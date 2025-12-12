@@ -5463,5 +5463,167 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 56,
+        "subcategory": "Headlight Assembly",
+        "category": "Lighting & Lamps",
+        "partname": "Driver Side Headlamp Assembly",
+        "partnumber": 23358994,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "GMC",
+                "model": "Acadia Limited",
+                "years": "2017",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2016",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2015",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2014",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2013",
+                "engine": "3.6L V6 - Gas"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/gmc/headlight0056.png",
+        "item_specifics": {
+            "sku": "GM0003",
+            "Brand": "GM Genuine",
+            "Manufacturer Part Number": 23358994,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "19433928, 22939423, 23137299, 23172864, 23181975, 23423713"
+            ],
+            "Placement on Vehicle": [
+                "Left Front, Left Driver Side"
+            ],
+            "Condition": "New",
+            "Material": "Plastic Lens",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "USA, Mexico, China, Korean",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 8792,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine GM Genuine Driver Side Headlamp Assembly. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 57,
+        "subcategory": "Headlight Assembly",
+        "category": "Lighting & Lamps",
+        "partname": "Passenger Side Headlamp Assembly",
+        "partnumber": 23358995,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "GMC",
+                "model": "Acadia Limited",
+                "years": "2017",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2016",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2015",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2014",
+                "engine": "3.6L V6 - Gas"
+            },
+            {
+                "make": "GMC",
+                "model": "Acadia",
+                "years": "2013",
+                "engine": "3.6L V6 - Gas"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/gmc/headlight0057.png",
+        "item_specifics": {
+            "sku": "GM0004",
+            "Brand": "GM Genuine",
+            "Manufacturer Part Number": 23358994,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "19433928, 22939423, 23137299, 23172864, 23181975, 23423713"
+            ],
+            "Placement on Vehicle": [
+                "Right Front, Right Passenger"
+            ],
+            "Condition": "New",
+            "Material": "Plastic Lens",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "USA, Mexico, China, Korean",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 8716,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine GM Genuine Passenger Side Headlamp Assembly. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
