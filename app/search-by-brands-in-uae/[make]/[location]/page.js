@@ -152,14 +152,14 @@ export async function generateMetadata({ params }) {
     ]
   };
   return {
-    title: `${make} Spare Parts in ${decodeURIComponent(location)}, UAE from Dubai dealers -
+    title: `Buy ${make} Spare Parts in ${decodeURIComponent(location)}, UAE -
       Best Prices`,
     description: `Buy ${make} - ${decodeURIComponent(
       location,
     )} auto spare parts Online and Get delivered Used, New, Genuine / OEM, Aftermarket in UAE`,
     openGraph: {
       images: 'https://www.emirates-car.com/favicon.png',
-      title: `${make} Spare Parts in ${decodeURIComponent(location)}, UAE from Dubai dealers -
+      title: `${make} Spare Parts in ${decodeURIComponent(location)}, UAE -
       Best Prices`,
       description: `Buy ${make} - ${decodeURIComponent(
         location,
