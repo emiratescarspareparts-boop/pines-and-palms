@@ -94,23 +94,6 @@ export default function ProductTabs({ product, slug }) {
                         </ul>
                     </div>
                 )}
-                <ul className={`list-disc pl-6 space-y-1 ${firaSans.className}`}>
-                    {product?.compatibility?.map((comp, index) => {
-                        const compatMake = encodeURIComponent(comp.make);
-                        const compatModel = encodeURIComponent(comp.model);
-                        const compatYear = comp.years;
-
-                        const partSlug = `${product.partname}-${comp.make}-${comp.model}-${compatYear}-${product.partnumber}-${product.id}`;
-
-                        return (
-                            <div key={index}
-                            >
-                                {`<url><loc>https://www.emirates-car.com/search-by-make/${comp.make}/${compatModel}/${encodeURIComponent(product.category)}/${encodeURIComponent(product.subcategory)}/${encodeURIComponent(partSlug)}</loc><lastmod>2025-1-12T12:45:55.555Z</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-`}
-                            </div>
-                        );
-                    })}
-                </ul>
 
 
                 {activeTab === 'item-specifics' && (
