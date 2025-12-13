@@ -31,7 +31,7 @@ import Wheel from '../../../../public/img/honda-eighth-gen/Wheel.webp';
 import MudFlap from '../../../../public/img/honda-eighth-gen/Mud_Flap.webp';
 import { getFormModel, getParts } from '../../../page';
 import FormComponent from '../../../../components/FormComponent';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { promises as fs } from 'fs';
 import path from 'path';
 import products from '../../../../public/products.json'
@@ -417,7 +417,7 @@ export default async function Model({ params, searchParams }) {
   const haksMakes = ['Honda', 'Audi', 'Porsche', 'Volvo', 'Mini', 'Mercedes-Benz', 'Renault', 'Peugeot', 'Jaguar', 'Ford', 'Hummer', 'Dodge', 'GMC', 'Jeep', 'Lincoln']
   const isExcludedMake = excludedMakes.includes(make);
   if (excludedMakes.includes(make)) {
-    redirect('/get-in-touch');
+    notFound();
   }
 
   const filePath = path.join(process.cwd(), 'public/lib/car-data.json');

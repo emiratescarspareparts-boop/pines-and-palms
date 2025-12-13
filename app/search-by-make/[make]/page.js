@@ -37,7 +37,7 @@ import Hero_img from '../../../public/img/car-spare-parts.png';
 import SearchCity from '../../../components/SearchCity';
 import TenEntries from '../../../components/tenentries';
 import PartsAccordion from '../../../components/Parts-Accordion';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { promises as fs } from 'fs';
 import path from 'path';
 import VWFilters from '../../volkswagen-spare-parts-uae/VWFilters';
