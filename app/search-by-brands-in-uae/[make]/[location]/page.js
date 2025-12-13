@@ -542,14 +542,6 @@ export default async function Cities({ params, searchParams }) {
         {make === 'Honda' ? <HondaOfferButton /> : <></>}
       </div>
 
-      {makeFiltered.length > 0 ?
-        <ProductFilter
-          make={make}
-          products={filtered}
-          allProducts={makeFiltered}
-          searchParams={searchParams}
-          location={location}
-        /> : <></>}
       <div>
         <div className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
           Popular{' '}
