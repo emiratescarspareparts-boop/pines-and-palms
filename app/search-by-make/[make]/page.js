@@ -38,11 +38,9 @@ import SearchCity from '../../../components/SearchCity';
 import TenEntries from '../../../components/tenentries';
 import PartsAccordion from '../../../components/Parts-Accordion';
 import { notFound, redirect } from 'next/navigation';
-import { promises as fs } from 'fs';
-import path from 'path';
-import VWFilters from '../../volkswagen-spare-parts-uae/VWFilters';
 import products from "../../../public/products.json"
 import ProductFilter from './ProductFilter';
+import CarData from "../../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 
 const playfair_display = Playfair_Display({
@@ -74,11 +72,7 @@ export async function generateStaticParams({ make }) {
   }
 
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const fileContent = await fs.readFile(filePath, 'utf8');
-    const allCars = JSON.parse(fileContent);
-
-    const allowed = allCars.filter(
+    const allowed = CarData.filter(
       car => car.make === make && !excludedMakes.includes(car.make)
     );
 
@@ -93,12 +87,9 @@ export async function generateStaticParams({ make }) {
 
 async function getModel(make) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
     const decodedMake = decodeURIComponent(make);
 
-    const filtered = data.filter(item => item.make === decodedMake);
+    const filtered = CarData.filter(item => item.make === decodedMake);
 
     const uniqueObjectArray = [
       ...new Map(filtered.map(item => [item.model, item])).values(),
@@ -300,11 +291,7 @@ export async function generateMetadata({ params }) {
 
 async function getMakeImage(make) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    const filtered = data.filter(item => item.make === make);
+    const filtered = CarData.filter(item => item.make === make);
 
     const uniqueMkeArray = [
       ...new Map(filtered.map(item => [item.img, item])).values(),
@@ -320,12 +307,9 @@ async function getMakeImage(make) {
 }
 async function getDescription(make) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
     const decodedMake = decodeURIComponent(make);
 
-    const filtered = data.filter(item => item.make === decodedMake);
+    const filtered = CarData.filter(item => item.make === decodedMake);
 
     const uniqueDescriptionArray = [
       ...new Map(filtered.map(item => [item.description, item])).values(),

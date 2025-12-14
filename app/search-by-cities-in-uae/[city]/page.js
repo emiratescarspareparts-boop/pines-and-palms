@@ -17,16 +17,11 @@ import China from '../../../public/img/icons/china.png';
 import France from '../../../public/img/icons/france.png';
 import TenEntries from '../../../components/tenentries';
 import Contents from '../../../components/Contents';
-import { promises as fs } from 'fs';
-import path from 'path';
+import CitiesData from "../../../public/lib/cities.json"
 
 export async function generateStaticParams() {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/cities.json');
-    const fileContents = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(fileContents);
-
-    const params = data.map(item => ({
+    const params = CitiesData.map(item => ({
       city: item.city,
     }));
 
@@ -124,12 +119,8 @@ export async function generateMetadata({ params }) {
 }
 
 async function getCityData(city) {
-  const filePath = path.join(process.cwd(), 'public/lib/cities.json');
-  const jsonData = await fs.readFile(filePath, 'utf8');
-  const cities = JSON.parse(jsonData);
-
   const decodedCity = decodeURIComponent(city);
-  const cityData = cities.find(c => c.city === decodedCity);
+  const cityData = CitiesData.find(c => c.city === decodedCity);
 
   if (!cityData) {
     return null;

@@ -8,12 +8,12 @@ import FormComponent from '../../../components/FormComponent';
 import TenEntries from '../../../components/tenentries';
 import CarParts from '../../../public/img/car-spare-parts.png';
 import Counter from '../../../components/service-countup';
-import path from 'path';
-import { promises as fs } from 'fs';
 import { notFound } from 'next/navigation';
 import products from "../../../public/products.json"
 import ProductFilter from './ProductFilter';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import PartsData from "../../../public/lib/parts.json"
+
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
@@ -29,11 +29,7 @@ const firaSans = Fira_Sans({
 
 export async function generateStaticParams() {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-    const fileContents = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(fileContents);
-
-    const params = data.map(item => ({
+    const params = PartsData.map(item => ({
       parts: item.parts,
     }));
 
@@ -98,12 +94,8 @@ export async function generateMetadata({ params }) {
   };
 }
 async function getPartsData(parts) {
-  const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-  const jsonData = await fs.readFile(filePath, 'utf8');
-  const data = JSON.parse(jsonData);
-
   const decodedParts = decodeURIComponent(parts);
-  const filtered = data.find(item => item.parts === decodedParts);
+  const filtered = PartsData.find(item => item.parts === decodedParts);
 
   return filtered;
 }

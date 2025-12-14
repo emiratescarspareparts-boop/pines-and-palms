@@ -1,8 +1,6 @@
 import React from 'react';
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
-import { promises as fs } from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import TenEntries from '../../../../components/tenentries';
 import Contents from '../../../../components/Contents';
@@ -16,6 +14,8 @@ import { redirect } from 'next/navigation';
 import HeroCarousel from '../../../../components/HeroCarousel';
 import SearchCity from '../../../../components/SearchCity';
 import SearchMakeParts from './SearchMakeParts';
+import CarData from "../../../../public/lib/car-data.json"
+import partsData from "../../../../public/lib/parts.json"
 
 export async function generateStaticParams() {
     const excludedMakes = [
@@ -28,14 +28,7 @@ export async function generateStaticParams() {
         'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker'
     ];
     try {
-        const carPath = path.join(process.cwd(), 'public/lib/car-data.json');
-        const carData = await fs.readFile(carPath, 'utf8');
-        const cars = JSON.parse(carData);
-
-        const partsPath = path.join(process.cwd(), 'public/lib/parts.json');
-        const partsData = await fs.readFile(partsPath, 'utf8');
-        const parts = JSON.parse(partsData);
-        const filtered = cars.filter(car => !excludedMakes.includes(car.make));
+        const filtered = CarData.filter(car => !excludedMakes.includes(car.make));
         const uniqueMakes = Array.from(
             new Map(
                 filtered.map(item => [`${item.make}`, { make: item.make }])
@@ -45,7 +38,7 @@ export async function generateStaticParams() {
 
         const paths = [];
         uniqueMakes.forEach(make => {
-            parts.forEach(part => {
+            partsData.forEach(part => {
                 paths.push({
                     make,
                     parts: part.parts,
@@ -110,17 +103,12 @@ export async function generateMetadata({ params }) {
 }
 
 async function getModel(make) {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
-    const filtered = data.filter(item => item.make === make);
+    const filtered = CarData.filter(item => item.make === make);
     return [...new Map(filtered.map(item => [item.model, item])).values()];
 }
 
 async function getPartsList() {
-    const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    return JSON.parse(jsonData);
+    return partsData;
 }
 
 export default async function PartsPage({ params }) {

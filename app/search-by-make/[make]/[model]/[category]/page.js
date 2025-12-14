@@ -1,22 +1,15 @@
 import React from "react";
-import { promises as fs } from "fs";
-import path from "path";
 import { notFound } from "next/navigation";
 import ProductFilter from "./ProductFilter";
 import productsFile from "../../../../../public/products.json";
 import GetInTouchForm from "../../../../../components/GetInTouchForm";
+import CarData from "../../../../../public/lib/car-data.json"
+export const revalidate = 86400;
 
-async function loadJSON(relPath) {
-    const full = path.join(process.cwd(), relPath);
-    const data = await fs.readFile(full, "utf8");
-    return JSON.parse(data);
-}
 
 async function getMakeImage(make, model) {
     try {
-        const data = await loadJSON("public/lib/car-data.json");
-
-        const filtered = data.filter(
+        const filtered = CarData.filter(
             (i) =>
                 i.make.toLowerCase() === make.toLowerCase() &&
                 i.model.toLowerCase() === model.toLowerCase()

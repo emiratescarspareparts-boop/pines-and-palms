@@ -32,12 +32,11 @@ import MudFlap from '../../../../public/img/honda-eighth-gen/Mud_Flap.webp';
 import { getFormModel, getParts } from '../../../page';
 import FormComponent from '../../../../components/FormComponent';
 import { notFound } from 'next/navigation';
-import { promises as fs } from 'fs';
-import path from 'path';
 import products from '../../../../public/products.json'
 import ProductFilter from './ProductFilter';
 import SearchModel from '../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import CarData from "../../../../public/lib/car-data.json"
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
@@ -67,11 +66,7 @@ export async function generateStaticParams() {
   ];
 
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf-8');
-    const allCars = JSON.parse(jsonData);
-
-    const filtered = allCars.filter(car => !excludedMakes.includes(car.make));
+    const filtered = CarData.filter(car => !excludedMakes.includes(car.make));
 
     const uniquePairs = Array.from(
       new Map(
@@ -274,11 +269,7 @@ export async function generateMetadata({ params }) {
 }
 async function getMakeImage(make, model) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    const filtered = data.filter(item => item.make === make && item.model === model);
+    const filtered = CarData.filter(item => item.make === make && item.model === model);
 
     const uniqueMkeArray = [
       ...new Map(filtered.map(item => [item.img, item])).values(),
@@ -295,13 +286,10 @@ async function getMakeImage(make, model) {
 
 async function getDescription(make, model) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
     const decodedMake = decodeURIComponent(make);
     const decodedModel = decodeURIComponent(model);
 
-    const filtered = data.filter(item => item.make === decodedMake && item.model === decodedModel);
+    const filtered = CarData.filter(item => item.make === decodedMake && item.model === decodedModel);
 
     const uniqueDescriptionArray = [
       ...new Map(filtered.map(item => [item.description, item])).values(),
@@ -319,12 +307,9 @@ async function getDescription(make, model) {
 
 async function getModel(make) {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
     const decodedMake = decodeURIComponent(make);
 
-    const filtered = data.filter(item => item.make === decodedMake);
+    const filtered = CarData.filter(item => item.make === decodedMake);
 
     const uniqueObjectArray = [
       ...new Map(filtered.map(item => [item.model, item])).values(),
@@ -339,12 +324,9 @@ async function getModel(make) {
 
 async function getMake() {
   try {
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
 
     const makeArray = [
-      ...new Map(data.map(item => [item.make, item])).values(),
+      ...new Map(CarData.map(item => [item.make, item])).values(),
     ];
 
     return makeArray;
@@ -420,11 +402,7 @@ export default async function Model({ params, searchParams }) {
     notFound();
   }
 
-  const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-  const jsonData = await fs.readFile(filePath, 'utf8');
-  const allData = JSON.parse(jsonData);
-
-  const data = allData.filter(item => item.make === make && item.model === model);
+  const data = CarData.filter(item => item.make === make && item.model === model);
   const grouped = partspost.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
     acc[item.category].push(item.parts);

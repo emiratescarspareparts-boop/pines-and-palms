@@ -8,53 +8,39 @@ import TenEntries from '../components/tenentries';
 import Contents from '../components/Contents';
 import StaticCities from '../components/StaticCities';
 import MainAccordion from '../components/Main-Accordion';
-import { promises as fs } from 'fs';
-import path from 'path';
 import "../public/main.css"
+import CarData from "../public/lib/car-data.json"
+import CitiesData from "../public/lib/cities.json"
+import PartsData from "../public/lib/parts.json"
+export const revalidate = 1814400;
+
 
 export async function getMake() {
-  const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const carList = JSON.parse(data);
-
   const uniqueMakeArray = [
-    ...new Map(carList.map(item => [item.make, item])).values()
+    ...new Map(CarData.map(item => [item.make, item])).values()
   ];
 
   return uniqueMakeArray;
 }
 
 export async function getYear() {
-  const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const carList = JSON.parse(data);
-
   const uniqueYearArray = [
-    ...new Map(carList.map(item => [item.year, item])).values()
+    ...new Map(CarData.map(item => [item.year, item])).values()
   ];
 
   return uniqueYearArray;
 }
 
 export async function getFormModel() {
-  const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const forms = JSON.parse(data);
-  return forms;
+  return CarData;
 }
 
 export async function getCity() {
-  const filePath = path.join(process.cwd(), 'public/lib/cities.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const cities = JSON.parse(data)
-  return cities;
+  return CitiesData;
 }
 
 export async function getParts() {
-  const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const partsposts = JSON.parse(data)
-  return partsposts;
+  return PartsData;
 }
 
 export default async function Home() {

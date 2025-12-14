@@ -1,6 +1,4 @@
 import React from "react";
-import { promises as fs } from "fs";
-import path from "path";
 import ProductFilter from "./ProductFilter";
 import productsFile from "../../../../../../public/products.json";
 import { Fira_Sans, Playfair_Display } from "next/font/google";
@@ -15,6 +13,7 @@ import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import { notFound, redirect } from "next/navigation";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
+import CarData from "../../../../../../public/lib/car-data.json"
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
@@ -28,13 +27,6 @@ const firaSans = Fira_Sans({
     display: 'swap',
     variable: '--font-fira-sans',
 });
-
-async function loadJSON(file) {
-    const filePath = path.join(process.cwd(), file);
-    const data = await fs.readFile(filePath, "utf8");
-    return JSON.parse(data);
-}
-
 
 
 const subCity = [
@@ -231,12 +223,9 @@ export async function generateMetadata({ params }) {
 
 async function getModel(make) {
     try {
-        const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-        const jsonData = await fs.readFile(filePath, 'utf8');
-        const data = JSON.parse(jsonData);
         const decodedMake = decodeURIComponent(make);
 
-        const filtered = data.filter(item => item.make === decodedMake);
+        const filtered = CarData.filter(item => item.make === decodedMake);
 
         const uniqueObjectArray = [
             ...new Map(filtered.map(item => [item.model, item])).values(),
