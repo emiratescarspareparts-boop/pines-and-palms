@@ -8,12 +8,13 @@ import CarParts from '../../../../../../public/img/car-spare-parts.png';
 import Image from "next/image";
 import SearchMakeModelParts from "../../../../../../components/SearchMakeModelParts";
 import { getCity, getFormModel, getMake, getParts } from "../../../../../page";
-import FormComponent from "../../../../../../components/FormComponent";
 import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import { notFound, redirect } from "next/navigation";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
+import partsData from "../../../../../../public/lib/parts.json"
+
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
@@ -92,9 +93,7 @@ const subCity = [
 
 async function getMakeImage(make, model) {
     try {
-        const data = await loadJSON("public/lib/car-data.json");
-
-        const filtered = data.filter(
+        const filtered = CarData.filter(
             (item) =>
                 item.make.toLowerCase() === make.toLowerCase() &&
                 item.model.toLowerCase() === model.toLowerCase()
@@ -111,8 +110,6 @@ async function getMakeImage(make, model) {
 async function getPartsByCategory(category, subcategory) {
     try {
         if (!category) return [];
-
-        const partsData = await loadJSON("public/lib/parts.json");
         return partsData.filter(
             (item) => item.category.toLowerCase() === category.toLowerCase()
         );
@@ -123,9 +120,7 @@ async function getPartsByCategory(category, subcategory) {
 }
 async function getPartImage(subcategory) {
     try {
-        const data = await loadJSON("public/lib/parts.json");
-
-        const filtered = data.filter(item =>
+        const filtered = partsData.filter(item =>
             item.parts.toLowerCase() === subcategory.toLowerCase()
         );
 
@@ -257,7 +252,7 @@ export default async function SubcategoryPage({ params, searchParams }) {
     const cities = await getCity()
     const relatedCategories = await getPartsByCategory(category, subcategory)
     const carmodel = await getModel(make);
-    const genericParts = await loadJSON("public/lib/parts.json");
+    const genericParts = partsData;
 
     const normalize = (v) =>
         v?.toString().toLowerCase().trim().replace(/\s+/g, " ") || "";
