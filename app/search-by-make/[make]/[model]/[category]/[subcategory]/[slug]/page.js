@@ -3,7 +3,10 @@ import products from "../../../../../../../public/products.json";
 import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
 import { Copse, Fira_Sans, Playfair_Display, Poppins, Roboto } from 'next/font/google';
-export const revalidate = 86400;
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
     subsets: ['latin'],

@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 import Image from 'next/image';
 import React from 'react';
 import { getCity, getFormModel, getMake, getParts } from '../../page';
@@ -13,6 +11,10 @@ import products from "../../../public/products.json"
 import ProductFilter from './ProductFilter';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import PartsData from "../../../public/lib/parts.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],

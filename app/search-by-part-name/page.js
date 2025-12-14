@@ -8,7 +8,9 @@ import Spare from '../../public/img/car-spare-parts.png';
 import SearchPartsComponent from '../../components/SearchPart';
 import Footer from '../../components/footer';
 export const revalidate = 1814400;
-
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 export default async function PartPage() {
   const cities = await getCity();

@@ -4,8 +4,10 @@ import ProductFilter from "./ProductFilter";
 import productsFile from "../../../../../public/products.json";
 import GetInTouchForm from "../../../../../components/GetInTouchForm";
 import CarData from "../../../../../public/lib/car-data.json"
-export const revalidate = 86400;
-
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 async function getMakeImage(make, model) {
     try {

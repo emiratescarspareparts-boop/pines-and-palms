@@ -1,9 +1,6 @@
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import { promises as fs } from 'fs';
 import { notFound, redirect } from 'next/navigation';
 import path from 'path';
 import FormComponent from '../../../../../components/FormComponent';
@@ -14,7 +11,10 @@ import SearchModel from '../../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import products from "../../../../../public/products.json"
 import ProductFilter from './ProductFilter';
-import parse from "html-react-parser";
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
     subsets: ['latin'],
@@ -453,9 +453,6 @@ export default async function Parts({ params, searchParams }) {
                     <FormComponent formsData={modelsform} postFilter={partsposts} />
 
                 </section>
-
-
-
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
                         <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>

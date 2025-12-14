@@ -3,21 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '../../components/footer.js';
 import RelatedPost from './relatedpost/page.js';
-import path from 'path';
-import { promises as fs } from 'fs';
+import Blog from "../../public/lib/blog.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
-async function getPosts() {
-  const res = await fetch(`https://rozy-api-two.vercel.app/api/blog`);
-  const posts = await res.json();
-  return posts;
-}
 
 async function getBlog() {
-  const filePath = path.join(process.cwd(), 'public/lib/blog.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const carList = JSON.parse(data);
-
-  return carList;
+  return Blog;
 }
 
 export default async function Blog() {

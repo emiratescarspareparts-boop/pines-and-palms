@@ -5,6 +5,10 @@ import { getFormModel, getMake, getParts } from '../page';
 import Image from 'next/image';
 import Hero_img from '../../public/img/car-spare-parts.png';
 import Social from '../../components/Social';
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 export default async function Contact() {
   const partsposts = await getParts();

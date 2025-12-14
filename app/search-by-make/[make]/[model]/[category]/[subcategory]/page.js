@@ -14,6 +14,10 @@ import FormComponentMakeModelCatSubcat from "../../../../../../components/FormCo
 import { notFound, redirect } from "next/navigation";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],

@@ -2,19 +2,10 @@ import React from 'react';
 import Footer from '../../../components/footer';
 import RelatedPost from '../relatedpost/page';
 import Image from 'next/image';
-import path from 'path';
-import { promises as fs } from 'fs';
+import carBlog from "../../../public/lib/blog.json"
 
-async function getBlogDetail(slug) {
-  const res = await fetch(`https://rozy-api-two.vercel.app/api/blog/${slug}`);
-  const data = await res.json();
-  return data;
-}
 
 export async function getBlog(slug) {
-  const filePath = path.join(process.cwd(), 'public/lib/blog.json');
-  const data = await fs.readFile(filePath, 'utf8');
-  const carBlog = JSON.parse(data);
   const blog = await carBlog.filter(c => c.TITLE === decodeURIComponent(slug))
 
   return blog;

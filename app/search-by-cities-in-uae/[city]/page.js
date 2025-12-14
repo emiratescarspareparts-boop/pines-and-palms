@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -7,17 +5,13 @@ import { getFormModel, getMake, getParts } from '../../page';
 import FormComponent from '../../../components/FormComponent';
 import Footer from '../../../components/footer';
 import Image from 'next/image';
-import Britain from '../../../public/img/icons/united-kingdom.png';
-import Indian from '../../../public/img/icons/india.png';
-import Japan from '../../../public/img/icons/japan.png';
-import Korean from '../../../public/img/icons/south-korea.png';
-import USA from '../../../public/img/icons/usa.png';
-import Germany from '../../../public/img/icons/germany.png';
-import China from '../../../public/img/icons/china.png';
-import France from '../../../public/img/icons/france.png';
 import TenEntries from '../../../components/tenentries';
 import Contents from '../../../components/Contents';
 import CitiesData from "../../../public/lib/cities.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   try {

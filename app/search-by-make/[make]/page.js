@@ -1,6 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'default-cache';
-export const revalidate = 1814400;
 import React from 'react';
 import SearchModel from '../../../components/SearchModel';
 import FormComponent from '../../../components/FormComponent';
@@ -42,6 +39,10 @@ import products from "../../../public/products.json"
 import ProductFilter from './ProductFilter';
 import CarData from "../../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
@@ -57,20 +58,6 @@ const firaSans = Fira_Sans({
 });
 
 export async function generateStaticParams({ make }) {
-  const excludedMakes = [
-    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
-    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
-    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
-    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
-    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
-    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
-    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker'
-  ];
-
-  if (excludedMakes.includes(make)) {
-    notFound();
-  }
-
   try {
     const allowed = CarData.filter(
       car => car.make === make && !excludedMakes.includes(car.make)
@@ -539,9 +526,6 @@ export default async function MakePage({ params, searchParams }) {
       link: '/search-by-part-name/Wheel',
     },
   ];
-
-
-
   return (
     <div>
       <div className='max-w-7xl mx-auto md:px-0 lg:px-0 xs:px-0 xxs:px-0 sm:px-2'>

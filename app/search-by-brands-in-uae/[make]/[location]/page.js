@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 import React from 'react';
 import Hero_img from '../../../../public/img/car-spare-parts.png';
 import TenEntries from '../../../../components/tenentries';
@@ -43,6 +41,10 @@ import products from "../../../../public/products.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import baseCityData from "../../../../public/lib/basecity.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],

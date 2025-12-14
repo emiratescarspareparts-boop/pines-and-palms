@@ -6,6 +6,10 @@ import Link from 'next/link';
 import Count from '../../components/service-countup';
 import Footer from '../../components/footer';
 import SearchCity from '../../components/SearchCity';
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 export const metadata = {
   title: 'Quick Car Auto Spare Part Order Online in UAE | Emirates-car.com',

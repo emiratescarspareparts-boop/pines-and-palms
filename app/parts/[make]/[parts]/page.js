@@ -1,6 +1,4 @@
 import React from 'react';
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 import Link from 'next/link';
 import TenEntries from '../../../../components/tenentries';
 import Contents from '../../../../components/Contents';
@@ -16,6 +14,10 @@ import SearchCity from '../../../../components/SearchCity';
 import SearchMakeParts from './SearchMakeParts';
 import CarData from "../../../../public/lib/car-data.json"
 import partsData from "../../../../public/lib/parts.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
     const excludedMakes = [
