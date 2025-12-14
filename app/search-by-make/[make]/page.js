@@ -379,7 +379,7 @@ export default async function MakePage({ params, searchParams }) {
   const haksMakes = ['Honda', 'Audi', 'Porsche', 'Volvo', 'Mini', 'Mercedes-Benz', 'Renault', 'Peugeot', 'Jaguar', 'Ford', 'Hummer', 'Dodge', 'GMC', 'Jeep', 'Lincoln']
   const isExcludedMake = excludedMakes.includes(make);
   if (excludedMakes.includes(make)) {
-    redirect('/get-in-touch');
+    notFound()
   }
 
   const makeFiltered = products.filter(product =>
