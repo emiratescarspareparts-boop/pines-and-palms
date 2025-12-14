@@ -633,6 +633,9 @@ export default async function Model({ params, searchParams }) {
           </div>
         </div>
       </header>
+      <section className='#myForm'>
+        <FormComponent formsData={modelsform} postFilter={partspost} />
+      </section>
 
       <section className='xs:px-3 xxs:px-3 md:px-3 lg:max-w-4xl lg:mx-auto'>
         <h3 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why Emirates-car.com?</h3>
@@ -701,12 +704,6 @@ export default async function Model({ params, searchParams }) {
           <li>Aftermarket auto spare parts in uae</li>
         </ul>
       </section>
-
-      <section className='#myForm'>
-        <FormComponent formsData={modelsform} postFilter={partspost} />
-      </section>
-
-
 
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
