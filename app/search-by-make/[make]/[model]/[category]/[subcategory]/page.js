@@ -293,7 +293,6 @@ export default async function SubcategoryPage({ params, searchParams }) {
     const finalData = productMatches.length > 0 ? productMatches : genericMatch ? [genericMatch] : [];
 
 
-
     return (<>
         {finalData.length === 0 && productMatches.length > 0 ? (<div className="text-black text-center"><GetInTouchForm /></div>) : <div className="p-6 max-w-6xl mx-auto">
             {productMatches.length > 0 && (
@@ -416,16 +415,10 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         {partsposts.map((post, i) => {
                             return (
                                 <li key={i} className="h-full">
-                                    <Link
-                                        href='/search-by-make/[make]/[model]/[category]/[subcategory]'
-                                        as={'/search-by-make/' + make + "/" + model + "/" + post.category + "/" + post.parts}
-                                        title={make + " " + model + " " + post.parts}
-                                        className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                                    >
-                                        <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                                            {make} {model} <span className="text-blue-500">{post.parts}</span>
-                                        </span>
-                                    </Link>
+
+                                    <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                        {make} {model} <span className="text-blue-500">{post.parts}</span>
+                                    </span>
                                 </li>
                             );
                         })}
