@@ -6,10 +6,14 @@ export function middleware(request) {
     const blockedBots = [
         'mj12bot',
         'dotbot',
-        'bingpreview',
         'ahrefsbot',
         'semrushbot',
     ];
+
+    // Always allow Google, Bing, etc.
+    if (ua.includes('googlebot') || ua.includes('bingbot')) {
+        return NextResponse.next();
+    }
 
     if (blockedBots.some(bot => ua.includes(bot))) {
         return new NextResponse('Blocked', { status: 403 });
@@ -18,6 +22,7 @@ export function middleware(request) {
     return NextResponse.next();
 }
 
+// Only match pages where bot blocking is required
 export const config = {
-    matcher: '/:path*',
+    matcher: ['/search-by-make/:path*', '/api/:path*'],
 };

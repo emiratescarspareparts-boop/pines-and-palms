@@ -7,7 +7,7 @@ import SearchMake from '../../components/SearchMake';
 import HondaOfferButton from '../../components/HondaOfferButton';
 import Social from '../../components/Social';
 export const revalidate = 1814400;
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 

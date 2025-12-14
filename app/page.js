@@ -12,8 +12,6 @@ import "../public/main.css"
 import CarData from "../public/lib/car-data.json"
 import CitiesData from "../public/lib/cities.json"
 import PartsData from "../public/lib/parts.json"
-import Analytics from '../components/Analytics.client';
-import Tawk from '../components/Tawk.client';
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
