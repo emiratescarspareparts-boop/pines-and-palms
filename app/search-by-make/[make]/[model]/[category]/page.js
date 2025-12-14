@@ -124,15 +124,7 @@ export default async function CategoryPage({ params, searchParams }) {
                 </p>
             </header>
 
-            {productMatches.length > 0 && (
-                <ProductFilter
-                    make={make}
-                    model={model}
-                    products={productMatches}
-                    allProducts={productMatches}
-                    searchParams={searchParams}
-                />
-            )}
+
 
             {productMatches.length === 0 && (
                 <ul className="mt-6 grid gap-4">

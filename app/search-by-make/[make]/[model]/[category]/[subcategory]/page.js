@@ -351,17 +351,6 @@ export default async function SubcategoryPage({ params, searchParams }) {
             )}
 
 
-            {/* Filters + Products */}
-            {productMatches.length > 0 && (
-                <ProductFilter
-                    make={make}
-                    model={model}
-                    subcategory={subcategory}
-                    products={productMatches}
-                    allProducts={productMatches}
-                    searchParams={searchParams}
-                />
-            )}
             {productMatches.length > 0 && (
                 <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">

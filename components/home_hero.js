@@ -223,13 +223,7 @@ export default async function HomeHero({ searchParams }) {
       </div>
 
       <FormComponent formsData={modelforms} postFilter={partsposts} />
-      <section className="mt-6">
-        <ProductFilter
-          products={filtered}
-          allProducts={allProducts}
-          searchParams={searchParams}
-        />
-      </section>
+
 
       <div className="bg-bglight">
         <h3 className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">

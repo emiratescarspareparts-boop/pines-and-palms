@@ -651,13 +651,6 @@ export default async function MakePage({ params, searchParams }) {
       <div className="text-center">
         {make === 'Honda' ? <HondaOfferButton /> : <></>}
       </div>
-      {makeFiltered.length > 0 ?
-        <ProductFilter
-          make={make}
-          products={filtered}
-          allProducts={makeFiltered}
-          searchParams={searchParams}
-        /> : <></>}
 
       <section aria-labelledby="featured-deals" className="mt-10 xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
         <h2

@@ -706,16 +706,7 @@ export default async function Model({ params, searchParams }) {
         <FormComponent formsData={modelsform} postFilter={partspost} />
       </section>
 
-      <section>
-        {makeModelFiltered.length > 0 ?
-          <ProductFilter
-            make={make}
-            model={model}
-            products={filtered}
-            allProducts={makeModelFiltered}
-            searchParams={searchParams}
-          /> : <></>}
-      </section>
+
 
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
