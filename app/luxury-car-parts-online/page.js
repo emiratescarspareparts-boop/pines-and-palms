@@ -31,6 +31,9 @@ import Mclaren from "../../public/img/car-logos/mclaren.webp"
 import AstonMartin from "../../public/img/car-logos/aston_martin.webp"
 import Link from "next/link";
 import Image from "next/image";
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const dynamicParams = false;
 
 
 export default function LuxuryPartsLanding() {

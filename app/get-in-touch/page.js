@@ -5,9 +5,7 @@ import Social from '../../components/Social';
 import GetInTouchForm from '../../components/GetInTouchForm';
 export const revalidate = 1814400;
 export const runtime = 'edge';
-export const fetchCache = 'force-cache';
 export const dynamicParams = false;
-export const dynamic = 'force-static';
 
 export default async function Forms() {
   return (

@@ -7,9 +7,7 @@ import Image from 'next/image';
 import FeaturedHonda from '../../components/featured';
 export const revalidate = 1814400;
 export const runtime = 'edge';
-export const fetchCache = 'force-cache';
 export const dynamicParams = false;
-export const dynamic = 'force-static';
 
 export default function HondaParts() {
   return (

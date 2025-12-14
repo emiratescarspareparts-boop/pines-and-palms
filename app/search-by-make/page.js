@@ -8,9 +8,7 @@ import HondaOfferButton from '../../components/HondaOfferButton';
 import Social from '../../components/Social';
 export const revalidate = 1814400;
 export const runtime = 'edge';
-export const fetchCache = 'force-cache';
 export const dynamicParams = false;
-export const dynamic = 'force-static';
 
 
 export default async function Make() {

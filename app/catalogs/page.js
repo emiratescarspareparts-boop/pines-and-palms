@@ -2,9 +2,7 @@ import ProductFilter from "./ProductFilter";
 import products from "../../public/products.json";
 export const revalidate = 1814400;
 export const runtime = 'edge';
-export const fetchCache = 'force-cache';
 export const dynamicParams = false;
-export const dynamic = 'force-static';
 
 export default function CatalogPage({ searchParams }) {
     const {
