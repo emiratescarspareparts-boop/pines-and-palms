@@ -7,6 +7,11 @@ import FormBattery from '../../components/FormBattery';
 import BatteryAccordion from '../../components/Battery-Accordion';
 import BatterySlider from '../../components/Battery-Slider';
 import { getFormModel } from '../page';
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 export const metadata = {
   title: 'Quick Car Battery Replacement services in UAE | Emirates-car.com',

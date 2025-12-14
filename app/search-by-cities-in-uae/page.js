@@ -10,6 +10,8 @@ export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
+export const dynamic = 'force-static';
+
 
 export const metadata = {
   title: 'Quick Car Auto Spare Part Order Online in UAE | Emirates-car.com',

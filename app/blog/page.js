@@ -8,6 +8,7 @@ export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 
 async function getBlog() {

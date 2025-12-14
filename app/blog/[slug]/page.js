@@ -3,6 +3,11 @@ import Footer from '../../../components/footer';
 import RelatedPost from '../relatedpost/page';
 import Image from 'next/image';
 import carBlog from "../../../public/lib/blog.json"
+export const revalidate = 1814400;
+export const runtime = 'edge';
+export const fetchCache = 'force-cache';
+export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 
 export async function getBlog(slug) {
