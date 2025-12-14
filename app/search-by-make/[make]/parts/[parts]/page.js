@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import path from 'path';
 import FormComponent from '../../../../../components/FormComponent';
 import TenEntries from '../../../../../components/tenentries';
 import { getCity, getFormModel, getMake, getParts } from '../../../../page';
