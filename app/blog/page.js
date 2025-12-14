@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '../../components/footer.js';
 import RelatedPost from './relatedpost/page.js';
-import Blog from "../../public/lib/blog.json"
+import carBlog from "../../public/lib/blog.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
@@ -11,7 +11,7 @@ export const dynamicParams = false;
 
 
 async function getBlog() {
-  return Blog;
+  return carBlog;
 }
 
 export default async function Blog() {

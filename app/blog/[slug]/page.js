@@ -6,7 +6,7 @@ import carBlog from "../../../public/lib/blog.json"
 
 
 export async function getBlog(slug) {
-  const blog = await carBlog.filter(c => c.TITLE === decodeURIComponent(slug))
+  const blog = carBlog.filter(c => c.TITLE === decodeURIComponent(slug))
 
   return blog;
 }
