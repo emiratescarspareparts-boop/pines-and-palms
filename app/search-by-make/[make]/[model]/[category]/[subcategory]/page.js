@@ -291,11 +291,28 @@ export default async function SubcategoryPage({ params, searchParams }) {
     );
 
     const finalData = productMatches.length > 0 ? productMatches : genericMatch ? [genericMatch] : [];
+    const hasExactMatch = productMatches.length > 0;
+    const hasAnyData = finalData.length > 0;
+
 
 
     return (<>
-        {finalData.length === 0 && productMatches.length > 0 ? (<div className="text-black text-center"><GetInTouchForm /></div>) : <div className="p-6 max-w-6xl mx-auto">
-            {productMatches.length > 0 && (
+
+        {!hasExactMatch && (
+            <div className="p-6 max-w-6xl mx-auto">
+                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold ${playfair_display.className}`}>
+                    {make} {model} <span className="text-blue-500">{subcategory.replace(/-/g, " ")}</span> - Genuine & Aftermarket in UAE
+                </h1>
+                <p className={`text-xl py-4 font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                    If you are looking for {make} {model} {subcategory.replace(/-/g, " ")}, submit your inquiry below, Our team will get back to you through whatsapp based on stock availability
+                </p>
+
+                <GetInTouchForm />
+            </div>
+        )}
+        {hasExactMatch &&
+            (<div className="p-6 max-w-6xl mx-auto">
+
                 <div className="py-5 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
                     <div className="bg-backgroundlight rounded-sm">
                         <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
@@ -335,15 +352,10 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         </div>
                     </div>
                 </div>
-            )}
-            {productMatches.length > 0 && (
+
                 <section className='#myForm'>
                     <FormComponentMakeModelCatSubcat formsData={modelsform} postFilter={partspost} mke={make} model={model} subcategory={subcategory} />
                 </section>
-            )}
-
-
-            {productMatches.length > 0 && (
                 <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
 
@@ -372,8 +384,6 @@ export default async function SubcategoryPage({ params, searchParams }) {
 
                     </div>
                 </section>
-            )}
-            {productMatches.length > 0 && (
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
                         <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
@@ -402,8 +412,6 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         </ul>
                     </div>
                 </section>
-            )}
-            {productMatches.length > 0 && (
                 <section>
                     <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search All spare parts for <span className='text-blue-600'>{make} {model}</span>
@@ -424,9 +432,7 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         })}
                     </ul>
                 </section>
-            )}
 
-            {productMatches.length > 0 && (
                 <section
                     aria-labelledby={`all-${make}-${model}-${subcategory}-brands`}
                     className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
@@ -464,8 +470,6 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         ))}
                     </ul>
                 </section>
-            )}
-            {productMatches.length > 0 && (
                 <section>
                     <h2 className={`font-bold text-3xl text-center xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search <span className='text-blue-600'>{make} {model} {subcategory}</span> Anywhere in UAE
@@ -484,8 +488,7 @@ export default async function SubcategoryPage({ params, searchParams }) {
                         ))}
                     </ul>
                 </section>
-            )}
-        </div>}
+            </div>)}
     </>
 
     );

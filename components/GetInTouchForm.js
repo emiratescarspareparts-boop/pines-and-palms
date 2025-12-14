@@ -103,7 +103,7 @@ export default function GetInTouchForm() {
     setWhatsappno('');
   }
   return (
-    <div>
+    <div className='max-w-4xl mx-auto my-5 xs:mx-3 xxs:mx-3 md:mx-4'>
       <form
         id="myForm"
         method="POST"
