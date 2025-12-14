@@ -11,6 +11,9 @@ import SearchModel from '../../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import products from "../../../../../public/products.json"
 import ProductFilter from './ProductFilter';
+import partsData from "../../../../../public/lib/parts.json"
+import carData from "../../../../../public/lib/car-data.json"
+import hondaMakePartsData from "../../../../../public/lib/makeparts/honda.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
@@ -32,11 +35,7 @@ const firaSans = Fira_Sans({
 
 export async function generateStaticParams() {
     try {
-        const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        const data = JSON.parse(fileContents);
-
-        const params = data.map(item => ({
+        const params = partsData.map(item => ({
             parts: item.parts,
         }));
 
@@ -246,12 +245,9 @@ export async function generateMetadata({ params }) {
 
 
 async function getPartsData(parts) {
-    const filePath = path.join(process.cwd(), 'public/lib/parts.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
 
     const decodedParts = decodeURIComponent(parts);
-    const filtered = data.find(item => item.parts === decodedParts);
+    const filtered = partsData.find(item => item.parts === decodedParts);
 
     return filtered;
 }
@@ -259,11 +255,7 @@ async function getPartsData(parts) {
 
 async function getMakeImage(make) {
     try {
-        const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-        const jsonData = await fs.readFile(filePath, 'utf8');
-        const data = JSON.parse(jsonData);
-
-        const filtered = data.filter(item => item.make === make);
+        const filtered = carData.filter(item => item.make === make);
 
         const uniqueMkeArray = [
             ...new Map(filtered.map(item => [item.img, item])).values(),
@@ -280,12 +272,9 @@ async function getMakeImage(make) {
 
 async function getModel(make) {
     try {
-        const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-        const jsonData = await fs.readFile(filePath, 'utf8');
-        const data = JSON.parse(jsonData);
         const decodedMake = decodeURIComponent(make);
 
-        const filtered = data.filter(item => item.make === decodedMake);
+        const filtered = carData.filter(item => item.make === decodedMake);
 
         const uniqueObjectArray = [
             ...new Map(filtered.map(item => [item.model, item])).values(),
@@ -300,12 +289,9 @@ async function getModel(make) {
 
 async function getBlog(make) {
     try {
-        const filePath = path.join(process.cwd(), 'public/lib/makeparts/honda.json');
-        const jsonData = await fs.readFile(filePath, 'utf8');
-        const data = JSON.parse(jsonData);
         const decodedMake = decodeURIComponent(make);
 
-        const filtered = data.filter(item => item.make === decodedMake);
+        const filtered = hondaMakePartsData.filter(item => item.make === decodedMake);
         const content = filtered.map((m) => m.content)
         return content;
     } catch (error) {
@@ -395,11 +381,7 @@ export default async function Parts({ params, searchParams }) {
         redirect('/get-in-touch');
     }
 
-    const filePath = path.join(process.cwd(), 'public/lib/car-data.json');
-    const jsonData = await fs.readFile(filePath, 'utf8');
-    const allData = JSON.parse(jsonData);
-
-    const data = allData.filter(item => item.make === make);
+    const data = carData.filter(item => item.make === make);
 
     if (!data || data.length === 0) {
         notFound();
