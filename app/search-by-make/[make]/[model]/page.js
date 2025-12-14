@@ -743,43 +743,6 @@ export default async function Model({ params, searchParams }) {
 
         </div>
       </section>
-      <section
-        aria-labelledby={`all-${make}-brands`}
-        className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
-      >
-        <h2
-          id={`all-${make}-brands`}
-          className={`text-4xl md:text-3xl lg:text-3xl xs:text-2xl xxs:text-2xl font-semibold py-5 ${playfair_display.className}`}
-        >
-          Used, Genuine & Aftermarket parts for{" "}
-          <span className="text-blue-600">{make}</span> spare parts
-        </h2>
-
-        <ul className="grid grid-cols-6 md:grid-cols-5 xs:grid-cols-2 xxs:grid-cols-3 sm:grid-cols-3 xs:gap-2 xxs:gap-2 sm:gap-2 gap-4 my-10">
-          {makeArray.map((p, i) => (
-            <li key={i} className="list-none">
-              <Link
-                href="/search-by-make/[make]"
-                as={`/search-by-make/${p.make}`}
-                title={`${p.make} spare parts`}
-                className="flex flex-col items-center justify-center border hover:border-blue-600 p-3 rounded-sm bg-white"
-              >
-                <Image
-                  alt={`${p.make} parts`}
-                  src={`/img/car-logos/${p.img}`}
-                  height={90}
-                  width={90}
-                  className="object-contain"
-                  priority
-                />
-                <span className={`mt-2 px-3 py-1 text-sm xl:text-2xl xxl:text-2xl font-medium font-sans text-white bg-blue-600 rounded-sm hover:bg-blue-700 text-center w-max ${firaSans.className}`}>
-                  {p.make}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
 
 
       <section className="d-flex py-10 xs:pt-5 mx-8 md:mx-5 xs:mx-3 lg:max-w-4xl lg:mx-auto" aria-labelledby='oem parts or aftermarket parts'>
@@ -1405,15 +1368,7 @@ export default async function Model({ params, searchParams }) {
         <ul className="xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 gap-2 md:w-full lg:mx-2 px-3">
           {partspost.map((post, i) => (
             <li key={i}>
-              <Link
-                href={`/search-by-make/${make}/${model}/[category]/[parts]`}
-                as={'/search-by-make/' + make + "/" + model + "/" + encodeURIComponent(post.category) + "/" + encodeURIComponent(post.parts)}
-                target='_blank'
-                title={`${make} ${decodeURIComponent(model)} ${post.parts}`}
-                className={`text-blue-700 underline hover:text-blue-900 focus:text-blue-800 text-xl xs:text-lg xl:text-2xl xxl:text-2xl font-sans flex items-center ${firaSans.className}`}
-              >
-                {make} {decodeURIComponent(model)} {post.parts} price list
-              </Link>
+              {make} {decodeURIComponent(model)} {post.parts} price list
             </li>
           ))}
         </ul>

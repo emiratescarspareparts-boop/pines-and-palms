@@ -110,21 +110,6 @@ export default function HondaAccord({ searchParams }) {
         >
           Inquire Now
         </Link>
-        <section className="d-flex justify-center text-center pt-10 xs:pt-5 mx-8">
-          {categoryFiltered.length > 0 ? (
-            <ProductFilter
-              make={make}
-              model={model}
-              products={filtered}
-              allProducts={categoryFiltered}
-              searchParams={searchParams}
-            />
-          ) : (
-            <p className="text-center text-gray-600">
-              No Honda Accord (2008–2012) Body Kits found.
-            </p>
-          )}
-        </section>
         <div className="py-10 xs:py-5">
           <p className="text-blue-600 text-2xl md:text-sm lg:text-lg font-extrabold xs:text-xl 2xs:text-xs py-5 text-center">
             8th Gen Honda Accord Body parts Aerodynamics upgrades parts:

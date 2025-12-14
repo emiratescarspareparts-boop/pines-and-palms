@@ -14,6 +14,7 @@ import FormComponent from "../../../../../../components/FormComponent";
 import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import { notFound, redirect } from "next/navigation";
+import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
@@ -288,21 +289,13 @@ export default async function SubcategoryPage({ params, searchParams }) {
             normalize(gp.parts) === normalize(subcategory) &&
             normalize(gp.category) === normalize(category)
     );
-    if (!productMatches.length && !genericMatch) {
-        notFound()
-    }
-    if (!productMatches || productMatches.length === 0) {
-        notFound()
-    }
 
     const finalData = productMatches.length > 0 ? productMatches : genericMatch ? [genericMatch] : [];
 
-    if (finalData.length === 0) {
-        notFound()
-    }
 
-    return (
-        <div className="p-6 max-w-6xl mx-auto">
+
+    return (<>
+        {finalData.length === 0 && productMatches.length > 0 ? (<div className="text-black text-center"><GetInTouchForm /></div>) : <div className="p-6 max-w-6xl mx-auto">
             {productMatches.length > 0 && (
                 <div className="py-5 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
                     <div className="bg-backgroundlight rounded-sm">
@@ -499,6 +492,8 @@ export default async function SubcategoryPage({ params, searchParams }) {
                     </ul>
                 </section>
             )}
-        </div>
+        </div>}
+    </>
+
     );
 }

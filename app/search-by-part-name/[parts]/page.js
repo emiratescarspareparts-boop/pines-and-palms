@@ -224,11 +224,7 @@ export default async function Parts({ params, searchParams }) {
           </div>
         </div>
       </div>
-      <ProductFilter
-        products={filteredProducts}
-        allProducts={products}
-        searchParams={searchParams || {}}
-      />
+
       <section>
         <FormComponent formsData={modelsform} postFilter={partsposts} />
       </section>
