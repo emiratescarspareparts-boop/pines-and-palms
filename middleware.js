@@ -3,26 +3,59 @@ import { NextResponse } from 'next/server';
 export function middleware(request) {
     const ua = request.headers.get('user-agent')?.toLowerCase() || '';
 
-    const blockedBots = [
+    // Allow legit services
+    const allowed = [
+        'googlebot',
+        'bingbot',
+        'facebookexternalhit',
+        'twitterbot',
+        'linkedinbot',
+        'whatsapp',
+        'slackbot',
+        'telegrambot',
+    ];
+
+    if (allowed.some(bot => ua.includes(bot))) {
+        return NextResponse.next();
+    }
+
+    // Block abusive scrapers & AI bots
+    const blocked = [
         'mj12bot',
         'dotbot',
         'ahrefsbot',
         'semrushbot',
+        'blexbot',
+        'serpstatbot',
+        'sistrix',
+        'spbot',
+        'dataforseobot',
+
+        // AI / ML scrapers
+        'gptbot',
+        'chatgpt',
+        'openai',
+        'claudebot',
+        'anthropic',
+        'bytespider',
+        'ccbot',
+        'diffbot',
+
+        // Scripted scrapers
+        'curl',
+        'wget',
+        'python-requests',
+        'axios',
+        'go-http-client',
     ];
 
-    // Always allow Google, Bing, etc.
-    if (ua.includes('googlebot') || ua.includes('bingbot')) {
-        return NextResponse.next();
-    }
-
-    if (blockedBots.some(bot => ua.includes(bot))) {
-        return new NextResponse('Blocked', { status: 403 });
+    if (blocked.some(bot => ua.includes(bot))) {
+        return new NextResponse('Access denied', { status: 403 });
     }
 
     return NextResponse.next();
 }
 
-// Only match pages where bot blocking is required
 export const config = {
-    matcher: ['/search-by-make/:path*', '/api/:path*'],
+    matcher: ['/api/:path*'], // 🔥 ONLY APIs
 };
