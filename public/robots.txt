@@ -5,6 +5,12 @@ Disallow: /ar
 Disallow: /blocked-secret
 Disallow: /catalogs
 
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
 User-agent: ClaudeBot
 Disallow: /
 
