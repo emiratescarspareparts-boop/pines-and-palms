@@ -2,42 +2,35 @@ import { NextResponse } from 'next/server';
 
 export function middleware(request) {
     const ua = request.headers.get('user-agent')?.toLowerCase() || '';
-    const country = request.geo?.country || 'UNKNOWN';
+    const country = request.geo?.country || '';
 
-    /* =========================
-       1. HARD GEO BLOCK
-       ========================= */
-
-    // Completely block China (bots, scrapers, AI training)
-    if (country === 'CN') {
-        return new NextResponse('Access denied', { status: 403 });
+    // Geo block: China (CN) and Singapore (SG)
+    const blockedCountries = ['CN', 'SG'];
+    if (blockedCountries.includes(country)) {
+        return new NextResponse('Access Denied - Geo Blocked', { status: 403 });
     }
 
-    /* =========================
-       2. ALLOW LEGIT SERVICES
-       ========================= */
-
-    const allowedBots = [
+    // Legitimate search engines and social crawlers
+    const allowed = [
         'googlebot',
         'bingbot',
+        'yandex',
+        'duckduckbot',
+        'baiduspider',
         'facebookexternalhit',
         'twitterbot',
         'linkedinbot',
-        'whatsapp',
         'slackbot',
+        'whatsapp',
         'telegrambot',
     ];
 
-    if (allowedBots.some(bot => ua.includes(bot))) {
+    if (allowed.some(bot => ua.includes(bot))) {
         return NextResponse.next();
     }
 
-    /* =========================
-       3. BLOCK AI / SEO / SCRAPERS
-       ========================= */
-
-    const blockedBots = [
-        // SEO crawlers
+    // Abusive scrapers & AI bots
+    const blocked = [
         'mj12bot',
         'dotbot',
         'ahrefsbot',
@@ -47,8 +40,6 @@ export function middleware(request) {
         'sistrix',
         'spbot',
         'dataforseobot',
-
-        // AI / ML scrapers
         'gptbot',
         'chatgpt',
         'openai',
@@ -57,41 +48,40 @@ export function middleware(request) {
         'bytespider',
         'ccbot',
         'diffbot',
-
-        // Scripted / headless
         'curl',
         'wget',
         'python-requests',
         'axios',
         'go-http-client',
-        'node-fetch',
+        'httpclient',
+        'java',
+        'pycurl',
+        'libwww',
+        'fetch'
     ];
 
-    if (blockedBots.some(bot => ua.includes(bot))) {
-        return new NextResponse('Access denied', { status: 403 });
+    if (blocked.some(bot => ua.includes(bot))) {
+        return new NextResponse('Access Denied - Bot', { status: 403 });
     }
 
-    /* =========================
-       4. SOFT BLOCK SINGAPORE ABUSE
-       ========================= */
+    // Block empty or suspicious user agents
+    if (!ua || ua.length < 10) {
+        return new NextResponse('Invalid User Agent', { status: 403 });
+    }
 
-    // Singapore is a crawler hotspot
-    if (country === 'SG') {
-        // Block suspicious or empty user agents
-        if (!ua || ua.length < 10 || ua.includes('bot')) {
-            return new NextResponse('Access denied', { status: 403 });
-        }
+    // Block if multiple bot patterns present
+    const suspiciousPatterns = ['bot', 'crawl', 'spider', 'scrape'];
+    const matchCount = suspiciousPatterns.filter(pattern => ua.includes(pattern)).length;
+    if (matchCount >= 2) {
+        return new NextResponse('Access Denied - Suspicious UA', { status: 403 });
     }
 
     return NextResponse.next();
 }
 
-/* =========================
-   5. APPLY ONLY TO APIs
-   ========================= */
-
+// Apply to all pages except static assets, images, and common files
 export const config = {
     matcher: [
-        '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js)$).*)',
+        '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|woff2)$).*)',
     ],
 };
