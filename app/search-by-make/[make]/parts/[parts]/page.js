@@ -9,9 +9,8 @@ import products from "../../../../../public/products.json"
 import partsData from "../../../../../public/lib/parts.json"
 import carData from "../../../../../public/lib/car-data.json"
 import hondaMakePartsData from "../../../../../public/lib/makeparts/honda.json"
-import CarData from "../../../public/lib/car-data.json"
-import CitiesData from "../../../public/lib/cities.json"
-import PartsData from "../../../public/lib/parts.json"
+import CarData from "../../../../../public/lib/car-data.json"
+import CitiesData from "../../../../../public/lib/cities.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
