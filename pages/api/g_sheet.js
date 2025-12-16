@@ -148,18 +148,20 @@ async function handler(req, res) {
     const mailOptionsCus = {
       from: 'emiratesautomobileparts@gmail.com',
       to: email,
-      subject: `EMIRATESCAR ${year + ' ' + brand + ' ' + model + ' ' + address + ' '
-        }`,
-      text: `We have received the following Inquiry:\n ${Timestamp +
-        '\n' +
-        RefNo +
-        '\n' +
-        description + '\n' +
-        `We will get back to you through whatsapp based on Stock avaiability.` + '\n' +
-        `Regards` + '\n' +
-        `EMIRATESCAR` + '\n' +
-        `Emirates-car.com`
-        }`,
+      subject: `EMIRATESCAR ${year} ${brand} ${model} ${address}`,
+      text:
+        `We have received the following inquiry:
+
+${Timestamp}
+${RefNo}
+${description}
+
+We will get back to you through WhatsApp based on stock availability.
+
+Regards,
+EMIRATESCAR
+https://www.emirates-car.com
+`
     };
     await transporterCus.sendMail(mailOptionsCus)
     await transporter.sendMail(mailOptions);
