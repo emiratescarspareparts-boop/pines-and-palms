@@ -33,13 +33,6 @@ function getCitiesData() {
     return citiesDataCache;
 }
 
-function getPartsData() {
-    if (!partsDataCache) {
-        partsDataCache = PartsData;
-    }
-    return partsDataCache;
-}
-
 async function getFormModel() {
     return getCarData();
 }
