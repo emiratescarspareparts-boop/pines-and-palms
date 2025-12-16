@@ -54,7 +54,7 @@ async function handler(req, res) {
         // Append to Sheet
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
-            range: 'supplier-sheet',
+            range: 'supplier-sheets',
             valueInputOption: 'USER_ENTERED',
             auth: jwt,
             requestBody: {
