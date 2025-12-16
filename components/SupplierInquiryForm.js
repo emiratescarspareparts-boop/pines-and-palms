@@ -148,7 +148,7 @@ export default function SupplierInquiryForm() {
         const today = new Date();
         const dateTime = today.toISOString();
 
-        await fetch('/api/g_sheet', {
+        await fetch('/api/supplier_form', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

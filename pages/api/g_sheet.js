@@ -99,6 +99,7 @@ async function handler(req, res) {
         pass: process.env.PASSKEY,
       },
     });
+
     var details = `${RefNo +
       '\n' +
       'We received an inquiry for ' +
@@ -126,6 +127,41 @@ async function handler(req, res) {
         }`,
     };
 
+    const transporterCus = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: 'emiratesautomobileparts@gmail.com',
+        pass: process.env.PASSKEY,
+      },
+    });
+
+    var details = `${RefNo +
+      '\n' +
+      'We received an inquiry for ' +
+      '\n' +
+      description +
+      'Do you still require it?'
+      }`;
+    var detailEncode = encodeURI(details);
+
+    // Prepare email message
+    const mailOptionsCus = {
+      from: 'emiratesautomobileparts@gmail.com',
+      to: email,
+      subject: `${year + ' ' + brand + ' ' + model + ' ' + address + ' Order Received'
+        }`,
+      text: `${Timestamp +
+        '\n' +
+        RefNo +
+        '\n' +
+        description +
+        '\n' +
+        `https://api.whatsapp.com/send?phone=${contact}&text=${encodeURI(
+          description,
+        )}`
+        }`,
+    };
+    await transporterCus.sendMail(mailOptionsCus)
     await transporter.sendMail(mailOptions);
     res.status(201).json(data);
   } else {

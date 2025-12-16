@@ -22,7 +22,7 @@ async function handler(req, res) {
         const readData = await sheets.spreadsheets.values.get({
             auth: jwt,
             spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
-            range: 'supplier-sheet',
+            range: 'supplier-sheets',
         });
 
         const today = new Date();
@@ -40,7 +40,6 @@ async function handler(req, res) {
             makes,
         } = req.body;
 
-        // ✅ ONE DESCRIPTION FIELD (LIKE BUYER FORM)
         const description =
             'Ref: ' + RefNo + '\n' +
             'Supplier Type: ' + supplierType + '\n' +
