@@ -158,6 +158,14 @@ export default function Navbar() {
                 Blog
               </a>
             </li>
+            <li className="nav-item">
+              <a
+                href={`/supplier-inquiry-form`}
+                className="px-3 py-2 flex items-center text-xl sm:text-base leading-snug text-white bg-blue-950 hover:bg-blue-900 border-blue-500 hover:border-white hover:opacity-75"
+              >
+                Become a Supplier
+              </a>
+            </li>
           </ul>
         </div>
       </div>
