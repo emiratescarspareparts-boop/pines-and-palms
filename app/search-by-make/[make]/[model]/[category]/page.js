@@ -1,8 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import ProductFilter from "./ProductFilter";
 import productsFile from "../../../../../public/products.json";
-import GetInTouchForm from "../../../../../components/GetInTouchForm";
 import CarData from "../../../../../public/lib/car-data.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';

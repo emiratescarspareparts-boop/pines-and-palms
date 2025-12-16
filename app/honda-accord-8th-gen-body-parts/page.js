@@ -1,10 +1,8 @@
-import React from 'react';
 import FeaturedHonda from '../../components/8th-gen-Honda';
 import Footer from '../../components/footer';
 import OtherHondaModels from '../../components/OtherHondaModels';
 import Link from 'next/link';
 import Image from 'next/image';
-import ProductFilter from './ProductFilter';
 import products from "../../public/products.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';

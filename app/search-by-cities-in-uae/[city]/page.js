@@ -1,16 +1,52 @@
-import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getFormModel, getMake, getParts } from '../../page';
 import FormComponent from '../../../components/FormComponent';
 import Footer from '../../../components/footer';
 import Image from 'next/image';
 import TenEntries from '../../../components/tenentries';
 import Contents from '../../../components/Contents';
+import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
+import PartsData from "../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getMake() {
+  const carData = getCarData();
+  const uniqueMakeArray = [
+    ...new Map(carData.map(item => [item.make, item])).values()
+  ];
+
+  return uniqueMakeArray;
+}
+
+
+async function getFormModel() {
+  return getCarData();
+}
+
+
+async function getParts() {
+  return getPartsData();
+}
 
 
 export async function generateStaticParams() {

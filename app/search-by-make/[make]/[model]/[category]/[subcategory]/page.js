@@ -1,5 +1,3 @@
-import React from "react";
-import ProductFilter from "./ProductFilter";
 import productsFile from "../../../../../../public/products.json";
 import { Fira_Sans, Playfair_Display } from "next/font/google";
 import SearchModel from "../../../../../../components/SearchModel";
@@ -10,7 +8,6 @@ import SearchMakeModelParts from "../../../../../../components/SearchMakeModelPa
 import { getCity, getFormModel, getMake, getParts } from "../../../../../page";
 import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
-import { notFound, redirect } from "next/navigation";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/parts.json"

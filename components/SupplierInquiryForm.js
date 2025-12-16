@@ -225,7 +225,7 @@ Makes: ${makes.join(', ')}
                     <input
                         type="text"
                         required
-                        placeholder="+971xxxxxxxxx"
+                        placeholder="Eg. +971xxxxxxxxx"
                         value={whatsapp}
                         onChange={(e) => setWhatsapp(e.target.value)}
                         className="w-full bg-gray-200 rounded px-3 py-2"

@@ -26,17 +26,53 @@ import SideMirror from '../../../../public/img/honda-eighth-gen/Side_Mirror.webp
 import SteeringWheel from '../../../../public/img/honda-eighth-gen/Steering_Wheel.webp';
 import Wheel from '../../../../public/img/honda-eighth-gen/Wheel.webp';
 import MudFlap from '../../../../public/img/honda-eighth-gen/Mud_Flap.webp';
-import { getFormModel, getParts } from '../../../page';
 import FormComponent from '../../../../components/FormComponent';
 import { notFound } from 'next/navigation';
 import products from '../../../../public/products.json'
-import ProductFilter from './ProductFilter';
 import SearchModel from '../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
+import CitiesData from "../../../../public/lib/cities.json"
+import PartsData from "../../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+function getCitiesData() {
+  if (!citiesDataCache) {
+    citiesDataCache = CitiesData;
+  }
+  return citiesDataCache;
+}
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getFormModel() {
+  return getCarData();
+}
+
+async function getCity() {
+  return getCitiesData();
+}
+
+async function getParts() {
+  return getPartsData();
+}
 
 
 const playfair_display = Playfair_Display({

@@ -26,24 +26,57 @@ import SideMirror from '../../../../public/img/honda-eighth-gen/Side_Mirror.webp
 import SteeringWheel from '../../../../public/img/honda-eighth-gen/Steering_Wheel.webp';
 import Wheel from '../../../../public/img/honda-eighth-gen/Wheel.webp';
 import MudFlap from '../../../../public/img/honda-eighth-gen/Mud_Flap.webp';
-import { getCity, getFormModel, getParts, getMake } from '../../../page';
 import Image from 'next/image';
 import FormComponent from '../../../../components/FormComponent';
 import SearchModel from '../../../../components/SearchModel';
 import Link from 'next/link';
-import SearchCity from '../../../../components/SearchCity';
-import Footer from '../../../../components/footer';
 import HondaOfferButton from '../../../../components/HondaOfferButton';
 import PartsAccordion from '../../../../components/Parts-Accordion';
 import { redirect } from 'next/navigation';
-import ProductFilter from './ProductFilter';
 import products from "../../../../public/products.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import baseCityData from "../../../../public/lib/basecity.json"
+import PartsData from "../../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getMake() {
+  const carData = getCarData();
+  const uniqueMakeArray = [
+    ...new Map(carData.map(item => [item.make, item])).values()
+  ];
+
+  return uniqueMakeArray;
+}
+
+
+async function getFormModel() {
+  return getCarData();
+}
+
+
+async function getParts() {
+  return getPartsData();
+}
 
 
 const playfair_display = Playfair_Display({
@@ -223,21 +256,10 @@ async function getModel(make) {
 }
 
 
-async function getLocation(make) {
-  const filtered = CarData.filter(item => item.make === make);
-
-  const uniqueObjectArray = [
-    ...new Map(filtered.map(item => [item.location, item])).values(),
-  ];
-
-  return uniqueObjectArray;
-}
-
 export default async function Cities({ params, searchParams }) {
   const { make, location } = params;
   const carmodel = await getModel(make);
   const partspost = await getParts();
-  const cities = await getCity();
   const posts = await getMake();
   const modelsform = await getFormModel();
 

@@ -1,14 +1,69 @@
-import React from 'react';
 import FormComponent from '../../components/FormComponent';
-import { getMake, getFormModel, getParts, getCity } from '../page';
 import Image from 'next/image';
 import Link from 'next/link';
 import SearchMake from '../../components/SearchMake';
 import HondaOfferButton from '../../components/HondaOfferButton';
 import Social from '../../components/Social';
+import CarData from "../../public/lib/car-data.json"
+import CitiesData from "../../public/lib/cities.json"
+import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
-export const runtime = 'nodejs';
+export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+function getCitiesData() {
+  if (!citiesDataCache) {
+    citiesDataCache = CitiesData;
+  }
+  return citiesDataCache;
+}
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getMake() {
+  const carData = getCarData();
+  const uniqueMakeArray = [
+    ...new Map(carData.map(item => [item.make, item])).values()
+  ];
+
+  return uniqueMakeArray;
+}
+
+async function getYear() {
+  const carData = getCarData();
+  const uniqueYearArray = [
+    ...new Map(carData.map(item => [item.year, item])).values()
+  ];
+
+  return uniqueYearArray;
+}
+
+async function getFormModel() {
+  return getCarData();
+}
+
+async function getCity() {
+  return getCitiesData();
+}
+
+async function getParts() {
+  return getPartsData();
+}
 
 
 export default async function Make() {
@@ -21,7 +76,7 @@ export default async function Make() {
     <div>
       <div className="flex xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 2xs:grid 2xs:grid-cols-1 xs:mx-auto font-sans">
         <div className="w-3/4 2xs:w-full xs:w-full sm:w-full">
-          <main className="mx-10 xs:mx-4 2xs:mx-4 sm:mx-4 md:mx-5 mt-10 border border-gray-100 shadow-sm">
+          <div className="mx-10 xs:mx-4 2xs:mx-4 sm:mx-4 md:mx-5 mt-10 border border-gray-100 shadow-sm">
             <h1 className="text-blue-600 text-4xl md:text-lg lg:text-2xl font-extrabold xs:text-base 2xs:text-xs mx-10">
               <i className="fas fa-car-garage py-5"></i> AUTO SPARE PARTS ONLINE
               IN UAE
@@ -127,7 +182,7 @@ export default async function Make() {
                 arrange delivery to your convinient locations mentioned.
               </p>
             </div>
-          </main>
+          </div>
         </div>
         <div className="w-1/4 text-sm font-sans xs:w-full 2xs:w-full sm:w-full my-10">
           <div className="xs:grid xs:grid-cols-1 2xs:w-full sm:w-full md:w-full text-5xl lg:text-4xl md:text-base sm:text-2xl text-blue-400 font-bold py-4 sm:mt-5 md:mt-5 lg:mx-2 xs:text-xl  xl:text-lg 2xs:text-2xl px-5 font-sans">

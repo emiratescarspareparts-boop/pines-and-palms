@@ -1,10 +1,8 @@
-import React from 'react';
 import SearchModel from '../../../components/SearchModel';
 import FormComponent from '../../../components/FormComponent';
 import Link from 'next/link';
 import HondaOfferButton from '../../../components/HondaOfferButton';
 import Image from 'next/image';
-import { getParts, getCity, getFormModel } from '../../page';
 import ABS from '../../../public/img/honda-eighth-gen/Anti_Lock_Braking_System.webp';
 import AirFilter from '../../../public/img/honda-eighth-gen/Air_Filter.webp';
 import AirSuspension from '../../../public/img/honda-eighth-gen/Air_Suspension_Module.webp';
@@ -29,19 +27,54 @@ import SideMirror from '../../../public/img/honda-eighth-gen/Side_Mirror.webp';
 import SteeringWheel from '../../../public/img/honda-eighth-gen/Steering_Wheel.webp';
 import Wheel from '../../../public/img/honda-eighth-gen/Wheel.webp';
 import MudFlap from '../../../public/img/honda-eighth-gen/Mud_Flap.webp';
-import Contents from '../../../components/Contents';
-import Hero_img from '../../../public/img/car-spare-parts.png';
-import SearchCity from '../../../components/SearchCity';
 import TenEntries from '../../../components/tenentries';
 import PartsAccordion from '../../../components/Parts-Accordion';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import products from "../../../public/products.json"
-import ProductFilter from './ProductFilter';
-import CarData from "../../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import CarData from "../../../public/lib/car-data.json"
+import CitiesData from "../../../public/lib/cities.json"
+import PartsData from "../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+function getCitiesData() {
+  if (!citiesDataCache) {
+    citiesDataCache = CitiesData;
+  }
+  return citiesDataCache;
+}
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getFormModel() {
+  return getCarData();
+}
+
+async function getCity() {
+  return getCitiesData();
+}
+
+async function getParts() {
+  return getPartsData();
+}
+
 
 
 const playfair_display = Playfair_Display({
@@ -310,9 +343,6 @@ async function getDescription(make) {
     return [];
   }
 }
-
-
-
 export default async function MakePage({ params, searchParams }) {
   const make = decodeURIComponent(params.make);
   const carmodel = await getModel(make);

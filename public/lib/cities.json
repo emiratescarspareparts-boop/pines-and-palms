@@ -2,594 +2,693 @@
     {
         "id": 1,
         "city": "Total Abu Al Bukhoosh Abu Dhabi",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.107542989913!2d54.359002914349425!3d24.48173038423392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e666e82489a7b%3A0x324d19d60283a99d!2sAbu%20Al%20Bukhoush%20St%20-%20Al%20Danah%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018976022!5m2!1sen!2sin",
         "description": "The Abu Al Bukhoosh field is located around 45 kilometres northeast of Das Island, 180 kilometres north of Abu Dhabi city, and straddles the United Arab Emirates - Iran maritime boundary.The field is not unitised and has been developed completely independently. Abu Al Bukhoosh produces medium sour crude from Jurassic carbonates and non-associated gas. The Iranian portion of the field (known as Salman) was discovered in 1965 and its extension into Abu Dhabi was confirmed in 1969."
     },
     {
         "id": 2,
         "city": "Abu Dhabi",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465132.6090253298!2d54.27841778442708!3d24.38657289151084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e440f723ef2b9%3A0xc7cc2e9341971108!2sAbu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018687052!5m2!1sen!2sin",
         "description": "Abu Dhabi, also spelled Abū Ẓaby. Abu Dhabi, the capital of the United Arab Emirates, sits off the mainland on an island in the Persian (Arabian) Gulf. Its focus on oil exports and commerce is reflected by the skyline’s modern towers and shopping megacenters such as Abu Dhabi and Marina malls. The city of Abu Dhabi is located on an island Beneath white-marble domes, the vast Sheikh Zayed Grand Mosque features an immense Persian carpet, crystal chandeliers and capacity for 41,000 worshipers."
     },
     {
         "id": 3,
         "city": "Abu Musa Island",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9425.525890464347!2d55.02120502096358!3d25.877124926893575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e58eeb359a7e6eb%3A0x3252889e65ac77e5!2sAbu%20Musa%20Airport!5e0!3m2!1sen!2sin!4v1640018766948!5m2!1sen!2sin",
         "description": "A paper published by Gulf Research centre of Cambridge explains about Disputed Islands between UAE and Iran`:`Abu Musa, Greater Tunb, and Lesser Tunb in the Strait of Hormuz on 15th of October, 2015. Abu Musa island is located 70 kilometres (43 mi) south of Bandar-e Shenas and 59 kilometres (37 mi) north-northwest of Sharjah. The island is administered by Iran as part of its province of Hormozgan, but is also claimed by the United Arab Emirates as a territory of the emirate of Sharjah. Small island near the entrance to the Persian Gulf, claimed by both Iran and the United Arab Emirates. This island is great for tourism but facilities need to be increased for tourism."
     },
     {
         "id": 4,
         "city": "Ahmed bin Rashid Free Zone (UAQ FTZ) (Umm Al Quwain)",
+        "basecity": "Umm al Quwain",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.1430081230383!2d55.57512591437738!3d25.59467418371284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5ff394be3c33b%3A0xce5a3ceca65088f9!2sAhmed%20bin%20Rashid%20Free%20Zone%20(UAQ%20FTZ)!5e1!3m2!1sen!2sae!4v1653408215277!5m2!1sen!2sae",
         "description": "Investment on ahmed bin rashid port has a series of procedures, A company interested in setting up a project with the Ahmed Bin Rashid Free Zone needs to submit a completed application form.After receipt of the completed application form the Free Zone Authority will consider the proposal. Once provisional approval has been given the Company or their legal representative will be called for a meeting to discuss and finalize details of the project. Upon finalization of project details, the Authority will prepare Lease and Secondment Agreements for signature."
     },
     {
         "id": 5,
         "city": "Ajman",
+        "basecity": "Ajman",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230658.57689222984!2d55.39307659945978!3d25.40346278803545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5764dd8fbe79%3A0xcda090de6445a819!2sAjman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640009886379!5m2!1sen!2sin",
         "description": "After Abu Dhabi, Sharjah and Al Ain, Ajman is the fifth largest city in United Arab Emirates. A paper published by researchers from Ajman university explains the URBANISATION IN AJMAN: PUSHING BY HOUSING DEVELOPMENT, published on febrauary, 2020. It is published in a motto of developing the Ajman city."
     },
     {
         "id": 6,
         "city": "Al Ain (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232921.30495584515!2d55.60677819193463!3d24.192928130526976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab145cbd5a049%3A0xf56f8cea5bf29f7f!2sAl%20Ain%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018189460!5m2!1sen!2sin",
         "description": "Al Ain is a inland oasis city. It shares eastern border with Oman. Its called a garden city because it is loaded with palm grooves trees and natural springs. It has Archeological park to the north and tombs on mountain of Jebel al Hafeet and its remains are displayed on the National museum in the central part of Al Ain. So naturally, Al Ain is more adventourous to attract tourist. A new project is initiated by the name `Plan Al Ain 2030`. It is expected to complete by 2030. The paper released by faculty of UAEU. It outlines the Foundation, Economics, urban structure framework and overall patterns"
     },
     {
         "id": 7,
         "city": "Al Barsha (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57814.79486915902!2d55.178649489795504!3d25.087481740340316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c0fdcf8c319%3A0xc1b5948ee66f3482!2sAl%20Barsha%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018150770!5m2!1sen!2sin",
         "description": "One of the most popular residential districts in Dubai. Tranquil Al Barsha Pond Park is a popular spot for picnics and go-karting while sprawling Dubai Miracle Garden, open October to April, features elaborate floral displays and butterfly domes. Al Barsha is known for its affordable apartments, spacious villas, beautiful parks and abundant amenities. Mall of Emirates is Famous spot in Al Barsha for a vast shopping complex with fashion chains, skeing."
     },
     {
         "id": 8,
         "city": "Al Dhafra or Western Region (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e676dc4e9bfa3d5%3A0x462755f5ab7fa52e!2sWestern%20Region%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018126092!5m2!1sen!2sin",
         "description": "Al Dhafra Region known until 2017 as `Al Gharbia` or the `Western Region is one of three Municipal Regions in the Emirate of Abu Dhabi. Al Dhafra Petroleum is an emerging upstream company that is focused on unlocking undeveloped oil and gas potential in the UAE."
     },
     {
         "id": 9,
         "city": "Al Fujairah",
+        "basecity": "Fujairah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef4323d9028b95f%3A0xa6c1b11bdbb33cbc!2sFujairah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018083168!5m2!1sen!2sin",
         "description": "A sheikhdom of the United Arab Emirates on the Gulf of Oman. It joined the federation in 1971. Fujairah City (Arabic: الفجيرة‎) is the capital of the emirate of Fujairah in the United Arab Emirates. It is the seventh-largest city in UAE. Metro population is about 1,52,000"
     },
     {
         "id": 10,
         "city": "Al Hamriyah (Sharjah)",
+        "basecity": "Sharjah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115268.53238490084!2d55.486569656933185!3d25.466945580478626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f89651108465%3A0xce6604cc22def6a6!2sAl%20Hamriya%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640017993680!5m2!1sen!2sin",
         "description": "Also known as the Al Hamriyah Free Zone, the industrial zone in Sharjah was established in 1995. Established in 1995 by Emiri Decree, Hamriyah Free Zone Authority is ideally located in the Emirate of Sharjah, UAE. Hamriyah Free Zone, Sharjah. ff_sharjah. Total Area: 211,168 sq metres. Total Building Area: 63,781 sq metres."
     },
     {
         "id": 11,
         "city": "AlJazeera Port (Ras al Khaimah)",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14380.540224198712!2d55.77203162074269!3d25.699952038634944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef60a4a1028bb27%3A0xf643f1731b8cc63!2sAl%20Jazeerah%20Beach!5e0!3m2!1sen!2sin!4v1640017945767!5m2!1sen!2sin",
         "description": "AlJazeera Port is located in Emirates of Ras Al Khaimah. They provide services such as Free Zone Leasing, warehousing, cruising, importing and exporting bulk cargos and container cargos to and from Ras Al Khaimah, repairing ship and anchoraging and marine services. Their job vacancies can be found in their official site https://rakports.ae/careers"
     },
     {
         "id": 12,
         "city": "Al Jeer Port (Ras al Khaimah)",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14339.612219770746!2d56.08806967088269!3d26.036727836200285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef666da183e5f8f%3A0x7f4f22f69055e428!2sAl%20jeer%20-%20Ras%20al%20Khaimah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640017868664!5m2!1sen!2sin",
         "description": "Ras Al Khaimah Port is managed by Saqr port authority. rakports.ae has all sort of information such as ras al khaimah port vessel schedule, ports in ras al khaimah, saqr port job vacancies, rak ports ceo, rak port positions, rak maritime city, rak port gate pass, rak port pass application form. Careers are also available at al Jeer port which are also listed in the website. There are various companies that ships through AlJazeera port and Al jeer port."
     },
     {
         "id": 13,
         "city": "Al Mafraq (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29084.04966387611!2d54.59125734114173!3d24.3288533456535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e3827b1ba5d1f%3A0xf422978da74681ee!2sShakhbout%20City%20-%20Al%20Mafraq%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640017731395!5m2!1sen!2sin",
         "description": "Al Mafraq is located in Shakhbout City, Abu Dhabi. It is the home of various landmark such as Al Mafraq Hospital, Milennium Central Mafraq Hotel, Khawlah Bint Al Azwar School. There are lots of Job career oppurtunities in mafraq hospital for senior nurses. Mafraq Hospital is part of the SEHA HealthSystem and is owned and operated by Abu Dhabi Health Services Company PJSC (SEHA) which provides medical internships and An Emiratization initiative offering high school and university students practical experience of different roles within the healthcare sector. The jobs can be applied through https://jobscareers4u.com/, https://www.gulftalent.com/, https://www.naukrigulf.com etc"
     },
     {
         "id": 14,
         "city": "Al Quoz (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6964885557e3%3A0xa70149067c1c3458!2sAl%20Quoz%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640017701389!5m2!1sen!2sin",
         "description": "Al quoz is an ex-industrial area.But now it is a residence for various art galleries for both local arts and global arts. There are boutiques which has products of home startups, It is also a residence for Pop-ups market, film screenings and stylish cafes. Many rooms and villas are available at cheap rent rate for families. If families are looking for rent near a mall and busy area, they can find it near khail mall. Al quoz area is divided into al quoz 1, al quoz 2, al quoz 3, al quoz 4 and two industrial area. Rooms are avaiable for rent at low rent prices."
     },
     {
         "id": 15,
         "city": "Al Sufouh (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b6b18e24261%3A0xd6770d4a34e796dd!2sAl%20Sufouh%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016883117!5m2!1sen!2sin",
         "description": "Al Sufouh is divided into two area. It contains famous university such as American University in Dubai, Oracle University, Murdoch University Dubai, Islamic Azad University, University of Wollongong in Dubai (UOWD), Middlesex University Dubai, University of Bradford Regional Hub Dubai, Strathclyde Business School Dubai, Hult International Business School Dubai, Abu Dhabi University Dubai Campus. Al sufouh has lots of villas, studio for rent available."
     },
     {
         "id": 16,
         "city": "Al Ruways Industrial City (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233033.104233351!2d52.695030735500566!3d24.131641902323416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e42d4cc492be3b5%3A0xaaa0cd03c1681095!2sAl%20Ruwais%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640017631977!5m2!1sen!2sin",
         "description": "Al Ruways is in western part of abu Dhabi. It is a small town and developing into a city. To travel from Al Ruwais Adnoc station to Abu Dhabi, there is a bus plied by Abu Dhabi department of Transport. It operates twice a day. Ruwais housing complex has various houses for rents. Many Typing center are available aling Ghayathi road in Ruwais."
     },
     {
         "id": 17,
         "city": "Arzanah Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e44a846eb1638a9%3A0x5689d1dbe1f96483!2sArzanah%20Island!5e0!3m2!1sen!2sin!4v1640016778000!5m2!1sen!2sin",
         "description": "It is located northwest of Abu Dhabi city"
     },
     {
         "id": 18,
         "city": "Das Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28892.24918798341!2d52.85728444245823!3d25.151537220695268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5b47d87375c80f%3A0x367b76c91260c29c!2sDas%20Island!5e0!3m2!1sen!2sin!4v1640016706702!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 19,
         "city": "Deira (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434f37cdae93%3A0xde756363a1b78491!2sDeira%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016669393!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 20,
         "city": "Dibba Al Fujairah (Fujairah)",
+        "basecity": "Fujairah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115159.93514201323!2d56.216995009975356!3d25.580050327349866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef43224f6927aad%3A0x528ef81105bf9313!2sDibba%20Al%20Fujairah%20-%20Fujairah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016636739!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 21,
         "city": "Dubai",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.65102636546!2d54.94754444558808!3d25.075759435668097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016582896!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 22,
         "city": "Dubai World Central (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14475.817161532255!2d55.110347720416854!3d24.899540744565627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0b5c5a36d9df%3A0xd200fe47cad199cf!2sDubai%20World%20Central%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016515401!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 23,
         "city": "Esnnad (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.5961324236055!2d54.45076381434555!3d24.325718584308962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e413be2cda9db%3A0xc69e0fb1d72b5c29!2sESNAAD!5e0!3m2!1sen!2sin!4v1640016452741!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 24,
         "city": "Sea Port (Fateh Terminal)",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.4276388542507!2d55.008428914360124!3d24.917497784027073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0eff32fc595f%3A0x3674901e25614331!2sSea%20Port!5e0!3m2!1sen!2sin!4v1640016415590!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 25,
         "city": "Free Port (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.629558544723!2d54.362291914350635!3d24.532897484209464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e679fd0b30f2d%3A0x9ee16013d6646b8f!2sFREEPORT!5e0!3m2!1sen!2sin!4v1640016267901!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 26,
         "city": "Habshan (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5d89164771d33f%3A0xc8c0c6d66bd34e09!2sHabshan%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016214686!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 27,
         "city": "Abu Hail (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.558799809508!2d55.449605514371065!3d25.35258198382413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5958a1402379%3A0x58f876db49b01a88!2sHail%20%26%20zafran!5e0!3m2!1sen!2sin!4v1640016172798!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 28,
         "city": "Hamriya Free Zone Port",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.1624108247884!2d55.50776271437405!3d25.466251783771682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f861d8e460f3%3A0x51daa783c88d08d5!2sPort%20Side%20Al%20Hamriyah%20Freezone.!5e0!3m2!1sen!2sin!4v1640016127194!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 29,
         "city": "Al Jarf (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f08e96eecf553%3A0xda7b83ae0830d515!2sAl%20Jarf%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016066046!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 30,
         "city": "Hatta (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57949.810882878664!2d56.0936788879294!3d24.800138124920295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef51f2c6823f777%3A0x206ef3bcec05f58c!2sHatta%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640015924223!5m2!1sen!2sin",
         "description": "Hatta was formally an inland exclave of Oman, its Ownership was transferred to Dubai in the year 1850. It has places to empower women such as Dubai Women Association. Latifa hospital for children and women in Hatta provides good medical facilities for women and children from gynocology to pediatric surgery and many. Hatta Hospital is a multi-specialist hospital that has 123 beds and located in the heart of the Hatta."
     },
     {
         "id": 31,
         "city": "Sea Port (Hulaylah Terminal)",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.4276388542507!2d55.008428914360124!3d24.917497784027073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0eff32fc595f%3A0x3674901e25614331!2sSea%20Port!5e0!3m2!1sen!2sin!4v1640014935740!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 32,
         "city": "Sea Port (Indooroodilly)",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.4276388542507!2d55.008428914360124!3d24.917497784027073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0eff32fc595f%3A0x3674901e25614331!2sSea%20Port!5e0!3m2!1sen!2sin!4v1640014511788!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 33,
         "city": "Mina Jebel Ali (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115744.42348983572!2d54.982737593600966!3d24.965664369052767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f1212335809a9%3A0xa14e0c8de1c5300a!2sMina%20Jebel%20Ali%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640014257451!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 34,
         "city": "Jebel Ali Free Zone (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115713.08486562147!2d54.98760969447892!3d24.998963953048214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f1212286cda85%3A0xe1416ab0e66bdcbe!2sMina%20Jebel%20Ali%20-%20Jebel%20Ali%20Freezone%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640014230950!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 35,
         "city": "Al Dhannah City or Jebel Dhanna (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116487.6281183974!2d52.52699482277691!3d24.16337131129386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e4329921839050b%3A0x4bcf8d1a06b029d8!2sJebel%20Dhanna%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640014180980!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 36,
         "city": "Jumeirah (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57758.52665206922!2d55.20978204057321!3d25.206327726158623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f421450b11cff%3A0xf654a68d2f2b513e!2sJumeirah%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640014141493!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 37,
         "city": "Kalba (Sharjah)",
+        "basecity": "Sharjah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231431.028080815!2d56.13203867768459!3d24.996384261096388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef4f99211cc5fef%3A0xff824a7c7100f828!2sKalba%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640014097223!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 38,
         "city": "Khalidiya (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23242.46485951712!2d52.54250029187228!3d24.78852488160475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e660ac4134aef%3A0x417d133186064715!2sKhalidiya!5e1!3m2!1sen!2sae!4v1653411951739!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 39,
         "city": "Khor Fakkan (Sharjah)",
+        "basecity": "Sharjah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115389.53384568829!2d56.22537510354341!3d25.340366990243613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef44f95b0b473b9%3A0x414e87538e5932e2!2sKhor%20Fakkan%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013977818!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 40,
         "city": "Masfut (Ajman)",
+        "basecity": "Ajman",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14485.656235576624!2d56.08832502038319!3d24.815509845199898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef51943f15b9f4d%3A0xf2446cffc872da92!2sMasfut%20-%20Ajman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013921743!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 41,
         "city": "Khalid Port (Sharjah)",
+        "basecity": "Sharjah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.3362089722464!2d55.37538732786312!3d25.36004618314184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5a4623a56ce7%3A0x549165ab95c02826!2sAl%20Mina%20Square%20-%20Al%20Layyeh%20Suburb%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640019271123!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 42,
         "city": "Khalifa City (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116252.34425308705!2d54.503048329369754!3d24.420036134431356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4665e784b025%3A0x18856a84d3a5d8bf!2sKhalifa%20City%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013733500!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 43,
         "city": "Mina Rashid Port",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57723.89161524927!2d55.245071991051866!3d25.279221817495404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f437d3eb9b461%3A0xe9518475a66aa7cc!2sAl%20Mina%20-%20Port%20Rashid%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013773046!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 44,
         "city": "Mina Saqr (Ras al Khaimah)",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14369.443494117064!2d55.94457852078066!3d25.791665987968305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef6714b4d4b1233%3A0xd4493410e33e960!2sMina%20Saqr!5e0!3m2!1sen!2sin!4v1640013542505!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 45,
         "city": "Mina Zayed (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29038.797762570157!2d54.369723841452334!3d24.525281939618285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e66de29cbaa17%3A0x9830676b298225a5!2sAl%20Mina%20-%20Mina%20Zayed%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013486903!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 46,
         "city": "Minhad (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14461.06942894422!2d55.3979119204673!3d25.024999343622735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f7c809be0718d%3A0x39adb2ddca104513!2zTWluaGHhuJE!5e0!3m2!1sen!2sin!4v1640013446758!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 47,
         "city": "Mirfa (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233142.80907763704!2d53.2729067791869!3d24.071361222406807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5da231f0c9e5e7%3A0x6fe1166d2ba5f51!2sAl%20Mirfa%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013395954!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 48,
         "city": "Mubarek Tower (Sharjah)",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23242.46485951712!2d52.54250029187228!3d24.78852488160475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5bbb04858bff%3A0x1bbe692ad1ec55bf!2sMubarak%20Tower%20-%20Al%20Majaz%20-%20Al%20Majaz%203%20-%20Sharjah!5e1!3m2!1sen!2sae!4v1653412746493!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 49,
         "city": "Mubarraz Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116147.37546562243!2d53.26931158231099!3d24.533730128648322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5cf46cb11f3707%3A0x3b4fa036a1292605!2sMubarraz%20Island!5e0!3m2!1sen!2sin!4v1640013009318!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 50,
         "city": "Musaffah (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7268.21236475708!2d54.501424972498455!3d24.377609337135596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e41240f81b6a7%3A0x174eabc4f4ce89f!2sMusaffah%20-%20M-9%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640013041790!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 51,
         "city": "Mussafah",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58158.91569286176!2d54.45183538503916!3d24.348853230055802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e40e7483d11d5%3A0x7672bbc1a32c03c2!2sMusaffah%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012900077!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 52,
         "city": "Offshore Marine Services (Fujairah)",
+        "basecity": "Fujairah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23242.46485951712!2d52.54250029187228!3d24.78852488160475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef457bad3c1a309%3A0x66f775cfed7f4e93!2sOffshore%20Marine%20Services!5e1!3m2!1sen!2sae!4v1653413134612!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 53,
         "city": "Port Rashid or Al Mina (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57723.89161524927!2d55.24507199105189!3d25.279221817495404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f437d3eb9b461%3A0xe9518475a66aa7cc!2sAl%20Mina%20-%20Port%20Rashid%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012689404!5m2!1sen!2sin",
         "description": "The Other name of Port Rashid is Mina Rashid. It is a man made cruise terminal located in Dubai, United Arab Emirates. It is the port where the Dubai's first commercial port was located. Later in 2018, the operations were relocated to Jebel Ali Port. It is currently functioning as a residence, seafront coastal destination and cruise for tourist."
     },
     {
         "id": 54,
         "city": "Ras Al Khor Port",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115389.53384568813!2d56.22537510354341!3d25.340366990243613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef44f95b0b473b9%3A0x414e87538e5932e2!2sKhor%20Fakkan%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640019545242!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 55,
         "city": "Rak Maritime City (Ras al Khaimah)",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460076.08067649585!2d55.68807499648988!3d25.72612267110705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef676ad264b24c1%3A0x10f6affe1a9e78a3!2sRas%20Al-Khaimah%20-%20Ras%20al%20Khaimah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640019689525!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 56,
         "city": "Ras al Khaimah",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922252.0033869754!2d55.44538869425926!3d25.453407942583034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef6710e4cd209a7%3A0xb99e670ca684e20f!2sRas%20al%20Khaimah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012402585!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 57,
         "city": "Ras Al Khor (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28881.528928521606!2d55.32545489253182!3d25.196776619347247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f67bdb8a14db5%3A0xd5fbd3bdddf25fa7!2sRas%20Al%20Khor%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012351774!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 58,
         "city": "Al Ras (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.084024267449!2d55.291110322587265!3d25.269172135450802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434400ae7e23%3A0xd6aea49665392c17!2sDeira%20-%20Al%20Ras%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012261647!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 59,
         "city": "Al Reem Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29046.334096525003!2d54.39098259140062!3d24.492670990616958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e67becd78ccdd%3A0xad4befbe23b2d345!2sAl%20Reem%20Island!5e0!3m2!1sen!2sin!4v1640012211574!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 60,
         "city": "Al Ruways Industrial City (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14328.343944626886!2d51.19096757092122!3d26.1287392355414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e48d010e1c7c70b%3A0x7eeeb9bfef231fac!2sAl%20Ruwais%2C%20Qatar!5e0!3m2!1sen!2sin!4v1640012135085!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 61,
         "city": "Ruwais Port Abu Dhabi (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23242.46485951712!2d52.54250029187228!3d24.78852488160475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5d2b6e74efb891%3A0xa7f354c36995393e!2sRuwais%20Port%20Abu%20Dhabi!5e1!3m2!1sen!2sae!4v1653422243883!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 62,
         "city": "Saadiyat Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116141.23969492046!2d54.365426682482905!3d24.540360625402982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e5df7ae201b61%3A0x61df06dacb77f51e!2sSaadiyat%20Island!5e0!3m2!1sen!2sin!4v1640012035645!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 63,
         "city": "Sharjah",
+        "basecity": "",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230818.9387004767!2d55.41516106289569!3d25.319455944500426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5fede7964b%3A0x2a830aa19c1f6d89!2sAl%20Sharjah%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640011943348!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 64,
         "city": "Al Sila (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14576.719473202458!2d51.75624522007176!3d24.024721551275555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e43b733822d191f%3A0xc240e1c58611a16a!2sAs%20Sil&#39;!5e0!3m2!1sen!2sin!4v1640011979165!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 65,
         "city": "Stevin Rock (Ras al Khaimah)",
+        "basecity": "Ras al Khaimah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230658.57689222984!2d55.39307659945978!3d25.40346278803545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5764dd8fbe79%3A0xcda090de6445a819!2sAjman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640009886379!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 66,
         "city": "Sweihan (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465063.4745083383!2d55.02668969279987!3d24.405351443587076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5ff163e1b39225%3A0x6e113ad7c18b5c1c!2sSweihan%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640011881805!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 67,
         "city": "The Palm Jumeirah (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14450.447161457285!2d55.12874522050363!3d25.114999342949368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f14d4cca1c2d7%3A0x5ad3062089d93972!2sThe%20Palm%20-%20Jumeirah!5e0!3m2!1sen!2sin!4v1640011798560!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 68,
         "city": "Umm al Nar (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29057.60090401604!2d54.49043304132328!3d24.44384154211477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4390f92080e5%3A0xba264039c2696909!2sSas%20Al%20Nakhl%20Island!5e0!3m2!1sen!2sin!4v1640011733819!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 69,
         "city": "Umm al Quwain",
+        "basecity": "Umm al Quwain",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115187.54146156512!2d55.48921240920201!3d25.551342440810267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5fea6ff2b925d%3A0x4a02589b92c58613!2sUmm%20Al%20Quwain%20-%20Umm%20Al%20Quawain%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640011676684!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 70,
         "city": "Al Qurayyah (Fujairah)",
+        "basecity": "Fujairah",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28871.67374787758!2d56.33473064259946!3d25.238298518112277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef450cf0d96fb61%3A0xfd94abebaef921ad!2sAl%20Qurayya%20-%20Fujairah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640019940949!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 71,
         "city": "Yas Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58095.81913827245!2d54.5679585859113!3d24.485848513212385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e457d9c174315%3A0xbea25f33cf37e48e!2sYas%20Island!5e0!3m2!1sen!2sin!4v1640011573483!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 72,
         "city": "Zirku Island (Abu Dhabi)",
+        "basecity": "Abu Dhabi",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28956.601367345193!2d53.057656183234!3d24.87835522889462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5c9fa479090823%3A0xee477fce81af9351!2sZirku!5e0!3m2!1sen!2sin!4v1640011490559!5m2!1sen!2sin",
         "description": "."
     },
     {
         "id": 73,
         "city": "Sheikh Zayed Road (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.9420150127335!2d55.13489191500697!3d25.06995438395548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f13435f3abe57%3A0xb4c00b9d46311cd0!2sSheikh%20Zayed%20Rd%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653496934505!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 74,
         "city": "Business Bay (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28884.319245515573!2d55.25684224251268!3d25.185008819697657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682def25f457%3A0x3dd4c4097970950e!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653746679848!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 75,
         "city": "Downtown Dubai (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28882.15779490044!2d55.24420773921744!3d25.194124905517132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682f700cf983%3A0xb5cc58b076c0b904!2sDowntown%20Dubai%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653746865952!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 76,
         "city": "Al Bada'a (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28874.951016424104!2d55.2340401395738!3d25.224497802146022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4258484a4477%3A0x35d904e278837516!2sAl%20Bada&#39;a%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653746914928!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 77,
         "city": "Al Satwa (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28875.991496993312!2d55.256491842569865!3d25.220114818652842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42f52c7f9adb%3A0xfd52c7771df58061!2sAl%20Satwa%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653746970477!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 78,
         "city": "Za'abeel (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57753.4752360158!2d55.26198074064301!3d25.216971374891997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42a218e96a81%3A0x3e447be592a28dbe!2sZa&#39;abeel%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747037466!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 79,
         "city": "Trade Centre (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28876.877947572266!2d55.26300044256373!3d25.21638011876392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428d9dabe295%3A0x610912d15e85274c!2sTrade%20Centre%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747087159!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 80,
         "city": "Al Karama (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14435.078699430707!2d55.29624617055619!3d25.244681541983557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42d7bf391ce5%3A0xc92c59be702d25dd!2sAl%20Karama%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747225010!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 81,
         "city": "Oud Metha (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14435.712087385462!2d55.30272927055401!3d25.239349192023194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42d258d31831%3A0xf10568f2b52e566e!2sOud%20Metha%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747266044!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 82,
         "city": "Al Jaddaf (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28878.316711742835!2d55.30975254255389!3d25.21031736894428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f67f7dbdbad43%3A0x8dcc421c7049a238!2sAl%20Jaddaf%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747320859!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 83,
         "city": "Al Wasl (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28881.172101790315!2d55.23910664253428!3d25.19828111930246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4276cb11be6b%3A0x7a6f9270d7f09001!2sAl%20Wasl%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747926734!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 84,
         "city": "Al Safa (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28887.688761236735!2d55.217220892489514!3d25.170791470121234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69f185ca9f65%3A0x88c357d8c4a88b40!2sAl%20Safa%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653747967753!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 85,
         "city": "Umm Suqeim (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57784.13518629602!2d55.17199384021924!3d25.15230418259637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6a3929b7abed%3A0xe493f1ccb5fd5bbd!2sUmm%20Suqeim%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748014819!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 86,
         "city": "Jumeirah Village Circle (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28913.754792437292!2d55.191083542310636!3d25.060553573414133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c36babd2c79%3A0x675853b2595d1a65!2sJumeirah%20Village%20Circle%20-%20Jumeirah%20Village%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748067986!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 87,
         "city": "Dubai Investments Park (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28913.754792437292!2d55.191083542310636!3d25.060553573414133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c36babd2c79%3A0x675853b2595d1a65!2sJumeirah%20Village%20Circle%20-%20Jumeirah%20Village%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748067986!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 88,
         "city": "Mirdif (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28875.709315222226!2d55.40611644257176!3d25.221303568617476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f60bde888939f%3A0x2245c09926a8f686!2sMirdif%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748171642!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 88,
         "city": "Al Twar (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28866.506675027158!2d55.359246692634926!3d25.260042967466383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5db69e02de3b%3A0xe9e7c3620931818!2sAl%20Twar%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748660739!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 89,
         "city": "Al Khawaneej (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57747.46767215088!2d55.479733140726054!3d25.229624223386995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef58aed5ebcecd3%3A0x2117c7a0afa7b2cd!2sAl%20Khawaneej%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748711682!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 90,
         "city": "Al Warqa (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57766.0392555693!2d55.39470219046936!3d25.190490428044356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f611945057f4d%3A0x7fe0405c1ab6c152!2sAl%20Warqa%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748794650!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 91,
         "city": "Dubai Silicon Oasis (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28899.03259340412!2d55.371097592411694!3d25.122871971550747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f640f1dcd4111%3A0xcb38e7be624792c3!2sDubai%20Silicon%20Oasis%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748833788!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 92,
         "city": "Al Thammam (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7231.678149681895!2d55.24519082256074!3d25.005583585942304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f71c04861a98b%3A0x9e62013eff51493e!2sRemraam%20-%20Al%20Thammam%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748897308!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 93,
         "city": "Golf City (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28925.247467788064!2d55.21610244223173!3d25.011804674875137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f71fa505d9fa9%3A0x58bddb5e235659b9!2sGolf%20City%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748931078!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 94,
         "city": "Umm Ramool (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28873.74231441529!2d55.347352292585285!3d25.229588518371152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d84c7ff78e1%3A0xde6f37cbd852013e!2sUmm%20Ramool%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653748970608!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 95,
         "city": "Al Qusais (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28863.873736147856!2d55.36501304265299!3d25.271116367137704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c35d410acf3%3A0xe8aff9f4de65bf11!2sAl%20Qusais%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653749007703!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 95,
         "city": "Al Nahda (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14429.589639720007!2d55.365055320575!3d25.290848691641003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c6ec9f09411%3A0xd41f88b4dde53bbe!2sAl%20Nahda%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653749072494!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 96,
         "city": "Al Rashidiya (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28874.987763531088!2d55.37296834257672!3d25.224343018527104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6759c7757955%3A0xdc9a1315843ee548!2sAl%20Rashidiya%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653749118365!5m2!1sen!2sae",
         "description": "."
     },
     {
         "id": 97,
         "city": "Nad al Sheba (Dubai)",
+        "basecity": "Dubai",
         "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57787.5386089262!2d55.304254090172236!3d25.14511618345405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f667d60a9d2e9%3A0x68847b1aa899b641!2sNad%20Al%20Sheba%20-%20Dubai!5e0!3m2!1sen!2sae!4v1653749334040!5m2!1sen!2sae",
         "description": "."
     }

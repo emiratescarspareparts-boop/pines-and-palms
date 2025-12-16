@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 import Footer from '../../components/footer';
 import Link from 'next/link';
 import OtherHondaModels from '../../components/OtherHondaModels';

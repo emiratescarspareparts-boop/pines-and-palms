@@ -11,12 +11,13 @@ export default function footer() {
     <div className="py-6 bg-blue-500">
       <div className="pb-6 xs:pb-3 p-2 sm:pb-3 2xs:pb-3">
         <h3 className="text-3xl xs:text-sm text-white uppercase text-center font-bold 2xs:text-base md:text-xl lg:text-2xl s:text-sm">
-          COULD&apos;NT FIND YOUR DESIRED AUTO PARTS?{' '}
+          Want to get More Buyers?&nbsp;
           <Link
-            href="https://emirates-car.com/contact"
+            href="https://www.emirates-car.com/supplier-inquiry-form"
+            target='_blank'
             className="underline text-blue-900"
           >
-            CONTACT US NOW {'>>'}
+            Become a Supplier Now!
           </Link>
         </h3>
       </div>

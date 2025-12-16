@@ -1,8 +1,5 @@
-import React from 'react';
 import Hero from '../components/home_hero';
 import Count from '../components/service-countup';
-import Featured from '../components/featured';
-import Link from 'next/link';
 import Image from 'next/image';
 import TenEntries from '../components/tenentries';
 import Contents from '../components/Contents';
@@ -15,34 +12,59 @@ import PartsData from "../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
 
+export function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+export function getCitiesData() {
+  if (!citiesDataCache) {
+    citiesDataCache = CitiesData;
+  }
+  return citiesDataCache;
+}
+
+export function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
 
 export async function getMake() {
+  const carData = getCarData();
   const uniqueMakeArray = [
-    ...new Map(CarData.map(item => [item.make, item])).values()
+    ...new Map(carData.map(item => [item.make, item])).values()
   ];
 
   return uniqueMakeArray;
 }
 
 export async function getYear() {
+  const carData = getCarData();
   const uniqueYearArray = [
-    ...new Map(CarData.map(item => [item.year, item])).values()
+    ...new Map(carData.map(item => [item.year, item])).values()
   ];
 
   return uniqueYearArray;
 }
 
 export async function getFormModel() {
-  return CarData;
+  return getCarData();
 }
 
 export async function getCity() {
-  return CitiesData;
+  return getCitiesData();
 }
 
 export async function getParts() {
-  return PartsData;
+  return getPartsData();
 }
 
 export default async function Home() {

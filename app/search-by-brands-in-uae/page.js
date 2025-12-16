@@ -1,15 +1,61 @@
-import React from 'react';
 import FormComponent from '../../components/FormComponent';
-import { getMake, getFormModel, getParts, getCity } from '../page';
 import Image from 'next/image';
 import Link from 'next/link';
 import SearchMake from '../../components/SearchMake';
 import HondaOfferButton from '../../components/HondaOfferButton';
 import Social from '../../components/Social';
 import Footer from '../../components/footer';
+import CarData from "../../public/lib/car-data.json"
+import CitiesData from "../../public/lib/cities.json"
+import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+export function getCarData() {
+  if (!carDataCache) {
+    carDataCache = CarData;
+  }
+  return carDataCache;
+}
+
+export function getCitiesData() {
+  if (!citiesDataCache) {
+    citiesDataCache = CitiesData;
+  }
+  return citiesDataCache;
+}
+
+function getPartsData() {
+  if (!partsDataCache) {
+    partsDataCache = PartsData;
+  }
+  return partsDataCache;
+}
+
+async function getMake() {
+  const carData = getCarData();
+  const uniqueMakeArray = [
+    ...new Map(carData.map(item => [item.make, item])).values()
+  ];
+
+  return uniqueMakeArray;
+}
+
+async function getFormModel() {
+  return getCarData();
+}
+
+async function getCity() {
+  return getCitiesData();
+}
+
+async function getParts() {
+  return getPartsData();
+}
 
 
 export default async function Make() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import TenEntries from '../../../../components/tenentries';
 import Contents from '../../../../components/Contents';
@@ -7,17 +6,65 @@ import SearchModel from '../../../../components/SearchModel';
 import Footer from '../../../../components/footer';
 import HondaOfferButton from '../../../../components/HondaOfferButton';
 import PartsAccordion from '../../../../components/Parts-Accordion';
-import { getCity, getFormModel, getParts } from '../../../page';
 import { redirect } from 'next/navigation';
 import HeroCarousel from '../../../../components/HeroCarousel';
 import SearchCity from '../../../../components/SearchCity';
 import SearchMakeParts from './SearchMakeParts';
 import CarData from "../../../../public/lib/car-data.json"
 import partsData from "../../../../public/lib/parts.json"
+import CarData from "../../../../public/lib/car-data.json"
+import CitiesData from "../../../../public/lib/cities.json"
+import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
-export const fetchCache = 'force-cache';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+export function getCarData() {
+    if (!carDataCache) {
+        carDataCache = CarData;
+    }
+    return carDataCache;
+}
+
+export function getCitiesData() {
+    if (!citiesDataCache) {
+        citiesDataCache = CitiesData;
+    }
+    return citiesDataCache;
+}
+
+export function getPartsData() {
+    if (!partsDataCache) {
+        partsDataCache = PartsData;
+    }
+    return partsDataCache;
+}
+
+
+export async function getYear() {
+    const carData = getCarData();
+    const uniqueYearArray = [
+        ...new Map(carData.map(item => [item.year, item])).values()
+    ];
+
+    return uniqueYearArray;
+}
+
+export async function getFormModel() {
+    return getCarData();
+}
+
+export async function getCity() {
+    return getCitiesData();
+}
+
+export async function getParts() {
+    return getPartsData();
+}
+
 
 export async function generateStaticParams() {
     const excludedMakes = [
