@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Count from '../../components/service-countup';
 import SearchCity from '../../components/SearchCity';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import CarData from "../../../public/lib/car-data.json"
-import CitiesData from "../../../public/lib/cities.json"
-import PartsData from "../../../public/lib/parts.json"
+import CarData from "../../public/lib/car-data.json"
+import CitiesData from "../../public/lib/cities.json"
+import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
