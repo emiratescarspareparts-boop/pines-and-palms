@@ -10,7 +10,6 @@ import { redirect } from 'next/navigation';
 import HeroCarousel from '../../../../components/HeroCarousel';
 import SearchCity from '../../../../components/SearchCity';
 import SearchMakeParts from './SearchMakeParts';
-import CarData from "../../../../public/lib/car-data.json"
 import partsData from "../../../../public/lib/parts.json"
 import CarData from "../../../../public/lib/car-data.json"
 import CitiesData from "../../../../public/lib/cities.json"

@@ -1,21 +1,58 @@
 import Image from 'next/image';
-import React from 'react';
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import FormComponent from '../../../../../components/FormComponent';
 import TenEntries from '../../../../../components/tenentries';
-import { getCity, getFormModel, getMake, getParts } from '../../../../page';
-import CarParts from '../../../../../public/img/car-spare-parts.png';
 import SearchModel from '../../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import products from "../../../../../public/products.json"
-import ProductFilter from './ProductFilter';
 import partsData from "../../../../../public/lib/parts.json"
 import carData from "../../../../../public/lib/car-data.json"
 import hondaMakePartsData from "../../../../../public/lib/makeparts/honda.json"
+import CarData from "../../../public/lib/car-data.json"
+import CitiesData from "../../../public/lib/cities.json"
+import PartsData from "../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+let carDataCache = null;
+let citiesDataCache = null;
+let partsDataCache = null;
+
+function getCarData() {
+    if (!carDataCache) {
+        carDataCache = CarData;
+    }
+    return carDataCache;
+}
+
+function getCitiesData() {
+    if (!citiesDataCache) {
+        citiesDataCache = CitiesData;
+    }
+    return citiesDataCache;
+}
+
+function getPartsData() {
+    if (!partsDataCache) {
+        partsDataCache = PartsData;
+    }
+    return partsDataCache;
+}
+
+async function getFormModel() {
+    return getCarData();
+}
+
+async function getCity() {
+    return getCitiesData();
+}
+
+async function getParts() {
+    return getPartsData();
+}
+
+
 
 
 const playfair_display = Playfair_Display({
