@@ -7,48 +7,23 @@ import Contents from '../../../components/Contents';
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 import PartsData from "../../../public/lib/parts.json"
-export const revalidate = 1814400;
+export const revalidate = 86400;
 export const runtime = 'edge';
 export const dynamicParams = false;
-let carDataCache = null;
-let partsDataCache = null;
 
-function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
   }
-  return carDataCache;
+  return Object.values(uniqueMakes);
 }
 
 
-function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
-
-async function getMake() {
-  const carData = getCarData();
-  const uniqueMakeArray = [
-    ...new Map(carData.map(item => [item.make, item])).values()
-  ];
-
-  return uniqueMakeArray;
-}
-
-
-async function getFormModel() {
-  return getCarData();
-}
-
-
-async function getParts() {
-  return getPartsData();
-}
-
-
-export async function generateStaticParams() {
+export function generateStaticParams() {
   try {
     const params = CitiesData.map(item => ({
       city: item.city,
@@ -63,7 +38,7 @@ export async function generateStaticParams() {
 
 
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
   const { city } = params;
   const schema = {
     "@context": "https://schema.org",
@@ -81,7 +56,7 @@ export async function generateMetadata({ params }) {
         },
         "provider": {
           "@type": "LocalBusiness",
-          "name": "Emirates Car"
+          "name": "EMIRATESCAR"
         }
       }
     ]
@@ -94,7 +69,7 @@ export async function generateMetadata({ params }) {
       title: `Auto spare parts Order Online from Dubai Dealers in ${decodeURIComponent(city)}, UAE - Best Prices |
           Emirates-car.com`,
       description: `Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in ${decodeURIComponent(city)}  uae`,
-      url: 'https://emirates-car.com/search-by-cities-in-uae/' + city,
+      url: 'https://www.emirates-car.com/search-by-cities-in-uae/' + city,
       image: 'https://emirates-car.com/img/car-spare-parts.png',
       siteName: 'EMIRATESCAR',
       images: [
@@ -144,10 +119,13 @@ export async function generateMetadata({ params }) {
       'Spare parts in ' +
       city +
       ', auto spare parts, emirates auto parts',
+    other: {
+      "script:ld+json": JSON.stringify(schema),
+    },
   };
 }
 
-async function getCityData(city) {
+function getCityData(city) {
   const decodedCity = decodeURIComponent(city);
   const cityData = CitiesData.find(c => c.city === decodedCity);
 
@@ -158,16 +136,16 @@ async function getCityData(city) {
   return cityData;
 }
 
-export default async function City({ params }) {
-  const cityData = await getCityData(params.city);
+export default function City({ params }) {
+  const cityData = getCityData(params.city);
 
   if (!cityData) {
-    notFound(); // cleanly render 404 page if city not found
+    notFound();
   }
 
-  const makedatas = await getMake();
-  const partsposts = await getParts();
-  const modelsform = await getFormModel();
+  const makedatas = getMake();
+  const partsposts = PartsData;
+  const modelsform = CarData;
 
   return (
     <div>

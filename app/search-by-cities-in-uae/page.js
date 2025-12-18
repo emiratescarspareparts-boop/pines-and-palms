@@ -3,71 +3,30 @@ import FormComponent from '../../components/FormComponent';
 import Link from 'next/link';
 import Count from '../../components/service-countup';
 import SearchCity from '../../components/SearchCity';
-import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
-let carDataCache = null;
-let citiesDataCache = null;
-let partsDataCache = null;
 
-function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
+
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
   }
-  return carDataCache;
-}
-
-function getCitiesData() {
-  if (!citiesDataCache) {
-    citiesDataCache = CitiesData;
-  }
-  return citiesDataCache;
-}
-
-function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
-
-async function getMake() {
-  const carData = getCarData();
-  const uniqueMakeArray = [
-    ...new Map(carData.map(item => [item.make, item])).values()
-  ];
-
-  return uniqueMakeArray;
-}
-
-
-async function getFormModel() {
-  return getCarData();
-}
-
-async function getCity() {
-  return getCitiesData();
-}
-
-async function getParts() {
-  return getPartsData();
+  return Object.values(uniqueMakes);
 }
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair-display',
-});
-
-const firaSans = Fira_Sans({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fira-sans',
 });
 
 
@@ -79,11 +38,11 @@ export const metadata = {
 
 
 
-export default async function Cities() {
-  const cities = await getCity();
-  const partsposts = await getParts();
-  const modelsform = await getFormModel();
-  const makeData = await getMake();
+export default function Cities() {
+  const cities = CitiesData;
+  const partsposts = PartsData;
+  const modelsform = CarData;
+  const makeData = getMake();
 
   return (
     <div>

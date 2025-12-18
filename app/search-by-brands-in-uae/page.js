@@ -11,59 +11,25 @@ import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
-let carDataCache = null;
-let citiesDataCache = null;
-let partsDataCache = null;
 
-
-export function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
   }
-  return carDataCache;
-}
-
-export function getCitiesData() {
-  if (!citiesDataCache) {
-    citiesDataCache = CitiesData;
-  }
-  return citiesDataCache;
-}
-
-function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
-
-async function getMake() {
-  const carData = getCarData();
-  const uniqueMakeArray = [
-    ...new Map(carData.map(item => [item.make, item])).values()
-  ];
-
-  return uniqueMakeArray;
-}
-
-async function getFormModel() {
-  return getCarData();
-}
-
-async function getCity() {
-  return getCitiesData();
-}
-
-async function getParts() {
-  return getPartsData();
+  return Object.values(uniqueMakes);
 }
 
 
-export default async function Make() {
-  const posts = await getMake();
-  const modelforms = await getFormModel();
-  const partsposts = await getParts();
-  const cities = await getCity();
+
+export default function Make() {
+  const posts = getMake();
+  const modelforms = CarData;
+  const partsposts = PartsData;
+  const cities = CitiesData;
   return (
     <div>
       <div className="flex xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 2xs:grid 2xs:grid-cols-1 xs:mx-auto font-sans">
