@@ -17,9 +17,6 @@ import PartsData from "../../../../public/lib/parts.json"
 export const revalidate = 86400;
 export const runtime = 'edge';
 export const dynamicParams = false;
-let carDataCache = null;
-let partsDataCache = null;
-
 
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 
@@ -51,42 +48,16 @@ const imagePaths = {
 }
 
 
-
-
-function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
   }
-  return carDataCache;
+  return Object.values(uniqueMakes);
 }
-
-
-function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
-
-async function getMake() {
-  const carData = getCarData();
-  const uniqueMakeArray = [
-    ...new Map(carData.map(item => [item.make, item])).values()
-  ];
-
-  return uniqueMakeArray;
-}
-
-
-async function getFormModel() {
-  return getCarData();
-}
-
-
-async function getParts() {
-  return getPartsData();
-}
-
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
@@ -101,7 +72,7 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
-export async function generateStaticParams({ params }) {
+export function generateStaticParams() {
 
   const excludedMakes = [
     'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
@@ -140,7 +111,7 @@ export async function generateStaticParams({ params }) {
 }
 
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
   const { make, location } = params;
   const faqSchema = {
     "@context": "https://schema.org",
@@ -253,24 +224,30 @@ export async function generateMetadata({ params }) {
 }
 
 
-async function getModel(make) {
+function getModel(make) {
+  const makeLower = make.toLowerCase();
+  const cars = carDataByMake[makeLower];
 
-  const filtered = CarData.filter(item => item.make === make);
+  if (!cars || cars.length === 0) return [];
 
-  const uniqueObjectArray = [
-    ...new Map(filtered.map(item => [item.model, item])).values(),
-  ];
+  const uniqueModels = {};
+  for (let i = 0; i < cars.length; i++) {
+    const car = cars[i];
+    if (!uniqueModels[car.model]) {
+      uniqueModels[car.model] = car;
+    }
+  }
 
-  return uniqueObjectArray;
+  return Object.values(uniqueModels);
 }
 
 
-export default async function Cities({ params, searchParams }) {
+export default function Cities({ params, searchParams }) {
   const { make, location } = params;
-  const carmodel = await getModel(make);
-  const partspost = await PartsData;
-  const posts = await getMake();
-  const modelsform = await CarData;
+  const carmodel = getModel(make);
+  const partspost = PartsData;
+  const posts = getMake();
+  const modelsform = CarData;
 
   const {
     "filter_car_parts[]": categories = [],
@@ -279,37 +256,147 @@ export default async function Cities({ params, searchParams }) {
     search = ""
   } = searchParams;
 
-
+  // Normalize filters
   const selectedCategories = Array.isArray(categories) ? categories : [categories].filter(Boolean);
   const selectedEngines = Array.isArray(engines) ? engines : [engines].filter(Boolean);
   const selectedCompats = Array.isArray(compats) ? compats : [compats].filter(Boolean);
+
   const query = search?.toLowerCase() || "";
 
-  const makeFiltered = products.filter(product =>
-    product.compatibility?.some(c =>
-      c.make.toLowerCase() === make.toLowerCase()
-    )
-  )
+  const categoriesSet = new Set(selectedCategories);
+  const enginesSet = new Set(selectedEngines);
+  const compatsSet = new Set(selectedCompats);
 
-  const filtered = makeFiltered.filter(product => {
-    const matchesCategory =
-      selectedCategories.length === 0 || selectedCategories.includes(product.category);
+  const makeLower = make.toLowerCase();
 
-    const matchesSearch =
-      product.partname.toLowerCase().includes(query) ||
-      product.partnumber.toLowerCase().includes(query) ||
-      product.engine?.some(e => e.toLowerCase().includes(query)) ||
-      product.compatibility?.some(c =>
-        `${c.make} ${c.model} ${c.years ?? ""}`.toLowerCase().includes(query))
 
-    const matchesEngine =
-      selectedEngines.length === 0 || product.engine?.some(e => selectedEngines.includes(e));
+  // ------------------------------------
+  // 1️⃣ Filter products by MAKE only
+  // ------------------------------------
+  const makeFiltered = [];
 
-    const matchesCompatibility =
-      selectedCompats.length === 0 ||
-      product.compatibility?.some(c => selectedCompats.includes(`${c.make} ${c.model} ${c.years ? `(${c.years})` : ""}`));
-    return matchesCategory && matchesSearch && matchesEngine && matchesCompatibility;
-  });
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+
+    if (!product.compatibility) continue;
+
+    for (let j = 0; j < product.compatibility.length; j++) {
+      const c = product.compatibility[j];
+
+      if (c.make?.toLowerCase() === makeLower) {
+        makeFiltered.push(product);
+        break;
+      }
+    }
+  }
+
+
+  // ------------------------------------
+  // 2️⃣ Apply remaining filters
+  // ------------------------------------
+  const filtered = [];
+
+  for (let i = 0; i < makeFiltered.length; i++) {
+    const product = makeFiltered[i];
+
+    // Category filter
+    if (categoriesSet.size > 0 && !categoriesSet.has(product.category)) {
+      continue;
+    }
+
+    // Search filter
+    if (query) {
+      let matches = false;
+
+      if (product.partname?.toLowerCase().includes(query)) {
+        matches = true;
+      }
+
+      if (!matches && product.engine) {
+        for (let j = 0; j < product.engine.length; j++) {
+          if (product.engine[j].toLowerCase().includes(query)) {
+            matches = true;
+            break;
+          }
+        }
+      }
+
+      if (!matches && product.compatibility) {
+        for (let j = 0; j < product.compatibility.length; j++) {
+          const c = product.compatibility[j];
+          const searchStr = `${c.make} ${c.model ?? ""} ${c.years ?? ""}`.toLowerCase();
+
+          if (searchStr.includes(query)) {
+            matches = true;
+            break;
+          }
+        }
+      }
+
+      if (!matches) continue;
+    }
+
+    // Engine filter
+    if (enginesSet.size > 0) {
+      let hasEngine = false;
+
+      if (product.engine) {
+        for (let j = 0; j < product.engine.length; j++) {
+          if (enginesSet.has(product.engine[j])) {
+            hasEngine = true;
+            break;
+          }
+        }
+      }
+
+      if (!hasEngine) continue;
+    }
+
+    // Compatibility filter (make-level)
+    if (compatsSet.size > 0) {
+      let hasCompat = false;
+
+      if (product.compatibility) {
+        for (let j = 0; j < product.compatibility.length; j++) {
+          const c = product.compatibility[j];
+          const compatStr = `${c.make} ${c.model ?? ""} ${c.years ? `(${c.years})` : ""}`;
+
+          if (compatsSet.has(compatStr)) {
+            hasCompat = true;
+            break;
+          }
+        }
+      }
+
+      if (!hasCompat) continue;
+    }
+
+    filtered.push(product);
+  }
+
+
+  if (excludedMakesSet.has(make)) {
+    notFound();
+  }
+
+  const data = carDataByMake[makeLower] || [];
+
+  if (data.length === 0) {
+    notFound();
+  }
+
+
+  const grouped = {};
+
+  for (let i = 0; i < filtered.length; i++) {
+    const item = filtered[i];
+
+    if (!grouped[item.category]) {
+      grouped[item.category] = [];
+    }
+
+    grouped[item.category].push(item.parts);
+  }
 
   const excludedMakes = [
     'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',

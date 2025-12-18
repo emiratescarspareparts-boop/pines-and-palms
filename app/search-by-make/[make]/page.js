@@ -134,7 +134,7 @@ function getModel(make) {
   return Object.values(uniqueModels);
 }
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);
   const productsForMake = products.filter(p =>
     p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase())
@@ -323,7 +323,7 @@ export async function generateMetadata({ params }) {
 
 function getMakeImage(make) {
   const key = `${make.toLowerCase()}`;
-  const cars = carDataByMakeModel[key];
+  const cars = carDataByMake[key];
 
   if (!cars || cars.length === 0) return '';
 
@@ -378,10 +378,6 @@ export default function MakePage({ params, searchParams }) {
 
   const makeLower = make.toLowerCase();
 
-
-  // ------------------------------------
-  // 1️⃣ Filter products by MAKE only
-  // ------------------------------------
   const makeFiltered = [];
 
   for (let i = 0; i < products.length; i++) {
@@ -745,9 +741,12 @@ export default function MakePage({ params, searchParams }) {
             </nobr>
           </Link>{' '}
         </div>
+
+
         <div className="text-center">
           {make === 'Honda' ? <HondaOfferButton /> : <></>}
         </div>
+
 
         <section aria-labelledby="featured-deals" className="mt-10 xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
           <h2
