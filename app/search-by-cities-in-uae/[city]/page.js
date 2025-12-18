@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import FormComponent from '../../../components/FormComponent';
 import Footer from '../../../components/footer';
 import Image from 'next/image';
-import TenEntries from '../../../components/tenentries';
 import Contents from '../../../components/Contents';
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
@@ -291,7 +290,6 @@ export default async function City({ params }) {
           ))}
         </div>
       </div>
-      <TenEntries />
       <Contents />
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { getCity, getFormModel, getMake, getParts } from '../../page';
+import { getParts } from '../../page';
 import Link from 'next/link';
 import FormComponent from '../../../components/FormComponent';
 import TenEntries from '../../../components/tenentries';
@@ -8,9 +8,10 @@ import CarParts from '../../../public/img/car-spare-parts.png';
 import Counter from '../../../components/service-countup';
 import { notFound } from 'next/navigation';
 import products from "../../../public/products.json"
-import ProductFilter from './ProductFilter';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import PartsData from "../../../public/lib/parts.json"
+import CarData from "../../../public/lib/car-data.json"
+import CitiesData from "../../../public/lib/cities.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
@@ -29,11 +30,16 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   try {
-    const params = PartsData.map(item => ({
-      parts: item.parts,
-    }));
+    const params = [];
+
+    for (let i = 0; i < PartsData.length; i++) {
+      const item = PartsData[i];
+      params.push({
+        parts: item.parts,
+      });
+    }
 
     return params;
   } catch (error) {
@@ -42,7 +48,18 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }) {
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
+  }
+  return Object.values(uniqueMakes);
+}
+
+export function generateMetadata({ params }) {
   const { parts } = params;
   const decodedParts = decodeURIComponent(parts);
 
@@ -95,15 +112,21 @@ export async function generateMetadata({ params }) {
     keywords: `${decodedParts} for honda, ${decodedParts} in dubai, ${decodedParts} for porsche, ${decodedParts} for volkswagen, ${decodedParts} for volvo, ${decodedParts} online, ${decodedParts} for ford, ${decodedParts} spare parts uae, ${decodedParts} spare parts online, ${decodedParts} used spare parts dubai, ${decodedParts} spare parts near me`,
   };
 }
-async function getPartsData(parts) {
+function getPartsData(parts) {
   const decodedParts = decodeURIComponent(parts);
-  const filtered = PartsData.find(item => item.parts === decodedParts);
 
-  return filtered;
+  for (let i = 0; i < PartsData.length; i++) {
+    const item = PartsData[i];
+    if (item.parts === decodedParts) {
+      return item;
+    }
+  }
+
+  return null;
 }
-export default async function Parts({ params, searchParams }) {
+export default function Parts({ params, searchParams }) {
   const { parts } = params;
-  const partsData = await getPartsData(parts);
+  const partsData = getPartsData(parts);
   const staticcity = [
     "Abu Dhabi", "Dubai", "Sharjah", "Deira", "Ajman", "Al Ain", "Al Quoz", "Al Fujairah"
   ]
@@ -116,10 +139,10 @@ export default async function Parts({ params, searchParams }) {
     notFound();
   }
 
-  const cities = await getCity();
-  const makedatas = await getMake();
-  const partsposts = await getParts();
-  const modelsform = await getFormModel();
+  const cities = CitiesData;
+  const makedatas = getMake();
+  const partsposts = getParts();
+  const modelsform = CarData;
 
   const {
     "filter_car_parts[]": categories = [],

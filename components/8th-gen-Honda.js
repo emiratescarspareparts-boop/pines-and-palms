@@ -1,181 +1,186 @@
 import React from 'react';
 import Image from 'next/image';
-import ABS from '../public/img/honda-eighth-gen/Anti_Lock_Braking_System.webp';
-import AirFilter from '../public/img/honda-eighth-gen/Air_Filter.webp';
-import AirSuspension from '../public/img/honda-eighth-gen/Air_Suspension_Module.webp';
-import AxleAssembly from '../public/img/honda-eighth-gen/Axle_Assembly_Rear.webp';
-import BrakePads from '../public/img/honda-eighth-gen/Brake_Pads.webp';
-import CatalyticConverter from '../public/img/honda-eighth-gen/Catalytic_Converter.webp';
-import CylinderHead from '../public/img/honda-eighth-gen/Cylinder_Head.webp';
-import Distributor from '../public/img/honda-eighth-gen/Distributor.webp';
-import Engine from '../public/img/honda-eighth-gen/Engine.webp';
-import ExhaustManifold from '../public/img/honda-eighth-gen/Exhaust_Manifold.webp';
-import GearBox from '../public/img/honda-eighth-gen/Gearbox.webp';
-import Grille from '../public/img/honda-eighth-gen/Grille.webp';
-import Headlight from '../public/img/honda-eighth-gen/Headlight.webp';
-import MasterCylinderKit from '../public/img/honda-eighth-gen/Master_Cylinder.webp';
-import Radiator from '../public/img/honda-eighth-gen/Radiator.webp';
-import RearBumper from '../public/img/honda-eighth-gen/Rear_Bumper_Assembly.webp';
-import ReverseLight from '../public/img/honda-eighth-gen/Reverse_Light.webp';
-import Rim from '../public/img/honda-eighth-gen/Rim.webp';
-import SeatBelt from '../public/img/honda-eighth-gen/Seat_Belt.webp';
-import ShockAbsorber from '../public/img/honda-eighth-gen/Shock_Absorber.webp';
-import SideMirror from '../public/img/honda-eighth-gen/Side_Mirror.webp';
-import SteeringWheel from '../public/img/honda-eighth-gen/Steering_Wheel.webp';
-import Wheel from '../public/img/honda-eighth-gen/Wheel.webp';
-import MudFlap from '../public/img/honda-eighth-gen/Mud_Flap.webp';
 import Link from 'next/link';
+
+const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
+
+const imagePaths = {
+  ABS: `${IMAGE_BASE_PATH}/ABS.webp`,
+  AirFilter: `${IMAGE_BASE_PATH}/Air_Filter.webp`,
+  AirSuspension: `${IMAGE_BASE_PATH}/Air_Suspension_Module.webp`,
+  AxleAssembly: `${IMAGE_BASE_PATH}/Axle_Assembly_Rear.webp`,
+  BrakePads: `${IMAGE_BASE_PATH}/Brake_Pads.webp`,
+  CatalyticConverter: `${IMAGE_BASE_PATH}/Catalytic_Converter.webp`,
+  CylinderHead: `${IMAGE_BASE_PATH}/Cylinder_Head.webp`,
+  Distributor: `${IMAGE_BASE_PATH}/Distributor.webp`,
+  Engine: `${IMAGE_BASE_PATH}/Engine.webp`,
+  ExhaustManifold: `${IMAGE_BASE_PATH}/Exhaust_Manifold.webp`,
+  GearBox: `${IMAGE_BASE_PATH}/Gearbox.webp`,
+  Grille: `${IMAGE_BASE_PATH}/Grille.webp`,
+  Headlight: `${IMAGE_BASE_PATH}/Headlight.webp`,
+  MasterCylinderKit: `${IMAGE_BASE_PATH}/Master_Cylinder.webp`,
+  Radiator: `${IMAGE_BASE_PATH}/Radiator.webp`,
+  RearBumper: `${IMAGE_BASE_PATH}/Rear_Bumper_Assembly.webp`,
+  ReverseLight: `${IMAGE_BASE_PATH}/Reverse_Light.webp`,
+  Rim: `${IMAGE_BASE_PATH}/Rim.webp`,
+  SeatBelt: `${IMAGE_BASE_PATH}/Seat_Belt.webp`,
+  ShockAbsorber: `${IMAGE_BASE_PATH}/Shock_Absorber.webp`,
+  SideMirror: `${IMAGE_BASE_PATH}/Side_Mirror.webp`,
+  SteeringWheel: `${IMAGE_BASE_PATH}/Steering_Wheel.webp`,
+  Wheel: `${IMAGE_BASE_PATH}/Wheel.webp`,
+  MudFlap: `${IMAGE_BASE_PATH}/Mud_Flap.webp`,
+}
 
 export default function Honda() {
   const images = [
     {
-      images: ABS,
+      images: imagePaths.ABS,
       name: 'ABS',
       alt: 'honda accord anti lock braking system',
       link:
         'https://emirates-car.com/search-by-part-name/Anti-Lock%20Brake%20Control%20Module%20(ABS)'
     },
     {
-      images: AirFilter,
+      images: imagePaths.AirFilter,
       name: 'Air Filter',
       alt: 'honda accord air filter',
       link: 'https://emirates-car.com/get-in-touch'
     },
 
     {
-      images: AirSuspension,
+      images: imagePaths.AirSuspension,
       name: 'Air Suspension',
       alt: 'honda accord air suspension',
       link: 'https://emirates-car.com/get-in-touch'
     },
 
     {
-      images: AxleAssembly,
+      images: imagePaths.AxleAssembly,
       name: 'Axle',
       alt: 'honda accord axle',
       link:
         'https://emirates-car.com/search-by-part-name/Axle%20Assembly%20(Front,%204WD)'
     },
     {
-      images: BrakePads,
+      images: imagePaths.BrakePads,
       name: 'Brake Pads',
       alt: 'honda accord brake pads',
       link: 'https://emirates-car.com/get-in-touch'
     },
     {
-      images: CatalyticConverter,
+      images: imagePaths.CatalyticConverter,
       name: 'Catalytic Convertor',
       alt: 'honda accord catalytic convertor',
       link: 'https://emirates-car.com/get-in-touch'
     },
     {
-      images: CylinderHead,
+      images: imagePaths.CylinderHead,
       name: 'Cylinder Head',
       alt: 'honda accord cylinder',
       link: 'https://emirates-car.com/search-by-part-name/Cylinder%20Head)'
     },
     {
-      images: Distributor,
+      images: imagePaths.Distributor,
       name: 'Distributor',
       alt: 'honda accord distributor',
       link: 'https://emirates-car.com/search-by-part-name/Distributor'
     },
     {
-      images: Engine,
+      images: imagePaths.Engine,
       name: 'Engine',
       alt: 'honda accord engine',
       link: 'https://emirates-car.com/search-by-part-name/Engine%20Assembly'
     },
     {
-      images: ExhaustManifold,
+      images: imagePaths.ExhaustManifold,
       name: 'Exhaust Manifold',
       alt: 'honda accord exhaust system',
       link: 'https://emirates-car.com/search-by-part-name/Exhaust%20Manifold'
     },
     {
-      images: GearBox,
+      images: imagePaths.GearBox,
       name: 'Gearbox / Transmission',
       alt: 'honda accord gearbox',
       link:
         'https://emirates-car.com/search-by-part-name/Transmission%20Control%20Module'
     },
     {
-      images: Grille,
+      images: imagePaths.Grille,
       name: 'Grille',
       alt: 'honda accord grill',
       link: 'https://emirates-car.com/search-by-part-name/Grille'
     },
     {
-      images: Headlight,
+      images: imagePaths.Headlight,
       name: 'Headlight',
       alt: 'honda accord headlight bulb',
       link: 'https://emirates-car.com/search-by-part-name/Headlight%20Assembly'
     },
     {
-      images: MasterCylinderKit,
+      images: imagePaths.MasterCylinderKit,
       name: 'Master Cylinder',
       alt: 'honda accord master cylinder',
       link:
         'https://emirates-car.com/search-by-part-name/Master%20Cylinder%20(Clutch)'
     },
     {
-      images: MudFlap,
+      images: imagePaths.MudFlap,
       name: 'Mud Flap',
       alt: 'honda accord mud flaps',
       link: 'https://emirates-car.com/get-in-touch'
     },
     {
-      images: Radiator,
+      images: imagePaths.Radiator,
       name: 'Radiator',
       alt: 'honda accord radiator',
       link: 'https://emirates-car.com/search-by-part-name/Radiator'
     },
     {
-      images: RearBumper,
+      images: imagePaths.RearBumper,
       name: 'Rear Bumper',
       alt: 'honda accord rear bumper',
       link:
         'https://emirates-car.com/search-by-part-name/Bumper%20Assembly%20(Rear)'
     },
     {
-      images: ReverseLight,
+      images: imagePaths.ReverseLight,
       name: 'Reverse Light',
       alt: 'honda accord reverse light bulb',
       link: 'https://emirates-car.com/search-by-part-name/Reverse%20Light'
     },
     {
-      images: Rim,
+      images: imagePaths.Rim,
       name: 'Rims',
       alt: 'honda accord rims for sale',
       link: 'https://emirates-car.com/search-by-part-name/Rim'
     },
     {
-      images: SeatBelt,
+      images: imagePaths.SeatBelt,
       name: 'Seat Belt',
       alt: 'honda accord seat belt',
       link: 'https://emirates-car.com/search-by-part-name/Seat%20Belt'
     },
     {
-      images: ShockAbsorber,
+      images: imagePaths.ShockAbsorber,
       name: 'Shock Absorber',
       alt: 'honda accord shock absorber',
       link: 'https://emirates-car.com/search-by-part-name/Shock%20Absorber'
     },
     {
-      images: SideMirror,
+      images: imagePaths.SideMirror,
       name: 'Mirror',
       alt: 'honda accord mirrors',
       link:
         'https://emirates-car.com/search-by-part-name/Mirror%20(Rear%20View)'
     },
     {
-      images: SteeringWheel,
+      images: imagePaths.SteeringWheel,
       name: 'Steering Wheel',
       alt: 'honda accord steering wheel',
       link: 'https://emirates-car.com/search-by-part-name/Steering%20Wheel'
     },
     {
-      images: Wheel,
+      images: imagePaths.Wheel,
       name: 'Wheels',
       alt: 'honda accord wheels',
       link: 'https://emirates-car.com/search-by-part-name/Wheel'

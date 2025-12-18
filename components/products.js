@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import Image from "next/image";
-import Britain from '../public/img/icons/united-kingdom.png';
-import Indian from '../public/img/icons/india.png';
-import Japan from '../public/img/icons/japan.png';
-import Korean from '../public/img/icons/south-korea.png';
-import USA from '../public/img/icons/usa.png';
-import Germany from '../public/img/icons/germany.png';
-import China from '../public/img/icons/china.png';
-import France from '../public/img/icons/france.png';
 import Nav from './nav';
 
 export default class products extends Component {
@@ -18,7 +10,7 @@ export default class products extends Component {
         <div className="grid grid-cols-8 xs:grid xs:grid-cols-2 ml-8 xs:mx-5">
           <div className="text-center">
             <Image
-              src={Britain}
+              src='../public/img/icons/united-kingdom.png'
               alt="used car parts"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -26,7 +18,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={Indian}
+              src='../public/img/icons/india.png'
               alt="used car parts dubai"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -34,7 +26,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={Japan}
+              src='../public/img/icons/japan.png'
               alt="used spare parts dubai"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -42,7 +34,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={Korean}
+              src='../public/img/icons/south-korea.png'
               alt="used parts honda civic"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -50,7 +42,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={USA}
+              src='../public/img/icons/usa.png'
               alt="spare parts UK"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -58,7 +50,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={Germany}
+              src='../public/img/icons/germany.png'
               alt="german car parts"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -66,7 +58,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={China}
+              src='../public/img/icons/china.png'
               alt="china car parts"
               className="object-scale-down h-40 w-full xs:object-none"
             />
@@ -74,7 +66,7 @@ export default class products extends Component {
           </div>
           <div className="text-center">
             <Image
-              src={France}
+              src='../public/img/icons/france.png'
               alt="car parts emirates"
               className="object-scale-down h-40 w-full xs:object-none"
             />

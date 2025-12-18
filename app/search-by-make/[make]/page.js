@@ -3,30 +3,6 @@ import FormComponent from '../../../components/FormComponent';
 import Link from 'next/link';
 import HondaOfferButton from '../../../components/HondaOfferButton';
 import Image from 'next/image';
-import ABS from '../../../public/img/honda-eighth-gen/Anti_Lock_Braking_System.webp';
-import AirFilter from '../../../public/img/honda-eighth-gen/Air_Filter.webp';
-import AirSuspension from '../../../public/img/honda-eighth-gen/Air_Suspension_Module.webp';
-import AxleAssembly from '../../../public/img/honda-eighth-gen/Axle_Assembly_Rear.webp';
-import BrakePads from '../../../public/img/honda-eighth-gen/Brake_Pads.webp';
-import CatalyticConverter from '../../../public/img/honda-eighth-gen/Catalytic_Converter.webp';
-import CylinderHead from '../../../public/img/honda-eighth-gen/Cylinder_Head.webp';
-import Distributor from '../../../public/img/honda-eighth-gen/Distributor.webp';
-import Engine from '../../../public/img/honda-eighth-gen/Engine.webp';
-import ExhaustManifold from '../../../public/img/honda-eighth-gen/Exhaust_Manifold.webp';
-import GearBox from '../../../public/img/honda-eighth-gen/Gearbox.webp';
-import Grille from '../../../public/img/honda-eighth-gen/Grille.webp';
-import Headlight from '../../../public/img/honda-eighth-gen/Headlight.webp';
-import MasterCylinderKit from '../../../public/img/honda-eighth-gen/Master_Cylinder.webp';
-import Radiator from '../../../public/img/honda-eighth-gen/Radiator.webp';
-import RearBumper from '../../../public/img/honda-eighth-gen/Rear_Bumper_Assembly.webp';
-import ReverseLight from '../../../public/img/honda-eighth-gen/Reverse_Light.webp';
-import Rim from '../../../public/img/honda-eighth-gen/Rim.webp';
-import SeatBelt from '../../../public/img/honda-eighth-gen/Seat_Belt.webp';
-import ShockAbsorber from '../../../public/img/honda-eighth-gen/Shock_Absorber.webp';
-import SideMirror from '../../../public/img/honda-eighth-gen/Side_Mirror.webp';
-import SteeringWheel from '../../../public/img/honda-eighth-gen/Steering_Wheel.webp';
-import Wheel from '../../../public/img/honda-eighth-gen/Wheel.webp';
-import MudFlap from '../../../public/img/honda-eighth-gen/Mud_Flap.webp';
 import TenEntries from '../../../components/tenentries';
 import PartsAccordion from '../../../components/Parts-Accordion';
 import { notFound } from 'next/navigation';
@@ -38,41 +14,34 @@ import PartsData from "../../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
-let carDataCache = null;
-let citiesDataCache = null;
-let partsDataCache = null;
 
-function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
-  }
-  return carDataCache;
-}
+const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 
-function getCitiesData() {
-  if (!citiesDataCache) {
-    citiesDataCache = CitiesData;
-  }
-  return citiesDataCache;
-}
-
-function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
-
-async function getFormModel() {
-  return getCarData();
-}
-
-async function getCity() {
-  return getCitiesData();
-}
-
-async function getParts() {
-  return getPartsData();
+const imagePaths = {
+  ABS: `${IMAGE_BASE_PATH}/ABS.webp`,
+  AirFilter: `${IMAGE_BASE_PATH}/Air_Filter.webp`,
+  AirSuspension: `${IMAGE_BASE_PATH}/Air_Suspension_Module.webp`,
+  AxleAssembly: `${IMAGE_BASE_PATH}/Axle_Assembly_Rear.webp`,
+  BrakePads: `${IMAGE_BASE_PATH}/Brake_Pads.webp`,
+  CatalyticConverter: `${IMAGE_BASE_PATH}/Catalytic_Converter.webp`,
+  CylinderHead: `${IMAGE_BASE_PATH}/Cylinder_Head.webp`,
+  Distributor: `${IMAGE_BASE_PATH}/Distributor.webp`,
+  Engine: `${IMAGE_BASE_PATH}/Engine.webp`,
+  ExhaustManifold: `${IMAGE_BASE_PATH}/Exhaust_Manifold.webp`,
+  GearBox: `${IMAGE_BASE_PATH}/Gearbox.webp`,
+  Grille: `${IMAGE_BASE_PATH}/Grille.webp`,
+  Headlight: `${IMAGE_BASE_PATH}/Headlight.webp`,
+  MasterCylinderKit: `${IMAGE_BASE_PATH}/Master_Cylinder.webp`,
+  Radiator: `${IMAGE_BASE_PATH}/Radiator.webp`,
+  RearBumper: `${IMAGE_BASE_PATH}/Rear_Bumper_Assembly.webp`,
+  ReverseLight: `${IMAGE_BASE_PATH}/Reverse_Light.webp`,
+  Rim: `${IMAGE_BASE_PATH}/Rim.webp`,
+  SeatBelt: `${IMAGE_BASE_PATH}/Seat_Belt.webp`,
+  ShockAbsorber: `${IMAGE_BASE_PATH}/Shock_Absorber.webp`,
+  SideMirror: `${IMAGE_BASE_PATH}/Side_Mirror.webp`,
+  SteeringWheel: `${IMAGE_BASE_PATH}/Steering_Wheel.webp`,
+  Wheel: `${IMAGE_BASE_PATH}/Wheel.webp`,
+  MudFlap: `${IMAGE_BASE_PATH}/Mud_Flap.webp`,
 }
 
 
@@ -90,36 +59,79 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
-export async function generateStaticParams({ make }) {
-  try {
-    const allowed = CarData.filter(
-      car => car.make === make && !excludedMakes.includes(car.make)
-    );
+const excludedMakes = [
+  'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+  'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+  'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+  'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+  'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+  'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+  'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr',
+  'ZNA', 'GAC', 'Gs7', 'Hongqi', 'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK',
+  'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+  'Chery', 'Geely', 'BAIC', 'Bestune'
+];
 
-    return allowed.map(post => ({
-      make: encodeURIComponent(post.make),
-    }));
+const excludedMakesSet = new Set(excludedMakes);
+
+const carDataByMakeModel = {};
+const carDataByMake = {};
+
+for (let i = 0; i < CarData.length; i++) {
+  const car = CarData[i];
+
+  const key = `${car.make.toLowerCase()}-${car.model.toLowerCase()}`;
+  if (!carDataByMakeModel[key]) {
+    carDataByMakeModel[key] = [];
+  }
+  carDataByMakeModel[key].push(car);
+
+  const makeLower = car.make.toLowerCase();
+  if (!carDataByMake[makeLower]) {
+    carDataByMake[makeLower] = [];
+  }
+  carDataByMake[makeLower].push(car);
+}
+
+export function generateStaticParams() {
+  try {
+    const seen = new Set();
+    const params = [];
+
+    for (let i = 0; i < CarData.length; i++) {
+      const make = CarData[i].make;
+
+      if (excludedMakes.indexOf(make) !== -1) continue;
+
+      if (!seen.has(make)) {
+        seen.add(make);
+        params.push({ make });
+      }
+    }
+
+    return params;
   } catch (error) {
-    console.error('Error reading car.json:', error);
+    console.error('Error:', error);
     return [];
   }
 }
 
-async function getModel(make) {
-  try {
-    const decodedMake = decodeURIComponent(make);
 
-    const filtered = CarData.filter(item => item.make === decodedMake);
+function getModel(make) {
+  const makeLower = make.toLowerCase();
+  const cars = carDataByMake[makeLower];
 
-    const uniqueObjectArray = [
-      ...new Map(filtered.map(item => [item.model, item])).values(),
-    ];
+  if (!cars || cars.length === 0) return [];
 
-    return uniqueObjectArray;
-  } catch (error) {
-    console.error('Error reading model data:', error.message);
-    return [];
+  const uniqueModels = {};
+  for (let i = 0; i < cars.length; i++) {
+    const car = cars[i];
+    if (!uniqueModels[car.model]) {
+      uniqueModels[car.model] = car;
+    }
   }
+
+  return Object.values(uniqueModels);
 }
 
 export async function generateMetadata({ params }) {
@@ -309,51 +321,43 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function getMakeImage(make) {
-  try {
-    const filtered = CarData.filter(item => item.make === make);
+function getMakeImage(make) {
+  const key = `${make.toLowerCase()}`;
+  const cars = carDataByMakeModel[key];
 
-    const uniqueMkeArray = [
-      ...new Map(filtered.map(item => [item.img, item])).values(),
-    ];
+  if (!cars || cars.length === 0) return '';
 
-    const imageMake = uniqueMkeArray.map(item => item.img);
-
-    return imageMake;
-  } catch (error) {
-    console.error('Error reading make images:', error.message);
-    return [];
+  for (const car of cars) {
+    if (car.img) {
+      return car.img;
+    }
   }
+
+  return '';
 }
-async function getDescription(make) {
-  try {
-    const decodedMake = decodeURIComponent(make);
 
-    const filtered = CarData.filter(item => item.make === decodedMake);
 
-    const uniqueDescriptionArray = [
-      ...new Map(filtered.map(item => [item.description, item])).values(),
-    ];
+function getDescription(make) {
+  const cars = carDataByMake[make.toLowerCase()];
+  if (!cars || cars.length === 0) return '';
 
-    const description = uniqueDescriptionArray.map(i => i.description);
-
-    return description;
-  } catch (error) {
-    console.error('Error reading descriptions:', error.message);
-    return [];
+  for (let i = 0; i < cars.length; i++) {
+    if (cars[i].description) {
+      return cars[i].description;
+    }
   }
+
+  return '';
 }
-export default async function MakePage({ params, searchParams }) {
+export default function MakePage({ params, searchParams }) {
   const make = decodeURIComponent(params.make);
-  const carmodel = await getModel(make);
-  const partspost = await getParts();
-  const cities = await getCity();
-  const modelsform = await getFormModel();
-  const imageMake = await getMakeImage(make)
-  const description = await getDescription(make)
+  const carmodel = getModel(make);
+  const partspost = PartsData;
+  const cities = CitiesData;
+  const modelsform = CarData;
+  const imageMake = getMakeImage(make)
+  const description = getDescription(make)
 
-
-  //search filte
   const {
     "filter_car_parts[]": categories = [],
     "engine[]": engines = [],
@@ -361,196 +365,290 @@ export default async function MakePage({ params, searchParams }) {
     search = ""
   } = searchParams;
 
-
+  // Normalize filters
   const selectedCategories = Array.isArray(categories) ? categories : [categories].filter(Boolean);
   const selectedEngines = Array.isArray(engines) ? engines : [engines].filter(Boolean);
   const selectedCompats = Array.isArray(compats) ? compats : [compats].filter(Boolean);
+
   const query = search?.toLowerCase() || "";
-  const excludedMakes = [
-    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
-    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
-    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
-    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
-    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
-    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
-    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
-    'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
-    'Chery', 'Geely', 'BAIC', 'Bestune'
-  ];
-  const haksMakes = ['Honda', 'Audi', 'Porsche', 'Volvo', 'Mini', 'Mercedes-Benz', 'Renault', 'Peugeot', 'Jaguar', 'Ford', 'Hummer', 'Dodge', 'GMC', 'Jeep', 'Lincoln']
-  const isExcludedMake = excludedMakes.includes(make);
-  if (excludedMakes.includes(make)) {
-    notFound()
+
+  const categoriesSet = new Set(selectedCategories);
+  const enginesSet = new Set(selectedEngines);
+  const compatsSet = new Set(selectedCompats);
+
+  const makeLower = make.toLowerCase();
+
+
+  // ------------------------------------
+  // 1️⃣ Filter products by MAKE only
+  // ------------------------------------
+  const makeFiltered = [];
+
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+
+    if (!product.compatibility) continue;
+
+    for (let j = 0; j < product.compatibility.length; j++) {
+      const c = product.compatibility[j];
+
+      if (c.make?.toLowerCase() === makeLower) {
+        makeFiltered.push(product);
+        break;
+      }
+    }
   }
 
-  const makeFiltered = products.filter(product =>
-    product.compatibility?.some(c =>
-      c.make.toLowerCase() === make.toLowerCase()
-    )
-  )
 
-  const filtered = makeFiltered.filter(product => {
-    const matchesCategory =
-      selectedCategories.length === 0 || selectedCategories.includes(product.category);
+  // ------------------------------------
+  // 2️⃣ Apply remaining filters
+  // ------------------------------------
+  const filtered = [];
 
-    const matchesSearch =
-      product.partname.toLowerCase().includes(query) ||
-      product.partnumber.toLowerCase().includes(query) ||
-      product.engine?.some(e => e.toLowerCase().includes(query)) ||
-      product.compatibility?.some(c =>
-        `${c.make} ${c.model} ${c.years ?? ""}`.toLowerCase().includes(query))
+  for (let i = 0; i < makeFiltered.length; i++) {
+    const product = makeFiltered[i];
 
-    const matchesEngine =
-      selectedEngines.length === 0 || product.engine?.some(e => selectedEngines.includes(e));
+    // Category filter
+    if (categoriesSet.size > 0 && !categoriesSet.has(product.category)) {
+      continue;
+    }
 
-    const matchesCompatibility =
-      selectedCompats.length === 0 ||
-      product.compatibility?.some(c => selectedCompats.includes(`${c.make} ${c.model} ${c.years ? `(${c.years})` : ""}`));
-    return matchesCategory && matchesSearch && matchesEngine && matchesCompatibility;
-  });
+    // Search filter
+    if (query) {
+      let matches = false;
+
+      if (product.partname?.toLowerCase().includes(query)) {
+        matches = true;
+      }
+
+      if (!matches && product.engine) {
+        for (let j = 0; j < product.engine.length; j++) {
+          if (product.engine[j].toLowerCase().includes(query)) {
+            matches = true;
+            break;
+          }
+        }
+      }
+
+      if (!matches && product.compatibility) {
+        for (let j = 0; j < product.compatibility.length; j++) {
+          const c = product.compatibility[j];
+          const searchStr = `${c.make} ${c.model ?? ""} ${c.years ?? ""}`.toLowerCase();
+
+          if (searchStr.includes(query)) {
+            matches = true;
+            break;
+          }
+        }
+      }
+
+      if (!matches) continue;
+    }
+
+    // Engine filter
+    if (enginesSet.size > 0) {
+      let hasEngine = false;
+
+      if (product.engine) {
+        for (let j = 0; j < product.engine.length; j++) {
+          if (enginesSet.has(product.engine[j])) {
+            hasEngine = true;
+            break;
+          }
+        }
+      }
+
+      if (!hasEngine) continue;
+    }
+
+    // Compatibility filter (make-level)
+    if (compatsSet.size > 0) {
+      let hasCompat = false;
+
+      if (product.compatibility) {
+        for (let j = 0; j < product.compatibility.length; j++) {
+          const c = product.compatibility[j];
+          const compatStr = `${c.make} ${c.model ?? ""} ${c.years ? `(${c.years})` : ""}`;
+
+          if (compatsSet.has(compatStr)) {
+            hasCompat = true;
+            break;
+          }
+        }
+      }
+
+      if (!hasCompat) continue;
+    }
+
+    filtered.push(product);
+  }
+
+
+  if (excludedMakesSet.has(make)) {
+    notFound();
+  }
+
+  const data = carDataByMake[makeLower] || [];
+
+  if (data.length === 0) {
+    notFound();
+  }
+
+
+  const grouped = {};
+
+  for (let i = 0; i < filtered.length; i++) {
+    const item = filtered[i];
+
+    if (!grouped[item.category]) {
+      grouped[item.category] = [];
+    }
+
+    grouped[item.category].push(item.parts);
+  }
 
 
   const images = [
     {
-      images: ABS,
+      images: imagePaths.ABS,
       name: `${make} ABS`,
       alt: `${make} anti lock braking system`,
       link: '/search-by-part-name/Anti-Lock%20Brake%20Control%20Module%20(ABS)',
     },
     {
-      images: AirFilter,
+      images: imagePaths.AirFilter,
       name: `${make} Air Filter`,
       alt: `${make} air filter`,
       link: '/get-in-touch',
     },
     {
-      images: AirSuspension,
+      images: imagePaths.AirSuspension,
       name: `${make} Air Suspension`,
       alt: `${make} Air suspension`,
       link: '/get-in-touch',
     },
     {
-      images: AxleAssembly,
+      images: imagePaths.AxleAssembly,
       name: `${make} Axle`,
       alt: `${make} axle`,
       link: '/search-by-part-name/Axle%20Assembly%20(Front,%204WD)',
     },
     {
-      images: BrakePads,
+      images: imagePaths.BrakePads,
       name: `${make} Brake Pads`,
       alt: `${make} brake pads`,
       link: '/get-in-touch',
     },
     {
-      images: CatalyticConverter,
+      images: imagePaths.CatalyticConverter,
       name: `${make} Catalytic Convertor`,
       alt: `${make} catalytic convertor`,
       link: '/get-in-touch',
     },
     {
-      images: CylinderHead,
+      images: imagePaths.CylinderHead,
       name: `${make} Cylinder Head`,
       alt: `${make} cylinder`,
       link: '/search-by-part-name/Cylinder%20Head)',
     },
     {
-      images: Distributor,
+      images: imagePaths.Distributor,
       name: `${make} Distributor`,
       alt: `${make} distributor`,
       link: '/search-by-part-name/Distributor',
     },
     {
-      images: Engine,
+      images: imagePaths.Engine,
       name: `${make} Engine`,
       alt: `${make} Engine`,
       link: '/search-by-part-name/Engine%20Assembly',
     },
     {
-      images: ExhaustManifold,
+      images: imagePaths.ExhaustManifold,
       name: `${make} Exhaust Manifold`,
       alt: `${make} exhaust system`,
       link: '/search-by-part-name/Exhaust%20Manifold',
     },
     {
-      images: GearBox,
+      images: imagePaths.GearBox,
       name: `${make} Gearbox / Transmission`,
       alt: `${make} gearbox`,
       link: '/search-by-part-name/Transmission%20Control%20Module',
     },
     {
-      images: Grille,
+      images: imagePaths.Grille,
       name: `${make} grill`,
       alt: `${make} grill`,
       link: '/search-by-part-name/Grille',
     },
     {
-      images: Headlight,
+      images: imagePaths.Headlight,
       name: `${make} Headlight`,
       alt: `${make} headlight bulb`,
       link: '/search-by-part-name/Headlight%20Assembly',
     },
     {
-      images: MasterCylinderKit,
+      images: imagePaths.MasterCylinderKit,
       name: `${make} Master Cylinder`,
       alt: `${make} master cylinder`,
       link: '/search-by-part-name/Master%20Cylinder%20(Clutch)',
     },
     {
-      images: MudFlap,
+      images: imagePaths.MudFlap,
       name: `${make} Mud Flaps`,
       alt: `${make} mud flaps`,
       link: '/get-in-touch',
     },
     {
-      images: Radiator,
+      images: imagePaths.Radiator,
       name: `${make} Radiator`,
       alt: `${make} radiator`,
       link: '/search-by-part-name/Radiator',
     },
     {
-      images: RearBumper,
+      images: imagePaths.RearBumper,
       name: `${make} Rear Bumper`,
       alt: `${make} rear bumper`,
       link: '/search-by-part-name/Bumper%20Assembly%20(Rear)',
     },
     {
-      images: ReverseLight,
+      images: imagePaths.ReverseLight,
       name: `${make} Reverse Light`,
       alt: `${make} reverse light`,
       link: '/search-by-part-name/Reverse%20Light',
     },
     {
-      images: Rim,
+      images: imagePaths.Rim,
       name: `${make} Rims`,
       alt: `${make} Rims for sale`,
       link: '/search-by-part-name/Rim',
     },
     {
-      images: SeatBelt,
+      images: imagePaths.SeatBelt,
       name: `${make} Seat Belt`,
       alt: `${make} seat belt`,
       link: '/search-by-part-name/Seat%20Belt',
     },
     {
-      images: ShockAbsorber,
+      images: imagePaths.ShockAbsorber,
       name: `${make} Shock Absorber`,
       alt: `${make} shock absorber`,
       link: '/search-by-part-name/Shock%20Absorber',
     },
     {
-      images: SideMirror,
+      images: imagePaths.SideMirror,
       name: `${make} Mirror`,
       alt: `${make} mirrors`,
       link: '/search-by-part-name/Mirror%20(Rear%20View)',
     },
     {
-      images: SteeringWheel,
+      images: imagePaths.SteeringWheel,
       name: `${make} Steering Wheel`,
       alt: `${make} steering wheel`,
       link: '/search-by-part-name/Steering%20Wheel',
     },
     {
-      images: Wheel,
+      images: imagePaths.Wheel,
       name: `${make} wheels`,
       alt: `${make} wheels`,
       link: '/search-by-part-name/Wheel',

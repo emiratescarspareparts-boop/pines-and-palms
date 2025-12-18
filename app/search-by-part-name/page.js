@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import FormComponent from '../../components/FormComponent';
-import { getCity, getFormModel, getParts } from '../page';
 import Image from 'next/image';
 import Social from '../../components/Social';
 import Spare from '../../public/img/car-spare-parts.png';
@@ -11,17 +10,20 @@ export const revalidate = 1814400;
 export const runtime = 'edge';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
+import PartsData from "../../public/lib/parts.json"
+import CitiesData from "../../public/lib/cities.json"
+import CarData from "../../public/lib/car-data.json"
 
-export default async function PartPage() {
-  const cities = await getCity();
-  const partsposts = await getParts();
-  const modelsform = await getFormModel();
+
+export default function PartPage() {
+  const cities = CitiesData;
+  const partsposts = PartsData;
+  const modelsform = CarData;
   return (
     <div>
-
       <div className="flex xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 2xs:grid 2xs:grid-cols-1 xs:mx-auto">
         <div className="w-3/4 2xs:w-full xs:w-full sm:w-full">
-          <main className="mx-10 xs:mx-4 2xs:mx-4 sm:mx-4 md:mx-5 mt-10 border border-gray-100 shadow-sm my-10">
+          <div className="mx-10 xs:mx-4 2xs:mx-4 sm:mx-4 md:mx-5 mt-10 border border-gray-100 shadow-sm my-10">
             <h1 className="text-blue-600 text-4xl md:text-lg lg:text-2xl font-extrabold xs:text-base 2xs:text-xs mx-10">
               <Image
                 src={Spare}
@@ -105,7 +107,7 @@ export default async function PartPage() {
                 </ul>
               </p>
             </div>
-          </main>
+          </div>
         </div>
         <div className="w-1/4 text-sm font-sans xs:w-full 2xs:w-full sm:w-full my-10">
           <div className="xs:grid xs:grid-cols-1 2xs:w-full sm:w-full md:w-full text-5xl lg:text-4xl md:text-base sm:text-2xl text-blue-400 font-bold py-4 sm:mt-5 md:mt-5 lg:mx-2 xs:text-xl  xl:text-lg 2xs:text-2xl px-5  text-justify font-sans">

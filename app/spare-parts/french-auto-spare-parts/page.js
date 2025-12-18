@@ -2,15 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import FormComponent from '../../../components/FormComponent';
-import { getFormModel, getParts } from '../../page';
 import HeroCarousel from '../../../components/HeroCarousel';
 import SearchMake from '../../../components/SearchMake';
 import StaticCities from '../../../components/StaticCities';
 import Contents from '../../../components/Contents';
+import CarData from "../../../public/lib/car-data.json"
+import PartsData from "../../../public/lib/parts.json"
 
-export default async function France() {
-  const modelforms = await getFormModel();
-  const partsposts = await getParts();
+export default function France() {
+  const modelforms = CarData;
+  const partsposts = PartsData;
   return (
     <div>
       <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">

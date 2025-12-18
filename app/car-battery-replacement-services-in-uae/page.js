@@ -5,10 +5,10 @@ import Social from '../../components/Social';
 import FormBattery from '../../components/FormBattery';
 import BatteryAccordion from '../../components/Battery-Accordion';
 import BatterySlider from '../../components/Battery-Slider';
-import { getFormModel } from '../page';
 export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
+import CarData from "../../public/lib/car-data.json"
 
 export const metadata = {
   title: 'Quick Car Battery Replacement services in UAE | Emirates-car.com',
@@ -16,8 +16,8 @@ export const metadata = {
     "Don't panic, we know your car battery dead. Contact us right away to get your car battery replacement services in Dubai, sharjah, Abu dhabi, Ajman, Al quoz and other cities irrespective of any car brands."
 };
 
-export default async function CarBatteryDubai() {
-  const modelforms = await getFormModel();
+export default function CarBatteryDubai() {
+  const modelforms = CarData;
   return (
     <div>
       <Head>
