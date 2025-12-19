@@ -14,9 +14,28 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import baseCityData from "../../../../public/lib/basecity.json"
 import PartsData from "../../../../public/lib/parts.json"
-export const revalidate = 86400;
-export const runtime = 'edge';
+export const revalidate = 1814400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
+
+const carDataByMakeModel = {};
+const carDataByMake = {};
+
+for (let i = 0; i < CarData.length; i++) {
+  const car = CarData[i];
+
+  const key = `${car.make.toLowerCase()}-${car.model.toLowerCase()}`;
+  if (!carDataByMakeModel[key]) {
+    carDataByMakeModel[key] = [];
+  }
+  carDataByMakeModel[key].push(car);
+
+  const makeLower = car.make.toLowerCase();
+  if (!carDataByMake[makeLower]) {
+    carDataByMake[makeLower] = [];
+  }
+  carDataByMake[makeLower].push(car);
+}
 
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 

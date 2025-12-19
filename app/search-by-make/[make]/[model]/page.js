@@ -8,14 +8,10 @@ import products from '../../../../public/products.json'
 import SearchModel from '../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
-import CitiesData from "../../../../public/lib/cities.json"
 import PartsData from "../../../../public/lib/parts.json"
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
-let carDataCache = null;
-let citiesDataCache = null;
-let partsDataCache = null;
 
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 

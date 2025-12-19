@@ -50,35 +50,70 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
     const featuredOnly = searchParams?.featured === "true";
 
-    /** Build filter lists */
-    const categories = [...new Set(allProducts.map((item) => item.category))];
+    const categoriesSet = new Set();
+    const enginesSet = new Set();
+    const compatSet = new Set();
 
-    const engines = [...new Set(allProducts.flatMap((item) => item.engine || []))];
+    for (let i = 0; i < allProducts.length; i++) {
+        const item = allProducts[i];
 
-    const compatibilities = [
-        ...new Set(
-            allProducts.flatMap((item) =>
-                item.compatibility.map((c) =>
+        // Categories
+        if (item.category) {
+            categoriesSet.add(item.category);
+        }
+
+        // Engines
+        if (item.engine) {
+            for (let j = 0; j < item.engine.length; j++) {
+                enginesSet.add(item.engine[j]);
+            }
+        }
+
+        // Compatibility
+        if (item.compatibility) {
+            for (let j = 0; j < item.compatibility.length; j++) {
+                const c = item.compatibility[j];
+                compatSet.add(
                     typeof c === "string"
                         ? c
-                        : `${c.make} ${c.model} ${c.years ? `(${c.years})` : ""}`
-                )
-            )
-        ),
-    ];
+                        : `${c.make} ${c.model}${c.years ? ` (${c.years})` : ""}`
+                );
+            }
+        }
+    }
+
+
+    const categories = Array.from(categoriesSet);
+    const engines = Array.from(enginesSet);
+    const compatibilities = Array.from(compatSet);
 
     /** Search filtering for inputs */
-    const filteredCategories = categories.filter((cat) =>
-        cat.toLowerCase().includes(categoryQuery.toLowerCase())
-    );
+    const filteredCategories = [];
+    const catQuery = categoryQuery.toLowerCase();
 
-    const filteredEngines = engines.filter((eng) =>
-        eng.toLowerCase().includes(engineQuery.toLowerCase())
-    );
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].toLowerCase().includes(catQuery)) {
+            filteredCategories.push(categories[i]);
+        }
+    }
 
-    const filteredCompatibilities = compatibilities.filter((comp) =>
-        comp.toLowerCase().includes(compatQuery.toLowerCase())
-    );
+    const filteredEngines = [];
+    const engQuery = engineQuery.toLowerCase();
+
+    for (let i = 0; i < engines.length; i++) {
+        if (engines[i].toLowerCase().includes(engQuery)) {
+            filteredEngines.push(engines[i]);
+        }
+    }
+
+    const filteredCompatibilities = [];
+    const compQuery = compatQuery.toLowerCase();
+
+    for (let i = 0; i < compatibilities.length; i++) {
+        if (compatibilities[i].toLowerCase().includes(compQuery)) {
+            filteredCompatibilities.push(compatibilities[i]);
+        }
+    }
 
     /** Search bar logic */
     const updateURLAndFilter = (value) => {
@@ -95,19 +130,39 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
         const q = value.toLowerCase();
 
-        const matches = allProducts
-            .filter(
-                (p) =>
-                    p.partname.toLowerCase().includes(q) ||
-                    p.partnumber.toLowerCase().includes(q) ||
-                    p.engine?.some((e) => e.toLowerCase().includes(q)) ||
-                    p.compatibility?.some((c) =>
-                        `${c.make} ${c.model} ${c.years ?? ""}`
-                            .toLowerCase()
-                            .includes(q)
-                    )
-            )
-            .slice(0, 6);
+        const matches = [];
+
+        for (let i = 0; i < allProducts.length; i++) {
+            const p = allProducts[i];
+            let match = false;
+
+            if (p.partname?.toLowerCase().includes(q)) {
+                match = true;
+            } else if (p.partnumber?.toLowerCase().includes(q)) {
+                match = true;
+            } else if (p.engine) {
+                for (let j = 0; j < p.engine.length; j++) {
+                    if (p.engine[j].toLowerCase().includes(q)) {
+                        match = true;
+                        break;
+                    }
+                }
+            } else if (p.compatibility) {
+                for (let j = 0; j < p.compatibility.length; j++) {
+                    const c = p.compatibility[j];
+                    const str = `${c.make} ${c.model} ${c.years ?? ""}`.toLowerCase();
+                    if (str.includes(q)) {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            if (match) {
+                matches.push(p);
+                if (matches.length === 6) break;
+            }
+        }
 
         setSuggestions(matches);
     };

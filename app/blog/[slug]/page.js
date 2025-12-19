@@ -7,11 +7,40 @@ export const revalidate = 1814400;
 export const runtime = 'edge';
 export const dynamicParams = false;
 
+export function generateStaticParams() {
+  try {
+    const params = [];
 
-export async function getBlog(slug) {
-  const blog = carBlog.filter(c => c.TITLE === decodeURIComponent(slug))
+    for (let i = 0; i < carBlog.length; i++) {
+      const item = carBlog[i];
 
-  return blog;
+      if (!item || !item.TITLE) continue;
+
+      params.push({
+        slug: encodeURIComponent(item.TITLE)
+      });
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating blog static params:", error);
+    return [];
+  }
+}
+
+export function getBlog(slug) {
+  const decodedSlug = decodeURIComponent(slug);
+  const result = [];
+
+  for (let i = 0; i < carBlog.length; i++) {
+    const item = carBlog[i];
+
+    if (item && item.TITLE === decodedSlug) {
+      result.push(item);
+    }
+  }
+
+  return result;
 }
 
 export default async function Blog({ params }) {

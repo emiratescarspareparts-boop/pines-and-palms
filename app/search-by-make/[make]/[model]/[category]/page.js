@@ -2,35 +2,95 @@ import React from "react";
 import { notFound } from "next/navigation";
 import productsFile from "../../../../../public/products.json";
 import CarData from "../../../../../public/lib/car-data.json"
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
+const excludedMakes = [
+    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
+    'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+    'Chery', 'Geely', 'BAIC', 'Bestune'
+];
 
-async function getMakeImage(make, model) {
+const excludedMakesSet = new Set(excludedMakes);
+
+
+function getMakeImage(make, model) {
     try {
-        const filtered = CarData.filter(
-            (i) =>
-                i.make.toLowerCase() === make.toLowerCase() &&
-                i.model.toLowerCase() === model.toLowerCase()
-        );
+        const seenImages = {};
+        const result = [];
 
-        const unique = [
-            ...new Map(filtered.map((i) => [i.img, i])).values(),
-        ];
+        const makeLower = make.toLowerCase();
+        const modelLower = model.toLowerCase();
 
-        return unique.map((i) => i.img);
+        for (let i = 0; i < CarData.length; i++) {
+            const item = CarData[i];
+
+            if (!item.make || !item.model || !item.img) continue;
+
+            if (
+                item.make.toLowerCase() === makeLower &&
+                item.model.toLowerCase() === modelLower
+            ) {
+                if (!seenImages[item.img]) {
+                    seenImages[item.img] = true;
+                    result.push(item.img);
+                }
+            }
+        }
+
+        return result;
     } catch (err) {
         return [];
     }
 }
 
-export async function generateMetadata({ params }) {
+export function generateStaticParams() {
+    try {
+        const seen = {};
+        const params = [];
+
+        for (let i = 0; i < CarData.length; i++) {
+            const item = CarData[i];
+
+            if (!item || !item.make || !item.model || !item.category) continue;
+            if (excludedMakesSet.has(item.make)) continue;
+
+            const make = item.make;
+            const model = item.model;
+            const category = item.category;
+
+            const key = make + "|" + model + "|" + category;
+
+            if (!seen[key]) {
+                seen[key] = true;
+                params.push({
+                    make,
+                    model,
+                    category,
+                });
+            }
+        }
+
+        return params;
+    } catch (error) {
+        console.error("Error static gen", error);
+        return [];
+    }
+}
+
+export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
 
-    const images = await getMakeImage(make, model);
+    const images = getMakeImage(make, model);
 
     return {
         title: `${make} ${model} ${category} | EMIRATESCAR`,
@@ -62,47 +122,70 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function CategoryPage({ params, searchParams }) {
+export default function CategoryPage({ params, searchParams }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
 
-    const partsData = await loadJSON("public/lib/parts.json");
+    const partsData = loadJSON("public/lib/parts.json");
 
-    const normalize = (x) =>
-        x?.toLowerCase().replace(/\s+/g, " ").trim() || "";
+    function normalize(x) {
+        return x ? x.toLowerCase().replace(/\s+/g, " ").trim() : "";
+    }
 
-    const productMatches = productsFile.filter((p) => {
-        const matchCompat = p.compatibility?.some(
-            (c) =>
+    const productMatches = [];
+
+    for (let i = 0; i < productsFile.length; i++) {
+        const p = productsFile[i];
+
+        if (!p || !p.compatibility) continue;
+
+        let matchCompat = false;
+
+        for (let j = 0; j < p.compatibility.length; j++) {
+            const c = p.compatibility[j];
+
+            if (
                 normalize(c.make) === normalize(make) &&
                 normalize(c.model) === normalize(model)
-        );
+            ) {
+                matchCompat = true;
+                break;
+            }
+        }
 
-        return (
+        if (
             matchCompat &&
             normalize(p.category) === normalize(category)
-        );
-    });
+        ) {
+            productMatches.push(p);
+        }
+    }
 
-    if (!productMatches || productMatches.length === 0) {
+    if (productMatches.length === 0) {
         notFound();
     }
 
-    const genericParts = partsData.filter(
-        (p) => normalize(p.category) === normalize(category)
-    );
+    const genericParts = [];
 
-    // If no products found but generic exists → show generic category list
-    const finalData =
-        productMatches.length > 0
-            ? productMatches
-            : genericParts.length > 0
-                ? genericParts
-                : [];
+    for (let i = 0; i < partsData.length; i++) {
+        const p = partsData[i];
+
+        if (normalize(p.category) === normalize(category)) {
+            genericParts.push(p);
+        }
+    }
+
+    let finalData = [];
+
+    if (productMatches.length > 0) {
+        finalData = productMatches;
+    } else if (genericParts.length > 0) {
+        finalData = genericParts;
+    }
 
     if (finalData.length === 0) {
-        return notFound()
+        return notFound();
     }
 
     return (

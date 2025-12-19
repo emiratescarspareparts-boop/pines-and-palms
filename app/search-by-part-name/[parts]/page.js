@@ -13,7 +13,7 @@ import PartsData from "../../../public/lib/parts.json"
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 export const revalidate = 1814400;
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
 

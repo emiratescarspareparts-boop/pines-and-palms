@@ -22,67 +22,100 @@ const firaSans = Fira_Sans({
 
 export default function ProductFilter({ products, allProducts, searchParams }) {
     const router = useRouter();
-    const [localQuery, setLocalQuery] = useState(searchParams.search || "");
+    const [localQuery, setLocalQuery] = useState(searchParams?.search || "");
     const [suggestions, setSuggestions] = useState([]);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [categoryQuery, setCategoryQuery] = useState("");
     const [engineQuery, setEngineQuery] = useState("");
     const [compatQuery, setCompatQuery] = useState("");
 
-    // Selected filters from URL
-    const selectedCategories = Array.isArray(searchParams["filter_car_parts[]"])
+    /** Extract selected filters */
+    const selectedCategories = Array.isArray(searchParams?.["filter_car_parts[]"])
         ? searchParams["filter_car_parts[]"]
-        : searchParams["filter_car_parts[]"]
+        : searchParams?.["filter_car_parts[]"]
             ? [searchParams["filter_car_parts[]"]]
             : [];
 
-    const selectedEngines = Array.isArray(searchParams["engine[]"])
+    const selectedEngines = Array.isArray(searchParams?.["engine[]"])
         ? searchParams["engine[]"]
-        : searchParams["engine[]"]
+        : searchParams?.["engine[]"]
             ? [searchParams["engine[]"]]
             : [];
 
-    const selectedCompat = Array.isArray(searchParams["compatibility[]"])
+    const selectedCompat = Array.isArray(searchParams?.["compatibility[]"])
         ? searchParams["compatibility[]"]
-        : searchParams["compatibility[]"]
+        : searchParams?.["compatibility[]"]
             ? [searchParams["compatibility[]"]]
             : [];
 
-    // Build unique filter options
-    const categories = [...new Set(allProducts.map((item) => item.category))];
+    const featuredOnly = searchParams?.featured === "true";
 
-    const engines = [
-        ...new Set(allProducts.flatMap((item) => item.engine || [])),
-    ];
+    const categoriesSet = new Set();
+    const enginesSet = new Set();
+    const compatSet = new Set();
 
-    const compatibilities = [
-        ...new Set(
-            allProducts.flatMap((item) =>
-                item.compatibility.map((c) =>
+    for (let i = 0; i < allProducts.length; i++) {
+        const item = allProducts[i];
+
+        // Categories
+        if (item.category) {
+            categoriesSet.add(item.category);
+        }
+
+        // Engines
+        if (item.engine) {
+            for (let j = 0; j < item.engine.length; j++) {
+                enginesSet.add(item.engine[j]);
+            }
+        }
+
+        // Compatibility
+        if (item.compatibility) {
+            for (let j = 0; j < item.compatibility.length; j++) {
+                const c = item.compatibility[j];
+                compatSet.add(
                     typeof c === "string"
                         ? c
-                        : `${c.make} ${c.model} ${c.years ? `(${c.years})` : ""
-                            }`.trim()
-                )
-            )
-        ),
-    ];
+                        : `${c.make} ${c.model}${c.years ? ` (${c.years})` : ""}`
+                );
+            }
+        }
+    }
 
 
+    const categories = Array.from(categoriesSet);
+    const engines = Array.from(enginesSet);
+    const compatibilities = Array.from(compatSet);
 
-    // Filter search lists
-    const filteredCategories = categories.filter((cat) =>
-        cat.toLowerCase().includes(categoryQuery.toLowerCase())
-    );
+    /** Search filtering for inputs */
+    const filteredCategories = [];
+    const catQuery = categoryQuery.toLowerCase();
 
-    const filteredEngines = engines.filter((eng) =>
-        eng.toLowerCase().includes(engineQuery.toLowerCase())
-    );
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].toLowerCase().includes(catQuery)) {
+            filteredCategories.push(categories[i]);
+        }
+    }
 
-    const filteredCompatibilities = compatibilities.filter((comp) =>
-        comp.toLowerCase().includes(compatQuery.toLowerCase())
-    );
+    const filteredEngines = [];
+    const engQuery = engineQuery.toLowerCase();
 
+    for (let i = 0; i < engines.length; i++) {
+        if (engines[i].toLowerCase().includes(engQuery)) {
+            filteredEngines.push(engines[i]);
+        }
+    }
+
+    const filteredCompatibilities = [];
+    const compQuery = compatQuery.toLowerCase();
+
+    for (let i = 0; i < compatibilities.length; i++) {
+        if (compatibilities[i].toLowerCase().includes(compQuery)) {
+            filteredCompatibilities.push(compatibilities[i]);
+        }
+    }
+
+    /** Search bar logic */
     const updateURLAndFilter = (value) => {
         const params = new URLSearchParams(window.location.search);
         params.set("search", value);
@@ -96,19 +129,40 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
         if (!value.trim()) return setSuggestions([]);
 
         const q = value.toLowerCase();
-        const matches = allProducts
-            .filter(
-                (p) =>
-                    p.partname.toLowerCase().includes(q) ||
-                    p.partnumber.toLowerCase().includes(q) ||
-                    p.engine?.some((e) => e.toLowerCase().includes(q)) ||
-                    p.compatibility?.some((c) =>
-                        `${c.make} ${c.model} ${c.years ?? ""}`
-                            .toLowerCase()
-                            .includes(q)
-                    )
-            )
-            .slice(0, 6);
+
+        const matches = [];
+
+        for (let i = 0; i < allProducts.length; i++) {
+            const p = allProducts[i];
+            let match = false;
+
+            if (p.partname?.toLowerCase().includes(q)) {
+                match = true;
+            } else if (p.partnumber?.toLowerCase().includes(q)) {
+                match = true;
+            } else if (p.engine) {
+                for (let j = 0; j < p.engine.length; j++) {
+                    if (p.engine[j].toLowerCase().includes(q)) {
+                        match = true;
+                        break;
+                    }
+                }
+            } else if (p.compatibility) {
+                for (let j = 0; j < p.compatibility.length; j++) {
+                    const c = p.compatibility[j];
+                    const str = `${c.make} ${c.model} ${c.years ?? ""}`.toLowerCase();
+                    if (str.includes(q)) {
+                        match = true;
+                        break;
+                    }
+                }
+            }
+
+            if (match) {
+                matches.push(p);
+                if (matches.length === 6) break;
+            }
+        }
 
         setSuggestions(matches);
     };
@@ -132,7 +186,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
                         <button
                             onClick={toggleDrawer}
                             className="mr-2 px-2 py-2 bg-blue-900 text-white rounded-full 
-                block lg:hidden"
+                                block lg:hidden"
                         >
                             {isDrawerOpen ? <X /> : <Menu />}
                         </button>
@@ -140,7 +194,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
                         {/* Search Input */}
                         <input
                             type="text"
-                            placeholder={`Search products by name, number, engine, compatibility...`}
+                            placeholder="Search products by name, number, engine, compatibility..."
                             value={localQuery}
                             onChange={handleSearchChange}
                             onKeyDown={handleKeyDown}
@@ -169,7 +223,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
             {/* Filters + Results */}
             <div className="max-w-7xl mx-auto px-4">
                 <div className="lg:grid lg:grid-cols-[20rem_1fr] xl:grid xl:grid-cols-[24rem_1fr] xxl:grid xxl:grid-cols-[28rem_1fr] md:grid md:grid-cols-[16rem_1fr] gap-6 xl:gap-4 xxl:gap-4 lg:gap-4">
-                    {/* Aside filters */}
+                    {/* Sidebar Filters */}
                     <aside
                         className={`fixed top-0 left-0 h-full lg:w-80 xl:w-96 xxl:w-auto md:w-64 bg-white shadow-lg p-4 z-50
       transform ${isDrawerOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 lg:sticky lg:translate-x-0 lg:shadow-none lg:block lg:h-auto
@@ -179,7 +233,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
        md:top-4 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto md:z-auto`}
                     >
                         {/* Mobile close */}
-                        <div className="lg:hidden xl:hidden xxl:hidden md:hidden flex justify-end p-4">
+                        <div className="lg:hidden flex justify-end p-4">
                             <button
                                 onClick={toggleDrawer}
                                 className="px-2 py-2 bg-blue-900 text-white rounded-full"
@@ -191,9 +245,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
                         <form method="get">
                             {/* Category */}
                             <fieldset>
-                                <legend
-                                    className={`font-bold my-3 text-xl ${playfair_display.className}`}
-                                >
+                                <legend className={`font-bold my-3 text-xl ${playfair_display.className}`}>
                                     Category
                                 </legend>
                                 <input
@@ -203,6 +255,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
                                     onChange={(e) => setCategoryQuery(e.target.value)}
                                     className="w-full mb-2 px-3 py-2 border rounded-md text-sm"
                                 />
+
                                 {filteredCategories.map((cat) => (
                                     <label key={cat} className={`block ${firaSans.className}`}>
                                         <input
@@ -221,9 +274,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
                             {/* Engine */}
                             <fieldset>
-                                <legend
-                                    className={`font-bold my-3 text-xl ${playfair_display.className}`}
-                                >
+                                <legend className={`font-bold my-3 text-xl ${playfair_display.className}`}>
                                     Engine
                                 </legend>
                                 <input
@@ -251,9 +302,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
                             {/* Compatibility */}
                             <fieldset>
-                                <legend
-                                    className={`font-bold my-3 text-xl ${playfair_display.className}`}
-                                >
+                                <legend className={`font-bold my-3 text-xl ${playfair_display.className}`}>
                                     Compatibility
                                 </legend>
                                 <input
@@ -279,24 +328,39 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
                             <hr className="mt-5" />
 
-                            <button
-                                type="submit"
-                                className="mt-4 w-full bg-blue-600 text-white py-2 rounded"
-                            >
+                            {/* ⭐ FEATURED ONLY FILTER */}
+                            <fieldset>
+                                <legend className={`font-bold my-3 text-xl ${playfair_display.className}`}>
+                                    Featured
+                                </legend>
+
+                                <label className={`block ${firaSans.className}`}>
+                                    <input
+                                        type="checkbox"
+                                        name="featured"
+                                        value="true"
+                                        defaultChecked={featuredOnly}
+                                        className="mr-2"
+                                    />
+                                    Show Featured Only
+                                </label>
+                            </fieldset>
+
+                            <hr className="mt-5" />
+
+                            <button type="submit" className="mt-4 w-full bg-blue-600 text-white py-2 rounded">
                                 Apply Filters
                             </button>
                         </form>
                     </aside>
 
-                    {/* Product grid */}
-                    <section className="lg:ml-0">
-                        <h2
-                            className={`text-4xl font-bold mb-4 ${playfair_display.className}`}
-                        >
-                            All Products
+                    {/* Product Grid */}
+                    <section>
+                        <h2 className={`text-4xl font-bold mb-4 ${playfair_display.className}`}>
+                            Featured Products
                         </h2>
 
-                        <p>{allProducts.length} Results</p>
+                        <p>{products.length} Results</p>
 
                         <ul className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-4 gap-6">
                             {products.length > 0 ? (
@@ -306,6 +370,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
                                     const model = compat?.model || "Unknown";
                                     const slug = `${product.partname}-${make}-${model}${compat?.years ? `-${compat.years}` : ""
                                         }-${product.partnumber}-${product.id}`;
+
                                     return (
                                         <li
                                             key={product.id}

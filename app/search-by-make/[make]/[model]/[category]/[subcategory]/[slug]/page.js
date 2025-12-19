@@ -1,17 +1,11 @@
 import products from "../../../../../../../public/products.json";
 import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
-import { Fira_Sans, Playfair_Display, Poppins, Roboto } from 'next/font/google';
-export const revalidate = 1814400;
-export const runtime = 'edge';
+import { Fira_Sans, Poppins, Roboto } from 'next/font/google';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
-
-const playfair_display = Playfair_Display({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-playfair-display',
-});
 
 const roboto = Roboto({
     subsets: ['latin'],

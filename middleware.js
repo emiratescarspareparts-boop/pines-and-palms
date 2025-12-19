@@ -31,17 +31,13 @@ export function middleware(request) {
 
     // Abusive scrapers & AI bots
     const blocked = [
-        'mj12bot',
-        'dotbot',
-        'ahrefsbot',
-        'semrushbot',
+
         'blexbot',
         'serpstatbot',
         'sistrix',
         'spbot',
         'dataforseobot',
-        'gptbot',
-        'chatgpt',
+
         'openai',
         'claudebot',
         'anthropic',

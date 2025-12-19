@@ -25,13 +25,21 @@ function getMake() {
 
 export function generateStaticParams() {
   try {
-    const params = CitiesData.map(item => ({
-      city: item.city,
-    }));
+    const params = [];
+
+    for (let i = 0; i < CitiesData.length; i++) {
+      const item = CitiesData[i];
+
+      if (!item || !item.city) continue;
+
+      params.push({
+        city: item.city,
+      });
+    }
 
     return params;
   } catch (error) {
-    console.error('Error generating static params from JSON:', error);
+    console.error("Error generating static params from JSON:", error);
     return [];
   }
 }
@@ -127,13 +135,16 @@ export function generateMetadata({ params }) {
 
 function getCityData(city) {
   const decodedCity = decodeURIComponent(city);
-  const cityData = CitiesData.find(c => c.city === decodedCity);
 
-  if (!cityData) {
-    return null;
+  for (let i = 0; i < CitiesData.length; i++) {
+    const item = CitiesData[i];
+
+    if (item && item.city === decodedCity) {
+      return item;
+    }
   }
 
-  return cityData;
+  return null;
 }
 
 export default function City({ params }) {

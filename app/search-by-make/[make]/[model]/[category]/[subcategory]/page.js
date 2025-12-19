@@ -12,9 +12,23 @@ import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/parts.json"
 
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
+
+const excludedMakes = [
+    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
+    'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+    'Chery', 'Geely', 'BAIC', 'Bestune'
+];
+
+const excludedMakesSet = new Set(excludedMakes);
 
 
 const playfair_display = Playfair_Display({
@@ -88,56 +102,130 @@ const subCity = [
     }
 ];
 
-async function getMakeImage(make, model) {
+function getMakeImage(make, model) {
     try {
-        const filtered = CarData.filter(
-            (item) =>
+        const imagesMap = {};
+        const result = [];
+
+        for (let i = 0; i < CarData.length; i++) {
+            const item = CarData[i];
+
+            if (
+                item.make &&
+                item.model &&
                 item.make.toLowerCase() === make.toLowerCase() &&
                 item.model.toLowerCase() === model.toLowerCase()
-        );
+            ) {
+                if (item.img && !imagesMap[item.img]) {
+                    imagesMap[item.img] = true;
+                    result.push(item.img);
+                }
+            }
+        }
 
-        const unique = [...new Map(filtered.map((i) => [i.img, i])).values()];
-        return unique.map((i) => i.img);
+        return result;
     } catch (e) {
         console.error("Error loading image:", e.message);
         return [];
     }
 }
 
-async function getPartsByCategory(category, subcategory) {
+function getPartsByCategory(category) {
     try {
         if (!category) return [];
-        return partsData.filter(
-            (item) => item.category.toLowerCase() === category.toLowerCase()
-        );
+
+        const result = [];
+
+        for (let i = 0; i < partsData.length; i++) {
+            const item = partsData[i];
+
+            if (
+                item.category &&
+                item.category.toLowerCase() === category.toLowerCase()
+            ) {
+                result.push(item);
+            }
+        }
+
+        return result;
     } catch (error) {
         console.error("Error filtering parts by category:", error);
         return [];
     }
 }
-async function getPartImage(subcategory) {
+function getPartImage(subcategory) {
     try {
-        const filtered = partsData.filter(item =>
-            item.parts.toLowerCase() === subcategory.toLowerCase()
-        );
+        if (!subcategory) return null;
 
-        return filtered.length ? filtered[0].img : null;
+        for (let i = 0; i < partsData.length; i++) {
+            const item = partsData[i];
+
+            if (
+                item.parts &&
+                item.parts.toLowerCase() === subcategory.toLowerCase()
+            ) {
+                return item.img || null;
+            }
+        }
+
+        return null;
     } catch (e) {
         console.error("Error loading image:", e.message);
+        return null;
+    }
+}
+
+
+export function generateStaticParams() {
+    try {
+        const unique = new Set();
+        const params = [];
+
+        for (const product of CarData) {
+            if (!product || !product.compatibility) continue;
+
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
+
+            if (!category || !subcategory) continue;
+
+            for (const fit of product.compatibility) {
+                const make = fit.make?.trim();
+                const model = fit.model?.trim();
+
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make,
+                        model,
+                        category,
+                        subcategory,
+                    });
+                }
+            }
+        }
+
+        return params;
+    } catch (error) {
+        console.error("Error generating static params", error);
         return [];
     }
 }
 
 
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
-    const partImage = await getPartImage(subcategory)
+    const partImage = getPartImage(subcategory)
 
-    const imageMake = await getMakeImage(make, model);
+    const imageMake = getMakeImage(make, model);
 
     // Products filtered only by make
     const productsForMake = productsFile.filter((p) =>
@@ -217,38 +305,47 @@ export async function generateMetadata({ params }) {
 }
 
 
-async function getModel(make) {
+function getModel(make) {
     try {
         const decodedMake = decodeURIComponent(make);
+        const seenModels = {};
+        const result = [];
 
-        const filtered = CarData.filter(item => item.make === decodedMake);
+        for (let i = 0; i < CarData.length; i++) {
+            const item = CarData[i];
 
-        const uniqueObjectArray = [
-            ...new Map(filtered.map(item => [item.model, item])).values(),
-        ];
+            if (!item.make || !item.model) continue;
 
-        return uniqueObjectArray;
+            if (item.make === decodedMake) {
+                if (!seenModels[item.model]) {
+                    seenModels[item.model] = true;
+                    result.push(item);
+                }
+            }
+        }
+
+        return result;
     } catch (error) {
-        console.error('Error reading model data:', error.message);
+        console.error("Error reading model data:", error.message);
         return [];
     }
 }
 
 
-export default async function SubcategoryPage({ params, searchParams }) {
+export default function SubcategoryPage({ params, searchParams }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
-    const partImage = await getPartImage(subcategory)
-    const partsposts = await getParts();
-    const makeArray = await getMake();
-    const imageMake = await getMakeImage(make, model);
-    const partspost = await getParts();
-    const modelsform = await getFormModel();
-    const cities = await getCity()
-    const relatedCategories = await getPartsByCategory(category, subcategory)
-    const carmodel = await getModel(make);
+    const partImage = getPartImage(subcategory)
+    const partsposts = getParts();
+    const makeArray = getMake();
+    const imageMake = getMakeImage(make, model);
+    const partspost = getParts();
+    const modelsform = getFormModel();
+    const cities = getCity()
+    const relatedCategories = getPartsByCategory(category, subcategory)
+    const carmodel = getModel(make);
     const genericParts = partsData;
 
     const normalize = (v) =>

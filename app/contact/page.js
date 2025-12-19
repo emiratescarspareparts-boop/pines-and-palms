@@ -5,8 +5,8 @@ import { getFormModel, getMake, getParts } from '../page';
 import Image from 'next/image';
 import Hero_img from '../../public/img/car-spare-parts.png';
 import Social from '../../components/Social';
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 

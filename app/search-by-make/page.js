@@ -8,7 +8,7 @@ import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 

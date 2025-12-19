@@ -4,8 +4,8 @@ import OtherHondaModels from '../../components/OtherHondaModels';
 import Link from 'next/link';
 import Image from 'next/image';
 import products from "../../public/products.json"
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 export default function HondaAccord({ searchParams }) {

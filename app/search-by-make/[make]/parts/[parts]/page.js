@@ -12,7 +12,7 @@ import hondaMakePartsData from "../../../../../public/lib/makeparts/honda.json"
 import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 export const revalidate = 1814400;
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 let carDataCache = null;
 let citiesDataCache = null;
