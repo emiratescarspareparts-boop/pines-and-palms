@@ -3,49 +3,33 @@ import Footer from '../../../components/footer';
 import RelatedPost from '../relatedpost/page';
 import Image from 'next/image';
 import carBlog from "../../../public/lib/blog.json"
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  try {
-    const params = [];
-
-    for (let i = 0; i < carBlog.length; i++) {
-      const item = carBlog[i];
-
-      if (!item || !item.TITLE) continue;
-
-      params.push({
-        slug: encodeURIComponent(item.TITLE)
-      });
-    }
-
-    return params;
-  } catch (error) {
-    console.error("Error generating blog static params:", error);
-    return [];
-  }
+  return carBlog
+    .filter(item => item?.SLUG)
+    .map(item => ({
+      slug: item.SLUG
+    }));
 }
 
 export function getBlog(slug) {
   const decodedSlug = decodeURIComponent(slug);
-  const result = [];
 
-  for (let i = 0; i < carBlog.length; i++) {
-    const item = carBlog[i];
-
-    if (item && item.TITLE === decodedSlug) {
-      result.push(item);
-    }
-  }
-
-  return result;
+  return carBlog.find(
+    (item) => item && item.SLUG === decodedSlug
+  ) || null;
 }
 
-export default async function Blog({ params }) {
+
+export default function Blog({ params }) {
   const { slug } = params;
-  const data = await getBlog(slug);
+  const data = getBlog(slug);
+  if (!data) {
+    return <div className="p-10 text-center">Blog not found</div>;
+  }
   return (
     <div>
       <div className="container mx-auto w-full xs:m-0">
@@ -67,7 +51,7 @@ export default async function Blog({ params }) {
                 {data.TIME} - {data.DATE_PUBLISHED}
               </p>
               <div className="text-base font-sans">
-                <div dangerouslySetInnerHTML={{ __html: data.CONTENT }}></div>
+                <div dangerouslySetInnerHTML={{ __html: data.CONTENT }} />
               </div>
               <div className="flex py-5">
                 <div className="h-10 w-10 rounded-full bg-gray-500"></div>

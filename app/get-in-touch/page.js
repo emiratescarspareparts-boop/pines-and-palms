@@ -3,18 +3,18 @@ import Link from 'next/link';
 import Footer from '../../components/footer';
 import Social from '../../components/Social';
 import GetInTouchForm from '../../components/GetInTouchForm';
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
-export default async function Forms() {
+export default function Forms() {
   return (
     <div>
       <div className="container place-content-center mx-auto py-6">
         <Social />
         <div className="text-center">
           <Link
-            href="/honda-accord-8th-gen-parts"
+            href="/honda-accord-8th-gen-body-parts"
             className="underline animate-pulse text-red-600 hover:text-red-800"
           >
             {' '}

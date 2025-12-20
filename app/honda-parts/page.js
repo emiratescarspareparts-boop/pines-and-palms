@@ -1,19 +1,21 @@
-import Head from 'next/head';
 import Footer from '../../components/footer';
 import Link from 'next/link';
 import OtherHondaModels from '../../components/OtherHondaModels';
 import Image from 'next/image';
 import FeaturedHonda from '../../components/featured';
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
+
+export const metadata = {
+  alternates: {
+    canonical: 'https://www.emirates-car.com/honda-parts',
+  },
+};
 
 export default function HondaParts() {
   return (
     <div>
-      <Head>
-        <link rel="canonical" href="https://www.emirates-car.com/honda-parts" />
-      </Head>
       <div className="w-3/4 mx-auto">
         <h1 className="text-3xl font-extrabold mx-auto my-5 xs:text-xl">
           Buy Car Parts - Used, Genuine, OEM (Original parts) and Aftermarket

@@ -7,32 +7,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../components/footer"
 import GetInTouchForm from "../../components/GetInTouchForm";
-import Ferrari from "../../public/img/car-logos/ferrari.webp"
-import Porsche from "../../public/img/car-logos/porsche.webp"
-import Audi from "../../public/img/car-logos/audi.webp"
-import BMW from "../../public/img/car-logos/bmw.webp"
-import Mercedes from "../../public/img/car-logos/mercedesbenz.webp"
-import RangeRover from "../../public/img/car-logos/land_rover.webp"
-import RollsRoyce from "../../public/img/car-logos/rolls-royce.webp"
-import Bentley from "../../public/img/car-logos/bentley.webp"
-import Cadillac from "../../public/img/car-logos/cadillac.webp"
-import Lexus from "../../public/img/car-logos/lexus.webp"
-import Jaguar from "../../public/img/car-logos/jaguar.webp"
-import Tesla from "../../public/img/car-logos/tesla.webp"
-import Volvo from "../../public/img/car-logos/volvo.webp"
-import Genesis from "../../public/img/car-logos/genesis.webp"
-import Koenigsegg from "../../public/img/car-logos/koenigsegg.webp"
-import Lamborghini from "../../public/img/car-logos/lamborghini.webp"
-import Maserati from "../../public/img/car-logos/maserati.webp"
-import Acura from "../../public/img/car-logos/acura.webp"
-import AlfaRomeo from "../../public/img/car-logos/alfa_romeo.webp"
-import Bugatti from "../../public/img/car-logos/bugatti.webp"
-import Mclaren from "../../public/img/car-logos/mclaren.webp"
-import AstonMartin from "../../public/img/car-logos/aston_martin.webp"
 import Link from "next/link";
 import Image from "next/image";
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 
@@ -58,95 +36,95 @@ export default function LuxuryPartsLanding() {
                 <div className="max-w-6xl mx-auto grid xl:grid-cols-4 xxl:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-4 gap-10 px-4 text-center text-gray-300">
                     <div className="mx-auto group"><Link href="/search-by-make/Ferrari">
                         <div className="transition-transform duration-300 group-hover:-rotate-12">
-                            <Image width={150} height={150} src={Ferrari} />
+                            <Image width={150} height={150} src="../../public/img/car-logos/ferrari.webp" />
                         </div>
 
                         <p className="mt-2">Ferrari</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Porsche">
                         <div className="transition-transform duration-300 group-hover:-rotate-12">
-                            <Image width={150} height={150} src={Porsche} /></div>
+                            <Image width={150} height={150} src="../../public/img/car-logos/porsche.webp" /></div>
                         <p className="mt-2">Porsche</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Audi">
                         <div className="transition-transform duration-300 group-hover:-rotate-12">
-                            <Image width={150} height={150} src={Audi} /></div>
+                            <Image width={150} height={150} src="../../public/img/car-logos/audi.webp" /></div>
                         <p className="mt-2">Audi</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/BMW"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={BMW} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/audi.webp" /></div>
                         <p className="mt-2">BMW</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Mercedes-Benz">
                         <div className="transition-transform duration-300 group-hover:-rotate-12">
-                            <Image width={150} height={150} src={Mercedes} /></div>
+                            <Image width={150} height={150} src="../../public/img/car-logos/mercedesbenz.webp" /></div>
                         <p className="mt-2">Mercedes Benz</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Land%20Rover"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={RangeRover} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/land_rover.webp" /></div>
                         <p className="mt-2">Range Rover</p></Link>
                     </div><div className="mx-auto group"><Link href="/search-by-make/Rolls-Royce"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={RollsRoyce} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/rolls-royce.webp" /></div>
                         <p className="mt-2">Rolls Royce</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Bentley"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Bentley} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/bentley.webp" /></div>
                         <p className="mt-2">Bentley</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Cadillac"><div className="transition-transform duration-300 group-hover:-rotate-12">
 
-                        <Image width={150} height={150} src={Cadillac} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/cadillac.webp" /></div>
                         <p className="mt-2">Cadillac</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Lexus"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Lexus} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/lexus.webp" /></div>
                         <p className="mt-2">Lexus</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Jaguar"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Jaguar} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/jaguar.webp" /></div>
                         <p className="mt-2">Jaguar</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Tesla"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Tesla} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/tesla.webp" /></div>
                         <p className="mt-2">Tesla</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Volvo"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Volvo} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/volvo.webp" /></div>
                         <p className="mt-2">Volvo</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Genesis"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Genesis} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/genesis.webp" /></div>
                         <p className="mt-2">Genesis</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Koenigsegg"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Koenigsegg} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/koenigsegg.webp" /></div>
                         <p className="mt-2">Koenigsegg</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Lamborghini"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Lamborghini} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/lamborghini.webp" /></div>
                         <p className="mt-2">Lamborghini</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Maserati"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Maserati} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/maserati.webp" /></div>
                         <p className="mt-2">Maserati</p></Link>
                     </div><div className="mx-auto group"><Link href="/search-by-make/Alfa%20Romeo"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={AlfaRomeo} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/alfa_romeo.webp" /></div>
                         <p className="mt-2">Alfa Romeo</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Aston%20Martin"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={AstonMartin} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/aston_martin.webp" /></div>
                         <p className="mt-2">Aston Martin</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Acura"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Acura} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/acura.webp" /></div>
                         <p className="mt-2">Acura</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Bugatti"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Bugatti} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/bugatti.webp" /></div>
                         <p className="mt-2">Bugatti</p></Link>
                     </div>
                     <div className="mx-auto group"><Link href="/search-by-make/Mclaren"><div className="transition-transform duration-300 group-hover:-rotate-12">
-                        <Image width={150} height={150} src={Mclaren} /></div>
+                        <Image width={150} height={150} src="../../public/img/car-logos/mclaren.webp" /></div>
                         <p className="mt-2">Mclaren</p></Link>
                     </div>
                 </div>

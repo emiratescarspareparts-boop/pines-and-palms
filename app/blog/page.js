@@ -4,17 +4,14 @@ import Image from 'next/image';
 import Footer from '../../components/footer.js';
 import RelatedPost from './relatedpost/page.js';
 import carBlog from "../../public/lib/blog.json"
-export const revalidate = 1814400;
-export const runtime = 'edge';
+export const revalidate = 86400;
+export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 
-async function getBlog() {
-  return carBlog;
-}
 
-export default async function Blog() {
-  const blogPost = await getBlog();
+export default function Blog() {
+  const blogPost = carBlog;
   return (
     <div>
       <div className="container mx-auto w-full">
