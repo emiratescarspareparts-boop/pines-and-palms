@@ -11,7 +11,7 @@ import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 
 const playfair_display = Playfair_Display({

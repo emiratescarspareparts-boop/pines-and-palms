@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const blockedBots = /blexbot|serpstatbot|ahrefsbot|semrushbot|dataforseobot|dotbot|petalbot|magpie-crawler|rogerbot|mj12bot|seekbot/i;
+const blockedBots = /blexbot|serpstatbot|dataforseobot|dotbot|petalbot|magpie-crawler|rogerbot|mj12bot|seekbotbytespider|baiduspider|yisouspider|sogouspider|haosouspider|scooter|shenma|qwen|ernie|kimi|doubao|deepseek|youdaobot|toutiaospider/i;
 
 export function middleware(request) {
     const ua = request.headers.get('user-agent') || '';
