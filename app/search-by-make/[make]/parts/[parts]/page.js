@@ -74,9 +74,10 @@ export async function generateStaticParams() {
     }
 }
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
     const { parts, make } = params;
-    const partsDa = await getParts()
+    const partsDa = partsData;
+    console.log("partsda", partsDa)
 
     const partEntry = partsDa.find(
         (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()

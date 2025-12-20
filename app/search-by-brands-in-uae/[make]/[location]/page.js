@@ -8,7 +8,7 @@ import SearchModel from '../../../../components/SearchModel';
 import Link from 'next/link';
 import HondaOfferButton from '../../../../components/HondaOfferButton';
 import PartsAccordion from '../../../../components/Parts-Accordion';
-import { redirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import products from "../../../../public/products.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"

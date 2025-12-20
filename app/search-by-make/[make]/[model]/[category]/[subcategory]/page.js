@@ -5,12 +5,12 @@ import Link from "next/link";
 import CarParts from '../../../../../../public/img/car-spare-parts.png';
 import Image from "next/image";
 import SearchMakeModelParts from "../../../../../../components/SearchMakeModelParts";
-import { getCity, getFormModel, getMake, getParts } from "../../../../../page";
 import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/parts.json"
+import CitiesData from "../../../../../../public/lib/cities.json"
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
@@ -101,6 +101,16 @@ const subCity = [
         "description": "."
     }
 ];
+
+function getPartsData() {
+
+    for (let i = 0; i < partsData.length; i++) {
+        const item = partsData[i];
+        return item;
+    }
+
+    return null;
+}
 
 function getMakeImage(make, model) {
     try {
@@ -304,6 +314,17 @@ export function generateMetadata({ params }) {
     };
 }
 
+function getMake() {
+    const uniqueMakes = {};
+    for (let i = 0; i < CarData.length; i++) {
+        const car = CarData[i];
+        if (!uniqueMakes[car.make]) {
+            uniqueMakes[car.make] = car;
+        }
+    }
+    return Object.values(uniqueMakes);
+}
+
 
 function getModel(make) {
     try {
@@ -338,12 +359,11 @@ export default function SubcategoryPage({ params, searchParams }) {
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
     const partImage = getPartImage(subcategory)
-    const partsposts = getParts();
+    const partsposts = partsData;
     const makeArray = getMake();
     const imageMake = getMakeImage(make, model);
-    const partspost = getParts();
-    const modelsform = getFormModel();
-    const cities = getCity()
+    const modelsform = CarData;
+    const cities = CitiesData;
     const relatedCategories = getPartsByCategory(category, subcategory)
     const carmodel = getModel(make);
     const genericParts = partsData;
@@ -436,7 +456,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                 </div>
 
                 <section className='#myForm'>
-                    <FormComponentMakeModelCatSubcat formsData={modelsform} postFilter={partspost} mke={make} model={model} subcategory={subcategory} />
+                    <FormComponentMakeModelCatSubcat formsData={modelsform} postFilter={partsposts} mke={make} model={model} subcategory={subcategory} />
                 </section>
                 <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
