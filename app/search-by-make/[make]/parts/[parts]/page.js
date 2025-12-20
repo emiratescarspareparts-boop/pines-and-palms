@@ -77,15 +77,11 @@ export async function generateStaticParams() {
 export function generateMetadata({ params }) {
     const { parts, make } = params;
     const partsDa = partsData;
-    console.log("partsda", partsDa)
 
     const partEntry = partsDa.find(
         (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
     );
 
-    if (!partEntry) {
-        redirect("/get-in-touch");
-    }
 
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
@@ -281,6 +277,17 @@ async function getPartsData(parts) {
     return filtered;
 }
 
+function getMake() {
+    const uniqueMakes = {};
+    for (let i = 0; i < CarData.length; i++) {
+        const car = CarData[i];
+        if (!uniqueMakes[car.make]) {
+            uniqueMakes[car.make] = car;
+        }
+    }
+    return Object.values(uniqueMakes);
+}
+
 
 async function getMakeImage(make) {
     try {
@@ -328,13 +335,13 @@ async function getBlog(make) {
         return [];
     }
 }
-export default async function Parts({ params, searchParams }) {
+export default function Parts({ params, searchParams }) {
     const { make, parts } = params;
-    const partsData = await getPartsData(parts);
-    const carmodel = await getModel(make)
-    const imageMake = await getMakeImage(make)
-    const partsDa = await getParts()
-    const content = await getBlog(make);
+    const partsData = getPartsData(parts);
+    const carmodel = getModel(make)
+    const imageMake = getMakeImage(make)
+    const partsDa = partsData;
+    const content = getBlog(make);
 
 
     if (!partsData || partsData.length === 0) {
@@ -416,10 +423,10 @@ export default async function Parts({ params, searchParams }) {
         notFound();
     }
 
-    const cities = await getCity();
-    const makedatas = await getMake();
-    const partsposts = await getParts();
-    const modelsform = await getFormModel();
+    const cities = CitiesData;
+    const makedatas = getMake();
+    const partsposts = partsData;
+    const modelsform = CarData;
 
 
     return (
