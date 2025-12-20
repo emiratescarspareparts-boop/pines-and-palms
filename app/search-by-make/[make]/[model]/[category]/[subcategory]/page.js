@@ -14,7 +14,7 @@ import CitiesData from "../../../../../../public/lib/cities.json"
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const excludedMakes = [
     'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',

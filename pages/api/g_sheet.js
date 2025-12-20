@@ -163,8 +163,9 @@ EMIRATESCAR
 https://www.emirates-car.com
 `
     };
-    await transporterCus.sendMail(mailOptionsCus)
+
     await transporter.sendMail(mailOptions);
+    await transporterCus.sendMail(mailOptionsCus)
     res.status(201).json(data);
   } else {
     res.status(200).json({ message: 'error' });
