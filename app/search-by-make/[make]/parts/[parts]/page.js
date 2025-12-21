@@ -47,6 +47,20 @@ const firaSans = Fira_Sans({
     variable: '--font-fira-sans',
 });
 
+const excludedMakes = [
+    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM',
+    'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi', 'W Motor', 'JAC', 'Jaecoo', 'Jetour',
+    'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye',
+    'Sandstorm', 'Chery', 'Geely', 'BAIC', 'Bestune'
+];
+
+const excludedMakesSet = new Set(excludedMakes);
 
 export function generateStaticParams() {
     try {
@@ -110,6 +124,13 @@ export function generateMetadata({ params }) {
     const partEntry = partsDa.find(
         (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
     );
+
+    if (!partEntry) {
+        return {
+            title: 'Parts not found',
+            robots: { index: false, follow: false }
+        };
+    }
 
 
     const makeFiltered = products.filter(product =>
@@ -453,7 +474,7 @@ export default function Parts({ params, searchParams }) {
                                     <div className="lg:text-left">
 
                                         <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-bold ${firaSans.className}`}>
-                                            <span className="text-blue-500">{make} {partsData.parts}</span> - Used, Genuine & Aftermarket in UAE
+                                            <span className="text-blue-500">{make} {partEntry.parts}</span> - Used, Genuine & Aftermarket in UAE
                                         </h1>
                                         <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
                                             <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
@@ -470,14 +491,15 @@ export default function Parts({ params, searchParams }) {
                                 </div>
                             </div>
                             <div className="xxs:hidden xs:hidden p-35 md:p-20 lg:p-20">
-                                <Image
-                                    src={'/img/car-logos/' + imageMake}
-                                    alt={make + ' spare parts'}
-                                    className="ml-20 md:ml-5 lg:ml-8 lg:mt-10 xl:mt-10 xxl:mt-10 xl:ml-16 xxl:ml-16"
-                                    priority
-                                    width={300}
-                                    height={300}
-                                />
+                                {imageMake && (
+                                    <Image
+                                        src={`/img/car-logos/${imageMake}`}
+                                        alt={`${make} spare parts`}
+                                        width={300}
+                                        height={300}
+                                        priority
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
@@ -527,7 +549,7 @@ export default function Parts({ params, searchParams }) {
                         >
                             Search{" "}
                             <span className="text-blue-500">
-                                {decodeURIComponent(partsData.parts)}{" "}
+                                {decodeURIComponent(partEntry.parts)}{" "}
                             </span>
                             for Any Models
                         </h2>
@@ -539,17 +561,17 @@ export default function Parts({ params, searchParams }) {
                                     p.compatibility?.some(c =>
                                         c.make.toLowerCase() === post.make.toLowerCase()
                                     ) &&
-                                    p.subcategory.toLowerCase() === decodeURIComponent(partsData.parts).toLowerCase()
+                                    p.subcategory.toLowerCase() === decodeURIComponent(partEntry.parts).toLowerCase()
                                 );
 
                                 // Build link conditionally
                                 const href = partsAvailable
-                                    ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partsData.parts)}`
+                                    ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
                                     : `/search-by-make/${encodeURIComponent(post.make)}`;
 
                                 return (
                                     <div key={i} className="border">
-                                        <Link href={href} title={`${post.make} ${decodeURIComponent(partsData.parts)}`}>
+                                        <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
                                             <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
                                                 <Image
                                                     src={`/img/car-logos/${post.img}`}
@@ -561,7 +583,7 @@ export default function Parts({ params, searchParams }) {
                                                 />
                                                 <p className="text-center font-sans font-medium text-lg">
                                                     <span className="text-blue-600">{post.make}</span>{" "}
-                                                    {decodeURIComponent(partsData.parts)}
+                                                    {decodeURIComponent(partEntry.parts)}
                                                 </p>
                                             </span>
                                         </Link>
@@ -576,7 +598,7 @@ export default function Parts({ params, searchParams }) {
                         <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
                             Search{' '}
                             <span className="text-blue-500">
-                                {decodeURIComponent(partsData.parts)}{' '}
+                                {decodeURIComponent(partEntry.parts)}{' '}
                             </span>
                             parts in UAE
                         </h2>
@@ -588,12 +610,12 @@ export default function Parts({ params, searchParams }) {
                                         as={'/search-by-cities-in-uae/' + post.city}
                                         target='_blank'
                                         title={
-                                            make + " " + decodeURIComponent(partsData.parts) + ' in ' + post.city
+                                            make + " " + decodeURIComponent(partEntry.parts) + ' in ' + post.city
                                         }
                                     >
                                         <span className="h-full hover:border-blue-600 py-auto bg-gray-100 rounded-sm">
                                             <p className={`text-center my-auto font-sans font-medium text-lg xs:text-base xxs:text-base`}>
-                                                {decodeURIComponent(partsData.parts)} in <span className='text-blue-600'>{post.city}</span>
+                                                {decodeURIComponent(partEntry.parts)} in <span className='text-blue-600'>{post.city}</span>
                                             </p>
                                         </span>
                                     </Link>
