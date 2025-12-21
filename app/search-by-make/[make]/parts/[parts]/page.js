@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import FormComponent from '../../../../../components/FormComponent';
 import TenEntries from '../../../../../components/tenentries';
 import SearchModel from '../../../../../components/SearchModel';
@@ -398,9 +398,7 @@ export default function Parts({ params, searchParams }) {
         (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
     );
 
-    if (!partEntry) {
-        redirect("/get-in-touch");
-    }
+
 
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
@@ -412,9 +410,7 @@ export default function Parts({ params, searchParams }) {
         product.subcategory.toLowerCase() === partEntry.parts.toLowerCase()
     );
 
-    if (partFiltered.length === 0) {
-        redirect("/get-in-touch");
-    }
+
 
     const filtered = partFiltered.filter(product => {
         const matchesCategory =
@@ -449,7 +445,7 @@ export default function Parts({ params, searchParams }) {
     ];
     const isExcludedMake = excludedMakes.includes(make);
     if (excludedMakes.includes(make)) {
-        redirect('/get-in-touch');
+        notFound();
     }
 
     const data = CarData.filter(item => item.make === make);
@@ -462,10 +458,11 @@ export default function Parts({ params, searchParams }) {
     const makedatas = getMake();
     const partsposts = partsData;
     const modelsform = CarData;
+    const hasPartInSubcategory = partFiltered.length > 0;
 
 
     return (
-        <>{!partEntry && (
+        <>{!hasPartInSubcategory && (
             <div className="p-6 max-w-6xl mx-auto">
                 <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold ${playfair_display.className}`}>
                     {make} {partEntry.parts} - Genuine & Aftermarket in UAE
@@ -477,7 +474,7 @@ export default function Parts({ params, searchParams }) {
                 <GetInTouchForm />
             </div>
         )}
-            {partEntry && (
+            {hasPartInSubcategory && (
                 <div className='max-w-7xl mx-auto'>
                     <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
                         <div className="bg-backgroundlight rounded-sm">
