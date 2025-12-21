@@ -11,7 +11,7 @@ import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const carDataByMakeModel = {};
 const carDataByMake = {};
@@ -74,7 +74,6 @@ export function generateStaticParams() {
 
                 if (!make || excludedMakesSet.has(make) || !uniqueMakes.has(make)) continue;
 
-                // Match subcategory from products with parts from partsData
                 for (let k = 0; k < partsData.length; k++) {
                     const part = partsData[k];
 
