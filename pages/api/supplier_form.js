@@ -58,6 +58,7 @@ async function handler(req, res) {
             spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
             range: 'supplier-sheets',
             valueInputOption: 'USER_ENTERED',
+            insertDataOption: 'INSERT_ROWS',
             auth: jwt,
             requestBody: {
                 values: [
