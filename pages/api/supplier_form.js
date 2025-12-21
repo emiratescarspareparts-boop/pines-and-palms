@@ -32,6 +32,7 @@ async function handler(req, res) {
         const {
             Timestamp,
             supplierType,
+            businessName,
             whatsapp,
             country,
             email,
@@ -40,8 +41,10 @@ async function handler(req, res) {
             makes,
         } = req.body;
 
+
         const description =
             'Ref: ' + RefNo + '\n' +
+            'Business Name: ' + businessName + '\n' +
             'Supplier Type: ' + supplierType + '\n' +
             'WhatsApp: ' + whatsapp + '\n' +
             'Country: ' + country + '\n' +

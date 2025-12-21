@@ -13,6 +13,26 @@ export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = true;
 
+const carDataByMakeModel = {};
+const carDataByMake = {};
+
+//for loop to run at build time 
+for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+
+    const key = `${car.make.toLowerCase()}-${car.model.toLowerCase()}`;
+    if (!carDataByMakeModel[key]) {
+        carDataByMakeModel[key] = [];
+    }
+    carDataByMakeModel[key].push(car);
+
+    const makeLower = car.make.toLowerCase();
+    if (!carDataByMake[makeLower]) {
+        carDataByMake[makeLower] = [];
+    }
+    carDataByMake[makeLower].push(car);
+}
+
 
 const playfair_display = Playfair_Display({
     subsets: ['latin'],
@@ -256,21 +276,19 @@ function getMake() {
 }
 
 
-async function getMakeImage(make) {
-    try {
-        const filtered = CarData.filter(item => item.make === make);
+function getMakeImage(make) {
+    const key = `${make.toLowerCase()}`;
+    const cars = carDataByMake[key];
 
-        const uniqueMkeArray = [
-            ...new Map(filtered.map(item => [item.img, item])).values(),
-        ];
+    if (!cars || cars.length === 0) return '';
 
-        const imageMake = uniqueMkeArray.map(item => item.img);
-
-        return imageMake;
-    } catch (error) {
-        console.error('Error reading make images:', error.message);
-        return [];
+    for (const car of cars) {
+        if (car.img) {
+            return car.img;
+        }
     }
+
+    return '';
 }
 
 function getModel(make) {
