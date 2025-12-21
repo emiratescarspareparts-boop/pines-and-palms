@@ -11,7 +11,7 @@ import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const carDataByMakeModel = {};
 const carDataByMake = {};
@@ -48,15 +48,58 @@ const firaSans = Fira_Sans({
 });
 
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
     try {
-        const params = partsData.map(item => ({
-            parts: item.parts,
-        }));
+        const params = [];
+        const unique = new Set();
 
+        // Step 1: Get unique makes from CarData (excluding blocked ones)
+        const uniqueMakes = new Set();
+        for (let i = 0; i < CarData.length; i++) {
+            const car = CarData[i];
+            if (car.make && !excludedMakesSet.has(car.make)) {
+                uniqueMakes.add(car.make);
+            }
+        }
+
+        // Step 2: Check which make/parts combinations actually have products
+        for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+
+            if (!product.compatibility || !product.subcategory) continue;
+
+            for (let j = 0; j < product.compatibility.length; j++) {
+                const compat = product.compatibility[j];
+                const make = compat.make;
+
+                if (!make || excludedMakesSet.has(make) || !uniqueMakes.has(make)) continue;
+
+                // Match subcategory from products with parts from partsData
+                for (let k = 0; k < partsData.length; k++) {
+                    const part = partsData[k];
+
+                    if (part.parts &&
+                        product.subcategory.toLowerCase() === part.parts.toLowerCase()) {
+
+                        const key = `${make}|${part.parts}`;
+
+                        if (!unique.has(key)) {
+                            unique.add(key);
+                            params.push({
+                                make: make,
+                                parts: part.parts
+                            });
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log(` Generated ${params.length} params (only pages with products)`);
         return params;
+
     } catch (error) {
-        console.error('Error generating static params from JSON:', error);
+        console.error(' Error generating static params:', error);
         return [];
     }
 }
