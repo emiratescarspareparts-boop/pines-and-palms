@@ -297,15 +297,6 @@ export function generateMetadata({ params }) {
     };
 }
 
-
-async function getPartsData(parts) {
-
-    const decodedParts = decodeURIComponent(parts);
-    const filtered = partsData.find(item => item.parts === decodedParts);
-
-    return filtered;
-}
-
 function getMake() {
     const uniqueMakes = {};
     for (let i = 0; i < CarData.length; i++) {
@@ -316,6 +307,7 @@ function getMake() {
     }
     return Object.values(uniqueMakes);
 }
+
 
 
 function getMakeImage(make) {
@@ -335,15 +327,22 @@ function getMakeImage(make) {
 
 function getModel(make) {
     try {
-        const decodedMake = decodeURIComponent(make);
+        const decodedMake = decodeURIComponent(make).toLowerCase();
+        const cars = carDataByMake[decodedMake] || [];
 
-        const filtered = CarData.filter(item => item.make === decodedMake);
+        const result = [];
+        const seenModels = {};
 
-        const uniqueObjectArray = [
-            ...new Map(filtered.map(item => [item.model, item])).values(),
-        ];
+        for (let i = 0; i < cars.length; i++) {
+            const item = cars[i];
 
-        return uniqueObjectArray;
+            if (!seenModels[item.model]) {
+                seenModels[item.model] = true;
+                result.push(item);
+            }
+        }
+
+        return result;
     } catch (error) {
         console.error('Error reading model data:', error.message);
         return [];
@@ -353,7 +352,6 @@ function getModel(make) {
 
 export default function Parts({ params, searchParams }) {
     const { make, parts } = params;
-    const partsDat = getPartsData(parts);
     const carmodel = getModel(make)
     const imageMake = getMakeImage(make)
     const partsDa = partsData;
