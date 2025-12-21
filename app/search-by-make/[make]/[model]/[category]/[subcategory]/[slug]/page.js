@@ -5,7 +5,7 @@ import { Fira_Sans, Poppins, Roboto } from 'next/font/google';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const roboto = Roboto({
     subsets: ['latin'],
@@ -38,10 +38,10 @@ export async function generateStaticParams() {
                 const slug = `${product.partname}-${compat.make}-${compat.model}-${compat.years}-${product.partnumber}-${product.id}`;
 
                 params.push({
-                    make: encodeURIComponent(compat.make),
-                    model: encodeURIComponent(compat.model),
-                    category: encodeURIComponent(product.category),
-                    slug: encodeURIComponent(slug),
+                    make: compat.make,
+                    model: compat.model,
+                    category: product.category,
+                    slug: slug,
                 });
             });
         }
