@@ -11,7 +11,7 @@ import CarData from "../../../../public/lib/car-data.json"
 import PartsData from "../../../../public/lib/parts.json"
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 

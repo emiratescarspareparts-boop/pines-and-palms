@@ -12,7 +12,7 @@ import CitiesData from "../../../../../public/lib/cities.json"
 import GetInTouchForm from '../../../../../components/GetInTouchForm';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const carDataByMakeModel = {};
 const carDataByMake = {};
