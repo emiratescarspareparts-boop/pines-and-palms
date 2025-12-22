@@ -6,7 +6,7 @@ import TenEntries from '../../../../../components/tenentries';
 import SearchModel from '../../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import products from "../../../../../public/products.json"
-import partsData from "../../../../../public/lib/parts.json"
+import partsData from "../../../../../public/lib/filteredparts.json"
 import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 import GetInTouchForm from '../../../../../components/GetInTouchForm';
