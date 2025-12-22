@@ -134,25 +134,6 @@ const baseCity = [{
 ];
 
 
-export function generateStaticParams() {
-  try {
-    const uniquePairs = new Map();
-
-    for (let i = 0; i < CarData.length; i++) {
-      const car = CarData[i];
-      if (!excludedMakesSet.has(car.make)) {
-        const key = `${car.make}-${car.model}`;
-        if (!uniquePairs.has(key)) {
-          uniquePairs.set(key, { make: car.make, model: car.model });
-        }
-      }
-    }
-    return Array.from(uniquePairs.values());
-  } catch (error) {
-    console.error('Error ststic gen', error);
-    return [];
-  }
-}
 
 export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);

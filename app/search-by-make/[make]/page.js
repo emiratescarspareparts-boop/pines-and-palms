@@ -137,29 +137,6 @@ for (let i = 0; i < CarData.length; i++) {
   carDataByMake[makeLower].push(car);
 }
 
-export function generateStaticParams() {
-  try {
-    const seen = new Set();
-    const params = [];
-
-    for (let i = 0; i < CarData.length; i++) {
-      const make = CarData[i].make;
-
-      if (excludedMakes.indexOf(make) !== -1) continue;
-
-      if (!seen.has(make)) {
-        seen.add(make);
-        params.push({ make });
-      }
-    }
-
-    return params;
-  } catch (error) {
-    console.error('Error:', error);
-    return [];
-  }
-}
-
 
 function getModel(make) {
   const makeLower = make.toLowerCase();
