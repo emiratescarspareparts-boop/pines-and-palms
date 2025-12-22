@@ -186,6 +186,48 @@ function getPartImage(subcategory) {
 }
 
 
+export function generateStaticParams() {
+    try {
+        const unique = new Set();
+        const params = [];
+
+        for (const product of productsFile) {
+            if (!product || !product.compatibility) continue;
+
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
+
+            if (!category || !subcategory) continue;
+
+            for (const fit of product.compatibility) {
+                const make = fit.make?.trim();
+                const model = fit.model?.trim();
+
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make,
+                        model,
+                        category,
+                        subcategory,
+                    });
+                }
+            }
+        }
+
+        return params;
+    } catch (error) {
+        console.error("Error generating static params", error);
+        return [];
+    }
+}
+
+
+
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
