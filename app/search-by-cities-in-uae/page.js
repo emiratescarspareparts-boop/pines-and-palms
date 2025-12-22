@@ -3,7 +3,7 @@ import FormComponent from '../../components/FormComponent';
 import Link from 'next/link';
 import Count from '../../components/service-countup';
 import SearchCity from '../../components/SearchCity';
-import { Playfair_Display } from 'next/font/google';
+import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
@@ -11,6 +11,58 @@ import Image from 'next/image';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
+
+const firaSans = Fira_Sans({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira-sans',
+});
+
+const grouped = {};
+
+for (let i = 0; i < CitiesData.length; i++) {
+  const baseCity = CitiesData[i].basecity;
+
+  if (!grouped[baseCity]) {
+    grouped[baseCity] = [];
+  }
+
+  grouped[baseCity].push(CitiesData[i]);
+}
+
+const getBaseCityImage = (baseCity) => {
+  const key = baseCity
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ");
+
+  switch (key) {
+    case "abu dhabi":
+      return "/img/flags/abudhabi.png";
+
+    case "dubai":
+      return "/img/flags/dubai.png";
+
+    case "sharjah":
+      return "/img/flags/sharjah.png";
+
+    case "ajman":
+      return "/img/flags/ajman.png";
+
+    case "Umm Al Quwain":
+      return "/img/flags/ummalquwain.png";
+
+    case "ras al khaimah":
+      return "/img/flags/rasalkhaimah.png";
+
+    case "fujairah":
+      return "/img/flags/fujairah.webp";
+
+    default:
+      return "/img/flags/uae.webp";
+  }
+};
 
 
 function getMake() {
@@ -46,7 +98,7 @@ export default function Cities() {
   const makeData = getMake();
 
   return (
-    <div>
+    <div className='max-w-7xl mx-auto'>
       <div className=" bg-white">
         {/* Hero Section */}
         <div className="container mx-auto px-6 py-6">
@@ -107,7 +159,42 @@ export default function Cities() {
 
       </div>
 
+      <div className="place-content-center grid grid-cols-1 gap-3 xs:grid-cols-1 xs:grid s:grid s:grid-cols-1 py-5 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-5 mx-10">
+        {Object.keys(grouped).map((baseCity) => (
+          <div key={baseCity}>
+            <div className="flex items-center gap-3 mb-6">
+              <Image
+                src={getBaseCityImage(baseCity)}
+                alt={`${baseCity} auto spare parts`}
+                width={40}
+                height={32}
+                className="object-contain"
+              />
+              <h3 className="text-2xl font-bold">
+                {baseCity}
+              </h3>
+            </div>
 
+            <div className="grid grid-cols-4 xxl:grid-cols-4 xl:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {grouped[baseCity].map((city) => (
+                <div
+                  key={city.id}
+                  className="border rounded-sm p-4 hover:shadow-stone-500 hover:drop-shadow-lg"
+                ><Link
+                  href={`/search-by-cities-in-uae/${city.city}`}
+                  as={`/search-by-cities-in-uae/[city]`}
+                  className="text-lg mt-2 inline-block hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                    <p className={`text-base font-medium ${firaSans.className}`}>{city.city}</p>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="place-content-center grid grid-cols-1 gap-3 xs:grid-cols-1 xs:grid s:grid s:grid-cols-1 py-5 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-5 mx-10">
         <FormComponent formsData={modelsform} postFilter={partsposts} />
       </div>

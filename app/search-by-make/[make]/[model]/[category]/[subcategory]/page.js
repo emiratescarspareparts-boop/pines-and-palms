@@ -9,7 +9,7 @@ import SearchCity from "../../../../../../components/SearchCity";
 import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
-import partsData from "../../../../../../public/lib/parts.json"
+import partsData from "../../../../../../public/lib/filteredparts.json"
 import CitiesData from "../../../../../../public/lib/cities.json"
 
 export const revalidate = 86400;
