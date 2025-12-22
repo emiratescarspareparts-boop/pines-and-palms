@@ -51,39 +51,7 @@ function getMakeImage(make, model) {
     }
 }
 
-export function generateStaticParams() {
-    try {
-        const seen = {};
-        const params = [];
 
-        for (let i = 0; i < CarData.length; i++) {
-            const item = CarData[i];
-
-            if (!item || !item.make || !item.model || !item.category) continue;
-            if (excludedMakesSet.has(item.make)) continue;
-
-            const make = item.make;
-            const model = item.model;
-            const category = item.category;
-
-            const key = make + "|" + model + "|" + category;
-
-            if (!seen[key]) {
-                seen[key] = true;
-                params.push({
-                    make,
-                    model,
-                    category,
-                });
-            }
-        }
-
-        return params;
-    } catch (error) {
-        console.error("Error static gen", error);
-        return [];
-    }
-}
 
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
