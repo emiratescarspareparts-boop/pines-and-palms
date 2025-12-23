@@ -1,5 +1,6 @@
 import '../../styles/globals.css';
 import Navbar from '../../components/nav';
+import Script from 'next/script';
 
 export const viewport = {
   width: 'device-width',

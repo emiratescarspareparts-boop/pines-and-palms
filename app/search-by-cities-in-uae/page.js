@@ -99,6 +99,7 @@ export default function Cities() {
 
   return (
     <div className='max-w-7xl mx-auto'>
+
       <div className=" bg-white">
         {/* Hero Section */}
         <div className="container mx-auto px-6 py-6">
