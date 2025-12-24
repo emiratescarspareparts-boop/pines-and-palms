@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function FormComponent({ formsData, postFilter }) {
+export default function FormComponent({ formsData }) {
   const [Year, setYear] = useState('');
   const [Make, setMake] = useState('');
   const [Model, setModel] = useState('');
@@ -18,11 +18,111 @@ export default function FormComponent({ formsData, postFilter }) {
   const [Name, setName] = useState('');
   const [Code, setCode] = useState('');
 
+  const postFilter = ['Total Abu Al Bukhoosh Abu Dhabi',
+    'Abu Dhabi',
+    'Abu Musa Island',
+    'Ahmed bin Rashid Free Zone',
+    'Ajman',
+    'Al Ain',
+    'Al Barsha',
+    'Al Dhafra or Western Region',
+    'Al Fujairah',
+    'Al Hamriyah',
+    'AlJazeera Port',
+    'Al Jeer Port',
+    'Al Mafraq',
+    'Al Quoz',
+    'Al Sufouh',
+    'Al Ruways Industrial City',
+    'Arzanah Island',
+    'Das Island',
+    'Deira',
+    'Dibba Al Fujairah',
+    'Dubai',
+    'Dubai World Central',
+    'Esnnad',
+    'Sea Port',
+    'Free Port',
+    'Habshan',
+    'Abu Hail',
+    'Hamriya Free Zone Port',
+    'Al Jarf',
+    'Hatta',
+    'Sea Port',
+    'Sea Port',
+    'Mina Jebel Ali',
+    'Jebel Ali Free Zone',
+    'Al Dhannah City or Jebel Dhanna',
+    'Jumeirah',
+    'Kalba',
+    'Khalidiya',
+    'Khor Fakkan',
+    'Masfut',
+    'Khalid Port',
+    'Khalifa City',
+    'Mina Rashid Port',
+    'Mina Saqr',
+    'Mina Zayed',
+    'Minhad',
+    'Mirfa',
+    'Mubarek Tower',
+    'Mubarraz Island',
+    'Musaffah',
+    'Mussafah',
+    'Offshore Marine Services',
+    'Port Rashid or Al Mina',
+    'Ras Al Khor Port',
+    'Rak Maritime City',
+    'Ras al Khaimah',
+    'Ras Al Khor',
+    'Al Ras',
+    'Al Reem Island',
+    'Al Ruways Industrial City',
+    'Ruwais Port Abu Dhabi',
+    'Saadiyat Island',
+    'Sharjah',
+    'Al Sila',
+    'Stevin Rock',
+    'Sweihan',
+    'The Palm Jumeirah',
+    'Umm al Nar',
+    'Umm al Quwain',
+    'Al Qurayyah',
+    'Yas Island',
+    'Zirku Island',
+    'Sheikh Zayed Road',
+    'Business Bay',
+    'Downtown Dubai',
+    'Al Badaa',
+    'Al Satwa',
+    'Zaabeel',
+    'Trade Centre',
+    'Al Karama',
+    'Oud Metha',
+    'Al Jaddaf',
+    'Al Wasl',
+    'Al Safa',
+    'Umm Suqeim',
+    'Jumeirah Village Circle',
+    'Dubai Investments Park',
+    'Mirdif',
+    'Al Twar',
+    'Al Khawaneej',
+    'Al Warqa',
+    'Dubai Silicon Oasis',
+    'Al Thammam',
+    'Golf City',
+    'Umm Ramool',
+    'Al Qusais',
+    'Al Nahda',
+    'Al Rashidiya',
+    'Nad al Sheba',]
+
   useEffect(() => {
     const loadPart = async () => {
       var part = [];
       for (var i in postFilter) {
-        var filtered = postFilter[i].parts;
+        var filtered = postFilter[i];
         part.push(filtered);
       }
       setFormPartname(part);

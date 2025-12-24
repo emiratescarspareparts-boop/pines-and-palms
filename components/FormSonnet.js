@@ -1,8 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ChevronRight, Car, Package, User, MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
+import { ChevronRight, Car, User, MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
 
-export default function FormSonnet({ formsData = [], postFilter = [] }) {
+export default function FormSonnet({ formsData = [] }) {
     const [currentStep, setCurrentStep] = useState(1);
     const [Year, setYear] = useState('');
     const [Make, setMake] = useState('');
@@ -15,22 +15,127 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
     const [Address, setAddress] = useState('');
     const [Name, setName] = useState('');
     const [Code, setCode] = useState('');
+    const [submissionData, setSubmissionData] = useState(null);
     const [partInputs, setPartInputs] = useState([
         { id: 1, value: '', suggestions: [], isCustom: false },
     ]);
     const [nextPartId, setNextPartId] = useState(2);
 
+    const postFilter = ['Total Abu Al Bukhoosh Abu Dhabi',
+        'Abu Dhabi',
+        'Abu Musa Island',
+        'Ahmed bin Rashid Free Zone',
+        'Ajman',
+        'Al Ain',
+        'Al Barsha',
+        'Al Dhafra or Western Region',
+        'Al Fujairah',
+        'Al Hamriyah',
+        'AlJazeera Port',
+        'Al Jeer Port',
+        'Al Mafraq',
+        'Al Quoz',
+        'Al Sufouh',
+        'Al Ruways Industrial City',
+        'Arzanah Island',
+        'Das Island',
+        'Deira',
+        'Dibba Al Fujairah',
+        'Dubai',
+        'Dubai World Central',
+        'Esnnad',
+        'Sea Port',
+        'Free Port',
+        'Habshan',
+        'Abu Hail',
+        'Hamriya Free Zone Port',
+        'Al Jarf',
+        'Hatta',
+        'Sea Port',
+        'Sea Port',
+        'Mina Jebel Ali',
+        'Jebel Ali Free Zone',
+        'Al Dhannah City or Jebel Dhanna',
+        'Jumeirah',
+        'Kalba',
+        'Khalidiya',
+        'Khor Fakkan',
+        'Masfut',
+        'Khalid Port',
+        'Khalifa City',
+        'Mina Rashid Port',
+        'Mina Saqr',
+        'Mina Zayed',
+        'Minhad',
+        'Mirfa',
+        'Mubarek Tower',
+        'Mubarraz Island',
+        'Musaffah',
+        'Mussafah',
+        'Offshore Marine Services',
+        'Port Rashid or Al Mina',
+        'Ras Al Khor Port',
+        'Rak Maritime City',
+        'Ras al Khaimah',
+        'Ras Al Khor',
+        'Al Ras',
+        'Al Reem Island',
+        'Al Ruways Industrial City',
+        'Ruwais Port Abu Dhabi',
+        'Saadiyat Island',
+        'Sharjah',
+        'Al Sila',
+        'Stevin Rock',
+        'Sweihan',
+        'The Palm Jumeirah',
+        'Umm al Nar',
+        'Umm al Quwain',
+        'Al Qurayyah',
+        'Yas Island',
+        'Zirku Island',
+        'Sheikh Zayed Road',
+        'Business Bay',
+        'Downtown Dubai',
+        'Al Badaa',
+        'Al Satwa',
+        'Zaabeel',
+        'Trade Centre',
+        'Al Karama',
+        'Oud Metha',
+        'Al Jaddaf',
+        'Al Wasl',
+        'Al Safa',
+        'Umm Suqeim',
+        'Jumeirah Village Circle',
+        'Dubai Investments Park',
+        'Mirdif',
+        'Al Twar',
+        'Al Khawaneej',
+        'Al Warqa',
+        'Dubai Silicon Oasis',
+        'Al Thammam',
+        'Golf City',
+        'Umm Ramool',
+        'Al Qusais',
+        'Al Nahda',
+        'Al Rashidiya',
+        'Nad al Sheba',]
+
     useEffect(() => {
         const loadPart = async () => {
             var part = [];
             for (var i in postFilter) {
-                var filtered = postFilter[i].parts;
+                var filtered = postFilter[i];
                 part.push(filtered);
             }
             setFormPartname(part);
         };
         loadPart();
     }, [postFilter]);
+
+    useEffect(() => {
+        setYear('');
+    }, [Make, Model]);
 
     const onSuggestionHandler = text => {
         setText(text);
@@ -74,12 +179,24 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
         const dateTime = date + ' ' + time;
         const partsText = getSelectedParts().join(', ');
 
+        const submissionInfo = {
+            date: dateTime,
+            vehicle: `${Year} ${Make} ${Model}`,
+            parts: partsText,
+            name: Name,
+            location: Address,
+            phone: Code + Whatsappno,
+            email: Email
+        };
+
+        setSubmissionData(submissionInfo);
+
         const response = fetch(`/api/g_sheet`, {
             method: 'POST',
             body: JSON.stringify({
                 Timestamp: dateTime,
                 brand: Make,
-                contact: Code + Whatsappno,
+                contact: Whatsappno,
                 name: Name,
                 description: 'Customer Name: ' + Name + '\n' + 'Address: ' + Address + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText,
                 partList: partsText,
@@ -92,8 +209,9 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                 'Content-Type': 'application/json',
             },
         });
+        setCurrentStep(4)
 
-        alert('Form submitted. We will contact you shortly ;)');
+
         setName('');
         setCode('');
         setYear('');
@@ -105,7 +223,6 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
         setWhatsappno('');
         setPartInputs([{ id: 1, value: '', showSuggestions: false, isCustom: false, customName: '' }]);
         setNextPartId(2);
-        setCurrentStep(1);
     }
 
     const nextStep = () => {
@@ -116,7 +233,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
         if (currentStep > 1) setCurrentStep(currentStep - 1);
     };
 
-    const canProceedStep1 = Name && Code && Whatsappno;
+    const canProceedStep1 = Name && Whatsappno;
     const canProceedStep2 = Year && Make && Model;
 
     const addPartField = () => {
@@ -162,7 +279,6 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
     const canProceedStep3 = getSelectedParts().length > 0;
 
 
-
     const handlePartInputChange = (id, value) => {
         const matches = formPartname.filter(part => {
             const regex = new RegExp(`${value}`, 'gi');
@@ -182,16 +298,16 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 px-4">
             <div className="max-w-7xl mx-auto">
-                <div className="grid xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 gap-8 items-start">
+                <div className="grid grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 lg:gap-8 xl:gap-8 xxl:gap-8 gap-4 items-start">
 
                     {/* Marketing Content */}
                     <div className="lg:sticky lg:top-8 space-y-6">
-                        <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white shadow-2xl">
-                            <h1 className="text-5xl font-bold mb-6 leading-tight">
+                        <div className="bg-gradient-to-br from-blue-700 via-blue-700 to-blue-300 rounded-3xl p-12 text-white shadow-2xl">
+                            <h4 className="text-5xl xxs:text-3xl xs:text-3xl s:text-3xl font-bold mb-6 leading-tight">
                                 Find Your Perfect Auto Parts
-                            </h1>
-                            <p className="text-xl mb-8 text-blue-100">
-                                Get instant quotes from verified suppliers across the UAE. Quality parts, competitive prices, fast delivery.
+                            </h4>
+                            <p className="text-xl xl:text-base xxl:text-base xs:text-base s:text-base mb-8 text-blue-100">
+                                Get instant quotes with optimal rates pre-compared and filtered from verified suppliers across the UAE. Quality parts, competitive prices, fast delivery.
                             </p>
 
                             <div className="space-y-4">
@@ -201,7 +317,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Verified Suppliers</h3>
-                                        <p className="text-blue-100">Access to over 500+ trusted auto parts suppliers</p>
+                                        <p className="text-blue-100 text-xl xl:text-base xxl:text-base xs:text-base s:text-base">We have a community of 500+ trusted auto parts suppliers partnered with us.</p>
                                     </div>
                                 </div>
 
@@ -210,8 +326,8 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                         <CheckCircle className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-lg mb-1">Quick Response</h3>
-                                        <p className="text-blue-100">Get quotes within 24 hours guaranteed</p>
+                                        <h3 className="font-semibold text-lg mb-1">Dedicated services</h3>
+                                        <p className="text-blue-100 text-xl xl:text-base xxl:text-base xs:text-base s:text-base">Get 100% professional assistance from our expert</p>
                                     </div>
                                 </div>
 
@@ -221,7 +337,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Best Prices</h3>
-                                        <p className="text-blue-100">Compare prices and save up to 40% on parts</p>
+                                        <p className="text-blue-100 text-xl xl:text-base xxl:text-base xs:text-base s:text-base">Our optimal rates saves you up to 40% on parts</p>
                                     </div>
                                 </div>
                             </div>
@@ -229,15 +345,15 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                             <div className="mt-10 pt-8 border-t border-white/20">
                                 <div className="grid grid-cols-3 gap-6 text-center">
                                     <div>
-                                        <div className="text-4xl font-bold mb-2">500+</div>
+                                        <div className="text-4xl xl:text-xl xxl:text-xl xs:text-xl s:text-xl font-bold mb-2">500+</div>
                                         <div className="text-sm text-blue-100">Suppliers</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-bold mb-2">50K+</div>
+                                        <div className="text-4xl xl:text-xl xxl:text-xl xs:text-xl s:text-xl  font-bold mb-2">50K+</div>
                                         <div className="text-sm text-blue-100">Parts Found</div>
                                     </div>
                                     <div>
-                                        <div className="text-4xl font-bold mb-2">98%</div>
+                                        <div className="text-4xl xl:text-xl xxl:text-xl xs:text-xl s:text-xl  font-bold mb-2">98%</div>
                                         <div className="text-sm text-blue-100">Satisfaction</div>
                                     </div>
                                 </div>
@@ -277,13 +393,13 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                         {/* Progress Bar */}
                         <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-6">
                             <div className="flex items-center justify-between mb-4">
-                                {[1, 2, 3].map((step) => (
+                                {[1, 2, 3, 4].map((step) => (
                                     <div key={step} className="flex items-center flex-1">
                                         <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${currentStep >= step ? 'bg-white text-purple-600' : 'bg-white/30 text-white'
                                             }`}>
                                             {step}
                                         </div>
-                                        {step < 3 && (
+                                        {step < 4 && (
                                             <div className={`flex-1 h-1 mx-2 rounded transition-all ${currentStep > step ? 'bg-white' : 'bg-white/30'
                                                 }`} />
                                         )}
@@ -295,6 +411,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                     {currentStep === 1 && 'Personal Information'}
                                     {currentStep === 2 && 'Vehicle Details'}
                                     {currentStep === 3 && 'Parts & Contact'}
+                                    {currentStep === 4 && 'Inquiry Submitted Successfully!'}
                                 </h2>
                             </div>
                         </div>
@@ -339,17 +456,10 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                                 WhatsApp Number
                                             </label>
                                             <div className="flex gap-3">
+
                                                 <input
                                                     type="text"
-                                                    placeholder="+971"
-                                                    className="w-24 border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                                    onChange={(e) => setCode(e.target.value)}
-                                                    value={Code}
-                                                    required
-                                                />
-                                                <input
-                                                    type="text"
-                                                    placeholder="50 123 4567"
+                                                    placeholder="+971501234567"
                                                     className="flex-1 border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
                                                     onChange={(e) => setWhatsappno(e.target.value)}
                                                     value={Whatsappno}
@@ -392,20 +502,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                             {currentStep === 2 && (
                                 <div className="space-y-6 animate-fadeIn">
                                     <div className="space-y-4">
-                                        <div>
-                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                                <Car className="w-4 h-4" />
-                                                Year
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder="e.g., 2020"
-                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                                onChange={(e) => setYear(e.target.value)}
-                                                value={Year}
-                                                required
-                                            />
-                                        </div>
+
 
                                         <div>
                                             <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
@@ -446,6 +543,31 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                                 ))}
                                             </select>
                                         </div>
+
+                                        <div>
+                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                                <Car className="w-4 h-4" />
+                                                Year
+                                            </label>
+                                            <select
+                                                required
+                                                onChange={(e) => setYear(e.target.value)}
+                                                value={Year}
+                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                                disabled={!Make || !Model}
+                                            >
+                                                <option value="" disabled defaultValue>Select vehicle Year</option>
+                                                {[...new Set(
+                                                    formsData
+                                                        .filter(s => s.make === Make && s.model === Model)
+                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
+                                                )]
+                                                    .sort((a, b) => b - a)
+                                                    .map((year, i) => (
+                                                        <option key={i} value={year}>{year}</option>
+                                                    ))}
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div className="flex gap-3">
@@ -461,7 +583,7 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                             onClick={nextStep}
                                             disabled={!canProceedStep2}
                                             className={`flex-1 py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep2
-                                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                                                ? 'bg-gradient-to-r from-blue-600 to-blue-300 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                                                 : 'bg-gray-300 cursor-not-allowed'
                                                 }`}
                                         >
@@ -545,6 +667,57 @@ export default function FormSonnet({ formsData = [], postFilter = [] }) {
                                     </div>
                                 </>
                             )}
+
+                            {/* Step 4: Success */}
+                            {currentStep === 4 && submissionData && (
+                                <div className="text-center space-y-6 animate-fadeIn">
+
+                                    <CheckCircle className="w-24 h-24 text-green-500 mx-auto" />
+
+                                    <h2 className="text-3xl font-bold text-gray-800">
+                                        Inquiry Submitted Successfully!
+                                    </h2>
+
+                                    <p className="text-gray-600">
+                                        Our team will contact you based on stock availability.
+                                    </p>
+
+                                    <div className="bg-gray-50 rounded-2xl p-6 text-left space-y-3">
+                                        <h3 className="font-semibold text-lg text-gray-800">
+                                            Inquiry Details
+                                        </h3>
+
+                                        <p><strong><Car className="w-4 h-4" />Name:</strong> {submissionData.name}</p>
+                                        <p><strong>Phone:</strong> {submissionData.phone}</p>
+                                        <p><strong>Email:</strong> {submissionData.email || '—'}</p>
+                                        <p><strong>Location:</strong> {submissionData.location}</p>
+                                        <p><strong>Vehicle:</strong> {submissionData.vehicle}</p>
+                                        <p><strong> Parts:</strong> {submissionData.parts}</p>
+                                        <p className="text-sm text-gray-400">
+                                            Submitted on {submissionData.date}
+                                        </p>
+                                    </div>
+
+                                    <button
+                                        onClick={() => {
+                                            setSubmissionData(null);
+                                            setCurrentStep(1);
+                                            setName('');
+                                            setEmail('');
+                                            setWhatsappno('');
+                                            setAddress('');
+                                            setYear('');
+                                            setMake('');
+                                            setModel('');
+                                            setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
+                                        }}
+                                        className="mt-6 px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl"
+                                    >
+                                        Submit Another Inquiry
+                                    </button>
+                                </div>
+                            )}
+
                         </form>
                     </div>
                 </div>
