@@ -366,7 +366,7 @@ export default function FormComponent({ formsData, postFilter }) {
           Name +
           '\n' +
           'Address: ' +
-          Address +
+          textCity +
           '\n' +
           'Vehicle: ' +
           Make +
