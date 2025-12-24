@@ -262,6 +262,9 @@ export default function Parts({ params, searchParams }) {
             </div>
           </div>
 
+
+
+
           <section
             aria-labelledby={`${parts}`}
             className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
