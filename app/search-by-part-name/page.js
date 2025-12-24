@@ -60,8 +60,6 @@ export default function PartPage() {
                 ))}
               </div>
             </section>
-
-
             <div className="place-content-center grid grid-cols-1 gap-3 xs:grid-cols-1 xs:grid s:grid s:grid-cols-1 py-5 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-5 mx-10">
               <Social />
               <FormComponent formsData={modelsform} postFilter={partsposts} />

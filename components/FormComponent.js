@@ -17,8 +17,137 @@ export default function FormComponent({ formsData, postFilter }) {
   const [formMakeChange, setFormMakeChange] = useState('');
   const [Name, setName] = useState('');
   const [Code, setCode] = useState('');
+  const [formCities, setFormCities] = useState([]);
+  const [suggestionCity, setCitySuggestion] = useState([]);
+  const [textCity, setCityText] = useState('');
 
+  const postCities = ['Total Abu Al Bukhoosh Abu Dhabi',
+    'Abu Dhabi',
+    'Abu Musa Island',
+    'Ahmed bin Rashid Free Zone',
+    'Ajman',
+    'Al Ain',
+    'Al Barsha',
+    'Al Dhafra or Western Region',
+    'Al Fujairah',
+    'Al Hamriyah',
+    'AlJazeera Port',
+    'Al Jeer Port',
+    'Al Mafraq',
+    'Al Quoz',
+    'Al Sufouh',
+    'Al Ruways Industrial City',
+    'Arzanah Island',
+    'Das Island',
+    'Deira',
+    'Dibba Al Fujairah',
+    'Dubai',
+    'Dubai World Central',
+    'Esnnad',
+    'Sea Port',
+    'Free Port',
+    'Habshan',
+    'Abu Hail',
+    'Hamriya Free Zone Port',
+    'Al Jarf',
+    'Hatta',
+    'Sea Port',
+    'Sea Port',
+    'Mina Jebel Ali',
+    'Jebel Ali Free Zone',
+    'Al Dhannah City or Jebel Dhanna',
+    'Jumeirah',
+    'Kalba',
+    'Khalidiya',
+    'Khor Fakkan',
+    'Masfut',
+    'Khalid Port',
+    'Khalifa City',
+    'Mina Rashid Port',
+    'Mina Saqr',
+    'Mina Zayed',
+    'Minhad',
+    'Mirfa',
+    'Mubarek Tower',
+    'Mubarraz Island',
+    'Musaffah',
+    'Mussafah',
+    'Offshore Marine Services',
+    'Port Rashid or Al Mina',
+    'Ras Al Khor Port',
+    'Rak Maritime City',
+    'Ras al Khaimah',
+    'Ras Al Khor',
+    'Al Ras',
+    'Al Reem Island',
+    'Al Ruways Industrial City',
+    'Ruwais Port Abu Dhabi',
+    'Saadiyat Island',
+    'Sharjah',
+    'Al Sila',
+    'Stevin Rock',
+    'Sweihan',
+    'The Palm Jumeirah',
+    'Umm al Nar',
+    'Umm al Quwain',
+    'Al Qurayyah',
+    'Yas Island',
+    'Zirku Island',
+    'Sheikh Zayed Road',
+    'Business Bay',
+    'Downtown Dubai',
+    'Al Badaa',
+    'Al Satwa',
+    'Zaabeel',
+    'Trade Centre',
+    'Al Karama',
+    'Oud Metha',
+    'Al Jaddaf',
+    'Al Wasl',
+    'Al Safa',
+    'Umm Suqeim',
+    'Jumeirah Village Circle',
+    'Dubai Investments Park',
+    'Mirdif',
+    'Al Twar',
+    'Al Khawaneej',
+    'Al Warqa',
+    'Dubai Silicon Oasis',
+    'Al Thammam',
+    'Golf City',
+    'Umm Ramool',
+    'Al Qusais',
+    'Al Nahda',
+    'Al Rashidiya',
+    'Nad al Sheba',]
 
+  useEffect(() => {
+    const loadCity = async () => {
+      var city = [];
+      for (var i in postCities) {
+        var filtered = postCities[i];
+        city.push(filtered);
+      }
+      setFormCities(city);
+    };
+    loadCity();
+  }, [postCities]);
+  const onSuggestionCityHandler = textCity => {
+    setCityText(textCity);
+    setCitySuggestion([]);
+  };
+
+  const onPartCityChange = citytext => {
+    let matches = [];
+    if (citytext.length > 0) {
+      matches = formCities.filter(city => {
+        const regex = new RegExp(`${citytext}`, 'gi');
+        return city.match(regex);
+      });
+    }
+    setCitySuggestion(matches);
+    setCityText(citytext);
+  };
 
   useEffect(() => {
     const loadPart = async () => {
@@ -252,7 +381,7 @@ export default function FormComponent({ formsData, postFilter }) {
         email: Email,
         year: Year,
         model: Model,
-        address: Address,
+        address: textCity,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -265,15 +394,16 @@ export default function FormComponent({ formsData, postFilter }) {
     setMake('');
     setModel('');
     setAddress('');
+    setCityText('')
     setEmail('');
     setText('');
     setWhatsappno('');
   }
   return (
     <div className="max-w-4xl mx-auto my-5 xs:mx-3 xxs:mx-3 md:mx-4">
-      <h2 className="bg-gray-800 text-white text-center py-5 text-2xl md:text-4xl font-bold font-sans">
+      <div className="bg-gray-800 text-white text-center py-5 text-2xl md:text-4xl font-bold font-sans">
         AUTO SPARE PARTS INQUIRY FORM
-      </h2>
+      </div>
       <form
         id="myForm"
         method="POST"
@@ -421,19 +551,31 @@ export default function FormComponent({ formsData, postFilter }) {
 
           <div>
             <label htmlFor="city" className="block text-sm font-bold mb-2">
-              Location
+              City
             </label>
             <input
               id="city"
-              type="text"
               placeholder="(Area, Emirates) or (City, Country)"
               className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
-              onChange={handleAddressChange}
-              value={Address}
-              autoComplete="off"
+              onChange={e => onPartCityChange(e.target.value)}
+              value={textCity}
+              required
             />
+            <div className='z-10 mt-1 w-full bg-white rounded-xl max-h-64 overflow-y-auto'>
+              {suggestionCity &&
+                suggestionCity.map((s, i) => (
+                  <div
+                    key={i}
+                    className="cursor-pointer border-gray-400 p-2"
+                    onClick={() => onSuggestionCityHandler(s)}
+                  >
+                    {s}
+                  </div>
+                ))}
+            </div>
           </div>
         </fieldset>
+
 
         {/* Part Name */}
         <fieldset className="pt-3">
