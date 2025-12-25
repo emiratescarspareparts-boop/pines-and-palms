@@ -16,12 +16,27 @@ import CitiesData from "../public/lib/cities.json"
 import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
 import FormComponent from '../components/FormComponent';
+import FormSonnet from '../components/FormSonnet';
+import { Fira_Sans, Playfair_Display } from 'next/font/google';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 let carDataCache = null;
 let citiesDataCache = null;
 let partsDataCache = null;
+
+const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair-display',
+});
+
+const firaSans = Fira_Sans({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira-sans',
+});
 
 export function getCarData() {
   if (!carDataCache) {
@@ -81,59 +96,67 @@ export default async function Home() {
   return (
     <div>
       <section
-        className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 s:mx-2 max-w-7xl mx-auto"
-        aria-label="Spare parts by country of origin"
+        className="py-5 xxs:py-0 xs:py-0 s:py-0 sm:px-7 lg:mx-6 md:mx-6 xs:px-0 s:px-2 max-w-7xl mx-auto"
+        aria-label="auto spare parts in uae"
       >
         <div className="bg-backgroundlight rounded-sm">
-          <div className="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-2 xxs:grid-cols-1 xs:text-center xs:pt-5">
+          <div className="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xxs:grid-cols-1 xs:text-center xs:pt-0">
             <div>
-              <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 mt-10 sm:mt-12 md:mt-10 lg:mt-20 xl:mt-28 xs:mt-2 xs:text-left">
-                <h2 className="block text-3xl md:text-lg lg:text-2xl font-medium  lg:leading-tight font-poppins">
-                  Best Car Spare Parts Prices in UAE - <span className='text-blue-500'>Pre-Compared Quotes</span>
-                </h2>
+              <div className="lg:ml-8 md:ml-4 xl:ml-8 xxl:ml-8 xs:ml-3 xxs:ml-2 mt-40 lg:mt-28 xxs:mt-8 xxs:pt-8 sm:mt-12 md:mt-10 xs:mt-0 xs:text-center xxs:text-center md:text-center">
+                <h1
+                  className={`text-3xl xxs:mt-5 xs:mt-5 s:mt-5 sm:mt-5 lg:text-2xl md:text-2xl xxs:text-2xl xs:text-xl font-extrabold lg:leading-tight ${firaSans.className}`}
+                >
+                  Best Car Spare Parts Prices in UAE –{" "}
+                  <span className="text-blue-500">Pre-Compared Quotes</span>
+                </h1>
 
-                <p className="mt-3 text-5xl xl:text-4xl xxl:text-4xl lg:text-4xl md:text-xl xs:text-lg xxs:text-lg sm:text-lg s:text-lg font-extrabold font-head text-gray-900">
+                <p className="mt-3 text-5xl xl:text-4xl xxl:text-2xl lg:text-4xl md:text-4xl xxs:text-xl xs:text-lg font-medium">
                   We Compare 100+ Suppliers So You Don&apos;t Have To. Get the Best Price Guaranteed.
                 </p>
 
-                <div className="mt-5">
-                  <div className="grid grid-cols-2 gap-2 py-3  w-1/2 lg:w-full xs:w-full xxs:w-3/4 mr-auto rounded-lg shadow-md">
+                <div className="mt-5 mx-auto sm:mx-5 md:mx-5 xxs:mx-3 xs:mx-3 xxs:my-5">
+                  <div className="grid grid-cols-2 gap-2 py-3 xl:w-full xxl:w-full lg:w-full xs:w-full xxs:w-full mr-auto lg:mx-auto xl:mx-auto md:mx-auto xxl:mx-auto sm:mx-auto rounded-lg shadow-md">
                     <a
                       href="#myForm"
                       title="Inquire about vehicle parts online"
-                      className="flex items-center justify-center py-2 text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700"
+                      className="flex items-center justify-center py-2 text-xl xl:text-4xl xxl:text-4xl lg:text-lg md:text-lg xs:text-lg xxs:text-lg font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700"
                     >
                       Inquire Now
-                    </a><a
+                    </a>
+
+                    <a
                       href="/search-by-make"
-                      title="Inquire about vehicle parts online"
-                      className="flex items-center justify-center py-2 text-xl border border-transparent font-medium rounded-sm text-white bg-blue-400 hover:bg-blue-500"
+                      title="Explore vehicle spare parts"
+                      className="flex items-center justify-center py-2 text-xl xl:text-4xl xxl:text-4xl lg:text-lg md:text-lg xs:text-lg xxs:text-lg font-medium rounded-sm text-white bg-blue-400 hover:bg-blue-500"
                     >
                       Explore
                     </a>
                   </div>
                 </div>
 
-                <p className="mt-10 mb-3 hidden xl:block xxl:block lg:block md:block text-sm text-gray-700">
+                {/* Description */}
+                <p className="mt-10 mb-3 hidden md:block text-sm text-gray-700">
                   We deal with auto parts for German, Japanese, Chinese, French, British origin cars.
                 </p>
-                <div className='xs:hidden xxs:hidden sm:hidden s:hidden xl:block xxl:block lg:block md:block'>
+
+                {/* Country Icons */}
+                <div className="hidden md:block">
                   <div className="grid grid-cols-8 md:grid-cols-4 lg:grid-cols-4 gap-2 place-content-center mb-10">
                     {[
-                      { src: "/img/icons/germany.png", alt: "German car auto spare parts", label: "Germany", href: "/spare-parts/german-auto-spare-parts" },
-                      { src: "/img/icons/united-kingdom.png", alt: "British car auto spare parts", label: "Britain", href: "/spare-parts/british-auto-spare-parts" },
-                      { src: "/img/icons/japan.png", alt: "Japanese car auto spare parts", label: "Japan", href: "/spare-parts/japanese-auto-spare-parts" },
-                      { src: "/img/icons/south-korea.png", alt: "Korean car auto spare parts", label: "Korean", href: "/spare-parts/korean-auto-spare-parts" },
-                      { src: "/img/icons/usa.png", alt: "American car auto spare parts", label: "USA", href: "/spare-parts/american-auto-spare-parts" },
-                      { src: "/img/icons/india.png", alt: "Indian car auto spare parts", label: "Indian", href: "/spare-parts/indian-auto-spare-parts" },
-                      { src: "/img/icons/china.png", alt: "Chinese car auto spare parts", label: "China", href: "/spare-parts/chinese-auto-spare-parts" },
-                      { src: "/img/icons/france.png", alt: "French car auto spare parts", label: "French", href: "/spare-parts/french-auto-spare-parts" },
-                    ].map(({ src, alt, label, href }) => (
+                      { src: "/img/icons/germany.png", label: "Germany", href: "/spare-parts/german-auto-spare-parts" },
+                      { src: "/img/icons/united-kingdom.png", label: "Britain", href: "/spare-parts/british-auto-spare-parts" },
+                      { src: "/img/icons/japan.png", label: "Japan", href: "/spare-parts/japanese-auto-spare-parts" },
+                      { src: "/img/icons/south-korea.png", label: "Korean", href: "/spare-parts/korean-auto-spare-parts" },
+                      { src: "/img/icons/usa.png", label: "USA", href: "/spare-parts/american-auto-spare-parts" },
+                      { src: "/img/icons/india.png", label: "Indian", href: "/spare-parts/indian-auto-spare-parts" },
+                      { src: "/img/icons/china.png", label: "China", href: "/spare-parts/chinese-auto-spare-parts" },
+                      { src: "/img/icons/france.png", label: "French", href: "/spare-parts/french-auto-spare-parts" },
+                    ].map(({ src, label, href }) => (
                       <Link key={label} href={href}>
                         <figure className="flex flex-col items-center text-center">
                           <Image
                             src={src}
-                            alt={alt}
+                            alt={`${label} car auto spare parts`}
                             height={50}
                             width={50}
                             className="my-1 px-2 py-1"
@@ -146,20 +169,21 @@ export default async function Home() {
                     ))}
                   </div>
                 </div>
-
-
               </div>
             </div>
 
-            <div className="xxs:hidden xs:hidden">
+            <div className="xxs:hidden xs:hidden md:hidden">
               <HeroCarousel />
             </div>
           </div>
         </div>
       </section>
+
+      <FormSonnet formsData={modelforms} />
+
       <section>
-        <div className="text-center max-w-7xl mx-auto py-10 xs:py-5 xxs:py-5">
-          <div className="grid grid-cols-4 text-center gap-2 xs:grid xs:grid-cols-4 s:grid s:grid-cols-2 xs:gap-1 xxs:text-sm xxs:grid xxs:grid-cols-2 xs:pb-5 s:pb-10 ">
+        <div className="text-center mx-auto max-w-7xl xs:px-3 xxs:px-2 xxs:mx-3 py-10 xs:py-5 xxs:py-5">
+          <div className="grid grid-cols-4 text-center gap-2 xs:grid xs:grid-cols-2 s:grid s:grid-cols-2 xs:gap-1 xxs:text-sm xxs:grid xxs:grid-cols-2 xs:pb-5 s:pb-10">
             {/* New Parts */}
             <div className="text-base lg:text-base sm:text-xs md:text-sm bg-gradient-to-r from-blue-500 via-blue-200 to-blue-500 rounded-sm lg:mx-6 py-2 shadow-2xl xs:text-xs s:text-xs xs:shadow-none sm:shadow-none">
               <figure className="flex flex-col items-center">
@@ -217,7 +241,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <FormComponent formsData={modelforms} postFilter={partsposts} />
+
 
 
       <div className="bg-bglight max-w-7xl mx-auto">

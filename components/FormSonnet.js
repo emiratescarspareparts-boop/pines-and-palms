@@ -632,13 +632,13 @@ export default function FormSonnet({ formsData = [] }) {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-10 px-4 sm:px-2 xxs:px-2 xs:px-2">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 lg:gap-8 xl:gap-8 xxl:gap-8 gap-4 items-start">
 
                     {/* Marketing Content */}
-                    <div className="lg:sticky lg:top-8 space-y-6">
-                        <div className="bg-gradient-to-br from-blue-700 via-blue-700 to-blue-300 rounded-3xl p-12 text-white shadow-2xl">
+                    <div className="lg:sticky lg:top-8 space-y-6 xs:space-y-3 xxs:space-y-3">
+                        <div className="bg-gradient-to-br from-blue-700 via-blue-700 to-blue-300 rounded-3xl p-12 lg:p-12 xl:p-12 xxl:p-12 xs:p-5 xxs:p-5 sm:p-5 md:p-12 text-white shadow-2xl">
                             <h4 className="text-5xl xxs:text-3xl xs:text-3xl s:text-3xl font-bold mb-6 leading-tight">
                                 Find Your Perfect Auto Parts
                             </h4>
@@ -700,24 +700,24 @@ export default function FormSonnet({ formsData = [] }) {
                             <h3 className="text-2xl font-bold mb-4 text-gray-800">How It Works</h3>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                                    <div className="bg-gradient-to-br from-blue-500 to-blue-300 text-blue-50 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
                                     <div>
                                         <h4 className="font-semibold text-gray-800">Fill the Form</h4>
                                         <p className="text-gray-600 text-sm">Tell us about your vehicle and parts needed</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                                    <div className="bg-gradient-to-br from-blue-500 to-blue-300 text-blue-50 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
                                     <div>
                                         <h4 className="font-semibold text-gray-800">Get Quotes</h4>
-                                        <p className="text-gray-600 text-sm">Receive competitive quotes from suppliers</p>
+                                        <p className="text-gray-600 text-sm">Receive the best pre-compared optimal rates from us.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-gradient-to-br from-pink-500 to-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                                    <div className="bg-gradient-to-br from-blue-500 to-blue-300 text-blue-50 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-800">Choose & Order</h4>
-                                        <p className="text-gray-600 text-sm">Select best offer and get parts delivered</p>
+                                        <h4 className="font-semibold text-gray-800">Get delivered the same day</h4>
+                                        <p className="text-gray-600 text-sm">Select best rates and get parts delivered</p>
                                     </div>
                                 </div>
                             </div>
@@ -727,7 +727,7 @@ export default function FormSonnet({ formsData = [] }) {
                     {/* Multi-Step Form */}
                     <div className="bg-white rounded-3xl shadow-2xl overflow-visible">
                         {/* Progress Bar */}
-                        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-6">
+                        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-6" id="myForm">
                             <div className="flex items-center justify-between mb-4">
                                 {[1, 2, 3, 4].map((step) => (
                                     <div key={step} className="flex items-center flex-1">
@@ -752,7 +752,8 @@ export default function FormSonnet({ formsData = [] }) {
                             </div>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="p-8">
+                        <form onSubmit={handleSubmit}
+                            method="POST" className="p-8">
 
 
                             {/* Step 2: Vehicle Info */}
