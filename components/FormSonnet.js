@@ -515,7 +515,7 @@ export default function FormSonnet({ formsData = [] }) {
             vehicle: `${Year} ${Make} ${Model}`,
             parts: partsText,
             name: Name,
-            location: Address,
+            location: textCity,
             phone: Code + Whatsappno,
             email: Email,
             condition: Condition,
@@ -1079,12 +1079,14 @@ export default function FormSonnet({ formsData = [] }) {
                                             Inquiry Details
                                         </h3>
 
-                                        <p><strong><Car className="w-4 h-4" />Name:</strong> {submissionData.name}</p>
+                                        <p><strong>Name:</strong> {submissionData.name}</p>
                                         <p><strong>Phone:</strong> {submissionData.phone}</p>
                                         <p><strong>Email:</strong> {submissionData.email || '—'}</p>
                                         <p><strong>Location:</strong> {submissionData.location}</p>
                                         <p><strong>Vehicle:</strong> {submissionData.vehicle}</p>
-                                        <p><strong> Parts:</strong> {submissionData.parts}</p>
+                                        <p><strong>Parts:</strong> {submissionData.parts}</p>
+                                        <p><strong>Condition:</strong> {submissionData.condition}</p>
+                                        <p><strong>Timing:</strong> {submissionData.timing}</p>
                                         <p className="text-sm text-gray-400">
                                             Submitted on {submissionData.date}
                                         </p>
