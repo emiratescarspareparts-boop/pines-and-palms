@@ -82,15 +82,15 @@ async function handler(req, res) {
             year,
             model,
             address,
+            condition,
+            timing,
             WApp,
             SCnfD,
             Y,
             N,
             Q,
             Follow,
-            S,
-            condition,
-            timing
+            S
           ],
         ],
       },
