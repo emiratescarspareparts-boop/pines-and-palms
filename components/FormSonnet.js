@@ -531,7 +531,7 @@ export default function FormSonnet({ formsData = [] }) {
                 brand: Make,
                 contact: Whatsappno,
                 name: Name,
-                description: 'Customer Name: ' + Name + '\n' + 'Address: ' + Address + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
+                description: 'Customer Name: ' + Name + '\n' + 'Address: ' + textCity + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
                 partList: partsText,
                 email: Email,
                 year: Year,
