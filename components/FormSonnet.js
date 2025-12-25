@@ -536,7 +536,7 @@ export default function FormSonnet({ formsData = [] }) {
                 email: Email,
                 year: Year,
                 model: Model,
-                address: Address,
+                address: textCity,
                 timing: Timing,
                 condition: Condition,
             }),
@@ -551,6 +551,7 @@ export default function FormSonnet({ formsData = [] }) {
         setMake('');
         setModel('');
         setAddress('');
+        setCityText('');
         setCondition('')
         setTiming('');
         setEmail('');
@@ -568,8 +569,8 @@ export default function FormSonnet({ formsData = [] }) {
         if (currentStep > 1) setCurrentStep(currentStep - 1);
     };
 
-    const canProceedStep1 = Name && Whatsappno;
-    const canProceedStep2 = Year && Make && Model;
+    const canProceedStep1 = Year && Make && Model;
+    const canProceedStep3 = Name && Whatsappno;
 
     const addPartField = () => {
         setPartInputs([
@@ -611,7 +612,7 @@ export default function FormSonnet({ formsData = [] }) {
     const getSelectedParts = () =>
         partInputs.map(p => p.value.trim()).filter(Boolean);
 
-    const canProceedStep3 = getSelectedParts().length > 0;
+    const canProceedStep2 = getSelectedParts().length > 0;
 
 
     const handlePartInputChange = (id, value) => {
@@ -743,17 +744,258 @@ export default function FormSonnet({ formsData = [] }) {
                             </div>
                             <div className="text-white text-center">
                                 <h2 className="text-2xl font-bold">
-                                    {currentStep === 1 && 'Personal Information'}
-                                    {currentStep === 2 && 'Vehicle Details'}
-                                    {currentStep === 3 && 'Parts & Contact'}
+                                    {currentStep === 1 && 'Vehicle Details'}
+                                    {currentStep === 2 && 'Parts Details'}
+                                    {currentStep === 3 && 'Personal Information'}
                                     {currentStep === 4 && 'Inquiry Submitted Successfully!'}
                                 </h2>
                             </div>
                         </div>
 
                         <form onSubmit={handleSubmit} className="p-8">
-                            {/* Step 1: Personal Info */}
+
+
+                            {/* Step 2: Vehicle Info */}
                             {currentStep === 1 && (
+                                <div className="space-y-6 animate-fadeIn">
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                                <Car className="w-4 h-4" />
+                                                Make
+                                            </label>
+                                            <select
+                                                required
+                                                onChange={(e) => setMake(e.target.value)}
+                                                value={Make}
+                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                            >
+                                                <option value="" disabled>Select vehicle make</option>
+                                                {make.map((m, i) => (
+                                                    <option key={i}>{m}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                                <Car className="w-4 h-4" />
+                                                Model
+                                            </label>
+                                            <select
+                                                required
+                                                onChange={(e) => setModel(e.target.value)}
+                                                value={Model}
+                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                                disabled={!Make}
+                                            >
+                                                <option value="" disabled>Select vehicle model</option>
+                                                {[...new Set(formsData
+                                                    .filter(s => s.make === Make)
+                                                    .map(s => s.model)
+                                                )].map((model, i) => (
+                                                    <option key={i} value={model}>{model}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                                <Car className="w-4 h-4" />
+                                                Year
+                                            </label>
+                                            <select
+                                                required
+                                                onChange={(e) => setYear(e.target.value)}
+                                                value={Year}
+                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                                disabled={!Make || !Model}
+                                            >
+                                                <option value="" disabled defaultValue>Select vehicle Year</option>
+                                                {[...new Set(
+                                                    formsData
+                                                        .filter(s => s.make === Make && s.model === Model)
+                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
+                                                )]
+                                                    .sort((a, b) => b - a)
+                                                    .map((year, i) => (
+                                                        <option key={i} value={year}>{year}</option>
+                                                    ))}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-3">
+                                        <button
+                                            type="button"
+                                            onClick={nextStep}
+                                            disabled={!canProceedStep1}
+                                            className={`flex-1 py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep1
+                                                ? 'bg-gradient-to-r from-blue-600 to-blue-300 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                                                : 'bg-gray-300 cursor-not-allowed'
+                                                }`}
+                                        >
+                                            Continue to Part Details
+                                            <ChevronRight className="w-5 h-5" />
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Step 3: Parts */}
+                            {currentStep === 2 && (
+                                <div className='space-y-6 animate-fadeIn'>
+                                    <div>
+                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                            <FerrisWheel className="w-4 h-4" />
+                                            Part Name
+                                        </label>
+                                        {partInputs.map(part => (
+                                            <div key={part.id} className="relative">
+                                                <div className="flex gap-2">
+                                                    <input
+                                                        className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                                                        placeholder={part.isCustom ? 'Custom part name' : 'Type Parts Name'}
+                                                        value={part.value}
+                                                        onChange={e => updatePartValue(part.id, e.target.value)}
+                                                    />
+
+                                                    <button type="button" onClick={addPartField} className="px-4 rounded-xl bg-info text-white font-bold">+</button>
+
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => removePartField(part.id)}
+                                                        disabled={partInputs.length === 1}
+                                                        className={`px-4 rounded-xl font-bold ${partInputs.length === 1
+                                                            ? 'bg-gray-300 cursor-not-allowed'
+                                                            : 'bg-red-500 text-white hover:bg-red-600'
+                                                            }`}
+                                                    >
+                                                        ✕
+                                                    </button>
+                                                </div>
+
+                                                {!part.isCustom && part.suggestions.length > 0 && (
+                                                    <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-64 overflow-y-auto">
+                                                        <div
+                                                            className="px-4 py-2 text-blue-500 font-semibold cursor-pointer"
+                                                            onClick={() => updatePartValue(part.id, 'custom')}
+                                                        >
+                                                            ➕ Custom part
+                                                        </div>
+                                                        {part.suggestions.map(s => (
+                                                            <div
+                                                                key={s}
+                                                                className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                                                                onClick={() => selectSuggestion(part.id, s)}
+                                                            >
+                                                                {s}
+                                                            </div>
+                                                        ))}
+
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div>
+                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
+                                            <FerrisWheel className="w-4 h-4" />
+                                            Part Condition/Type
+                                        </label>
+
+                                        <div className="grid grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2 sm:grid-cols-2 gap-3">
+                                            {['Used', 'New', 'Genuine', 'Aftermarket/Tijari', 'Any'].map(option => {
+                                                const isChecked = Condition.includes(option);
+
+                                                return (
+                                                    <label
+                                                        key={option}
+                                                        className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors           ${isChecked
+                                                            ? 'border-purple-500 bg-purple-50'
+                                                            : 'border-gray-200 hover:border-purple-400'
+                                                            }`}
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={isChecked}
+                                                            onChange={() =>
+                                                                setCondition(prev =>
+                                                                    isChecked
+                                                                        ? prev.filter(item => item !== option)
+                                                                        : [...prev, option]
+                                                                )
+                                                            }
+                                                            className="w-4 h-4 accent-purple-500"
+                                                        />
+                                                        <span className="text-sm font-medium text-gray-700">
+                                                            {option}
+                                                        </span>
+                                                    </label>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
+                                            <TimerIcon className="w-4 h-4" />
+                                            When do you need the part
+                                        </label>
+
+                                        <div className="grid grid-cols-3 gap-3">
+                                            {['Urgent', 'Not Urgent', 'Just Quote'].map(option => (
+                                                <label
+                                                    key={option}
+                                                    className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors ${Timing === option
+                                                        ? 'border-purple-500 bg-purple-50'
+                                                        : 'border-gray-200 hover:border-purple-400'
+                                                        }`}
+                                                >
+                                                    <input
+                                                        type="radio"
+                                                        name="timing"
+                                                        value={option}
+                                                        checked={Timing === option}
+                                                        onChange={(e) => setTiming(e.target.value)}
+                                                        className="w-4 h-4 accent-purple-500"
+                                                    />
+                                                    <span className="text-sm font-medium text-gray-700">
+                                                        {option}
+                                                    </span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </div>
+
+
+                                    <div className="flex gap-3 pt-4">
+                                        <button
+                                            type="button"
+                                            onClick={prevStep}
+                                            className="flex-1 px-4 py-4 rounded-xl font-bold text-gray-700 bg-gray-200 hover:bg-gray-300 transition-colors"
+                                        >
+                                            Back
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            onClick={nextStep}
+                                            disabled={!canProceedStep2}
+                                            className={`w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep2
+                                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                                                : 'bg-gray-300 cursor-not-allowed'
+                                                }`}
+                                        >
+                                            Continue to Vehicle Details
+                                            <ChevronRight className="w-5 h-5" />
+                                        </button>
+
+                                    </div>
+                                </div>
+                            )}
+                            {/* Step 1: Personal Info */}
+                            {currentStep === 3 && (
                                 <div className="space-y-6 animate-fadeIn">
                                     <div className="space-y-4">
                                         <div>
@@ -829,214 +1071,6 @@ export default function FormSonnet({ formsData = [] }) {
                                             </div>
                                         </div>
                                     </div>
-
-                                    <button
-                                        type="button"
-                                        onClick={nextStep}
-                                        disabled={!canProceedStep1}
-                                        className={`w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep1
-                                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                                            : 'bg-gray-300 cursor-not-allowed'
-                                            }`}
-                                    >
-                                        Continue to Vehicle Details
-                                        <ChevronRight className="w-5 h-5" />
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Step 2: Vehicle Info */}
-                            {currentStep === 2 && (
-                                <div className="space-y-6 animate-fadeIn">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                                <Car className="w-4 h-4" />
-                                                Make
-                                            </label>
-                                            <select
-                                                required
-                                                onChange={(e) => setMake(e.target.value)}
-                                                value={Make}
-                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                            >
-                                                <option value="" disabled>Select vehicle make</option>
-                                                {make.map((m, i) => (
-                                                    <option key={i}>{m}</option>
-                                                ))}
-                                            </select>
-                                        </div>
-
-                                        <div>
-                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                                <Car className="w-4 h-4" />
-                                                Model
-                                            </label>
-                                            <select
-                                                required
-                                                onChange={(e) => setModel(e.target.value)}
-                                                value={Model}
-                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                                disabled={!Make}
-                                            >
-                                                <option value="" disabled>Select vehicle model</option>
-                                                {[...new Set(formsData
-                                                    .filter(s => s.make === Make)
-                                                    .map(s => s.model)
-                                                )].map((model, i) => (
-                                                    <option key={i} value={model}>{model}</option>
-                                                ))}
-                                            </select>
-                                        </div>
-
-                                        <div>
-                                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                                <Car className="w-4 h-4" />
-                                                Year
-                                            </label>
-                                            <select
-                                                required
-                                                onChange={(e) => setYear(e.target.value)}
-                                                value={Year}
-                                                className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                                disabled={!Make || !Model}
-                                            >
-                                                <option value="" disabled defaultValue>Select vehicle Year</option>
-                                                {[...new Set(
-                                                    formsData
-                                                        .filter(s => s.make === Make && s.model === Model)
-                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
-                                                )]
-                                                    .sort((a, b) => b - a)
-                                                    .map((year, i) => (
-                                                        <option key={i} value={year}>{year}</option>
-                                                    ))}
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex gap-3">
-                                        <button
-                                            type="button"
-                                            onClick={prevStep}
-                                            className="flex-1 py-4 rounded-xl font-bold text-gray-700 bg-gray-200 hover:bg-gray-300 transition-colors"
-                                        >
-                                            Back
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={nextStep}
-                                            disabled={!canProceedStep2}
-                                            className={`flex-1 py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep2
-                                                ? 'bg-gradient-to-r from-blue-600 to-blue-300 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                                                : 'bg-gray-300 cursor-not-allowed'
-                                                }`}
-                                        >
-                                            Continue
-                                            <ChevronRight className="w-5 h-5" />
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Step 3: Parts */}
-                            {currentStep === 3 && (
-                                <div className='space-y-6 animate-fadeIn'>
-                                    <div>
-                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                                            <TimerIcon className="w-4 h-4" />
-                                            Timing
-                                        </label>
-
-                                        <div className="grid grid-cols-3 gap-3">
-                                            {['Urgent', 'Can Wait', 'I want to inquire the price only'].map(option => (
-                                                <label
-                                                    key={option}
-                                                    className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors ${Timing === option
-                                                        ? 'border-purple-500 bg-purple-50'
-                                                        : 'border-gray-200 hover:border-purple-400'
-                                                        }`}
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={Timing === option}
-                                                        onChange={() => setTiming(option)}
-                                                        className="w-4 h-4 accent-purple-500"
-                                                    />
-                                                    <span className="text-sm font-medium text-gray-700">
-                                                        {option}
-                                                    </span>
-                                                </label>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                            <FerrisWheel className="w-4 h-4" />
-                                            Part Condition Needed
-                                        </label>
-                                        <select
-                                            required
-                                            onChange={(e) => setCondition(e.target.value)}
-                                            value={Condition}
-                                            className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                        >
-                                            <option value="" disabled>Select Part Type</option>
-                                            <option value="Used">Used</option>
-                                            <option value="New">New</option>
-                                            <option value="Genuine">Genuine</option>
-                                            <option value="Aftermarket">Aftermarket</option>
-
-                                        </select>
-                                    </div>
-                                    {partInputs.map(part => (
-                                        <div key={part.id} className="relative">
-                                            <div className="flex gap-2">
-                                                <input
-                                                    className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                                                    placeholder={part.isCustom ? 'Custom part name' : 'Type Parts Name'}
-                                                    value={part.value}
-                                                    onChange={e => updatePartValue(part.id, e.target.value)}
-                                                />
-
-                                                <button type="button" onClick={addPartField} className="px-4 rounded-xl bg-info text-white font-bold">+</button>
-
-                                                <button
-                                                    type="button"
-                                                    onClick={() => removePartField(part.id)}
-                                                    disabled={partInputs.length === 1}
-                                                    className={`px-4 rounded-xl font-bold ${partInputs.length === 1
-                                                        ? 'bg-gray-300 cursor-not-allowed'
-                                                        : 'bg-red-500 text-white hover:bg-red-600'
-                                                        }`}
-                                                >
-                                                    ✕
-                                                </button>
-                                            </div>
-
-                                            {!part.isCustom && part.suggestions.length > 0 && (
-                                                <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-64 overflow-y-auto">
-
-                                                    {part.suggestions.map(s => (
-                                                        <div
-                                                            key={s}
-                                                            className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                                                            onClick={() => selectSuggestion(part.id, s)}
-                                                        >
-                                                            {s}
-                                                        </div>
-                                                    ))}
-                                                    <div
-                                                        className="px-4 py-2 text-blue-500 font-semibold cursor-pointer"
-                                                        onClick={() => updatePartValue(part.id, 'custom')}
-                                                    >
-                                                        ➕ Custom part
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ))}
-
                                     <div className="flex gap-3 pt-4">
                                         <button
                                             type="button"
@@ -1057,6 +1091,8 @@ export default function FormSonnet({ formsData = [] }) {
                                             Submit Request
                                         </button>
                                     </div>
+
+
                                 </div>
                             )}
 
