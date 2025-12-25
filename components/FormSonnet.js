@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ChevronRight, Car, User, MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
+import { ChevronRight, Car, User, MapPin, Phone, Mail, CheckCircle, TimerIcon, FerrisWheel } from 'lucide-react';
 
 export default function FormSonnet({ formsData = [] }) {
     const [currentStep, setCurrentStep] = useState(1);
@@ -23,6 +23,8 @@ export default function FormSonnet({ formsData = [] }) {
     const [formCities, setFormCities] = useState([]);
     const [suggestionCity, setCitySuggestion] = useState([]);
     const [textCity, setCityText] = useState('');
+    const [Condition, setCondition] = useState('');
+    const [Timing, setTiming] = useState('');
 
     const postFilter = ['AC Compressor',
         'AC Condenser',
@@ -515,7 +517,9 @@ export default function FormSonnet({ formsData = [] }) {
             name: Name,
             location: Address,
             phone: Code + Whatsappno,
-            email: Email
+            email: Email,
+            condition: Condition,
+            timing: Timing,
         };
 
         setSubmissionData(submissionInfo);
@@ -527,26 +531,28 @@ export default function FormSonnet({ formsData = [] }) {
                 brand: Make,
                 contact: Whatsappno,
                 name: Name,
-                description: 'Customer Name: ' + Name + '\n' + 'Address: ' + Address + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText,
+                description: 'Customer Name: ' + Name + '\n' + 'Address: ' + Address + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
                 partList: partsText,
                 email: Email,
                 year: Year,
                 model: Model,
                 address: Address,
+                timing: Timing,
+                condition: Condition,
             }),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
         setCurrentStep(4)
-
-
         setName('');
         setCode('');
         setYear('');
         setMake('');
         setModel('');
         setAddress('');
+        setCondition('')
+        setTiming('');
         setEmail('');
         setText('');
         setWhatsappno('');
@@ -843,8 +849,6 @@ export default function FormSonnet({ formsData = [] }) {
                             {currentStep === 2 && (
                                 <div className="space-y-6 animate-fadeIn">
                                     <div className="space-y-4">
-
-
                                         <div>
                                             <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                                 <Car className="w-4 h-4" />
@@ -937,7 +941,54 @@ export default function FormSonnet({ formsData = [] }) {
 
                             {/* Step 3: Parts */}
                             {currentStep === 3 && (
-                                <>
+                                <div className='space-y-6 animate-fadeIn'>
+                                    <div>
+                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
+                                            <TimerIcon className="w-4 h-4" />
+                                            Timing
+                                        </label>
+
+                                        <div className="grid grid-cols-3 gap-3">
+                                            {['Urgent', 'Can Wait', 'I want to inquire the price only'].map(option => (
+                                                <label
+                                                    key={option}
+                                                    className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors ${Timing === option
+                                                        ? 'border-purple-500 bg-purple-50'
+                                                        : 'border-gray-200 hover:border-purple-400'
+                                                        }`}
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={Timing === option}
+                                                        onChange={() => setTiming(option)}
+                                                        className="w-4 h-4 accent-purple-500"
+                                                    />
+                                                    <span className="text-sm font-medium text-gray-700">
+                                                        {option}
+                                                    </span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                                            <FerrisWheel className="w-4 h-4" />
+                                            Part Condition Needed
+                                        </label>
+                                        <select
+                                            required
+                                            onChange={(e) => setCondition(e.target.value)}
+                                            value={Condition}
+                                            className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                        >
+                                            <option value="" disabled>Select Part Type</option>
+                                            <option value="Used">Used</option>
+                                            <option value="New">New</option>
+                                            <option value="Genuine">Genuine</option>
+                                            <option value="Aftermarket">Aftermarket</option>
+
+                                        </select>
+                                    </div>
                                     {partInputs.map(part => (
                                         <div key={part.id} className="relative">
                                             <div className="flex gap-2">
@@ -1006,7 +1057,7 @@ export default function FormSonnet({ formsData = [] }) {
                                             Submit Request
                                         </button>
                                     </div>
-                                </>
+                                </div>
                             )}
 
                             {/* Step 4: Success */}
