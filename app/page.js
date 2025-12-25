@@ -179,7 +179,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <FormSonnet formsData={modelforms} />
+      <FormComponent formsData={modelforms} postFilter={partsposts} />
 
       <section>
         <div className="text-center mx-auto max-w-7xl xs:px-3 xxs:px-2 xxs:mx-3 py-10 xs:py-5 xxs:py-5">
