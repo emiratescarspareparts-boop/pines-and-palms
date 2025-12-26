@@ -516,7 +516,7 @@ export default function FormSonnet({ formsData = [] }) {
             parts: partsText,
             name: Name,
             location: textCity,
-            phone: Code + Whatsappno,
+            phone: Whatsappno,
             email: Email,
             condition: Condition,
             timing: Timing,
@@ -536,9 +536,7 @@ export default function FormSonnet({ formsData = [] }) {
                 email: Email,
                 year: Year,
                 model: Model,
-                address: textCity,
-                timing: Timing,
-                condition: Condition,
+                address: textCity
             }),
             headers: {
                 'Content-Type': 'application/json',
