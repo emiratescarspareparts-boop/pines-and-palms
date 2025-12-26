@@ -35,6 +35,8 @@ async function handler(req, res) {
     const year = req.body.year;
     const model = req.body.model;
     const address = req.body.address;
+    const condition = req.body.condition;
+    const timing = req.body.timing;
     const WApp = null;
     const SCnfD = null;
     const Y = null;

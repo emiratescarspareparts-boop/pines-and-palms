@@ -536,7 +536,9 @@ export default function FormSonnet({ formsData = [] }) {
                 email: Email,
                 year: Year,
                 model: Model,
-                address: textCity
+                address: textCity,
+                timing: Timing,
+                condition: Condition,
             }),
             headers: {
                 'Content-Type': 'application/json',
