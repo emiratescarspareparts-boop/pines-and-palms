@@ -524,7 +524,7 @@ export default function FormSonnet({ formsData = [] }) {
 
         setSubmissionData(submissionInfo);
 
-        const response = fetch(`/api/g_sheet`, {
+        const response = await fetch(`/api/g_sheet`, {
             method: 'POST',
             body: JSON.stringify({
                 Timestamp: dateTime,
