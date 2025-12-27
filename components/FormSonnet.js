@@ -23,7 +23,7 @@ export default function FormSonnet({ formsData = [] }) {
     const [formCities, setFormCities] = useState([]);
     const [suggestionCity, setCitySuggestion] = useState([]);
     const [textCity, setCityText] = useState('');
-    const [Condition, setCondition] = useState('');
+    const [Condition, setCondition] = useState([]);
     const [Timing, setTiming] = useState('');
 
     const postFilter = ['AC Compressor',
@@ -509,6 +509,8 @@ export default function FormSonnet({ formsData = [] }) {
         const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
         const dateTime = date + ' ' + time;
         const partsText = getSelectedParts().join(', ');
+        console.log(Timing, Condition, textCity, Email, partsText, Code, Whatsappno, Make, Model, Year)
+        const conditionText = Condition.join(', ').toString();
 
         const submissionInfo = {
             date: dateTime,
@@ -518,7 +520,7 @@ export default function FormSonnet({ formsData = [] }) {
             location: textCity,
             phone: Code + Whatsappno,
             email: Email,
-            condition: Condition,
+            condition: conditionText,
             timing: Timing,
         };
 
@@ -538,7 +540,7 @@ export default function FormSonnet({ formsData = [] }) {
                 model: Model,
                 address: textCity,
                 timing: Timing || '',
-                condition: Condition || '',
+                condition: conditionText || '',
             }),
             headers: {
                 'Content-Type': 'application/json',
