@@ -594,6 +594,10 @@ export default function FormSonnet({ formsData = [] }) {
                 return { ...p, value: '', isCustom: true, suggestions: [] };
             }
 
+            if (p.isCustom && value !== 'custom') {
+                return { ...p, value, suggestions: [] };
+            }
+
             const matches =
                 value.length > 0 && !p.isCustom
                     ? formPartname.filter(part =>
@@ -634,7 +638,7 @@ export default function FormSonnet({ formsData = [] }) {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-10 px-4 sm:px-2 xxs:px-2 xs:px-2">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-10 px-4 sm:px-5 xxs:px-3 xs:px-3">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 lg:gap-8 xl:gap-8 xxl:gap-8 gap-4 items-start">
 
@@ -729,11 +733,11 @@ export default function FormSonnet({ formsData = [] }) {
                     {/* Multi-Step Form */}
                     <div className="bg-white rounded-3xl shadow-2xl overflow-visible">
                         {/* Progress Bar */}
-                        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-6" id="myForm">
+                        <div className="bg-gradient-to-r from-blue-600 via-blue-300 to-blue-900 p-6" id="myForm">
                             <div className="flex items-center justify-between mb-4">
                                 {[1, 2, 3, 4].map((step) => (
                                     <div key={step} className="flex items-center flex-1">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${currentStep >= step ? 'bg-white text-purple-600' : 'bg-white/30 text-white'
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${currentStep >= step ? 'bg-white text-blue-600' : 'bg-white/30 text-white'
                                             }`}>
                                             {step}
                                         </div>
@@ -854,8 +858,8 @@ export default function FormSonnet({ formsData = [] }) {
                                             Part Name
                                         </label>
                                         {partInputs.map(part => (
-                                            <div key={part.id} className="relative">
-                                                <div className="flex gap-2">
+                                            <div key={part.id} className="relative mb-3">
+                                                <div className="flex gap-1">
                                                     <input
                                                         className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors resize-none"
                                                         placeholder={part.isCustom ? 'Custom part name' : 'Type Parts Name'}
@@ -878,6 +882,7 @@ export default function FormSonnet({ formsData = [] }) {
                                                     </button>
                                                 </div>
 
+
                                                 {!part.isCustom && part.suggestions.length > 0 && (
                                                     <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-64 overflow-y-auto">
                                                         <div
@@ -896,6 +901,7 @@ export default function FormSonnet({ formsData = [] }) {
                                                             </div>
                                                         ))}
 
+
                                                     </div>
                                                 )}
                                             </div>
@@ -907,16 +913,16 @@ export default function FormSonnet({ formsData = [] }) {
                                             Part Condition/Type
                                         </label>
 
-                                        <div className="grid grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2 sm:grid-cols-2 gap-3">
+                                        <div className="grid grid-cols-4 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-1 gap-3 xs:gap-2 xxs:gap-2 sm:gap-2">
                                             {['Used', 'New', 'Genuine', 'Aftermarket/Tijari', 'Any'].map(option => {
                                                 const isChecked = Condition.includes(option);
 
                                                 return (
                                                     <label
                                                         key={option}
-                                                        className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors           ${isChecked
-                                                            ? 'border-purple-500 bg-purple-50'
-                                                            : 'border-gray-200 hover:border-purple-400'
+                                                        className={`flex items-center gap-3 rounded-xl px-4 py-3 xs:py-1 xxs:py-1 sm:py-1 xs:px-1 xxs:px-1 sm:px-1 cursor-pointer transition-colors           ${isChecked
+                                                            ? ' bg-purple-50'
+                                                            : ' hover:border-purple-400'
                                                             }`}
                                                     >
                                                         <input
@@ -946,13 +952,13 @@ export default function FormSonnet({ formsData = [] }) {
                                             When do you need the part
                                         </label>
 
-                                        <div className="grid grid-cols-3 gap-3">
+                                        <div className="grid grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-1 gap-3 xs:gap-1 xxs:gap-1 sm:gap-1">
                                             {['Urgent', 'Not Urgent', 'Just Quote'].map(option => (
                                                 <label
                                                     key={option}
-                                                    className={`flex items-center gap-3 border-2 rounded-xl px-4 py-3 cursor-pointer transition-colors ${Timing === option
-                                                        ? 'border-purple-500 bg-purple-50'
-                                                        : 'border-gray-200 hover:border-purple-400'
+                                                    className={`flex items-center gap-3 rounded-xl px-4 py-3 xs:py-1 xxs:py-1 sm:py-1 xs:px-1 xxs:px-1 sm:px-1 cursor-pointer transition-colors ${Timing === option
+                                                        ? ' bg-purple-50'
+                                                        : ' hover:border-purple-400'
                                                         }`}
                                                 >
                                                     <input
@@ -1060,7 +1066,7 @@ export default function FormSonnet({ formsData = [] }) {
                                                 onChange={e => onPartCityChange(e.target.value)}
                                                 value={textCity}
                                             />
-                                            <div className=" z-10 mt-1 w-full bg-white rounded-xl max-h-64 overflow-y-auto">
+                                            <div className="z-10 mt-1 w-full bg-white rounded-xl max-h-64 overflow-y-auto">
                                                 {suggestionCity &&
                                                     suggestionCity.map((s, i) => (
                                                         <div
@@ -1085,7 +1091,7 @@ export default function FormSonnet({ formsData = [] }) {
                                         <button
                                             type="submit"
                                             disabled={!canProceedStep3}
-                                            className={`flex-1 py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep3
+                                            className={`flex-1 py-4 xs:py-2 xxs:py-2 sm:py-2 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep3
                                                 ? 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg hover:shadow-xl'
                                                 : 'bg-gray-300 cursor-not-allowed'
                                                 }`}

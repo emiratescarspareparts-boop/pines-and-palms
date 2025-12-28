@@ -6,24 +6,16 @@ import Contents from '../components/Contents';
 import StaticCities from '../components/StaticCities';
 import MainAccordion from '../components/Main-Accordion';
 import "../public/main.css"
-import NewCar from '../public/img/icons/new-car.png';
-import UsedCar from '../public/img/icons/used-car.png';
-import Genuine from '../public/img/icons/genuine.png';
-import AfterMarket from '../public/img/icons/aftermarket.png';
 import HeroCarousel from '../components/HeroCarousel';
 import CarData from "../public/lib/car-data.json"
-import CitiesData from "../public/lib/cities.json"
 import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
 import FormComponent from '../components/FormComponent';
-import FormSonnet from '../components/FormSonnet';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
-let carDataCache = null;
-let citiesDataCache = null;
-let partsDataCache = null;
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
@@ -38,56 +30,10 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
-export function getCarData() {
-  if (!carDataCache) {
-    carDataCache = CarData;
-  }
-  return carDataCache;
-}
 
-export function getCitiesData() {
-  if (!citiesDataCache) {
-    citiesDataCache = CitiesData;
-  }
-  return citiesDataCache;
-}
 
-export function getPartsData() {
-  if (!partsDataCache) {
-    partsDataCache = PartsData;
-  }
-  return partsDataCache;
-}
 
-export async function getMake() {
-  const carData = getCarData();
-  const uniqueMakeArray = [
-    ...new Map(carData.map(item => [item.make, item])).values()
-  ];
 
-  return uniqueMakeArray;
-}
-
-export async function getYear() {
-  const carData = getCarData();
-  const uniqueYearArray = [
-    ...new Map(carData.map(item => [item.year, item])).values()
-  ];
-
-  return uniqueYearArray;
-}
-
-export async function getFormModel() {
-  return getCarData();
-}
-
-export async function getCity() {
-  return getCitiesData();
-}
-
-export async function getParts() {
-  return getPartsData();
-}
 
 export default async function Home() {
   const modelforms = CarData;
@@ -95,6 +41,7 @@ export default async function Home() {
 
   return (
     <div>
+
       <section
         className="py-5 xxs:py-0 xs:py-0 s:py-0 sm:px-7 lg:mx-6 md:mx-6 xs:px-0 s:px-2 max-w-7xl mx-auto"
         aria-label="auto spare parts in uae"
