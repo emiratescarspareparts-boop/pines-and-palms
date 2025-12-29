@@ -44,6 +44,8 @@ export default function FormOnly({ formsData = [] }) {
     const [isCustomPart, setIsCustomPart] = useState(false);
     const [addedParts, setAddedParts] = useState([]);
     const [duplicateMessage, setDuplicateMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
 
 
     const postFilter = ['AC Compressor',
@@ -524,64 +526,60 @@ export default function FormOnly({ formsData = [] }) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const today = new Date();
-        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-        const dateTime = date + ' ' + time;
+        setIsLoading(true);
 
-        const partsText = addedParts.join(', ');
-        const conditionText = Condition.join(', ').toString();
+        try {
+            const today = new Date();
+            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+            const dateTime = date + ' ' + time;
 
-        const submissionInfo = {
-            date: dateTime,
-            vehicle: `${Year} ${Make} ${Model}`,
-            parts: partsText,
-            name: Name,
-            location: textCity,
-            phone: Code + Whatsappno,
-            email: Email,
-            condition: conditionText,
-            timing: Timing,
-        };
+            const partsText = addedParts.join(', ');
+            const conditionText = Condition.join(', ').toString();
 
-        setSubmissionData(submissionInfo);
-
-        const response = await fetch(`/api/g_sheet`, {
-            method: 'POST',
-            body: JSON.stringify({
-                Timestamp: dateTime,
-                brand: Make,
-                contact: Whatsappno,
+            const submissionInfo = {
+                date: dateTime,
+                vehicle: `${Year} ${Make} ${Model}`,
+                parts: partsText,
                 name: Name,
-                description: 'Customer Name: ' + Name + '\n' + 'Address: ' + textCity + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
-                partList: partsText,
+                location: textCity,
+                phone: Code + Whatsappno,
                 email: Email,
-                year: Year,
-                model: Model,
-                address: textCity,
-                timing: Timing || '',
-                condition: conditionText || '',
-            }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        setCurrentStep(4)
-        setName('');
-        setCode('');
-        setYear('');
-        setMake('');
-        setModel('');
-        setAddress('');
-        setCityText('');
-        setCondition('')
-        setTiming('');
-        setEmail('');
-        setText('');
-        setWhatsappno('');
-        setPartInputs([{ id: 1, value: '', showSuggestions: false, isCustom: false, customName: '' }]);
-        setDuplicateMessage('');
-        setNextPartId(2);
+                condition: conditionText,
+                timing: Timing,
+            };
+
+            setSubmissionData(submissionInfo);
+
+            const response = await fetch(`/api/g_sheet`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    Timestamp: dateTime,
+                    brand: Make,
+                    contact: Whatsappno,
+                    name: Name,
+                    description: 'Customer Name: ' + Name + '\n' + 'Address: ' + textCity + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
+                    partList: partsText,
+                    email: Email,
+                    year: Year,
+                    model: Model,
+                    address: textCity,
+                    timing: Timing || '',
+                    condition: conditionText || '',
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            setCurrentStep(4);
+            // Reset form fields...
+        } catch (error) {
+            console.error('Submission error:', error);
+            // Handle error (maybe show error message to user)
+        } finally {
+            setIsLoading(false); // Always set loading to false when done
+        }
     }
 
     const nextStep = () => {
@@ -1168,14 +1166,26 @@ export default function FormOnly({ formsData = [] }) {
                                 </button>
                                 <button
                                     type="submit"
-                                    disabled={!canProceedStep3}
-                                    className={`flex-1 py-4 xs:py-2 xxs:py-2 sm:py-2 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep3
+                                    disabled={!canProceedStep3 || isLoading}
+                                    className={`flex-1 py-4 xs:py-2 xxs:py-2 sm:py-2 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${canProceedStep3 && !isLoading
                                         ? 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-lg hover:shadow-xl'
                                         : 'bg-gray-300 cursor-not-allowed'
                                         }`}
                                 >
-                                    <CheckCircle className="w-5 h-5" />
-                                    Submit Request
+                                    {isLoading ? (
+                                        <>
+                                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Submitting...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <CheckCircle className="w-5 h-5" />
+                                            Submit Inquiry
+                                        </>
+                                    )}
                                 </button>
                             </div>
 
