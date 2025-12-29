@@ -460,7 +460,7 @@ export default function Parts({ params, searchParams }) {
                         </div>
                     </div>
 
-                    <FormComponent formsData={modelforms} postFilter={partsposts} />
+                    <FormComponent formsData={modelsform} postFilter={partsposts} />
 
 
 
