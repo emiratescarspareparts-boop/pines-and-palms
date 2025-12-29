@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import { getParts } from '../../page';
 import Link from 'next/link';
 import FormComponent from '../../../components/FormComponent';
 import TenEntries from '../../../components/tenentries';
@@ -141,7 +140,7 @@ export default function Parts({ params, searchParams }) {
 
   const cities = CitiesData;
   const makedatas = getMake();
-  const partsposts = getParts();
+  const partsposts = PartsData;
   const modelsform = CarData;
 
   const {

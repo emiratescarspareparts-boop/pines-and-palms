@@ -1,19 +1,33 @@
 import Link from 'next/link';
 import React from 'react';
 import FormComponent from '../../components/FormComponent';
-import { getFormModel, getMake, getParts } from '../page';
 import Image from 'next/image';
 import Hero_img from '../../public/img/car-spare-parts.png';
 import Social from '../../components/Social';
+import PartsData from "../../public/lib/parts.json"
+import CarData from "../../public/lib/car-data.json";
+
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 
+function getMake() {
+  const uniqueMakes = {};
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+    if (!uniqueMakes[car.make]) {
+      uniqueMakes[car.make] = car;
+    }
+  }
+  return Object.values(uniqueMakes);
+}
 
-export default async function Contact() {
-  const partsposts = await getParts();
-  const modelforms = await getFormModel();
-  const posts = await getMake();
+
+export default function Contact() {
+  const partsposts = PartsData;
+  const modelforms = CarData;
+  const posts = getMake();
+
   return (
     <div>
       <div className="container place-content-center py-6 xl:mx-auto lg:mx-auto md:mx-auto">
