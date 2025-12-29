@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ChevronRight, Car, User, MapPin, Phone, Mail, CheckCircle, TimerIcon, FerrisWheel, CarFront, Settings2, Settings, CarFrontIcon } from 'lucide-react';
+import { ChevronRight, Car, User, MapPin, Phone, Mail, CheckCircle, TimerIcon, FerrisWheel, CarFront, Settings2, Settings, CarFrontIcon, Plus } from 'lucide-react';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 
 const playfair_display = Playfair_Display({
@@ -697,16 +697,17 @@ export default function FormOnly({ formsData = [] }) {
 
                 {/* Progress Bar */}
                 <div className="bg-gradient-to-r p-6 xxs:p-3" id="myForm">
-                    <div >
-                        <CarFrontIcon className='w-16 h-16 rounded-full mx-auto border-blue-800 border-4 bg-white text-blue-900' />
+                    <div>
+                        <CarFrontIcon className='w-16 h-16 xs:h-10 xs:w-10 xxs:h-10 xxs:w-10 rounded-full mx-auto border-blue-800 border-4 bg-blue-900  text-white' />
                         <div className='text-center'>
-                            <h6 className={`text-3xl pt-5 ${playfair_display.className} font-bold`}>Auto spare parts inquiry</h6>
+                            <h6 className={`text-3xl pt-5 ${playfair_display.className} font-bold`}>Inquiry Form</h6>
                             <p className='text-gray-700 text-base'>Find the parts you need in 3 steps</p>
                         </div>
                     </div>
                     <div className="text-black text-center">
-                        <h4 className={`text-2xl font-bold mt-16 ${firaSans.className}`}>
+                        <h4 className={`text-2xl font-bold mt-16 xs:mt-8 xxs:mt-8 sm:mt-10 ${firaSans.className}`}>
                             {currentStep === 1 && 'Vehicle Details'}
+
                             {currentStep === 2 && 'Parts Details'}
                             {currentStep === 3 && 'Personal Information'}
                             {currentStep === 4 && 'Inquiry Submitted Successfully!'}
@@ -729,7 +730,7 @@ export default function FormOnly({ formsData = [] }) {
                 </div>
 
                 <form onSubmit={handleSubmit}
-                    method="POST" className="p-8 border-2 rounded-lg bg-transparent">
+                    method="POST" className="p-8 xs:p-4 xxs:p-4 sm:p-6 border-2 rounded-lg bg-transparent">
 
 
                     {/* Step 2: Vehicle Info */}
@@ -837,40 +838,6 @@ export default function FormOnly({ formsData = [] }) {
                                     Part Name
                                 </label>
 
-                                {/* Toggle between Standard and Custom */}
-                                <div className="flex gap-2 mb-3">
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setIsCustomPart(false);
-                                            setCurrentPartInput('');
-                                            setCurrentPartSuggestions([]);
-                                            setDuplicateMessage('');
-                                        }}
-                                        className={`px-4 py-2 rounded-xl font-semibold transition-colors ${!isCustomPart
-                                            ? 'bg-blue-500 text-white'
-                                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                    >
-                                        Standard Parts
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setIsCustomPart(true);
-                                            setCurrentPartInput('');
-                                            setCurrentPartSuggestions([]);
-                                            setDuplicateMessage('');
-                                        }}
-                                        className={`px-4 py-2 rounded-xl font-semibold transition-colors ${isCustomPart
-                                            ? 'bg-blue-500 text-white'
-                                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                    >
-                                        Custom Part
-                                    </button>
-                                </div>
-
                                 {/* Duplicate Message Alert */}
                                 {duplicateMessage && (
                                     <div className="mb-3 bg-yellow-50 border-2 border-yellow-300 rounded-xl p-3 flex items-center gap-2 text-yellow-800 animate-fadeIn">
@@ -880,17 +847,24 @@ export default function FormOnly({ formsData = [] }) {
                                 )}
 
                                 {/* Standard Parts Input */}
-                                {!isCustomPart && (
-                                    <div className="relative mb-4">
+                                <div className="mb-4">
+                                    <div className="text-sm font-semibold text-gray-700 mb-2">
+                                        Search Standard Parts
+                                    </div>
+                                    <div className="relative">
                                         <div className="flex gap-2">
                                             <input
                                                 className="flex-1 border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
                                                 placeholder="Type to search parts..."
-                                                value={currentPartInput}
-                                                onChange={(e) => handlePartInputChange(e.target.value)}
+                                                value={!isCustomPart ? currentPartInput : ''}
+                                                onChange={(e) => {
+                                                    setIsCustomPart(false);
+                                                    handlePartInputChange(e.target.value);
+                                                }}
                                                 onKeyPress={(e) => {
                                                     if (e.key === 'Enter') {
                                                         e.preventDefault();
+                                                        setIsCustomPart(false);
                                                         addPart();
                                                     }
                                                 }}
@@ -898,25 +872,31 @@ export default function FormOnly({ formsData = [] }) {
 
                                             <button
                                                 type="button"
-                                                onClick={addPart}
-                                                disabled={!currentPartInput.trim()}
-                                                className={`px-6 rounded-xl font-bold transition-colors ${currentPartInput.trim()
+                                                onClick={() => {
+                                                    setIsCustomPart(false);
+                                                    addPart();
+                                                }}
+                                                disabled={isCustomPart || !currentPartInput.trim()}
+                                                className={`px-4 rounded-xl font-bold transition-colors ${!isCustomPart && currentPartInput.trim()
                                                     ? 'bg-blue-500 text-white hover:bg-blue-600'
-                                                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                                    : 'bg-green-500 text-white cursor-not-allowed'
                                                     }`}
                                             >
-                                                + Add
+                                                <Plus className='w-9 h-9' />
                                             </button>
                                         </div>
 
                                         {/* Suggestions Dropdown */}
-                                        {currentPartSuggestions.length > 0 && (
+                                        {!isCustomPart && currentPartSuggestions.length > 0 && (
                                             <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-64 overflow-y-auto">
                                                 {currentPartSuggestions.map(s => (
                                                     <div
                                                         key={s}
                                                         className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                                                        onClick={() => selectSuggestion(s)}
+                                                        onClick={() => {
+                                                            setIsCustomPart(false);
+                                                            selectSuggestion(s);
+                                                        }}
                                                     >
                                                         {s}
                                                     </div>
@@ -924,44 +904,55 @@ export default function FormOnly({ formsData = [] }) {
                                             </div>
                                         )}
                                     </div>
-                                )}
+                                </div>
+
 
                                 {/* Custom Parts Input */}
-                                {isCustomPart && (
-                                    <div className="mb-4 bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
+                                <div className="mb-4">
+                                    <div className="text-sm font-semibold text-gray-700 mb-2">
+                                        or type a custom part name
+                                    </div>
+                                    <div className="rounded-xl">
                                         <div className="flex items-center gap-2 mb-3 text-blue-700">
-                                            <span className="text-sm font-semibold">✏️ Enter your custom part name</span>
+                                            <span className="text-sm">For parts not in our standard list</span>
                                         </div>
                                         <div className="flex gap-2">
                                             <input
-                                                className="flex-1 border-2 border-blue-300 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
+                                                className="flex-1 border-2 border-blue-300 rounded-xl py-3 px-4 xs:px-0 xxs:px-3 text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
                                                 placeholder="e.g., Custom Exhaust Pipe, Modified Bumper..."
-                                                value={currentPartInput}
-                                                onChange={(e) => handlePartInputChange(e.target.value)}
+                                                value={isCustomPart ? currentPartInput : ''}
+                                                onChange={(e) => {
+                                                    setIsCustomPart(true);
+                                                    handlePartInputChange(e.target.value);
+                                                }}
                                                 onKeyPress={(e) => {
                                                     if (e.key === 'Enter') {
                                                         e.preventDefault();
+                                                        setIsCustomPart(true);
                                                         addPart();
                                                     }
                                                 }}
                                             />
-
                                             <button
                                                 type="button"
-                                                onClick={addPart}
-                                                disabled={!currentPartInput.trim()}
-                                                className={`px-6 rounded-xl font-bold transition-colors ${currentPartInput.trim()
+                                                onClick={() => {
+                                                    setIsCustomPart(true);
+                                                    addPart();
+                                                }}
+                                                disabled={!isCustomPart || !currentPartInput.trim()}
+                                                className={`px-4 rounded-xl font-bold transition-colors ${isCustomPart && currentPartInput.trim()
                                                     ? 'bg-blue-500 text-white hover:bg-blue-600'
-                                                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                                    : 'bg-green-500 text-white cursor-not-allowed'
                                                     }`}
                                             >
-                                                + Add
+                                                <Plus className="w-8 h-8 rounded-xl" />
                                             </button>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* Added Parts Display */}
+
                                 {addedParts.length > 0 && (
                                     <div className="mb-4">
                                         <div className="text-sm font-semibold text-gray-700 mb-2">
@@ -996,14 +987,14 @@ export default function FormOnly({ formsData = [] }) {
                                     Part Condition/Type
                                 </label>
 
-                                <div className="grid grid-cols-1 xs:grid-cols-1 xxs:grid-cols-1 s:grid-cols-1 sm:grid-cols-1">
+                                <div className="grid grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-1 gap-3 xs:gap-0 xxs:gap-0 sm:gap-0">
                                     {['Used', 'New', 'Genuine', 'Non-Genuine', 'Any'].map(option => {
                                         const isChecked = Condition.includes(option);
 
                                         return (
                                             <label
                                                 key={option}
-                                                className={`flex items-center gap-3 rounded-xl px-2 py-2 cursor-pointer transition-colors ${isChecked
+                                                className={`flex items-center gap-3 rounded-xl px-4 py-3 xs:py-0 xxs:py-0 sm:py-1 xs:px-0 xxs:px-1 sm:px-1 cursor-pointer transition-colors ${Timing === option
                                                     ? 'bg-purple-50'
                                                     : 'hover:border-purple-400'
                                                     }`}
@@ -1021,7 +1012,7 @@ export default function FormOnly({ formsData = [] }) {
                                                     className="w-4 h-4 accent-purple-500"
                                                 />
                                                 <span className="text-sm font-medium text-gray-700">
-                                                    {option}
+                                                    {" " + option}
                                                 </span>
                                             </label>
                                         );
@@ -1036,11 +1027,11 @@ export default function FormOnly({ formsData = [] }) {
                                     When do you need the part
                                 </label>
 
-                                <div className="grid grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-1 gap-3 xs:gap-1 xxs:gap-1 sm:gap-1">
+                                <div className="grid grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-1 gap-3 xs:gap-0 xxs:gap-0 sm:gap-0">
                                     {['Urgent', 'Not Urgent', 'Just Quote'].map(option => (
                                         <label
                                             key={option}
-                                            className={`flex items-center gap-3 rounded-xl px-4 py-3 xs:py-1 xxs:py-1 sm:py-1 xs:px-1 xxs:px-1 sm:px-1 cursor-pointer transition-colors ${Timing === option
+                                            className={`flex items-center gap-3 rounded-xl px-4 py-3 xs:py-0 xxs:py-0 sm:py-1 xs:px-0 xxs:px-1 sm:px-1 cursor-pointer transition-colors ${Timing === option
                                                 ? 'bg-purple-50'
                                                 : 'hover:border-purple-400'
                                                 }`}

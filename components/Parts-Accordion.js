@@ -119,22 +119,9 @@ export default function PartsAccordion({ make, location }) {
                 href="/#myForm"
                 className="text-blue-500 underline hover:no-underline"
               >
-                Emirates-car.com
+                EMIRATESCAR
               </Link>{' '}
-              sells Genuine/OEM, used and aftermarket parts.
-            </p>
-          </AccordionItemPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <AccordionItemHeading>
-            <AccordionItemButton>
-              How long does it take to fulfill my spare parts request{' '}
-              {location ? 'in ' + location : ''}?
-            </AccordionItemButton>
-          </AccordionItemHeading>
-          <AccordionItemPanel>
-            <p>
-              You will typically receive a reply within 10 minutes to 30 minutes
+              deal in Genuine/OEM, used and aftermarket parts.
             </p>
           </AccordionItemPanel>
         </AccordionItem>

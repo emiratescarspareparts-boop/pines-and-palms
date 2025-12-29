@@ -10,6 +10,8 @@ import partsData from "../../../../../public/lib/filteredparts.json"
 import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 import GetInTouchForm from '../../../../../components/GetInTouchForm';
+import Product from './Product';
+import FormOnly from '../../../../../components/FormOnly';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -421,313 +423,322 @@ export default function Parts({ params, searchParams }) {
         )}
             {hasPartInSubcategory && (
                 <div className='max-w-7xl mx-auto'>
-                    <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
-                        <div className="bg-backgroundlight rounded-sm">
-                            <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
-                                <div>
-                                    <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
-                                        <div className="lg:text-left">
+                    <div className="bg-backgroundlight rounded-sm">
+                        <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
+                            <div>
+                                <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
+                                    <div className="lg:text-left">
 
-                                            <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-bold ${firaSans.className}`}>
-                                                <span className="text-blue-500">{make} {partEntry.parts}</span> - Used, Genuine & Aftermarket in UAE
-                                            </h1>
-                                            <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
-                                                <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
-                                                    <a
-                                                        href="/#myForm"
-                                                        title="vehicle parts online"
-                                                        className="flex items-center justify-center py-2 xs:py-2 xxs:py-1 sm:py-0 text-xl sm:text-base xl:text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:text-lg md:px-5 xs:text-sm xxs:text-sm xxs:my-2 lg:my-2 s:text-sm s:my-2 focus:filter brightness-125"
-                                                    >
-                                                        Inquire Now
-                                                    </a>
-                                                </div>
+                                        <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-bold ${firaSans.className}`}>
+                                            <span className="text-blue-500">{make} {partEntry.parts}</span> - Used, Genuine & Aftermarket in UAE
+                                        </h1>
+                                        <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
+                                            <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
+                                                <a
+                                                    href="#myForm"
+                                                    title="vehicle parts online"
+                                                    className="flex items-center justify-center py-2 xs:py-2 xxs:py-1 sm:py-0 text-xl sm:text-base xl:text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:text-lg md:px-5 xs:text-sm xxs:text-sm xxs:my-2 lg:my-2 s:text-sm s:my-2 focus:filter brightness-125"
+                                                >
+                                                    Inquire Now
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="xxs:hidden xs:hidden p-35 md:p-20 lg:p-20">
-                                    {imageMake && (
-                                        <Image
-                                            src={`/img/car-logos/${imageMake}`}
-                                            alt={`${make} spare parts`}
-                                            width={300}
-                                            height={300}
-                                            priority
-                                        />
-                                    )}
-                                </div>
+                            </div>
+                            <div className="xxs:hidden xs:hidden p-35 md:p-20 lg:p-20">
+                                {imageMake && (
+                                    <Image
+                                        src={`/img/car-logos/${imageMake}`}
+                                        alt={`${make} spare parts`}
+                                        width={300}
+                                        height={300}
+                                        priority
+                                    />
+                                )}
                             </div>
                         </div>
-                        <section className="grid grid-cols-1 s:grid s:grid-cols-1 xs:grid xs:grid-cols-1 xxs:grid xxs:grid-cols-1 sm:grid sm:grid-cols-1">
-                            <FormComponent formsData={modelsform} postFilter={partsposts} />
+                    </div>
 
-                        </section>
-                        <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-                            <div className="container py-6">
-                                <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-                                    Search <span className='text-blue-600'>{decodeURIComponent(parts)}</span> for all {make} model
-                                </h2>
-                                <SearchModel make={make} car={carmodel} />
+                    <FormComponent formsData={modelforms} postFilter={partsposts} />
 
-                                <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-                                    {carmodel.map((post, i) => {
-                                        const linkHref = isExcludedMake
-                                            ? '/get-in-touch'
-                                            : '/search-by-make/[make]/[model]/[category]/[subcategory]';
-                                        const linkAs = isExcludedMake
-                                            ? '/get-in-touch'
-                                            : `/search-by-make/${post.make}/${post.model}/${partsData.category}/${parts}`;
 
-                                        return (
-                                            <li key={i} className="h-full">
-                                                <Link
-                                                    href={linkHref}
-                                                    as={linkAs}
-                                                    target='_blank'
-                                                    title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
-                                                    className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                                                >
-                                                    <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                                                        <span className='text-blue-600'>{make} {post.model}</span> {decodeURIComponent(parts)} parts
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
 
-                            </div>
-                        </section>
-                        <section>
-                            <h2
-                                className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}
-                            >
-                                Search{" "}
-                                <span className="text-blue-500">
-                                    {decodeURIComponent(partEntry.parts)}{" "}
-                                </span>
-                                for Any Models
+                    <section>
+                        {partFiltered.length > 0 ?
+                            <Product
+                                make={make}
+                                parts={parts}
+                                products={filtered}
+                                allProducts={partFiltered}
+                            /> : <></>}
+                    </section>
+
+                    <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
+                        <div className="container py-6">
+                            <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+                                Search <span className='text-blue-600'>{decodeURIComponent(parts)}</span> for all {make} model
                             </h2>
+                            <SearchModel make={make} car={carmodel} />
 
-                            <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
-                                {makedatas.map((post, i) => {
-                                    // Check if the given [parts] exists for this make
-                                    const partsAvailable = products.some(p =>
-                                        p.compatibility?.some(c =>
-                                            c.make.toLowerCase() === post.make.toLowerCase()
-                                        ) &&
-                                        p.subcategory.toLowerCase() === decodeURIComponent(partEntry.parts).toLowerCase()
-                                    );
-
-                                    // Build link conditionally
-                                    const href = partsAvailable
-                                        ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
-                                        : `/search-by-make/${encodeURIComponent(post.make)}`;
+                            <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+                                {carmodel.map((post, i) => {
+                                    const linkHref = isExcludedMake
+                                        ? '/get-in-touch'
+                                        : '/search-by-make/[make]/[model]/[category]/[subcategory]';
+                                    const linkAs = isExcludedMake
+                                        ? '/get-in-touch'
+                                        : `/search-by-make/${post.make}/${post.model}/${partsData.category}/${parts}`;
 
                                     return (
-                                        <div key={i} className="border">
-                                            <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
-                                                <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
-                                                    <Image
-                                                        src={`/img/car-logos/${post.img}`}
-                                                        alt={`${post.make} spare parts`}
-                                                        className="mx-auto m-3"
-                                                        priority
-                                                        width={70}
-                                                        height={70}
-                                                    />
-                                                    <p className="text-center font-sans font-medium text-lg">
-                                                        <span className="text-blue-600">{post.make}</span>{" "}
-                                                        {decodeURIComponent(partEntry.parts)}
-                                                    </p>
+                                        <li key={i} className="h-full">
+                                            <Link
+                                                href={linkHref}
+                                                as={linkAs}
+                                                target='_blank'
+                                                title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
+                                                className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+                                            >
+                                                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                                    <span className='text-blue-600'>{make} {post.model}</span> {decodeURIComponent(parts)} parts
                                                 </span>
                                             </Link>
-                                        </div>
+                                        </li>
                                     );
                                 })}
-                            </div>
-                        </section>
+                            </ul>
 
-                        <TenEntries />
-                        <section>
-                            <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-                                Search{' '}
-                                <span className="text-blue-500">
-                                    {decodeURIComponent(partEntry.parts)}{' '}
-                                </span>
-                                parts in UAE
-                            </h2>
-                            <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
-                                {cities.map((post, i) => (
-                                    <div key={i} className='border'>
-                                        <Link
-                                            href="/search-by-cities-in-uae/[city]"
-                                            as={'/search-by-cities-in-uae/' + post.city}
-                                            target='_blank'
-                                            title={
-                                                make + " " + decodeURIComponent(partEntry.parts) + ' in ' + post.city
-                                            }
-                                        >
-                                            <span className="h-full hover:border-blue-600 py-auto bg-gray-100 rounded-sm">
-                                                <p className={`text-center my-auto font-sans font-medium text-lg xs:text-base xxs:text-base`}>
-                                                    {decodeURIComponent(partEntry.parts)} in <span className='text-blue-600'>{post.city}</span>
+                        </div>
+                    </section>
+                    <section>
+                        <h2
+                            className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}
+                        >
+                            Search{" "}
+                            <span className="text-blue-500">
+                                {decodeURIComponent(partEntry.parts)}{" "}
+                            </span>
+                            for Any Models
+                        </h2>
+
+                        <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
+                            {makedatas.map((post, i) => {
+                                // Check if the given [parts] exists for this make
+                                const partsAvailable = products.some(p =>
+                                    p.compatibility?.some(c =>
+                                        c.make.toLowerCase() === post.make.toLowerCase()
+                                    ) &&
+                                    p.subcategory.toLowerCase() === decodeURIComponent(partEntry.parts).toLowerCase()
+                                );
+
+                                // Build link conditionally
+                                const href = partsAvailable
+                                    ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
+                                    : `/search-by-make/${encodeURIComponent(post.make)}`;
+
+                                return (
+                                    <div key={i} className="border">
+                                        <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
+                                            <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                                                <Image
+                                                    src={`/img/car-logos/${post.img}`}
+                                                    alt={`${post.make} spare parts`}
+                                                    className="mx-auto m-3"
+                                                    priority
+                                                    width={70}
+                                                    height={70}
+                                                />
+                                                <p className="text-center font-sans font-medium text-lg">
+                                                    <span className="text-blue-600">{post.make}</span>{" "}
+                                                    {decodeURIComponent(partEntry.parts)}
                                                 </p>
                                             </span>
                                         </Link>
                                     </div>
-                                ))}
-                            </div>
+                                );
+                            })}
+                        </div>
+                    </section>
+
+                    <TenEntries />
+                    <section>
+                        <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+                            Search{' '}
+                            <span className="text-blue-500">
+                                {decodeURIComponent(partEntry.parts)}{' '}
+                            </span>
+                            parts in UAE
+                        </h2>
+                        <div className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
+                            {cities.map((post, i) => (
+                                <div key={i} className='border'>
+                                    <Link
+                                        href="/search-by-cities-in-uae/[city]"
+                                        as={'/search-by-cities-in-uae/' + post.city}
+                                        target='_blank'
+                                        title={
+                                            make + " " + decodeURIComponent(partEntry.parts) + ' in ' + post.city
+                                        }
+                                    >
+                                        <span className="h-full hover:border-blue-600 py-auto bg-gray-100 rounded-sm">
+                                            <p className={`text-center my-auto font-sans font-medium text-lg xs:text-base xxs:text-base`}>
+                                                {decodeURIComponent(partEntry.parts)} in <span className='text-blue-600'>{post.city}</span>
+                                            </p>
+                                        </span>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                    {parts === 'Alternator' ? <>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Find the Right Honda Alternator in the UAE — For Garages & Car Owners
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Whether you run a workshop, showroom, spare parts shop or you are a Honda owner,
+                                <span className='text-blue-600'> EMIRATESCAR</span> operates as a secure, centralized spare parts hub that sources quotes from verified,
+                                reputable suppliers across the UAE. We conduct the full price comparison internally and provide the
+                                most cost-effective option, ensuring no third-party involvement or direct supplier interactions.
+                                Our inventory covers a full range of <strong>OEM, aftermarket, refurbished and
+                                    high-output Honda alternators</strong>. We serve Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah
+                                and Fujairah with fast delivery, warranty options and bulk pricing tailored for garages and workshops.
+                            </p>
                         </section>
-                        {parts === 'Alternator' ? <>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Find the Right Honda Alternator in the UAE — For Garages & Car Owners
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Whether you run a workshop, showroom, spare parts shop or you are a Honda owner,
-                                    <span className='text-blue-600'> EMIRATESCAR</span> operates as a secure, centralized spare parts hub that sources quotes from verified,
-                                    reputable suppliers across the UAE. We conduct the full price comparison internally and provide the
-                                    most cost-effective option, ensuring no third-party involvement or direct supplier interactions.
-                                    Our inventory covers a full range of <strong>OEM, aftermarket, refurbished and
-                                        high-output Honda alternators</strong>. We serve Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah
-                                    and Fujairah with fast delivery, warranty options and bulk pricing tailored for garages and workshops.
-                                </p>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Why Choose EMIRATESCAR for Your Honda Alternator Replacement
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    We deal in a wide range of Honda alternators across models and engine types, backed by
-                                    trusted UAE suppliers. Whether you need <em>one unit</em> or a <em>bulk order</em> for
-                                    your garage, you can compare prices, check compatibility and request quotations easily.
-                                </p>
-                                <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    <li>✔ Genuine OEM and reliable aftermarket options</li>
-                                    <li>✔ Verified suppliers and warranty-backed parts</li>
-                                    <li>✔ Bulk order discounts for workshops and spare parts shops</li>
-                                </ul>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Common Alternator Symptoms — When to Replace It
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    If your Honda shows electrical issues, don&apos;t ignore it. Typical signs include the battery
-                                    warning light, dim or flickering headlights, slow cranking, frequent battery drain, or
-                                    electrical accessories failing. Early replacement prevents battery and ECU damage — and
-                                    saves your time and money.
-                                </p>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Models & Engine Coverage (Including K-Series Engines)
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    We list alternators for all popular Honda models found on UAE roads — Accord, Civic, CR-V,
-                                    City, HR-V, Odyssey and Pilot — and we specifically support a wide range of <strong>K-series</strong>
-                                    and related engine codes used in these models. This makes it easy for both garage buyers and
-                                    individual owners to find a direct-fit alternator.
-                                </p>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Why Choose EMIRATESCAR for Your Honda Alternator Replacement
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                We deal in a wide range of Honda alternators across models and engine types, backed by
+                                trusted UAE suppliers. Whether you need <em>one unit</em> or a <em>bulk order</em> for
+                                your garage, you can compare prices, check compatibility and request quotations easily.
+                            </p>
+                            <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                <li>✔ Genuine OEM and reliable aftermarket options</li>
+                                <li>✔ Verified suppliers and warranty-backed parts</li>
+                                <li>✔ Bulk order discounts for workshops and spare parts shops</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Common Alternator Symptoms — When to Replace It
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                If your Honda shows electrical issues, don&apos;t ignore it. Typical signs include the battery
+                                warning light, dim or flickering headlights, slow cranking, frequent battery drain, or
+                                electrical accessories failing. Early replacement prevents battery and ECU damage — and
+                                saves your time and money.
+                            </p>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Models & Engine Coverage (Including K-Series Engines)
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                We list alternators for all popular Honda models found on UAE roads — Accord, Civic, CR-V,
+                                City, HR-V, Odyssey and Pilot — and we specifically support a wide range of <strong>K-series</strong>
+                                and related engine codes used in these models. This makes it easy for both garage buyers and
+                                individual owners to find a direct-fit alternator.
+                            </p>
 
 
-                                <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    <li>Popular models: Honda Accord, Civic, CR-V, City, HR-V, Odyssey, Pilot</li>
-                                    <li>Targeted engine codes: <strong>K20A, K20A2, K20, K20C, K20C1 (crate)</strong></li>
-                                    <li>Targeted engine codes: <strong>K24, K24A, K24A1, K24A2, K24A4, K24Z3, K24Z7</strong></li>
-                                </ul>
+                            <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                <li>Popular models: Honda Accord, Civic, CR-V, City, HR-V, Odyssey, Pilot</li>
+                                <li>Targeted engine codes: <strong>K20A, K20A2, K20, K20C, K20C1 (crate)</strong></li>
+                                <li>Targeted engine codes: <strong>K24, K24A, K24A1, K24A2, K24A4, K24Z3, K24Z7</strong></li>
+                            </ul>
 
 
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Each K-series variant may require a different amperage, mounting bracket or regulator spec —
-                                    our listings include those details so a mechanic or owner can choose the correct alternator
-                                    the first time.
-                                </p>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Types of Honda Alternators Available in the UAE
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    We make it easy to choose between OEM reliability and cost-effective aftermarket options.
-                                    Our marketplace lists brand-new OEM alternators, dependable aftermarket units, refurbished
-                                    assemblies and high-output alternators for vehicles with added electrical loads.
-                                </p>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Each K-series variant may require a different amperage, mounting bracket or regulator spec —
+                                our listings include those details so a mechanic or owner can choose the correct alternator
+                                the first time.
+                            </p>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Types of Honda Alternators Available in the UAE
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                We make it easy to choose between OEM reliability and cost-effective aftermarket options.
+                                Our marketplace lists brand-new OEM alternators, dependable aftermarket units, refurbished
+                                assemblies and high-output alternators for vehicles with added electrical loads.
+                            </p>
 
 
-                                <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    <li>Genuine OEM alternators — exact fit and factory performance</li>
-                                    <li>Aftermarket alternators — value-focused replacements and popular with workshops</li>
-                                    <li>Refurbished/reconditioned alternators — economical for older vehicles</li>
-                                    <li>High-output alternators — for modified cars or heavy-electrical loads</li>
-                                </ul>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Pricing Guide — What to Expect in the UAE Market
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Prices vary by model, engine and condition. Below are approximate ranges that help both
-                                    visitors budgeting a repair and garages planning inventory purchases.
-                                </p>
+                            <ul className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                <li>Genuine OEM alternators — exact fit and factory performance</li>
+                                <li>Aftermarket alternators — value-focused replacements and popular with workshops</li>
+                                <li>Refurbished/reconditioned alternators — economical for older vehicles</li>
+                                <li>High-output alternators — for modified cars or heavy-electrical loads</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Pricing Guide — What to Expect in the UAE Market
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Prices vary by model, engine and condition. Below are approximate ranges that help both
+                                visitors budgeting a repair and garages planning inventory purchases.
+                            </p>
 
-                                <ul className={`text-center font-sans font-medium text-lg mt-3 ${firaSans.className}`}>
-                                    <li>Aftermarket alternator: AED 200 – 600</li>
-                                    <li>Genuine OEM alternator: AED 1,500 – 3,500</li>
-                                    <li>Premium new alternator: AED 900 – 1,500</li>
-                                    <li>Used/rebuilt alternator: AED 100 – 250</li>
-                                </ul>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    For K-series engines such as <strong>K20A2</strong> or <strong>K24A2</strong>, prices can
-                                    skew higher if you need OEM or high-output units. Garages ordering in bulk should ask
-                                    suppliers for wholesale discounts (typically 5–25% depending on quantity).
-                                </p>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Why Workshops & Showrooms Trust Our Platform
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    UAE garages and showrooms rely on <a href="/" className='text-blue-600'>EMIRATESCAR</a> for streamlined procurement: supplier
-                                    verification, stock visibility, and fast lead times. For engine rebuilds, crate engines
-                                    (like K20C1 builds) and fleet maintenance, our bulk ordering and pricing tools reduce
-                                    downtime and improve margins.
-                                </p>
-                            </section>
-                            {/* 8. Why Visitors Trust Us */}
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Why Honda Owners Choose <a href="/" className='text-blue-600'>EMIRATESCAR</a>
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Individual owners benefit from easy compatibility checks, clear pricing and delivery
-                                    across the UAE. If your Honda runs a K-series engine such as <strong>K20</strong> or
-                                    <strong>K24Z7</strong>, you can quickly find alternators that match your engine’s amps and
-                                    mounting style.
-                                </p>
-                            </section>
-                            <section>
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    How to Order Your Honda Alternator Online
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Ordering is simple: choose your model and engine, select Alternator under parts, compare
-                                    OEM and aftermarket listings, and submit an inquiry or request for bulk pricing. Suppliers
-                                    will contact you via WhatsApp, phone or email with delivery and warranty details.
-                                </p>
-                            </section>
-                            <section className="pb-12">
-                                <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-                                    Buy Honda Alternators in the UAE — Fast, Reliable & Compatible
-                                </h2>
-                                <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                                    Whether you’re a garage stocking parts or an owner replacing an alternator on a K-series
-                                    engine, <a href="/" className='text-blue-600'>EMIRATESCAR</a> helps you find the right part with confidence. Contact suppliers
-                                    today to request a quote, check compatibility for <strong>K20A2, K24A2</strong> and other
-                                    engines, or secure bulk order pricing for your workshop.
-                                </p>
-                            </section></> : ""}
-                    </div>
+                            <ul className={`text-center font-sans font-medium text-lg mt-3 ${firaSans.className}`}>
+                                <li>Aftermarket alternator: AED 200 – 600</li>
+                                <li>Genuine OEM alternator: AED 1,500 – 3,500</li>
+                                <li>Premium new alternator: AED 900 – 1,500</li>
+                                <li>Used/rebuilt alternator: AED 100 – 250</li>
+                            </ul>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                For K-series engines such as <strong>K20A2</strong> or <strong>K24A2</strong>, prices can
+                                skew higher if you need OEM or high-output units. Garages ordering in bulk should ask
+                                suppliers for wholesale discounts (typically 5–25% depending on quantity).
+                            </p>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Why Workshops & Showrooms Trust Our Platform
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                UAE garages and showrooms rely on <a href="/" className='text-blue-600'>EMIRATESCAR</a> for streamlined procurement: supplier
+                                verification, stock visibility, and fast lead times. For engine rebuilds, crate engines
+                                (like K20C1 builds) and fleet maintenance, our bulk ordering and pricing tools reduce
+                                downtime and improve margins.
+                            </p>
+                        </section>
+                        {/* 8. Why Visitors Trust Us */}
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Why Honda Owners Choose <a href="/" className='text-blue-600'>EMIRATESCAR</a>
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Individual owners benefit from easy compatibility checks, clear pricing and delivery
+                                across the UAE. If your Honda runs a K-series engine such as <strong>K20</strong> or
+                                <strong>K24Z7</strong>, you can quickly find alternators that match your engine’s amps and
+                                mounting style.
+                            </p>
+                        </section>
+                        <section>
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                How to Order Your Honda Alternator Online
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Ordering is simple: choose your model and engine, select Alternator under parts, compare
+                                OEM and aftermarket listings, and submit an inquiry or request for bulk pricing. Suppliers
+                                will contact you via WhatsApp, phone or email with delivery and warranty details.
+                            </p>
+                        </section>
+                        <section className="pb-12">
+                            <h2 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
+                                Buy Honda Alternators in the UAE — Fast, Reliable & Compatible
+                            </h2>
+                            <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
+                                Whether you’re a garage stocking parts or an owner replacing an alternator on a K-series
+                                engine, <a href="/" className='text-blue-600'>EMIRATESCAR</a> helps you find the right part with confidence. Contact suppliers
+                                today to request a quote, check compatibility for <strong>K20A2, K24A2</strong> and other
+                                engines, or secure bulk order pricing for your workshop.
+                            </p>
+                        </section></> : ""}
                 </div>
             )}
         </>

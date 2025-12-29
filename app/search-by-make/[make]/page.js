@@ -10,6 +10,7 @@ import products from "../../../public/products.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../public/lib/car-data.json"
 import PartsData from "../../../public/lib/parts.json"
+import Product from './Product';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -221,10 +222,10 @@ export function generateMetadata({ params }) {
         "divEntity": [
           {
             "@type": "Question",
-            "name": `Do you sell genuine ${make} spare parts in UAE?`,
+            "name": `Do you deal in genuine ${make} spare parts in UAE?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `Yes, we supply genuine OEM ${make} parts, as well as used and aftermarket options to suit your budget.`
+              "text": `Yes, we deal in genuine OEM ${make} parts, as well as used and aftermarket options to suit your budget.`
             }
           },
           {
@@ -743,10 +744,13 @@ export default function MakePage({ params, searchParams }) {
             </div>
           </div>
         </header>
-
-        <section className='#myForm'>
-          <FormComponent formsData={modelsform} postFilter={partspost} />
-        </section>
+        <FormComponent formsData={modelforms} postFilter={partsposts} />
+        {makeFiltered.length > 0 ?
+          <Product
+            make={make}
+            products={filtered}
+            allProducts={makeFiltered}
+          /> : <></>}
         <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
           <div className="container py-6">
             <h2 className={`font-bold text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>

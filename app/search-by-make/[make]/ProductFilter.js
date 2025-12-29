@@ -305,7 +305,7 @@ export default function ProductFilter({ make, products, allProducts, searchParam
                                                     />
                                                 </figure>
                                                 <figcaption className="p-3">
-                                                    <h2 className="font-semibold line-clamp-1" itemProp="name">{product.partname}</h2>
+                                                    <h2 className="font-semibold line-clamp-1" itemProp="name">{make} {compat?.model || ""} {compat?.years || ""} {product.partname}</h2>
                                                     <p className="text-sm text-gray-600">Part #: <span itemProp="mpn">{product.partnumber}</span></p>
                                                     <meta itemProp="brand" content={product.brand} />
                                                     <meta itemProp="category" content={product.category} />

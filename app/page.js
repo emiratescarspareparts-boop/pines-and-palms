@@ -12,6 +12,8 @@ import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
 import FormComponent from '../components/FormComponent';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import { CheckCircle } from 'lucide-react';
+import FormOnly from '../components/FormOnly';
 
 export const revalidate = 1814400;
 export const runtime = 'nodejs';

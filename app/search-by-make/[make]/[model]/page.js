@@ -9,6 +9,7 @@ import SearchModel from '../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import PartsData from "../../../../public/lib/parts.json"
+import Product from './Product';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -719,6 +720,16 @@ export default function Model({ params, searchParams }) {
           </div>
         </div>
       </header>
+
+      <section>
+        {makeModelFiltered.length > 0 ?
+          <Product
+            make={make}
+            model={model}
+            products={filtered}
+            allProducts={makeModelFiltered}
+          /> : <></>}
+      </section>
       <section className='#myForm'>
         <FormComponent formsData={modelsform} postFilter={partspost} />
       </section>
