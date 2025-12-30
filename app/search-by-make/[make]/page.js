@@ -1,5 +1,4 @@
 import SearchModel from '../../../components/SearchModel';
-import FormComponent from '../../../components/FormComponent';
 import Link from 'next/link';
 import HondaOfferButton from '../../../components/HondaOfferButton';
 import Image from 'next/image';
@@ -11,6 +10,7 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../public/lib/car-data.json"
 import PartsData from "../../../public/lib/parts.json"
 import Product from './Product';
+import FormOnly from '../../../components/FormOnly';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -744,7 +744,9 @@ export default function MakePage({ params, searchParams }) {
             </div>
           </div>
         </header>
-        <FormComponent formsData={modelforms} postFilter={partsposts} />
+        <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+          <FormOnly formsData={modelsform} />
+        </div>
         {makeFiltered.length > 0 ?
           <Product
             make={make}

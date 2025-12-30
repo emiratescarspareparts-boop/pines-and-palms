@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import FormComponent from '../../../../../components/FormComponent';
 import TenEntries from '../../../../../components/tenentries';
 import SearchModel from '../../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
@@ -12,6 +11,7 @@ import CitiesData from "../../../../../public/lib/cities.json"
 import GetInTouchForm from '../../../../../components/GetInTouchForm';
 import Product from './Product';
 import FormOnly from '../../../../../components/FormOnly';
+import FormMakePart from '../../../../../components/FormMakePart';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -411,7 +411,7 @@ export default function Parts({ params, searchParams }) {
     return (
         <>{!hasPartInSubcategory && (
             <div className="p-6 max-w-6xl mx-auto">
-                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold ${playfair_display.className}`}>
+                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-3xl xxs:text-3xl md:text-4xl font-head font-extrabold ${playfair_display.className}`}>
                     {make} {partEntry.parts} - Genuine & Aftermarket in UAE
                 </h1>
                 <p className={`text-xl py-4 font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
@@ -423,44 +423,19 @@ export default function Parts({ params, searchParams }) {
         )}
             {hasPartInSubcategory && (
                 <div className='max-w-7xl mx-auto'>
-                    <div className="bg-backgroundlight rounded-sm">
-                        <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
-                            <div>
-                                <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
-                                    <div className="lg:text-left">
-
-                                        <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-bold ${firaSans.className}`}>
-                                            <span className="text-blue-500">{make} {partEntry.parts}</span> - Used, Genuine & Aftermarket in UAE
-                                        </h1>
-                                        <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
-                                            <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
-                                                <a
-                                                    href="#myForm"
-                                                    title="vehicle parts online"
-                                                    className="flex items-center justify-center py-2 xs:py-2 xxs:py-1 sm:py-0 text-xl sm:text-base xl:text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:text-lg md:px-5 xs:text-sm xxs:text-sm xxs:my-2 lg:my-2 s:text-sm s:my-2 focus:filter brightness-125"
-                                                >
-                                                    Inquire Now
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="xxs:hidden xs:hidden p-35 md:p-20 lg:p-20">
-                                {imageMake && (
-                                    <Image
-                                        src={`/img/car-logos/${imageMake}`}
-                                        alt={`${make} spare parts`}
-                                        width={300}
-                                        height={300}
-                                        priority
-                                    />
-                                )}
+                    <div className="flex items-center mt-10 xs:pt-5 s:pt-5">
+                        <div>
+                            <div className="mx-auto xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
+                                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-3xl xxs:text-3xl md:text-4xl font-head font-bold ${firaSans.className}`}>
+                                    <span className="text-blue-500">{make} {partEntry.parts}</span> - Used, Genuine & Aftermarket in UAE
+                                </h1>
                             </div>
                         </div>
                     </div>
 
-                    <FormComponent formsData={modelsform} postFilter={partsposts} />
+                    <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+                        <FormMakePart formsData={modelsform} mke={make} />
+                    </div>
 
 
 

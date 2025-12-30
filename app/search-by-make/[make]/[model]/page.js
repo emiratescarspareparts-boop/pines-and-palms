@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import HondaOfferButton from '../../../../components/HondaOfferButton';
-import FormComponent from '../../../../components/FormComponent';
-import { notFound } from 'next/navigation';
 import products from '../../../../public/products.json'
 import SearchModel from '../../../../components/SearchModel';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
+import FormOnly from '../../../../components/FormOnly';
+import FormMakeModel from '../../../../components/FormMakeModel';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -721,6 +721,10 @@ export default function Model({ params, searchParams }) {
         </div>
       </header>
 
+      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+        <FormMakeModel formsData={modelsform} mke={make} modl={model} />
+      </div>
+
       <section>
         {makeModelFiltered.length > 0 ?
           <Product
@@ -730,9 +734,7 @@ export default function Model({ params, searchParams }) {
             allProducts={makeModelFiltered}
           /> : <></>}
       </section>
-      <section className='#myForm'>
-        <FormComponent formsData={modelsform} postFilter={partspost} />
-      </section>
+
 
       <section className='xs:px-3 xxs:px-3 md:px-3 lg:max-w-4xl lg:mx-auto'>
         <h3 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why Emirates-car.com?</h3>

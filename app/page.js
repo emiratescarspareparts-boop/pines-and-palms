@@ -130,6 +130,10 @@ export default async function Home() {
 
       <FormComponent formsData={modelforms} postFilter={partsposts} />
 
+      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+        <FormOnly formsData={modelforms} />
+      </div>
+
       <section>
         <div className="text-center mx-auto max-w-7xl xs:px-3 xxs:px-2 xxs:mx-3 py-10 xs:py-5 xxs:py-5">
           <div className="grid grid-cols-4 text-center gap-2 xs:grid xs:grid-cols-2 s:grid s:grid-cols-2 xs:gap-1 xxs:text-sm xxs:grid xxs:grid-cols-2 xs:pb-5 s:pb-10">

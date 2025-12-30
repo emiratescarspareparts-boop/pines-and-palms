@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 
-export default function Product({ make, model, products, allProducts }) {
+export default function Product({ make, products, model, allProducts, subcategory }) {
     const INITIAL_COUNT = 8; // change as needed
     const [showAll, setShowAll] = useState(false);
 
@@ -18,14 +18,14 @@ export default function Product({ make, model, products, allProducts }) {
         )
     );
     return (
-        <div> {/* Results Grid */}
+        <div>
+            {/* Results Grid */}
             <section className="mt-20 xs:mt-5 xxs:mt-5 sm:mt-7 mx-5 xs:mx-3 sm:mx-3 xxs:mx-3">
-                <h2 className="text-2xl font-bold mb-4">{make} {model} Parts</h2>
+                <h2 className="text-2xl font-bold mb-4">{make} {model} {subcategory} Parts</h2>
                 <p>{visibleProducts.length} Results</p>
                 <ul className="grid grid-cols-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xxl:grid-cols-5 xxs:grid-cols-2 xs:grid-cols-2 xs:gap-2 s:gap-2 xxs:gap-2 md:gap-2 s:grid-cols-2 sm:grid-cols-2 sm:gap-2 gap-6 xl:gap-3 xxl:gap-3 lg:gap-3">
                     {visibleProducts.length > 0 ? (
                         visibleProducts.map(product => {
-                            // === 3-DAY ROTATION LOGIC ===
                             const compatList = product.compatibility.filter(
                                 c => c.make.toLowerCase() === make.toLowerCase()
                             );

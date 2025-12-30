@@ -16,11 +16,11 @@ const firaSans = Fira_Sans({
     variable: '--font-fira-sans',
 });
 
-export default function FormOnly({ formsData = [] }) {
+export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
     const [currentStep, setCurrentStep] = useState(1);
     const [Year, setYear] = useState('');
-    const [Make, setMake] = useState('');
-    const [Model, setModel] = useState('');
+    const [Make, setMake] = useState(mke);
+    const [Model, setModel] = useState(modl);
     const [Email, setEmail] = useState('');
     const [Whatsappno, setWhatsappno] = useState('');
     const [formPartname, setFormPartname] = useState([]);

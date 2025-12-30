@@ -6,11 +6,12 @@ import CarParts from '../../../../../../public/img/car-spare-parts.png';
 import Image from "next/image";
 import SearchMakeModelParts from "../../../../../../components/SearchMakeModelParts";
 import SearchCity from "../../../../../../components/SearchCity";
-import FormComponentMakeModelCatSubcat from "../../../../../../components/FormComponentMakeModelCatSubcat";
 import GetInTouchForm from "../../../../../../components/GetInTouchForm";
 import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/filteredparts.json"
 import CitiesData from "../../../../../../public/lib/cities.json"
+import Product from "./Product";
+import FormMakeModel from "../../../../../../components/FormMakeModel";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
@@ -210,10 +211,10 @@ export function generateStaticParams() {
                 if (!unique.has(key)) {
                     unique.add(key);
                     params.push({
-                        make,
-                        model,
-                        category,
-                        subcategory,
+                        make: encodeURIComponent(make),
+                        model: encodeURIComponent(model),
+                        category: encodeURIComponent(category),
+                        subcategory: encodeURIComponent(subcategory),
                     });
                 }
             }
@@ -416,76 +417,31 @@ export default function SubcategoryPage({ params, searchParams }) {
             (<div className="p-6 max-w-6xl mx-auto">
 
                 <div className="py-5 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
-                    <div className="bg-backgroundlight rounded-sm">
-                        <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
-                            <div>
-                                <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
-                                    <div className="lg:text-left">
-
-                                        <header>
-                                            <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold ${playfair_display.className}`}>
-                                                {make} {model} <span className="text-blue-500">{subcategory.replace(/-/g, " ")}</span> - Genuine & Aftermarket in UAE
-                                            </h1>
-                                        </header>
-
-                                        <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
-                                            <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
-                                                <a
-                                                    href="#myMakeModelSubcategoryForm"
-                                                    title={`${make} ${model} ${subcategory}`}
-                                                    className="flex items-center justify-center py-2 xs:py-2 xxs:py-1 sm:py-0 text-xl sm:text-base xl:text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:text-lg md:px-5 xs:text-sm xxs:text-sm xxs:my-2 lg:my-2 s:text-sm s:my-2 focus:filter brightness-125"
-                                                >
-                                                    Inquire Now
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="xxs:hidden xs:hidden p-35 md:p-20 lg:p-20">
-                                <Image
-                                    alt="emirates car"
-                                    className="rounded-sm"
-                                    src={partImage ? partImage : CarParts}
-                                    width={400}
-                                    height={400}
-                                />
+                    <div className="flex items-center mt-10 xs:pt-5 s:pt-5">
+                        <div>
+                            <div className="mx-auto xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
+                                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-3xl xxs:text-3xl md:text-4xl font-head font-bold ${firaSans.className}`}>
+                                    {make} {model} <span className="text-blue-500">{subcategory.replace(/-/g, " ")}</span> - New, Used, Genuine & Aftermarket in UAE
+                                </h1>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <section className='#myForm'>
-                    <FormComponentMakeModelCatSubcat formsData={modelsform} postFilter={partsposts} mke={make} model={model} subcategory={subcategory} />
-                </section>
-                <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-                    <div className="container py-6">
+                <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+                    <FormMakeModel formsData={modelsform} mke={make} modl={model} />
+                </div>
 
-                        <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
-                            Similar {category} Parts Categories for {make} {model}
-                        </h2>
+                {productMatches.length > 0 && (
+                    <Product
+                        make={make}
+                        model={model}
+                        subcategory={subcategory}
+                        products={productMatches}
+                        allProducts={productMatches}
+                    />
+                )}
 
-                        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-
-                            {relatedCategories.map((item, i) => (
-
-                                <li key={i} className="h-full">
-                                    <Link
-                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(item.category)}`}
-                                        title={`${make} ${model} ${item.category}`}
-                                        target="_blank"
-                                        className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                                    >
-                                        <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline">
-                                            {make} {model} <span className="text-blue-500">{item.parts}</span>
-                                        </span>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-
-                    </div>
-                </section>
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
                         <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
@@ -551,7 +507,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                             <li key={i} className="list-none">
                                 <Link
                                     href="/search-by-make/[make]/parts/[subcategory]"
-                                    as={`/search-by-make/${p.make}/parts/${subcategory}`}
+                                    as={`/search-by-make/${encodeURIComponent(p.make)}/parts/${encodeURIComponent(subcategory)}`}
                                     title={`${p.make} ${subcategory}`}
                                     target="_blank"
                                     className="flex flex-col items-center justify-center border hover:border-blue-600 p-3 rounded-sm bg-white"
@@ -572,6 +528,34 @@ export default function SubcategoryPage({ params, searchParams }) {
                         ))}
                     </ul>
                 </section>
+                <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
+                    <div className="container py-6">
+
+                        <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
+                            Similar {category} Parts Categories for {make} {model}
+                        </h2>
+
+                        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+
+                            {relatedCategories.map((item, i) => (
+
+                                <li key={i} className="h-full">
+                                    <Link
+                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(item.category)}`}
+                                        title={`${make} ${model} ${item.category}`}
+                                        target="_blank"
+                                        className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+                                    >
+                                        <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline">
+                                            {make} {model} <span className="text-blue-500">{item.parts}</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+
+                    </div>
+                </section>
                 <section>
                     <h2 className={`font-bold text-3xl text-center xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search <span className='text-blue-600'>{make} {model} {subcategory}</span> Anywhere in UAE
@@ -580,7 +564,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                     <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-4 xs:gap-2 xxs:gap-2 mt-10">
                         {subCity.map((city) => (
                             <li key={city.id} className="border rounded-md overflow-hidden bg-white shadow hover:shadow-lg transition-shadow h-full flex flex-col">
-                                <Link href={`/search-by-brands-in-uae/${make}/${city.city}`} target="_blank"
+                                <Link href={`/search-by-brands-in-uae/${encodeURIComponent(make)}/${encodeURIComponent(city.city)}`} target="_blank"
                                     title={`${make} ${model} ${subcategory} dubai`}>
                                     <div className="p-3 flex-1 flex flex-col">
                                         <h3 className="text-lg font-semibold mb-2 underline text-center">{make} {model} {subcategory} <span className="text-blue-500">{city.city}</span></h3>
