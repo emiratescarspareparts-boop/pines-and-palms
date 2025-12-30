@@ -568,7 +568,7 @@ export default function FormOnly({ formsData = [] }) {
                     description: 'Customer Name: ' + Name + '\n' + 'Address: ' + textCity + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
                     partList: partsText,
                     email: Email,
-                    year: yearSuggestions,
+                    year: Year,
                     model: Model,
                     address: textCity,
                     timing: Timing || '',
