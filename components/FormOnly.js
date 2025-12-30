@@ -27,6 +27,8 @@ export default function FormOnly({ formsData = [] }) {
     const [text, setText] = useState('');
     const [suggestion, setSuggestion] = useState([]);
     const [Address, setAddress] = useState('');
+    const [yearSuggestions, setYearSuggestions] = useState([]);
+
     const [Name, setName] = useState('');
     const [Code, setCode] = useState('');
     const [submissionData, setSubmissionData] = useState(null);
@@ -45,6 +47,9 @@ export default function FormOnly({ formsData = [] }) {
     const [addedParts, setAddedParts] = useState([]);
     const [duplicateMessage, setDuplicateMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+
+
 
 
 
@@ -442,6 +447,11 @@ export default function FormOnly({ formsData = [] }) {
         'Nad al Sheba',]
 
     useEffect(() => {
+        setYear('');
+        setYearSuggestions([]);
+    }, [Make, Model]);
+
+    useEffect(() => {
         const loadCity = async () => {
             var city = [];
             for (var i in postCities) {
@@ -502,6 +512,8 @@ export default function FormOnly({ formsData = [] }) {
         setText(text);
     };
 
+
+
     const ma = [
         'Ford', 'Chrysler', 'Citroen', 'Hillman', 'Chevrolet', 'Cadillac', 'BMW', 'Austin', 'Fairthorpe',
         'Fillmore', 'Pontiac', 'Studebaker', 'Buick', 'Rambler', 'Plymouth', 'Volkswagen', 'Jensen', 'Jetour',
@@ -556,7 +568,7 @@ export default function FormOnly({ formsData = [] }) {
                     description: 'Customer Name: ' + Name + '\n' + 'Address: ' + textCity + '\n' + 'Vehicle: ' + Make + ' ' + Model + ' ' + Year + '\n' + 'Part List: ' + partsText + '\n' + 'Remarks: ' + Condition + ' ' + Timing,
                     partList: partsText,
                     email: Email,
-                    year: Year,
+                    year: yearSuggestions,
                     model: Model,
                     address: textCity,
                     timing: Timing || '',
@@ -568,12 +580,21 @@ export default function FormOnly({ formsData = [] }) {
             });
 
             setCurrentStep(4);
-            // Reset form fields...
+            setYearSuggestions('')
+            setMake('')
+            setModel('')
+            setPartInputs('')
+            setCitySuggestion('')
+            setCityText('')
+            setEmail('')
+            setTiming('')
+            setWhatsappno('')
+            setName('')
+
         } catch (error) {
             console.error('Submission error:', error);
-            // Handle error (maybe show error message to user)
         } finally {
-            setIsLoading(false); // Always set loading to false when done
+            setIsLoading(false);
         }
     }
 
@@ -724,6 +745,8 @@ export default function FormOnly({ formsData = [] }) {
                                     <CarFront className="w-6 h-6" />
                                     Select Your Vehicle
                                 </div>
+
+                                {/* Make field - unchanged */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
@@ -742,6 +765,7 @@ export default function FormOnly({ formsData = [] }) {
                                     </select>
                                 </div>
 
+                                {/* Model field - unchanged */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
@@ -764,29 +788,59 @@ export default function FormOnly({ formsData = [] }) {
                                     </select>
                                 </div>
 
+                                {/* Year field - NOW WITH SEARCH */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
                                         Year
                                     </label>
-                                    <select
-                                        required
-                                        onChange={(e) => setYear(e.target.value)}
-                                        value={Year}
-                                        className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                        disabled={!Make || !Model}
-                                    >
-                                        <option value="" disabled defaultValue>Select vehicle Year</option>
-                                        {[...new Set(
-                                            formsData
-                                                .filter(s => s.make === Make && s.model === Model)
-                                                .flatMap(s => Array.isArray(s.year) ? s.year : [])
-                                        )]
-                                            .sort((a, b) => b - a)
-                                            .map((year, i) => (
-                                                <option key={i} value={year}>{year}</option>
-                                            ))}
-                                    </select>
+                                    <div className="relative">
+                                        <input
+                                            type="text"
+                                            required
+                                            placeholder="Search or type year (e.g., 2020)"
+                                            value={Year}
+                                            onChange={(e) => {
+                                                setYear(e.target.value);
+                                                // Filter years based on input
+                                                const availableYears = [...new Set(
+                                                    formsData
+                                                        .filter(s => s.make === Make && s.model === Model)
+                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
+                                                )];
+
+                                                const matches = e.target.value.length > 0
+                                                    ? availableYears.filter(year =>
+                                                        year.toString().includes(e.target.value)
+                                                    )
+                                                    : [];
+
+                                                setYearSuggestions(matches);
+                                            }}
+                                            className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                            disabled={!Make || !Model}
+                                        />
+
+                                        {/* Year Suggestions Dropdown */}
+                                        {yearSuggestions.length > 0 && Year && (
+                                            <div className="absolute z-10 mt-1 w-full bg-white border-2 border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
+                                                {yearSuggestions
+                                                    .sort((a, b) => b - a)
+                                                    .map((year, i) => (
+                                                        <div
+                                                            key={i}
+                                                            className="px-4 py-3 cursor-pointer hover:bg-purple-50 transition-colors"
+                                                            onClick={() => {
+                                                                setYear(year.toString());
+                                                                setYearSuggestions([]);
+                                                            }}
+                                                        >
+                                                            {year}
+                                                        </div>
+                                                    ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 
@@ -1229,6 +1283,7 @@ export default function FormOnly({ formsData = [] }) {
                     )}
 
                 </form>
+
             </div>
         </div>
     )
