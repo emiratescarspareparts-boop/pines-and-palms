@@ -27,7 +27,7 @@ export default function FormOnly({ formsData = [] }) {
     const [text, setText] = useState('');
     const [suggestion, setSuggestion] = useState([]);
     const [Address, setAddress] = useState('');
-    const [yearSuggestions, setYearSuggestions] = useState([]);
+
 
     const [Name, setName] = useState('');
     const [Code, setCode] = useState('');
@@ -47,9 +47,12 @@ export default function FormOnly({ formsData = [] }) {
     const [addedParts, setAddedParts] = useState([]);
     const [duplicateMessage, setDuplicateMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [yearSuggestions, setYearSuggestions] = useState([]);
 
-
-
+    useEffect(() => {
+        setYear('');
+        setYearSuggestions([]);
+    }, [Make, Model]);
 
 
 
@@ -446,10 +449,7 @@ export default function FormOnly({ formsData = [] }) {
         'Al Rashidiya',
         'Nad al Sheba',]
 
-    useEffect(() => {
-        setYear('');
-        setYearSuggestions([]);
-    }, [Make, Model]);
+
 
     useEffect(() => {
         const loadCity = async () => {
@@ -581,6 +581,7 @@ export default function FormOnly({ formsData = [] }) {
 
             setCurrentStep(4);
             setYearSuggestions('')
+            setYear('')
             setMake('')
             setModel('')
             setPartInputs('')
@@ -788,7 +789,6 @@ export default function FormOnly({ formsData = [] }) {
                                     </select>
                                 </div>
 
-                                {/* Year field - NOW WITH SEARCH */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
