@@ -739,8 +739,6 @@ export default function FormMakePart({ formsData = [], mke }) {
                                     <CarFront className="w-6 h-6" />
                                     Select Your Vehicle
                                 </div>
-
-                                {/* Make field - unchanged */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
@@ -750,6 +748,7 @@ export default function FormMakePart({ formsData = [], mke }) {
                                         required
                                         onChange={(e) => setMake(e.target.value)}
                                         value={Make}
+                                        defaultValue={mke}
                                         className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
                                     >
                                         <option value="" disabled>Select vehicle make</option>
@@ -759,7 +758,6 @@ export default function FormMakePart({ formsData = [], mke }) {
                                     </select>
                                 </div>
 
-                                {/* Model field - unchanged */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
@@ -782,59 +780,29 @@ export default function FormMakePart({ formsData = [], mke }) {
                                     </select>
                                 </div>
 
-                                {/* Year field - NOW WITH SEARCH */}
                                 <div>
                                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
                                         <Car className="w-4 h-4" />
                                         Year
                                     </label>
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            required
-                                            placeholder="Search or type year (e.g., 2020)"
-                                            value={Year}
-                                            onChange={(e) => {
-                                                setYear(e.target.value);
-                                                // Filter years based on input
-                                                const availableYears = [...new Set(
-                                                    formsData
-                                                        .filter(s => s.make === Make && s.model === Model)
-                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
-                                                )];
-
-                                                const matches = e.target.value.length > 0
-                                                    ? availableYears.filter(year =>
-                                                        year.toString().includes(e.target.value)
-                                                    )
-                                                    : [];
-
-                                                setYearSuggestions(matches);
-                                            }}
-                                            className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                            disabled={!Make || !Model}
-                                        />
-
-                                        {/* Year Suggestions Dropdown */}
-                                        {yearSuggestions.length > 0 && Year && (
-                                            <div className="absolute z-10 mt-1 w-full bg-white border-2 border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
-                                                {yearSuggestions
-                                                    .sort((a, b) => b - a)
-                                                    .map((year, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className="px-4 py-3 cursor-pointer hover:bg-purple-50 transition-colors"
-                                                            onClick={() => {
-                                                                setYear(year.toString());
-                                                                setYearSuggestions([]);
-                                                            }}
-                                                        >
-                                                            {year}
-                                                        </div>
-                                                    ))}
-                                            </div>
-                                        )}
-                                    </div>
+                                    <select
+                                        required
+                                        onChange={(e) => setYear(e.target.value)}
+                                        value={Year}
+                                        className="w-full border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
+                                        disabled={!Make || !Model}
+                                    >
+                                        <option value="" disabled defaultValue>Select vehicle Year</option>
+                                        {[...new Set(
+                                            formsData
+                                                .filter(s => s.make === Make && s.model === Model)
+                                                .flatMap(s => Array.isArray(s.year) ? s.year : [])
+                                        )]
+                                            .sort((a, b) => b - a)
+                                            .map((year, i) => (
+                                                <option key={i} value={year}>{year}</option>
+                                            ))}
+                                    </select>
                                 </div>
                             </div>
 
