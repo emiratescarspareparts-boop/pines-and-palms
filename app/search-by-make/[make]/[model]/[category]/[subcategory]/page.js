@@ -18,7 +18,7 @@ export const runtime = 'nodejs';
 export const dynamicParams = false;
 
 const excludedMakes = [
-    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
     'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
     'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
     'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
@@ -30,7 +30,6 @@ const excludedMakes = [
 ];
 
 const excludedMakesSet = new Set(excludedMakes);
-
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
@@ -210,6 +209,15 @@ export function generateStaticParams() {
 
                 if (!unique.has(key)) {
                     unique.add(key);
+                    if (product.id === 43) {
+                        console.log('✅ Product 43 generating route:', {
+                            make,
+                            model,
+                            category,
+                            subcategory,
+                            key
+                        });
+                    }
                     params.push({
                         make: encodeURIComponent(make),
                         model: encodeURIComponent(model),
@@ -396,7 +404,6 @@ export default function SubcategoryPage({ params, searchParams }) {
     const finalData = productMatches.length > 0 ? productMatches : genericMatch ? [genericMatch] : [];
     const hasExactMatch = productMatches.length > 0;
     const hasAnyData = finalData.length > 0;
-
 
 
     return (<>

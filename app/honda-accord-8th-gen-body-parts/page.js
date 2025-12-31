@@ -12,7 +12,6 @@ export default function HondaAccord({ searchParams }) {
   const make = "Honda";
   const model = "Accord";
 
-  // Get filters from search params
   const {
     "filter_car_parts[]": categories = [],
     "engine[]": engines = [],

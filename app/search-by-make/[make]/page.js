@@ -60,7 +60,7 @@ const firaSans = Fira_Sans({
 });
 
 const excludedMakes = [
-  'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
   'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
   'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
   'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',

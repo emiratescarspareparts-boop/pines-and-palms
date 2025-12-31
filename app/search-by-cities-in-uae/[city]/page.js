@@ -7,6 +7,7 @@ import Contents from '../../../components/Contents';
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 import PartsData from "../../../public/lib/parts.json"
+import FormOnly from '../../../components/FormOnly';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -213,7 +214,9 @@ export default function City({ params }) {
           </div>
         </div>
       </div>
-      <FormComponent formsData={modelsform} postFilter={partsposts} />
+      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+        <FormOnly formsData={modelsform} />
+      </div>
       <div className="bg-bglight">
         <h3 className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
           Search <span className="text-blue-500">{cityData.city}</span> Spare
