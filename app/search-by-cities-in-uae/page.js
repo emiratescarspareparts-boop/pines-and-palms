@@ -31,6 +31,7 @@ for (let i = 0; i < CitiesData.length; i++) {
   grouped[baseCity].push(CitiesData[i]);
 }
 
+
 const getBaseCityImage = (baseCity) => {
   const key = baseCity
     .toLowerCase()
@@ -38,14 +39,14 @@ const getBaseCityImage = (baseCity) => {
     .replace(/\s+/g, " ");
 
   switch (key) {
-    case "abu dhabi":
-      return "/img/flags/abudhabi.png";
-
     case "dubai":
       return "/img/flags/dubai.png";
 
     case "sharjah":
       return "/img/flags/sharjah.png";
+
+    case "abu dhabi":
+      return "/img/flags/abudhabi.png";
 
     case "ajman":
       return "/img/flags/ajman.png";
@@ -154,7 +155,6 @@ export default function Cities() {
         {/* Hero Section */}
         <div className="container mx-auto px-6 py-6">
           <div className="max-w-7xl">
-            {/* Eyebrow Text */}
             <div className="text-sm font-bold uppercase text-gray-600 mb-3">
               Auto spare parts in UAE
             </div>
@@ -209,10 +209,51 @@ export default function Cities() {
         </div>
 
       </div>
-      <div aria-label='search spare parts in city'><SearchCity cities={cities} /></div>
+      <div aria-label='search spare parts in dubai'><SearchCity cities={cities} /></div>
+
+      <div className="grid grid-cols-4 gap-4 
+  xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2
+  md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1
+  py-5"
+      >
+        {Object.keys(grouped).map((baseCity) => (
+          <div
+            key={baseCity}
+            className="relative border rounded-2xl h-36 bg-white
+      hover:shadow-lg transition-all duration-300"
+          >
+            {/* Center City Name */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h3 className="text-xl font-semibold text-gray-800 text-center">
+                {baseCity}
+              </h3>
+            </div>
+
+            {/* Bottom Left Flag */}
+            <div className="absolute bottom-3 left-3">
+              <Image
+                src={getBaseCityImage(baseCity)}
+                alt={`${baseCity} flag`}
+                width={28}
+                height={20}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Bottom Right Count Pill */}
+            <div className="absolute bottom-3 right-3">
+              <span className="px-3 py-1 rounded-full
+          bg-gray-200 text-gray-700 text-xs font-medium"
+              >
+                {grouped[baseCity].length} cities
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
 
 
-      <div className="place-content-center grid grid-cols-1 gap-3 xs:grid-cols-1 xs:grid s:grid s:grid-cols-1 py-5 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-5 mx-10">
+      <div className="place-content-center grid grid-cols-1 gap-3 xs:grid-cols-1 xs:grid s:grid s:grid-cols-1 py-5  md:ml-11 my-5">
         {Object.keys(grouped).map((baseCity) => (
           <div key={baseCity}>
             <div className="flex items-center gap-3 mb-6">
@@ -284,7 +325,6 @@ export default function Cities() {
           </ul>
         </div>
       </section>
-      <CountryMap />
 
 
     </div>
