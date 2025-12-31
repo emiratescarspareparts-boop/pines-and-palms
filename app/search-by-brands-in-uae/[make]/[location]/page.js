@@ -3,7 +3,6 @@ import Hero_img from '../../../../public/img/car-spare-parts.png';
 import TenEntries from '../../../../components/tenentries';
 import Contents from '../../../../components/Contents';
 import Image from 'next/image';
-import FormComponent from '../../../../components/FormComponent';
 import SearchModel from '../../../../components/SearchModel';
 import Link from 'next/link';
 import HondaOfferButton from '../../../../components/HondaOfferButton';
@@ -14,6 +13,8 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import baseCityData from "../../../../public/lib/basecity.json"
 import PartsData from "../../../../public/lib/parts.json"
+import Product from './Product';
+import FormOnly from '../../../../components/FormOnly';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -433,7 +434,7 @@ export default function Cities({ params, searchParams }) {
   }
 
   const excludedMakes = [
-    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
     'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
     'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
     'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
@@ -596,7 +597,7 @@ export default function Cities({ params, searchParams }) {
     },
   ];
   return (
-    <main className="d-flex justify-center pt-10 xs:pt-5 mx-2 font-sans">
+    <main className="max-w-7xl pt-10 xs:pt-5 mx-2 font-sans">
       <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
         <div className="bg-backgroundlight rounded-sm">
           <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
@@ -632,9 +633,15 @@ export default function Cities({ params, searchParams }) {
           </div>
         </div>
       </div>
-      <section className='#myForm'>
-        <FormComponent formsData={modelsform} postFilter={partspost} />
-      </section>
+      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+        <FormOnly formsData={modelsform} />
+      </div>
+      {makeFiltered.length > 0 ?
+        <Product
+          make={make}
+          products={filtered}
+          allProducts={makeFiltered}
+        /> : <></>}
 
       <div>
         <div className="bg-bglight">

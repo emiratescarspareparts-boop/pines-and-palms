@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import FormComponent from '../../../components/FormComponent';
 import TenEntries from '../../../components/tenentries';
 import CarParts from '../../../public/img/car-spare-parts.png';
 import Counter from '../../../components/service-countup';
@@ -11,6 +10,7 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import PartsData from "../../../public/lib/parts.json"
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
+import FormOnly from '../../../components/FormOnly';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
@@ -241,9 +241,9 @@ export default function Parts({ params, searchParams }) {
         </div>
       </div>
 
-      <section>
-        <FormComponent formsData={modelsform} postFilter={partsposts} />
-      </section>
+      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+        <FormOnly formsData={modelsform} />
+      </div>
       <div className="flex xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 sm:grid sm:grid-cols-1 xxs:grid xxs:grid-cols-1">
         <div>
           <div className="grid grid-cols-1 s:grid s:grid-cols-1 xs:grid xs:grid-cols-1 xxs:grid xxs:grid-cols-1 sm:grid sm:grid-cols-1">
