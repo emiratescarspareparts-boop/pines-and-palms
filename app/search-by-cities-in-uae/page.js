@@ -228,7 +228,7 @@ export default function Cities() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-4 xxl:grid-cols-4 xl:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 xxl:grid-cols-4 xl:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-4 xs:gap-2 xxs:gap-2">
               {grouped[baseCity].map((city) => (
                 <div
                   key={city.id}
@@ -285,7 +285,6 @@ export default function Cities() {
         </div>
       </section>
       <CountryMap />
-
 
 
     </div>
