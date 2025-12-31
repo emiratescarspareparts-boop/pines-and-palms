@@ -219,10 +219,10 @@ export function generateStaticParams() {
                         });
                     }
                     params.push({
-                        make: make,
-                        model: model,
-                        category: category,
-                        subcategory: subcategory,
+                        make: encodeURIComponent(make),
+                        model: encodeURIComponent(model),
+                        category: encodeURIComponent(category),
+                        subcategory: encodeURIComponent(subcategory),
                     });
                 }
             }
