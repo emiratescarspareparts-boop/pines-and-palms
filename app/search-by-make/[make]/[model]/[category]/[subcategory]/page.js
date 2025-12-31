@@ -421,16 +421,14 @@ export default function SubcategoryPage({ params, searchParams }) {
             </div>
         )}
         {hasExactMatch &&
-            (<div className="p-6 max-w-6xl mx-auto">
+            (<div className="p-6 xs:p-3 xxs:p-3 s:p-3 sm:p-4 max-w-6xl mx-auto">
 
-                <div className="py-5 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
-                    <div className="flex items-center mt-10 xs:pt-5 s:pt-5">
-                        <div>
-                            <div className="mx-auto xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
-                                <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-3xl xxs:text-3xl md:text-4xl font-head font-bold ${firaSans.className}`}>
-                                    {make} {model} <span className="text-blue-500">{subcategory.replace(/-/g, " ")}</span> - New, Used, Genuine & Aftermarket in UAE
-                                </h1>
-                            </div>
+                <div className="flex items-center mt-10 xs:pt-5 s:pt-5">
+                    <div>
+                        <div className="mx-auto xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
+                            <h1 className={`mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-3xl xxs:text-3xl md:text-4xl font-head font-bold ${firaSans.className}`}>
+                                {make} {model} <span className="text-blue-500">{subcategory.replace(/-/g, " ")}</span> - New, Used, Genuine & Aftermarket in UAE
+                            </h1>
                         </div>
                     </div>
                 </div>

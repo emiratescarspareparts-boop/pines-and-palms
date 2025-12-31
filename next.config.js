@@ -75,11 +75,6 @@ module.exports = withPWA({
         destination: "/search-by-make/Audi/TT%20Quattro/Cooling%20System/Water%20Pump/Engine%20Water%20Pump%20with%20Gasket%20and%20Temp%20sensor-Audi-TT%20Quattro-2009-2015-06H121026DR-23",
         permanent: true
       },
-      {
-        source: '/search-by-make/:make/:model/Electrical%20&%20Electronics/:subcategory',
-        destination: '/search-by-make/:make/:model/Electrical%20%26%20Electronics/:subcategory',
-        permanent: true,
-      },
     ];
   },
   staticPageGenerationTimeout: 3000,
