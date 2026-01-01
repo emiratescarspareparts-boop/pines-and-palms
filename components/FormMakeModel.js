@@ -800,19 +800,24 @@ export default function FormMakeModel({ formsData = [], mke, modl }) {
                                             placeholder="Search or type year (e.g., 2020)"
                                             value={Year}
                                             onChange={(e) => {
-                                                setYear(e.target.value);
-                                                // Filter years based on input
-                                                const availableYears = [...new Set(
-                                                    formsData
-                                                        .filter(s => s.make === Make && s.model === Model)
-                                                        .flatMap(s => Array.isArray(s.year) ? s.year : [])
-                                                )];
+                                                const inputValue = e.target.value;
+                                                setYear(inputValue);
 
-                                                const matches = e.target.value.length > 0
-                                                    ? availableYears.filter(year =>
-                                                        year.toString().includes(e.target.value)
-                                                    )
-                                                    : [];
+                                                const startYear = 1900;
+                                                const endYear = 2027;
+
+                                                // Build years using classic for loop
+                                                const availableYears = [];
+                                                for (let y = startYear; y <= endYear; y++) {
+                                                    availableYears.push(y);
+                                                }
+
+                                                const matches =
+                                                    inputValue.length > 0
+                                                        ? availableYears.filter(y =>
+                                                            y.toString().includes(inputValue)
+                                                        )
+                                                        : [];
 
                                                 setYearSuggestions(matches);
                                             }}
@@ -824,7 +829,7 @@ export default function FormMakeModel({ formsData = [], mke, modl }) {
                                         {yearSuggestions.length > 0 && Year && (
                                             <div className="absolute z-10 mt-1 w-full bg-white border-2 border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
                                                 {yearSuggestions
-                                                    .sort((a, b) => b - a)
+                                                    .sort((a, b) => a - b)
                                                     .map((year, i) => (
                                                         <div
                                                             key={i}
