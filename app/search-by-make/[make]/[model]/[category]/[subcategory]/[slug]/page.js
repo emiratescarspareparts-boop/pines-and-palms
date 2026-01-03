@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import products from "../../../../../../../public/products.json";
 import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
@@ -69,9 +70,7 @@ export async function generateStaticParams() {
             makeModelGroups[key].push(compat.years);
         });
 
-        console.log(makeModelGroups)
 
-        // Generate one page per make/model
         Object.entries(makeModelGroups).forEach(([key, years]) => {
             const [make, model] = key.split('|');
 
@@ -110,7 +109,7 @@ export async function generateMetadata({ params }) {
     const product = products.find((p) => p.id === id);
 
     if (!product) {
-        return <div className="p-6 text-center text-gray-700">Product not found</div>;
+        notFound()
     }
 
     const compat = product.compatibility?.find(
@@ -306,7 +305,7 @@ export default function ProductPage({ params }) {
     const product = products.find((p) => p.id === id);
 
     if (!product) {
-        return <div className="p-6 text-center text-gray-700">Product not found</div>;
+        notFound()
     }
 
     const compat = product.compatibility?.find(
