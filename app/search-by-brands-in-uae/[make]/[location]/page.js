@@ -597,7 +597,7 @@ export default function Cities({ params, searchParams }) {
     },
   ];
   return (
-    <main className="max-w-7xl pt-10 xs:pt-5 mx-2 font-sans mx-auto">
+    <main className="max-w-7xl pt-10 xs:pt-5 font-sans mx-auto">
       <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
         <div className="bg-backgroundlight rounded-sm">
           <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
