@@ -12,6 +12,7 @@ import partsData from "../../../../../../public/lib/filteredparts.json"
 import CitiesData from "../../../../../../public/lib/cities.json"
 import Product from "./Product";
 import FormMakeModel from "../../../../../../components/FormMakeModel";
+import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
@@ -190,12 +191,18 @@ export function generateStaticParams() {
     try {
         const unique = new Set();
         const params = [];
+        const stats = {
+            totalProducts: productsFile.length,
+            totalPages: 0,
+            byMake: {},
+            byCategory: {},
+        };
 
         for (const product of productsFile) {
             if (!product || !product.compatibility) continue;
 
-            const category = product.category?.trim();
-            const subcategory = product.subcategory?.trim();
+            const category = product.category?.trim();  // Keep original format
+            const subcategory = product.subcategory?.trim();  // Keep original format
 
             if (!category || !subcategory) continue;
 
@@ -207,30 +214,49 @@ export function generateStaticParams() {
 
                 const key = `${make}|${model}|${category}|${subcategory}`;
 
+                // Only generate unique combinations
                 if (!unique.has(key)) {
                     unique.add(key);
-                    if (product.id === 43) {
-                        console.log('✅ Product 43 generating route:', {
-                            make,
-                            model,
-                            category,
-                            subcategory,
-                            key
-                        });
-                    }
+
                     params.push({
                         make: make,
                         model: model,
                         category: category,
                         subcategory: subcategory,
                     });
+
+                    // Track stats
+                    stats.byMake[make] = (stats.byMake[make] || 0) + 1;
+                    stats.byCategory[category] = (stats.byCategory[category] || 0) + 1;
                 }
             }
         }
 
+        stats.totalPages = params.length;
+
+        console.log(`
+📊 Subcategory Pages Generation:
+   Total Products: ${stats.totalProducts}
+   Total Pages: ${stats.totalPages}
+   
+   Top Makes:
+${Object.entries(stats.byMake)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 5)
+                .map(([make, count]) => `     ${make}: ${count} pages`)
+                .join('\n')}
+   
+   Top Categories:
+${Object.entries(stats.byCategory)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 5)
+                .map(([cat, count]) => `     ${cat}: ${count} pages`)
+                .join('\n')}
+        `);
+
         return params;
     } catch (error) {
-        console.error("Error generating static params", error);
+        console.error("Error generating static params:", error);
         return [];
     }
 }
@@ -243,7 +269,6 @@ export function generateMetadata({ params }) {
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
     const partImage = getPartImage(subcategory)
-
     const imageMake = getMakeImage(make, model);
 
     // Products filtered only by make
@@ -377,6 +402,22 @@ export default function SubcategoryPage({ params, searchParams }) {
     const carmodel = getModel(make);
     const genericParts = partsData;
 
+    const matchingProducts = productsFile.filter(product => {
+        if (product.category !== category || product.subcategory !== subcategory) {
+            return false;
+        }
+
+        // Check if this product fits this make/model
+        return product.compatibility?.some(
+            compat => compat.make === make && compat.model === model
+        );
+    });
+
+    // If no products found, show 404
+    if (matchingProducts.length === 0) {
+        notFound();
+    }
+
     const normalize = (v) =>
         v?.toString().toLowerCase().trim().replace(/\s+/g, " ") || "";
 
@@ -508,7 +549,9 @@ export default function SubcategoryPage({ params, searchParams }) {
                     </h2>
 
                     <ul className="grid grid-cols-4 md:grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-2 xs:gap-1 xxs:gap-1 sm:gap-1 gap-4 my-10">
+
                         {makeArray.map((p, i) => (
+
                             <li key={i} className="list-none">
                                 <Link
                                     href="/search-by-make/[make]/parts/[subcategory]"

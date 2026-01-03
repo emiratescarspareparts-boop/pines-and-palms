@@ -29,22 +29,72 @@ const poppins = Poppins({
     weight: ['600'],
 });
 
+const excludedMakes = [
+    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+    'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+    'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+    'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+    'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+    'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
+    'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+    'Chery', 'Geely', 'BAIC', 'Bestune'
+];
+
+const excludedMakesSet = new Set(excludedMakes);
+
 export async function generateStaticParams() {
     const params = [];
+    const generatedCombos = new Set();
 
     products.forEach((product) => {
-        if (Array.isArray(product.compatibility)) {
-            product.compatibility.forEach((compat) => {
-                const slug = `${product.partname}-${compat.make}-${compat.model}-${compat.years}-${product.partnumber}-${product.id}`;
+        if (!product || !Array.isArray(product.compatibility)) return;
 
+        const category = product.category?.trim();
+        const subcategory = product.subcategory?.trim();
+
+        if (!category || !subcategory) return;
+
+        // Group by make/model
+        const makeModelGroups = {};
+
+        product.compatibility.forEach((compat) => {
+            const make = compat.make?.trim();
+            const model = compat.model?.trim();
+
+            if (!make || !model || excludedMakesSet.has(make)) return;
+
+            const key = `${make}|${model}`;
+            if (!makeModelGroups[key]) makeModelGroups[key] = [];
+            makeModelGroups[key].push(compat.years);
+        });
+
+        console.log(makeModelGroups)
+
+        // Generate one page per make/model
+        Object.entries(makeModelGroups).forEach(([key, years]) => {
+            const [make, model] = key.split('|');
+
+            const sortedYears = years.sort();
+            const yearRange = sortedYears.length > 1
+                ? `${sortedYears[0]}-${sortedYears[sortedYears.length - 1]}`
+                : sortedYears[0];
+
+            const slug = `${product.partname}-${make}-${model}-${yearRange}-${product.partnumber}-${product.id}`;
+
+            const comboKey = `${product.id}|${make}|${model}`;
+
+            if (!generatedCombos.has(comboKey)) {
+                generatedCombos.add(comboKey);
                 params.push({
-                    make: compat.make,
-                    model: compat.model,
-                    category: product.category,
-                    slug: slug,
+                    make,
+                    model,
+                    category,
+                    subcategory,
+                    slug
                 });
-            });
-        }
+            }
+        });
     });
 
     return params;
@@ -53,8 +103,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
 
-
-    const { make, model, category, slug } = params;
+    const { make, model, category, subcategory, slug } = params;
     const id = Number(slug.split("-").pop());
 
     // Find product by ID
@@ -250,7 +299,7 @@ export async function generateMetadata({ params }) {
 
 
 export default function ProductPage({ params }) {
-    const { make, model, category, slug } = params;
+    const { make, model, category, subcategory, slug } = params;
 
     const id = Number(slug.split("-").pop());
 
@@ -274,7 +323,6 @@ export default function ProductPage({ params }) {
         );
     }
 
-    // Other products of the same make
     const otherProducts = products.filter(
         (p) => p.id !== product.id && p.compatibility?.some((c) => c.make === make)
     );
@@ -342,7 +390,7 @@ export default function ProductPage({ params }) {
 
                             <link
                                 itemProp="url"
-                                href={`https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`}
+                                href={`https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${subcategory}/${slug}`}
                             />
 
                             {/* Hidden structured data for availability */}
