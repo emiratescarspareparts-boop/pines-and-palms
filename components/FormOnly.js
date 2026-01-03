@@ -872,7 +872,6 @@ export default function FormOnly({ formsData = [] }) {
                                 </label>
 
                                 {/* Duplicate Message Alert */}
-                                {/* Duplicate Message Alert */}
                                 {duplicateMessage && (
                                     <div className="mb-3 bg-yellow-50 border-2 border-yellow-300 rounded-xl p-3 flex items-center gap-2 text-yellow-800 animate-fadeIn">
                                         <span className="text-xl">⚠️</span>

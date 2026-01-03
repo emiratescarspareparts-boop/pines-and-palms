@@ -648,12 +648,6 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
     const handlePartInputChange = (value) => {
         setCurrentPartInput(value);
 
-        // Don't show suggestions in custom mode
-        if (isCustomPart) {
-            setCurrentPartSuggestions([]);
-            return;
-        }
-
         const matches = value.length > 0
             ? formPartname.filter(part =>
                 part.toLowerCase().includes(value.toLowerCase())
@@ -673,17 +667,14 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
         // Check if part already exists
         if (addedParts.includes(trimmedValue)) {
             setDuplicateMessage(`"${trimmedValue}" is already added!`);
-            // Clear message after 3 seconds
             setTimeout(() => setDuplicateMessage(''), 3000);
             return;
         }
 
-        // Add the part
         setAddedParts([...addedParts, trimmedValue]);
         setCurrentPartInput('');
         setCurrentPartSuggestions([]);
-        setIsCustomPart(false);
-        setDuplicateMessage(''); // Clear any existing message
+        setDuplicateMessage('');
     };
 
     const removePart = (partToRemove) => {
@@ -882,25 +873,21 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                     </div>
                                 )}
 
-                                {/* Standard Parts Input */}
+                                {/* Single Part Input Field */}
                                 <div className="mb-4">
                                     <div className="text-sm font-semibold text-gray-700 mb-2">
-                                        Choose a part and click add
+                                        Search or type part name, then click the green button to add
                                     </div>
                                     <div className="relative">
                                         <div className="flex gap-2">
                                             <input
                                                 className="flex-1 border-2 border-blue-300 rounded-xl py-3 px-4 xs:px-2 xxs:px-3 text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
-                                                placeholder="🔎Search by Part Name🔽"
-                                                value={!isCustomPart ? currentPartInput : ''}
-                                                onChange={(e) => {
-                                                    setIsCustomPart(false);
-                                                    handlePartInputChange(e.target.value);
-                                                }}
+                                                placeholder="🔎 Search or type part name..."
+                                                value={currentPartInput}
+                                                onChange={(e) => handlePartInputChange(e.target.value)}
                                                 onKeyPress={(e) => {
                                                     if (e.key === 'Enter') {
                                                         e.preventDefault();
-                                                        setIsCustomPart(false);
                                                         addPart();
                                                     }
                                                 }}
@@ -908,31 +895,26 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
 
                                             <button
                                                 type="button"
-                                                onClick={() => {
-                                                    setIsCustomPart(false);
-                                                    addPart();
-                                                }}
-                                                disabled={isCustomPart || !currentPartInput.trim()}
-                                                className={`rounded-xl font-bold transition-colors ${!isCustomPart && currentPartInput.trim()
-                                                    ? 'text-blue-500  hover:text-blue-600'
-                                                    : 'text-green-500  cursor-not-allowed'
+                                                onClick={addPart}
+                                                disabled={!currentPartInput.trim()}
+                                                className={`px-4 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${currentPartInput.trim()
+                                                    ? 'bg-green-500 hover:bg-green-600 text-white shadow-md hover:shadow-lg'
+                                                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                                     }`}
                                             >
-                                                <CirclePlus className='w-12 h-12' />
+                                                <Plus className='w-5 h-5' />
+                                                Add
                                             </button>
                                         </div>
 
                                         {/* Suggestions Dropdown */}
-                                        {!isCustomPart && currentPartSuggestions.length > 0 && (
-                                            <div className="absolute z-10 mt-1 w-full bg-white border rounded-xl shadow-lg max-h-64 overflow-y-auto">
+                                        {currentPartSuggestions.length > 0 && (
+                                            <div className="absolute z-10 mt-1 w-full bg-white border-2 border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
                                                 {currentPartSuggestions.map(s => (
                                                     <div
                                                         key={s}
-                                                        className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                                                        onClick={() => {
-                                                            setIsCustomPart(false);
-                                                            selectSuggestion(s);
-                                                        }}
+                                                        className="px-4 py-3 cursor-pointer hover:bg-blue-50 transition-colors"
+                                                        onClick={() => selectSuggestion(s)}
                                                     >
                                                         {s}
                                                     </div>
@@ -941,57 +923,12 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                         )}
                                     </div>
                                 </div>
-
-
-                                {/* Custom Parts Input */}
+                                {/* Selected Parts Display - Always Visible */}
                                 <div className="mb-4">
-                                    <div className="text-sm font-semibold text-gray-700 mb-2">
-                                        If not in above list, type Part Name
+                                    <div className="text-sm font-semibold text-gray-700 mb-2 pb-2 border-b-2 border-gray-200">
+                                        Selected Parts {addedParts.length > 0 && `(${addedParts.length})`}
                                     </div>
-                                    <div className="rounded-xl">
-
-                                        <div className="flex gap-2">
-                                            <input
-                                                className="flex-1 border-2 border-blue-300 rounded-xl py-3 px-4 xs:px-2 xxs:px-3 text-gray-700 focus:outline-none focus:border-blue-500 transition-colors"
-                                                placeholder="Type Part Name here"
-                                                value={isCustomPart ? currentPartInput : ''}
-                                                onChange={(e) => {
-                                                    setIsCustomPart(true);
-                                                    handlePartInputChange(e.target.value);
-                                                }}
-                                                onKeyPress={(e) => {
-                                                    if (e.key === 'Enter') {
-                                                        e.preventDefault();
-                                                        setIsCustomPart(true);
-                                                        addPart();
-                                                    }
-                                                }}
-                                            />
-                                            <button
-                                                type="button"
-                                                onClick={() => {
-                                                    setIsCustomPart(true);
-                                                    addPart();
-                                                }}
-                                                disabled={!isCustomPart || !currentPartInput.trim()}
-                                                className={` rounded-xl font-bold transition-colors ${isCustomPart && currentPartInput.trim()
-                                                    ? 'text-blue-500  hover:text-blue-600'
-                                                    : 'text-red-700  cursor-not-allowed'
-                                                    }`}
-                                            >
-                                                <CirclePlus className="w-12 h-12 rounded-xl" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Added Parts Display */}
-
-                                {addedParts.length > 0 && (
-                                    <div className="mb-4">
-                                        <div className="text-sm font-semibold text-gray-700 mb-2">
-                                            Selected Parts ({addedParts.length})
-                                        </div>
+                                    {addedParts.length > 0 ? (
                                         <div className="flex flex-wrap gap-2">
                                             {addedParts.map((part, index) => (
                                                 <div
@@ -1010,8 +947,12 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                                 </div>
                                             ))}
                                         </div>
-                                    </div>
-                                )}
+                                    ) : (
+                                        <div className="text-gray-400 text-sm italic py-4 text-center bg-gray-50 rounded-xl">
+                                            No parts added yet. Search or type a part name above and click the green Add button.
+                                        </div>
+                                    )}
+                                </div>
                             </div>
 
                             {/* Part Condition/Type */}
