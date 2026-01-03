@@ -10,7 +10,6 @@ import CarData from "../../../../../public/lib/car-data.json"
 import CitiesData from "../../../../../public/lib/cities.json"
 import GetInTouchForm from '../../../../../components/GetInTouchForm';
 import Product from './Product';
-import FormOnly from '../../../../../components/FormOnly';
 import FormMakePart from '../../../../../components/FormMakePart';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
@@ -36,7 +35,6 @@ for (let i = 0; i < CarData.length; i++) {
     carDataByMake[makeLower].push(car);
 }
 
-
 const playfair_display = Playfair_Display({
     subsets: ['latin'],
     display: 'swap',
@@ -51,7 +49,7 @@ const firaSans = Fira_Sans({
 });
 
 const excludedMakes = [
-    'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
     'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
     'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
     'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
@@ -65,7 +63,47 @@ const excludedMakes = [
 
 const excludedMakesSet = new Set(excludedMakes);
 
+// ✅ Update generateStaticParams to only generate pages with products
+export function generateStaticParams() {
+    const params = [];
+    const generated = new Set();
 
+    for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+
+        if (!product?.compatibility || !product.subcategory) continue;
+
+        const subcategory = product.subcategory.trim();
+
+        // Find matching part entry
+        const partEntry = partsData.find(
+            p => p.parts.toLowerCase() === subcategory.toLowerCase()
+        );
+
+        if (!partEntry) continue;
+
+        for (let j = 0; j < product.compatibility.length; j++) {
+            const compat = product.compatibility[j];
+            const make = compat.make?.trim();
+
+            if (!make || excludedMakesSet.has(make)) continue;
+
+            const key = `${make}|${partEntry.parts}`;
+
+            // ✅ Only generate unique make/parts combinations that have products
+            if (!generated.has(key)) {
+                generated.add(key);
+                params.push({
+                    make: make,
+                    parts: partEntry.parts,
+                });
+            }
+        }
+    }
+
+    console.log(`✅ Generated ${params.length} make/parts pages from ${products.length} products`);
+    return params;
+}
 
 export function generateMetadata({ params }) {
     const { parts, make } = params;
@@ -81,7 +119,6 @@ export function generateMetadata({ params }) {
             robots: { index: false, follow: false }
         };
     }
-
 
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
@@ -120,7 +157,6 @@ export function generateMetadata({ params }) {
             }
         }
     }));
-
 
     const faqSchema = {
         "@context": "https://schema.org",
@@ -213,6 +249,7 @@ export function generateMetadata({ params }) {
             },
         ]
     };
+
     return {
         title: `${make} ${parts} for sale from Dubai dealers in UAE - Used, Genuine, OEM and Aftermarket - Best price`,
         description: `Find genuine, OEM, used & aftermarket ${make} ${parts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
@@ -318,17 +355,28 @@ function getModel(make) {
     }
 }
 
-
 export default function Parts({ params, searchParams }) {
     const { make, parts } = params;
-    const carmodel = getModel(make)
-    const imageMake = getMakeImage(make)
+    const carmodel = getModel(make);
+    const imageMake = getMakeImage(make);
     const partsDa = partsData;
 
+    if (excludedMakesSet.has(make)) {
+        notFound();
+    }
 
     if (!partsData || partsData.length === 0) {
         notFound();
     }
+
+    const partEntry = partsDa.find(
+        (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
+    );
+
+    if (!partEntry) {
+        notFound();
+    }
+
     const {
         "filter_car_parts[]": categories = [],
         "engine[]": engines = [],
@@ -336,29 +384,27 @@ export default function Parts({ params, searchParams }) {
         search = ""
     } = searchParams;
 
-
     const selectedCategories = Array.isArray(categories) ? categories : [categories].filter(Boolean);
     const selectedEngines = Array.isArray(engines) ? engines : [engines].filter(Boolean);
     const selectedCompats = Array.isArray(compats) ? compats : [compats].filter(Boolean);
     const query = search?.toLowerCase() || "";
-    const partEntry = partsDa.find(
-        (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
-    );
 
-
-
+    // ✅ Filter products for this make
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
             (c) => c.make.toLowerCase() === make.toLowerCase()
         )
     );
 
+    // ✅ Filter by part subcategory
     const partFiltered = makeFiltered.filter(product =>
         product.subcategory.toLowerCase() === partEntry.parts.toLowerCase()
     );
 
-
-
+    // ✅ If no products found for this make/part combination, show 404
+    if (!partFiltered || partFiltered.length === 0) {
+        notFound();
+    }
     const filtered = partFiltered.filter(product => {
         const matchesCategory =
             selectedCategories.length === 0 || selectedCategories.includes(product.category);
@@ -376,22 +422,11 @@ export default function Parts({ params, searchParams }) {
         const matchesCompatibility =
             selectedCompats.length === 0 ||
             product.compatibility?.some(c => selectedCompats.includes(`${c.make} ${c.model} ${c.years ? `(${c.years})` : ""}`));
+
         return matchesCategory && matchesSearch && matchesEngine && matchesCompatibility;
     });
 
-    const excludedMakes = [
-        'Acura', 'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
-        'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
-        'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
-        'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
-        'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
-        'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
-        'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
-        'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
-        'Chery', 'Geely', 'BAIC', 'Bestune'
-    ];
-    const isExcludedMake = excludedMakes.includes(make);
-    if (excludedMakes.includes(make)) {
+    if (filtered.length === 0) {
         notFound();
     }
 
@@ -458,10 +493,10 @@ export default function Parts({ params, searchParams }) {
 
                             <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
                                 {carmodel.map((post, i) => {
-                                    const linkHref = isExcludedMake
+                                    const linkHref = excludedMakes
                                         ? '/get-in-touch'
                                         : '/search-by-make/[make]/[model]/[category]/[subcategory]';
-                                    const linkAs = isExcludedMake
+                                    const linkAs = excludedMakes
                                         ? '/get-in-touch'
                                         : `/search-by-make/${post.make}/${post.model}/${partsData.category}/${parts}`;
 
