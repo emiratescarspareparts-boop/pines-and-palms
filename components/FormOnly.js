@@ -556,7 +556,7 @@ export default function FormOnly({ formsData = [] }) {
                 timing: Timing,
             };
 
-            setSubmissionData(submissionInfo);
+
 
             const response = await fetch(`/api/g_sheet`, {
                 method: 'POST',
@@ -578,19 +578,23 @@ export default function FormOnly({ formsData = [] }) {
                     'Content-Type': 'application/json',
                 },
             });
-
+            setSubmissionData(submissionInfo);
             setCurrentStep(4);
             setYearSuggestions('')
             setYear('')
             setMake('')
             setModel('')
-            setPartInputs('')
+            setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
+            setAddedParts([]);
             setCitySuggestion('')
             setCityText('')
             setEmail('')
             setTiming('')
             setWhatsappno('')
             setName('')
+            setCurrentPartInput('');
+            setCurrentPartSuggestions([]);
+            setIsCustomPart(false);
 
         } catch (error) {
             console.error('Submission error:', error);

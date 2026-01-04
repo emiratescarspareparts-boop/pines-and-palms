@@ -554,8 +554,6 @@ export default function FormMakePart({ formsData = [], mke }) {
                 timing: Timing,
             };
 
-            setSubmissionData(submissionInfo);
-
             const response = await fetch(`/api/g_sheet`, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -576,19 +574,23 @@ export default function FormMakePart({ formsData = [], mke }) {
                     'Content-Type': 'application/json',
                 },
             });
-
+            setSubmissionData(submissionInfo);
             setCurrentStep(4);
             setYearSuggestions('')
             setYear('')
             setMake('')
             setModel('')
-            setPartInputs('')
+            setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
+            setAddedParts([]);
             setCitySuggestion('')
             setCityText('')
             setEmail('')
             setTiming('')
             setWhatsappno('')
             setName('')
+            setCurrentPartInput('');
+            setCurrentPartSuggestions([]);
+            setIsCustomPart(false);
         } catch (error) {
             console.error('Submission error:', error);
             // Handle error (maybe show error message to user)
