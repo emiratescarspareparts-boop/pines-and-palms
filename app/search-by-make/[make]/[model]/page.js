@@ -788,11 +788,11 @@ export default function Model({ params, searchParams }) {
           {' '}<a href={`/search-by-brands-in-uae/${make}/Deira`} className='text-blue-600'>Deira</a>,
           etc. You can check our catalogue at{' '}
           <Link
-            href="/search-by-part-name"
+            href="/catalogs"
             className="text-blue-400 underline"
             title={make + ' ' + model}
           >
-            /search-by-part-name
+            /catalogs
           </Link>
           . We provide auto spare parts for any vehicles including :
         </p>
