@@ -47,11 +47,6 @@ export default function FormMakeModel({ formsData = [], mke, modl }) {
     const [duplicateMessage, setDuplicateMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setYear('');
-        setYearSuggestions([]);
-    }, [Make, Model]);
-
 
 
     const postFilter = ['AC Compressor',
@@ -577,13 +572,13 @@ export default function FormMakeModel({ formsData = [], mke, modl }) {
             });
             setSubmissionData(submissionInfo);
             setCurrentStep(4);
-            setYearSuggestions('')
+            setYearSuggestions([])
             setYear('')
             setMake('')
             setModel('')
             setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
             setAddedParts([]);
-            setCitySuggestion('')
+            setCitySuggestion([])
             setCityText('')
             setEmail('')
             setTiming('')

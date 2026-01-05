@@ -47,11 +47,6 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
     const [isLoading, setIsLoading] = useState(false);
     const [yearSuggestions, setYearSuggestions] = useState([]);
 
-    useEffect(() => {
-        setYear('');
-        setYearSuggestions([]);
-    }, [Make, Model]);
-
 
 
     const postFilter = ['AC Compressor',
@@ -446,6 +441,10 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
         'Al Nahda',
         'Al Rashidiya',
         'Nad al Sheba',]
+    useEffect(() => {
+        setYear('');
+        setYearSuggestions([]);
+    }, [Make, Model]);
 
     useEffect(() => {
         const loadCity = async () => {
@@ -574,16 +573,17 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
             });
             setSubmissionData(submissionInfo);
             setCurrentStep(4);
-            setYearSuggestions('')
+            setYearSuggestions([])
             setYear('')
             setMake('')
             setModel('')
             setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
             setAddedParts([]);
-            setCitySuggestion('')
+            setCitySuggestion([])
             setCityText('')
             setEmail('')
             setTiming('')
+            setCondition([])
             setWhatsappno('')
             setName('')
             setCurrentPartInput('');

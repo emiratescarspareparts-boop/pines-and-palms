@@ -580,16 +580,17 @@ export default function FormOnly({ formsData = [] }) {
             });
             setSubmissionData(submissionInfo);
             setCurrentStep(4);
-            setYearSuggestions('')
+            setYearSuggestions([])
             setYear('')
             setMake('')
             setModel('')
             setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
             setAddedParts([]);
-            setCitySuggestion('')
+            setCitySuggestion([])
             setCityText('')
             setEmail('')
             setTiming('')
+            setCondition([])
             setWhatsappno('')
             setName('')
             setCurrentPartInput('');

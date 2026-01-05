@@ -47,11 +47,6 @@ export default function FormMakePart({ formsData = [], mke }) {
     const [duplicateMessage, setDuplicateMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setYear('');
-        setYearSuggestions([]);
-    }, [Make, Model]);
-
 
     const postFilter = ['AC Compressor',
         'AC Condenser',
@@ -576,16 +571,17 @@ export default function FormMakePart({ formsData = [], mke }) {
             });
             setSubmissionData(submissionInfo);
             setCurrentStep(4);
-            setYearSuggestions('')
+            setYearSuggestions([])
             setYear('')
             setMake('')
             setModel('')
             setPartInputs([{ id: 1, value: '', suggestions: [], isCustom: false }]);
             setAddedParts([]);
-            setCitySuggestion('')
+            setCitySuggestion([])
             setCityText('')
             setEmail('')
             setTiming('')
+            setCondition([])
             setWhatsappno('')
             setName('')
             setCurrentPartInput('');
