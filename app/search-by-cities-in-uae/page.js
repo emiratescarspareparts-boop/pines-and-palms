@@ -7,7 +7,6 @@ import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 import Image from 'next/image';
 import FormOnly from '../../components/FormOnly';
-import CountryMap from '../Countrysitemap';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;

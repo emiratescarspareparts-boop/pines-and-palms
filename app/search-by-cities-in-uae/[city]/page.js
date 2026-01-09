@@ -1,16 +1,31 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import FormComponent from '../../../components/FormComponent';
-import Footer from '../../../components/footer';
 import Image from 'next/image';
 import Contents from '../../../components/Contents';
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 import PartsData from "../../../public/lib/parts.json"
 import FormOnly from '../../../components/FormOnly';
+import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import { MapPin } from 'lucide-react';
+import DubaiContent from './DubaiContent';
+import SearchCity from '../../../components/SearchCity';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
+
+const firaSans = Fira_Sans({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira-sans',
+});
+
+const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair-display',
+});
 
 function getMake() {
   const uniqueMakes = {};
@@ -22,6 +37,18 @@ function getMake() {
   }
   return Object.values(uniqueMakes);
 }
+
+const excludedMakes = [
+  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+  'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+  'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+  'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+  'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+  'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+  'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
+  'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+  'Chery', 'Geely', 'BAIC', 'Bestune'
+];
 
 
 export function generateStaticParams() {
@@ -122,7 +149,7 @@ export function generateMetadata({ params }) {
       'auto parts in ' +
       city +
       ', ' +
-      'car parts ' +
+      'car parts in' +
       city +
       ', ' +
       'Spare parts in ' +
@@ -158,98 +185,295 @@ export default function City({ params }) {
   const makedatas = getMake();
   const partsposts = PartsData;
   const modelsform = CarData;
+  const cities = CitiesData;
 
   return (
-    <div>
-      <div className="py-5 xxs:px-7 sm:px-7 s:py-6 lg:mx-6 md:mx-6 xs:mx-2 xxs:mx-2 max-w-7xl mx-auto">
-        <div className="bg-backgroundlight rounded-sm">
-          <div className="grid grid-cols-2 xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 xs:text-center sm:grid sm:grid-cols-2 xxs:grid xxs:grid-cols-1 xs:pt-5 s:pt-5">
-            <div>
-              <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
-                <div className="lg:text-left">
-                  <h2 className="block text-3xl sm:text-sm xs:text-base xxs:text-base md:text-lg lg:text-2xl font-medium font-poppins text-gray-800  lg:leading-tight dark:text-white">
-                    <span className="block">
-                      Expert Parts&nbsp;
-                      <span className="block text-blue-600 xl:inline">
-                        Seamless Performance
-                      </span>
-                    </span>
-                  </h2>
-                  <h1 className="mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold">
-                    Search Used / Genuine / Aftermarket Auto parts in{' '}
-                    <span className="block text-darkblue xl:inline">
-                      {cityData.city}
-                    </span>
-                  </h1>
-                  <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
-                    <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
-                      <a
-                        href="/#myForm"
-                        title="vehicle parts online"
-                        className="flex items-center justify-center py-2 xs:py-2 xxs:py-1 sm:py-0 text-xl sm:text-base xl:text-xl border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:text-lg md:px-5 xs:text-sm xxs:text-sm xxs:my-2 lg:my-2 s:text-sm s:my-2 focus:filter brightness-125"
-                      >
-                        Inquire Now
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-10 mb-3 xs:hidden xxs:hidden">
-                  We deal with auto parts for german, japanese, chinese, french,
-                  british origin cars.
-                </div>
-                <div className="grid grid-cols-8 xs:hidden xxs:hidden md:grid-cols-4 lg:grid-cols-4 gap-2 place-content-center mb-10">
-                  {/* icons here */}
-                </div>
-              </div>
+    <div className='max-w-7xl mx-auto'>
+      <h1 className={`text-4xl xxs:text-2xl xs:text-2xl sm:text-2xl text-center font-bold text-gray-900 my-6 ${playfair_display.className}`}>
+        Search Genuine, OEM & Used Auto parts in{' '}
+        <span className="text-blue-700 block mt-2">{cityData.city}</span>
+      </h1>
+      <header
+        className="px-4 xxs:px-2 xs:px-2 s:px-2"
+        aria-label="Spare parts by country of origin"
+      >
+        <div >
+          <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 gap-8 xs:gap-2 xxs:gap-2 xxs:p-2 xs:p-2 sm:p-4 p-8">
+            {/* Left Side - Your Form Component */}
+            <div className="order-1 md:order-1">
+              <FormOnly formsData={modelsform} />
             </div>
-            <div className="xxs:hidden xs:hidden p-10">
+
+            {/* Right Side - H1 and CTA */}
+            <div className="order-2 md:order-2 flex flex-col justify-center">
               <iframe
                 src={cityData.link}
-                className="w-full h-full border-8 border-darkblue pointer-events-none"
-                allowFullScreen="null"
+                className="w-full h-full pointer-events-none"
+                allowFullScreen
                 loading="lazy"
-                disable
+                title="Location Map"
               ></iframe>
             </div>
           </div>
         </div>
-      </div>
-      <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelsform} />
-      </div>
-      <div className="bg-bglight">
+      </header>
+
+      <section aria-labelledby='list of towns and cities in dubai'>
+        {cityData.city === "Dubai" &&
+          <div>
+            <h3 className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
+              Discover Car Parts in Dubai
+            </h3>
+
+            <div className="grid grid-cols-5 md:grid-cols-4 lg:grid-cols-5 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-3 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Downtown Dubai
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Palm Jumeirah
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Barsha
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Silicon Oasis
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Media City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Business Bay
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Marina
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Za'abeel
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Twar
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Mirdif
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Deira
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Bur Dubai
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Karama
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Nahda
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Qusais
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Nad Al Hammar
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Khawaneej
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Mizhar
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Ras Al Khor
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Abu Hail
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Hatta
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Awir
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai South
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Wadi al Safa
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Damac Hills
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Motor City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Arabian Ranches
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Discovery Gardens
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai International City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Festival City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Mankhool
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Muhaisnah
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Muweileh
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Jafiliyah
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Raffa
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Oud Metha
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Sufouh
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Emirates Hills
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Furjan
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Barari
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Bluewaters Island
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Hills
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Umm Suqeim
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> JBR
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Jumeirah Village Circle
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Jumeirah Park
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Jumeirah Lake Towers
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> MBR City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Tilal Al Ghaf
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubailand
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Jaddaf
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Creek Harbour
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> MBR City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Bada
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Satwa
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Abu Hail
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Golf City
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Warqa
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Nad al Sheba
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Wasl
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Trade Centre
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Umm Ramool
+              </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Dubai Investment Park
+              </div>
+            </div>
+          </div>}
+        <div className="place-content-center mx-auto">
+          <div className="p-3 shadow-md">
+            <a
+              href="#myForm"
+              title="Inquire about vehicle parts online"
+              className="flex items-center  w-3/4 mx-auto justify-center py-2 border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700"
+            >
+              Inquire Now
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section className="bg-bglight">
         <h3 className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
-          Search <span className="text-blue-500">{cityData.city}</span> Spare
-          parts by Model
+          Search Car parts in <span className="text-blue-500">{cityData.city}</span>
         </h3>
 
-        <div className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-5 xxs:grid xxs:grid-cols-5 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
-          {makedatas.map((post, i) => (
-            <div key={i}>
-              <Link
-                href="/search-by-make/[make]"
-                as={'/search-by-make/' + post.make}
-                title={post.make + ' spare parts ' + cityData.city}
-              >
-                <main className="border h-full  hover:border-blue-600 py-3 bg-gray-100">
-                  <div className="flex justify-center">
-                    <Image
-                      alt={post.make + ' spare parts ' + cityData.city}
-                      src={'/img/car-logos/' + post.img}
-                      className="object-scale-down shadow-xl"
-                      height={50}
-                      width={50}
-                    />
-                  </div>
-                  <p className="text-center m-1 bg-darkblue hover:bg-blue-400  font-bold text-white text-sm hover:text-gray-800 rounded-sm">
-                    {post.make.toUpperCase()}
-                  </p>
-                </main>
-              </Link>
-            </div>
-          ))}
+        <div className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-5 xxs:grid xxs:grid-cols-3 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
+          {makedatas
+            .filter((post) => !excludedMakes.includes(post.make))
+            .map((post, i) => {
+              const uaeCities = ['Abu Dhabi', 'Ajman', 'Al Ain', 'Al Quoz', 'Dubai', 'Ras Al Khaimah', 'Sharjah', 'Deira', 'Palm Jumeirah'];
+              const isUAECity = uaeCities.includes(cityData.city);
+
+              const href = isUAECity
+                ? `/search-by-brands-in-uae/${post.make}/${cityData.city}`
+                : `/search-by-make/${post.make}`;
+
+              return (
+                <div key={i}>
+                  <Link
+                    href={href}
+                    title={post.make + ' spare parts ' + cityData.city}
+                  >
+                    <div className="border h-full hover:border-blue-600 py-3 bg-gray-100">
+                      <div className="flex justify-center">
+                        <Image
+                          alt={post.make + ' spare parts ' + cityData.city}
+                          src={'/img/car-logos/' + post.img}
+                          className="object-scale-down shadow-xl"
+                          height={50}
+                          width={50}
+                        />
+                      </div>
+                      <p className={`text-center p-2 font-bold text-base hover:text-gray-800 ${firaSans.className}`}>
+                        {post.make}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
-      </div>
+      </section>
       <iframe
         src={cityData.link}
         className="w-full h-full  pointer-events-none"
@@ -258,32 +482,33 @@ export default function City({ params }) {
         allowFullScreen="null"
         loading="lazy"
       ></iframe>
-      <div className="bg-bglight">
+      <section className="bg-bglight">
         <h3 className="text-black text-4xl my-10 text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
           Search <span className="text-blue-500">{cityData.city}</span> Spare
           parts by Model
         </h3>
+        <div aria-label='search spare parts in dubai'><SearchCity cities={cities} citypage={cityData.city} /></div>
 
-        <div className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-5 xxs:grid xxs:grid-cols-5 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
+        <div className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-3 xxs:grid xxs:grid-cols-3 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
           {partsposts.map((post, i) => (
             <div key={i}>
               <Link
-                href="/search-by-cities-in-uae/[cities]"
-                as={'/search-by-cities-in-uae/' + cityData.city}
+                href="/search-by-part-name/[parts]"
+                as={'/search-by-part-name/' + post.parts}
                 title={post.parts + ' in ' + cityData.city}
               >
                 <div className="border-blue-800 h-full hover:border-blue-900 bg-white rounded-sm">
-                  <p className="text-center text-black font-medium text-sm hover:text-gray-800 p-2">
-                    {post.parts + ' in ' + cityData.city}
+                  <p className={`text-center p-2 font-bold text-base hover:text-gray-800 ${firaSans.className}`} >
+                    {post.parts}
                   </p>
                 </div>
               </Link>
             </div>
-          ))}
-        </div>
-      </div>
+          ))
+          }
+        </div >
+      </section>
       <Contents />
-      <Footer />
-    </div>
+    </div >
   );
 }

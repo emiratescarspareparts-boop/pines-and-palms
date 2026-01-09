@@ -1,4 +1,3 @@
-import Hero from '../components/home_hero';
 import Count from '../components/service-countup';
 import Image from 'next/image';
 import TenEntries from '../components/tenentries';
@@ -10,9 +9,7 @@ import HeroCarousel from '../components/HeroCarousel';
 import CarData from "../public/lib/car-data.json"
 import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
-import FormComponent from '../components/FormComponent';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import { CheckCircle } from 'lucide-react';
 import FormOnly from '../components/FormOnly';
 
 export const revalidate = 1814400;

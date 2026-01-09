@@ -65,38 +65,6 @@ async function handler(req, res) {
       }`,
     );
 
-    const response = await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
-      range: 'emirates-car-sheet',
-      valueInputOption: 'USER_ENTERED',
-      auth: jwt,
-      requestBody: {
-        values: [
-          [
-            Timestamp,
-            RefNo,
-            email,
-            brand,
-            contact,
-            description,
-            partList,
-            year,
-            model,
-            address,
-            condition,
-            timing,
-            WApp,
-            SCnfD,
-            Y,
-            N,
-            Q,
-            Follow,
-            S
-          ],
-        ],
-      },
-    });
-    const data = JSON.stringify(response);
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
@@ -131,6 +99,41 @@ async function handler(req, res) {
         )}`
         }`,
     };
+    await transporter.sendMail(mailOptions);
+
+    const response = await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
+      range: 'emirates-car-sheet',
+      valueInputOption: 'USER_ENTERED',
+      auth: jwt,
+      requestBody: {
+        values: [
+          [
+            Timestamp,
+            RefNo,
+            email,
+            brand,
+            contact,
+            description,
+            partList,
+            year,
+            model,
+            address,
+            condition,
+            timing,
+            WApp,
+            SCnfD,
+            Y,
+            N,
+            Q,
+            Follow,
+            S
+          ],
+        ],
+      },
+    });
+    const data = JSON.stringify(response);
+
 
     const transporterCus = nodemailer.createTransport({
       service: 'Gmail',
@@ -169,7 +172,7 @@ https://www.emirates-car.com
 `
     };
 
-    await transporter.sendMail(mailOptions);
+
     await transporterCus.sendMail(mailOptionsCus)
     res.status(201).json(data);
   } else {

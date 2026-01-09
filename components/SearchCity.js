@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export default function SearchCity({ cities }) {
+export default function SearchCity({ cities, citypage }) {
   const [searchCity, setSearchCity] = useState('');
   const [recommendcities, setRecommendCity] = useState('');
   const [formCityChange, setFormCityChange] = useState('');
@@ -44,7 +44,7 @@ export default function SearchCity({ cities }) {
           id="city-search"
           type="search"
           className="border-2 border-gray-300 w-full bg-white h-10 xs:h-6 2xs:h-6 rounded-lg text-sm focus:outline-none px-2"
-          placeholder="Eg. Abu Dhabi, Dubai, Ajman..."
+          placeholder={`${citypage ? `Search your parts in ${citypage}` : "Eg Dubai, Abu Dhabi.."}`}
           onChange={e => onCityFormChange(e.target.value)}
           value={searchCity}
           autoComplete="off"

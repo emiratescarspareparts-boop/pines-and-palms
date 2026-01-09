@@ -7,74 +7,9 @@ export const viewport = {
   userScalable: false,
   themeColor: '#2563eb',
 };
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "German Spare Parts",
-  "about": {
-    "@type": "Country",
-    "name": "German"
-  },
-  "url": "https://www.emirates-car.com/spare-parts/german-auto-spare-parts",
-  "description": "A comprehensive collection of Used, New, Genuine, OEM, Aftermarket spare parts for German car makes including Mercedes benz, BMW, Jaguar, Land Rover, Porche."
-};
 
-export const metadata = {
-  title:
-    'Online German Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-  description:
-    'Buy Online and Get delivered German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-  openGraph: {
-    images: 'https://emirates-car.com/favicon.png',
-    title:
-      'Online German Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-    description:
-      'Buy Online and Get delivered German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-    url: 'https://www.emirates-car.com/spare-parts/german-auto-spare-parts',
-    image: 'https://emirates-car.com/img/car-spare-parts.png',
-    siteName: 'Emirates Auto Parts',
-    images: [
-      {
-        url: 'https://emirates-car.com/icon-192x192.png',
-        width: 192,
-        height: 192,
-      },
-      {
-        url: 'https://emirates-car.com/icons/icon-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'car parts',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title:
-      'Online German Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-    url: 'https://www.emirates-car.com/spare-parts/german-auto-spare-parts',
-    description:
-      'Buy Online and Get delivered German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-    images: ['https://emirates-car.com/favicon.png'],
-  },
-  icons: {
-    icon: 'https://emirates-car.com/favicon.png',
-    shortcut: 'https://emirates-car.com/icons/icon-96x96.png',
-    apple: 'https://emirates-car.com/icons/icon-192x192.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: 'https://emirates-car.com/icons/icon-152x152.png',
-    },
-  },
-  alternates: {
-    canonical: `https://www.emirates-car.com/spare-parts/german-auto-spare-parts}`,
-  },
-  category: 'german origin spare parts',
-  other: {
-    "script:ld+json": JSON.stringify(schema),
-  },
-};
+
+
 
 export default function RootLayout({ children }) {
   return (

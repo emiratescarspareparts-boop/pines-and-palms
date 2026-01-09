@@ -22,11 +22,10 @@ async function handler(req, res) {
     const data = values.slice(-10);
     const columns = values.shift();
 
-    // Create key-value pairs using column names as keys
     const dataValue = values.slice(startIndex).map(row => {
       const entry = {};
       columns.forEach((column, index) => {
-        entry[column] = row[index] || ''; // Handle empty cells
+        entry[column] = row[index] || '';
       });
       return entry;
     });

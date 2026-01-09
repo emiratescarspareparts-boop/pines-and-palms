@@ -693,12 +693,6 @@ export default function Parts({ params, searchParams }) {
                                 visitors budgeting a repair and garages planning inventory purchases.
                             </p>
 
-                            <ul className={`text-center font-sans font-medium text-lg mt-3 ${firaSans.className}`}>
-                                <li>Aftermarket alternator: AED 200 – 600</li>
-                                <li>Genuine OEM alternator: AED 1,500 – 3,500</li>
-                                <li>Premium new alternator: AED 900 – 1,500</li>
-                                <li>Used/rebuilt alternator: AED 100 – 250</li>
-                            </ul>
                             <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
                                 For K-series engines such as <strong>K20A2</strong> or <strong>K24A2</strong>, prices can
                                 skew higher if you need OEM or high-output units. Garages ordering in bulk should ask

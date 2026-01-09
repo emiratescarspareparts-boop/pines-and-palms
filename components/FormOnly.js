@@ -447,7 +447,25 @@ export default function FormOnly({ formsData = [] }) {
         'Al Qusais',
         'Al Nahda',
         'Al Rashidiya',
-        'Nad al Sheba',]
+        'Nad al Sheba',
+        'Al Awir',
+        'Dubai South',
+        'Dubai Media City',
+        'Al Mankhool',
+        'Al Mizhar',
+        'Nad Al Hamar',
+        'Dubai Festival City',
+        'Dubai International City',
+        'Bu Shaghara',
+        'Discovery Gardens',
+        'Arabian Ranches',
+        'Dubai Motor City',
+        'Damac Hills',
+        'Wadi al Safa',
+        'Muhaisnah',
+        'Muweileh',
+        'Jafiliyah'
+    ]
 
 
 

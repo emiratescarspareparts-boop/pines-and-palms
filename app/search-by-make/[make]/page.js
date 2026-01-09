@@ -439,10 +439,6 @@ export default function MakePage({ params, searchParams }) {
     }
   }
 
-
-  // ------------------------------------
-  // 2️⃣ Apply remaining filters
-  // ------------------------------------
   const filtered = [];
 
   for (let i = 0; i < makeFiltered.length; i++) {

@@ -3,11 +3,13 @@ import React from 'react';
 import useSWR from 'swr';
 const fetcher = async url => {
   const res = await fetch(url);
+  console.log(res.json())
   return res.json();
 };
 
 export default function TenEntries() {
   const { data, error } = useSWR('/api/entries', fetcher);
+
 
   if (error) return <div>Error fetching data</div>;
   if (!data) return <div>Loading...</div>;
