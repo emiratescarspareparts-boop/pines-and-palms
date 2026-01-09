@@ -48,7 +48,7 @@ async function handler(req, res) {
 
     let messageURIOne =
       encodeURI(description) +
-      '%0AWe%20received%20your%20enquiry%20for%20car%20auto%20parts%20for%20above%20vehicle ';
+      '%0AWe%20received%20your%20enquiry%20for%20car%20auto%20parts%20for%20above%20vehicle';
 
     const wap = `https://api.whatsapp.com/send?phone=${contact}&text=${encodeURI(
       description,

@@ -189,7 +189,7 @@ export default function ProductTabs({ product, slug }) {
                         <h2 className="text-xl font-semibold mb-2">Policies</h2>
                         <ul className={`list-disc pl-5 space-y-1 text-gray-700 ${firaSans.className}`}>
                             <li><strong>Shipping:</strong> {product.policies.shipping}</li>
-                            <li><strong>Delivery:</strong> {`Estimated between ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" })} - ${new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric" })}. ${product.policies.delivery}`}</li>
+                            <li><strong>Delivery:</strong> Delivery Available to All Emirates - Dubai, Sharjah, Ajman, Abu Dhabi, Al Ain, Fujairah, Umm Al Quwain, Ras Al Khaimah</li>
                             <li><strong>Returns:</strong> {product.policies.returns}</li>
                             <li><strong>Payment Methods:</strong> {product.policies.payment_methods.join(", ")}</li>
                         </ul>
