@@ -457,7 +457,9 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
         'Wadi al Safa',
         'Muhaisnah',
         'Muweileh',
-        'Jafiliyah'
+        'Jafiliyah',
+        'Al Mamzar',
+        'Sajja',
     ]
     useEffect(() => {
         setYear('');
@@ -544,6 +546,13 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
 
     async function handleSubmit(event) {
         event.preventDefault();
+        if (isLoading) {
+            return;
+        }
+        if (!Name || !Whatsappno || addedParts.length === 0 || Condition.length === 0 || !Timing) {
+            alert('Please fill in all required fields');
+            return;
+        }
         setIsLoading(true);
 
         try {
@@ -807,6 +816,12 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                             required
                                             placeholder="Search or type year (e.g., 2020)"
                                             value={Year}
+                                            onKeyPress={(e) => {
+                                                if (e.key === 'Enter' && canProceedStep1) {
+                                                    e.preventDefault();
+                                                    nextStep();
+                                                }
+                                            }}
                                             onChange={(e) => {
                                                 const inputValue = e.target.value;
                                                 setYear(inputValue);
@@ -950,6 +965,18 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                     <div className="text-sm font-semibold text-gray-700 mb-2 pb-2 border-b-2 border-gray-200">
                                         Selected Parts {addedParts.length > 0 && `(${addedParts.length})`}
                                     </div>
+                                    {addedParts.length > 0 && (
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                setAddedParts([]);
+                                                setDuplicateMessage('');
+                                            }}
+                                            className="text-sm ml-auto text-right text-red-600 hover:text-red-800 font-semibold"
+                                        >
+                                            X Clear All Parts
+                                        </button>
+                                    )}
                                     {addedParts.length > 0 ? (
                                         <div className="flex flex-wrap gap-2">
                                             {addedParts.map((part, index) => (
@@ -1062,8 +1089,8 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                 <button
                                     type="button"
                                     onClick={nextStep}
-                                    disabled={addedParts.length === 0}
-                                    className={`w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${addedParts.length > 0
+                                    disabled={addedParts.length === 0 || Condition.length === 0 || !Timing}
+                                    className={`w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all ${addedParts.length > 0 && Condition.length > 0 && Timing
                                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                                         : 'bg-gray-300 cursor-not-allowed'
                                         }`}
@@ -1122,7 +1149,10 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                                             type="text"
                                             placeholder="+971501234567"
                                             className="flex-1 border-2 border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:border-purple-500 transition-colors"
-                                            onChange={(e) => setWhatsappno(e.target.value)}
+                                            onChange={(e) => {
+                                                const cleaned = e.target.value.replace(/[^\d+]/g, '');
+                                                setWhatsappno(cleaned);
+                                            }}
                                             value={Whatsappno}
                                             required
                                         />
