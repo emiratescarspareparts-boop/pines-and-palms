@@ -77,5 +77,5 @@ module.exports = withPWA({
       },
     ];
   },
-  staticPageGenerationTimeout: 3000,
+  staticPageGenerationTimeout: 180,
 });
