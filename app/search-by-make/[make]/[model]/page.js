@@ -10,6 +10,7 @@ import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
 import FormMakeModel from '../../../../components/FormMakeModel';
 import { notFound } from 'next/navigation';
+import TenEntries from '../../../../components/tenentries';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -911,6 +912,8 @@ export default function Model({ params, searchParams }) {
           ))}
         </ul>
       </section>
+
+      <TenEntries make={make} model={model} />
 
 
       <section aria-labelledby="featured-deals" className="xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
