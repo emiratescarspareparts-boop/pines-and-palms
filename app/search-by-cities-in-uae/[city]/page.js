@@ -415,6 +415,9 @@ export default function City({ params }) {
               <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
                 <MapPin size={32} color="darkblue" /> Dubai Investment Park
               </div>
+              <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
+                <MapPin size={32} color="darkblue" /> Al Mamzar
+              </div>
             </div>
           </div>}
         <div className="place-content-center mx-auto">
