@@ -17,7 +17,7 @@ async function handler(req, res) {
     const readData = await sheets.spreadsheets.values.get({
       auth: jwt,
       spreadsheetId: process.env.EMIRATES_CAR_DATABASE_ID,
-      range: 'emirates-car-sheet',
+      range: 'display-inquiry',
     });
     const values = readData.data.values;
 
