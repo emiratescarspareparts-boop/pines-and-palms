@@ -18,6 +18,12 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
+const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair-display',
+});
+
 const grouped = {};
 
 for (let i = 0; i < CitiesData.length; i++) {
@@ -76,11 +82,7 @@ function getMake() {
   return Object.values(uniqueMakes);
 }
 
-const playfair_display = Playfair_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair-display',
-});
+
 
 
 export const metadata = {
@@ -208,7 +210,8 @@ export default function Cities() {
         </div>
 
       </div>
-      <div aria-label='search spare parts in dubai'><SearchCity cities={cities} /></div>
+      <div aria-label='search spare parts in dubai'>
+        <SearchCity cities={cities} /></div>
 
       <div className="grid grid-cols-4 gap-4 
   xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2
