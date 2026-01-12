@@ -301,7 +301,7 @@ export function generateMetadata({ params }) {
   };
   return {
     title: `${make} Spare Parts Dubai dealers UAE - Used, Genuine, OEM and Aftermarket`,
-    description: `Find genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
+    description: `Buy genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
     metadataBase: new URL(
       `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
     ),

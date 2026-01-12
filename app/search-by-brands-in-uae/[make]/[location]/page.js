@@ -729,7 +729,7 @@ export default function Cities({ params, searchParams }) {
           ))}
         </div>
       </div>
-      <TenEntries />
+      <TenEntries make={make} />
 
       <section
         aria-labelledby={`all-${make}-brands`}

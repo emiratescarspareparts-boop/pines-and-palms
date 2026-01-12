@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../../components/nav';
 
 export const viewport = {
   width: 'device-width',

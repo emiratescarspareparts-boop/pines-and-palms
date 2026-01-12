@@ -277,11 +277,11 @@ export function generateMetadata({ params }) {
   };
   return {
     title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
-    description: `Find and buy all new, used, and genuine ${make} ${decodeURIComponent(model)} spare parts online in the UAE. Get fast delivery and expert support from reliable dealers. Shop now!`,
+    description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
 
     openGraph: {
       title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
-      description: `Find and buy all new, used, and genuine ${make} ${decodeURIComponent(model)} spare parts online in the UAE. Get fast delivery and expert support from reliable dealers. Shop now! `,
+      description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
       url: 'https://www.emirates-car.com/search-by-make/' + make + '/' + model,
       image: `https://www.emirates-car.com/img/car-logos/${imageMake}`,
       siteName: 'EMIRATESCAR',
@@ -306,7 +306,7 @@ export function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
       url: '/search-by-make/' + make + '/' + model,
-      description: `Find and buy all new, used, and genuine ${make} ${decodeURIComponent(model)} spare parts online in the UAE. Get fast delivery and expert support from reliable dealers. Shop now!`,
+      description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
       images: ['https://www.emirates-car.com/favicon.png'],
     },
     icons: {
