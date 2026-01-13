@@ -372,7 +372,7 @@ export default function ProductPage({ params }) {
                             <p className="text-xl font-semibold text-gray-800">
                                 Price:{" "}
                                 <span className="text-black">
-                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">{product.pricing?.price}</span>
+                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">0</span>
                                 </span>{" "}
                                 <span>
                                     <PartInquiryForm

@@ -5865,5 +5865,296 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 65,
+        "subcategory": "Belt Tensioner",
+        "category": "Belts & Timing Components",
+        "partname": "Serpentine Belt Tensioner, Pulley",
+        "partnumber": "31170-PNA-023",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2002",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2003",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2004",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2005",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2006",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2007",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2008",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2009",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2010",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2011",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2012",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2013",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "CR-V",
+                "years": "2014",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2003",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2004",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2005",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2006",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2007",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2008",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2009",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2010",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Element",
+                "years": "2011",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Honda",
+                "model": "Accord",
+                "years": "2003",
+                "engine": "2.4L,3.0L"
+            },
+            {
+                "make": "Honda",
+                "model": "Accord",
+                "years": "2004",
+                "engine": "2.4L,3.0L"
+            },
+            {
+                "make": "Honda",
+                "model": "Accord",
+                "years": "2005",
+                "engine": "2.4L,3.0L"
+            },
+            {
+                "make": "Honda",
+                "model": "Accord",
+                "years": "2006",
+                "engine": "2.4L,3.0L"
+            },
+            {
+                "make": "Honda",
+                "model": "Accord",
+                "years": "2007",
+                "engine": "2.4L,3.0L"
+            },
+            {
+                "make": "Acura",
+                "model": "TSX",
+                "years": "2004",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "TSX",
+                "years": "2005",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "TSX",
+                "years": "2006",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "TSX",
+                "years": "2007",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "TSX",
+                "years": "2008",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "RDX",
+                "years": "2007",
+                "engine": "2.3L"
+            },
+            {
+                "make": "Acura",
+                "model": "RDX",
+                "years": "2008",
+                "engine": "2.3L"
+            },
+            {
+                "make": "Acura",
+                "model": "RDX",
+                "years": "2009",
+                "engine": "2.3L"
+            },
+            {
+                "make": "Acura",
+                "model": "RDX",
+                "years": "2010",
+                "engine": "2.3L"
+            },
+            {
+                "make": "Acura",
+                "model": "RDX",
+                "years": "2011",
+                "engine": "2.3L"
+            },
+            {
+                "make": "Acura",
+                "model": "ILX",
+                "years": "2013",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "ILX",
+                "years": "2014",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Acura",
+                "model": "ILX",
+                "years": "2015",
+                "engine": "2.4L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/honda/tensioner27.jpg",
+        "item_specifics": {
+            "sku": "HON0027",
+            "Brand": "Honda Motor Company",
+            "Manufacturer Part Number": "31170PNA023",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "31170-PNA-023, MX31170PNA023"
+            ],
+            "Placement on Vehicle": [
+                "Front"
+            ],
+            "Condition": "New",
+            "Material": "Metal",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Japan",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Honda Motor Company Serpentine Belt Tensioner, Pulley. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
