@@ -97,7 +97,6 @@ export default function Make() {
           relevant consultation regarding your car symptoms/problems/signs. If you have Maintenance problems, it is likely that your car needs replacement like spark plugs, air filter, oil filter,fluids, brake pads, <a href="/car-battery-replacement-services-in-uae" className='text-blue-500'>batteries</a>, body panels, alternators etc.
           It is most likely that these parts are immediate need of your car. As parts like alternator if its problematic, then the car doesnt start. There are some parts which has to be changed immediately because of it is linked to the batteries, it fuels the battery to recharge when vehcile is started.
         </p>
-
       </div>
     </div>
   );

@@ -11,6 +11,9 @@ import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import FormOnly from '../components/FormOnly';
+import SearchPartsComponent from '../components/SearchPart';
+import SearchBar from './catalogs/SearchBar';
+import products from "../public/products.json"
 
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
@@ -30,17 +33,13 @@ const firaSans = Fira_Sans({
 });
 
 
-
-
-
-
-export default async function Home() {
+export default async function Home({ searchParams }) {
   const modelforms = CarData;
   const partsposts = PartsData;
 
   return (
     <div>
-
+      <SearchBar allProducts={products} searchParams={searchParams} />
       <section
         className="py-5 xxs:py-0 xs:py-0 s:py-0 sm:px-7 lg:mx-6 md:mx-6 xs:px-0 s:px-2 max-w-7xl mx-auto"
         aria-label="auto spare parts in uae"
@@ -59,6 +58,7 @@ export default async function Home() {
                 <p className="mt-3 text-5xl xl:text-4xl xxl:text-2xl lg:text-4xl md:text-4xl xxs:text-xl xs:text-lg font-medium">
                   We Compare 100+ Suppliers So You Don&apos;t Have To. Get the Best Price Guaranteed.
                 </p>
+
 
                 <div className="mt-5 mx-auto sm:mx-5 md:mx-5 xxs:mx-3 xs:mx-3 xxs:my-5">
                   <div className="grid grid-cols-2 gap-2 py-3 xl:w-full xxl:w-full lg:w-full xs:w-full xxs:w-full mr-auto lg:mx-auto xl:mx-auto md:mx-auto xxl:mx-auto sm:mx-auto rounded-lg shadow-md">
