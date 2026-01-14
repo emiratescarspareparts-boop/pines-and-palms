@@ -2073,5 +2073,12 @@
         "category": "Filters (Air, Oil, Fuel, Cabin)",
         "description": "",
         "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 291,
+        "parts": "Transmission Oil Cooler",
+        "category": "Cooling System",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
     }
 ]

@@ -6156,5 +6156,62 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 66,
+        "subcategory": "Transmission Oil Cooler",
+        "category": "Cooling System",
+        "partname": "Transmission Oil Cooler (Warmer)",
+        "partnumber": "25560-R5L-003",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Honda",
+                "model": "Crosstour",
+                "years": "2012-2015",
+                "engine": "2.4L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/honda/warmer28.png",
+        "item_specifics": {
+            "sku": "HON0028",
+            "Brand": "Honda Motor Company",
+            "Manufacturer Part Number": "25560-R5L-003",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "25560-R5L-003,25560R5L003"
+            ],
+            "Placement on Vehicle": [
+                "Front of Radiator"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum Alloy",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Japan",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Honda Motor Company Transmission Oil Cooler (Warmer). Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
