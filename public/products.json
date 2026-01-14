@@ -6213,5 +6213,104 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 67,
+        "subcategory": "Steering Rack",
+        "category": "Suspension & Steering Parts",
+        "partname": "Steering Rack",
+        "partnumber": "53400-TG7-A02",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2016",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2017",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2017",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2018",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2019",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2020",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2021",
+                "engine": "3.5L"
+            },
+            {
+                "make": "Honda",
+                "model": "Pilot",
+                "years": "2022",
+                "engine": "3.5L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/honda/steeringrack67.jpg",
+        "item_specifics": {
+            "sku": "HON0029",
+            "Brand": "Honda Motor Company",
+            "Manufacturer Part Number": "53400TG7A02",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "53400-TG7-A02, NSK 53400TG7A02,551-60173"
+            ],
+            "Placement on Vehicle": [
+                "Lower"
+            ],
+            "Condition": "New",
+            "Material": "Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Japan",
+            "OEM or Aftermarket": "Aftermarket",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Honda Motor Company Steering Rack. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]

@@ -3,6 +3,7 @@ import products from "../../../../../../../public/products.json";
 import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
 import { Fira_Sans, Poppins, Roboto } from 'next/font/google';
+import SearchBar from "../../../../../../catalogs/SearchBar";
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
@@ -297,7 +298,7 @@ export async function generateMetadata({ params }) {
 }
 
 
-export default function ProductPage({ params }) {
+export default function ProductPage({ params, searchParams }) {
     const { make, model, category, subcategory, slug } = params;
 
     const id = Number(slug.split("-").pop());
@@ -322,6 +323,14 @@ export default function ProductPage({ params }) {
         );
     }
 
+    const matchingCompats = product.compatibility?.filter(
+        (c) =>
+            c?.make?.trim().toLowerCase() === decodeURIComponent(params.make).trim().toLowerCase() &&
+            c?.model?.trim().toLowerCase() === decodeURIComponent(params.model).trim().toLowerCase()
+    );
+
+    const years = [...new Set(matchingCompats?.map(c => c.years))].join(', ');
+
     const otherProducts = products.filter(
         (p) => p.id !== product.id && p.compatibility?.some((c) => c.make === make)
     );
@@ -329,6 +338,7 @@ export default function ProductPage({ params }) {
 
     return (
         <main className="max-w-5xl mx-auto p-6">
+            <SearchBar allProducts={products} searchParams={searchParams} />
             <div className="grid xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-6"
                 itemScope
                 itemType="https://schema.org/Product">
@@ -358,7 +368,7 @@ export default function ProductPage({ params }) {
                         <p className="text-gray-700"><strong>Category:</strong><span itemProp="category">{product.category}</span> </p>
                         <p className="text-gray-700"><strong>Brand:</strong> {product.item_specifics.Brand}</p>
                         <p className="text-gray-700" itemProp="mpn"><strong>Part Number:</strong> {product.partnumber}</p>
-                        <p className="text-gray-700"><strong>Compatible Years</strong> {compat.years}</p>
+                        <p className="text-gray-700"><strong>Compatible Years</strong> {years}</p>
                         <p className="text-gray-700"><strong>Condition:</strong> {product.item_specifics.Condition}</p>
                         <p className="text-gray-700"><strong>Availability:</strong> {product.availability}</p>
                         <meta itemProp="brand" content={product.item_specifics.Brand} />
@@ -374,7 +384,7 @@ export default function ProductPage({ params }) {
                             <p className="text-xl font-semibold text-gray-800">
                                 Price:{" "}
                                 <span className="text-black">
-                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">0</span>
+                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">{product.pricing?.price} <span className="text-sm text-blue-500">(approx.)</span></span>
                                 </span>{" "}
                                 <span>
                                     <PartInquiryForm
