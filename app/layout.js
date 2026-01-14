@@ -244,11 +244,11 @@ const homepageSchema = {
 
         { "@type": "City", "name": "Discovery Gardens", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Discovery%20Gardens", "sameAs": "https://www.wikidata.org/wiki/Q5281529" },
 
-        { "@type": "City", "name": "Arabian Ranches", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Arabian%20Ranches", "sameAs": "https://www.wikidata.org/wiki/Q4789374" },
+        { "@type": "Place", "name": "Arabian Ranches", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Arabian%20Ranches", "sameAs": "https://www.wikidata.org/wiki/Q4789374" },
 
         { "@type": "City", "name": "Dubai Motor City", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Dubai%20Motor%20City", "sameAs": "https://www.wikidata.org/wiki/Q5281523" },
 
-        { "@type": "City", "name": "Damac Hills", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Damac%20Hills", "sameAs": "https://www.wikidata.org/wiki/Q65060383" },
+        { "@type": "Place", "name": "Damac Hills", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Damac%20Hills", "sameAs": "https://www.wikidata.org/wiki/Q65060383" },
 
         { "@type": "City", "name": "Wadi Al Safa", "url": "https://www.emirates-car.com/search-by-cities-in-uae/Wadi%20Al%20Safa", "sameAs": null },
 
