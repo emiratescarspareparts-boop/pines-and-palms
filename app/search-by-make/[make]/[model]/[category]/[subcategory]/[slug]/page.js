@@ -358,6 +358,7 @@ export default function ProductPage({ params }) {
                         <p className="text-gray-700"><strong>Category:</strong><span itemProp="category">{product.category}</span> </p>
                         <p className="text-gray-700"><strong>Brand:</strong> {product.item_specifics.Brand}</p>
                         <p className="text-gray-700" itemProp="mpn"><strong>Part Number:</strong> {product.partnumber}</p>
+                        <p className="text-gray-700"><strong>Compatible Years</strong> {compat.years}</p>
                         <p className="text-gray-700"><strong>Condition:</strong> {product.item_specifics.Condition}</p>
                         <p className="text-gray-700"><strong>Availability:</strong> {product.availability}</p>
                         <meta itemProp="brand" content={product.item_specifics.Brand} />
