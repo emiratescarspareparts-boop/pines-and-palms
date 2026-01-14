@@ -351,13 +351,13 @@ export default function ProductPage({ params }) {
                 <section className="space-y-4">
                     {/* Category & Engine */}
                     <h1 className={`text-3xl xl:text-4xl xxl:text-4xl font-extrabold mx-auto my-5 xs:my-3 xs:text-xl xxs:text-2xl md:text-xl md:my-3 sm:text-xl xxs:text-center line-clamp-6  ${poppins.className}`} itemProp="name">
-                        {decodeURIComponent(make)} {decodeURIComponent(model)} {product.partname} (<span itemProp="mpn">{product.partnumber}</span> ) for {product.compatibility.map(c => c.make + " " + c.model + " " + c.years + " ")[0]}
+                        {decodeURIComponent(make)} {decodeURIComponent(model)} {product.partname}
                     </h1>
                     <p className={`text-fitment font-semibold ${roboto.className}`}>✓ Verified fitment</p>
                     <div className={`space-y-1 ${roboto.className}`}>
                         <p className="text-gray-700"><strong>Category:</strong><span itemProp="category">{product.category}</span> </p>
                         <p className="text-gray-700"><strong>Brand:</strong> {product.item_specifics.Brand}</p>
-                        <p className="text-gray-700"><strong>Part Number:</strong> {product.partnumber}</p>
+                        <p className="text-gray-700" itemProp="mpn"><strong>Part Number:</strong> {product.partnumber}</p>
                         <p className="text-gray-700"><strong>Condition:</strong> {product.item_specifics.Condition}</p>
                         <p className="text-gray-700"><strong>Availability:</strong> {product.availability}</p>
                         <meta itemProp="brand" content={product.item_specifics.Brand} />
