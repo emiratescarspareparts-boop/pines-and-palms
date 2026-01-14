@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "make": "Honda",
+        "model": "Accord",
+        "diagnosis": [
+            {
+                "question": "",
+                "answer": ""
+            }
+        ]
+    }
+]
