@@ -218,51 +218,6 @@ export function generateMetadata({ params }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "FAQPage",
-        "divEntity": [
-          {
-            "@type": "Question",
-            "name": `Do you deal in genuine ${make} spare parts in UAE?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we deal in genuine OEM ${make} parts, as well as used and aftermarket options to suit your budget.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Can I buy used or aftermarket ${make} parts to save costs?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we offer used and aftermarket ${make} spare parts that are tested for quality and performance.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Do you deliver ${make} parts across UAE?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we deliver ${make} spare parts to Dubai, Abu Dhabi, Sharjah, Ajman, and other Emirates. International shipping is also available.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `How do I know if a part fits my ${make}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `You can share your car's VIN or model details with us, and we will confirm compatibility before shipping.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Do your ${make} spare parts come with warranty?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, all new and OEM ${make} spare parts come with a standard warranty. Used parts are tested but carry limited warranty.`
-            }
-          }
-        ]
-      },
-      {
         "@type": "CollectionPage",
         "name": `${make} Spare Parts | Emirates Car`,
         "url": `https://www.emirates-car.com/search-by-make/${make}`,

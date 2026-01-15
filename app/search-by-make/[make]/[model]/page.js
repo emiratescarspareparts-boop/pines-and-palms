@@ -196,51 +196,6 @@ export function generateMetadata({ params }) {
         }
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": `Do you sell genuine ${make} ${model} spare parts in UAE?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we supply genuine OEM ${make} ${model} parts, as well as used and aftermarket options to suit your budget.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Can I buy used or aftermarket ${make} ${model} parts to save costs?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we offer used and aftermarket ${make} ${model} spare parts that are tested for quality and performance.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Do you deliver ${make} ${model} parts across UAE?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, we deliver ${make} ${model} spare parts to Dubai, Abu Dhabi, Sharjah, Ajman, and other Emirates. International shipping is also available.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `How do I know if a part fits my ${make} ${model}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `You can share your car's VIN or model details with us, and we will confirm compatibility before shipping.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Do your ${make} ${model} spare parts come with warranty?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Yes, all new and OEM ${make} ${model} spare parts come with a standard warranty. Used parts are tested but carry limited warranty.`
-            }
-          }
-        ]
-      },
-      {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [

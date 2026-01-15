@@ -312,6 +312,48 @@ export function generateMetadata({ params }) {
                     itemListElement: productListItems,
                 },
             },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.emirates-car.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Car Makes",
+                        "item": `https://www.emirates-car.com/search-by-makes/`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": `${make} Spare Parts`,
+                        "item": `https://www.emirates-car.com/search-by-make/${make}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": `${make} ${model} Spare Parts`,
+                        "item": `https://www.emirates-car.com/search-by-make/${make}/${model}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": `${make} ${model} ${category} Spare Parts`,
+                        "item": `https://www.emirates-car.com/search-by-make/${make}/${model}/${category}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": `${make} ${model} ${subcategory} Spare Parts`,
+                        "item": `https://www.emirates-car.com/search-by-make/${make}/${model}/${category}/${subcategory}`
+                    }
+                ]
+            },
         ],
     };
 
