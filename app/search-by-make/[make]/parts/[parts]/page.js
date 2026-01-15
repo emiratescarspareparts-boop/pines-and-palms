@@ -124,6 +124,8 @@ export function generateMetadata({ params }) {
         )
     );
 
+    const alternatorForMakes = ['Chrysler', 'Dodge', 'GMC', 'Hyundai', 'Infiniti', 'Jeep', 'Volvo', 'Hummer', 'Kia', 'Mini', 'Maybach', 'Scion', 'Bentley', 'Audi', 'Ford', 'Honda', 'Land Rover', 'Lexus', 'Mazda', 'Mercedes Benz', 'Porsche', 'Volkswagen', 'Chevrolet', 'BMW', 'Cadillac']
+
     const partFiltered = makeFiltered.filter(product =>
         product.subcategory.toLowerCase() === partEntry.parts.toLowerCase()
     );
@@ -161,9 +163,9 @@ export function generateMetadata({ params }) {
         "@graph": [
             {
                 "@type": "CollectionPage",
-                "name": `${make} ${parts} Spare Parts | EMIRATESCAR`,
+                "name": `${make} ${parts} Parts | EMIRATESCAR`,
                 "url": `https://www.emirates-car.com/search-by-make/${make}`,
-                "description": `Find ${parts} genuine, OEM, and aftermarket spare parts for all ${make} models.`,
+                "description": `Buy ${make} ${parts} parts | New, Used, Genuine/ OEM, and Aftermarket spare parts for all ${make} models.`,
                 "about": { "@type": "Brand", "name": make },
                 "mainEntity": {
                     "@type": "ItemList",
@@ -195,7 +197,7 @@ export function generateMetadata({ params }) {
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": `${make} ${parts} Spare Parts`,
+                        "name": `${make} ${parts} Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${make}/parts/${parts}`
                     }
                 ]
@@ -342,7 +344,6 @@ export default function Parts({ params, searchParams }) {
     const selectedCompats = Array.isArray(compats) ? compats : [compats].filter(Boolean);
     const query = search?.toLowerCase() || "";
 
-    // ✅ Filter products for this make
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
             (c) => c.make.toLowerCase() === make.toLowerCase()
