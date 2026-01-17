@@ -45689,5 +45689,82 @@
     "model": "CLK320",
     "description": "",
     "keyword": "."
+  },
+  {
+    "id": 14351,
+    "year": [
+      2011
+    ],
+    "make": "Chrysler",
+    "img": "chrysler.webp",
+    "model": "Ypsilon (846)",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14352,
+    "year": [
+      2010
+    ],
+    "make": "Alfa Romeo",
+    "img": "alfa_romeo.webp",
+    "model": "Giulietta",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14353,
+    "year": [
+      2010
+    ],
+    "make": "Alfa Romeo",
+    "img": "alfa_romeo.webp",
+    "model": "Mito",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14354,
+    "year": [
+      2010
+    ],
+    "make": "Fiat",
+    "img": "fiat.webp",
+    "model": "500 (312)",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14356,
+    "year": [
+      2010
+    ],
+    "make": "Jeep",
+    "img": "jeep.webp",
+    "model": "Renegade",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14357,
+    "year": [
+      2010
+    ],
+    "make": "Fiat",
+    "img": "fiat.webp",
+    "model": "Panda",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14358,
+    "year": [
+      2010
+    ],
+    "make": "Fiat",
+    "img": "fiat.webp",
+    "model": "Tipo",
+    "description": "",
+    "keyword": "."
   }
 ]

@@ -6312,5 +6312,122 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 68,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 14V 120AMP 54 Pulleys",
+        "partnumber": 51874105,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Alfa Romeo",
+                "model": "Giulietta",
+                "years": "2010-2020",
+                "engine": "1.4 TB"
+            },
+            {
+                "make": "Alfa Romeo",
+                "model": "Giulietta",
+                "years": "2014",
+                "engine": "1.4 TB"
+            },
+            {
+                "make": "Alfa Romeo",
+                "model": "Mito",
+                "years": "2008-2018",
+                "engine": "0.9 TwinAir"
+            },
+            {
+                "make": "Chrysler",
+                "model": "Ypsilon (846)",
+                "years": "2011",
+                "engine": "0.9 Twinair"
+            },
+            {
+                "make": "Fiat",
+                "model": "500 (312)",
+                "years": "2009",
+                "engine": "0.9 Twinair"
+            },
+            {
+                "make": "Fiat",
+                "model": "500 L",
+                "years": "2012",
+                "engine": "0.9 Twinair"
+            },
+            {
+                "make": "Fiat",
+                "model": "500 X",
+                "years": "2014",
+                "engine": "1.4"
+            },
+            {
+                "make": "Fiat",
+                "model": "Panda",
+                "years": "2012",
+                "engine": "0.9, 0.9 Twinair,0.9 Twinair 4x4"
+            },
+            {
+                "make": "Fiat",
+                "model": "Punto",
+                "years": "2012",
+                "engine": "0.9 Twinair"
+            },
+            {
+                "make": "Fiat",
+                "model": "Tipo",
+                "years": "2016",
+                "engine": "1.4"
+            },
+            {
+                "make": "Jeep",
+                "model": "Renegade",
+                "years": "2014",
+                "engine": "1.4"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/fiat/alternator68.jpg",
+        "item_specifics": {
+            "sku": "CHR0001",
+            "Brand": "Magnetti Marelli, Denso",
+            "Manufacturer Part Number": 51874105,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "063377561010 MAGNETI MARELLI, 0000071796424, 51874104, 51929094, 51929095,AD KÜHNER 553583RID,AD KÜHNER #553583RI, SANDO #2040372.1, CASCO #CAL40372GS,CASCO #CAL40372, ELSTOCK #28-6799"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Italy",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2115,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Magnetti Marelli, Denso Alternator 14V 120AMP 54 Pulleys. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]

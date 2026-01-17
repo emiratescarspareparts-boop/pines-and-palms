@@ -371,6 +371,7 @@ export default function ProductPage({ params, searchParams }) {
                         <p className="text-gray-700"><strong>Compatible Years</strong> {years}</p>
                         <p className="text-gray-700"><strong>Condition:</strong> {product.item_specifics.Condition}</p>
                         <p className="text-gray-700"><strong>Availability:</strong> {product.availability}</p>
+                        <p className="text-gray-700"><strong>Delivery:</strong> <a href="https://www.emirates-car.com/search-by-cities-in-uae/Dubai" className="text-blue-500">Dubai</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Abu%20Dhabi" className="text-blue-500">Abu Dhabi</a>,<a href="https://www.emirates-car.com/search-by-cities-in-uae/Ajman" className="text-blue-500">Ajman</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Sharjah" className="text-blue-500">Sharjah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Al%20Ain" className="text-blue-500">Al Ain</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Ras%20Al%20Khaimah" className="text-blue-500">Ras Al Khaimah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Fujairah" className="text-blue-500">Al Fujairah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Umm%20al%20Quwain" className="text-blue-500">Umm Al Quwain</a></p>
                         <meta itemProp="brand" content={product.item_specifics.Brand} />
 
                     </div>
@@ -410,6 +411,7 @@ export default function ProductPage({ params, searchParams }) {
                     </div>
                 </section>
             </div>
+
             <section><ProductTabs product={product} slug={slug} /></section>
 
 
