@@ -816,7 +816,7 @@ export default function MakePage({ params, searchParams }) {
             ))}
           </ul>
         </section>
-        <TenEntries make={make} />
+        <TenEntries />
         <PartsAccordion make={make} />
         <section className='xs:px-3 xxs:px-3 md:px-3 lg:max-w-4xl lg:mx-auto'>
           <h3 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why EMIRATESCAR?</h3>

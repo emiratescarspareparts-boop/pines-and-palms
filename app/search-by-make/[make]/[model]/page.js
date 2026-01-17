@@ -868,7 +868,7 @@ export default function Model({ params, searchParams }) {
         </ul>
       </section>
 
-      <TenEntries make={make} model={model} />
+      <TenEntries />
 
 
       <section aria-labelledby="featured-deals" className="xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
