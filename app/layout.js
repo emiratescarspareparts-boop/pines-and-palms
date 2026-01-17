@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import Navbar from '../components/nav';
-import Script from 'next/script';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,7 +20,7 @@ const homepageSchema = {
     {
       "@type": "WebSite",
       "@id": "www.emirates-car.com",
-      "url": "www.emirates-car.com",
+      "url": "https://www.emirates-car.com",
       "name": "EMIRATESCAR",
       "publisher": { "@id": "www.emirates-car.com#organization" },
       "potentialAction": {
@@ -72,7 +71,7 @@ const homepageSchema = {
         {
           "@type": "ContactPoint",
           "contactType": "sales",
-          "url": "www.emirates-car.com/contact",
+          "url": "https://www.emirates-car.com/contact",
           "description": "Online Inquiry Form"
         }
       ],
@@ -515,6 +514,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema).replace(/</g, '\\u003c') }}
+        />
 
         <Analytics />
         <Tawk />
