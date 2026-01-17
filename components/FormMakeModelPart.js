@@ -460,6 +460,7 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
         'Jafiliyah',
         'Al Mamzar',
         'Sajja',
+        'City Walk'
     ]
     useEffect(() => {
         setYear('');

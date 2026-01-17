@@ -459,7 +459,8 @@ export default function FormMakeModel({ formsData = [], mke, modl }) {
         'Muweileh',
         'Jafiliyah',
         'Al Mamzar',
-        'Sajja'
+        'Sajja',
+        'City Walk'
     ]
 
     useEffect(() => {

@@ -459,6 +459,7 @@ export default function FormMakePart({ formsData = [], mke }) {
         'Jafiliyah',
         'Al Mamzar',
         'Sajja',
+        'City Walk'
     ]
 
     useEffect(() => {
