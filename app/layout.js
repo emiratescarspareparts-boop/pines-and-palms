@@ -29,9 +29,9 @@ const homepageSchema = {
         "@id": "www.emirates-car.com#search-action",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "www.emirates-car.comsearch?q={search_term_string}"
+          "urlTemplate": "www.emirates-car.com/search-by-part-name/{search_term_string}"
         },
-        "query-input": "required name=search_term_string"
+        "queryInput": "required name=search_term_string"
       }
     },
     {
@@ -49,7 +49,7 @@ const homepageSchema = {
     },
     {
       "@type": "OnlineBusiness",
-      "@id": "www.emirates-car.com#organization",
+      "@id": "www.emirates-car.com#onlinebusiness",
       "name": "EMIRATESCAR",
       "url": "www.emirates-car.com",
       "logo": "www.emirates-car.comimg/car-spare-parts.png",
@@ -58,10 +58,17 @@ const homepageSchema = {
         {
           "@type": "ContactPoint",
           "contactType": "customer support",
-          "url": "wa.me",
-          "contactOption": "HearingImpairedSupported",
+          "telephone": "+971-XX-XXX-XXXX",
+          "url": "https://www.emirates-car.com/contact",
+          "contactOption": ["TollFree", "HearingImpairedSupported"],
           "availableLanguage": ["English", "Arabic", "Urdu", "Hindi"],
-          "description": "WhatsApp Quotation & Inquiry Service"
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "description": "24/7 Online Inquiry Form"
         },
         {
           "@type": "ContactPoint",
