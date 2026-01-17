@@ -6,7 +6,6 @@ import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 import FormOnly from '../../components/FormOnly';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import SearchPartsComponent from '../../components/SearchPart';
 import ShowCities from './ShowCities';
 import ShowMake from './ShowMake';
 import ShowParts from './ShowParts';

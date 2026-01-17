@@ -231,11 +231,11 @@ export function generateMetadata({ params }) {
 
   };
   return {
-    title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
+    title: `${make} ${model} Spare Parts in UAE from Dubai Dealer | Genuine, OEM & Aftermarket – Best Prices`,
     description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
 
     openGraph: {
-      title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
+      title: `${make} ${model} Spare Parts in UAE from Dubai dealer | Genuine, OEM & Aftermarket – Best Prices`,
       description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
       url: 'https://www.emirates-car.com/search-by-make/' + make + '/' + model,
       image: `https://www.emirates-car.com/img/car-logos/${imageMake}`,
@@ -259,7 +259,7 @@ export function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${make} ${model} Spare Parts in Dubai, UAE | Genuine, OEM & Aftermarket – Best Prices`,
+      title: `${make} ${model} Spare Parts in UAE from Dubai dealer | Genuine, OEM & Aftermarket – Best Prices`,
       url: '/search-by-make/' + make + '/' + model,
       description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
       images: ['https://www.emirates-car.com/favicon.png'],
@@ -310,6 +310,7 @@ function getMakeImage(make, model) {
 
   return '';
 }
+
 
 function getDescription(make, model) {
   const key = `${make.toLowerCase()}-${model.toLowerCase()}`;
@@ -629,6 +630,7 @@ export default function Model({ params, searchParams }) {
 
   return (
     <div className="max-w-7xl  mx-auto md:px-0 lg:px-0 xs:px-0 xxs:px-0 sm:px-2">
+
       <header
         className="xxs:py-0 sm:px-7  xl:py-10 xxl:py-10 s:py-0 xs:py-0 lg:py-0 md:mx-0 md:py-0"
         aria-label="Spare parts by country of origin"
