@@ -58,7 +58,6 @@ const homepageSchema = {
         {
           "@type": "ContactPoint",
           "contactType": "customer support",
-          "telephone": "+971-XX-XXX-XXXX",
           "url": "https://www.emirates-car.com/contact",
           "contactOption": ["TollFree", "HearingImpairedSupported"],
           "availableLanguage": ["English", "Arabic", "Urdu", "Hindi"],
