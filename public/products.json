@@ -1014,7 +1014,7 @@
         "id": 5,
         "subcategory": "Grille",
         "category": "Body Kits",
-        "partname": "Grille",
+        "partname": "Front Grille",
         "partnumber": "71120-TA5-A000",
         "availability": "In Stock",
         "compatibility": [
@@ -6417,6 +6417,471 @@
         "pricing": {
             "price": 2115,
             "price_info": "*Prices reflects the latest compared average online market values for Genuine Magnetti Marelli, Denso Alternator 14V 120AMP 54 Pulleys. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 69,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 160AMP",
+        "partnumber": "1BP00788AA",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2023",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2023",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2023",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2023",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2022",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2022",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2022",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2022",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2021",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2021",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2021",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2021",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2020",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2020",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2020",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2020",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Grand Cherokee",
+                "years": "2020",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2020",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2019",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2019",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2019",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2019",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Grand Cherokee",
+                "years": "2019",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2019",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2018",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2018",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2018",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2018",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2018",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2018",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2017",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2017",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2017",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2017",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2017",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2017",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2016",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2016",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Ram",
+                "model": "1500",
+                "years": "2016",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2015",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2015",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2015",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2015",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2015",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2014",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2014",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2014",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2014",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2014",
+                "engine": "3.0L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2013",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2013",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2013",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2013",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2013",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2012",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2012",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2012",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2012",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2012",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Chrysler",
+                "model": "300",
+                "years": "2011",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Challenger",
+                "years": "2011",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Charger",
+                "years": "2011",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Dodge",
+                "model": "Durango",
+                "years": "2011",
+                "engine": "3.6L"
+            },
+            {
+                "make": "Jeep",
+                "model": "Cherokee",
+                "years": "2011",
+                "engine": "3.6L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/dodge/alternator69.webp",
+        "item_specifics": {
+            "sku": "DOD0001",
+            "Brand": "Mopar",
+            "Manufacturer Part Number": "1BP00788AA",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "11572N WAI, 04801779AI MOPAR, 2138922 NAPA, DLG11572 AUTOZONE"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United State",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2089,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Mopar Alternator 160AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
             "currency": "AED",
             "discounted_price": 0,
             "offer": "0% OFF"

@@ -1,7 +1,15 @@
 "use client"
+import { Fira_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
+
+const firaSans = Fira_Sans({
+    weight: ['400', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-fira-sans',
+});
 
 export default function Product({ make, model, parts, products, allProducts }) {
     const INITIAL_COUNT = 8; // change as needed
@@ -70,6 +78,8 @@ export default function Product({ make, model, parts, products, allProducts }) {
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
                                                 {make} {compat?.model || ""} {compat?.years || ""} {product.partname}
                                             </h2>
+                                            <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}</p>
+
                                             <p className="text-sm text-gray-600">
                                                 Part #: <span itemProp="mpn">{product.partnumber}</span>
                                             </p>

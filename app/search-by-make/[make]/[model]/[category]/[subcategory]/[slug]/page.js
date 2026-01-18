@@ -435,7 +435,8 @@ export default function ProductPage({ params, searchParams }) {
                                             alt={p.partname}
                                             className="w-full h-36 object-cover mb-2 rounded"
                                         />
-                                        <p className={`text-sm font-semibold ${firaSans.className}`}>{p.partname}</p>
+                                        <p className={`text-sm font-semibold ${firaSans.className}`}>{make} {model} {p.partname}</p>
+                                        <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{p.pricing.currency} {p.pricing.price}</p>
                                         <p className={`text-xs text-gray-600 ${firaSans.className}`}>{p.partnumber}</p>
                                     </a>
                                 </li>
