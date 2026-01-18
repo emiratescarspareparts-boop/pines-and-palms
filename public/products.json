@@ -6894,5 +6894,104 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 70,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 150 AMP",
+        "partnumber": 84493690,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 2500 HD",
+                "years": "2016",
+                "engine": "6.6L"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado",
+                "years": "2016",
+                "engine": "3500 HD"
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra 2500 HD",
+                "years": "2016",
+                "engine": "6.6L"
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra 3500 HD",
+                "years": "2016",
+                "engine": "6.6L"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 2500 HD",
+                "years": "2015",
+                "engine": "6.6L"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado",
+                "years": "2015",
+                "engine": "3500 HD"
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra 2500 HD",
+                "years": "2015",
+                "engine": "6.6L"
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra 3500 HD",
+                "years": "2015",
+                "engine": "6.6L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/gmc/alternator70.png",
+        "item_specifics": {
+            "sku": "GMC0001",
+            "Brand": "GM Genuine, ACDelco",
+            "Manufacturer Part Number": 84493690,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "84493690, ACD 84493690"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United State",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2866,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine GM Genuine, ACDelco Alternator 150 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]

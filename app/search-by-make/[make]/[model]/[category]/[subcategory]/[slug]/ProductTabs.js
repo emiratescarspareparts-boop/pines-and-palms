@@ -95,8 +95,6 @@ export default function ProductTabs({ product, slug }) {
                     </div>
                 )}
 
-
-
                 {activeTab === 'item-specifics' && (
                     <div>
                         <h2 className="text-xl font-semibold mb-2">Item Specifics</h2>

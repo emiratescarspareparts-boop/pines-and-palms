@@ -45766,5 +45766,38 @@
     "model": "Tipo",
     "description": "",
     "keyword": "."
+  },
+  {
+    "id": 14359,
+    "year": [
+      2010
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Silverado 2500 HD",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14360,
+    "year": [
+      2010
+    ],
+    "make": "GMC",
+    "img": "gmc.webp",
+    "model": "Sierra 2500 HD",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14361,
+    "year": [
+      2010
+    ],
+    "make": "GMC",
+    "img": "gmc.webp",
+    "model": "Sierra 3500 HD",
+    "description": "",
+    "keyword": "."
   }
 ]
