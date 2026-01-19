@@ -209,19 +209,19 @@ export function generateMetadata({ params }) {
             "@type": "ListItem",
             "position": 2,
             "name": "Car Makes",
-            "item": `https://www.emirates-car.com/search-by-makes/`
+            "item": `https://www.emirates-car.com/search-by-make/`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": `${make} Spare Parts`,
-            "item": `https://www.emirates-car.com/search-by-make/${make}`
+            "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": `${make} ${model} Spare Parts`,
-            "item": `https://www.emirates-car.com/search-by-make/${make}/${model}`
+            "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}`
           }
         ]
       },
