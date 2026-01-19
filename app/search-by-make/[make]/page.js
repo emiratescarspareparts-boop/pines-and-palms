@@ -730,6 +730,7 @@ export default function MakePage({ params, searchParams }) {
                 );
               })}
             </ul>
+
           </div>
         </section>
         <div className="text-center mt-2 text-red-400 text-sm xs:text-xs py-5">
