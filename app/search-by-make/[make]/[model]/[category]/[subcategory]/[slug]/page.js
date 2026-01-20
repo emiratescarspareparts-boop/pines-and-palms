@@ -158,7 +158,7 @@ export async function generateMetadata({ params }) {
                     "availability": product.availability === "In Stock" ? "http://schema.org/InStock" : "http://schema.org/OutOfStock",
                     "priceSpecification": {
                         "@type": "PriceSpecification",
-                        "price": product.pricing.price ?? 0,
+                        "price": parseFloat(product.pricing.price) ?? 0,
                         "priceCurrency": product.pricing.currency || "USD"
                     }
                 },
