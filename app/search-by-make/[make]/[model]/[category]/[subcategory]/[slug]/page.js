@@ -386,7 +386,7 @@ export default function ProductPage({ params, searchParams }) {
                             <p className="text-xl font-semibold text-gray-800">
                                 Price:{" "}
                                 <span className="text-black">
-                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">{product.pricing?.price} <span className="text-sm text-blue-500">(approx.)</span></span>
+                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">{product.pricing?.price}</span> <span className="text-sm text-blue-500">(approx.)</span>
                                 </span>{" "}
                                 <span>
                                     <PartInquiryForm
