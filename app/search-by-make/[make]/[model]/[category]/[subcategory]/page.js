@@ -30,6 +30,15 @@ const excludedMakes = [
     'Chery', 'Geely', 'BAIC', 'Bestune'
 ];
 
+const includedMakes = [
+    'Audi', 'Ford', 'Honda', 'Lamborghini', 'Land Rover', 'Lexus', 'Lincoln', 'Maserati', 'Mazda', 'Mercedes-Benz', 'Mitsubishi',
+    'Nissan', 'Porsche', 'Suzuki', 'Volkswagen', 'Chevrolet', 'Toyota', 'Alfa Romeo', 'BMW', 'Cadillac', 'Chrysler'
+    , 'Daihatsu', 'Dodge', 'GMC', 'Hyundai', 'Infiniti', 'Jaguar', 'Jeep', 'Volvo', 'Hummer', 'Kia', 'Daewoo', 'Mini', 'Maybach', 'Scion',
+    'Aston Martin', 'Bentley', 'Rolls-Royce', 'Ferrari', 'Peugeot', 'Bugatti', 'Tesla', 'Ram', 'Fiat', 'McLaren', 'BYD',
+    'Genesis', 'Abarth', 'Renault', 'Dacia'
+]
+
+
 const excludedMakesSet = new Set(excludedMakes);
 
 const playfair_display = Playfair_Display({
@@ -233,7 +242,7 @@ export function generateStaticParams() {
         }
 
         stats.totalPages = params.length;
-
+        console.log(partsData.length)
         console.log(`
 📊 Subcategory Pages Generation:
    Total Products: ${stats.totalProducts}
@@ -436,6 +445,7 @@ export default function SubcategoryPage({ params, searchParams }) {
     const subcategory = decodeURIComponent(params.subcategory);
     const partImage = getPartImage(subcategory)
     const partsposts = partsData;
+    console.log(partsposts.length)
     const makeArray = getMake();
     const imageMake = getMakeImage(make, model);
     const modelsform = CarData;
@@ -462,6 +472,7 @@ export default function SubcategoryPage({ params, searchParams }) {
 
     const normalize = (v) =>
         v?.toString().toLowerCase().trim().replace(/\s+/g, " ") || "";
+
 
     const productMatches = productsFile.filter((p) => {
         const matchesMakeModel = p.compatibility?.some(

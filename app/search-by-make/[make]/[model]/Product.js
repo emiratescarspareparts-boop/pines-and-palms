@@ -2,7 +2,7 @@
 import { Fira_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 const firaSans = Fira_Sans({
     weight: ['400', '700'],
@@ -16,8 +16,18 @@ export default function Product({ make, model, products, allProducts }) {
     const [showAll, setShowAll] = useState(false);
 
     const visibleProducts = showAll
-        ? products
-        : products.slice(0, INITIAL_COUNT);
+        ? allProducts.filter(product =>
+            product.compatibility.some(
+                c =>
+                    c.make.toLowerCase() === make.toLowerCase()
+            )
+        )
+        : allProducts.filter(product =>
+            product.compatibility.some(
+                c =>
+                    c.make.toLowerCase() === make.toLowerCase()
+            )
+        ).slice(0, INITIAL_COUNT);
 
     const filteredProducts = allProducts.filter(product =>
         product.compatibility.some(
@@ -25,6 +35,91 @@ export default function Product({ make, model, products, allProducts }) {
                 c.make.toLowerCase() === make.toLowerCase()
         )
     );
+
+    const modelYears = useMemo(() => {
+        const yearsSet = new Set();
+
+        products.forEach(product => {
+            product.compatibility?.forEach(compat => {
+                if (
+                    compat.make?.toLowerCase() === make.toLowerCase() &&
+                    compat.model?.toLowerCase() === model.toLowerCase() &&
+                    compat.years
+                ) {
+                    const yearString = compat.years.toString();
+
+                    if (yearString.includes(',')) {
+                        yearString.split(',').forEach(y => {
+                            const year = y.trim();
+                            if (year) yearsSet.add(year);
+                        });
+                    }
+                    else if (yearString.includes('-')) {
+                        const [start, end] = yearString.split('-').map(y => parseInt(y.trim()));
+                        for (let year = start; year <= end; year++) {
+                            yearsSet.add(year.toString());
+                        }
+                    }
+                    else {
+                        yearsSet.add(yearString.trim());
+                    }
+                }
+            });
+        });
+
+        return Array.from(yearsSet).sort((a, b) => parseInt(b) - parseInt(a));
+    }, [products, make, model]);
+
+    const yearRange = useMemo(() => {
+        if (modelYears.length === 0) return '';
+        if (modelYears.length === 1) return modelYears[0];
+
+        const sorted = [...modelYears].sort((a, b) => parseInt(a) - parseInt(b));
+        return `${sorted[0]}-${sorted[sorted.length - 1]}`;
+    }, [modelYears]);
+
+    const getProductCompatibility = (product) => {
+        const modelYearsMap = {};
+
+        product.compatibility?.forEach(compat => {
+            if (compat.make?.toLowerCase() === make.toLowerCase() && compat.model && compat.years) {
+                const model = compat.model;
+                const yearString = compat.years.toString();
+
+                if (!modelYearsMap[model]) {
+                    modelYearsMap[model] = new Set();
+                }
+
+                if (yearString.includes(',')) {
+                    yearString.split(',').forEach(y => {
+                        const year = y.trim();
+                        if (year) modelYearsMap[model].add(year);
+                    });
+                }
+                else if (yearString.includes('-')) {
+                    const [start, end] = yearString.split('-').map(y => parseInt(y.trim()));
+                    for (let year = start; year <= end; year++) {
+                        modelYearsMap[model].add(year.toString());
+                    }
+                }
+                else {
+                    modelYearsMap[model].add(yearString.trim());
+                }
+            }
+        });
+
+        const compatibilityStrings = Object.entries(modelYearsMap).map(([model, yearsSet]) => {
+            const years = Array.from(yearsSet).sort((a, b) => parseInt(a) - parseInt(b));
+
+            if (years.length === 0) return model;
+            if (years.length === 1) return `${model} (${years[0]})`;
+
+            return `${model} (${years[0]}-${years[years.length - 1]})`;
+        });
+
+        return compatibilityStrings.join(', ');
+    };
+
     return (
         <div> {/* Results Grid */}
             <section className="mt-20 xs:mt-5 xxs:mt-5 sm:mt-7 mx-5 xs:mx-3 sm:mx-3 xxs:mx-3">
@@ -47,6 +142,7 @@ export default function Product({ make, model, products, allProducts }) {
                                 const index = (rotationPeriod + product.id) % compatList.length;
                                 compat = compatList[index];
                             }
+                            const compatibilityString = getProductCompatibility(product);
 
                             const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
 
@@ -78,8 +174,12 @@ export default function Product({ make, model, products, allProducts }) {
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
                                                 {product.partname} for {make} {compat?.model || ""} {compat?.years || ""}
                                             </h2>
-                                            <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}</p>
-
+                                            <p className={`text-base font-bold text-red-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}&nbsp;<span className='text-sm font-thin text-blue-500'>approx.</span></p>
+                                            <p className="text-sm text-gray-600">
+                                                Compatibility: <br /><span itemProp="compatibility">
+                                                    {compatibilityString || `${make} ${model}`}
+                                                </span>
+                                            </p>
                                             <p className="text-sm text-gray-600">
                                                 Part #: <span itemProp="mpn">{product.partnumber}</span>
                                             </p>

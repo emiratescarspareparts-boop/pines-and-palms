@@ -153,7 +153,7 @@ export async function generateMetadata({ params }) {
                 "description": `${product.item_specifics?.Condition || ""} ${product.partname} compatible with multiple vehicles.`,
                 "offers": {
                     "@type": "Offer",
-                    "url": `https://emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
+                    "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
                     "priceCurrency": product.pricing.currency || "USD",
                     "availability": product.availability === "In Stock" ? "http://schema.org/InStock" : "http://schema.org/OutOfStock",
                     "priceSpecification": {
