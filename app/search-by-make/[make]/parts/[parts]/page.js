@@ -898,6 +898,7 @@ export default function Parts({ params, searchParams }) {
                         </ul>
                     </section>
 
+
                     <TenEntries />
                     <section>
                         <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>

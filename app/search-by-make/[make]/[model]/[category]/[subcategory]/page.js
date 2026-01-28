@@ -1191,8 +1191,6 @@ export default function SubcategoryPage({ params, searchParams }) {
                                 );
                             })}
                         </ul>
-
-
                     </div>
                 </section>
                 <section>
@@ -1238,7 +1236,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                             if (isBattery) {
                                 linkHref = '/car-battery-replacement-services-in-uae'
                                 linkAs = '/car-battery-replacement-services-in-uae'
-                            } else if (excludedMakesSet.has(post.make)) {
+                            } else if (excludedMakesSet.has(p.make)) {
                                 linkHref = '/get-in-touch'
                                 linkAs = '/get-in-touch'
                             } else {
@@ -1459,44 +1457,6 @@ export default function SubcategoryPage({ params, searchParams }) {
                                                 {post.make} {post.model.replace('%2F', '/')}<span className="text-blue-600"> {isBattery ? "Battery replacement services in UAE" : decodeURIComponent(subcategory)}</span>
                                             </span>
                                         </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-
-                        <ul>
-                            {carmodel.map((post, i) => {
-
-                                const isBatterySubcategory = decodeURIComponent(subcategory).toLowerCase() === 'battery';
-
-                                const hasBatteryCompatibility = productsFile.some((product) =>
-                                    product.subcategory.toLowerCase() === 'battery' &&
-                                    product.compatibility?.some((c) =>
-                                        c.make.toLowerCase() === post.make.toLowerCase() &&
-                                        c.model.toLowerCase() === post.model.toLowerCase()
-                                    )
-                                );
-                                const isBattery = isBatterySubcategory || hasBatteryCompatibility;
-
-                                let linkHref, linkAs;
-                                if (isBattery) {
-                                    linkHref = '/car-battery-replacement-services-in-uae'
-                                    linkAs = '/car-battery-replacement-services-in-uae'
-                                } else if (excludedMakesSet.has(post.make)) {
-                                    linkHref = '/get-in-touch'
-                                    linkAs = '/get-in-touch'
-                                } else {
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myBatteryForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myBatteryForm`
-                                }
-                                return (
-                                    <li key={i} className="h-full">
-
-                                        <li key={i}>
-                                            {`<url><loc>https://www.emirates-car.com/search-by-make/${post.make}/${post.model}/${encodeURIComponent(
-                                                category
-                                            )}/${encodeURIComponent(subcategory)}</loc><lastmod>2026-01-26T12:45:55.555Z</lastmod><changefreq>weekly</changefreq></url>`}
-                                        </li>
                                     </li>
                                 );
                             })}

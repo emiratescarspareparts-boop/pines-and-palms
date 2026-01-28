@@ -440,7 +440,7 @@ export default function City({ params }) {
           Search Car parts in <span className="text-blue-500">{cityData.city}</span>
         </h3>
 
-        <div className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-5 xxs:grid xxs:grid-cols-3 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
+        <ul className="grid grid-cols-7 md:grid-cols-5 lg:grid-cols-7 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-5 xxs:grid xxs:grid-cols-3 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
           {makedatas
             .filter((post) => !excludedMakes.includes(post.make))
             .map((post, i) => {
@@ -452,7 +452,7 @@ export default function City({ params }) {
                 : `/search-by-make/${post.make}`;
 
               return (
-                <div key={i}>
+                <li key={i}>
                   <Link
                     href={href}
                     title={post.make + ' spare parts ' + cityData.city}
@@ -472,11 +472,12 @@ export default function City({ params }) {
                       </p>
                     </div>
                   </Link>
-                </div>
+                </li>
               );
             })}
-        </div>
+        </ul>
       </section>
+
       <iframe
         src={cityData.link}
         className="w-full h-full  pointer-events-none"
