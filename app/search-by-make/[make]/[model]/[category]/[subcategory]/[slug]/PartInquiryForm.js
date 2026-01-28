@@ -10,7 +10,7 @@ const roboto = Roboto({
     variable: '--font-roboto',
 });
 
-const PartInquiryModal = ({ isOpen, onClose, product }) => {
+const PartInquiryModal = ({ isOpen, onClose, product, subcategory }) => {
     const today = new Date();
     const date =
         today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -84,7 +84,7 @@ const PartInquiryModal = ({ isOpen, onClose, product }) => {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-indigo-50 text-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg">
-                <h4 className="text-2xl font-bold mb-4">Inquire Now</h4>
+                <h4 className="text-2xl font-bold mb-4">{subcategory === 'Battery' ? ('Order Now') : ('Inquire Now')}</h4>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block text-sm font-bold mb-2">Part List</label>
@@ -166,7 +166,7 @@ const PartInquiryModal = ({ isOpen, onClose, product }) => {
     );
 };
 
-export default function PartInquiryForm({ product, make, model, oemoraftermarket, partname }) {
+export default function PartInquiryForm({ product, subcategory }) {
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
@@ -175,7 +175,7 @@ export default function PartInquiryForm({ product, make, model, oemoraftermarket
                 onClick={() => setModalOpen(true)}
                 className="px-6 py-2 my-3 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-lg shadow"
             >
-                Inquire Now
+                {subcategory === 'Battery' ? ('Order Now') : ('Inquire Now')}
             </button>
             <span className={`text-info text-sm ${roboto.className}`}><br />{product.pricing.price_info}</span>
 
@@ -183,6 +183,7 @@ export default function PartInquiryForm({ product, make, model, oemoraftermarket
                 isOpen={isModalOpen}
                 onClose={() => setModalOpen(false)}
                 product={product}
+                subcategory={subcategory}
             />
         </div>
     );

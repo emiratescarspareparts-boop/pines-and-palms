@@ -32,7 +32,7 @@ const poppins = Poppins({
 });
 
 const excludedMakes = [
-    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+    'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab',
     'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
     'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
     'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
@@ -232,7 +232,9 @@ export async function generateMetadata({ params }) {
 
 
     return {
-        title: `${decodeURIComponent(make)} ${decodeURIComponent(model)} ${expandYears(compat?.years) || ""} ${product.partname}`,
+        title: `${subcategory === 'Battery'
+            ? `${decodeURIComponent(make)} ${decodeURIComponent(model)} battery replacement in Dubai & Sharjah`
+            : `${decodeURIComponent(make)} ${decodeURIComponent(model)} ${expandYears(compat?.years) || ""} ${product.partname}`}`,
         description: `Buy ${product.item_specifics["OEM or Aftermarket"]} ${product.item_specifics.Condition} ${product.partname} (${product.partnumber}), Check warranty, Fitment, Other part number, Manufacture part number and Policies`,
 
         openGraph: {
@@ -372,7 +374,21 @@ export default function ProductPage({ params, searchParams }) {
                         <p className="text-gray-700"><strong>Compatible Years</strong> {years}</p>
                         <p className="text-gray-700"><strong>Condition:</strong> {product.item_specifics.Condition}</p>
                         <p className="text-gray-700"><strong>Availability:</strong> {product.availability}</p>
-                        <p className="text-gray-700"><strong>Delivery:</strong> <a href="https://www.emirates-car.com/search-by-cities-in-uae/Dubai" className="text-blue-500">Dubai</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Abu%20Dhabi" className="text-blue-500">Abu Dhabi</a>,<a href="https://www.emirates-car.com/search-by-cities-in-uae/Ajman" className="text-blue-500">Ajman</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Sharjah" className="text-blue-500">Sharjah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Al%20Ain" className="text-blue-500">Al Ain</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Ras%20Al%20Khaimah" className="text-blue-500">Ras Al Khaimah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Fujairah" className="text-blue-500">Al Fujairah</a>, <a href="https://www.emirates-car.com/search-by-cities-in-uae/Umm%20al%20Quwain" className="text-blue-500">Umm Al Quwain</a></p>
+                        <p className="text-gray-700"><strong>Delivery:</strong>
+                            {subcategory === 'Battery' ? (
+                                <p className="text-red-800 animate-pulse text-lg font-extrabold">Delivery within 4 hours within Dubai and Sharjah</p>
+                            ) : (
+                                <p>
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Dubai" className="text-blue-500">Dubai</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Abu%20Dhabi" className="text-blue-500">Abu Dhabi</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Ajman" className="text-blue-500">Ajman</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Sharjah" className="text-blue-500">Sharjah</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Al%20Ain" className="text-blue-500">Al Ain</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Ras%20Al%20Khaimah" className="text-blue-500">Ras Al Khaimah</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Fujairah" className="text-blue-500">Al Fujairah</a>,{" "}
+                                    <a href="https://www.emirates-car.com/search-by-cities-in-uae/Umm%20al%20Quwain" className="text-blue-500">Umm Al Quwain</a>
+                                </p>
+                            )}</p>
                         <meta itemProp="brand" content={product.item_specifics.Brand} />
 
                     </div>
@@ -383,11 +399,19 @@ export default function ProductPage({ params, searchParams }) {
                             itemScope
                             itemType="https://schema.org/Offer"
                         >
+
                             <p className="text-xl font-semibold text-gray-800">
-                                Price:{" "}
-                                <span className="text-black">
-                                    <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}<span itemProp="price">{product.pricing?.price}</span> <span className="text-sm text-blue-500">(approx.)</span>
-                                </span>{" "}
+                                {subcategory !== 'Battery' && (
+                                    <>
+                                        Price:{" "}
+                                        <span className="text-black">
+                                            <span itemProp="priceCurrency">{product.pricing?.currency || "AED"}</span>{" "}
+                                            <span itemProp="price">{product.pricing?.price}</span>{" "}
+                                            <span className="text-sm text-blue-500">(approx.)</span>
+                                        </span>
+                                    </>
+                                )}
+
                                 <span>
                                     <PartInquiryForm
                                         product={product}
@@ -395,6 +419,7 @@ export default function ProductPage({ params, searchParams }) {
                                         dealerPriceCurrency={product.pricing?.currency}
                                         make={make}
                                         model={model}
+                                        subcategory={subcategory}
                                         oemoraftermarket={product.item_specifics["OEM or Aftermarket"]}
                                         partname={product.partname}
                                     />
@@ -438,7 +463,7 @@ export default function ProductPage({ params, searchParams }) {
                                         />
                                         <p className={`text-sm font-semibold ${firaSans.className}`}>{make} {model} {p.partname}</p>
                                         <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{p.pricing.currency} {p.pricing.price}</p>
-                                        <p className={`text-xs text-gray-600 ${firaSans.className}`}>{p.partnumber}</p>
+                                        <p className={`text-sm text-gray-600 ${firaSans.className}`}>{p.partnumber}</p>
                                     </a>
                                 </li>
                             );

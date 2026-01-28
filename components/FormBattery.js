@@ -1,14 +1,146 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+
+const postCities = ['Total Abu Al Bukhoosh Abu Dhabi',
+  'Abu Dhabi',
+  'Abu Musa Island',
+  'Ahmed bin Rashid Free Zone',
+  'Ajman',
+  'Al Ain',
+  'Al Barsha',
+  'Al Dhafra or Western Region',
+  'Al Fujairah',
+  'Al Hamriyah',
+  'AlJazeera Port',
+  'Al Jeer Port',
+  'Al Mafraq',
+  'Al Quoz',
+  'Al Sufouh',
+  'Al Ruways Industrial City',
+  'Arzanah Island',
+  'Das Island',
+  'Deira',
+  'Dibba Al Fujairah',
+  'Dubai',
+  'Dubai World Central',
+  'Esnnad',
+  'Sea Port',
+  'Free Port',
+  'Habshan',
+  'Abu Hail',
+  'Hamriya Free Zone Port',
+  'Al Jarf',
+  'Hatta',
+  'Sea Port',
+  'Sea Port',
+  'Mina Jebel Ali',
+  'Jebel Ali Free Zone',
+  'Al Dhannah City or Jebel Dhanna',
+  'Jumeirah',
+  'Kalba',
+  'Khalidiya',
+  'Khor Fakkan',
+  'Masfut',
+  'Khalid Port',
+  'Khalifa City',
+  'Mina Rashid Port',
+  'Mina Saqr',
+  'Mina Zayed',
+  'Minhad',
+  'Mirfa',
+  'Mubarek Tower',
+  'Mubarraz Island',
+  'Musaffah',
+  'Mussafah',
+  'Offshore Marine Services',
+  'Port Rashid or Al Mina',
+  'Ras Al Khor Port',
+  'Rak Maritime City',
+  'Ras al Khaimah',
+  'Ras Al Khor',
+  'Al Ras',
+  'Al Reem Island',
+  'Al Ruways Industrial City',
+  'Ruwais Port Abu Dhabi',
+  'Saadiyat Island',
+  'Sharjah',
+  'Al Sila',
+  'Stevin Rock',
+  'Sweihan',
+  'The Palm Jumeirah',
+  'Umm al Nar',
+  'Umm al Quwain',
+  'Al Qurayyah',
+  'Yas Island',
+  'Zirku Island',
+  'Sheikh Zayed Road',
+  'Business Bay',
+  'Downtown Dubai',
+  'Al Badaa',
+  'Al Satwa',
+  'Zaabeel',
+  'Trade Centre',
+  'Al Karama',
+  'Oud Metha',
+  'Al Jaddaf',
+  'Al Wasl',
+  'Al Safa',
+  'Umm Suqeim',
+  'Jumeirah Village Circle',
+  'Dubai Investments Park',
+  'Mirdif',
+  'Al Twar',
+  'Al Khawaneej',
+  'Al Warqa',
+  'Dubai Silicon Oasis',
+  'Al Thammam',
+  'Golf City',
+  'Umm Ramool',
+  'Al Qusais',
+  'Al Nahda',
+  'Al Rashidiya',
+  'Nad al Sheba',]
 
 export default function FormBattery({ formsData }) {
   const [Make, setMake] = useState('');
   const [Model, setModel] = useState('');
+  const [Year, setYear] = useState('');
   const [Whatsappno, setWhatsappno] = useState('');
   const [Address, setAddress] = useState('');
   const [Name, setName] = useState('');
   const [Code, setCode] = useState('');
+  const [formCities, setFormCities] = useState([]);
+  const [suggestionCity, setCitySuggestion] = useState([]);
+  const [textCity, setCityText] = useState('');
+
+  useEffect(() => {
+    const loadCity = async () => {
+      var city = [];
+      for (var i in postCities) {
+        var filtered = postCities[i];
+        city.push(filtered);
+      }
+      setFormCities(city);
+    };
+    loadCity();
+  }, [postCities]);
+  const onSuggestionCityHandler = textCity => {
+    setCityText(textCity);
+    setCitySuggestion([]);
+  };
+
+  const onPartCityChange = citytext => {
+    let matches = [];
+    if (citytext.length > 0) {
+      matches = formCities.filter(city => {
+        const regex = new RegExp(`${citytext}`, 'gi');
+        return city.match(regex);
+      });
+    }
+    setCitySuggestion(matches);
+    setCityText(citytext);
+  };
 
   function handleMakeChange(event) {
     setMake(event.target.value);
@@ -19,14 +151,11 @@ export default function FormBattery({ formsData }) {
   function handleWhatsAppNoChange(event) {
     setWhatsappno(event.target.value);
   }
-  function handleAddressChange(event) {
-    setAddress(event.target.value);
-  }
   function handleNameChange(event) {
     setName(event.target.value);
   }
-  function handleCodeChange(event) {
-    setCode(event.target.value);
+  function handleYearChange(event) {
+    setYear(event.target.value)
   }
   const mke = [
     'Ford',
@@ -46,6 +175,7 @@ export default function FormBattery({ formsData }) {
     'Plymouth',
     'Volkswagen',
     'Jensen',
+    'Jetour',
     'Oldsmobile',
     'Sandstorm',
     'Haval',
@@ -109,7 +239,6 @@ export default function FormBattery({ formsData }) {
     'Jeep',
     'Saturn',
     'Volvo',
-    'HUMMER',
     'Kia',
     'Holden',
     'Corbin',
@@ -133,7 +262,6 @@ export default function FormBattery({ formsData }) {
     'Bugatti',
     'Tesla',
     'Ram',
-    'FIAT',
     'Fiat',
     'McLaren',
     'BYD',
@@ -153,6 +281,7 @@ export default function FormBattery({ formsData }) {
   ];
   const make = mke.sort();
 
+
   function Submission(e) {
     e.preventDefault();
     const today = new Date();
@@ -170,21 +299,22 @@ export default function FormBattery({ formsData }) {
       body: JSON.stringify({
         Timestamp: dateTime,
         brand: Make,
-        contact: Code + Whatsappno,
+        contact: Whatsappno,
         name: Name,
         description:
           'Customer Name: ' +
           Name +
           '\n' +
           'Address: ' +
-          Address +
+          textCity +
           '\n' +
           'Vehicle: ' +
           Make +
           ' ' +
           Model +
           ' ' +
-          'Part List: ' +
+          Year + '\n' +
+          'Part: ' +
           'Battery',
         email: 'Email',
       }),
@@ -214,7 +344,8 @@ export default function FormBattery({ formsData }) {
     setMake('');
     setCode('');
     setModel('');
-    setAddress('');
+    setCityText('');
+    setCitySuggestion([])
     setWhatsappno('');
     window
       .open(
@@ -235,13 +366,13 @@ export default function FormBattery({ formsData }) {
         <div className="flex flex-wrap ">
           <div className="w-full px-3 mb-6 xs:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
+              className="block text-sm font-bold mb-2"
               htmlFor="whatsappno"
             >
               Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 xs:py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs"
+              className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
               id="name"
               type="text"
               placeholder="Your name"
@@ -256,16 +387,15 @@ export default function FormBattery({ formsData }) {
         <div className="flex flex-wrap  mb-2">
           <div className="w-1/2 md:w-1/2 px-3 mb-6 md:mb-0 xs:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
+              className="block text-sm font-bold mb-2"
               htmlFor="make"
             >
               Make
             </label>
             <div className="relative">
               <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 xs:py-1 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs"
+                className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
                 id="make"
-                name="entry.1911907904"
                 required="required"
                 value={Make}
                 onChange={handleMakeChange}
@@ -290,16 +420,15 @@ export default function FormBattery({ formsData }) {
           </div>
           <div className="w-1/2 md:w-1/2 pr-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
+              className="block text-sm font-bold mb-2"
               htmlFor="model"
             >
               Model
             </label>
             <div className="relative">
               <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 xs:py-1 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs"
+                className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
                 id="model"
-                name="entry.1541894897"
                 value={Model}
                 onChange={handleModelChange}
                 required
@@ -331,57 +460,69 @@ export default function FormBattery({ formsData }) {
         <div className="flex flex-wrap ">
           <div className="w-full px-3 mb-6 xs:mb-0">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
+              className="block text-sm font-bold mb-2"
               htmlFor="whatsappno"
             >
               Area Name, Emirates
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 xs:py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs"
+              className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
               id="whatsappno"
               type="text"
-              placeholder="Area Name, Emirates"
-              name="entry.1153362739"
-              value={Address}
-              onChange={handleAddressChange}
+              placeholder="(Area, Emirates) or (City, Country)"
+              value={textCity}
+              onChange={e => onPartCityChange(e.target.value)}
               autoComplete="off"
+              required
+            />
+            <div className='z-10 mt-1 w-full bg-white rounded-xl max-h-64 overflow-y-auto'>
+              {suggestionCity &&
+                suggestionCity.map((s, i) => (
+                  <div
+                    key={i}
+                    className="cursor-pointer border-gray-400 p-2"
+                    onClick={() => onSuggestionCityHandler(s)}
+                  >
+                    {s}
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap ">
+          <div className="w-full px-3 mb-6 xs:mb-0 md:mb-0">
+            <label
+              htmlFor="year"
+              className="block text-sm font-bold mb-2"
+            >
+              Year
+            </label>
+            <input
+              id="year"
+              className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
+              type="text"
+              placeholder="(e.g. 2020)"
+              onChange={handleYearChange}
+              value={Year}
               required
             />
           </div>
         </div>
 
         <div className="flex flex-wrap ">
-          <div className="w-2/5 px-3 mb-6 xs:mb-0 md:mb-0">
-            <label
-              htmlFor="Code"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
-            >
-              CODE
-            </label>
-            <input
-              id="Code"
-              name="entry.44547744"
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 xs:py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs"
-              type="text"
-              placeholder="Eg. +971, +27 ..."
-              onChange={handleCodeChange}
-              value={Code}
-              required
-            />
-          </div>
-          <div className="w-3/5 px-3 mb-6 xs:mb-0 md:mb-0">
+          <div className="w-full px-3 mb-6 xs:mb-0 md:mb-0">
             <label
               htmlFor="whatsappno"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 xs:mt-3"
+              className="block text-sm font-bold mb-2"
             >
               WhatsApp no
             </label>
             <input
               id="whatsappno"
-              name="entry.902626710"
-              className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 xs:py-1 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 xs:text-xs "
+              className="w-full border border-gray-300 rounded-sm py-2 px-4 text-xs text-gray-500 focus:outline-none focus:border-gray-400"
               type="text"
-              placeholder="WhatsApp No"
+              placeholder="+971 5********"
               onChange={handleWhatsAppNoChange}
               value={Whatsappno}
               required

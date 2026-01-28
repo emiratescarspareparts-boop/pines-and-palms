@@ -437,7 +437,7 @@ const homepageSchema = {
 
 export const metadata = {
   title:
-    'Buy Auto spare parts in UAE | Order Online from Dubai dealer | Used, New, Genuine and Aftermarket | Emirates-car.com',
+    'Auto spare parts in UAE | Order Online from Dubai dealer | Used, New, Genuine and Aftermarket | Emirates-car.com',
   description:
     'We have compared 100+ suppliers so you dont have to. Get the best price. Get professional assistance from Experienced dealer. Fast shipping and delivery available accross 8 Emirates.',
   metadataBase: new URL('https://www.emirates-car.com'),

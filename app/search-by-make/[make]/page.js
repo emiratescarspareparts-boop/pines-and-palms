@@ -60,7 +60,7 @@ const firaSans = Fira_Sans({
 });
 
 const excludedMakes = [
-  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab',
   'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
   'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
   'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
@@ -711,7 +711,6 @@ export default function MakePage({ params, searchParams }) {
             </h2>
             <SearchModel make={make} car={carmodel} />
 
-
             <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
               {carmodel.map((post, i) => {
                 return (
@@ -730,6 +729,7 @@ export default function MakePage({ params, searchParams }) {
                 );
               })}
             </ul>
+
 
           </div>
         </section>

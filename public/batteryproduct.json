@@ -1,0 +1,434 @@
+[
+    {
+        "id": 71,
+        "subcategory": "Battery",
+        "category": "Electrical & Electronics",
+        "partname": "Battery",
+        "partnumber": "S42B19L",
+        "availability": "In Stock",
+        "compatibility": [
+            {
+                "make": "Daihatsu",
+                "model": "Applause",
+                "years": "1989-2000",
+                "engine": "1.6i"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Charade",
+                "years": "1993-2006",
+                "engine": "G200, G203, L251RS 1.0ltr / 1.5ltr"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Copen",
+                "years": "2003-2007",
+                "engine": "0.7T"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Cuore",
+                "years": "2001-2004",
+                "engine": "1.0i"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Delta Twin Cab",
+                "years": "1979-null",
+                "engine": "petrol"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Duet",
+                "years": "1989-1995",
+                "engine": ""
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Handivan",
+                "years": "1981-2002",
+                "engine": "660cc / 850cc / Handi 1000cc"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Mira",
+                "years": "1990-1996",
+                "engine": "660cc / 850cc"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Move",
+                "years": "1997-2000",
+                "engine": "850cc"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Pyzar",
+                "years": "1997-2001",
+                "engine": "1.5li / 1.6i"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Sirion",
+                "years": "1998-2006",
+                "engine": "1.0i / GTvi 1.3i"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "Terios",
+                "years": "1997-2006",
+                "engine": "Petrol 4X4 1.3i"
+            },
+            {
+                "make": "Daihatsu",
+                "model": "YRV",
+                "years": "2001-2005",
+                "engine": "1.3i"
+            },
+            {
+                "make": "Ford",
+                "model": "Econovan",
+                "years": "1979-1997",
+                "engine": "1.6ltr / 2.0ltr"
+            },
+            {
+                "make": "Ford",
+                "model": "Econovan",
+                "years": "1997-2006",
+                "engine": "JG / JH 2.0ltr"
+            },
+            {
+                "make": "Ford",
+                "model": "Festiva",
+                "years": "1991-1994",
+                "engine": "1.3ltr"
+            },
+            {
+                "make": "Ford",
+                "model": "Spectron",
+                "years": "1983-1995",
+                "engine": "Petrol"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Cruze",
+                "years": "2004-2006",
+                "engine": "1.5i 4X4"
+            },
+            {
+                "make": "Honda",
+                "model": "600",
+                "years": "1964-1974",
+                "engine": ""
+            },
+            {
+                "make": "Honda",
+                "model": "City",
+                "years": "2009-2013",
+                "engine": "1.5i"
+            },
+            {
+                "make": "Honda",
+                "model": "Insight",
+                "years": "1989-1999",
+                "engine": ""
+            },
+            {
+                "make": "Honda",
+                "model": "Jazz",
+                "years": "2003-2013",
+                "engine": "GLi / VTi / VIBE"
+            },
+            {
+                "make": "Honda",
+                "model": "Jazz",
+                "years": "2014-null",
+                "engine": "VTi-L"
+            },
+            {
+                "make": "Hyundai",
+                "model": "Stellar",
+                "years": "1984-null",
+                "engine": ""
+            },
+            {
+                "make": "Mazda",
+                "model": "Traveller",
+                "years": "1983-1989",
+                "engine": ""
+            },
+            {
+                "make": "Mitsubishi",
+                "model": "Eclipse",
+                "years": "1990-1995",
+                "engine": ""
+            },
+            {
+                "make": "Mitsubishi",
+                "model": "L300",
+                "years": "1993-1998",
+                "engine": "Diesel"
+            },
+            {
+                "make": "Mitsubishi",
+                "model": "L200",
+                "years": "1993-1998",
+                "engine": "Diesel"
+            },
+            {
+                "make": "Mitsubishi",
+                "model": "Lancer",
+                "years": "2003-2008",
+                "engine": "2.0T"
+            },
+            {
+                "make": "Nissan",
+                "model": "180SX",
+                "years": "1988-1997",
+                "engine": "2.0T"
+            },
+            {
+                "make": "Nissan",
+                "model": "200SX",
+                "years": "1994-2003",
+                "engine": "S14 / S15"
+            },
+            {
+                "make": "Nissan",
+                "model": "Cube",
+                "years": "1994-2003",
+                "engine": "1.4i"
+            },
+            {
+                "make": "Nissan",
+                "model": "Micra",
+                "years": "1995-1997",
+                "engine": "1.3i"
+            },
+            {
+                "make": "Nissan",
+                "model": "NX Coupe",
+                "years": "1991-1996",
+                "engine": "1.3i"
+            },
+            {
+                "make": "Nissan",
+                "model": "Pulsar",
+                "years": "1983-1987",
+                "engine": "ET / EXA Turbo 1.6T,1.6i"
+            },
+            {
+                "make": "Nissan",
+                "model": "Silvia",
+                "years": "1988-1994",
+                "engine": ""
+            },
+            {
+                "make": "Nissan",
+                "model": "Skyline",
+                "years": "1990-1993",
+                "engine": ""
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza LX",
+                "years": "1993-2000",
+                "engine": "1.6i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza GX",
+                "years": "2000-2007",
+                "engine": "1.8i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza RX",
+                "years": "2000-2007",
+                "engine": "2.0i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza R",
+                "years": "2000-2007",
+                "engine": "1.8i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza RV",
+                "years": "2000-2007",
+                "engine": "1.8i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Impreza RS",
+                "years": "2000-2007",
+                "engine": "2.5i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Legacy",
+                "years": "2003-2009",
+                "engine": "2.5i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Leone",
+                "years": "1983-1995",
+                "engine": ""
+            },
+            {
+                "make": "Subaru",
+                "model": "Liberty",
+                "years": "1983-1995",
+                "engine": "2.2i,2.0i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Sherpa",
+                "years": "1989-1992",
+                "engine": "2.2i,2.0i"
+            },
+            {
+                "make": "Subaru",
+                "model": "Vortex",
+                "years": "1987-1993",
+                "engine": "2.2i,2.0i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "APV Van",
+                "years": "2005-2017",
+                "engine": "1.6i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "Baleno",
+                "years": "1995-2001",
+                "engine": "1.6i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "Carry",
+                "years": "1976-2005",
+                "engine": "1.6i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "Cappuccino",
+                "years": "1992-1997",
+                "engine": ""
+            },
+            {
+                "make": "Suzuki",
+                "model": "Ignis",
+                "years": "2000-2006",
+                "engine": "1.3i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "Liana",
+                "years": "2000-null",
+                "engine": "1.3i"
+            },
+            {
+                "make": "Suzuki",
+                "model": "Sierra",
+                "years": "1990-1995",
+                "engine": ""
+            },
+            {
+                "make": "Suzuki",
+                "model": "X90 Targa",
+                "years": "2000-null",
+                "engine": ""
+            },
+            {
+                "make": "Toyota",
+                "model": "Altezza",
+                "years": "1998-2005",
+                "engine": ""
+            },
+            {
+                "make": "Toyota",
+                "model": "Corolla AE111",
+                "years": "1995-2001",
+                "engine": ""
+            },
+            {
+                "make": "Toyota",
+                "model": "Corolla AE112R",
+                "years": "1995-2001",
+                "engine": "1.8i, 1.8T"
+            },
+            {
+                "make": "Toyota",
+                "model": "Hilux",
+                "years": "1997-2002",
+                "engine": "Petrol 2.0i"
+            },
+            {
+                "make": "Toyota",
+                "model": "Seca (Corolla)",
+                "years": "1999-2000",
+                "engine": "1.8i"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "featured": "true",
+        "image": "/img/daihat/acdelco70.webp",
+        "item_specifics": {
+            "sku": "BAT0001",
+            "Brand": "AC Delco",
+            "Manufacturer Part Number": "",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "A14 Varta",
+                "AD42B19L AC Delco",
+                "S42B19L AC Delco",
+                "NS40ZLWC AC Delco",
+                "42B20L",
+                "CMF-NS40ZL Solite"
+            ],
+            "batterysize": "NS40ZL",
+            "voltage": "12V",
+            "cca": "300 CCA to 400 CCA",
+            "terminaltype": "JIS Small/Pencil",
+            "dimensions": "187 mm (L) × 127 mm (W) × 225-227 mm",
+            "terminallayout": "Left-hand Negative terminal",
+            "amphours": "35Ah - 44Ah",
+            "reservecapacity": "55 mins",
+            "Placement on Vehicle": [
+                "Engine",
+                "Cylinder Head"
+            ],
+            "Condition": "New",
+            "Material": "Polypropylene (PP)",
+            "Warranty": "No manufacturer or seller warranty is offered on this item.",
+            "Country/Region of Manufacture": "France",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "Inquiry is important for fitment check and final price after delivery",
+            "currency": "AED",
+            "discounted_price": 0.0,
+            "offer": ""
+        },
+        "policies": {
+            "shipping": "Shipping (3-5 Business Days)",
+            "delivery": "",
+            "returns": "3 Days Returns Accepted",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    }
+]
