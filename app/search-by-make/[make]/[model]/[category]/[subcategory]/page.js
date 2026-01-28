@@ -17,7 +17,7 @@ import FormBattery from "../../../../../../components/FormBattery";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const excludedMakes = [
     'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
