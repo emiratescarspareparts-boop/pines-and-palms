@@ -138,35 +138,54 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
     const { parts, make } = params;
+    const decodedParts = decodeURIComponent(parts);
+    const decodedMake = decodeURIComponent(make);
     const partsDa = partsData;
 
     const partEntry = partsDa.find(
-        (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
+        (p) => p.parts.toLowerCase() === decodedParts.toLowerCase()
     );
 
-    if (!partEntry) {
-        return {
-            title: 'Parts not found',
-            robots: { index: false, follow: false }
-        };
-    }
-
+    // Check if this is a valid page
     const isSelectedPart = selectedParts.some(
-        p => p.toLowerCase() === partEntry.parts.toLowerCase()
+        p => p.toLowerCase() === decodedParts.toLowerCase()
     );
 
     const makeFiltered = products.filter(product =>
         product.compatibility?.some(
-            (c) => c.make.toLowerCase() === make.toLowerCase()
+            (c) => c.make.toLowerCase() === decodedMake.toLowerCase()
         )
     );
 
-    const alternatorForMakes = ['Chrysler', 'Dodge', 'GMC', 'Hyundai', 'Infiniti', 'Jeep', 'Volvo', 'Hummer', 'Kia', 'Mini', 'Maybach', 'Scion', 'Bentley', 'Audi', 'Ford', 'Honda', 'Land Rover', 'Lexus', 'Mazda', 'Mercedes Benz', 'Porsche', 'Volkswagen', 'Chevrolet', 'BMW', 'Cadillac']
-
     const partFiltered = makeFiltered.filter(product =>
-        product.subcategory.toLowerCase() === partEntry.parts.toLowerCase()
+        product.subcategory.toLowerCase() === decodedParts.toLowerCase()
     );
 
+    const hasValidContent = partEntry && (isSelectedPart || partFiltered.length > 0);
+
+    // For invalid pages (404), return noindex metadata
+    if (!hasValidContent) {
+        return {
+            title: 'Page Not Found - EMIRATESCAR',
+            description: 'The requested page could not be found.',
+            robots: {
+                index: false,
+                follow: false,
+                noarchive: true,
+                nosnippet: true,
+                noimageindex: true,
+                googleBot: {
+                    index: false,
+                    follow: false,
+                    noarchive: true,
+                    nosnippet: true,
+                    noimageindex: true,
+                },
+            },
+        };
+    }
+
+    // For valid pages, continue with regular metadata
     const productListItems = partFiltered.length > 0 ? partFiltered.map((product, index) => ({
         "@type": "ListItem",
         "position": index + 1,
@@ -201,7 +220,7 @@ export function generateMetadata({ params }) {
             {
                 "@type": "CollectionPage",
                 "name": `${make} ${parts} Parts | EMIRATESCAR`,
-                "url": `https://www.emirates-car.com/search-by-make/${make}`,
+                "url": `https://www.emirates-car.com/search-by-make/${make}/parts/${parts}`,
                 "description": `Buy ${make} ${parts} parts | New, Used, Genuine/ OEM, and Aftermarket spare parts for all ${make} models.`,
                 "about": { "@type": "Brand", "name": make },
                 "mainEntity": {
@@ -233,7 +252,7 @@ export function generateMetadata({ params }) {
                     },
                     {
                         "@type": "ListItem",
-                        "position": 3,
+                        "position": 4,
                         "name": `${make} ${parts} Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(parts)}`
                     }
@@ -290,6 +309,18 @@ export function generateMetadata({ params }) {
         category: `${make} auto spare parts`,
         alternates: {
             canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(parts)}`,
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                noimageindex: false,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
         },
         other: {
             "script:ld+json": JSON.stringify(faqSchema),

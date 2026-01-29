@@ -109,13 +109,6 @@ export function generateStaticParams() {
     try {
         const unique = new Set();
         const params = [];
-        const stats = {
-            totalProducts: productsFile.length,
-            totalPages: 0,
-            byMake: {},
-            byCategory: {},
-            selectedPartsPages: 0,
-        };
 
         for (const product of productsFile) {
             if (!product || !product.compatibility) continue;
@@ -136,15 +129,24 @@ export function generateStaticParams() {
                 if (!unique.has(key)) {
                     unique.add(key);
 
-                    params.push({
-                        make: make,
-                        model: model,
-                        category: category,
-                        subcategory: subcategory,
-                    });
+                    const isSelectedPart = selectedParts.some(
+                        p => p.toLowerCase() === subcategory.toLowerCase()
+                    );
 
-                    stats.byMake[make] = (stats.byMake[make] || 0) + 1;
-                    stats.byCategory[category] = (stats.byCategory[category] || 0) + 1;
+                    const hasProducts = productsFile.some(p =>
+                        p.category === category &&
+                        p.subcategory === subcategory &&
+                        p.compatibility?.some(c => c.make === make && c.model === model)
+                    );
+
+                    if (isSelectedPart || hasProducts) {
+                        params.push({
+                            make: make,
+                            model: model,
+                            category: category,
+                            subcategory: subcategory,
+                        })
+                    }
                 }
             }
         }
@@ -161,6 +163,45 @@ export function generateMetadata({ params }) {
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
+
+    // Check if this is a valid page
+    const isSelectedPart = selectedParts.some(
+        p => p.toLowerCase() === subcategory.toLowerCase()
+    );
+
+    const matchingProducts = productsFile.filter(product => {
+        if (product.category !== category || product.subcategory !== subcategory) {
+            return false;
+        }
+        return product.compatibility?.some(
+            compat => compat.make === make && compat.model === model
+        );
+    });
+
+    const hasValidContent = isSelectedPart || matchingProducts.length > 0;
+
+    // For invalid pages (404), return noindex metadata
+    if (!hasValidContent) {
+        return {
+            title: 'Page Not Found - EMIRATESCAR',
+            description: 'The requested page could not be found.',
+            robots: {
+                index: false,
+                follow: false,
+                noarchive: true,
+                nosnippet: true,
+                noimageindex: true,
+                googleBot: {
+                    index: false,
+                    follow: false,
+                    noarchive: true,
+                    nosnippet: true,
+                    noimageindex: true,
+                },
+            },
+        };
+    }
+
     const imageMake = getMakeImage(make, model);
 
     // Products filtered only by make
@@ -169,7 +210,6 @@ export function generateMetadata({ params }) {
             (c) => c.make?.toLowerCase() === make.toLowerCase()
         )
     );
-
 
     const productListItems = productsForMake.length > 0 ? productsForMake.map((product, index) => ({
         "@type": "ListItem",
@@ -255,7 +295,7 @@ export function generateMetadata({ params }) {
         description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
         openGraph: {
             title: `${make} ${model} ${subcategory} Parts`,
-            description: `Order ${subcategory} for ${make} ${model} in UAE.`,
+            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
             images: [
                 `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
             ],
