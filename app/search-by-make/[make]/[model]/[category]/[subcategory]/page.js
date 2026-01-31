@@ -107,13 +107,6 @@ export function generateStaticParams() {
         const unique = new Set();
         const params = [];
 
-        // Helper to make filesystem-safe category names
-        const encodeCategory = (cat) => {
-            if (!cat) return '';
-            // Encode special characters that Windows doesn't allow in paths
-            return encodeURIComponent(cat.trim());
-        };
-
         // First: Generate from existing products
         for (const product of productsFile) {
             if (!product || !product.compatibility) continue;
@@ -136,7 +129,7 @@ export function generateStaticParams() {
                     params.push({
                         make: make,
                         model: model,
-                        category: encodeURIComponent(category), // ENCODE HERE
+                        category: category,
                         subcategory: subcategory,
                     });
                 }
@@ -167,8 +160,8 @@ export function generateStaticParams() {
                     unique.add(key);
                     params.push({
                         make: car.make,
-                        model: encodeURIComponent(car.model), // ALSO ENCODE MODEL (for F150 2.7L etc)
-                        category: encodeURIComponent(category), // ENCODE HERE
+                        model: car.model,
+                        category: category,
                         subcategory: partName,
                     });
                     count++;
@@ -176,8 +169,6 @@ export function generateStaticParams() {
             }
             console.log(`✓ Generated ${count} paths for ${partName}`);
         });
-
-        console.log(`\n📊 Total static paths generated: ${params.length}`);
 
         return params;
     } catch (error) {
