@@ -104,71 +104,63 @@ function getPartsByCategory(category) {
 
 export function generateStaticParams() {
     try {
+        const unique = new Set();
         const params = [];
-        const uniqueKeys = new Set();
 
-        // Helper function
-        const addParam = (make, model, category, subcategory) => {
-            const key = `${make}|${model}|${category}|${subcategory}`;
-            if (!uniqueKeys.has(key)) {
-                uniqueKeys.add(key);
-                params.push({
-                    make,
-                    model: encodeURIComponent(model),
-                    category: encodeURIComponent(category),
-                    subcategory,
-                });
-                return true;
-            }
-            return false;
-        };
-
-        // FIRST: Products from productsFile
-        let productCount = 0;
+        // SINGLE PASS: Generate from products AND track selected parts
         for (const product of productsFile) {
-            if (!product?.compatibility || !product.category || !product.subcategory) continue;
+            if (!product || !product.compatibility) continue;
 
-            const category = product.category.trim();
-            const subcategory = product.subcategory.trim();
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
+
+            if (!category || !subcategory) continue;
 
             for (const fit of product.compatibility) {
                 const make = fit.make?.trim();
                 const model = fit.model?.trim();
 
-                if (make && model && !excludedMakesSet.has(make)) {
-                    if (addParam(make, model, category, subcategory)) {
-                        productCount++;
-                    }
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make: make,
+                        model: encodeURIComponent(model),
+                        category: encodeURIComponent(category),
+                        subcategory: subcategory,
+                    });
                 }
             }
         }
-        console.log(`✓ Generated ${productCount} pages from products.json`);
 
-        // SECOND: Selected parts for ALL cars
-        selectedParts.forEach(partName => {
-            const partInfo = partsData.find(p =>
-                p.parts?.toLowerCase() === partName.toLowerCase()
+        console.log(`✓ Generated ${params.length} pages from products.json`);
+
+        // For selected parts, ONLY generate if no products exist
+        // Check if we need to generate more for selectedParts
+        const selectedPartsInfo = selectedParts.map(partName => {
+            const partInfo = partsData.find(
+                p => p.parts?.toLowerCase() === partName.toLowerCase()
             );
+            return partInfo ? {
+                name: partName,
+                category: partInfo.category.trim()
+            } : null;
+        }).filter(Boolean);
 
-            if (!partInfo?.category) {
-                console.warn(`⚠️ Category not found for part: ${partName}`);
-                return;
-            }
+        // Count how many cars already have each selected part
+        selectedPartsInfo.forEach(({ name, category }) => {
+            const existingCount = params.filter(p =>
+                p.subcategory === name &&
+                decodeURIComponent(p.category) === category
+            ).length;
 
-            const category = partInfo.category.trim();
-            let count = 0;
-
-            for (const car of CarData) {
-                if (car.make && car.model && !excludedMakesSet.has(car.make)) {
-                    if (addParam(car.make, car.model, category, partName)) {
-                        count++;
-                    }
-                }
-            }
-            console.log(`✓ Generated ${count} additional pages for ${partName}`);
+            console.log(`${name}: ${existingCount} already in products.json`);
         });
 
-        console.log(`\n📊 Total: ${params.length} static paths`);
+        console.log(`\n📊 Total static paths: ${params.length}`);
         return params;
 
     } catch (error) {
