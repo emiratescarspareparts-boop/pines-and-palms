@@ -172,7 +172,7 @@ export function generateStaticParams() {
 
         return params;
     } catch (error) {
-        console.error("Error generating static params:", error);
+        console.error("Error generating static params :", error);
         return [];
     }
 }
