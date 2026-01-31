@@ -21,7 +21,6 @@ export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 
-
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
     display: "swap",
@@ -46,7 +45,6 @@ const excludedMakes = [
     'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
     'Chery', 'Geely', 'BAIC', 'Bestune'
 ];
-
 
 const selectedParts = ["Battery", "Alternator", "Steering Rack"]
 
@@ -104,12 +102,19 @@ function getPartsByCategory(category) {
     }
 }
 
-
 export function generateStaticParams() {
     try {
         const unique = new Set();
         const params = [];
 
+        // Helper to make filesystem-safe category names
+        const encodeCategory = (cat) => {
+            if (!cat) return '';
+            // Encode special characters that Windows doesn't allow in paths
+            return encodeURIComponent(cat.trim());
+        };
+
+        // First: Generate from existing products
         for (const product of productsFile) {
             if (!product || !product.compatibility) continue;
 
@@ -128,28 +133,51 @@ export function generateStaticParams() {
 
                 if (!unique.has(key)) {
                     unique.add(key);
-
-                    const isSelectedPart = selectedParts.some(
-                        p => p.toLowerCase() === subcategory.toLowerCase()
-                    );
-
-                    const hasProducts = productsFile.some(p =>
-                        p.category === category &&
-                        p.subcategory === subcategory &&
-                        p.compatibility?.some(c => c.make === make && c.model === model)
-                    );
-
-                    if (isSelectedPart || hasProducts) {
-                        params.push({
-                            make: make,
-                            model: model,
-                            category: category,
-                            subcategory: subcategory,
-                        })
-                    }
+                    params.push({
+                        make: make,
+                        model: model,
+                        category: encodeURIComponent(category), // ENCODE HERE
+                        subcategory: subcategory,
+                    });
                 }
             }
         }
+
+        // Second: Generate for selected parts
+        selectedParts.forEach(partName => {
+            const partInfo = partsData.find(
+                p => p.parts?.toLowerCase() === partName.toLowerCase()
+            );
+
+            if (!partInfo || !partInfo.category) {
+                console.warn(`⚠️  Category not found for part: ${partName}`);
+                return;
+            }
+
+            const category = partInfo.category.trim();
+            console.log(`Generating ${partName} with category: "${category}"`);
+
+            let count = 0;
+            for (const car of CarData) {
+                if (!car.make || !car.model || excludedMakesSet.has(car.make)) continue;
+
+                const key = `${car.make}|${car.model}|${category}|${partName}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make: car.make,
+                        model: encodeURIComponent(car.model), // ALSO ENCODE MODEL (for F150 2.7L etc)
+                        category: encodeURIComponent(category), // ENCODE HERE
+                        subcategory: partName,
+                    });
+                    count++;
+                }
+            }
+            console.log(`✓ Generated ${count} paths for ${partName}`);
+        });
+
+        console.log(`\n📊 Total static paths generated: ${params.length}`);
 
         return params;
     } catch (error) {
@@ -375,6 +403,7 @@ export default function SubcategoryPage({ params, searchParams }) {
     const carmodel = getModel(make);
     const genericParts = partsData;
     //lets check if this part is in the selectedParts
+
 
     const isSelectedPart = selectedParts.some(
         p => p.toLowerCase() === subcategory.toLowerCase()
