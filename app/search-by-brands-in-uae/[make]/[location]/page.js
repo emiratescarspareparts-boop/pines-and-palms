@@ -148,76 +148,129 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }) {
   const { make, location } = params;
+  const decodedLocation = decodeURIComponent(location);
+  const decodedMake = decodeURIComponent(make);
+
+  // ✅ Single source of truth for canonical URL
+  const canonicalUrl = `https://www.emirates-car.com/search-by-brands-in-uae/${encodeURIComponent(decodedMake)}/${encodeURIComponent(decodedLocation)}`;
+
   const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": `Do you sell genuine ${make} spare parts in ${location}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, we supply genuine OEM ${make} parts, as well as used and aftermarket options to suit your budget.`
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `Do you sell genuine ${decodedMake} spare parts in ${decodedLocation}?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Yes, we supply genuine OEM ${decodedMake} parts, as well as used and aftermarket options to suit your budget.`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `Can I buy used or aftermarket ${decodedMake} parts to save costs?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Yes, we offer used and aftermarket ${decodedMake} spare parts that are tested for quality and performance.`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `Do you deliver ${decodedMake} parts across ${decodedLocation}?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Yes, we deliver ${decodedMake} spare parts to Dubai, Abu Dhabi, Sharjah, Ajman, and other Emirates. International shipping is also available.`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `How do I know if a part fits my ${decodedMake} in ${decodedLocation}?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `You can share your car's VIN or model details with us, and we will confirm compatibility before shipping.`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `Do your ${decodedMake} spare parts in ${decodedLocation} come with warranty?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Yes, all new and OEM ${decodedMake} spare parts come with a standard warranty. Used parts are tested but carry limited warranty.`
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": `Can I buy used or aftermarket ${make} parts to save costs?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, we offer used and aftermarket ${make} spare parts that are tested for quality and performance.`
-        }
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.emirates-car.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Brands in UAE",
+            "item": "https://www.emirates-car.com/search-by-brands-in-uae/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": `${decodedMake} Spare Parts`,
+            "item": `https://www.emirates-car.com/search-by-brands-in-uae/${encodeURIComponent(decodedMake)}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": `${decodedMake} Parts in ${decodedLocation}`,
+            "item": canonicalUrl
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": `Do you deliver ${make} parts across ${location}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, we deliver ${make} spare parts to Dubai, Abu Dhabi, Sharjah, Ajman, and other Emirates. International shipping is also available.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How do I know if a part fits my ${make} in ${location}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `You can share your car's VIN or model details with us, and we will confirm compatibility before shipping.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Do your ${make} in ${location} spare parts come with warranty?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, all new and OEM ${make} spare parts come with a standard warranty. Used parts are tested but carry limited warranty.`
-        }
+        "@type": "LocalBusiness",
+        "name": `${decodedMake} Spare Parts ${decodedLocation}`,
+        "description": `Leading supplier of ${decodedMake} spare parts in ${decodedLocation}, UAE`,
+        "url": canonicalUrl,
+        "areaServed": {
+          "@type": "City",
+          "name": decodedLocation
+        },
+        "priceRange": "$$"
       }
     ]
   };
+
   return {
-    title: `Buy ${make} Spare Parts in ${decodeURIComponent(location)}, UAE -
-      Best Prices`,
-    description: `Buy ${make} - ${decodeURIComponent(
-      location,
-    )} auto spare parts Online and Get delivered Used, New, Genuine / OEM, Aftermarket in UAE`,
+    title: `Buy ${decodedMake} Spare Parts in ${decodedLocation}, UAE - Best Prices`,
+    description: `Buy ${decodedMake} auto spare parts in ${decodedLocation} and get them delivered. Used, New, Genuine/OEM, Aftermarket parts available across UAE.`,
+    metadataBase: new URL('https://www.emirates-car.com'),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      images: 'https://www.emirates-car.com/favicon.png',
-      title: `${make} Spare Parts in ${decodeURIComponent(location)}, UAE -
-      Best Prices`,
-      description: `Buy ${make} - ${decodeURIComponent(
-        location,
-      )} auto spare parts Online and Get delivered Used, New, Genuine / OEM, Aftermarket in UAE`,
-      url: 'https://emirates-car.com/search-by-brands-in-uae/' + make + '/' + location,
-      image: 'https://www.emirates-car.com/img/car-spare-parts.png',
+      title: `${decodedMake} Spare Parts in ${decodedLocation}, UAE - Best Prices`,
+      description: `Buy ${decodedMake} auto spare parts in ${decodedLocation} and get them delivered. Used, New, Genuine/OEM, Aftermarket parts available across UAE.`,
+      url: canonicalUrl,
       siteName: 'EMIRATESCAR',
       images: [
         {
-          url: '/icon-192x192.png',
+          url: 'https://www.emirates-car.com/img/car-spare-parts.png',
+          width: 1200,
+          height: 630,
+          alt: `${decodedMake} spare parts in ${decodedLocation}`,
+        },
+        {
+          url: 'https://www.emirates-car.com/icon-192x192.png',
           width: 192,
           height: 192,
         },
         {
-          url: '/icons/icon-512x512.png',
+          url: 'https://www.emirates-car.com/icons/icon-512x512.png',
           width: 512,
           height: 512,
           alt: 'car parts',
@@ -228,15 +281,10 @@ export function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${make} - ${decodeURIComponent(
-        location,
-      )} Car Auto Spare Parts Order Online in UAE from Dubai -
-      Best Prices`,
-      url: 'https://www.emirates-car.com/search-by-brands-in-uae/' + make + '/' + location,
-      description: `Buy ${make} - ${decodeURIComponent(
-        location,
-      )} auto spare parts Online and Get delivered Used, New, Genuine / OEM, Aftermarket in UAE`,
-      images: ['/favicon.png'],
+      title: `${decodedMake} Spare Parts in ${decodedLocation}, UAE - Best Prices`,
+      url: canonicalUrl,
+      description: `Buy ${decodedMake} auto spare parts in ${decodedLocation} and get them delivered. Used, New, Genuine/OEM, Aftermarket parts available across UAE.`,
+      images: ['https://www.emirates-car.com/img/car-spare-parts.png'],
     },
     icons: {
       icon: '/favicon.png',
@@ -247,11 +295,19 @@ export function generateMetadata({ params }) {
         url: '/icons/icon-152x152.png',
       },
     },
-    alternates: {
-      canonical: `https://www.emirates-car.com/search-by-brands-in-uae/${make}/${location}`,
+    category: `${decodedMake} ${decodedLocation} auto spare parts`,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-    category: `${make} ${decodeURIComponent(location)} auto spare parts`,
-
     other: {
       "script:ld+json": JSON.stringify(faqSchema),
     },
