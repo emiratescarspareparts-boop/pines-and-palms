@@ -185,6 +185,9 @@ export function generateMetadata({ params }) {
         };
     }
 
+    const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(decodedMake)}/parts/${encodeURIComponent(decodedParts)}`;
+
+
     // For valid pages, continue with regular metadata
     const productListItems = partFiltered.length > 0 ? partFiltered.map((product, index) => ({
         "@type": "ListItem",
@@ -193,14 +196,14 @@ export function generateMetadata({ params }) {
             "@type": "Product",
             "@id": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}#product`,
             "name": `${product.partname} ${product.partnumber} ${make}`,
-            "url": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.partname}-${product.partnumber}-${product.id}`,
-            "image": `https://www.emirates-car.com/${product.image}`,
+            "url": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}`,
+            "image": `https://www.emirates-car.com${product.image}`,
             "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
             "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-            "mpn": product.partnumber,
+            "mpn": `${product.partnumber}`,
             "offers": {
                 "@type": "Offer",
-                "url": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.partname}-${product.partnumber}-${product.id}`,
+                "url": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}`,
                 "priceCurrency": product.pricing.currency,
                 "price": product.pricing.price,
                 "availability": "https://schema.org/InStock",
@@ -270,7 +273,7 @@ export function generateMetadata({ params }) {
         openGraph: {
             title: `${make} ${parts} - Used, Genuine, OEM and Aftermarket`,
             description: `Find genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-            url: 'https://www.emirates-car.com/search-by-make/' + encodeURIComponent(make) + "/parts/" + encodeURIComponent(parts),
+            url: canonicalUrl,
             image: 'https://www.emirates-car.com/img/car-spare-parts.png',
             siteName: 'EMIRATESCAR',
             images: [
@@ -293,7 +296,7 @@ export function generateMetadata({ params }) {
         twitter: {
             card: 'summary_large_image',
             title: `${make} Spare Parts Dubai dealers UAE - Used, Genuine, OEM and Aftermarket`,
-            url: 'https://www.emirates-car.com/search-by-make/' + encodeURIComponent(make) + "/parts/" + encodeURIComponent(parts),
+            url: canonicalUrl,
             description: `Find genuine, OEM, used & aftermarket ${make} ${parts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
             images: ['https://www.emirates-car.com/favicon.png'],
         },
@@ -308,7 +311,7 @@ export function generateMetadata({ params }) {
         },
         category: `${make} auto spare parts`,
         alternates: {
-            canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(parts)}`,
+            canonical: canonicalUrl,
         },
         robots: {
             index: true,

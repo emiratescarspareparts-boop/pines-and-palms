@@ -215,6 +215,9 @@ export function generateMetadata({ params }) {
 
     const imageMake = getMakeImage(make, model);
 
+    const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`;
+
+
     // Products filtered only by make
     const productsForMake = productsFile.filter((p) =>
         p.compatibility?.some(
@@ -250,7 +253,7 @@ export function generateMetadata({ params }) {
             {
                 "@type": "CollectionPage",
                 "name": `${make} ${model} ${subcategory} | EMIRATESCAR`,
-                "url": `https://www.emirates-car.com/search-by-make/${make}/${model}/${category}/${subcategory}`,
+                "url": canonicalUrl,
                 "mainEntity": {
                     "@type": "ItemList",
                     "itemListElement": productListItems,
@@ -280,19 +283,19 @@ export function generateMetadata({ params }) {
                     },
                     {
                         "@type": "ListItem",
-                        "position": 3,
+                        "position": 4,
                         "name": `${make} ${model} Spare Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}`
                     },
                     {
                         "@type": "ListItem",
-                        "position": 4,
+                        "position": 5,
                         "name": `${make} ${model} ${category} Spare Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}`
                     },
                     {
                         "@type": "ListItem",
-                        "position": 4,
+                        "position": 6,
                         "name": `${make} ${model} ${subcategory} Spare Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`
                     }
@@ -314,7 +317,7 @@ export function generateMetadata({ params }) {
             siteName: "EMIRATESCAR",
         },
         alternates: {
-            canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`,
+            canonical: canonicalUrl,
         },
         robots: {
             index: true,
