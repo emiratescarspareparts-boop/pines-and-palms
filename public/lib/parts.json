@@ -2080,5 +2080,61 @@
         "category": "Cooling System",
         "description": "",
         "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 292,
+        "parts": "Bumpers",
+        "category": "Body Kits",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 293,
+        "parts": "Body Kits",
+        "category": "Body Kits",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 294,
+        "parts": "Accessories",
+        "category": "Body Kits",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 295,
+        "parts": "Differential Assembly",
+        "category": "Transmission & Drivetrain",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 296,
+        "parts": "Lower Control Arm",
+        "category": "Suspension & Steering Parts",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 297,
+        "parts": "Upper Control Arm",
+        "category": "Suspension & Steering Parts",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 298,
+        "parts": "Mirrors",
+        "category": "Glass & Mirrors",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 299,
+        "parts": "Spoiler",
+        "category": "Body Kits",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
     }
 ]

@@ -151,7 +151,6 @@ export function generateMetadata({ params }) {
   const decodedLocation = decodeURIComponent(location);
   const decodedMake = decodeURIComponent(make);
 
-  // ✅ Single source of truth for canonical URL
   const canonicalUrl = `https://www.emirates-car.com/search-by-brands-in-uae/${encodeURIComponent(decodedMake)}/${encodeURIComponent(decodedLocation)}`;
 
   const faqSchema = {

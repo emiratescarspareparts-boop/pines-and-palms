@@ -46,7 +46,14 @@ const excludedMakes = [
     'Chery', 'Geely', 'BAIC', 'Bestune'
 ];
 
-const selectedParts = ["Battery", "Alternator", "Steering Rack"]
+const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
+    "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
+    "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
+    , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
+    , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
+    "Gearbox", "Headlight Assembly", "Hood", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
+    , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+]
 
 const excludedMakesSet = new Set(excludedMakes);
 
@@ -157,10 +164,8 @@ export function generateStaticParams() {
                 decodeURIComponent(p.category) === category
             ).length;
 
-            console.log(`${name}: ${existingCount} already in products.json`);
         });
 
-        console.log(`\n📊 Total static paths: ${params.length}`);
         return params;
 
     } catch (error) {
@@ -306,10 +311,10 @@ export function generateMetadata({ params }) {
 
     return {
         title: `${make} ${model} ${subcategory} | Genuine & New, Used Parts UAE`,
-        description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
+        description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras al khaimah`,
         openGraph: {
             title: `${make} ${model} ${subcategory} Parts`,
-            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
+            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras al khaimah`,
             images: [
                 `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
             ],
