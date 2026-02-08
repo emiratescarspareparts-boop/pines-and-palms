@@ -51,7 +51,7 @@ const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor"
     "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
     , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
     , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
-    "Gearbox", "Headlight Assembly", "Hood", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
+    "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
     , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
 ]
 
@@ -321,6 +321,12 @@ export function generateMetadata({ params }) {
             url: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`,
             siteName: "EMIRATESCAR",
         },
+        category: `${category} > ${subcategory} > ${make}`,
+        other: {
+            'product:brand': `${make}`,
+            'product:model': `${model}`,
+            'product:category': `${category} > ${subcategory}`,
+        },
         alternates: {
             canonical: canonicalUrl,
         },
@@ -562,8 +568,8 @@ export default function SubcategoryPage({ params, searchParams }) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
                                 } else {
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myBatteryForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myBatteryForm`
+                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myForm'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myForm`
                                 }
                                 return (
                                     <li key={i} className="h-full">
@@ -831,8 +837,8 @@ export default function SubcategoryPage({ params, searchParams }) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
                                 } else {
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myBatteryForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myBatteryForm`
+                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myForm'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myForm`
                                 }
                                 return (
                                     <li key={i} className="h-full">

@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import TenEntries from '../../../components/tenentries';
-import CarParts from '../../../public/img/car-spare-parts.png';
 import Counter from '../../../components/service-countup';
 import { notFound } from 'next/navigation';
 import products from "../../../public/products.json"
@@ -29,6 +28,28 @@ const firaSans = Fira_Sans({
   variable: '--font-fira-sans',
 });
 
+const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
+  "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
+  "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
+  , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
+  , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
+  "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
+  , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+]
+
+const excludedMakes = [
+  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab', 'Subaru',
+  'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+  'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
+  'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
+  'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
+  'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
+  'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr', 'ZNA', 'GAC', 'Gs7', 'Hongqi',
+  'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK', 'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
+  'Chery', 'Geely', 'BAIC', 'Bestune'
+];
+
+
 export function generateStaticParams() {
   try {
     const params = [];
@@ -36,7 +57,7 @@ export function generateStaticParams() {
     for (let i = 0; i < PartsData.length; i++) {
       const item = PartsData[i];
       params.push({
-        parts: item.parts,
+        parts: encodeURIComponent(item.parts),
       });
     }
 
@@ -57,18 +78,30 @@ function getMake() {
   }
   return Object.values(uniqueMakes);
 }
+function getPartsData(parts) {
+  const decodedParts = decodeURIComponent(parts);
 
+  for (let i = 0; i < PartsData.length; i++) {
+    const item = PartsData[i];
+    if (item.parts === decodedParts) {
+      return item;
+    }
+  }
+
+  return null;
+}
 export function generateMetadata({ params }) {
   const { parts } = params;
   const decodedParts = decodeURIComponent(parts);
+  const partsData = getPartsData(parts);
 
 
   return {
-    title: `${decodedParts} Car Spare Parts Order Online in UAE | EMIRATESCAR`,
-    description: `Buy ${decodedParts}  Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE`,
+    title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
+    description: `Buy ${decodedParts}  Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
     openGraph: {
-      title: `${decodedParts} Car Spare Parts Order Online in UAE | EMIRATESCAR`,
-      description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE`,
+      title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
+      description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
       url: 'https://www.emirates-car.com/search-by-part-name/' + parts,
       image: 'https://emirates-car.com/img/car-spare-parts.png',
       siteName: 'Emirates Auto Parts',
@@ -90,8 +123,8 @@ export function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${decodedParts} Car Spare Parts Order Online in UAE - Used, Genuine, Aftermarket | Emirates-car.com`,
-      url: 'https://www.emirates-car.com/search-by-part-name/' + parts,
+      title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
+      url: 'https://www.emirates-car.com/search-by-part-name/' + decodedParts,
       description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE`,
       images: ['https://emirates-car.com/favicon.png'],
     },
@@ -104,25 +137,14 @@ export function generateMetadata({ params }) {
         url: 'https://emirates-car.com/icons/icon-152x152.png',
       },
     },
-    category: `${decodedParts}`,
+    category: `${partsData.category} > ${decodedParts}`,
     alternates: {
       canonical: `https://www.emirates-car.com/search-by-part-name/${parts}`,
     },
-    keywords: `${decodedParts} for honda, ${decodedParts} in dubai, ${decodedParts} for porsche, ${decodedParts} for volkswagen, ${decodedParts} for volvo, ${decodedParts} online, ${decodedParts} for ford, ${decodedParts} spare parts uae, ${decodedParts} spare parts online, ${decodedParts} used spare parts dubai, ${decodedParts} spare parts near me`,
+    keywords: `car ${decodedParts} price, car ${decodedParts} cost, car ${decodedParts} near me, car ${decodedParts} replacement, ${decodedParts} price in UAE, ${decodedParts} sharjah cost, , ${decodedParts} dubai cost, , ${decodedParts} abu dhabi price, best ${decodedParts} abu dhabi, best ${decodedParts} dubai, best ${decodedParts} sharjah`,
   };
 }
-function getPartsData(parts) {
-  const decodedParts = decodeURIComponent(parts);
 
-  for (let i = 0; i < PartsData.length; i++) {
-    const item = PartsData[i];
-    if (item.parts === decodedParts) {
-      return item;
-    }
-  }
-
-  return null;
-}
 export default function Parts({ params, searchParams }) {
   const { parts } = params;
   const partsData = getPartsData(parts);
@@ -201,18 +223,17 @@ export default function Parts({ params, searchParams }) {
             <div>
               <div className="ml-8 md:ml-8 xs:ml-1 xxs:ml-4 xxs:mt-8 xs:px-5 sm:ml-6 lg:ml-1 xl:ml-20 sm:mx-auto mt-10 sm:mt-12 md:mt-10 lg:mt-20 lg:px-8 xl:mt-28 xs:mt-2 xs:text-left s:mt-2">
                 <div className="lg:text-left">
-                  <h2 className="block text-3xl sm:text-sm xs:text-base xxs:text-base md:text-lg lg:text-2xl font-medium font-poppins text-gray-800  lg:leading-tight dark:text-white">
+                  <h2 className="block text-2xl sm:text-sm xs:text-base xxs:text-base md:text-lg lg:text-2xl font-medium font-poppins text-gray-800  lg:leading-tight dark:text-white">
                     <span class="block">
                       Expert Parts&nbsp;
-                      <span class="block text-blue-600 xl:inline">
+                      <span class="text-blue-600">
                         Seamless Performance
                       </span>
                     </span>
                   </h2>
-                  <h1 className="mt-3 text-5xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-head font-extrabold">
-                    Used / New / Genuine / Aftermarket{' '}
-                    <span className="text-blue-500">{partsData.parts}</span> in
-                    UAE
+                  <h1 className={`mt-3 text-4xl lg:text-4xl sm:text-lg xs:text-xl xxs:text-xl md:text-xl font-bold ${playfair_display.className}`}>
+                    Car <span className="text-blue-500">{partsData.parts}</span> - Used, New, Genuine, Aftermarket{' '}
+                    in UAE at Best Prices
                   </h1>
                   <div className="mt-5 sm:mt-5 xxs:my-5 xs:my-5 lg:justify-start">
                     <div className="py-3 px-4 sm:py-0 sm:px-0 w-1/2 lg:w-full xs:w-full xxs:w-3/4 xs:mx-auto s:w-full sm:w-3/4 md:w-full md:mx-auto md:px-0 md:py-0 xs:py-0 xs:px-0 xxs:px-0 xxs:py-0 lg:px-0 lg:py-0 xl:px-0 xl:py-0 xxl:px-0 xxl:py-0 rounded-lg shadow-md sm:shadow-none">
@@ -232,7 +253,7 @@ export default function Parts({ params, searchParams }) {
               <Image
                 alt="emirates car"
                 className="rounded-sm"
-                src={CarParts}
+                src={partsData.img}
                 width={400}
                 height={400}
               />
@@ -244,14 +265,51 @@ export default function Parts({ params, searchParams }) {
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
         <FormOnly formsData={modelsform} />
       </div>
+
+      <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
+        <div className="container py-6">
+          <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+            Car {decodeURIComponent(parts)} in UAE
+          </h2>
+
+          <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+            {partsposts.map((post, i) => {
+              const isPartAvailable = selectedParts.includes(post.parts);
+              const linkHref = isPartAvailable
+                ? `/search-by-part-name/${encodeURIComponent(post.parts)}`
+                : `/get-in-touch`;
+
+              return (
+                <li key={i} className="border">
+                  <a href={linkHref} target="_blank" title={`car ${post.parts} price`}>
+                    <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                      <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
+                        <Image
+                          src={post.img || '/img/parts/car-spare-parts.png'}
+                          alt={`${post.parts}`}
+                          className="max-w-full max-h-full object-contain"
+                          width={120}
+                          height={120}
+                        />
+                      </div>
+                      <p className="text-center font-sans font-medium text-base">
+                        <span>{post.parts}</span>
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </section>
       <div className="flex xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 sm:grid sm:grid-cols-1 xxs:grid xxs:grid-cols-1">
         <div>
           <div className="grid grid-cols-1 s:grid s:grid-cols-1 xs:grid xs:grid-cols-1 xxs:grid xxs:grid-cols-1 sm:grid sm:grid-cols-1">
-
             <div className="p-5 pt-10">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722504.3860201286!2d51.71183150969869!3d24.337497293019872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e48dfb1ab12bd%3A0x33d32f56c0080aa7!2sUnited%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1641654109734!5m2!1sen!2sin"
-                title={parts + ' parts'}
+                title={"used car " + parts + ' price dubai'}
                 width="100%"
                 height="100%"
                 style={{ border: '0' }}
@@ -260,78 +318,76 @@ export default function Parts({ params, searchParams }) {
               ></iframe>
             </div>
           </div>
-
-
-
-
-          <section
-            aria-labelledby={`${parts}`}
-            className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
-          >
-            <h2
-              id={`${parts}`}
-              className={`text-4xl md:text-3xl lg:text-3xl xs:text-2xl xxs:text-2xl font-semibold py-5 ${playfair_display.className}`}
-            >
-              Used, Genuine & Aftermarket <span className="text-blue-600">{parts}</span>
-            </h2>
-
-            <ul className="grid grid-cols-6 md:grid-cols-5 xs:grid-cols-2 xxs:grid-cols-3 sm:grid-cols-3 xs:gap-2 xxs:gap-2 sm:gap-2 gap-4 my-10">
-              {makedatas.map((p, i) => (
-                <li key={i} className="list-none">
-                  <Link
-                    href="/search-by-make/[make]/parts/[parts]"
-                    as={`/search-by-make/${p.make}/parts/${partsData.parts}`}
-                    title={`${p.make} ${parts}`}
-                    target='_blank'
-                    className="flex flex-col items-center justify-center border hover:border-blue-600 p-3 rounded-sm bg-white"
-                  >
-                    <Image
-                      alt={`${p.make} parts`}
-                      src={`/img/car-logos/${p.img}`}
-                      height={90}
-                      width={90}
-                      className="object-contain"
-                      priority
-                    />
-                    <span className={`mt-2 px-3 py-1 text-sm xl:text-2xl xxl:text-2xl font-medium font-sans rounded-sm text-center w-max ${firaSans.className}`}>
-                      <span className='text-blue-500'>{p.make}</span> {parts}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <TenEntries />
-          <Counter />
-          <section>
-            <h3 className="text-black text-4xl text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
-              Search{' '}
-              <span className="text-blue-500">
-                {decodeURIComponent(partsData.parts)}{' '}
-              </span>
-              parts in UAE
-            </h3>
-            <ul className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-7 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
-              {staticcity.map((post, i) => (
-                <li key={i}>
-                  <Link
-                    href="/search-by-cities-in-uae/[city]"
-                    as={'/search-by-cities-in-uae/' + post}
-                    title={
-                      decodeURIComponent(partsData.parts) + ' in ' + post
-                    }
-                  >
-                    <div className={`border h-full text-sm xl:text-2xl xxl:text-2xl font-medium font-sans rounded-sm text-center hover:border-blue-600 py-3 bg-gray-100 rounded-sm ${firaSans.className}`}>
-                      {decodeURIComponent(partsData.parts)} in <span className='text-blue-500'>{post}</span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-
         </div>
       </div>
+      <section
+        aria-labelledby={`${parts}`}
+        className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
+      >
+        <h2
+          id={`${parts}`}
+          className={`text-4xl md:text-3xl lg:text-3xl xs:text-2xl xxs:text-2xl font-semibold py-5 ${playfair_display.className}`}
+        >
+          Car <span className="text-blue-600">{decodeURIComponent(parts)}</span> for Any Car Brands in UAE
+        </h2>
+
+        <ul className="grid grid-cols-6 md:grid-cols-5 xs:grid-cols-2 xxs:grid-cols-3 sm:grid-cols-3 xs:gap-2 xxs:gap-2 sm:gap-2 gap-4 my-10">
+          {makedatas
+            .filter(p => !excludedMakes.includes(p.make))
+            .map((p, i) => (
+              <li key={i} className="list-none">
+                <Link
+                  href="/search-by-make/[make]/parts/[parts]"
+                  as={`/search-by-make/${p.make}/parts/${partsData.parts}`}
+                  title={`${p.make} ${decodeURIComponent(parts)}`}
+                  target='_blank'
+                  className="flex flex-col items-center justify-center border hover:border-blue-600 p-3 rounded-sm bg-white"
+                >
+                  <Image
+                    alt={`${p.make} parts`}
+                    src={`/img/car-logos/${p.img}`}
+                    height={90}
+                    width={90}
+                    className="object-contain"
+                    priority
+                  />
+                  <span className={`mt-2 px-3 py-1 text-sm xl:text-lg xxl:text-lg md:text-lg lg:text-base font-medium font-sans rounded-sm text-center w-max ${firaSans.className}`}>
+                    <span className='text-blue-500'>{p.make}</span> {decodeURIComponent(parts)}
+                  </span>
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <TenEntries />
+      <Counter />
+      <section>
+        <h3 className="text-black text-4xl text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
+          Search{' '}
+          <span className="text-blue-500">
+            {decodeURIComponent(partsData.parts)}{' '}
+          </span>
+          parts in UAE
+        </h3>
+        <ul className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-7 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
+          {staticcity.map((post, i) => (
+            <li key={i}>
+              <Link
+                href="/search-by-cities-in-uae/[city]"
+                as={'/search-by-cities-in-uae/' + post}
+                title={
+                  decodeURIComponent(partsData.parts) + ' in ' + post
+                }
+              >
+                <div className={`border h-full text-sm xl:text-2xl xxl:text-2xl font-medium font-sans rounded-sm text-center hover:border-blue-600 py-3 bg-gray-100 rounded-sm ${firaSans.className}`}>
+                  {decodeURIComponent(partsData.parts)} in <span className='text-blue-500'>{post}</span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

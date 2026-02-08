@@ -15,6 +15,15 @@ export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 
+const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
+  "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
+  "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
+  , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
+  , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
+  "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
+  , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+]
+
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
 
 const imagePaths = {
@@ -352,7 +361,6 @@ function getModel(make) {
 export default function Model({ params, searchParams }) {
   const make = decodeURIComponent(params.make);
   const model = decodeURIComponent(params.model);
-
   const imageMake = getMakeImage(make, model);
   const description = getDescription(make, model);
   const uniqueMakeArray = getModel(make);
@@ -871,6 +879,42 @@ export default function Model({ params, searchParams }) {
       </section>
 
       <TenEntries />
+
+      <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
+        <div className="container py-6">
+          <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+            Search All <span className='text-blue-500'>{make}</span> Parts in UAE
+          </h2>
+
+          <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+            {partspost
+              .filter(post => selectedParts.includes(post.parts))
+              .map((post, i) => {
+                return (
+                  <li key={i} className="border">
+                    <a href={`/search-by-make/${decodeURIComponent(make)}/${decodeURIComponent(model)}/${decodeURIComponent(post.category)}/${decodeURIComponent(post.parts)}`} target="_blank">
+                      <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                        <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
+                          <Image
+                            src={post.img || '/img/parts/car-spare-parts.png'}
+                            alt={`${make} ${model} ${post.parts}`}
+                            className="max-w-full max-h-full object-contain"
+                            width={120}
+                            height={120}
+                          />
+                        </div>
+                        <p className="text-center font-sans font-medium text-base">
+                          <span>{make} {model} {post.parts}</span>
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+      </section>
 
 
       <section aria-labelledby="featured-deals" className="xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">

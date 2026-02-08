@@ -781,15 +781,13 @@ export default function MakePage({ params, searchParams }) {
                   className="object-none object-center p-1"
                   priority
                 />
-
-                {/* CTA */}
-                <Link
+                <a
                   href={item.link}
                   title={`${make} ${item.name}`}
                   className="items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:px-5 xs:py-2 xs:text-xs xs:my-2 xxs:text-sm xxs:my-2 s:text-sm s:my-2 focus:filter brightness-125 mt-3 block text-center"
                 >
                   Inquire Now
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

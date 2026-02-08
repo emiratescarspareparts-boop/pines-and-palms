@@ -69,7 +69,7 @@ const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor"
     "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
     , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
     , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
-    "Gearbox", "Headlight Assembly", "Hood", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
+    "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
     , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
 ]
 
@@ -132,8 +132,8 @@ export function generateStaticParams() {
             if (!generated.has(key)) {
                 generated.add(key);
                 params.push({
-                    make: make,
-                    parts: partEntry.parts,
+                    make: encodeURIComponent(make),
+                    parts: encodeURIComponent(partEntry.parts),
                 });
             }
         }
@@ -316,7 +316,11 @@ export function generateMetadata({ params }) {
                 url: 'https://www.emirates-car.com/icons/icon-152x152.png',
             },
         },
-        category: `${make} auto spare parts`,
+        category: `${partEntry.category} > ${partEntry.parts} > ${decodedMake}`,
+        other: {
+            'product:brand': { decodedMake },
+            'product:category': `${partEntry.category} > ${partEntry.parts}`,
+        },
         alternates: {
             canonical: canonicalUrl,
         },
@@ -541,12 +545,12 @@ export default function Parts({ params, searchParams }) {
                                 if (isBattery) {
                                     linkHref = '/car-battery-replacement-services-in-uae'
                                     linkAs = '/car-battery-replacement-services-in-uae'
-                                } else if (excludedMakes) {
+                                } else if (excludedMakes === make) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
                                 } else {
                                     linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
-                                    linkAs = `/search-by-make/${post.make}/${post.model}/${partsData.category}/${parts}`
+                                    linkAs = `/search-by-make/${encodeURIComponent(post.make)}/${encodeURIComponent(post.model)}/${encodeURIComponent(partEntry.category)}/${parts}`
                                 }
 
 
@@ -582,40 +586,38 @@ export default function Parts({ params, searchParams }) {
                     </h2>
 
                     <ul className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
-                        {makedatas.map((post, i) => {
-                            // Check if the given [parts] exists for this make
-                            const partsAvailable = products.some(p =>
-                                p.compatibility?.some(c =>
-                                    c.make.toLowerCase() === post.make.toLowerCase()
-                                ) &&
-                                p.subcategory.toLowerCase() === decodeURIComponent(partEntry.parts).toLowerCase()
-                            );
+                        {makedatas
+                            .filter(post => !excludedMakes.includes(post.make))
+                            .map((post, i) => {
+                                // Check if this part is in selectedParts
+                                const isPartAvailable = selectedParts.includes(partEntry.parts);
 
-                            // Build link conditionally
-                            const href = partsAvailable
-                                ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
-                                : `/search-by-make/${encodeURIComponent(post.make)}`;
+                                // Build link conditionally
+                                const href = isPartAvailable
+                                    ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
+                                    : `/get-in-touch`;
 
-                            return (
-                                <li key={i} className="border">
-                                    <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
-                                        <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
-                                            <Image
-                                                src={`/img/car-logos/${post.img}`}
-                                                alt={`${post.make} spare parts`}
-                                                className="mx-auto m-3"
-                                                width={70}
-                                                height={70}
-                                            />
-                                            <p className="text-center font-sans font-medium text-lg">
-                                                <span className="text-blue-600">{post.make}</span>{" "}
-                                                {decodeURIComponent(partEntry.parts)}
-                                            </p>
-                                        </span>
-                                    </Link>
-                                </li>
-                            );
-                        })}
+                                return (
+                                    <li key={i} className="border">
+                                        <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
+                                            <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                                                <Image
+                                                    src={`/img/car-logos/${post.img}`}
+                                                    alt={`${post.make} spare parts`}
+                                                    className="mx-auto m-3"
+                                                    width={70}
+                                                    height={70}
+                                                />
+                                                <p className="text-center font-sans font-medium text-lg">
+                                                    <span className="text-blue-600">{post.make}</span>{" "}
+                                                    {decodeURIComponent(partEntry.parts)}
+                                                </p>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                );
+                            })
+                        }
                     </ul>
 
                 </section>
@@ -793,6 +795,8 @@ export default function Parts({ params, searchParams }) {
                             engines, or secure bulk order pricing for your workshop.
                         </p>
                     </section></> : ""}
+
+
             </div>
         )}
             {hasPartInSubcategory && (
@@ -866,7 +870,7 @@ export default function Parts({ params, searchParams }) {
                                         : '/search-by-make/[make]/[model]/[category]/[subcategory]';
                                     const linkAs = excludedMakes
                                         ? '/get-in-touch'
-                                        : `/search-by-make/${post.make}/${post.model}/${partsData.category}/${parts}`;
+                                        : `/search-by-make/${post.make}/${post.model}/${partEntry.category}/${parts}`;
 
                                     return (
                                         <li key={i} className="h-full">
@@ -877,7 +881,7 @@ export default function Parts({ params, searchParams }) {
                                                 title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
                                                 className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
                                             >
-                                                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline">
                                                     <span className='text-blue-600'>{make} {post.model}</span> {decodeURIComponent(parts)} parts
                                                 </span>
                                             </Link>
@@ -900,41 +904,37 @@ export default function Parts({ params, searchParams }) {
                         </h2>
 
                         <ul className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-6 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-2 gap-3 xs:gap-1 xxs:gap-1 sm:gap-2 s:gap-2 md:gap-2 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 mx-10">
-                            {makedatas.map((post, i) => {
-                                // Check if the given [parts] exists for this make
-                                const partsAvailable = products.some(p =>
-                                    p.compatibility?.some(c =>
-                                        c.make.toLowerCase() === post.make.toLowerCase()
-                                    ) &&
-                                    p.subcategory.toLowerCase() === decodeURIComponent(partEntry.parts).toLowerCase()
-                                );
+                            {makedatas
+                                .filter(post => !excludedMakes.includes(post.make))
+                                .map((post, i) => {
+                                    const isPartAvailable = selectedParts.includes(partEntry.parts);
 
-                                // Build link conditionally
-                                const href = partsAvailable
-                                    ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
-                                    : `/search-by-make/${encodeURIComponent(post.make)}`;
+                                    // Build link conditionally
+                                    const href = isPartAvailable
+                                        ? `/search-by-make/${encodeURIComponent(post.make)}/parts/${encodeURIComponent(partEntry.parts)}`
+                                        : `/get-in-touch`;
 
-                                return (
-                                    <li key={i} className="border">
-                                        <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
-                                            <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
-                                                <Image
-                                                    src={`/img/car-logos/${post.img}`}
-                                                    alt={`${post.make} spare parts`}
-                                                    className="mx-auto m-3"
-                                                    priority
-                                                    width={70}
-                                                    height={70}
-                                                />
-                                                <p className="text-center font-sans font-medium text-lg">
-                                                    <span className="text-blue-600">{post.make}</span>{" "}
-                                                    {decodeURIComponent(partEntry.parts)}
-                                                </p>
-                                            </span>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
+                                    return (
+                                        <li key={i} className="border">
+                                            <Link href={href} title={`${post.make} ${decodeURIComponent(partEntry.parts)}`}>
+                                                <span className="h-full hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                                                    <Image
+                                                        src={`/img/car-logos/${post.img}`}
+                                                        alt={`${post.make} spare parts`}
+                                                        className="mx-auto m-3"
+                                                        width={70}
+                                                        height={70}
+                                                    />
+                                                    <p className="text-center font-sans font-medium text-lg">
+                                                        <span className="text-blue-600">{post.make}</span>{" "}
+                                                        {decodeURIComponent(partEntry.parts)}
+                                                    </p>
+                                                </span>
+                                            </Link>
+                                        </li>
+                                    );
+                                })
+                            }
                         </ul>
                     </section>
 
@@ -1112,6 +1112,42 @@ export default function Parts({ params, searchParams }) {
                                 engines, or secure bulk order pricing for your workshop.
                             </p>
                         </section></> : ""}
+
+                    <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
+                        <div className="container py-6">
+                            <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+                                Search All <span className='text-blue-500'>{make}</span> Parts in UAE
+                            </h2>
+
+                            <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+                                {partsposts
+                                    .filter(post => selectedParts.includes(post.parts))
+                                    .map((post, i) => {
+                                        return (
+                                            <li key={i} className="border">
+                                                <a href={`/search-by-make/${decodeURIComponent(make)}/parts/${decodeURIComponent(post.parts)}`} target="_blank">
+                                                    <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                                                        <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
+                                                            <Image
+                                                                src={post.img || '/img/parts/car-spare-parts.png'}
+                                                                alt={`${make} ${post.parts}`}
+                                                                className="max-w-full max-h-full object-contain"
+                                                                width={120}
+                                                                height={120}
+                                                            />
+                                                        </div>
+                                                        <p className="text-center font-sans font-medium text-base">
+                                                            <span>{make} {post.parts}</span>
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             )}
         </>

@@ -32,7 +32,7 @@
         "parts": "AC Evaporator",
         "category": "AC & Heating (HVAC)",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/AC_Evaporator.png"
     },
     {
         "id": 6,
@@ -53,7 +53,7 @@
         "parts": "Air Bag Assembly",
         "category": "Airbag & Safety System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/Airbags.png"
     },
     {
         "id": 9,
@@ -115,7 +115,8 @@
         "id": 16,
         "parts": "Alternator",
         "category": "Electrical & Electronics",
-        "description": "Alternators for all vehicles are manufactured using Quality Standards and 100% end-of-line computerised."
+        "description": "Alternators for all vehicles are manufactured using Quality Standards and 100% end-of-line computerised.",
+        "img": "/img/parts/alternator.png"
     },
     {
         "id": 17,
@@ -136,7 +137,7 @@
         "parts": "Anti-Lock Brake Control Module (ABS)",
         "category": "Brakes & ABS Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/abs.png"
     },
     {
         "id": 20,
@@ -150,7 +151,7 @@
         "parts": "Axle Assembly",
         "category": "Transmission & Drivetrain",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/axleassembly.png"
     },
     {
         "id": 21,
@@ -185,7 +186,7 @@
         "parts": "Axle Shaft",
         "category": "Transmission & Drivetrain",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/axleshaft.png"
     },
     {
         "id": 26,
@@ -205,7 +206,8 @@
         "id": 28,
         "parts": "Battery",
         "category": "Electrical & Electronics",
-        "description": "The Automobile Batteries are manufactured using high power and performance."
+        "description": "The Automobile Batteries are manufactured using high power and performance.",
+        "img": "/img/parts/battery.png"
     },
     {
         "id": 29,
@@ -240,13 +242,14 @@
         "parts": "Body Control Module (BCM)",
         "category": "Electrical & Electronics",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bcm.png"
     },
     {
         "id": 34,
         "parts": "Brake Booster",
         "category": "Brakes & ABS Parts",
-        "description": "Braking system from high end manufacturers."
+        "description": "Braking system from high end manufacturers.",
+        "img": "/img/parts/brakebooster.png"
     },
     {
         "id": 279,
@@ -260,28 +263,28 @@
         "parts": "Bumper Assembly (Front)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bumpers.png"
     },
     {
         "id": 36,
         "parts": "Bumper Assembly (Rear)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bumpers.png"
     },
     {
         "id": 37,
         "parts": "Bumper Cover (Front)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bumpers.png"
     },
     {
         "id": 38,
         "parts": "Bumper Cover (Rear)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bumpers.png"
     },
     {
         "id": 39,
@@ -309,14 +312,14 @@
         "parts": "Camshaft",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/camshaft.png"
     },
     {
         "id": 43,
         "parts": "Carburetor",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/carburetor.png"
     },
     {
         "id": 44,
@@ -337,7 +340,7 @@
         "parts": "Catalytic Convertor",
         "category": "Exhaust & Emission System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/catalyticconverter.png"
     },
     {
         "id": 46,
@@ -372,7 +375,7 @@
         "parts": "Coil (Ignition)",
         "category": "Ignition Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/ignitioncoil.png"
     },
     {
         "id": 51,
@@ -449,7 +452,7 @@
         "parts": "Cooling Fans Assembly (Rad. & Cond.)",
         "category": "Cooling System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/radiatorfan.png"
     },
     {
         "id": 62,
@@ -470,7 +473,7 @@
         "parts": "Crankshaft",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/crankshaft.png"
     },
     {
         "id": 65,
@@ -491,14 +494,14 @@
         "parts": "Cylinder Head",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/cylinderhead.png"
     },
     {
         "id": 68,
         "parts": "Dashboard Assembly",
         "category": "Interior Parts & Comfort",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/dashboard.png"
     },
     {
         "id": 69,
@@ -694,7 +697,7 @@
         "parts": "Engine Assembly",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/engine.png"
     },
     {
         "id": 97,
@@ -715,7 +718,7 @@
         "parts": "Engine Mount",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/enginemount.png"
     },
     {
         "id": 100,
@@ -736,7 +739,7 @@
         "parts": "Exhaust Manifold",
         "category": "Exhaust & Emission System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/exhaustmanifold.png"
     },
     {
         "id": 103,
@@ -764,28 +767,28 @@
         "parts": "Fender (Front)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/frontfender.png"
     },
     {
         "id": 107,
         "parts": "Fender (Rear)",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/fenderrear.webp"
     },
     {
         "id": 108,
         "parts": "Flywheel",
         "category": "Transmission & Drivetrain",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/flywheel.png"
     },
     {
         "id": 109,
         "parts": "Fog Light",
         "category": "Lighting & Lamps",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/foglight.png"
     },
     {
         "id": 110,
@@ -820,14 +823,14 @@
         "parts": "Fuel Injection Pump",
         "category": "Fuel System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/fuelinjectionpump.png"
     },
     {
         "id": 115,
         "parts": "Fuel Pump",
         "category": "Fuel System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/fuelpump.png"
     },
     {
         "id": 116,
@@ -876,14 +879,14 @@
         "parts": "Grille",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/grille.png"
     },
     {
         "id": 286,
         "parts": "Gearbox",
         "category": "Transmission & Drivetrain",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/gearbox.png"
     },
     {
         "id": 123,
@@ -925,7 +928,7 @@
         "parts": "Headlight Assembly",
         "category": "Lighting & Lamps",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/headlight.png"
     },
     {
         "id": 129,
@@ -1051,7 +1054,7 @@
         "parts": "Intake Manifold",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/intakemanifold.png"
     },
     {
         "id": 147,
@@ -1142,7 +1145,7 @@
         "parts": "Master Cylinder",
         "category": "Brakes & ABS Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/mastercylinder.png"
     },
     {
         "id": 159,
@@ -1226,7 +1229,7 @@
         "parts": "Oil Pump",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/oilpump.png"
     },
     {
         "id": 1691,
@@ -1268,7 +1271,7 @@
         "parts": "Piston",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/piston.png"
     },
     {
         "id": 175,
@@ -1330,14 +1333,15 @@
         "id": 183,
         "parts": "Radiator",
         "category": "Cooling System",
-        "description": "Well performing radiator for top and bottom tanks."
+        "description": "Well performing radiator for top and bottom tanks.",
+        "img": "/img/parts/radiator.png"
     },
     {
         "id": 184,
         "parts": "Radiator Cooling Fan",
         "category": "Cooling System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/radiatorfan.png"
     },
     {
         "id": 185,
@@ -1526,7 +1530,7 @@
         "parts": "Shock Absorber",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/shockabsorber.png"
     },
     {
         "id": 212,
@@ -1568,7 +1572,7 @@
         "parts": "Speedometer Cluster",
         "category": "Interior Parts & Comfort",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/speedometercluster.png"
     },
     {
         "id": 218,
@@ -1596,14 +1600,14 @@
         "parts": "Starter",
         "category": "Electrical & Electronics",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/starter.png"
     },
     {
         "id": 222,
         "parts": "Steering Box",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/steeringbox.png"
     },
     {
         "id": 223,
@@ -1617,14 +1621,14 @@
         "parts": "Steering Rack",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/steeringrack.png"
     },
     {
         "id": 225,
         "parts": "Steering Wheel",
         "category": "Interior Parts & Comfort",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/steeringwheel.png"
     },
     {
         "id": 226,
@@ -1729,7 +1733,7 @@
         "parts": "Taillight",
         "category": "Lighting & Lamps",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/taillight.png"
     },
     {
         "id": 241,
@@ -1757,7 +1761,7 @@
         "parts": "Throttle Body Assembly",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/throttlebodyassembly.png"
     },
     {
         "id": 245,
@@ -1862,7 +1866,7 @@
         "parts": "Turbocharger",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/turbocharger.png"
     },
     {
         "id": 260,
@@ -1946,14 +1950,14 @@
         "parts": "Water Pump",
         "category": "Cooling System",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/waterpump.png"
     },
     {
         "id": 272,
         "parts": "Wheel",
         "category": "Wheels, Tires & Hub Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/wheel.png"
     },
     {
         "id": 273,
@@ -2002,7 +2006,7 @@
         "parts": "Bonnet",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bonnet.png"
     },
     {
         "id": 281,
@@ -2030,7 +2034,7 @@
         "parts": "Suspension",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/suspension.png"
     },
     {
         "id": 285,
@@ -2044,7 +2048,7 @@
         "parts": "Brake Disc",
         "category": "Brakes & ABS Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/brakedisc.png"
     },
     {
         "id": 287,
@@ -2058,7 +2062,7 @@
         "parts": "Engine Gasket",
         "category": "Engine Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/enginegasket.png"
     },
     {
         "id": 289,
@@ -2086,7 +2090,7 @@
         "parts": "Bumpers",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/bumpers.png"
     },
     {
         "id": 293,
@@ -2107,34 +2111,34 @@
         "parts": "Differential Assembly",
         "category": "Transmission & Drivetrain",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/differentialassembly.png"
     },
     {
         "id": 296,
         "parts": "Lower Control Arm",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/lowercontrolarm.png"
     },
     {
         "id": 297,
         "parts": "Upper Control Arm",
         "category": "Suspension & Steering Parts",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/uppercontrolarm.png"
     },
     {
         "id": 298,
         "parts": "Mirrors",
         "category": "Glass & Mirrors",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/mirrors.png"
     },
     {
         "id": 299,
         "parts": "Spoiler",
         "category": "Body Kits",
         "description": "",
-        "img": "/img/parts/car-spare-parts.png"
+        "img": "/img/parts/spoiler.png"
     }
 ]
