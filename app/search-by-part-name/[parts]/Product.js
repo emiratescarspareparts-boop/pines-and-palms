@@ -51,7 +51,7 @@ export default function Product({ products, allProducts, parts, searchParams }) 
                                     itemType="https://schema.org/Product"
                                 >
                                     <Link
-                                        href={`/search-by-part-name/${parts}/${encodeURIComponent(slug)}`}
+                                        href={`/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(product.category)}/${parts}/${encodeURIComponent(slug)}`}
                                         className="flex flex-col h-full"
                                         target="_blank"
                                         title={`${make} ${model} ${years} ${product.partname}`}

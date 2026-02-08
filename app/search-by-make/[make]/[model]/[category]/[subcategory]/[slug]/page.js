@@ -134,6 +134,9 @@ export async function generateMetadata({ params }) {
         return years.join(", ");
     };
 
+    var today = new Date();
+    var currentYear = today.getFullYear();
+    var endOfYear = new Date(currentYear, 11, 31);
 
 
     const faqSchema = {
@@ -141,7 +144,7 @@ export async function generateMetadata({ params }) {
         "@graph": [
             {
                 "@type": "Product",
-                "name": `${product.item_specifics?.Brand || ""} ${product.partname} for ${decodedMake} ${decodedModel}`,
+                "name": `${product.item_specifics?.Brand || ""} ${product.partname} for ${decodeURIComponent(make)} ${decodeURIComponent(model)}`,
                 "category": product.category,
                 "mpn": product.partnumber, // Clean MPN is better for matching
                 "sku": product.item_specifics?.sku || product.partnumber,
@@ -150,7 +153,7 @@ export async function generateMetadata({ params }) {
                     "name": product.item_specifics?.Brand || "Genuine"
                 },
                 "image": `https://www.emirates-car.com/${product.image}`,
-                "description": `Premium ${product.item_specifics?.Condition || "New"} ${product.partname} (${product.partnumber}) specifically for ${decodedMake} ${decodedModel}. Guaranteed fitment and quality tested.`,
+                "description": `Premium ${product.item_specifics?.Condition || "New"} ${product.partname} (${product.partnumber}) specifically for ${decodeURIComponent(make)} ${decodeURIComponent(model)}. Guaranteed fitment and quality tested.`,
 
                 "aggregateRating": {
                     "@type": "AggregateRating",
@@ -163,7 +166,7 @@ export async function generateMetadata({ params }) {
                     "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
                     "priceCurrency": product.pricing.currency || "AED",
                     "price": parseFloat(product.pricing.price) || 0,
-                    "priceValidUntil": currentYearEnd, // FIX: Resolves Google warning
+                    "priceValidUntil": endOfYear,
                     "availability": product.availability === "In Stock" ? "http://schema.org/InStock" : "http://schema.org/OutOfStock",
                     "itemCondition": product.item_specifics?.Condition === "Used" ? "http://schema.org" : "http://schema.org",
                     "shippingDetails": {
