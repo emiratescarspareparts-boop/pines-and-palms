@@ -88,17 +88,26 @@ function getPartsData(parts) {
     }
   }
 
-  return null;
+  return {
+    parts: decodedParts,
+    category: "Auto Parts",
+    description: "",
+    img: "/img/parts/car-spare-parts.png"
+  };
 }
 export function generateMetadata({ params }) {
   const { parts } = params;
   const decodedParts = decodeURIComponent(parts);
   const partsData = getPartsData(parts);
 
+  // ADD NULL CHECK HERE
+  const category = partsData?.category
+    ? `${partsData.category} > ${decodedParts}`
+    : `Auto Parts > ${decodedParts}`;
 
   return {
     title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
-    description: `Buy ${decodedParts}  Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
+    description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
     openGraph: {
       title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
       description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
@@ -137,11 +146,11 @@ export function generateMetadata({ params }) {
         url: 'https://emirates-car.com/icons/icon-152x152.png',
       },
     },
-    category: `${partsData.category} > ${decodedParts}`,
+    category: category, // USE THE SAFE VARIABLE
     alternates: {
       canonical: `https://www.emirates-car.com/search-by-part-name/${parts}`,
     },
-    keywords: `car ${decodedParts} price, car ${decodedParts} cost, car ${decodedParts} near me, car ${decodedParts} replacement, ${decodedParts} price in UAE, ${decodedParts} sharjah cost, , ${decodedParts} dubai cost, , ${decodedParts} abu dhabi price, best ${decodedParts} abu dhabi, best ${decodedParts} dubai, best ${decodedParts} sharjah`,
+    keywords: `car ${decodedParts} price, car ${decodedParts} cost, car ${decodedParts} near me, car ${decodedParts} replacement, ${decodedParts} price in UAE, ${decodedParts} sharjah cost, ${decodedParts} dubai cost, ${decodedParts} abu dhabi price, best ${decodedParts} abu dhabi, best ${decodedParts} dubai, best ${decodedParts} sharjah`,
   };
 }
 
@@ -283,15 +292,7 @@ export default function Parts({ params, searchParams }) {
                 <li key={i} className="border">
                   <a href={linkHref} target="_blank" title={`car ${post.parts} price`}>
                     <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
-                      <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
-                        <Image
-                          src={post.img || '/img/parts/car-spare-parts.png'}
-                          alt={`${post.parts}`}
-                          className="max-w-full max-h-full object-contain"
-                          width={120}
-                          height={120}
-                        />
-                      </div>
+
                       <p className="text-center font-sans font-medium text-base">
                         <span>{post.parts}</span>
                       </p>
