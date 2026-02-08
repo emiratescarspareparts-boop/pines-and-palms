@@ -70,7 +70,7 @@ export default function HondaAccord({ searchParams }) {
   });
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div className="d-flex justify-center  pt-10 xs:pt-5 mx-8">
         <h1 className="text-4xl md:text-lg lg:text-2xl text-center font-extrabold xs:text-base 2xs:text-xs">
           2008 - 2012 8TH Generation Honda Accord Spare Parts parts - Used /

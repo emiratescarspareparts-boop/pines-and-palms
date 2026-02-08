@@ -10,6 +10,7 @@ import PartsData from "../../../public/lib/parts.json"
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 import FormOnly from '../../../components/FormOnly';
+import Product from './Product';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
@@ -275,6 +276,17 @@ export default function Parts({ params, searchParams }) {
         <FormOnly formsData={modelsform} />
       </div>
 
+
+      <section>
+        {filteredProducts.length > 0 ?
+          <Product
+            parts={parts}
+            allProducts={products}
+            products={filteredProducts}
+          /> : <></>}
+      </section>
+
+
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
           <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
@@ -304,6 +316,7 @@ export default function Parts({ params, searchParams }) {
           </ul>
         </div>
       </section>
+
       <div className="flex xs:grid xs:grid-cols-1 s:grid s:grid-cols-1 sm:grid sm:grid-cols-1 xxs:grid xxs:grid-cols-1">
         <div>
           <div className="grid grid-cols-1 s:grid s:grid-cols-1 xs:grid xs:grid-cols-1 xxs:grid xxs:grid-cols-1 sm:grid sm:grid-cols-1">

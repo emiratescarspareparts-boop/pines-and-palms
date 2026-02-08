@@ -327,6 +327,7 @@ export function generateMetadata({ params }) {
             'product:model': `${model}`,
             'product:category': `${category} > ${subcategory}`,
         },
+        keywords: `${subcategory} for ${make} ${model} in dubai, buy ${make} ${model} ${subcategory} online UAE`,
         alternates: {
             canonical: canonicalUrl,
         },

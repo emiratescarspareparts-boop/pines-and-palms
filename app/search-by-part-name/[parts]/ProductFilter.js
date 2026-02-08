@@ -20,7 +20,7 @@ const firaSans = Fira_Sans({
     variable: "--font-fira-sans",
 });
 
-export default function ProductFilter({ products, allProducts, searchParams }) {
+export default function ProductFilter({ products, searchParams }) {
     const router = useRouter();
     const [localQuery, setLocalQuery] = useState(searchParams?.search || "");
     const [suggestions, setSuggestions] = useState([]);
