@@ -46547,5 +46547,38 @@
     "model": "Seca (Corolla)",
     "description": "",
     "keyword": "."
+  },
+  {
+    "id": 14430,
+    "year": [
+      2010
+    ],
+    "make": "GMC",
+    "img": "gmc.webp",
+    "model": "Suburban",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14431,
+    "year": [
+      2010
+    ],
+    "make": "Volvo",
+    "img": "volvo.webp",
+    "model": "V60",
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14432,
+    "year": [
+      2010
+    ],
+    "make": "Volvo",
+    "img": "volvo.webp",
+    "model": "XC40",
+    "description": "",
+    "keyword": "."
   }
 ]

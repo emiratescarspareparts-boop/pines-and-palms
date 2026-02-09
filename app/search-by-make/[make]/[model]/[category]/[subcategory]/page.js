@@ -726,6 +726,8 @@ export default function SubcategoryPage({ params, searchParams }) {
                         </div>
                     </div>
                 </div>
+
+
                 <div className=" mt-10 xs:pt-5 s:pt-5">
                     {isBattery ? (<>
                         <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>

@@ -9,6 +9,7 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import ShowCities from './ShowCities';
 import ShowMake from './ShowMake';
 import ShowParts from './ShowParts';
+import SitemapRender from './sitemap';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -46,6 +47,8 @@ export default function Make() {
 
   return (
     <div className='max-w-7xl mx-auto'>
+
+      <SitemapRender />
       <div className="bg-white">
         {/* Hero Section */}
         <div className="container mx-auto px-6 py-6">
