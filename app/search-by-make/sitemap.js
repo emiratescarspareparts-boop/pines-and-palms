@@ -31,7 +31,7 @@ const selectedParts = [
 ];
 
 export default function SitemapRender() {
-    const make = "Infiniti"; // Change this to any make you want
+    const make = "Mercedes-Benz"; // Change this to any make you want
 
     const selectedPartsSet = new Set(selectedParts.map(p => p.toLowerCase()));
 
