@@ -111,9 +111,9 @@ export default function HondaAccord({ searchParams }) {
           Inquire Now
         </Link>
         <div className="py-10 xs:py-5">
-          <p className="text-blue-600 text-2xl md:text-sm lg:text-lg font-extrabold xs:text-xl 2xs:text-xs py-5 text-center">
+          <h2 className="text-blue-600 text-2xl md:text-sm lg:text-lg font-extrabold xs:text-xl 2xs:text-xs py-5 text-center">
             8th Gen Honda Accord Body parts Aerodynamics upgrades parts:
-          </p>
+          </h2>
           <div className="grid grid-cols-5 xs:grid-cols-1">
             <div>
               <div className="border-2 p-5 relative text-center">
@@ -560,9 +560,9 @@ export default function HondaAccord({ searchParams }) {
         <FeaturedHonda />
       </div>
       <div className="d-flex justify-center text-center pt-10 xs:pt-5 mx-8 ">
-        <p className="text-black text-4xl md:text-sm lg:text-lg font-extrabold xs:text-base 2xs:text-xs py-5 shadow-lg hover:shadow-2xl">
+        <h2 className="text-black text-4xl md:text-sm lg:text-lg font-extrabold xs:text-base 2xs:text-xs py-5 shadow-lg hover:shadow-2xl">
           Genuine vs Aftermarket? Hard to decide? Read the following small guide
-        </p>
+        </h2>
         <Link
           href="https://www.emirates-car.com/honda-parts#oemvsaftermarket"
           className="text-white text-4xl xs:text-xl font-mono italic"
@@ -602,15 +602,15 @@ export default function HondaAccord({ searchParams }) {
       </div>
       <div className="d-flex  pt-10 xs:pt-5 mx-8">
         <div>
-          <p className="text-3xl font-extrabold mx-auto my-5 justify-center text-center">
+          <h2 className="text-3xl font-extrabold mx-auto my-5 justify-center text-center">
             List of different Genuine and Aftermarket Honda Accord 8th
             Generation spare parts in UAE
-          </p>
+          </h2>
           <div className="grid grid-cols-3 xs:grid-cols-1 place-content-center">
             <div>
-              <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
+              <h2 className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
                 Honda Accord Engine parts
-              </p>
+              </h2>
               <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
                 <li>
                   <Link
@@ -726,11 +726,10 @@ export default function HondaAccord({ searchParams }) {
                 </li>
               </ol>
             </div>
-
             <div>
-              <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
+              <h2 className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
                 Honda Accord Mechanical parts
-              </p>
+              </h2>
               <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
                 <li>
                   <Link
@@ -816,9 +815,9 @@ export default function HondaAccord({ searchParams }) {
             </div>
 
             <div>
-              <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
+              <h2 className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
                 Honda Accord Body Parts
-              </p>
+              </h2>
               <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
                 <li>
                   <Link
@@ -864,9 +863,9 @@ export default function HondaAccord({ searchParams }) {
             </div>
 
             <div>
-              <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
+              <h2 className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
                 Honda Accord Electrical Parts
-              </p>
+              </h2>
               <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
                 <li>
                   <Link
@@ -912,9 +911,9 @@ export default function HondaAccord({ searchParams }) {
             </div>
 
             <div>
-              <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
+              <h2 className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">
                 Honda Accord AC Parts
-              </p>
+              </h2>
               <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
                 <li>
                   <Link
@@ -1051,7 +1050,6 @@ export default function HondaAccord({ searchParams }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

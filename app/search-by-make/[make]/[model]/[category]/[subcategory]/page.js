@@ -475,10 +475,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                             You just have to submit your inquiry in the form below, our team will get back to you soon. Either you search for <span className="font-bold">"{make} {model} battery replacement in dubai"</span> or <span className="font-bold">"{make} {model} battery replacement in sharjah"</span> or <span className="font-bold">"{make} {model} battery replacement near me"</span>, we are your final destination. We will take you through the journey further.
                         </div>
 
-                    </>) : (<><p className={`text-xl py-4 font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-                        If you are looking for {make} {model} {subcategory}, submit your inquiry below, Our team will get back to you through whatsapp based on stock availability
-                    </p></>)}
-
+                    </>) : (<></>)}
                 </div>
 
                 {isBattery ? (<> <div className="grid grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1 mx-auto xl:px-10 xs:px-3 xxs:px-4 md:px-5 lg:px-6 mt-5 border-2 p-5 rounded-sm">
