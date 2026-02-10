@@ -1,25 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import SearchMake from '../../components/SearchMake';
 import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 import FormOnly from '../../components/FormOnly';
-import { Fira_Sans, Playfair_Display } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 import ShowCities from './ShowCities';
 import ShowMake from './ShowMake';
 import ShowParts from './ShowParts';
-import SitemapRender from './sitemap';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 
-const firaSans = Fira_Sans({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fira-sans',
-});
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
