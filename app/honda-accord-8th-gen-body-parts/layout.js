@@ -11,7 +11,7 @@ export const viewport = {
 
 export const metadata = {
   title:
-    '8TH Generation Honda Accord 2008, 2009, 2010, 2011, 2012 parts - Used / Genuine / OEM /  Aftermarket | EMIRATESCAR',
+    '8TH Generation Honda Accord 2008, 2009, 2010, 2011, 2012 parts - Used, Genuine, OEM,  Aftermarket | EMIRATESCAR',
   description:
     'Engines for 2.4L, 3.5L, 2.2L VTEC, DTEC, V6 engines , Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
   openGraph: {
@@ -20,7 +20,7 @@ export const metadata = {
       '8TH Generation Honda Accord 2008, 2009, 2010, 2011, 2012 parts - Used / Genuine / OEM /  Aftermarket | EMIRATESCAR',
     description:
       'Engines for 2.4L, 3.5L, 2.2L VTEC, DTEC, V6 engines , Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-    url: 'https://www.emirates-car.com/contact',
+    url: 'https://www.emirates-car.com/honda-accord-8th-gen-body-parts',
     image: 'https://www.emirates-car.com/img/car-logos/Honda.webp',
     siteName: 'EMIRATESCAR',
     images: [
@@ -57,9 +57,9 @@ export const metadata = {
       url: '/icons/icon-152x152.png'
     }
   },
-  category: 'car parts',
+  category: 'Honda > Accord > 8th Generation parts',
   alternates: {
-    canonical: 'https://emirates-car.com/honda-accord-8th-gen-body-parts'
+    canonical: 'https://www.emirates-car.com/honda-accord-8th-gen-body-parts'
   },
   keywords:
     'honda accord spare parts sharjah, honda accord spare parts, honda accord 2008 brake pads, honda body parts, honda accord spare parts, 8th gen accord parts, performance parts for honda accord, headlight, tailight, suspension parts'

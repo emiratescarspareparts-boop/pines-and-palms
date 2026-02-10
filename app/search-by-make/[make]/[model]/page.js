@@ -154,7 +154,7 @@ export function generateStaticParams() {
       if (!excludedMakesSet.has(car.make)) {
         const key = `${car.make}-${car.model}`;
         if (!uniquePairs.has(key)) {
-          uniquePairs.set(key, { make: car.make, model: car.model });
+          uniquePairs.set(key, { make: encodeURIComponent(car.make), model: encodeURIComponent(car.model) });
         }
       }
     }
