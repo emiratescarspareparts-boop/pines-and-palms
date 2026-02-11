@@ -25,6 +25,60 @@ const playfair_display = Playfair_Display({
   variable: '--font-playfair-display',
 });
 
+export const metadata = {
+  title:
+    'Auto Spare Parts Order Online in UAE from Dubai dealers | EMIRATESCAR',
+  description:
+    'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
+  openGraph: {
+    images: 'https://www.emirates-car.com/favicon.png',
+    title:
+      'Auto Spare Parts Order Online in UAE from Dubai dealers | EMIRATESCAR',
+    description:
+      'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
+    url: 'https://www.emirates-car.com/search-by-make',
+    image: 'https://www.emirates-car.com/img/car-spare-parts.png',
+    siteName: 'EMIRATESCAR',
+    images: [
+      {
+        url: 'https://www.emirates-car.com/icon-192x192.png',
+        width: 192,
+        height: 192
+      },
+      {
+        url: 'https://www.emirates-car.com/icons/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'car parts'
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'Auto Spare Parts Order Online in UAE from Dubai dealers | EMIRATESCAR',
+    url: `https://www.emirates-car.com/search-by-make`,
+    description:
+      'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
+    images: ['https://www.emirates-car.com/favicon.png']
+  },
+  icons: {
+    icon: 'https://www.emirates-car.com/favicon.png',
+    shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+    apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: 'https://www.emirates-car.com/icons/icon-152x152.png'
+    }
+  },
+  category: 'Vehicle Parts & Accessories',
+  alternates: {
+    canonical: `https://www.emirates-car.com/search-by-make`
+  },
+};
+
 const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
   "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
   "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"

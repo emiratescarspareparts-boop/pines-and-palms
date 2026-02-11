@@ -188,6 +188,7 @@ export function generateMetadata({ params }) {
     var today = new Date();
     var currentYear = today.getFullYear();
     var endOfYear = new Date(currentYear, 11, 31);
+
     return ({
       "@type": "ListItem",
       "position": index + 1,
@@ -338,6 +339,7 @@ export function generateMetadata({ params }) {
         url: 'https://www.emirates-car.com/icons/icon-152x152.png',
       },
     },
+    category: `Vehicle Parts & Accessories > ${make} > ${model}`,
     alternates: {
       canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}`,
     },

@@ -304,7 +304,7 @@ export async function generateMetadata({ params }) {
                 'max-snippet': -1,
             },
         },
-        category: `${decodeURIComponent(category)}`,
+        category: `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory} > ${product.partname}`,
         other: {
             "script:ld+json": JSON.stringify(faqSchema),
         },

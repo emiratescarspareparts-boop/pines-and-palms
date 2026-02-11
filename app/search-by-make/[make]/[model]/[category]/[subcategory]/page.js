@@ -321,7 +321,7 @@ export function generateMetadata({ params }) {
             url: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`,
             siteName: "EMIRATESCAR",
         },
-        category: `${category} > ${subcategory} > ${make}`,
+        category: `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
         other: {
             'product:brand': `${make}`,
             'product:model': `${model}`,

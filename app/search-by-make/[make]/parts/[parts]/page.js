@@ -316,9 +316,9 @@ export function generateMetadata({ params }) {
                 url: 'https://www.emirates-car.com/icons/icon-152x152.png',
             },
         },
-        category: `${partEntry.category} > ${partEntry.parts} > ${decodedMake}`,
+        category: `Vehicle Parts & Accessories > ${decodedMake} > ${partEntry.category} > ${partEntry.parts}`,
         other: {
-            'product:brand': { decodedMake },
+            'product:brand': `${decodedMake}`,
             'product:category': `${partEntry.category} > ${partEntry.parts}`,
         },
         alternates: {
