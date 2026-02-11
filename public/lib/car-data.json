@@ -1706,7 +1706,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Maxima",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2626,7 +2626,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Sentra",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5656,7 +5656,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Pathfinder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6798,7 +6798,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Altima",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10411,7 +10411,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Xterra",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12112,7 +12112,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Murano",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13349,7 +13349,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Armada",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16365,7 +16365,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "370Z",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16404,7 +16404,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "GT-R",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25353,7 +25353,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Juke",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37245,7 +37245,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Kicks",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -44403,7 +44403,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Patrol",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46239,7 +46239,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "X-trail",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46949,7 +46949,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Tiida",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47069,7 +47069,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Z",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47165,7 +47165,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Urvan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47897,7 +47897,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Sunny",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },

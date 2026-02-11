@@ -412,8 +412,15 @@ export default function SubcategoryPage({ params, searchParams }) {
         );
     });
 
+    // Check if this model has seo=true
+    const hasSEO = CarData.some(car =>
+        car.make === make &&
+        car.model === model &&
+        car.seo === true
+    );
+
     // If no products found, show 404
-    if (!isSelectedPart && matchingProducts.length === 0) {
+    if (!hasSEO && !isSelectedPart && matchingProducts.length === 0) {
         notFound();
     }
 
