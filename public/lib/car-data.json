@@ -338,7 +338,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Bronco",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -507,7 +507,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Mustang",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -559,7 +559,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Ranger",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -594,7 +594,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Taurus",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1023,7 +1023,7 @@
     "make": "Maserati",
     "img": "maserati.webp",
     "model": "Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1047,7 +1047,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "626",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1095,7 +1095,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "B-Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1214,7 +1214,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "RX-7",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1248,7 +1248,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "E-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1282,7 +1282,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "S-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1970,7 +1970,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1986,7 +1986,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "928",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -1999,7 +1999,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "944",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2276,7 +2276,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Golf",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2317,7 +2317,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "GTI",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2359,7 +2359,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Jetta",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2400,7 +2400,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Passat",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2472,7 +2472,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Caprice",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2506,7 +2506,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Explorer",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2813,7 +2813,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "3 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2844,7 +2844,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "5 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2876,7 +2876,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "7 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2947,7 +2947,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "Brougham",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2972,7 +2972,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "DeVille",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2994,7 +2994,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "Eldorado",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3010,7 +3010,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "Fleetwood",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3034,7 +3034,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "Seville",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3204,7 +3204,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Camaro",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3284,7 +3284,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Corvette",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3351,7 +3351,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Lumina",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3536,7 +3536,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Imperial",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3599,7 +3599,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Town & Country",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -3870,7 +3870,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Grand Caravan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4067,7 +4067,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Viper",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4716,7 +4716,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Yukon",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4778,7 +4778,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Elantra",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4848,7 +4848,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Sonata",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4878,7 +4878,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "G",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -4899,7 +4899,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "M",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5073,7 +5073,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Cherokee",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5116,7 +5116,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Wrangler",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5132,7 +5132,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Defender",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5188,7 +5188,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "323",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5259,7 +5259,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "MX-3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -5950,7 +5950,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "968",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6334,7 +6334,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "240",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6346,7 +6346,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "740",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6361,7 +6361,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "940",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6584,7 +6584,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Grand Cherokee",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6737,7 +6737,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "C-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6936,7 +6936,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "850",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7001,7 +7001,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Impala",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7078,7 +7078,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 1500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7106,7 +7106,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 2500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7134,7 +7134,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 3500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7250,7 +7250,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Discovery",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7313,7 +7313,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "A6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7437,7 +7437,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Tahoe",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7481,7 +7481,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Sebring",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7526,7 +7526,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Neon",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -7846,7 +7846,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Accent",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8198,7 +8198,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "A4",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8216,7 +8216,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "Z3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8689,7 +8689,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Malibu",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8736,7 +8736,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Expedition",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8900,7 +8900,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "SLK-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9052,7 +9052,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Boxster",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9065,7 +9065,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "S90",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9152,7 +9152,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Durango",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9174,7 +9174,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Envoy",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9482,7 +9482,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "Escalade",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9503,7 +9503,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Silverado",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9580,7 +9580,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9682,7 +9682,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Charger",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9720,7 +9720,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Sierra 1500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9973,7 +9973,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "S80",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9996,7 +9996,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "TT",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10035,7 +10035,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "X5",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10182,7 +10182,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Focus",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10219,7 +10219,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Sierra 3500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10562,7 +10562,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "V40",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10626,7 +10626,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "S8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10733,7 +10733,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Fiesta",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10782,7 +10782,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Santa Fe",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10870,7 +10870,7 @@
     "make": "Kia",
     "img": "kia.webp",
     "model": "Rio",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10890,7 +10890,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Freelander",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10946,7 +10946,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "Tribute",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11111,7 +11111,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "S60",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11248,7 +11248,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Trailblazer",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11355,7 +11355,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Liberty",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11452,7 +11452,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "G-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11474,7 +11474,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11640,7 +11640,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "CTS",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11882,7 +11882,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "G35",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12159,7 +12159,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12236,7 +12236,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Touareg",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12257,7 +12257,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "XC70",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12279,7 +12279,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "XC90",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12346,7 +12346,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "6 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12416,7 +12416,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "SRX",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12452,7 +12452,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Aveo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12541,7 +12541,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Canyon",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12642,7 +12642,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "Mazda3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12661,7 +12661,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "RX-8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12754,7 +12754,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Carrera GT",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12768,7 +12768,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "xA",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12789,7 +12789,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "xB",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12813,7 +12813,7 @@
     "make": "Spyker",
     "img": "spyker.webp",
     "model": "C8 Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12899,7 +12899,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Phaeton",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12964,7 +12964,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Arnage",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12983,7 +12983,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Continental",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13116,7 +13116,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300C",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13196,7 +13196,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Tucson",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13513,7 +13513,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "tC",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13650,7 +13650,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Azure",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13668,7 +13668,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Continental Flying Spur",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13810,7 +13810,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "CTS-V",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13956,7 +13956,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Suburban",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14092,7 +14092,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Fusion",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14110,7 +14110,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Savana",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14182,7 +14182,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Yukon XL",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14360,7 +14360,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Commander",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14398,7 +14398,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Sport",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14513,7 +14513,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "CLS-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14847,7 +14847,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "Q7",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14873,7 +14873,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS4",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14934,7 +14934,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Aspen",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14951,7 +14951,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Caliber",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14967,7 +14967,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Nitro",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15012,7 +15012,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Edge",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15077,7 +15077,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Acadia",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15208,7 +15208,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Compass",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15225,7 +15225,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Patriot",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15323,7 +15323,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "CX-7",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15340,7 +15340,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "CX-9",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15624,7 +15624,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "R8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15664,7 +15664,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "1 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15681,7 +15681,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "X6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15721,7 +15721,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Challenger",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15795,7 +15795,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "G37",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15918,7 +15918,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Clubman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15939,7 +15939,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper Clubman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15998,7 +15998,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "xD",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16105,7 +16105,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Brooklands",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16147,7 +16147,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Traverse",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16167,7 +16167,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Journey",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16272,7 +16272,7 @@
     "make": "Kia",
     "img": "kia.webp",
     "model": "Mohave Borrego",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16470,7 +16470,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "CC",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16509,7 +16509,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Tiguan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16524,7 +16524,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "XC60",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16679,7 +16679,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Terrain",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16752,7 +16752,7 @@
     "make": "Kia",
     "img": "kia.webp",
     "model": "Soul",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16868,7 +16868,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "GLK-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16903,7 +16903,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Panamera",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17028,7 +17028,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Mulsanne",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17048,7 +17048,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Cruze",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17084,7 +17084,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "200",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17130,7 +17130,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "G25",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17255,7 +17255,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Countryman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17508,7 +17508,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Veloster",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17537,7 +17537,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Evoque",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17651,7 +17651,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "iQ",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17769,7 +17769,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "CX-5",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17781,7 +17781,7 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "MAZDA6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -18173,7 +18173,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "R8 Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -18324,7 +18324,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Flying Spur",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -18682,7 +18682,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "535i",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -19228,7 +19228,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "i8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -19651,7 +19651,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "e6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -19668,7 +19668,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "ATS",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -19877,7 +19877,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "XTS",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20250,7 +20250,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Spark",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20405,7 +20405,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300 SRT8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20419,7 +20419,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Town and Country",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20480,7 +20480,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Dart",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -22081,7 +22081,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "Q50",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -22238,7 +22238,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "Q70",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -22289,7 +22289,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "QX50",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -22860,7 +22860,7 @@
     "make": "Kia",
     "img": "kia.webp",
     "model": "Cadenza",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23086,7 +23086,7 @@
     "make": "Lamborghini",
     "img": "lamborghini.webp",
     "model": "Gallardo Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23159,7 +23159,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "ES 300h",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23178,7 +23178,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "ES 350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23196,7 +23196,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "GS 350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23230,7 +23230,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "GS 450h",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23262,7 +23262,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "IS 250",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23307,7 +23307,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "IS 350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23432,7 +23432,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "LX 570",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23451,7 +23451,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "RX 350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23484,7 +23484,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "RX 450h",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -24085,7 +24085,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "C63 AMG",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -24282,7 +24282,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "E350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -24820,7 +24820,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper (3-doors)",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -24904,7 +24904,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper S (3-doors)",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25670,7 +25670,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 Carrera",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25811,7 +25811,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 GT3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25862,7 +25862,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -26007,7 +26007,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -26152,7 +26152,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Panamera Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -27081,7 +27081,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Beetle",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -27475,7 +27475,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "Q3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -28049,7 +28049,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Trax",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -28616,7 +28616,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "Q60",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -28983,7 +28983,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "NX 200t",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -29024,7 +29024,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "NX 300h",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -29060,7 +29060,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "RC 350",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -29096,7 +29096,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "RC F",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -29289,7 +29289,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "C300",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -30211,7 +30211,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "ATS-V",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -30226,7 +30226,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "CT6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -30940,7 +30940,7 @@
     "make": "Lamborghini",
     "img": "lamborghini.webp",
     "model": "Huracan Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32012,7 +32012,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Boxster Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32085,7 +32085,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Macan Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32114,7 +32114,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "iA",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32126,7 +32126,7 @@
     "make": "Scion",
     "img": "scion.webp",
     "model": "iM",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32569,7 +32569,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Bentayga",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -33221,7 +33221,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "XT5",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -34017,7 +34017,7 @@
     "make": "Infiniti",
     "img": "infiniti.webp",
     "model": "QX30",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -34592,7 +34592,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "AMG GT",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -34699,7 +34699,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "E300",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -35082,7 +35082,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Macan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -36536,7 +36536,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Velar",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -36549,7 +36549,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "GS 300",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -36577,7 +36577,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "IS 300",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37072,7 +37072,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "S450",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37100,7 +37100,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "S560",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37682,7 +37682,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Atlas",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37863,7 +37863,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "Q8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -37890,7 +37890,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "i3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -39960,7 +39960,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Arteon",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -40094,7 +40094,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS Q8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -40106,7 +40106,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -40622,7 +40622,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "CT4",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -40674,7 +40674,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "CT5",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -41936,7 +41936,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Spyder",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -41961,7 +41961,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Coupe",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -42076,7 +42076,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Taycan Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -43863,7 +43863,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Boxster",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -43911,7 +43911,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Cayman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48149,7 +48149,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Caddy",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48161,7 +48161,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Crafter",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48233,7 +48233,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Teramont",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48245,7 +48245,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "T-Roc",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48257,7 +48257,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "ID.4",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48269,7 +48269,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "ID.6",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48281,7 +48281,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "ID.3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48305,7 +48305,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Polo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48317,7 +48317,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Amarok",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48341,7 +48341,7 @@
     "make": "Volkswagen",
     "img": "volkswagon.webp",
     "model": "Transporter",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48377,7 +48377,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "C200",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48401,7 +48401,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "S500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48413,7 +48413,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "A-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48437,7 +48437,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "CLA",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48461,7 +48461,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "GLE-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48509,7 +48509,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "GLS-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48533,7 +48533,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "GLA",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48569,7 +48569,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "EQS",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48581,7 +48581,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "EQE",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48617,7 +48617,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "EQA",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48701,7 +48701,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "EQC",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48821,7 +48821,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "GLC-Class",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48953,7 +48953,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Renegade",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49025,7 +49025,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard 5",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49037,7 +49037,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49049,7 +49049,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard 8",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49061,7 +49061,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "HAN",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49073,7 +49073,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Seal",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49085,7 +49085,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Song Plus",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49097,7 +49097,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Qin Plus",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49109,7 +49109,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Sealion",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49121,7 +49121,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Destroyer 05",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49133,7 +49133,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard Titanium 7",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49145,7 +49145,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard Titanium 3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49157,7 +49157,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Qin L",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49169,7 +49169,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Song L",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49181,7 +49181,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Tang",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49193,7 +49193,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Seal 06",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49205,7 +49205,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Atto 3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49217,7 +49217,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Xia",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49229,7 +49229,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "e2",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49853,7 +49853,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "V60",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49865,7 +49865,7 @@
     "make": "Volvo",
     "img": "volvo.webp",
     "model": "XC40",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49949,7 +49949,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "2 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -49961,7 +49961,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "4 Series",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -50009,6 +50009,1041 @@
     "make": "Kia",
     "img": "kia.webp",
     "model": "Picanto",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14445,
+    "year": [
+      2010
+    ],
+    "make": "Kia",
+    "img": "kia.webp",
+    "model": "Cerato",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14446,
+    "year": [
+      2010
+    ],
+    "make": "Kia",
+    "img": "kia.webp",
+    "model": "Carnival",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14447,
+    "year": [
+      2010
+    ],
+    "make": "Kia",
+    "img": "kia.webp",
+    "model": "Seltos",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14448,
+    "year": [
+      2010
+    ],
+    "make": "Kia",
+    "img": "kia.webp",
+    "model": "Pegas",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14449,
+    "year": [
+      2010
+    ],
+    "make": "Kia",
+    "img": "kia.webp",
+    "model": "Stinger",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14450,
+    "year": [
+      2010
+    ],
+    "make": "Chrysler",
+    "img": "chrysler.webp",
+    "model": "300 S",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14451,
+    "year": [
+      2010
+    ],
+    "make": "Chrysler",
+    "img": "chrysler.webp",
+    "model": "300 SRT",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14452,
+    "year": [
+      2010
+    ],
+    "make": "Hyundai",
+    "img": "hyundai.webp",
+    "model": "Palisade",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14453,
+    "year": [
+      2010
+    ],
+    "make": "Hyundai",
+    "img": "hyundai.webp",
+    "model": "Kona",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14454,
+    "year": [
+      2010
+    ],
+    "make": "Hyundai",
+    "img": "hyundai.webp",
+    "model": "i10",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14455,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "QX80",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14456,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "QX60",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14457,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "QX70",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14458,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "FX35",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14459,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "FX45",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14460,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "FX50",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14461,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "G Series",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14462,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "M Series",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14463,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "M35",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14464,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "M56",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14465,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "JX35",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14466,
+    "year": [
+      2010
+    ],
+    "make": "Infiniti",
+    "img": "infiniti.webp",
+    "model": "i30",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14467,
+    "year": [
+      2010
+    ],
+    "make": "Jeep",
+    "img": "jeep.webp",
+    "model": "Gladiator",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14468,
+    "year": [
+      2010
+    ],
+    "make": "Jeep",
+    "img": "jeep.webp",
+    "model": "Grand Wagoneer",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14469,
+    "year": [
+      2010
+    ],
+    "make": "Mini",
+    "img": "mini.webp",
+    "model": "Cooper S",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14470,
+    "year": [
+      2010
+    ],
+    "make": "Mini",
+    "img": "mini.webp",
+    "model": "John Cooper Works (JCW)",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14471,
+    "year": [
+      2010
+    ],
+    "make": "Mini",
+    "img": "mini.webp",
+    "model": "Paceman",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14472,
+    "year": [
+      2010
+    ],
+    "make": "Bentley",
+    "img": "bentley.webp",
+    "model": "S",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14473,
+    "year": [
+      2010
+    ],
+    "make": "Bentley",
+    "img": "bentley.webp",
+    "model": "Speed",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14474,
+    "year": [
+      2010
+    ],
+    "make": "Bentley",
+    "img": "bentley.webp",
+    "model": "Turbo R",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14475,
+    "year": [
+      2010
+    ],
+    "make": "Bentley",
+    "img": "bentley.webp",
+    "model": "Turbo R",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14476,
+    "year": [
+      2010
+    ],
+    "make": "Bentley",
+    "img": "bentley.webp",
+    "model": "Eight",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14477,
+    "year": [
+      2010
+    ],
+    "make": "Audi",
+    "img": "audi.webp",
+    "model": "RS7",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14478,
+    "year": [
+      2010
+    ],
+    "make": "Ford",
+    "img": "ford.webp",
+    "model": "F-150",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14479,
+    "year": [
+      2010
+    ],
+    "make": "Ford",
+    "img": "ford.webp",
+    "model": "Bronco Raptor",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14480,
+    "year": [
+      2010
+    ],
+    "make": "Ford",
+    "img": "ford.webp",
+    "model": "Transit",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14481,
+    "year": [
+      2010
+    ],
+    "make": "Land Rover",
+    "img": "land_rover.webp",
+    "model": "Range Rover Vogue",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14482,
+    "year": [
+      2010
+    ],
+    "make": "Lexus",
+    "img": "lexus.webp",
+    "model": "LS 430",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14483,
+    "year": [
+      2010
+    ],
+    "make": "Lexus",
+    "img": "lexus.webp",
+    "model": "LX 600",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14484,
+    "year": [
+      2010
+    ],
+    "make": "Mazda",
+    "img": "mazda.webp",
+    "model": "3",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14485,
+    "year": [
+      2010
+    ],
+    "make": "Mazda",
+    "img": "mazda.webp",
+    "model": "6",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14486,
+    "year": [
+      2010
+    ],
+    "make": "Mazda",
+    "img": "mazda.webp",
+    "model": "CX-3",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14487,
+    "year": [
+      2010
+    ],
+    "make": "Mazda",
+    "img": "mazda.webp",
+    "model": "CX-30",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14388,
+    "year": [
+      2011
+    ],
+    "make": "Mercedes-Benz",
+    "img": "mercedesbenz.webp",
+    "model": "GLE 400",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14389,
+    "year": [
+      2011
+    ],
+    "make": "Mercedes-Benz",
+    "img": "mercedesbenz.webp",
+    "model": "GLE 450",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14390,
+    "year": [
+      2011
+    ],
+    "make": "Mercedes-Benz",
+    "img": "mercedesbenz.webp",
+    "model": "C180",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14391,
+    "year": [
+      2011
+    ],
+    "make": "Mercedes-Benz",
+    "img": "mercedesbenz.webp",
+    "model": "C180",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14392,
+    "year": [
+      2011
+    ],
+    "make": "Mercedes-Benz",
+    "img": "mercedesbenz.webp",
+    "model": "E200",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14393,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Porsche",
+    "img": "porsche.webp",
+    "model": "Targa",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14394,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Porsche",
+    "img": "porsche.webp",
+    "model": "959",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14395,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Captiva",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14396,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Epica",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14397,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Optra",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14398,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "E90",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14399,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "F30",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14400,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G20",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14401,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "E60",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14402,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "F10",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14402,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "520i",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14404,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "F01",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14403,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G11",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14404,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G12",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14405,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G11",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14406,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "E53",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14407,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "E70",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14408,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "F15",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14409,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G05",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14410,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "E71",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14411,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "F16",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14412,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "G06",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14413,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "i4",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14414,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "i7",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14415,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "BMW",
+    "img": "bmw.webp",
+    "model": "Z Series",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14416,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Cadillac",
+    "img": "cadillac.webp",
+    "model": "XT4",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14417,
+    "year": [
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021
+    ],
+    "make": "Cadillac",
+    "img": "cadillac.webp",
+    "model": "XT6",
     "seo": true,
     "description": "",
     "keyword": "."

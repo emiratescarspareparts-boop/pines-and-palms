@@ -929,9 +929,18 @@ export default function Model({ params, searchParams }) {
             {partspost
               .filter(post => selectedParts.includes(post.parts))
               .map((post, i) => {
+                // Check if this model has seo=true
+                const key = `${make.toLowerCase()}-${model.toLowerCase()}`;
+                const carEntry = carDataByMakeModel[key];
+                const hasSEO = carEntry?.some(car => car.seo === true);
+
+                const linkHref = hasSEO
+                  ? `/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(post.category)}/${encodeURIComponent(post.parts)}`
+                  : `/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}#myForm`;
+
                 return (
                   <li key={i} className="border">
-                    <a href={`/search-by-make/${decodeURIComponent(make)}/${decodeURIComponent(model)}/${decodeURIComponent(post.category)}/${decodeURIComponent(post.parts)}`} target="_blank">
+                    <a href={linkHref} target="_blank">
                       <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
                         <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
                           <Image
@@ -948,7 +957,7 @@ export default function Model({ params, searchParams }) {
                       </div>
                     </a>
                   </li>
-                )
+                );
               })
             }
           </ul>

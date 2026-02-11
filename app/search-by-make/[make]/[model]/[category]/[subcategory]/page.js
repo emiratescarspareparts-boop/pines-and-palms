@@ -109,6 +109,65 @@ function getPartsByCategory(category) {
     }
 }
 
+
+export function generateStaticParams() {
+    try {
+        // Build a Set of models with seo=true for O(1) lookup
+        const seoEnabledModels = new Set();
+        const carDataLength = CarData.length;
+
+        for (let i = 0; i < carDataLength; i++) {
+            const car = CarData[i];
+            if (car.seo === true) {
+                seoEnabledModels.add(`${car.make}|${car.model}`);
+            }
+        }
+
+        const unique = new Set();
+        const params = [];
+        const productsLength = productsFile.length;
+
+        for (let i = 0; i < productsLength; i++) {
+            const product = productsFile[i];
+            if (!product?.compatibility) continue;
+
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
+
+            if (!category || !subcategory) continue;
+
+            const compatibilityLength = product.compatibility.length;
+            for (let j = 0; j < compatibilityLength; j++) {
+                const fit = product.compatibility[j];
+                const make = fit.make?.trim();
+                const model = fit.model?.trim();
+
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+                if (!seoEnabledModels.has(`${make}|${model}`)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make: make,
+                        model: encodeURIComponent(model),
+                        category: encodeURIComponent(category),
+                        subcategory: subcategory,
+                    });
+                }
+            }
+        }
+
+        console.log(`✓ Generated ${params.length} pages (seo=true only)`);
+        return params;
+
+    } catch (error) {
+        console.error("Error generating static params:", error);
+        return [];
+    }
+}
+
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
@@ -493,6 +552,14 @@ export default function SubcategoryPage({ params, searchParams }) {
                                 );
                                 const isBattery = isBatterySubcategory || hasBatteryCompatibility;
 
+                                // Check if this specific model has seo=true
+                                const modelKey = `${post.make}|${post.model}`;
+                                const hasSEO = CarData.some(car =>
+                                    car.make === post.make &&
+                                    car.model === post.model &&
+                                    car.seo === true
+                                );
+
                                 let linkHref, linkAs;
                                 if (isBattery) {
                                     linkHref = '/car-battery-replacement-services-in-uae'
@@ -500,10 +567,16 @@ export default function SubcategoryPage({ params, searchParams }) {
                                 } else if (excludedMakesSet.has(post.make)) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
+                                } else if (hasSEO) {
+                                    // Model has seo=true, link to the subcategory page
+                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}`
                                 } else {
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myForm`
+                                    // Model has seo=false, link to model page with form anchor
+                                    linkHref = '/search-by-make/[make]/[model]#myForm'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}#myForm`
                                 }
+
                                 return (
                                     <li key={i} className="h-full">
                                         <Link
@@ -764,6 +837,14 @@ export default function SubcategoryPage({ params, searchParams }) {
                                 );
                                 const isBattery = isBatterySubcategory || hasBatteryCompatibility;
 
+                                // Check if this specific model has seo=true
+                                const modelKey = `${post.make}|${post.model}`;
+                                const hasSEO = CarData.some(car =>
+                                    car.make === post.make &&
+                                    car.model === post.model &&
+                                    car.seo === true
+                                );
+
                                 let linkHref, linkAs;
                                 if (isBattery) {
                                     linkHref = '/car-battery-replacement-services-in-uae'
@@ -771,17 +852,23 @@ export default function SubcategoryPage({ params, searchParams }) {
                                 } else if (excludedMakesSet.has(post.make)) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
+                                } else if (hasSEO) {
+                                    // Model has seo=true, link to the subcategory page
+                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}`
                                 } else {
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]#myForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}#myForm`
+                                    // Model has seo=false, link to model page with form anchor
+                                    linkHref = '/search-by-make/[make]/[model]#myForm'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}#myForm`
                                 }
+
                                 return (
                                     <li key={i} className="h-full">
                                         <Link
                                             href={linkHref}
                                             as={linkAs}
-                                            target="_blank"
                                             title={`${post.make} ${post.model} ${subcategory}`}
+                                            target="_blank"
                                             className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
                                         >
                                             <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">

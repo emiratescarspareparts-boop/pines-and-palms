@@ -529,8 +529,6 @@ export default function Parts({ params, searchParams }) {
                     <FormMakePart formsData={modelsform} mke={make} />
                 </div></>)}
 
-
-
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
                         <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
@@ -541,18 +539,28 @@ export default function Parts({ params, searchParams }) {
                         <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
                             {carmodel.map((post, i) => {
                                 const isBattery = decodeURIComponent(partEntry.parts).toLowerCase() === 'battery';
+
+                                // Check if this specific model has seo=true
+                                const key = `${post.make.toLowerCase()}-${post.model.toLowerCase()}`;
+                                const carEntry = carDataByMakeModel[key];
+                                const hasSEO = carEntry?.some(car => car.seo === true);
+
                                 let linkHref, linkAs;
                                 if (isBattery) {
                                     linkHref = '/car-battery-replacement-services-in-uae'
                                     linkAs = '/car-battery-replacement-services-in-uae'
-                                } else if (excludedMakes === make) {
+                                } else if (excludedMakes.includes(make)) {
                                     linkHref = '/get-in-touch'
                                     linkAs = '/get-in-touch'
-                                } else {
+                                } else if (hasSEO) {
+                                    // Model has seo=true, link to the subcategory page
                                     linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
                                     linkAs = `/search-by-make/${encodeURIComponent(post.make)}/${encodeURIComponent(post.model)}/${encodeURIComponent(partEntry.category)}/${parts}`
+                                } else {
+                                    // Model has seo=false, link to model page with form anchor
+                                    linkHref = '/search-by-make/[make]/[model]#myForm'
+                                    linkAs = `/search-by-make/${encodeURIComponent(post.make)}/${encodeURIComponent(post.model)}#myForm`
                                 }
-
 
                                 return (
                                     <li key={i} className="h-full">
@@ -865,12 +873,29 @@ export default function Parts({ params, searchParams }) {
 
                             <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
                                 {carmodel.map((post, i) => {
-                                    const linkHref = excludedMakes
-                                        ? '/get-in-touch'
-                                        : '/search-by-make/[make]/[model]/[category]/[subcategory]';
-                                    const linkAs = excludedMakes
-                                        ? '/get-in-touch'
-                                        : `/search-by-make/${post.make}/${post.model}/${partEntry.category}/${parts}`;
+                                    const isBattery = decodeURIComponent(partEntry.parts).toLowerCase() === 'battery';
+
+                                    // Check if this specific model has seo=true
+                                    const key = `${post.make.toLowerCase()}-${post.model.toLowerCase()}`;
+                                    const carEntry = carDataByMakeModel[key];
+                                    const hasSEO = carEntry?.some(car => car.seo === true);
+
+                                    let linkHref, linkAs;
+                                    if (isBattery) {
+                                        linkHref = '/car-battery-replacement-services-in-uae'
+                                        linkAs = '/car-battery-replacement-services-in-uae'
+                                    } else if (excludedMakes.includes(make)) {
+                                        linkHref = '/get-in-touch'
+                                        linkAs = '/get-in-touch'
+                                    } else if (hasSEO) {
+                                        // Model has seo=true, link to the subcategory page
+                                        linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
+                                        linkAs = `/search-by-make/${encodeURIComponent(post.make)}/${encodeURIComponent(post.model)}/${encodeURIComponent(partEntry.category)}/${parts}`
+                                    } else {
+                                        // Model has seo=false, link to model page with form anchor
+                                        linkHref = '/search-by-make/[make]/[model]#myForm'
+                                        linkAs = `/search-by-make/${encodeURIComponent(post.make)}/${encodeURIComponent(post.model)}#myForm`
+                                    }
 
                                     return (
                                         <li key={i} className="h-full">
@@ -881,8 +906,8 @@ export default function Parts({ params, searchParams }) {
                                                 title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
                                                 className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
                                             >
-                                                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline">
-                                                    <span className='text-blue-600'>{make} {post.model}</span> {decodeURIComponent(parts)} parts
+                                                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                                    <span className='text-blue-600'>{make} {post.model}</span> {decodeURIComponent(partEntry.parts) === 'Battery' ? "Battery replacement services in UAE" : decodeURIComponent(partEntry.parts)}
                                                 </span>
                                             </Link>
                                         </li>
@@ -1123,9 +1148,18 @@ export default function Parts({ params, searchParams }) {
                                 {partsposts
                                     .filter(post => selectedParts.includes(post.parts))
                                     .map((post, i) => {
+                                        // Check if any model for this make has seo=true
+                                        const makeLower = make.toLowerCase();
+                                        const carsForMake = carDataByMake[makeLower] || [];
+                                        const hasSEO = carsForMake.some(car => car.seo === true);
+
+                                        const linkHref = hasSEO
+                                            ? `/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(post.parts)}`
+                                            : `/search-by-make/${encodeURIComponent(make)}#myForm`;
+
                                         return (
                                             <li key={i} className="border">
-                                                <a href={`/search-by-make/${decodeURIComponent(make)}/parts/${decodeURIComponent(post.parts)}`} target="_blank">
+                                                <a href={linkHref} target="_blank">
                                                     <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
                                                         <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
                                                             <Image
@@ -1142,7 +1176,7 @@ export default function Parts({ params, searchParams }) {
                                                     </div>
                                                 </a>
                                             </li>
-                                        )
+                                        );
                                     })
                                 }
                             </ul>
