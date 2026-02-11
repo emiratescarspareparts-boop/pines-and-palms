@@ -184,34 +184,47 @@ export function generateMetadata({ params }) {
   const productsForMake = products.filter(p =>
     p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase())
   );
+  const productListItems = productsForMake.map((product, index) => {
+    let compat = null;
 
-  const productListItems = productsForMake.map((product, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "item": {
-      "@type": "Product",
-      "@id": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.partname}-${product.partnumber}-${product.id}#product`,
-      "name": `${product.partname} ${product.partnumber} ${make}`,
-      "url": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.partname}-${product.partnumber}-${product.id}`,
-      "image": `https://www.emirates-car.com${product.image}`,
-      "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
-      "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-      "mpn": product.partnumber,
-      "offers": {
-        "@type": "Offer",
-        "url": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.partname}-${product.partnumber}-${product.id}`,
-        "priceCurrency": product.pricing.currency,
-        "price": product.pricing.price,
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      },
-      "isAccessoryOrSparePartFor": {
-        "@type": "Car",
-        "make": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-        "model": product.compatibility[0]?.model
-      }
+    if (productsForMake.length > 0) {
+      const now = new Date();
+      const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+      const rotationPeriod = Math.floor(days / 3);
+      const index = (rotationPeriod + product.id) % productsForMake.length;
+      compat = productsForMake[index];
     }
-  }));
+
+    const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
+
+    return ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "@id": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}#product`,
+        "name": `${product.partname} ${product.partnumber} ${make}`,
+        "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+        "image": `https://www.emirates-car.com${product.image}`,
+        "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
+        "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
+        "mpn": product.partnumber,
+        "offers": {
+          "@type": "Offer",
+          "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+          "priceCurrency": product.pricing.currency,
+          "price": product.pricing.price,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        },
+        "isAccessoryOrSparePartFor": {
+          "@type": "Car",
+          "make": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
+          "model": product.compatibility[0]?.model
+        }
+      }
+    })
+  });
 
 
   const faqSchema = {

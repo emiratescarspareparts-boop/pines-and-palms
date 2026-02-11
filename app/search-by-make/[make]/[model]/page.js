@@ -169,7 +169,51 @@ export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);
   const model = decodeURIComponent(params.model);
   const imageMake = getMakeImage(make, model);
+  const productsForMake = products.filter(p =>
+    p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase() &&
+      c.model.toLowerCase() === model.toLowerCase())
+  );
+  const productListItems = productsForMake.map((product, index) => {
+    let compat = null;
 
+    if (productsForMake.length > 0) {
+      const now = new Date();
+      const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+      const rotationPeriod = Math.floor(days / 3);
+      const index = (rotationPeriod + product.id) % productsForMake.length;
+      compat = productsForMake[index];
+    }
+
+    const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
+
+    return ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "@id": `https://www.emirates-car.com/search-by-make/${make}/${model}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}#product`,
+        "name": `${product.partname} ${product.partnumber} ${make}`,
+        "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+        "image": `https://www.emirates-car.com${product.image}`,
+        "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
+        "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
+        "mpn": product.partnumber,
+        "offers": {
+          "@type": "Offer",
+          "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+          "priceCurrency": product.pricing.currency,
+          "price": product.pricing.price,
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        },
+        "isAccessoryOrSparePartFor": {
+          "@type": "Car",
+          "make": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
+          "model": product.compatibility[0]?.model
+        }
+      }
+    })
+  });
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -182,6 +226,10 @@ export function generateMetadata({ params }) {
         "description": `Browse our complete collection of genuine, OEM, and aftermarket spare parts specifically for the ${make} ${model}. Find high-quality brake pads, filters, engine components, and more.`,
         "mainEntity": {
           "@id": "https://www.emirates-car.com/#organization"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": productListItems
         },
         "about": {
           "@id": `https://www.emirates-car.com/search-by-make/${make}/${model}#model`
@@ -297,7 +345,7 @@ export function generateMetadata({ params }) {
         'max-snippet': -1,
       },
     },
-    category: `${make} ${decodeURIComponent(model)} auto spare parts`,
+    category: `${make} > ${decodeURIComponent(model)} auto spare parts`,
     other: {
       "script:ld+json": JSON.stringify(faqSchema),
     },

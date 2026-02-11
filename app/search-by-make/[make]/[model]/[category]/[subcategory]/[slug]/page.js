@@ -146,7 +146,7 @@ export async function generateMetadata({ params }) {
                 "@type": "Product",
                 "name": `${product.item_specifics?.Brand || ""} ${product.partname} for ${decodeURIComponent(make)} ${decodeURIComponent(model)}`,
                 "category": product.category,
-                "mpn": product.partnumber, // Clean MPN is better for matching
+                "mpn": product.partnumber,
                 "sku": product.item_specifics?.sku || product.partnumber,
                 "brand": {
                     "@type": "Brand",
