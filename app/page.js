@@ -522,7 +522,7 @@ export const metadata = {
       url: 'https://www.emirates-car.com/icons/icon-152x152.png',
     },
   },
-  category: 'Automotive > Auto Parts Store',
+  category: 'Vehicle Parts & Accessories',
   other: {
     "script:ld+json": JSON.stringify(homepageSchema),
   },
