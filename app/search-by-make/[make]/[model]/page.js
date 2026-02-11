@@ -185,7 +185,7 @@ export function generateMetadata({ params }) {
     }
 
     const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-
+    var endOfYear = new Date(currentYear, 11, 31);
     return ({
       "@type": "ListItem",
       "position": index + 1,
