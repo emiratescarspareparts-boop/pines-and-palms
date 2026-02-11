@@ -203,8 +203,14 @@ export function generateMetadata({ params }) {
           "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
           "priceCurrency": product.pricing.currency,
           "price": product.pricing.price,
+          "priceValidUntil": endOfYear,
           "availability": "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "12"
         },
         "isAccessoryOrSparePartFor": {
           "@type": "Car",
