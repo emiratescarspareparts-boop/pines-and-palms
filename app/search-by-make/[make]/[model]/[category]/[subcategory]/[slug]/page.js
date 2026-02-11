@@ -45,61 +45,6 @@ const excludedMakes = [
 
 const excludedMakesSet = new Set(excludedMakes);
 
-export async function generateStaticParams() {
-    const params = [];
-    const generatedCombos = new Set();
-
-    products.forEach((product) => {
-        if (!product || !Array.isArray(product.compatibility)) return;
-
-        const category = product.category?.trim();
-        const subcategory = product.subcategory?.trim();
-
-        if (!category || !subcategory) return;
-
-        // Group by make/model
-        const makeModelGroups = {};
-
-        product.compatibility.forEach((compat) => {
-            const make = compat.make?.trim();
-            const model = compat.model?.trim();
-
-            if (!make || !model || excludedMakesSet.has(make)) return;
-
-            const key = `${make}|${model}`;
-            if (!makeModelGroups[key]) makeModelGroups[key] = [];
-            makeModelGroups[key].push(compat.years);
-        });
-
-
-        Object.entries(makeModelGroups).forEach(([key, years]) => {
-            const [make, model] = key.split('|');
-
-            const sortedYears = years.sort();
-            const yearRange = sortedYears.length > 1
-                ? `${sortedYears[0]}-${sortedYears[sortedYears.length - 1]}`
-                : sortedYears[0];
-
-            const slug = `${product.partname}-${make}-${model}-${yearRange}-${product.partnumber}-${product.id}`;
-
-            const comboKey = `${product.id}|${make}|${model}`;
-
-            if (!generatedCombos.has(comboKey)) {
-                generatedCombos.add(comboKey);
-                params.push({
-                    make,
-                    model,
-                    category,
-                    subcategory,
-                    slug
-                });
-            }
-        });
-    });
-
-    return params;
-}
-
 
 export async function generateMetadata({ params }) {
 
