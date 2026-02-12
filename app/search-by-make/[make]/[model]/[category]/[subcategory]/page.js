@@ -419,8 +419,10 @@ export default function SubcategoryPage({ params, searchParams }) {
         car.seo === true
     );
 
+    const shouldRender = hasSEO && isSelectedPart
+
     // If no products found, show 404
-    if (!hasSEO && !isSelectedPart && matchingProducts.length === 0) {
+    if (!shouldRender && matchingProducts.length === 0) {
         notFound();
     }
 
