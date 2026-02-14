@@ -2,44 +2,68 @@ import React from 'react';
 import Footer from '../../../components/footer';
 import OtherHondaModels from '../../../components/OtherHondaModels';
 import Link from 'next/link';
+import FormOnly from '../../../components/FormOnly';
+import CarData from "../../../public/lib/car-data.json"
 
 
 export default function Sharjah() {
+  const modelforms = CarData;
   return (
-    <div>
+    <div className='max-w-5xl mx-auto'>
       <div className="w-3/4 mx-auto">
         <div>
           <h1 className="text-blue-600 text-4xl md:text-lg lg:text-2xl font-extrabold xs:text-base 2xs:text-xs">
-            Honda Car Parts in Sharjah Online for German, American, Japan,
-            Korean and more models
+            Honda spare Parts in Sharjah Online | Used, New, Genuine and Aftermarket stock
           </h1>
-          <Link
-            href="/search-by-cities-in-uae/Mussafah"
-            className="w-1/4 xs:w-full mx-auto flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125 my-5"
-            target="_newtab"
-          >
-            Inquire Now
-          </Link>
+        </div>
+        <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
+          <FormOnly formsData={modelforms} />
         </div>
       </div>
       <div className="grid grid-cols-1 place-content-center pt-10 xs:pt-5 mx-8">
         <div>
           <p className="text-xl font-mono text-gray-700 mx-auto">
-            Emirates-car.com is the online Dealers specialist in Honda spare
-            parts running on roads of UAE. We find pleasure is finding the best
-            genuine (otherwise called OEM parts) and aftermarket parts for any
+            EMIRATESCAR is the online Dealer specialist in Honda spare
+            parts running on roads of UAE. We can find the best
+            genuine (otherwise called OEM parts) and aftermarket parts for any honda model
             cars. We have experienced professional who can find the parts at
             affordable and reasonable price. We deal in genuine honda parts and
-            aftermarket honda parts such as engine parts, mechanical parts,
-            electrical and electronic parts, body parts and lights, AC parts and
-            service and mainatenance parts. You can order Honda spare parts by
+            aftermarket honda parts such as honda engine parts such as Engine Assembly
+            Engine Block,
+            Engine Mount,
+            Engine Block,
+            Cylinder Head,
+            Cylinder Block,
+            Crankshaft,
+            Camshaft,
+            Piston,
+            Exhaust Manifold,
+            Intake Manifold,
+            Ignition Switch,
+            Ignition Control Module,
+            TCM, honda mechanical parts such as , Engine,
+            Battery,
+            Alternator,
+            Brake Pads,
+            Radiator,
+            Transmission,
+            Shock Absorber,
+            Catalytic Converter,
+            Power Steering Pump,
+            honda electrical and electronic parts such as Spark Plug
+            Alternator,
+            Battery,
+            Ignition Switch, honda body parts such as Bonnet,
+            Fender,
+            Decklid,
+            Grille,
+            Wheel, and lights, AC parts such as AC Compressor
+            AC Condenser,
+            AC Selector,
+            AC Controls and
+            service and maintainence parts. You can order Honda spare parts by
             simply submitting the online inquiry form{' '}
-            <Link
-              href="https://emirates-car.com"
-              className="underline text-blue-500 hover:text-blue-900"
-            >
-              here
-            </Link>
+
             . You can get callback or whatsapp chat or email after submitting
             your form inquiry.
           </p>
@@ -51,13 +75,7 @@ export default function Sharjah() {
             2018, 80,000 honda cars were registered in UAE. So the demand for
             cars spare parts in on niche.{' '}
           </p>
-          <p className="text-xl font-mono text-gray-700 mx-auto">
-            Unfortunately, it became high in demand in such a way that its spare
-            parts are in scarce in Sharjah UAE and its difficult to find its
-            parts. But we can deal and get the best deals for you at best rate.
-            If you are looking for Honda spare parts dealer, Emirates-car.com is
-            the end point to all your search.
-          </p>
+
           <h3
             className="text-3xl font-extrabold mx-auto my-5"
             id="oemvsaftermarket"
@@ -99,9 +117,9 @@ export default function Sharjah() {
             really need, you can come to the best conclusion yourself. And we
             can serve you with both kind of parts.
           </p>
-          <p className="text-xl font-mono text-gray-700 mx-auto font-extrabold xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-10">
+          <h4 className="text-xl font-mono text-gray-700 mx-auto font-extrabold xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-10">
             Availability of Honda parts in Sharjah:
-          </p>
+          </h4>
           <div className="grid grid-cols-4 xs:grid-cols-1 gap-3 p-5 border-2 border-gray-500 xl:mx-10 lg:mx-10 md:mx-10 sm:mx-5 xs:mx-2 xs:py-0 2xs:mx-2 s:mx-2  md:ml-11 my-10 mx-10">
             <div>
               <Link
@@ -177,10 +195,10 @@ export default function Sharjah() {
               </Link>
             </div>
           </div>
-          <p className="text-3xl font-extrabold mx-auto my-5">
+          <h4 className="text-3xl font-extrabold mx-auto my-5">
             List of different Genuine and Aftermarket Honda spare parts in
             Sharjah, UAE
-          </p>
+          </h4>
           <div className="grid grid-cols-3 xs:grid-cols-1 place-content-center">
             <div>
               <p className="text-xl font-mono text-gray-700 mx-auto my-5 font-bold">

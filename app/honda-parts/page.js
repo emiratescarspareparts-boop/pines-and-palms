@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function HondaParts() {
   return (
-    <div>
+    <div className='max-w-5xl mx-auto'>
       <div className="w-3/4 mx-auto">
         <h1 className="text-3xl font-extrabold mx-auto my-5 xs:text-xl">
           Buy Car Parts - Used, Genuine, OEM (Original parts) and Aftermarket
