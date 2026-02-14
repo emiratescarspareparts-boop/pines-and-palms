@@ -320,7 +320,7 @@ export default function ProductPage({ params, searchParams }) {
                 <section className="space-y-4">
                     {/* Category & Engine */}
                     <h1 className={`text-3xl xl:text-4xl xxl:text-4xl font-extrabold mx-auto my-5 xs:my-3 xs:text-xl xxs:text-2xl md:text-xl md:my-3 sm:text-xl xxs:text-center line-clamp-6  ${poppins.className}`} itemProp="name">
-                        {decodeURIComponent(make)} {decodeURIComponent(model)} {product.partname}
+                        {years} {decodeURIComponent(make)} {decodeURIComponent(model)} {product.partname}
                     </h1>
                     <p className={`text-fitment font-semibold ${roboto.className}`}>✓ Verified fitment</p>
                     <div className={`space-y-1 ${roboto.className}`}>
@@ -417,7 +417,7 @@ export default function ProductPage({ params, searchParams }) {
                                             alt={p.partname}
                                             className="w-full h-36 object-cover mb-2 rounded"
                                         />
-                                        <p className={`text-sm font-semibold ${firaSans.className}`}>{make} {model} {p.partname}</p>
+                                        <p className={`text-sm font-semibold ${firaSans.className}`}>{make} {compatForMake.model} {p.partname}</p>
                                         <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{p.pricing.currency} {p.pricing.price}</p>
                                         <p className={`text-sm text-gray-600 ${firaSans.className}`}>{p.partnumber}</p>
                                     </a>
