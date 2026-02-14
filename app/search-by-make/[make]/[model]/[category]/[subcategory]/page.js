@@ -826,70 +826,7 @@ export default function SubcategoryPage({ params, searchParams }) {
                     />
                 )}
 
-                <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-                    <div className="container py-6">
-                        <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
-                            Search <span className='text-blue-600'>{subcategory}</span> for All {make} Models
-                        </h2>
-                        <SearchModel make={make} subcategory={subcategory} car={carmodel} />
 
-                        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-                            {carmodel.map((post, i) => {
-                                const isBatterySubcategory = decodeURIComponent(subcategory).toLowerCase() === 'battery';
-
-                                const hasBatteryCompatibility = productsFile.some((product) =>
-                                    product.subcategory.toLowerCase() === 'battery' &&
-                                    product.compatibility?.some((c) =>
-                                        c.make.toLowerCase() === post.make.toLowerCase() &&
-                                        c.model.toLowerCase() === post.model.toLowerCase()
-                                    )
-                                );
-                                const isBattery = isBatterySubcategory || hasBatteryCompatibility;
-
-                                // Check if this specific model has seo=true
-                                const modelKey = `${post.make}|${post.model}`;
-                                const hasSEO = CarData.some(car =>
-                                    car.make === post.make &&
-                                    car.model === post.model &&
-                                    car.seo === true
-                                );
-
-                                let linkHref, linkAs;
-                                if (isBattery) {
-                                    linkHref = '/car-battery-replacement-services-in-uae'
-                                    linkAs = '/car-battery-replacement-services-in-uae'
-                                } else if (excludedMakesSet.has(post.make)) {
-                                    linkHref = '/get-in-touch'
-                                    linkAs = '/get-in-touch'
-                                } else if (hasSEO) {
-                                    // Model has seo=true, link to the subcategory page
-                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}`
-                                } else {
-                                    // Model has seo=false, link to model page with form anchor
-                                    linkHref = '/search-by-make/[make]/[model]#myForm'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}#myForm`
-                                }
-
-                                return (
-                                    <li key={i} className="h-full">
-                                        <Link
-                                            href={linkHref}
-                                            as={linkAs}
-                                            title={`${post.make} ${post.model} ${subcategory}`}
-                                            target="_blank"
-                                            className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                                        >
-                                            <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                                                {post.make} {post.model.replace('%2F', '/')}<span className="text-blue-600"> {isBattery ? "Battery replacement services in UAE" : decodeURIComponent(subcategory)}</span>
-                                            </span>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </section>
                 <section
                     aria-labelledby={`all-${make}-${model}-${subcategory}-brands`}
                     className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
