@@ -1,5 +1,3 @@
-import '../../../styles/globals.css';
-import Navbar from '../../../components/nav';
 
 export const viewport = {
   width: 'device-width',
@@ -9,40 +7,28 @@ export const viewport = {
   themeColor: '#2563eb',
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "American Spare Parts",
-  "about": {
-    "@type": "Country",
-    "name": "American"
-  },
-  "url": "https://www.emirates-car.com/spare-parts/american-auto-spare-parts",
-  "description": "A comprehensive collection of Used, New, Genuine, OEM, Aftermarket spare parts for american car makes including ford, Chevrolet, GMC, Jeep, Hummer, Cadillac, Dodge, Chrysler, Buick, Ram"
-};
-
 export const metadata = {
-  title:
-    'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-  description:
-    'Buy Online and Get delivered American Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
+  title: 'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
+  description: 'Buy Online and Get delivered American Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
   openGraph: {
-    images: 'https://emirates-car.com/favicon.png',
-    title:
-      'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-    description:
-      'Buy Online and Get delivered American Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
+    title: 'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
+    description: 'Buy Online and Get delivered American Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
     url: 'https://www.emirates-car.com/spare-parts/american-auto-spare-parts',
-    image: 'https://emirates-car.com/img/car-spare-parts.png',
     siteName: 'Emirates Auto Parts',
     images: [
       {
-        url: 'https://emirates-car.com/icon-192x192.png',
+        url: 'https://www.emirates-car.com/img/car-spare-parts.png',
+        width: 1200,
+        height: 630,
+        alt: 'American car spare parts',
+      },
+      {
+        url: 'https://www.emirates-car.com/icons/icon-192x192.png',
         width: 192,
         height: 192,
       },
       {
-        url: 'https://emirates-car.com/icons/icon-512x512.png',
+        url: 'https://www.emirates-car.com/icons/icon-512x512.png',
         width: 512,
         height: 512,
         alt: 'car parts',
@@ -53,33 +39,35 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
-    url: 'https://www.emirates-car.com/spare-parts/american-auto-spare-parts',
-    description:
-      'Buy Online and Get delivered AmericanUsed, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-    images: ['https://emirates-car.com/favicon.png'],
-  },
-  icons: {
-    icon: '/favicon.png',
-    shortcut: 'https://emirates-car.com/icons/icon-96x96.png',
-    apple: 'https://emirates-car.com/icons/icon-192x192.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: 'https://emirates-car.com/icons/icon-152x152.png',
-    },
+    title: 'Online American Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
+    description: 'Buy Online and Get delivered American Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
+    images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
   },
   alternates: {
-    canonical: `https://www.emirates-car.com/spare-parts/american-auto-spare-parts}`,
-  },
-  category: 'American spare parts',
-  other: {
-    "script:ld+json": JSON.stringify(schema),
+    canonical: 'https://www.emirates-car.com/spare-parts/american-auto-spare-parts',
   },
 };
 
-export default function RootLayout({ children }) {
+export default function AmericanPartsLayout({ children }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "American Spare Parts",
+    "about": {
+      "@type": "Country",
+      "name": "American"
+    },
+    "url": "https://www.emirates-car.com/spare-parts/american-auto-spare-parts",
+    "description": "A comprehensive collection of Used, New, Genuine, OEM, Aftermarket spare parts for american car makes including ford, Chevrolet, GMC, Jeep, Hummer, Cadillac, Dodge, Chrysler, Buick, Ram"
+  };
+
   return (
-    <>{children}</>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      {children}
+    </>
   );
 }

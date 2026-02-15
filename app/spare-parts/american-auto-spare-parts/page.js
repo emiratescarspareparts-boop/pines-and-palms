@@ -10,6 +10,8 @@ import SearchMake from '../../../components/SearchMake';
 import CarData from "../../../public/lib/car-data.json"
 import PartsData from "../../../public/lib/parts.json"
 
+
+
 export default function America() {
   const modelforms = CarData;
   const partsposts = PartsData;

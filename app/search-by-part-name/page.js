@@ -15,6 +15,7 @@ import CitiesData from "../../public/lib/cities.json"
 import CarData from "../../public/lib/car-data.json"
 
 
+
 export default function PartPage() {
   const cities = CitiesData;
   const partsposts = PartsData;
@@ -76,7 +77,7 @@ export default function PartPage() {
                   href="/search-by-part-name"
                   className="text-blue-400 underline"
                 >
-                  https://emirates-car.com/search-by-part-name
+                  https://www.emirates-car.com/search-by-part-name
                 </Link>
                 .
               </p>

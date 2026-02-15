@@ -101,7 +101,7 @@ export function generateMetadata({ params }) {
     title: `Auto spare parts in ${decodeURIComponent(city)}, Order Online from Dubai Dealers UAE - Best Prices`,
     description: `Used, New, Genuine / Original / OEM, Aftermarket car Online in ${decodeURIComponent(city)} UAE`,
     openGraph: {
-      images: '/favicon.png',
+      images: 'https://www.emirates-car.com/icons/icon-32x32.png',
       title: `Auto spare parts Order Online from Dubai Dealers in ${decodeURIComponent(city)}, UAE - Best Prices |
           Emirates-car.com`,
       description: `Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in ${decodeURIComponent(city)}  uae`,
@@ -110,7 +110,7 @@ export function generateMetadata({ params }) {
       siteName: 'EMIRATESCAR',
       images: [
         {
-          url: 'https://emirates-car.com/icon-192x192.png',
+          url: 'https://emirates-car.com/icons/icon-192x192.png',
           width: 192,
           height: 192,
         },
@@ -130,15 +130,15 @@ export function generateMetadata({ params }) {
           Emirates-car.com`,
       url: 'https://www.emirates-car.com/search-by-cities-in-uae/' + city,
       description: `Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in ${decodeURIComponent(city)}  uae`,
-      images: ['https://emirates-car.com/favicon.png'],
+      images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
     },
     icons: {
-      icon: '/favicon.png',
-      shortcut: '/icons/icon-96x96.png',
-      apple: '/icons/icon-192x192.png',
+      icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
+      shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+      apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
       other: {
         rel: 'apple-touch-icon-precomposed',
-        url: '/icons/icon-152x152.png',
+        url: 'https://www.emirates-car.com/icons/icon-152x152.png',
       },
     },
     category: `Auto spare parts in ${decodeURIComponent(city)}`,

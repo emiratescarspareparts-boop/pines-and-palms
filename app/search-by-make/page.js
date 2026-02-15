@@ -31,7 +31,7 @@ export const metadata = {
   description:
     'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
   openGraph: {
-    images: 'https://www.emirates-car.com/favicon.png',
+    images: 'https://www.emirates-car.com/icons/favicon-32x32.png',
     title:
       'Auto Spare Parts Order Online in UAE from Dubai dealers | EMIRATESCAR',
     description:
@@ -62,10 +62,10 @@ export const metadata = {
     url: `https://www.emirates-car.com/search-by-make`,
     description:
       'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
-    images: ['https://www.emirates-car.com/favicon.png']
+    images: ['https://www.emirates-car.com/icons/favicon-32x32.png']
   },
   icons: {
-    icon: 'https://www.emirates-car.com/favicon.png',
+    icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
     shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
     apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
     other: {

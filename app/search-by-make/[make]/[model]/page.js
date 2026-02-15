@@ -288,7 +288,7 @@ export function generateMetadata({ params }) {
       image: `https://www.emirates-car.com/img/car-logos/${imageMake}`,
       siteName: 'EMIRATESCAR',
       images: [
-        'https://www.emirates-car.com/favicon.png',
+        'https://www.emirates-car.com/icons/favicon-32x32.png',
         {
           url: 'https://www.emirates-car.com/icon-192x192.png',
           width: 192,
@@ -309,10 +309,10 @@ export function generateMetadata({ params }) {
       title: `${make} ${model} Spare Parts in UAE from Dubai dealer | Genuine, OEM & Aftermarket – Best Prices`,
       url: '/search-by-make/' + make + '/' + model,
       description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
-      images: ['https://www.emirates-car.com/favicon.png'],
+      images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
     },
     icons: {
-      icon: 'https://www.emirates-car.com/favicon.png',
+      icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
       shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
       apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
       other: {

@@ -511,10 +511,10 @@ export const metadata = {
     title: 'Car spare parts',
     description:
       'We have compared 100+ suppliers so you dont have to. Get the best price. Get professional assistance from Experienced dealer. Fast shipping and delivery available accross 8 Emirates.',
-    images: 'https://www.emirates-car.com/favicon.png',
+    images: 'https://www.emirates-car.com/icons/favicon-32x32.png',
   },
   icons: {
-    icon: 'https://www.emirates-car.com/favicon.png',
+    icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
     shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
     apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
     other: {

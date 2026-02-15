@@ -101,10 +101,9 @@ export function generateMetadata({ params }) {
   const decodedParts = decodeURIComponent(parts);
   const partsData = getPartsData(parts);
 
-  // ADD NULL CHECK HERE
   const category = partsData?.category
-    ? `${partsData.category} > ${decodedParts}`
-    : `Auto Parts > ${decodedParts}`;
+    ? `Vehicle Parts & Accessories > ${partsData.category} > ${decodedParts}`
+    : `Vehicle Parts & Accessories > ${decodedParts}`;
 
   return {
     title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
@@ -113,16 +112,16 @@ export function generateMetadata({ params }) {
       title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
       description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in Dubai, Sharjah, Ajman, Ras Al Khaimah, Abu Dhabi, Fujairah & Al Ain`,
       url: 'https://www.emirates-car.com/search-by-part-name/' + parts,
-      image: 'https://emirates-car.com/img/car-spare-parts.png',
-      siteName: 'Emirates Auto Parts',
+      image: 'https://www.emirates-car.com/img/car-spare-parts.png',
+      siteName: 'EMIRATESCAR',
       images: [
         {
-          url: 'https://emirates-car.com/icon-192x192.png',
+          url: 'https://www.emirates-car.com/icon-192x192.png',
           width: 192,
           height: 192,
         },
         {
-          url: 'https://emirates-car.com/icons/icon-512x512.png',
+          url: 'https://www.emirates-car.com/icons/icon-512x512.png',
           width: 512,
           height: 512,
           alt: 'car parts',
@@ -136,18 +135,18 @@ export function generateMetadata({ params }) {
       title: `Car ${decodedParts} Parts Order Online in UAE | Best Prices | EMIRATESCAR`,
       url: 'https://www.emirates-car.com/search-by-part-name/' + decodedParts,
       description: `Buy ${decodedParts} Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE`,
-      images: ['https://emirates-car.com/favicon.png'],
+      images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
     },
     icons: {
-      icon: 'https://emirates-car.com/favicon.png',
-      shortcut: 'https://emirates-car.com/icons/icon-96x96.png',
-      apple: 'https://emirates-car.com/icons/icon-192x192.png',
+      icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
+      shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+      apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
       other: {
         rel: 'apple-touch-icon-precomposed',
-        url: 'https://emirates-car.com/icons/icon-152x152.png',
+        url: 'https://www.emirates-car.com/icons/icon-152x152.png',
       },
     },
-    category: category, // USE THE SAFE VARIABLE
+    category: category,
     alternates: {
       canonical: `https://www.emirates-car.com/search-by-part-name/${parts}`,
     },

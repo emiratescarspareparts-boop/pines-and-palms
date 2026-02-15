@@ -279,12 +279,12 @@ export function generateMetadata({ params }) {
         ),
         openGraph: {
             title: `${make} ${parts} - Used, Genuine, OEM and Aftermarket`,
-            description: `Find genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
+            description: `Find genuine, OEM, used & aftermarket ${make} ${parts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
             url: canonicalUrl,
             image: 'https://www.emirates-car.com/img/car-spare-parts.png',
             siteName: 'EMIRATESCAR',
             images: [
-                'https://www.emirates-car.com/favicon.png',
+                'https://www.emirates-car.com/icons/favicon-32x32.png',
                 {
                     url: 'https://www.emirates-car.com/icon-192x192.png',
                     width: 192,
@@ -302,13 +302,13 @@ export function generateMetadata({ params }) {
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${make} Spare Parts Dubai dealers UAE - Used, Genuine, OEM and Aftermarket`,
+            title: `${make} ${parts} Parts from Dubai dealers in UAE - Used, Genuine, OEM and Aftermarket`,
             url: canonicalUrl,
             description: `Find genuine, OEM, used & aftermarket ${make} ${parts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-            images: ['https://www.emirates-car.com/favicon.png'],
+            images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
         },
         icons: {
-            icon: 'https://www.emirates-car.com/favicon.png',
+            icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
             shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
             apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
             other: {

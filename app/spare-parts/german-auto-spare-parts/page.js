@@ -44,22 +44,22 @@ export const metadata = {
   description:
     'Buy German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
   openGraph: {
-    images: 'https://emirates-car.com/favicon.png',
+    images: 'https://www.emirates-car.com/icons/favicon-32x32.png',
     title:
       'German Auto Spare Parts in UAE - New | Used | Genuine | Aftermarket | OEM',
     description:
       'Buy German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
     url: 'https://www.emirates-car.com/spare-parts/german-auto-spare-parts',
-    image: 'https://emirates-car.com/img/car-spare-parts.png',
-    siteName: 'Emirates Auto Parts',
+    image: 'https://www.emirates-car.com/img/car-spare-parts.png',
+    siteName: 'EMIRATESCAR',
     images: [
       {
-        url: 'https://emirates-car.com/icon-192x192.png',
+        url: 'https://www.emirates-car.com/icons/icon-192x192.png',
         width: 192,
         height: 192,
       },
       {
-        url: 'https://emirates-car.com/icons/icon-512x512.png',
+        url: 'https://www.emirates-car.com/icons/icon-512x512.png',
         width: 512,
         height: 512,
         alt: 'car parts',
@@ -75,21 +75,21 @@ export const metadata = {
     url: 'https://www.emirates-car.com/spare-parts/german-auto-spare-parts',
     description:
       'Buy German Used, New, Genuine / Original / OEM, Aftermarket auto spare parts in UAE Body parts, Interior and exterior parts, suspension parts, headlight, fog lights and other lighting parts, performance parts and more',
-    images: ['https://emirates-car.com/favicon.png'],
+    images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
   },
   icons: {
-    icon: 'https://emirates-car.com/favicon.png',
-    shortcut: 'https://emirates-car.com/icons/icon-96x96.png',
-    apple: 'https://emirates-car.com/icons/icon-192x192.png',
+    icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
+    shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+    apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: 'https://emirates-car.com/icons/icon-152x152.png',
+      url: 'https://www.emirates-car.com/icons/icon-152x152.png',
     },
   },
   alternates: {
-    canonical: `https://www.emirates-car.com/spare-parts/german-auto-spare-parts}`,
+    canonical: `https://www.emirates-car.com/spare-parts/german-auto-spare-parts`,
   },
-  category: 'german origin spare parts',
+  category: 'German Spare Parts',
   other: {
     "script:ld+json": JSON.stringify(schema),
   },

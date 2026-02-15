@@ -286,15 +286,15 @@ export function generateMetadata({ params }) {
       images: ['https://www.emirates-car.com/img/car-spare-parts.png'],
     },
     icons: {
-      icon: '/favicon.png',
-      shortcut: '/icons/icon-96x96.png',
-      apple: '/icons/icon-192x192.png',
+      icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
+      shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+      apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
       other: {
         rel: 'apple-touch-icon-precomposed',
-        url: '/icons/icon-152x152.png',
+        url: 'https://www.emirates-car.com/icons/icon-152x152.png',
       },
     },
-    category: `${decodedMake} ${decodedLocation} auto spare parts`,
+    category: `Vehicle Parts & Accessories > ${decodedMake} > Spare parts in ${decodedLocation}`,
     robots: {
       index: true,
       follow: true,

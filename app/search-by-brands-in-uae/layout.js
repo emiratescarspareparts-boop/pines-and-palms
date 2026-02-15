@@ -10,21 +10,21 @@ export const viewport = {
 
 export const metadata = {
   title:
-    'Auto Spare Parts Order Online in UAE from Dubai dealers |Emirates-car.com',
+    'Auto Spare Parts Order Online in UAE from Dubai dealers | Emirates-car.com',
   description:
     'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
   openGraph: {
-    images: 'https://www.emirates-car.com/favicon.png',
+    images: 'https://www.emirates-car.com/icons/icon-32x32.png',
     title:
-      'Auto Spare Parts Order Online in UAE from Dubai dealers |Emirates-car.com',
+      'Auto Spare Parts Order Online in UAE from Dubai dealers | Emirates-car.com',
     description:
       'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
-    url: 'https://www.emirates-car.com/search-by-make',
+    url: 'https://www.emirates-car.com/search-by-brands-in-uae',
     image: 'https://www.emirates-car.com/img/car-spare-parts.png',
     siteName: 'EMIRATESCAR',
     images: [
       {
-        url: 'https://www.emirates-car.com/icon-192x192.png',
+        url: 'https://www.emirates-car.com/icons/icon-192x192.png',
         width: 192,
         height: 192
       },
@@ -42,21 +42,21 @@ export const metadata = {
     card: 'summary_large_image',
     title:
       'Auto Spare Parts Order Online in UAE from Dubai dealers |Emirates-car.com',
-    url: `https://www.emirates-car.com/search-by-make`,
+    url: `https://www.emirates-car.com/search-by-brands-in-uae`,
     description:
       'Buy Online and Get delivered Used, New, Genuine / Original / OEM, Aftermarket auto spare parts Online in UAE for German, American, Korean, Japanese models',
-    images: ['https://www.emirates-car.com/favicon.png']
+    images: ['https://www.emirates-car.com/icons/favicon-32x32.png']
   },
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/icons/icon-96x96.png',
-    apple: '/icons/icon-192x192.png',
+    icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
+    shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
+    apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/icons/icon-152x152.png'
+      url: 'https://www.emirates-car.com/icons/icon-152x152.png'
     }
   },
-  category: 'car parts',
+  category: 'Vehicle Parts & Accessories > Auto Spare parts in UAE',
   alternates: {
     canonical: `https://www.emirates-car.com/search-by-brands-in-uae`
   },

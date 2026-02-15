@@ -229,7 +229,7 @@ export function generateMetadata({ params }) {
         position: index + 1,
         item: {
             "@type": "Product",
-            "@id": `https://emirates-car.com/search-by-make/${make}/${product.category}/${product.subcategory}/${product.partname}-${product.partnumber}-${product.id}#product`,
+            "@id": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.subcategory}/${product.partname}-${product.partnumber}-${product.id}#product`,
             "name": `${product.partname} ${product.partnumber} ${make}`,
             "url": `https://www.emirates-car.com/search-by-make/${make}/${model}/${product.category}/${product.subcategory}/${product.partname}-${product.partnumber}-${product.id}`,
             "image": `https://www.emirates-car.com${product.image}`,
@@ -277,25 +277,25 @@ export function generateMetadata({ params }) {
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": `${make} Spare Parts`,
+                        "name": `${make}`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 4,
-                        "name": `${make} ${model} Spare Parts`,
+                        "name": `${make} ${model}`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 5,
-                        "name": `${make} ${model} ${category} Spare Parts`,
+                        "name": `${make} ${model} `,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 6,
-                        "name": `${make} ${model} ${subcategory} Spare Parts`,
+                        "name": `${make} ${model} ${category} ${subcategory}`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`
                     }
                 ]
@@ -316,11 +316,7 @@ export function generateMetadata({ params }) {
             siteName: "EMIRATESCAR",
         },
         category: `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
-        other: {
-            'product:brand': `${make}`,
-            'product:model': `${model}`,
-            'product:category': `${category} > ${subcategory}`,
-        },
+
         keywords: `${subcategory} for ${make} ${model} in dubai, buy ${make} ${model} ${subcategory} online UAE`,
         alternates: {
             canonical: canonicalUrl,
@@ -338,8 +334,11 @@ export function generateMetadata({ params }) {
             },
         },
         other: {
+            'product:brand': `${make}`,
+            'product:model': `${model}`,
+            'product:category': `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
             "script:ld+json": JSON.stringify(faqSchema),
-        },
+        }
     };
 }
 

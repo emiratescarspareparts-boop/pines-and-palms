@@ -200,7 +200,7 @@ export async function generateMetadata({ params }) {
             image: `https://www.emirates-car.com/${product.image}`,
             siteName: 'EMIRATESCAR',
             images: [
-                'https://www.emirates-car.com/favicon.png',
+                'https://www.emirates-car.com/icons/favicon-32x32.png',
                 {
                     url: 'https://www.emirates-car.com/icon-192x192.png',
                     width: 192,
@@ -223,10 +223,10 @@ export async function generateMetadata({ params }) {
             description: `Buy ${make} - ${decodeURIComponent(
                 model
             )} auto spare parts Online and Get delivered Used, New, Genuine / OEM, Aftermarket in UAE`,
-            images: ['https://www.emirates-car.com/favicon.png'],
+            images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
         },
         icons: {
-            icon: 'https://www.emirates-car.com/favicon.png',
+            icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
             shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
             apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
             other: {
