@@ -439,12 +439,12 @@ export default function Parts({ params, searchParams }) {
     );
 
 
-    // ✅ Filter by part subcategory
+    // Filter by part subcategory
     const partFiltered = makeFiltered.filter(product =>
         product.subcategory.toLowerCase() === partEntry.parts.toLowerCase()
     );
 
-    // ✅ Only show 404 if part is NOT in selectedParts AND no products found
+    // Only show 404 if part is NOT in selectedParts AND no products found
     if (!isSelectedParts && (!partFiltered || partFiltered.length === 0)) {
         notFound()
     }
