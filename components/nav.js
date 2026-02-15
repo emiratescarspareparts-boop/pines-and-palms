@@ -9,7 +9,6 @@ import {
   faTumblr,
 } from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import Iconpng from '../public/favicon-32x32.png';
 
@@ -47,7 +46,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <a
-                  href={`https://www.instagram.com/emiratescar_parts/`}
+                  href={`https://www.instagram.com/emiratescar.autoparts/`}
                   className="text-white hover:opacity-75"
                   aria-label="Instagram"
                 >

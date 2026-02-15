@@ -103,8 +103,8 @@ export function generateStaticParams() {
             if (!generated.has(key)) {
                 generated.add(key);
                 params.push({
-                    make: make,
-                    parts: partEntry.parts,
+                    make: encodeURIComponent(make),
+                    parts: encodeURIComponent(partEntry.parts),
                 });
             }
         }

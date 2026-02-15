@@ -44,7 +44,7 @@ export default function Contact() {
           <h6 className="text-3xl xs:text-sm text-white uppercase text-center font-bold xxs:text-base md:text-xl lg:text-2xl s:text-sm">
             COULD&apos;NT FIND YOUR DESIRED AUTO PARTS?{' '}
             <Link
-              href="https://emirates-car.com/contact"
+              href="https://www.emirates-car.com/contact"
               className="underline text-blue-900"
             >
               CONTACT US NOW
@@ -84,14 +84,14 @@ export default function Contact() {
                 &nbsp;
                 <Link
                   className="text-xl leading-xl text-purple-900"
-                  href="https://www.instagram.com/emiratescar_parts/"
+                  href="https://www.instagram.com/emiratescar.autoparts/"
                 >
                   <i className="fab fa-2x fa-instagram"></i>
                 </Link>
                 &nbsp;
                 <Link
                   className="text-xl leading-xl text-black"
-                  href="https://emirates-car.tumblr.com/"
+                  href="https://www.emirates-car.tumblr.com/"
                 >
                   <i className="fab fa-2x fa-tumblr"></i>
                 </Link>
@@ -122,21 +122,21 @@ export default function Contact() {
             <div className="pt-10 xs:py-5 xxs:pt-5 sm:pt-5 mx-auto text-center">
               <p className="pt-5 text-white font-extrabold">SHORTCUT LINKS</p>
               <Link
-                href="https://emirates-car.com/search-by-part-name"
+                href="https://www.emirates-car.com/search-by-part-name"
                 className="text-base xs:text-sm xxs:text-sm sm:text-base text-white underline"
               >
                 Search parts by part name in UAE
               </Link>
               <br />
               <Link
-                href="https://emirates-car.com/search-by-make"
+                href="https://www.emirates-car.com/search-by-make"
                 className="text-base xs:text-sm xxs:text-sm sm:text-base text-white underline"
               >
                 Search parts by Car make in UAE
               </Link>
               <br />
               <Link
-                href="https://emirates-car.com/search-by-cities-in-uae"
+                href="https://www.emirates-car.com/search-by-cities-in-uae"
                 className="text-base xs:text-sm xxs:text-sm sm:text-base text-white underline"
               >
                 Search parts by cities in UAE

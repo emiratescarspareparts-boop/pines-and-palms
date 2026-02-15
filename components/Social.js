@@ -29,7 +29,7 @@ export default function Social() {
         </div>
         <div>
           <a
-            href="https://www.instagram.com/emiratescar_parts/"
+            href="https://www.instagram.com/emiratescar.autoparts/"
             title="car trends"
             className="px-3 py-2 flex items-center text-xl leading-snug text-white hover:opacity-75"
             target="_newtab"
