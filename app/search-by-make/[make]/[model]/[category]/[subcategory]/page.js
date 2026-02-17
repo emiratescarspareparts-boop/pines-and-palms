@@ -153,7 +153,7 @@ export function generateStaticParams() {
                         make: make,
                         model: encodeURIComponent(model),
                         category: encodeURIComponent(category),
-                        subcategory: subcategory,
+                        subcategory: encodeURIComponent(subcategory),
                     });
                 }
             }
@@ -455,7 +455,6 @@ export default function SubcategoryPage({ params, searchParams }) {
     const hasAnyData = finalData.length > 0;
 
     const isBattery = decodeURIComponent(subcategory) === 'Battery'
-
 
     return (<>
 
