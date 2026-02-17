@@ -104,7 +104,7 @@ export function generateStaticParams() {
                 generated.add(key);
                 params.push({
                     make: encodeURIComponent(make),
-                    parts: encodeURIComponent(partEntry.parts),
+                    parts: partEntry.parts,
                 });
             }
         }
