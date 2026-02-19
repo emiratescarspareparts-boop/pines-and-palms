@@ -307,7 +307,7 @@ export function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       title: `${make} ${model} Spare Parts in UAE from Dubai dealer | Genuine, OEM & Aftermarket – Best Prices`,
-      url: '/search-by-make/' + make + '/' + model,
+      url: 'https://www.emirates-car.com/search-by-make/' + make + '/' + model,
       description: `Buy ${make} ${decodeURIComponent(model)} parts in UAE Online. High Quality New, Used, Genuine and Aftermarket. Get fast delivery and expert support from reliable Professionals. Shop now!`,
       images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
     },
@@ -336,8 +336,10 @@ export function generateMetadata({ params }) {
         'max-snippet': -1,
       },
     },
-    category: `${make} > ${decodeURIComponent(model)} auto spare parts`,
     other: {
+      'product:brand': make,
+      'product:model': model,
+      'product:category': `Vehicle Parts & Accessories > ${make} > ${model}`,
       "script:ld+json": JSON.stringify(faqSchema),
     },
   };

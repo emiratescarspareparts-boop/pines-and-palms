@@ -320,7 +320,7 @@ export function generateMetadata({ params }) {
         url: 'https://www.emirates-car.com/icons/icon-152x152.png',
       },
     },
-    category: `${make} auto spare parts`,
+    category: `Vehicle Parts & Accessories > ${make}`,
     alternates: {
       canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`,
     },
@@ -337,6 +337,8 @@ export function generateMetadata({ params }) {
       },
     },
     other: {
+      'product:brand': make,
+      'product:category': `Vehicle Parts & Accessories > ${make}`,
       "script:ld+json": JSON.stringify(faqSchema),
     },
   };
