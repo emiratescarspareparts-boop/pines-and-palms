@@ -250,6 +250,12 @@ export function generateMetadata({ params }) {
         }
       },
       {
+        "@type": "Organization",
+        "@id": "https://www.emirates-car.com",
+        "name": "Emirates Car",
+        "url": "https://www.emirates-car.com"
+      },
+      {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
