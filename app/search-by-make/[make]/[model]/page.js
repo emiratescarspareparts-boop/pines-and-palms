@@ -913,7 +913,7 @@ export default function Model({ params, searchParams }) {
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
           <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-            Search All <span className='text-blue-500'>{make}</span> Parts in UAE
+            Most Searched <span className='text-blue-500'>{make}</span> Spare Parts in UAE
           </h2>
 
           <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
@@ -955,52 +955,6 @@ export default function Model({ params, searchParams }) {
         </div>
       </section>
 
-
-      <section aria-labelledby="featured-deals" className="xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
-        <h2
-          id="featured-deals"
-          className={`text-4xl md:text-3xl lg:text-3xl font-bold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}
-        >
-          Featured Deals on{" "}
-          <span className="text-blue-600">
-            {make} {decodeURIComponent(model)}
-          </span>
-        </h2>
-
-        <ul className="grid grid-cols-5 xxs:grid-cols-2 gap-2 s:grid-cols-2 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {images.map((item, index) => (
-            <li key={index} className="list-none border-2 p-5 relative">
-              {/* Sale badge */}
-              <span className="absolute top-0 right-0 text-sm font-bold text-white bg-red-600 rounded-l-xl rounded-r-xl p-1">
-                Sale!
-              </span>
-
-              <h3 className={`text-xl xl:text-2xl xxl:text-2xl font-bold font-sans ${playfair_display.className}`}>{item.name}</h3>
-
-              <hr className="py-1" />
-
-              {/* Product image */}
-              <Image
-                src={item.images}
-                alt={item.alt}
-                height={250}
-                width={250}
-                className="object-none object-center p-1"
-                priority
-              />
-
-              {/* CTA */}
-              <Link
-                href={item.link}
-                title={`${make} ${decodeURIComponent(model)} ${item.name}`}
-                className="items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:px-5 xs:py-2 xs:text-xs xs:my-2 xxs:text-sm xxs:my-2 s:text-sm s:my-2 focus:filter brightness-125 mt-3 block text-center"
-              >
-                Inquire Now
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       <section>
         <div className="d-flex  pt-10 xs:pt-5 mx-8">
