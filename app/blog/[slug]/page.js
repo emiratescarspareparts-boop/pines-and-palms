@@ -23,9 +23,9 @@ export function getBlog(slug) {
   ) || null;
 }
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
   const { slug } = params;
-  const data = await getBlog(slug);
+  const data = getBlog(slug);
   return {
     title: `${data.TITLE} | EMIRATESCAR`,
     description: `${data.DESCRIPTION}`,

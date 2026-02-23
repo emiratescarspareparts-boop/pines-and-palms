@@ -517,155 +517,6 @@ export default function Model({ params, searchParams }) {
     grouped[item.category].push(item.parts);
   }
 
-  const images = [
-    {
-      images: imagePaths.ABS,
-      name: 'ABS',
-      alt: `${make} ${model} "anti lock braking system"`,
-      link: '/search-by-part-name/Anti-Lock%20Brake%20Control%20Module%20(ABS)',
-    },
-    {
-      images: imagePaths.AirFilter,
-      name: 'Air Filter',
-      alt: `${make} ${model} "air filter"`,
-      link: '/get-in-touch',
-    },
-
-    {
-      images: imagePaths.AirSuspension,
-      name: 'Air Suspension',
-      alt: `${make} ${model} "air suspension"`,
-      link: '/get-in-touch',
-    },
-
-    {
-      images: imagePaths.AxleAssembly,
-      name: 'Axle',
-      alt: `${make} ${model} " axle"`,
-      link: '/search-by-part-name/Axle%20Assembly%20(Front,%204WD)',
-    },
-    {
-      images: imagePaths.BrakePads,
-      name: 'Brake Pads',
-      alt: `${make} ${model} "brake pads"`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.CatalyticConverter,
-      name: 'Catalytic Convertor',
-      alt: `${make} ${model} "catalytic convertor"`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.CylinderHead,
-      name: 'Cylinder Head',
-      alt: `${make} ${model} "cylinder"`,
-      link: '/search-by-part-name/Cylinder%20Head)',
-    },
-    {
-      images: imagePaths.Distributor,
-      name: 'Distributor',
-      alt: `${make} ${model} distributor`,
-      link: '/search-by-part-name/Distributor',
-    },
-    {
-      images: imagePaths.Engine,
-      name: 'Engine',
-      alt: `${make} ${model} "engine"`,
-      link: '/search-by-part-name/Engine%20Assembly',
-    },
-    {
-      images: imagePaths.ExhaustManifold,
-      name: 'Exhaust Manifold',
-      alt: `${make} ${model} "exhaust system"`,
-      link: '/search-by-part-name/Exhaust%20Manifold',
-    },
-    {
-      images: imagePaths.GearBox,
-      name: 'Gearbox / Transmission',
-      alt: `${make} ${model} "gearbox"`,
-      link: '/search-by-part-name/Transmission%20Control%20Module',
-    },
-    {
-      images: imagePaths.Grille,
-      name: 'Grille',
-      alt: `${make} ${model} " grille"`,
-      link: '/Toyota/Camry/AC%20&%20Heating%20(HVAC)/AC%20Compressor',
-    },
-    {
-      images: imagePaths.Headlight,
-      name: 'Headlight',
-      alt: `${make} ${model} " headlight bulb"`,
-      link: '/search-by-part-name/Headlight%20Assembly',
-    },
-    {
-      images: imagePaths.MasterCylinderKit,
-      name: 'Master Cylinder',
-      alt: `${make} ${model} " master cylinder"`,
-      link: '/search-by-part-name/Master%20Cylinder%20(Clutch)',
-    },
-    {
-      images: imagePaths.MudFlap,
-      name: 'Mud Flap',
-      alt: `${make} ${model} mud flaps`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.Radiator,
-      name: 'Radiator',
-      alt: `${make} ${model} " radiator"`,
-      link: '/search-by-part-name/Radiator',
-    },
-    {
-      images: imagePaths.RearBumper,
-      name: 'Rear Bumper',
-      alt: `${make} ${model}" rear bumper"`,
-      link: '/search-by-part-name/Bumper%20Assembly%20(Rear)',
-    },
-    {
-      images: imagePaths.ReverseLight,
-      name: 'Reverse Light',
-      alt: `${make} ${model} "reverse light bulb"`,
-      link: '/search-by-part-name/Reverse%20Light',
-    },
-    {
-      images: imagePaths.Rim,
-      name: 'Rims',
-      alt: `${make} ${model} "rims for sale"`,
-      link: '/search-by-part-name/Rim',
-    },
-    {
-      images: imagePaths.SeatBelt,
-      name: 'Seat Belt',
-      alt: `${make} ${model} " seat belt"`,
-      link: '/search-by-part-name/Seat%20Belt',
-    },
-    {
-      images: imagePaths.ShockAbsorber,
-      name: 'Shock Absorber',
-      alt: `${make} ${model} " shock absorber"`,
-      link: '/search-by-part-name/Shock%20Absorber',
-    },
-    {
-      images: imagePaths.SideMirror,
-      name: 'Mirror',
-      alt: `${make} ${model}" mirrors"`,
-      link: '/search-by-part-name/Mirror%20(Rear%20View)',
-    },
-    {
-      images: imagePaths.SteeringWheel,
-      name: 'Steering Wheel',
-      alt: `${make} ${model} " steering wheel"`,
-      link: '/search-by-part-name/Steering%20Wheel',
-    },
-    {
-      images: imagePaths.Wheel,
-      name: 'Wheels',
-      alt: `${make} ${model} " wheels"`,
-      link: '/search-by-part-name/Wheel',
-    },
-  ];
-
   return (
     <div className="max-w-7xl  mx-auto md:px-0 lg:px-0 xs:px-0 xxs:px-0 sm:px-2">
 
@@ -837,76 +688,9 @@ export default function Model({ params, searchParams }) {
       </section>
 
 
-      <section className="d-flex py-10 xs:pt-5 mx-8 md:mx-5 xs:mx-3 lg:max-w-4xl lg:mx-auto" aria-labelledby='oem parts or aftermarket parts'>
-        <h3
-          className={`text-4xl md:text-3xl xs:text-2xl xxs:text-2xl sm:text-2xl font-bold text-blue-600 mx-auto my-5 ${playfair_display.className}`}
-          id="oemvsaftermarket"
-        >
-          Team Genuine {make} {decodeURIComponent(model)} Parts VS Team
-          Aftermarket {make} {decodeURIComponent(model)} Parts
-        </h3>
-        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
-          {make} {decodeURIComponent(model)} aftermarket parts are better
-          to buy for many reasons:
-        </h5>
-        <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
-          <li>It is more affordable than genuine parts</li>
-          <li>Some genuine parts are similar to genuine parts itself.</li>
-          <li>
-            It is readily available because it is equivalently
-            manufactured to genuine parts.
-          </li>
-          <li>
-            Aftermarket parts can have more manufacturers than genuine
-            parts which can be only from one main manufacturer
-          </li>
-        </ol>
-        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
-          {make} {decodeURIComponent(model)} Genuine parts are better to
-          buy for many reasons:
-        </h5>
-        <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
-          <li>
-            Aftermarket parts are not regularized or standardized because
-            it is manufactured as a duplicate to genuine parts.
-          </li>
-          <li>
-            Genuine parts are best in quality than aftermarket parts.{' '}
-          </li>
-          <li>
-            Genuine parts have warranty unlike aftermarket parts which has
-            no Warranty
-          </li>
-        </ol>
-        <p className="text-xl font-sans text-gray-700 mx-auto">
-          However, if you weigh your pros and cons and which kind of parts
-          you really need, you can come to the best conclusion yourself.
-          And we can serve you with both kind of parts.
-        </p>
-      </section>
 
-      <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-        <h2 className={`text-4xl md:text-3xl xs:text-2xl xxs:text-xl sm:text-2xl font-bold mx-auto my-10 ${playfair_display.className}`}>
-          Availability of <span className='text-blue-600'>{make} {model} spare parts</span> in UAE
-        </h2>
 
-        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-          {baseCity.map((post, i) => (
-            <li key={i}>
-              <Link
-                href="/search-by-brands-in-uae/[make]/[city]"
-                as={'/search-by-brands-in-uae/' + make + "/" + post.city}
-                title={make + " " + model + ' spare parts ' + post.city}
-                className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-              >
-                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                  {post.city}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+
 
       <TenEntries />
 
@@ -1319,109 +1103,82 @@ export default function Model({ params, searchParams }) {
           </div>
         </div>
       </section >
-
-      <section className='mx-3' aria-labelledby={`How to buy ${make} ${decodeURIComponent(model)} parts`}>
-        <h6 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
-          5 ways you can {make} {model} find parts for your car.
-        </h6>
-        There are 5 ways you can try finding {make} {model} spare parts for your car.
-        <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-          Traditional way its pros and cons
-        </h5>
-        <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-          You find a {make} {model} spare parts shop nearby and go and purchase and the work
-          is done. In this case, the pros is that you find nearby shop to have
-          similar brands you have and that's it! you purchase it with ease. But
-          the cons is when you don't find the nearby shop to have the car
-          brand which you are using. There are shop who only deal with certain
-          parts like the shop A sells only in honda, Mazda, BMW and shop B
-          sells only Audi, Lincoln and Ferrari. So to see for next option, you
-          can opt for shopping from Giant E-commerce company like Amazon,
-          EBay, Flipkart etc.
-        </p>
-        <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-          Giant E-commerce Company its pros and cons:
-        </h5>
-        <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-          If you don't find spare parts nearby your house location, generally
-          we move on to search on internet. You search for top companies
-          selling spare parts online and you end up in giant e-commerce
-          company like Amazon, Flipkart,Ebay etc. Now you see the review of
-          person who has already ordered spare parts. Most of the reviews says
-          the parts were broken. These giant company has a very big logistics
-          that they are vulnerable to be broken during or even get lost during
-          the check-in process. So it is not always safe to buy spare parts
-          from giant e-commerce company. Hence we see for other option which
-          is the Local dealers.
-        </p>
-        <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-          Local Dealers
-        </h5>
-        <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-          Local dealers are known through other person like through friends
-          and family. Or he gives you his business card and he explains you
-          directly the car brands he deals with. However with the current
-          digital advancement, the local dealers are decreasing gradually. So
-          we move to the next option to search on online marketplace.
-        </p>
-
-        <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-          Online Marketplace (Only CONS!)
-        </h5>
-        <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-          Through Online marketplace we find spare parts for our car easily.
-          But it also has lots of cons. If you search for very latest model
-          used spare parts, it will not be available on marketplace. In this
-          case you have to contact the car brand company directly. If you
-          search for very old model, it will not be available with most of the
-          car brands company itself due to numerous new brands being manufactured yearly. And also there are more spam issues
-          reported from those who purchase from small vendor marketplace and
-          also the larger companies. In this case you should go for Online
-          dealer website.
-        </p>
-
-        <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans  mx-auto my-5 font-bold">
-          Online Dealer Website ONLY PROS!
-        </h5>
-        <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-          Online dealers website is the easiest way to order spare parts. You
-          visit a bunch of site online and submit your inquiries therein and
-          dealers will contact you back through the contact information you
-          submitted. If one website didnt reply you or didn't have stock, then other website will
-          do. So there is plenty of website and options. Emirates-car.com is
-          one such website which accept online inquiries. It deals with parts
-          and accessories for honda accord, Honda civic and{' '}
-          <a
-            href={'/search-by-make/' + make}
-            className="text-blue-500 underline hover:text-blue-900"
-          >
-            other honda models
-          </a>
-          , Infiniti models, BMW models, Audi models and many other brands.
-          Visit to search parts you need.
-        </p>
-      </section>
-
-
       <section className="text-center text-xl underline font-bold text-red-600">
         <HondaOfferButton />
       </section>
 
-      <section className="grid grid-cols-1 xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 xxs:grid xxs:grid-cols-1 mt-10 mx-3">
-        {/* Section heading */}
-        <h3 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-          <span className='text-blue-600'>{make} {decodeURIComponent(model)}</span> parts Dubai
+      <section className="d-flex py-10 xs:pt-5 mx-8 md:mx-5 xs:mx-3 lg:max-w-4xl lg:mx-auto" aria-labelledby='oem parts or aftermarket parts'>
+        <h3
+          className={`text-4xl md:text-3xl xs:text-2xl xxs:text-2xl sm:text-2xl font-bold text-blue-600 mx-auto my-5 ${playfair_display.className}`}
+          id="oemvsaftermarket"
+        >
+          Team Genuine {make} {decodeURIComponent(model)} Parts VS Team
+          Aftermarket {make} {decodeURIComponent(model)} Parts
         </h3>
+        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
+          {make} {decodeURIComponent(model)} aftermarket parts are better
+          to buy for many reasons:
+        </h5>
+        <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
+          <li>It is more affordable than genuine parts</li>
+          <li>Some genuine parts are similar to genuine parts itself.</li>
+          <li>
+            It is readily available because it is equivalently
+            manufactured to genuine parts.
+          </li>
+          <li>
+            Aftermarket parts can have more manufacturers than genuine
+            parts which can be only from one main manufacturer
+          </li>
+        </ol>
+        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
+          {make} {decodeURIComponent(model)} Genuine parts are better to
+          buy for many reasons:
+        </h5>
+        <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
+          <li>
+            Aftermarket parts are not regularized or standardized because
+            it is manufactured as a duplicate to genuine parts.
+          </li>
+          <li>
+            Genuine parts are best in quality than aftermarket parts.{' '}
+          </li>
+          <li>
+            Genuine parts have warranty unlike aftermarket parts which has
+            no Warranty
+          </li>
+        </ol>
+        <p className="text-xl font-sans text-gray-700 mx-auto">
+          However, if you weigh your pros and cons and which kind of parts
+          you really need, you can come to the best conclusion yourself.
+          And we can serve you with both kind of parts.
+        </p>
+      </section>
 
-        {/* Parts list */}
-        <ul className="xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 gap-2 md:w-full lg:mx-2 px-3">
-          {partspost.map((post, i) => (
+      <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
+        <h2 className={`text-4xl md:text-3xl xs:text-2xl xxs:text-xl sm:text-2xl font-bold mx-auto my-10 ${playfair_display.className}`}>
+          Availability of <span className='text-blue-600'>{make} {model} spare parts</span> in UAE
+        </h2>
+
+        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+          {baseCity.map((post, i) => (
             <li key={i}>
-              {make} {decodeURIComponent(model)} {post.parts} price list
+              <Link
+                href="/search-by-brands-in-uae/[make]/[city]"
+                as={'/search-by-brands-in-uae/' + make + "/" + post.city}
+                title={make + " " + model + ' spare parts ' + post.city}
+                className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+              >
+                <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                  {post.city}
+                </span>
+              </Link>
             </li>
           ))}
         </ul>
       </section>
+
+
     </div >
   );
 }

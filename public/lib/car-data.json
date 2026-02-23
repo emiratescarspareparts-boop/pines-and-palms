@@ -33856,7 +33856,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Pilot AWD",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },

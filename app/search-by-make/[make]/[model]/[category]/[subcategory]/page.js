@@ -19,7 +19,7 @@ import dynamic from "next/dynamic";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
@@ -110,64 +110,6 @@ function getPartsByCategory(category) {
 }
 
 
-export function generateStaticParams() {
-    try {
-        // Build a Set of models with seo=true for O(1) lookup
-        const seoEnabledModels = new Set();
-        const carDataLength = CarData.length;
-
-        for (let i = 0; i < carDataLength; i++) {
-            const car = CarData[i];
-            if (car.seo === true) {
-                seoEnabledModels.add(`${car.make}|${car.model}`);
-            }
-        }
-
-        const unique = new Set();
-        const params = [];
-        const productsLength = productsFile.length;
-
-        for (let i = 0; i < productsLength; i++) {
-            const product = productsFile[i];
-            if (!product?.compatibility) continue;
-
-            const category = product.category?.trim();
-            const subcategory = product.subcategory?.trim();
-
-            if (!category || !subcategory) continue;
-
-            const compatibilityLength = product.compatibility.length;
-            for (let j = 0; j < compatibilityLength; j++) {
-                const fit = product.compatibility[j];
-                const make = fit.make?.trim();
-                const model = fit.model?.trim();
-
-                if (!make || !model || excludedMakesSet.has(make)) continue;
-                if (!seoEnabledModels.has(`${make}|${model}`)) continue;
-
-                const key = `${make}|${model}|${category}|${subcategory}`;
-
-                if (!unique.has(key)) {
-                    unique.add(key);
-                    params.push({
-                        make: make,
-                        model: encodeURIComponent(model),
-                        category: encodeURIComponent(category),
-                        subcategory: encodeURIComponent(subcategory),
-                    });
-                }
-            }
-        }
-
-        console.log(`✓ Generated ${params.length} pages (seo=true only)`);
-        return params;
-
-    } catch (error) {
-        console.error("Error generating static params:", error);
-        return [];
-    }
-}
-
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
@@ -215,7 +157,7 @@ export function generateMetadata({ params }) {
     const imageMake = getMakeImage(make, model);
 
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`;
-
+    console.log(canonicalUrl)
 
     // Products filtered only by make
     const productsForMake = productsFile.filter((p) =>
