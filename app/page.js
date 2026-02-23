@@ -528,13 +528,15 @@ export const metadata = {
   },
 };
 
-const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
-  "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
-  "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
-  , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
-  , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
-  "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
-  , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+const selectedParts = [
+  // Tier 1
+  "Battery", "Engine Assembly", "Gearbox", "Radiator",
+  "AC Compressor", "Alternator", "Suspension", "Shock Absorber",
+  "Headlight Assembly", "Bumpers", "Brake Disc", "Turbocharger",
+  // Tier 2
+  "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
+  "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
+  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
 ]
 
 
