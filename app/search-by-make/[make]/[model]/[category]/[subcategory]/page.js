@@ -327,6 +327,83 @@ function getModel(make) {
     }
 }
 
+export function generateStaticParams() {
+    try {
+        const seoEnabledModels = new Set();
+        for (let i = 0; i < CarData.length; i++) {
+            const car = CarData[i];
+            if (car.seo === true) {
+                seoEnabledModels.add(`${car.make}|${car.model}`);
+            }
+        }
+
+        const unique = new Set();
+        const params = [];
+
+        // --- Path 1: From products.json (exact product matches) ---
+        for (let i = 0; i < productsFile.length; i++) {
+            const product = productsFile[i];
+            if (!product?.compatibility) continue;
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
+            if (!category || !subcategory) continue;
+
+            for (let j = 0; j < product.compatibility.length; j++) {
+                const fit = product.compatibility[j];
+                const make = fit.make?.trim();
+                const model = fit.model?.trim();
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+                if (!seoEnabledModels.has(`${make}|${model}`)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make,
+                        model: encodeURIComponent(model),
+                        category: encodeURIComponent(category),
+                        subcategory: encodeURIComponent(subcategory),
+                    });
+                }
+            }
+        }
+
+        // --- Path 2: seo=true models + selectedParts (no product needed) ---
+        // Must also know which category each selectedPart belongs to
+        for (let i = 0; i < CarData.length; i++) {
+            const car = CarData[i];
+            if (!car.seo || excludedMakesSet.has(car.make)) continue;
+
+            for (let j = 0; j < selectedParts.length; j++) {
+                const subcategory = selectedParts[j];
+
+                // Find the category for this part from partsData
+                const partEntry = partsData.find(
+                    p => p.parts?.toLowerCase() === subcategory.toLowerCase()
+                );
+                if (!partEntry?.category) continue;
+
+                const category = partEntry.category;
+                const key = `${car.make}|${car.model}|${category}|${subcategory}`;
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make: car.make,
+                        model: encodeURIComponent(car.model),
+                        category: encodeURIComponent(category),
+                        subcategory: encodeURIComponent(subcategory),
+                    });
+                }
+            }
+        }
+
+        console.log(`✓ Generated ${params.length} pages`);
+        return params;
+    } catch (error) {
+        console.error("Error generating static params:", error);
+        return [];
+    }
+}
 
 export default function SubcategoryPage({ params }) {
     const make = decodeURIComponent(params.make);

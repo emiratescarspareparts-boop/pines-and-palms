@@ -276,11 +276,7 @@ export default function ProductPage({ params, searchParams }) {
     );
 
     if (!compat) {
-        return (
-            <div className="p-6 text-center text-gray-700">
-                Compatibility not found for {make} {model}
-            </div>
-        );
+        notFound()
     }
 
     const matchingCompats = product.compatibility?.filter(
