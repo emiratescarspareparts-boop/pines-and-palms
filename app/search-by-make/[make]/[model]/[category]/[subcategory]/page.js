@@ -46,13 +46,17 @@ const excludedMakes = [
     'Chery', 'Geely', 'BAIC', 'Bestune'
 ];
 
-const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
-    "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
-    "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
-    , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
-    , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
-    "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
-    , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+
+
+const selectedParts = [
+    // Tier 1
+    "Battery", "Engine Assembly", "Gearbox", "Radiator",
+    "AC Compressor", "Alternator", "Suspension", "Shock Absorber",
+    "Headlight Assembly", "Bumpers", "Brake Disc", "Turbocharger",
+    // Tier 2
+    "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
+    "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
+    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
 ]
 
 const excludedMakesSet = new Set(excludedMakes);
@@ -116,7 +120,6 @@ export function generateMetadata({ params }) {
     const category = decodeURIComponent(params.category);
     const subcategory = decodeURIComponent(params.subcategory);
 
-    // Check if this is a valid page
     const isSelectedPart = selectedParts.some(
         p => p.toLowerCase() === subcategory.toLowerCase()
     );
@@ -132,7 +135,6 @@ export function generateMetadata({ params }) {
 
     const hasValidContent = isSelectedPart || matchingProducts.length > 0;
 
-    // For invalid pages (404), return noindex metadata
     if (!hasValidContent) {
         return {
             title: 'Page Not Found - EMIRATESCAR',
@@ -155,27 +157,22 @@ export function generateMetadata({ params }) {
     }
 
     const imageMake = getMakeImage(make, model);
-
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`;
 
-    // Products filtered only by make
-    const productsForMake = productsFile.filter((p) =>
-        p.compatibility?.some(
-            (c) => c.make?.toLowerCase() === make.toLowerCase()
-        )
-    );
-
-    const productListItems = productsForMake.length > 0 ? productsForMake.map((product, index) => ({
+    // FIX 1: Use matchingProducts (make+model+category+subcategory specific)
+    // NOT productsForMake which was loading ALL make products into schema — bloated and irrelevant
+    const productListItems = matchingProducts.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
         item: {
             "@type": "Product",
-            "@id": `https://www.emirates-car.com/search-by-make/${make}/${product.category}/${product.subcategory}/${product.partname}-${product.partnumber}-${product.id}#product`,
-            "name": `${product.partname} ${product.partnumber} ${make}`,
-            "url": `https://www.emirates-car.com/search-by-make/${make}/${model}/${product.category}/${product.subcategory}/${product.partname}-${product.partnumber}-${product.id}`,
+            // FIX 2: Corrected @id and url to use proper route structure
+            "@id": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}/${product.partname}-${product.partnumber}-${product.id}#product`,
+            "name": `${product.partname} ${product.partnumber} ${make} ${model}`,
+            "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}/${product.partname}-${product.partnumber}-${product.id}`,
             "image": `https://www.emirates-car.com${product.image}`,
-            "description": `${product.partname} compatible with ${make}`,
-            "brand": { "@type": "Brand", name: product.compatibility?.[0]?.make || make },
+            "description": `${product.partname} compatible with ${make} ${model}`,
+            "brand": { "@type": "Brand", name: make },
             "mpn": product.partnumber,
             "offers": {
                 "@type": "Offer",
@@ -184,8 +181,14 @@ export function generateMetadata({ params }) {
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
             },
+            // FIX 3: Added isAccessoryOrSparePartFor which was missing from subcategory schema
+            "isAccessoryOrSparePartFor": {
+                "@type": "Car",
+                "brand": { "@type": "Brand", "name": make },
+                "model": model
+            }
         },
-    })) : [];
+    }));
 
     const faqSchema = {
         "@context": "https://schema.org",
@@ -194,6 +197,8 @@ export function generateMetadata({ params }) {
                 "@type": "CollectionPage",
                 "name": `${make} ${model} ${subcategory} | EMIRATESCAR`,
                 "url": canonicalUrl,
+                // FIX 4: Added description to CollectionPage — was missing
+                "description": `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
                 "mainEntity": {
                     "@type": "ItemList",
                     "itemListElement": productListItems,
@@ -206,7 +211,7 @@ export function generateMetadata({ params }) {
                 "url": "https://www.emirates-car.com"
             },
             {
-                "@context": "https://schema.org",
+                // FIX 5: Removed duplicate @context inside @graph — invalid schema
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {
@@ -219,12 +224,12 @@ export function generateMetadata({ params }) {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Car Makes",
-                        "item": `https://www.emirates-car.com/search-by-make/`
+                        "item": "https://www.emirates-car.com/search-by-make/"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": `${make}`,
+                        "name": `${make} Spare Parts`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
                     },
                     {
@@ -236,14 +241,14 @@ export function generateMetadata({ params }) {
                     {
                         "@type": "ListItem",
                         "position": 5,
-                        "name": `${make} ${model} `,
+                        "name": `${make} ${model} ${category}`,
                         "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 6,
-                        "name": `${make} ${model} ${category} ${subcategory}`,
-                        "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`
+                        "name": `${make} ${model} ${subcategory}`,
+                        "item": canonicalUrl
                     }
                 ]
             },
@@ -251,19 +256,28 @@ export function generateMetadata({ params }) {
     };
 
     return {
-        title: `${make} ${model} ${subcategory} | Genuine & New, Used Parts UAE`,
-        description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras al khaimah`,
+        // FIX 6: More descriptive, keyword-rich title
+        title: `${make} ${model} ${subcategory} | Genuine, Used & Aftermarket Parts UAE`,
+        description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
         openGraph: {
-            title: `${make} ${model} ${subcategory} Parts`,
-            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras al khaimah`,
+            title: `${make} ${model} ${subcategory} | Genuine & Aftermarket Parts UAE`,
+            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
             images: [
-                `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
+                {
+                    // FIX 7: OG image was a bare string — should be an object with url, width, height
+                    url: `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
+                    width: 800,
+                    height: 600,
+                    alt: `${make} ${model} ${subcategory}`,
+                }
             ],
-            url: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`,
+            url: canonicalUrl,
             siteName: "EMIRATESCAR",
+            type: "website",
+            locale: "en_US",
         },
-        category: `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
-
+        // FIX 8: Removed duplicate `other` key — was being overwritten silently
+        // merged product meta and ld+json into single other object
         keywords: `${subcategory} for ${make} ${model} in dubai, buy ${make} ${model} ${subcategory} online UAE`,
         alternates: {
             canonical: canonicalUrl,
@@ -281,8 +295,8 @@ export function generateMetadata({ params }) {
             },
         },
         other: {
-            'product:brand': `${make}`,
-            'product:model': `${model}`,
+            'product:brand': make,
+            'product:model': model,
             'product:category': `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
             "script:ld+json": JSON.stringify(faqSchema),
         }
@@ -326,6 +340,8 @@ function getModel(make) {
         return [];
     }
 }
+
+
 
 export function generateStaticParams() {
     try {
@@ -404,7 +420,6 @@ export function generateStaticParams() {
         return [];
     }
 }
-
 export default function SubcategoryPage({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);

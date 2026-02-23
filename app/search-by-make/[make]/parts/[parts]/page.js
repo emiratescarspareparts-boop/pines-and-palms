@@ -64,13 +64,15 @@ const excludedMakes = [
 
 const excludedMakesSet = new Set(excludedMakes);
 
-const selectedParts = ["Battery", "Alternator", "Steering Rack", "AC Compressor", "AC Condenser", "AC Evaporator",
-    "Air Bag Assembly", "Anti-Lock Brake Control Module (ABS)", "Axle Assembly", "Axle Shaft", "Brake Booster", "Bumpers", "Accessories", "Body Kits",
-    "Camshaft", "Carburetor", "Catalytic Convertor", "Body Control Module (BCM)", "Coil (Ignition)", "Cooling Fans Assembly (Rad. & Cond.)"
-    , "Crankshaft", "Cylinder Head", "Dashboard Assembly", "Differential Assembly", "Engine Assembly", "Engine Mount"
-    , "Exhaust Manifold", "Fender (Front)", "Fender (Rear)", "Flywheel", "Fog Light", "Fuel Injection Pump", "Fuel Pump", "Grille",
-    "Gearbox", "Headlight Assembly", "Speedometer Cluster", "Intake Manifold", "Lower Control Arm", "Upper Control Arm", "Master Cylinder", "Mirrors", "Oil Pump", "Piston"
-    , "Steering Box", "Radiator", "Steering Wheel", "Spoiler", "Starter", "Suspension", "Taillight", "Throttle Body Assembly", "Turbocharger", "Water Pump", "Wheel", "Brake Disc", "Bonnet", "Engine Gasket", "Shock Absorber"
+const selectedParts = [
+    // Tier 1
+    "Battery", "Engine Assembly", "Gearbox", "Radiator",
+    "AC Compressor", "Alternator", "Suspension", "Shock Absorber",
+    "Headlight Assembly", "Bumpers", "Brake Disc", "Turbocharger",
+    // Tier 2
+    "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
+    "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
+    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
 ]
 
 export function generateStaticParams() {
@@ -138,17 +140,17 @@ export function generateStaticParams() {
 }
 
 
+
+
 export function generateMetadata({ params }) {
     const { parts, make } = params;
     const decodedParts = decodeURIComponent(parts);
     const decodedMake = decodeURIComponent(make);
-    const partsDa = partsData;
 
-    const partEntry = partsDa.find(
+    const partEntry = partsData.find(
         (p) => p.parts.toLowerCase() === decodedParts.toLowerCase()
     );
 
-    // Check if this is a valid page
     const isSelectedPart = selectedParts.some(
         p => p.toLowerCase() === decodedParts.toLowerCase()
     );
@@ -165,7 +167,6 @@ export function generateMetadata({ params }) {
 
     const hasValidContent = partEntry && (isSelectedPart || partFiltered.length > 0);
 
-    // For invalid pages (404), return noindex metadata
     if (!hasValidContent) {
         return {
             title: 'Page Not Found - EMIRATESCAR',
@@ -189,52 +190,65 @@ export function generateMetadata({ params }) {
 
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(decodedMake)}/parts/${encodeURIComponent(decodedParts)}`;
 
+    // FIX 1: Use decodedMake and decodedParts consistently — original was mixing
+    // encoded params (make, parts) with decoded values in schema URLs
+    const productListItems = partFiltered.map((product, index) => {
+        // FIX 2: Guard against missing compatibility data to prevent runtime crash
+        const firstCompat = product.compatibility?.[0];
+        if (!firstCompat) return null;
 
-    // For valid pages, continue with regular metadata
-    const productListItems = partFiltered.length > 0 ? partFiltered.map((product, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-            "@type": "Product",
-            "@id": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}#product`,
-            "name": `${product.partname} ${product.partnumber} ${make}`,
-            "url": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}`,
-            "image": `https://www.emirates-car.com${product.image}`,
-            "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
-            "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-            "mpn": `${product.partnumber}`,
-            "offers": {
-                "@type": "Offer",
-                "url": `https://www.emirates-car.com/search-by-make/${make}/${product.compatibility[0].model}/${product.category}/${product.partname}-${make}-${product.compatibility[0].model}-${product.compatibility[0].years}-${product.partnumber}-${product.id}`,
-                "priceCurrency": product.pricing.currency,
-                "price": product.pricing.price,
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition"
-            },
-            "isAccessoryOrSparePartFor": {
-                "@type": "Car",
-                "make": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-                "model": product.compatibility[0]?.model
+        const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(decodedMake)}/${encodeURIComponent(firstCompat.model)}/${encodeURIComponent(product.category)}/${product.partname}-${encodeURIComponent(decodedMake)}-${encodeURIComponent(firstCompat.model)}-${firstCompat.years ?? ''}-${product.partnumber}-${product.id}`;
+
+        return {
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "Product",
+                // FIX 3: Corrected @id — was using raw encoded params in URL
+                "@id": `${productUrl}#product`,
+                "name": `${product.partname} ${product.partnumber} ${decodedMake}`,
+                "url": productUrl,
+                "image": `https://www.emirates-car.com${product.image}`,
+                // FIX 4: Description now includes all compatible models, not just first
+                "description": `${product.partname} compatible with ${decodedMake} ${product.compatibility?.map(c => c.model).join(", ")}`,
+                "brand": { "@type": "Brand", "name": decodedMake },
+                "mpn": product.partnumber,
+                "offers": {
+                    "@type": "Offer",
+                    "url": productUrl,
+                    "priceCurrency": product.pricing.currency,
+                    "price": product.pricing.price,
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition"
+                },
+                "isAccessoryOrSparePartFor": {
+                    "@type": "Car",
+                    // FIX 5: was { "@type": "Brand", "name": make } — wrong, make is a string not Brand
+                    "brand": { "@type": "Brand", "name": decodedMake },
+                    "model": firstCompat.model
+                }
             }
-        }
-    })) : [];
+        };
+        // FIX 6: Filter out nulls from missing compatibility guard above
+    }).filter(Boolean);
 
     const faqSchema = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "CollectionPage",
-                "name": `${make} ${parts} Parts | EMIRATESCAR`,
-                "url": `https://www.emirates-car.com/search-by-make/${make}/parts/${parts}`,
-                "description": `Buy ${make} ${parts} parts | New, Used, Genuine/ OEM, and Aftermarket spare parts for all ${make} models.`,
-                "about": { "@type": "Brand", "name": make },
+                // FIX 7: Was using raw encoded params — use decoded values
+                "name": `${decodedMake} ${decodedParts} Parts | EMIRATESCAR`,
+                "url": canonicalUrl,
+                "description": `Buy ${decodedMake} ${decodedParts} parts. New, used, genuine/OEM and aftermarket spare parts for all ${decodedMake} models in UAE.`,
+                "about": { "@type": "Brand", "name": decodedMake },
                 "mainEntity": {
                     "@type": "ItemList",
                     "itemListElement": productListItems
                 }
             },
             {
-                "@context": "https://schema.org",
+                // FIX 8: Removed duplicate @context inside @graph — invalid JSON-LD
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {
@@ -247,19 +261,19 @@ export function generateMetadata({ params }) {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Car Makes",
-                        "item": `https://www.emirates-car.com/search-by-make/`
+                        "item": "https://www.emirates-car.com/search-by-make/"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": `${make} Spare Parts`,
-                        "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
+                        "name": `${decodedMake} Spare Parts`,
+                        "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(decodedMake)}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 4,
-                        "name": `${make} ${parts} Parts`,
-                        "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(parts)}`
+                        "name": `${decodedMake} ${decodedParts} Parts`,
+                        "item": canonicalUrl
                     }
                 ]
             },
@@ -267,29 +281,24 @@ export function generateMetadata({ params }) {
     };
 
     return {
-        title: `${make} ${decodeURIComponent(parts)} for sale from Dubai dealers in UAE - Used, Genuine, OEM and Aftermarket - Best price`,
-        description: `Find genuine, OEM, used & aftermarket ${make} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-        metadataBase: new URL(
-            `https://www.emirates-car.com`
-        ),
+        // FIX 9: Title was too long (60+ chars is fine but this was excessive)
+        // Also was using raw encoded `make` and `parts` params
+        title: `${decodedMake} ${decodedParts} | Used, Genuine, OEM & Aftermarket Parts UAE`,
+        description: `Find genuine, OEM, used & aftermarket ${decodedMake} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
+        metadataBase: new URL('https://www.emirates-car.com'),
         openGraph: {
-            title: `${make} ${decodedParts} - Used, Genuine, OEM and Aftermarket`,
-            description: `Find genuine, OEM, used & aftermarket ${make} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
+            title: `${decodedMake} ${decodedParts} | Used, Genuine, OEM & Aftermarket UAE`,
+            description: `Find genuine, OEM, used & aftermarket ${decodedMake} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
             url: canonicalUrl,
-            image: 'https://www.emirates-car.com/img/car-spare-parts.png',
             siteName: 'EMIRATESCAR',
+            // FIX 10: Had both `image` (singular, wrong key) and `images` (correct)
+            // Removed the bare `image` key, cleaned up images array
             images: [
-                'https://www.emirates-car.com/icons/favicon-32x32.png',
                 {
-                    url: 'https://www.emirates-car.com/icon-192x192.png',
-                    width: 192,
-                    height: 192,
-                },
-                {
-                    url: 'https://www.emirates-car.com/icons/icon-512x512.png',
-                    width: 512,
-                    height: 512,
-                    alt: 'car parts',
+                    url: 'https://www.emirates-car.com/img/car-spare-parts.png',
+                    width: 800,
+                    height: 600,
+                    alt: `${decodedMake} ${decodedParts} spare parts UAE`,
                 },
             ],
             locale: 'en_US',
@@ -297,25 +306,13 @@ export function generateMetadata({ params }) {
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${make} ${decodedParts} Parts from Dubai dealers in UAE - Used, Genuine, OEM and Aftermarket`,
-            url: canonicalUrl,
-            description: `Find genuine, OEM, used & aftermarket ${make} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-            images: ['https://www.emirates-car.com/icons/favicon-32x32.png'],
+            title: `${decodedMake} ${decodedParts} | Used, Genuine, OEM & Aftermarket UAE`,
+            description: `Find genuine, OEM, used & aftermarket ${decodedMake} ${decodedParts} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
+            images: ['https://www.emirates-car.com/img/car-spare-parts.png'],
         },
-        icons: {
-            icon: 'https://www.emirates-car.com/icons/favicon-32x32.png',
-            shortcut: 'https://www.emirates-car.com/icons/icon-96x96.png',
-            apple: 'https://www.emirates-car.com/icons/icon-192x192.png',
-            other: {
-                rel: 'apple-touch-icon-precomposed',
-                url: 'https://www.emirates-car.com/icons/icon-152x152.png',
-            },
-        },
-        category: `Vehicle Parts & Accessories > ${decodedMake} > ${partEntry.category} > ${partEntry.parts}`,
-        other: {
-            'product:brand': `${decodedMake}`,
-            'product:category': `${partEntry.category} > ${partEntry.parts}`,
-        },
+        // FIX 11: Removed `icons` — icons belong in layout.js not in page metadata
+        // Setting icons per-page overrides your global layout icons unnecessarily
+        keywords: `${decodedParts} for ${decodedMake} in dubai, buy ${decodedMake} ${decodedParts} online UAE`,
         alternates: {
             canonical: canonicalUrl,
         },
@@ -331,7 +328,11 @@ export function generateMetadata({ params }) {
                 'max-snippet': -1,
             },
         },
+        // FIX 12: Duplicate `other` key — second was overwriting first silently
+        // Merged both into single other object
         other: {
+            'product:brand': decodedMake,
+            'product:category': `Vehicle Parts & Accessories > ${decodedMake} > ${partEntry.category} > ${partEntry.parts}`,
             "script:ld+json": JSON.stringify(faqSchema),
         },
     };
