@@ -7,7 +7,7 @@ import SearchBar from "../../../../../../catalogs/SearchBar";
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const roboto = Roboto({
     subsets: ['latin'],
@@ -113,7 +113,7 @@ export async function generateMetadata({ params }) {
                     "price": parseFloat(product.pricing.price) || 0,
                     "priceValidUntil": endOfYear,
                     "availability": product.availability === "In Stock" ? "http://schema.org/InStock" : "http://schema.org/OutOfStock",
-                    "itemCondition": product.item_specifics?.Condition === "Used" ? "http://schema.org" : "http://schema.org",
+                    "itemCondition": product.item_specifics?.Condition === "Used" ? "http://schema.org/UsedCondition" : "http://schema.org/NewCondition",
                     "shippingDetails": {
                         "@type": "OfferShippingDetails",
                         "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "AE" },
@@ -235,7 +235,7 @@ export async function generateMetadata({ params }) {
             },
         },
         alternates: {
-            canonical: `https://emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
+            canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
         },
         robots: {
             index: true,
@@ -261,6 +261,7 @@ export default function ProductPage({ params, searchParams }) {
     const { make, model, category, subcategory, slug } = params;
 
     const id = Number(slug.split("-").pop());
+
 
     const product = products.find((p) => p.id === id);
 

@@ -157,7 +157,6 @@ export function generateMetadata({ params }) {
     const imageMake = getMakeImage(make, model);
 
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`;
-    console.log(canonicalUrl)
 
     // Products filtered only by make
     const productsForMake = productsFile.filter((p) =>
@@ -329,7 +328,7 @@ function getModel(make) {
 }
 
 
-export default function SubcategoryPage({ params, searchParams }) {
+export default function SubcategoryPage({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
     const category = decodeURIComponent(params.category);
