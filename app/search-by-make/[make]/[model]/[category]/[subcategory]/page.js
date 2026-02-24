@@ -56,7 +56,7 @@ const selectedParts = [
     // Tier 2
     "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
     "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
-    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
+    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box"
 ]
 
 const excludedMakesSet = new Set(excludedMakes);
@@ -642,6 +642,7 @@ export default function SubcategoryPage({ params }) {
                         </ul>
                     </div>
                 </section>
+
                 <section>
                     <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search All spare parts for <span className='text-blue-600'>{make} {model}</span>

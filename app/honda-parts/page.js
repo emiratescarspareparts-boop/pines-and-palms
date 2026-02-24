@@ -45,7 +45,7 @@ export default function HondaParts() {
           buy japanese car parts Online. You can order Honda spare parts by
           simply submitting the online inquiry form{' '}
           <Link
-            href="https://emirates-car.com"
+            href="https://www.emirates-car.com"
             className="text-blue-500 underline hover:text-blue-900"
           >
             here
@@ -83,7 +83,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-part-name/Ring%20Gear%20and%20Pinion"
+                href="https://www.emirates-car.com/search-by-part-name/Ring%20Gear%20and%20Pinion"
                 title="Honda cam gear"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -102,7 +102,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-part-name/Intake%20Manifold"
+                href="https://www.emirates-car.com/search-by-part-name/Intake%20Manifold"
                 title="Honda cold air intakes"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -121,7 +121,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-make/Intake%20Manifold"
+                href="https://www.emirates-car.com/search-by-make/Intake%20Manifold"
                 title="Honda intake manifold"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -140,7 +140,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-make/Honda/CR-V"
+                href="https://www.emirates-car.com/search-by-make/Honda/CR-V"
                 title="Honda crv parts"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -159,7 +159,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-part-name/Radiator"
+                href="https://www.emirates-car.com/search-by-part-name/Radiator"
                 title="Honda radiator caps"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -178,7 +178,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/get-in-touch"
+                href="https://www.emirates-car.com/get-in-touch"
                 title="honda oxygen sensors"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -197,7 +197,7 @@ export default function HondaParts() {
                 width={250}
               />
               <Link
-                href="https://emirates-car.com/search-by-part-name/Throttle%20Body%20Assembly"
+                href="https://www.emirates-car.com/search-by-part-name/Throttle%20Body%20Assembly"
                 title="throttle body"
                 className="flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125"
               >
@@ -214,7 +214,7 @@ export default function HondaParts() {
 
             <FeaturedHonda />
             <Link
-              href="https://emirates-car.com/get-in-touch"
+              href="https://www.emirates-car.com/get-in-touch"
               className="w-1/4 mx-auto flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125 my-5"
               target="_newtab"
             >
@@ -275,7 +275,7 @@ export default function HondaParts() {
         <div className="grid grid-cols-5 xs:grid-cols-1 gap-3 mx-auto p-5 border-2 border-gray-500">
           <div>
             <Link
-              href="https://emirates-car.com/honda-parts/dubai"
+              href="https://www.emirates-car.com/honda-parts/dubai"
               title="honda spare parts dubai sheikh zayed road"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -286,7 +286,7 @@ export default function HondaParts() {
           <div>
             {' '}
             <Link
-              href="https://emirates-car.com/honda-parts/sharjah"
+              href="https://www.emirates-car.com/honda-parts/sharjah"
               title="honda spare parts sharjah"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -297,7 +297,7 @@ export default function HondaParts() {
           <div>
             {' '}
             <Link
-              href="https://emirates-car.com/honda-parts/ajman"
+              href="https://www.emirates-car.com/honda-parts/ajman"
               title="honda spare parts ajman"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -308,7 +308,7 @@ export default function HondaParts() {
           <div>
             {' '}
             <Link
-              href="https://emirates-car.com/honda-parts/ras-al-khaimah"
+              href="https://www.emirates-car.com/honda-parts/ras-al-khaimah"
               title="honda spare parts abu dhabi"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -318,7 +318,7 @@ export default function HondaParts() {
           </div>
           <div>
             <Link
-              href="https://emirates-car.com/honda-parts/al-quoz"
+              href="https://www.emirates-car.com/honda-parts/al-quoz"
               title="honda spare parts al quoz"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -328,7 +328,7 @@ export default function HondaParts() {
           </div>
           <div>
             <Link
-              href="https://emirates-car.com/honda-parts/abu-dhabi"
+              href="https://www.emirates-car.com/honda-parts/abu-dhabi"
               title="honda spare parts abu dhabi"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -338,7 +338,7 @@ export default function HondaParts() {
           </div>
           <div>
             <Link
-              href="https://emirates-car.com/honda-parts/deira"
+              href="https://www.emirates-car.com/honda-parts/deira"
               title="honda spare parts deira"
               className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
             >
@@ -361,7 +361,7 @@ export default function HondaParts() {
             <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Assembly"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Assembly"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Engine Assembly
@@ -369,7 +369,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Block"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Block"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Engine Block
@@ -377,7 +377,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Mount"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Mount"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Engine Mount
@@ -385,7 +385,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Block"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Block"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Engine Block
@@ -393,7 +393,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Cylinder%20Head"
+                  href="https://www.emirates-car.com/search-by-part-name/Cylinder%20Head"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Cylinder Head
@@ -401,7 +401,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Cylinder%20Block"
+                  href="https://www.emirates-car.com/search-by-part-name/Cylinder%20Block"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Cylinder Block
@@ -409,7 +409,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Crankshaft"
+                  href="https://www.emirates-car.com/search-by-part-name/Crankshaft"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Crankshaft
@@ -417,7 +417,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Camshaft"
+                  href="https://www.emirates-car.com/search-by-part-name/Camshaft"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Camshaft
@@ -425,7 +425,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Piston"
+                  href="https://www.emirates-car.com/search-by-part-name/Piston"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Piston
@@ -433,7 +433,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Exhaust%20Manifold"
+                  href="https://www.emirates-car.com/search-by-part-name/Exhaust%20Manifold"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Exhaust Manifold
@@ -441,7 +441,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Intake%20Manifold"
+                  href="https://www.emirates-car.com/search-by-part-name/Intake%20Manifold"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Intake Manifold
@@ -449,7 +449,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Ignition%20Switch"
+                  href="https://www.emirates-car.com/search-by-part-name/Ignition%20Switch"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Ignition Switch
@@ -457,7 +457,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Ignition%20Control%20Module"
+                  href="https://www.emirates-car.com/search-by-part-name/Ignition%20Control%20Module"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Ignition Control Module
@@ -465,7 +465,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Transmission%20Control%20Module"
+                  href="https://www.emirates-car.com/search-by-part-name/Transmission%20Control%20Module"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   TCM
@@ -481,7 +481,7 @@ export default function HondaParts() {
             <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Assembly"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Assembly"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Engine
@@ -489,7 +489,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Assembly"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Assembly"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Battery
@@ -497,7 +497,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Engine%20Assembly"
+                  href="https://www.emirates-car.com/search-by-part-name/Engine%20Assembly"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Alternator
@@ -505,7 +505,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Brake%20Pads"
+                  href="https://www.emirates-car.com/search-by-part-name/Brake%20Pads"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Brake Pads
@@ -513,7 +513,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Radiator"
+                  href="https://www.emirates-car.com/search-by-part-name/Radiator"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Radiator
@@ -521,7 +521,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Transmission%20Control%20Module"
+                  href="https://www.emirates-car.com/search-by-part-name/Transmission%20Control%20Module"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Transmission
@@ -529,7 +529,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Shock%20Absorber"
+                  href="https://www.emirates-car.com/search-by-part-name/Shock%20Absorber"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Shock Absorber
@@ -537,7 +537,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Convertible%20Top%20Motor"
+                  href="https://www.emirates-car.com/search-by-part-name/Convertible%20Top%20Motor"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Catalytic Converter
@@ -545,7 +545,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Power%20Steering%20Box"
+                  href="https://www.emirates-car.com/search-by-part-name/Power%20Steering%20Box"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Power Steering
@@ -553,7 +553,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/get-in-touch"
+                  href="https://www.emirates-car.com/get-in-touch"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Pump
@@ -569,7 +569,7 @@ export default function HondaParts() {
             <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Bonnet"
+                  href="https://www.emirates-car.com/search-by-part-name/Bonnet"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Bonnet
@@ -577,7 +577,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Fender%20(Front)"
+                  href="https://www.emirates-car.com/search-by-part-name/Fender%20(Front)"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Fender
@@ -585,7 +585,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Decklid"
+                  href="https://www.emirates-car.com/search-by-part-name/Decklid"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Decklid
@@ -593,7 +593,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Grille"
+                  href="https://www.emirates-car.com/search-by-part-name/Grille"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Grille
@@ -601,7 +601,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Wheel"
+                  href="https://www.emirates-car.com/search-by-part-name/Wheel"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Wheel
@@ -617,7 +617,7 @@ export default function HondaParts() {
             <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Spark%20Plug"
+                  href="https://www.emirates-car.com/search-by-part-name/Spark%20Plug"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Spark Plug
@@ -625,7 +625,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Alternator"
+                  href="https://www.emirates-car.com/search-by-part-name/Alternator"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Alternator
@@ -633,7 +633,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Battery"
+                  href="https://www.emirates-car.com/search-by-part-name/Battery"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Battery
@@ -641,7 +641,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/Ignition%20Switch"
+                  href="https://www.emirates-car.com/search-by-part-name/Ignition%20Switch"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Ignition Switch
@@ -649,7 +649,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/get-in-touch"
+                  href="https://www.emirates-car.com/get-in-touch"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   Many more...
@@ -665,7 +665,7 @@ export default function HondaParts() {
             <ol className="list-disc text-xl font-mono text-gray-700 mx-auto">
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/AC%20Compressor"
+                  href="https://www.emirates-car.com/search-by-part-name/AC%20Compressor"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   AC Compressor
@@ -673,7 +673,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/AC%20Condenser"
+                  href="https://www.emirates-car.com/search-by-part-name/AC%20Condenser"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   AC Condenser
@@ -681,7 +681,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/AC%20Selector"
+                  href="https://www.emirates-car.com/search-by-part-name/AC%20Selector"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   AC Selector
@@ -689,7 +689,7 @@ export default function HondaParts() {
               </li>
               <li>
                 <Link
-                  href="https://emirates-car.com/search-by-part-name/AC%20Controls"
+                  href="https://www.emirates-car.com/search-by-part-name/AC%20Controls"
                   className="font-mono font-semibold text-blue-600 underline hover:text-blue-900"
                 >
                   AC Controls
@@ -758,7 +758,7 @@ export default function HondaParts() {
           such website which accept online inquiries. It deals with parts and
           accessories for honda accord, Honda civic and{' '}
           <Link
-            href="https://emirates-car.com/search-by-make/Honda"
+            href="https://www.emirates-car.com/search-by-make/Honda"
             className="text-blue-500 underline hover:text-blue-900"
           >
             other honda models
