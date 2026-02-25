@@ -99,8 +99,8 @@ export function generateStaticParams() {
             if (!generated.has(key)) {
                 generated.add(key);
                 params.push({
-                    make: encodeURIComponent(make),
-                    parts: encodeURIComponent(partEntry.parts),
+                    make: make,
+                    parts: partEntry.parts,
                 });
             }
         }
@@ -128,8 +128,8 @@ export function generateStaticParams() {
             if (!generated.has(key)) {
                 generated.add(key);
                 params.push({
-                    make: encodeURIComponent(make),
-                    parts: encodeURIComponent(partEntry.parts),
+                    make: make,
+                    parts: partEntry.parts,
                 });
             }
         }
