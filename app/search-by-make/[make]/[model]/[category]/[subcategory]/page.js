@@ -643,6 +643,8 @@ export default function SubcategoryPage({ params }) {
                     </div>
                 </section>
 
+
+
                 <section>
                     <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search All spare parts for <span className='text-blue-600'>{make} {model}</span>
