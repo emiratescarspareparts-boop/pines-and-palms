@@ -394,16 +394,20 @@ export default function Parts({ params, searchParams }) {
     const imageMake = getMakeImage(make);
     const partsDa = partsData;
 
-    if (excludedMakesSet.has(make)) {
+    const decodedMake = decodeURIComponent(make);
+    const decodedParts = decodeURIComponent(parts);
+
+    if (excludedMakesSet.has(decodedMake)) {
         notFound();
     }
+
 
     if (!partsData || partsData.length === 0) {
         notFound();
     }
 
     const partEntry = partsDa.find(
-        (p) => p.parts.toLowerCase() === decodeURIComponent(parts).toLowerCase()
+        (p) => p.parts.toLowerCase() === decodedParts.toLowerCase()
     );
 
     if (!partEntry) {
@@ -413,7 +417,7 @@ export default function Parts({ params, searchParams }) {
     //lets check if this part is in the selectedParts
 
     const isSelectedParts = selectedParts.some(p => p.toLowerCase() === partEntry.parts.toLowerCase())
-    const isBattery = decodeURIComponent(parts) === 'Battery'
+    const isBattery = decodedParts === 'Battery'
 
 
     const {
@@ -441,7 +445,7 @@ export default function Parts({ params, searchParams }) {
     );
 
     // Only show 404 if part is NOT in selectedParts AND no products found
-    if (!isSelectedParts && (!partFiltered || partFiltered.length === 0)) {
+    if (!isSelectedParts) {
         notFound()
     }
     const filtered = partFiltered.filter(product => {
@@ -465,15 +469,13 @@ export default function Parts({ params, searchParams }) {
         return matchesCategory && matchesSearch && matchesEngine && matchesCompatibility;
     });
 
-    if (!isSelectedParts && filtered.length === 0) {
-        notFound();
+    if (!isSelectedParts) {
+        notFound()
     }
 
     const data = CarData.filter(item => item.make === make);
 
-    if (!data || data.length === 0) {
-        notFound();
-    }
+
 
     const cities = CitiesData;
     const makedatas = getMake();
@@ -530,7 +532,7 @@ export default function Parts({ params, searchParams }) {
                     <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                         <div className="container py-6">
                             <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-                                Search <span className='text-blue-600'>{decodeURIComponent(parts)}</span> for all {make} model
+                                Search <span className='text-blue-600'>{decodedParts}</span> for all {make} model
                             </h2>
                             <SearchModel make={make} car={carmodel} />
 
@@ -566,7 +568,7 @@ export default function Parts({ params, searchParams }) {
                                                 href={linkHref}
                                                 as={linkAs}
                                                 target='_blank'
-                                                title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
+                                                title={`${post.make} ${post.model} ${decodedParts}`}
                                                 className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
                                             >
                                                 <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
@@ -865,7 +867,7 @@ export default function Parts({ params, searchParams }) {
                     <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                         <div className="container py-6">
                             <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-                                Search <span className='text-blue-600'>{decodeURIComponent(parts)}</span> for all {make} model
+                                Search <span className='text-blue-600'>{decodedParts}</span> for all {make} model
                             </h2>
                             <SearchModel make={make} car={carmodel} />
 
@@ -901,7 +903,7 @@ export default function Parts({ params, searchParams }) {
                                                 href={linkHref}
                                                 as={linkAs}
                                                 target='_blank'
-                                                title={`${post.make} ${post.model} ${decodeURIComponent(parts)}`}
+                                                title={`${post.make} ${post.model} ${decodedParts}`}
                                                 className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
                                             >
                                                 <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
