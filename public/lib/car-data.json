@@ -880,7 +880,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Continental",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -927,7 +927,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Town Car",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -2644,7 +2644,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Previa",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6053,7 +6053,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "4Runner",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6091,7 +6091,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Camry",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6154,7 +6154,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Corolla",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -6198,7 +6198,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Land Cruiser",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8037,7 +8037,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Avalon",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8081,7 +8081,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Tacoma",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -8579,7 +8579,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "RAV4",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9200,7 +9200,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Navigator",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9369,7 +9369,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Sienna",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10505,7 +10505,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Tundra",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11035,7 +11035,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Highlander",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11064,7 +11064,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Prius",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11087,7 +11087,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Sequoia",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -11977,7 +11977,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Aviator",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13447,7 +13447,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Phantom",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14441,7 +14441,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Zephyr",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -14790,7 +14790,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Yaris",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15272,7 +15272,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKX",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15289,7 +15289,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKZ",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15306,7 +15306,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "Navigator L",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15490,7 +15490,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Camry Hybrid",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15507,7 +15507,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "FJ Cruiser",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16288,7 +16288,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKS",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16450,7 +16450,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Venza",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16836,7 +16836,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKT",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16925,7 +16925,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Ghost",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17440,7 +17440,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -17452,7 +17452,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Nuova 500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20645,7 +20645,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 Abarth",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20663,7 +20663,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 L",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -20680,7 +20680,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500e",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -26338,7 +26338,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Wraith",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -30417,7 +30417,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 X",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -32102,7 +32102,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Dawn",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -33423,7 +33423,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "124 Spider",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -38402,7 +38402,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500X AWD",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -39671,7 +39671,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Cullinan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46275,7 +46275,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Logan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46335,7 +46335,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Duster",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46347,7 +46347,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Megane",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46359,7 +46359,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Koleos",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46372,7 +46372,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Fluence",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -46444,7 +46444,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Kwid",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47993,7 +47993,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Talisman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48941,7 +48941,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 (312)",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48965,7 +48965,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Panda",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -48977,7 +48977,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Tipo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
