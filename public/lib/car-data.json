@@ -12024,27 +12024,6 @@
     "keyword": "."
   },
   {
-    "id": 3991,
-    "year": [
-      2003,
-      2004,
-      2005,
-      2006,
-      2007,
-      2008,
-      2009,
-      2010,
-      2011,
-      2012
-    ],
-    "make": "Mazda",
-    "img": "mazda.webp",
-    "model": "Mazda6",
-    "seo": false,
-    "description": "",
-    "keyword": "."
-  },
-  {
     "id": 3883,
     "year": [
       2003,
@@ -13447,7 +13426,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Phantom",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -13650,7 +13629,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Azure",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14212,7 +14191,7 @@
     "make": "Hummer",
     "img": "hummer.webp",
     "model": "H2 SUT",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14224,7 +14203,7 @@
     "make": "Hummer",
     "img": "hummer.webp",
     "model": "H2 SUV",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16105,7 +16084,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Brooklands",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16210,7 +16189,7 @@
     "make": "Hummer",
     "img": "hummer.webp",
     "model": "H3T",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17452,7 +17431,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Nuova 500",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17769,18 +17748,6 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "CX-5",
-    "seo": true,
-    "description": "",
-    "keyword": "."
-  },
-  {
-    "id": 7251,
-    "year": [
-      2013
-    ],
-    "make": "Mazda",
-    "img": "mazda.webp",
-    "model": "MAZDA6",
     "seo": true,
     "description": "",
     "keyword": "."
@@ -20663,7 +20630,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 L",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -20680,7 +20647,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500e",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -23086,7 +23053,7 @@
     "make": "Lamborghini",
     "img": "lamborghini.webp",
     "model": "Gallardo Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -30417,7 +30384,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 X",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -30940,7 +30907,7 @@
     "make": "Lamborghini",
     "img": "lamborghini.webp",
     "model": "Huracan Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -38402,7 +38369,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500X AWD",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46275,7 +46242,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Logan",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -48941,7 +48908,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 (312)",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50393,7 +50360,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Eight",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50489,18 +50456,6 @@
     "make": "Mazda",
     "img": "mazda.webp",
     "model": "3",
-    "seo": true,
-    "description": "",
-    "keyword": "."
-  },
-  {
-    "id": 14485,
-    "year": [
-      2010
-    ],
-    "make": "Mazda",
-    "img": "mazda.webp",
-    "model": "6",
     "seo": true,
     "description": "",
     "keyword": "."
