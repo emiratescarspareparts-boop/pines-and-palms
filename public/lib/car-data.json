@@ -3870,7 +3870,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Grand Caravan",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -4067,7 +4067,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Viper",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7078,7 +7078,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 1500",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7106,7 +7106,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 2500",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7134,7 +7134,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Ram 3500",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7526,7 +7526,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Neon",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14930,7 +14930,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Caliber",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14946,7 +14946,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Nitro",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46289,7 +46289,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Duster",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46301,7 +46301,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Megane",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46313,7 +46313,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Koleos",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46326,7 +46326,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Fluence",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -46398,7 +46398,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Kwid",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -47947,7 +47947,7 @@
     "make": "Renault",
     "img": "renault.webp",
     "model": "Talisman",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
