@@ -56,7 +56,7 @@ const selectedParts = [
     // Tier 2
     "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
     "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
-    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box"
+    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box", "Brake Booster", "Cylinder Head"
 ]
 
 const excludedMakesSet = new Set(excludedMakes);
@@ -372,13 +372,14 @@ export function generateStaticParams() {
                 if (!seoEnabledModels.has(`${make}|${model}`)) continue;
 
                 const key = `${make}|${model}|${category}|${subcategory}`;
+
                 if (!unique.has(key)) {
                     unique.add(key);
                     params.push({
                         make,
-                        model: encodeURIComponent(model),
-                        category: encodeURIComponent(category),
-                        subcategory: encodeURIComponent(subcategory),
+                        model: model,
+                        category: category,
+                        subcategory: subcategory,
                     });
                 }
             }
@@ -401,13 +402,14 @@ export function generateStaticParams() {
 
                 const category = partEntry.category;
                 const key = `${car.make}|${car.model}|${category}|${subcategory}`;
+
                 if (!unique.has(key)) {
                     unique.add(key);
                     params.push({
                         make: car.make,
-                        model: encodeURIComponent(car.model),
-                        category: encodeURIComponent(category),
-                        subcategory: encodeURIComponent(subcategory),
+                        model: car.model,
+                        category: category,
+                        subcategory: subcategory,
                     });
                 }
             }

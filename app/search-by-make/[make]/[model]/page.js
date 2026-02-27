@@ -23,7 +23,7 @@ const selectedParts = [
   // Tier 2
   "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
   "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
-  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
+  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Brake Booster", "Cylinder Head"
 ]
 
 const IMAGE_BASE_PATH = '/img/honda-eighth-gen';

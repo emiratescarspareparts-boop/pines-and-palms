@@ -87,7 +87,7 @@ export default function Product({ make, products, allProducts }) {
                                     </Link>
 
                                     {product.pricing?.price && (
-                                        <div itemProp="offers" itemScope itemType="https://schema.org/Offer" className="hidden">
+                                        <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
                                             <meta itemProp="priceCurrency" content={product.pricing.currency} />
                                             <meta itemProp="price" content={product.pricing.price} />
                                             <link itemProp="availability" href="https://schema.org/InStock" />

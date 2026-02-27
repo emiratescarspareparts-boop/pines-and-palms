@@ -76,6 +76,11 @@ module.exports = withPWA({
         permanent: true
       },
       {
+        source: "/search-by-make/Honda/Pilot/Suspension%20&%20Steering%20Parts/Steering%20Rack",
+        destination: "/search-by-make/Honda/Pilot/Suspension%20%26%20Steering%20Parts/Steering%20Rack",
+        permanent: true
+      },
+      {
         source: '/search-by-make/:make/:model/:year(\\d{4})',
         destination: '/search-by-make/:make/:model',
         permanent: true,
