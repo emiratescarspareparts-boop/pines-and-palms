@@ -1706,7 +1706,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Maxima",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -1970,7 +1970,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -1986,7 +1986,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "928",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -1999,7 +1999,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "944",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -3351,7 +3351,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Lumina",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -5132,7 +5132,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Defender",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -5950,7 +5950,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "968",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7250,7 +7250,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Discovery",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -9052,7 +9052,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Boxster",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -10890,7 +10890,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Freelander",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -12138,7 +12138,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -12733,7 +12733,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Carrera GT",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -13095,7 +13095,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300C",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14161,7 +14161,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Yukon XL",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14377,7 +14377,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Sport",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14913,7 +14913,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Aspen",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15073,7 +15073,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Sierra",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16344,7 +16344,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "370Z",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16383,7 +16383,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "GT-R",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16658,7 +16658,7 @@
     "make": "GMC",
     "img": "gmc.webp",
     "model": "Terrain",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16882,7 +16882,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Panamera",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16904,7 +16904,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Ghost",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17063,7 +17063,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "200",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17252,19 +17252,6 @@
     "keyword": "."
   },
   {
-    "id": 6700,
-    "year": [
-      2011,
-      2012
-    ],
-    "make": "Nissan",
-    "img": "nissan.webp",
-    "model": "JUKE",
-    "seo": false,
-    "description": "",
-    "keyword": "."
-  },
-  {
     "id": 6697,
     "year": [
       2011,
@@ -17419,7 +17406,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17516,7 +17503,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Evoque",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -19618,7 +19605,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "e6",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -20372,7 +20359,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300 SRT8",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -20612,7 +20599,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "500 Abarth",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -25637,7 +25624,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 Carrera",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -25778,7 +25765,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 GT3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -25829,7 +25816,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911 Turbo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -25974,7 +25961,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Turbo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -26119,7 +26106,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Panamera Turbo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -26305,7 +26292,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Wraith",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -31979,7 +31966,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Boxster Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -32052,7 +32039,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Macan Turbo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -32069,7 +32056,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Dawn",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -33390,7 +33377,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "124 Spider",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -35049,7 +35036,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Macan",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -36503,7 +36490,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Velar",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -39638,7 +39625,7 @@
     "make": "Rolls-Royce",
     "img": "rolls-royce.webp",
     "model": "Cullinan",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -41903,7 +41890,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -41928,7 +41915,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Coupe",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -42043,7 +42030,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Taycan Turbo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -43830,7 +43817,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Boxster",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -43878,7 +43865,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "718 Cayman",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -47036,7 +47023,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Z",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -47132,7 +47119,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Urvan",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -48932,7 +48919,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Panda",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -48944,7 +48931,7 @@
     "make": "Fiat",
     "img": "fiat.webp",
     "model": "Tipo",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -48992,7 +48979,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard 5",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49028,7 +49015,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "HAN",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49040,7 +49027,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Seal",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49052,7 +49039,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Song Plus",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49064,7 +49051,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Qin Plus",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49076,7 +49063,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Sealion",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49088,7 +49075,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Destroyer 05",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49100,7 +49087,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard Titanium 7",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49112,7 +49099,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard Titanium 3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49124,7 +49111,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Qin L",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49136,7 +49123,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Song L",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49148,7 +49135,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Tang",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49160,7 +49147,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Seal 06",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49172,7 +49159,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Atto 3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49184,7 +49171,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Xia",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -49196,7 +49183,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "e2",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50048,7 +50035,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300 S",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50060,7 +50047,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "300 SRT",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50420,7 +50407,7 @@
     "make": "Land Rover",
     "img": "land_rover.webp",
     "model": "Range Rover Vogue",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50557,7 +50544,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Targa",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50574,7 +50561,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "959",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
