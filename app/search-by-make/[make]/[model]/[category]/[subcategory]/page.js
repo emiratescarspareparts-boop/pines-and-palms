@@ -56,7 +56,7 @@ const selectedParts = [
     // Tier 2
     "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
     "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
-    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box", "Brake Booster", "Cylinder Head"
+    "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box"
 ]
 
 const excludedMakesSet = new Set(excludedMakes);
