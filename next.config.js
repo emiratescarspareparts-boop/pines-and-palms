@@ -138,11 +138,6 @@ module.exports = withPWA({
         permanent: true,
       },
       {
-        source: '/search-by-make/:make/:model/AC%20&%20Heating%20(HVAC)/AC%20Compressor',
-        destination: '/search-by-make/:make/:model/AC%20%26%20Heating%20(HVAC)/AC%20Compressor',
-        permanent: true,
-      },
-      {
         source: '/search-by-make/Honda/Accord/Electrical%20&%20Electronics/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
         destination: '/search-by-make/Honda/Accord/Electrical%20%26%20Electronics/Alternator/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
         permanent: true,
