@@ -80,6 +80,73 @@ module.exports = withPWA({
         destination: "/search-by-make/Honda/Pilot/Suspension%20%26%20Steering%20Parts/Steering%20Rack",
         permanent: true
       },
+      {
+        // 1. Fix the category "Suspension & Steering Parts" (literal &)
+        // This catches the raw ampersand and redirects to the encoded %26
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/:subcategory*',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/:subcategory*',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Lower%20Control%20Arm%20(Rear)',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Lower%20Control%20Arm',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Lower%20Control%20Arm%20(Front)',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Lower%20Control%20Arm',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Upper%20Control%20Arm%20(Rear)',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Upper%20Control%20Arm',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Upper%20Control%20Arm%20(Front)',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Upper%20Control%20Arm',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Power%20Steering%20Box',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Steering%20Box',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Suspension%20&%20Steering%20Parts/Steering%20Box',
+        destination: '/search-by-make/:make/:model/Suspension%20%26%20Steering%20Parts/Steering%20Box',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Electrical%20&%20Electronics/:subcategory*',
+        destination: '/search-by-make/:make/:model/Electrical%20%26%20Electronics/:subcategory*',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Body%20Kits/Bumper%20Cover%20(Front)',
+        destination: '/search-by-make/:make/:model/Body%20Kits/Bumpers',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Transmission%20&%20Drivetrain/Gearbox',
+        destination: '/search-by-make/:make/:model/Transmission%20%26%20Drivetrain/Gearbox',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/Transmission%20&%20Drivetrain/Axle%20Assembly',
+        destination: '/search-by-make/:make/:model/Transmission%20%26%20Drivetrain/Axle%20Assembly',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/:make/:model/AC%20&%20Heating%20(HVAC)/AC%20Compressor',
+        destination: '/search-by-make/:make/:model/AC%20%26%20Heating%20(HVAC)/AC%20Compressor',
+        permanent: true,
+      },
+      {
+        source: '/search-by-make/Honda/Accord/Electrical%20&%20Electronics/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
+        destination: '/search-by-make/Honda/Accord/Electrical%20%26%20Electronics/Alternator/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
+        permanent: true,
+      },
     ];
   },
   staticPageGenerationTimeout: 180,

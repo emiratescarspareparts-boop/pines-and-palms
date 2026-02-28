@@ -2644,7 +2644,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Previa",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -4737,7 +4737,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Prelude",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -6053,7 +6053,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "4Runner",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7181,7 +7181,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Passport",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -7808,7 +7808,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Odyssey",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -8037,7 +8037,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Avalon",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -8081,7 +8081,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Tacoma",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -8216,7 +8216,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "Z3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -9369,7 +9369,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Sienna",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -10307,7 +10307,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Insight",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -11064,7 +11064,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Prius",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -11087,7 +11087,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Sequoia",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -12091,7 +12091,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Murano",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -12325,7 +12325,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "6 Series",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -13328,7 +13328,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Armada",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -14852,7 +14852,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS4",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15469,7 +15469,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Camry Hybrid",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15486,7 +15486,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "FJ Cruiser",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15603,7 +15603,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "R8",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15643,7 +15643,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "1 Series",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -15660,7 +15660,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "X6",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16429,7 +16429,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Venza",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -17474,7 +17474,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Veloster",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -19182,7 +19182,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "i8",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -25307,7 +25307,7 @@
     "make": "Nissan",
     "img": "nissan.webp",
     "model": "Juke",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -27429,7 +27429,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "Q3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -30622,7 +30622,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "HR-V",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -33810,7 +33810,7 @@
     "make": "Honda",
     "img": "honda.webp",
     "model": "Pilot AWD",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -37817,7 +37817,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "Q8",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -40048,7 +40048,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS Q8",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -40060,7 +40060,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS3",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50059,7 +50059,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Palisade",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50071,7 +50071,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "Kona",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50083,7 +50083,7 @@
     "make": "Hyundai",
     "img": "hyundai.webp",
     "model": "i10",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50359,7 +50359,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "RS7",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50629,7 +50629,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "E90",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50646,7 +50646,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "F30",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50663,7 +50663,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G20",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50680,7 +50680,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "E60",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50697,7 +50697,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "F10",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50714,7 +50714,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "520i",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50731,7 +50731,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "F01",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50748,7 +50748,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G11",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50765,7 +50765,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G12",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50782,7 +50782,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G11",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50799,7 +50799,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "E53",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50816,7 +50816,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "E70",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50833,7 +50833,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "F15",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50850,7 +50850,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G05",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50867,7 +50867,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "E71",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50884,7 +50884,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "F16",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50901,7 +50901,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "G06",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50918,7 +50918,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "i4",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50935,7 +50935,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "i7",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50952,7 +50952,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "Z Series",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
