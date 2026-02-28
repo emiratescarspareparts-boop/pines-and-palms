@@ -2472,7 +2472,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Caprice",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -16815,7 +16815,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKT",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -18127,7 +18127,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "R8 Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -18636,7 +18636,7 @@
     "make": "BMW",
     "img": "bmw.webp",
     "model": "535i",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -19622,7 +19622,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "ATS",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -19831,7 +19831,7 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "XTS",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -20373,7 +20373,7 @@
     "make": "Chrysler",
     "img": "chrysler.webp",
     "model": "Town and Country",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -20434,7 +20434,7 @@
     "make": "Dodge",
     "img": "dodge.webp",
     "model": "Dart",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -24774,7 +24774,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper (3-doors)",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -24858,7 +24858,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper S (3-doors)",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -48991,7 +48991,7 @@
     "make": "BYD",
     "img": "byd.webp",
     "model": "Leopard",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50251,7 +50251,7 @@
     "make": "Jeep",
     "img": "jeep.webp",
     "model": "Grand Wagoneer",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50299,7 +50299,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "S",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50311,7 +50311,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Speed",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50323,7 +50323,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Turbo R",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50335,7 +50335,7 @@
     "make": "Bentley",
     "img": "bentley.webp",
     "model": "Turbo R",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50383,7 +50383,7 @@
     "make": "Ford",
     "img": "ford.webp",
     "model": "Bronco Raptor",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50595,7 +50595,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Epica",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
@@ -50612,7 +50612,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Optra",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },
