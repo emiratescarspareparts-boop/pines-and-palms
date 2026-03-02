@@ -342,15 +342,21 @@ function getModel(make) {
 }
 
 
+const topMakes = new Set([
+    'Toyota', 'Honda', 'BMW', 'Mercedes-Benz', 'Nissan', 'Ford',
+    'Audi', 'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep',
+    'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
+    'Infiniti', 'Cadillac', 'GMC', 'Volvo', 'Cadillac'
+]);
 
 export function generateStaticParams() {
     const unique = new Set();
     const params = [];
 
-    // Only Path 2 — seo=true models × selectedParts only
     for (let i = 0; i < CarData.length; i++) {
         const car = CarData[i];
         if (!car.seo || excludedMakesSet.has(car.make)) continue;
+        if (!topMakes.has(car.make)) continue; // only pre-build top makes
 
         for (let j = 0; j < selectedParts.length; j++) {
             const subcategory = selectedParts[j];
@@ -364,16 +370,15 @@ export function generateStaticParams() {
                 unique.add(key);
                 params.push({
                     make: car.make,
-                    model: car.model,          // no encodeURIComponent
-                    category: partEntry.category, // no encodeURIComponent
-                    subcategory: subcategory,     // no encodeURIComponent
+                    model: car.model,
+                    category: partEntry.category,
+                    subcategory: subcategory,
                 });
             }
         }
     }
 
     console.log(`✓ Generated ${params.length} pages`);
-    // target: seo=true models × selectedParts.length < 2000 total
     return params;
 }
 export default function SubcategoryPage({ params }) {
