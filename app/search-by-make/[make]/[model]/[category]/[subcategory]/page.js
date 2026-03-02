@@ -346,7 +346,7 @@ const topMakes = new Set([
     'Toyota', 'Honda', 'BMW', 'Mercedes-Benz', 'Nissan', 'Ford',
     'Audi', 'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep',
     'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
-    'Infiniti', 'Cadillac', 'GMC', 'Volvo', 'Cadillac'
+    'Infiniti', 'Cadillac', 'GMC', 'Volvo'
 ]);
 
 export function generateStaticParams() {
