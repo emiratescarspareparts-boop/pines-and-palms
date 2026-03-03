@@ -235,7 +235,7 @@ export async function generateMetadata({ params }) {
             },
         },
         alternates: {
-            canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${slug}`,
+            canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${subcategory}/${slug}`,
         },
         robots: {
             index: true,
