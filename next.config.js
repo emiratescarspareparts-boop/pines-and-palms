@@ -41,6 +41,11 @@ module.exports = withPWA({
   async redirects() {
     return [
       {
+        source: '/search-by-make/:make/:model/:year(\\d{4})',
+        destination: '/search-by-make/:make/:model',
+        permanent: true,
+      },
+      {
         source: "/search-by-make/Toyota/4Runner/Ignition%20%26%20Electrical/Spark%20Plug-Toyota-4Runner-2002-2009-90919-01235-25",
         destination: "/search-by-make/Toyota/4Runner/Ignition%20%26%20Electrical/Spark%20Plug/Spark%20Plug-Toyota-4Runner-2002-2009-90919-01235-25",
         permanent: true
