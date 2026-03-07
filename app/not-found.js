@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 
+export const metadata = {
+    robots: {
+        index: false,
+        follow: false,
+        noarchive: true,
+    },
+};
+
 export default function NotFound() {
     return (
         <div>
