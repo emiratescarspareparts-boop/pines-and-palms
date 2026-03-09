@@ -156,37 +156,37 @@ export function generateMetadata({ params }) {
     p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase() &&
       c.model.toLowerCase() === model.toLowerCase())
   );
-  const productListItems = productsForMake.map((product, index) => {
+  const productListItems = productsForMake.map((product, listIndex) => {
     let compat = null;
 
     if (productsForMake.length > 0) {
       const now = new Date();
       const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
       const rotationPeriod = Math.floor(days / 3);
-      const index = (rotationPeriod + product.id) % productsForMake.length;
-      compat = productsForMake[index];
+      const rotationIndex = (rotationPeriod + product.id) % productsForMake.length;
+      compat = productsForMake[rotationIndex];
     }
 
     const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-    var today = new Date();
-    var currentYear = today.getFullYear();
-    var endOfYear = new Date(currentYear, 11, 31);
+    const now = new Date();
+    const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
 
+    const productUrl = `https://www.emirates-car.com/search-by-make/${make}/${model}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`
     return ({
       "@type": "ListItem",
-      "position": index + 1,
+      "position": listIndex + 1,
       "item": {
         "@type": "Product",
-        "@id": `https://www.emirates-car.com/search-by-make/${make}/${model}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}#product`,
+        "@id": `${productUrl}#product`,
         "name": `${product.partname} ${product.partnumber} ${make}`,
-        "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+        "url": `${productUrl}`,
         "image": `https://www.emirates-car.com${product.image}`,
         "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
         "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
         "mpn": product.partnumber,
         "offers": {
           "@type": "Offer",
-          "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+          "url": `${productUrl}`,
           "priceCurrency": product.pricing.currency,
           "price": product.pricing.price,
           "priceValidUntil": endOfYear,
@@ -699,7 +699,7 @@ export default function Model({ params, searchParams }) {
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
           <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-            Most Searched <span className='text-blue-500'>{make}</span> Spare Parts in UAE
+            Most Searched <span className='text-blue-500'>{make} {model}</span> Spare Parts in UAE
           </h2>
 
           <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">

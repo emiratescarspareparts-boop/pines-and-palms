@@ -79,9 +79,9 @@ export async function generateMetadata({ params }) {
         return years.join(", ");
     };
 
-    var today = new Date();
-    var currentYear = today.getFullYear();
-    var endOfYear = new Date(currentYear, 11, 31);
+    const now = new Date();
+    const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
+
 
 
     const faqSchema = {

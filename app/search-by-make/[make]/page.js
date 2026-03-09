@@ -15,37 +15,6 @@ export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
 
-const IMAGE_BASE_PATH = '/img/honda-eighth-gen';
-
-const imagePaths = {
-  ABS: `${IMAGE_BASE_PATH}/ABS.webp`,
-  AirFilter: `${IMAGE_BASE_PATH}/Air_Filter.webp`,
-  AirSuspension: `${IMAGE_BASE_PATH}/Air_Suspension_Module.webp`,
-  AxleAssembly: `${IMAGE_BASE_PATH}/Axle_Assembly_Rear.webp`,
-  BrakePads: `${IMAGE_BASE_PATH}/Brake_Pads.webp`,
-  CatalyticConverter: `${IMAGE_BASE_PATH}/Catalytic_Converter.webp`,
-  CylinderHead: `${IMAGE_BASE_PATH}/Cylinder_Head.webp`,
-  Distributor: `${IMAGE_BASE_PATH}/Distributor.webp`,
-  Engine: `${IMAGE_BASE_PATH}/Engine.webp`,
-  ExhaustManifold: `${IMAGE_BASE_PATH}/Exhaust_Manifold.webp`,
-  GearBox: `${IMAGE_BASE_PATH}/Gearbox.webp`,
-  Grille: `${IMAGE_BASE_PATH}/Grille.webp`,
-  Headlight: `${IMAGE_BASE_PATH}/Headlight.webp`,
-  MasterCylinderKit: `${IMAGE_BASE_PATH}/Master_Cylinder.webp`,
-  Radiator: `${IMAGE_BASE_PATH}/Radiator.webp`,
-  RearBumper: `${IMAGE_BASE_PATH}/Rear_Bumper_Assembly.webp`,
-  ReverseLight: `${IMAGE_BASE_PATH}/Reverse_Light.webp`,
-  Rim: `${IMAGE_BASE_PATH}/Rim.webp`,
-  SeatBelt: `${IMAGE_BASE_PATH}/Seat_Belt.webp`,
-  ShockAbsorber: `${IMAGE_BASE_PATH}/Shock_Absorber.webp`,
-  SideMirror: `${IMAGE_BASE_PATH}/Side_Mirror.webp`,
-  SteeringWheel: `${IMAGE_BASE_PATH}/Steering_Wheel.webp`,
-  Wheel: `${IMAGE_BASE_PATH}/Wheel.webp`,
-  MudFlap: `${IMAGE_BASE_PATH}/Mud_Flap.webp`,
-}
-
-
-
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
@@ -58,6 +27,16 @@ const firaSans = Fira_Sans({
   display: 'swap',
   variable: '--font-fira-sans',
 });
+const selectedParts = [
+  // Tier 1
+  "Battery", "Engine Assembly", "Gearbox", "Radiator",
+  "AC Compressor", "Alternator", "Suspension", "Shock Absorber",
+  "Headlight Assembly", "Bumpers", "Brake Disc", "Turbocharger",
+  // Tier 2
+  "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
+  "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
+  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
+]
 
 const excludedMakes = [
   'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab',
@@ -116,8 +95,6 @@ const baseCity = [{
   "description": "A sheikhdom of the United Arab Emirates on the Gulf of Oman. It joined the federation in 1971. Fujairah City (Arabic: الفجيرة‎) is the capital of the emirate of Fujairah in the United Arab Emirates. It is the seventh-largest city in UAE. Metro population is about 1,52,000"
 }
 ];
-
-
 
 const carDataByMakeModel = {};
 const carDataByMake = {};
@@ -183,36 +160,40 @@ export function generateMetadata({ params }) {
   const productsForMake = products.filter(p =>
     p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase())
   );
-  const productListItems = productsForMake.map((product, index) => {
+  const productListItems = productsForMake.map((product, listIndex) => {
     let compat = null;
 
     if (productsForMake.length > 0) {
       const now = new Date();
       const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
       const rotationPeriod = Math.floor(days / 3);
-      const index = (rotationPeriod + product.id) % productsForMake.length;
-      compat = productsForMake[index];
+      const rotatedIndex = (rotationPeriod + product.id) % productsForMake.length;
+      compat = productsForMake[rotatedIndex];
     }
 
     const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-    var today = new Date();
-    var currentYear = today.getFullYear();
-    var endOfYear = new Date(currentYear, 11, 31);
+    const now = new Date();
+    const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
+
+    const productUrl = `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`;
+
+
     return ({
       "@type": "ListItem",
-      "position": index + 1,
+      "position": listIndex + 1,
       "item": {
         "@type": "Product",
-        "@id": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}#product`,
+        "@id": `${productUrl}#product`,
         "name": `${product.partname} ${product.partnumber} ${make}`,
-        "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+        "url": `${productUrl}`,
         "image": `https://www.emirates-car.com${product.image}`,
         "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
         "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
         "mpn": product.partnumber,
+
         "offers": {
           "@type": "Offer",
-          "url": `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`,
+          "url": `${productUrl}`,
           "priceCurrency": product.pricing.currency,
           "price": product.pricing.price,
           "priceValidUntil": endOfYear,
@@ -527,152 +508,7 @@ export default function MakePage({ params, searchParams }) {
   }
 
 
-  const images = [
-    {
-      images: imagePaths.ABS,
-      name: `${make} ABS`,
-      alt: `${make} anti lock braking system`,
-      link: '/search-by-part-name/Anti-Lock%20Brake%20Control%20Module%20(ABS)',
-    },
-    {
-      images: imagePaths.AirFilter,
-      name: `${make} Air Filter`,
-      alt: `${make} air filter`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.AirSuspension,
-      name: `${make} Air Suspension`,
-      alt: `${make} Air suspension`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.AxleAssembly,
-      name: `${make} Axle`,
-      alt: `${make} axle`,
-      link: '/search-by-part-name/Axle%20Assembly%20(Front,%204WD)',
-    },
-    {
-      images: imagePaths.BrakePads,
-      name: `${make} Brake Pads`,
-      alt: `${make} brake pads`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.CatalyticConverter,
-      name: `${make} Catalytic Convertor`,
-      alt: `${make} catalytic convertor`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.CylinderHead,
-      name: `${make} Cylinder Head`,
-      alt: `${make} cylinder`,
-      link: '/search-by-part-name/Cylinder%20Head)',
-    },
-    {
-      images: imagePaths.Distributor,
-      name: `${make} Distributor`,
-      alt: `${make} distributor`,
-      link: '/search-by-part-name/Distributor',
-    },
-    {
-      images: imagePaths.Engine,
-      name: `${make} Engine`,
-      alt: `${make} Engine`,
-      link: '/search-by-part-name/Engine%20Assembly',
-    },
-    {
-      images: imagePaths.ExhaustManifold,
-      name: `${make} Exhaust Manifold`,
-      alt: `${make} exhaust system`,
-      link: '/search-by-part-name/Exhaust%20Manifold',
-    },
-    {
-      images: imagePaths.GearBox,
-      name: `${make} Gearbox / Transmission`,
-      alt: `${make} gearbox`,
-      link: '/search-by-part-name/Transmission%20Control%20Module',
-    },
-    {
-      images: imagePaths.Grille,
-      name: `${make} grill`,
-      alt: `${make} grill`,
-      link: '/search-by-part-name/Grille',
-    },
-    {
-      images: imagePaths.Headlight,
-      name: `${make} Headlight`,
-      alt: `${make} headlight bulb`,
-      link: '/search-by-part-name/Headlight%20Assembly',
-    },
-    {
-      images: imagePaths.MasterCylinderKit,
-      name: `${make} Master Cylinder`,
-      alt: `${make} master cylinder`,
-      link: '/search-by-part-name/Master%20Cylinder%20(Clutch)',
-    },
-    {
-      images: imagePaths.MudFlap,
-      name: `${make} Mud Flaps`,
-      alt: `${make} mud flaps`,
-      link: '/get-in-touch',
-    },
-    {
-      images: imagePaths.Radiator,
-      name: `${make} Radiator`,
-      alt: `${make} radiator`,
-      link: '/search-by-part-name/Radiator',
-    },
-    {
-      images: imagePaths.RearBumper,
-      name: `${make} Rear Bumper`,
-      alt: `${make} rear bumper`,
-      link: '/search-by-part-name/Bumper%20Assembly%20(Rear)',
-    },
-    {
-      images: imagePaths.ReverseLight,
-      name: `${make} Reverse Light`,
-      alt: `${make} reverse light`,
-      link: '/search-by-part-name/Reverse%20Light',
-    },
-    {
-      images: imagePaths.Rim,
-      name: `${make} Rims`,
-      alt: `${make} Rims for sale`,
-      link: '/search-by-part-name/Rim',
-    },
-    {
-      images: imagePaths.SeatBelt,
-      name: `${make} Seat Belt`,
-      alt: `${make} seat belt`,
-      link: '/search-by-part-name/Seat%20Belt',
-    },
-    {
-      images: imagePaths.ShockAbsorber,
-      name: `${make} Shock Absorber`,
-      alt: `${make} shock absorber`,
-      link: '/search-by-part-name/Shock%20Absorber',
-    },
-    {
-      images: imagePaths.SideMirror,
-      name: `${make} Mirror`,
-      alt: `${make} mirrors`,
-      link: '/search-by-part-name/Mirror%20(Rear%20View)',
-    },
-    {
-      images: imagePaths.SteeringWheel,
-      name: `${make} Steering Wheel`,
-      alt: `${make} steering wheel`,
-      link: '/search-by-part-name/Steering%20Wheel',
-    },
-    {
-      images: imagePaths.Wheel,
-      name: `${make} wheels`,
-      alt: `${make} wheels`,
-      link: '/search-by-part-name/Wheel',
-    },
-  ];
+
   return (
     <div>
       <div className='max-w-7xl mx-auto md:px-0 lg:px-0 xs:px-0 xxs:px-0 sm:px-2'>
@@ -732,6 +568,51 @@ export default function MakePage({ params, searchParams }) {
             products={filtered}
             allProducts={makeFiltered}
           /> : <></>}
+
+        <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
+          <div className="container py-6">
+            <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
+              Most Searched <span className='text-blue-500'>{make}</span> Spare Parts in UAE
+            </h2>
+
+            <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+              {partspost
+                .filter(post => selectedParts.includes(post.parts))
+                .map((post, i) => {
+                  // Check if this model has seo=true
+                  const key = `${make.toLowerCase()}`;
+                  const carEntry = carDataByMake[key];
+                  const hasSEO = carEntry?.some(car => car.seo === true);
+
+                  const linkHref = hasSEO
+                    ? `/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(post.parts)}`
+                    : `/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(post.parts)}`;
+
+                  return (
+                    <li key={i} className="border">
+                      <a href={linkHref} target="_blank">
+                        <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
+                          <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
+                            <Image
+                              src={post.img || '/img/parts/car-spare-parts.png'}
+                              alt={`${make}  ${post.parts}`}
+                              className="max-w-full max-h-full object-contain"
+                              width={120}
+                              height={120}
+                            />
+                          </div>
+                          <p className="text-center font-sans font-medium text-base">
+                            <span>{make} {post.parts}</span>
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        </section>
         <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
           <div className="container py-6">
             <h2 className={`font-bold text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
@@ -776,50 +657,6 @@ export default function MakePage({ params, searchParams }) {
           {make === 'Honda' ? <HondaOfferButton /> : <></>}
         </div>
 
-
-        <section aria-labelledby="featured-deals" className="mt-10 xxs:mx-3 xs:mx-3 md:mx-5 lg:max-w-4xl lg:mx-auto">
-          <h2
-            id="featured-deals"
-            className={`text-4xl md:text-3xl lg:text-3xl font-bold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}
-          >
-            Featured Deals on{" "}
-            <span className="text-blue-600">
-              {make}
-            </span>
-          </h2>
-
-          <ul className="grid grid-cols-5 xxs:grid-cols-2 gap-2 s:grid-cols-1 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-            {images.map((item, index) => (
-              <li key={index} className="list-none border-2 p-5 relative">
-                {/* Sale badge */}
-                <span className="absolute top-0 right-0 text-sm font-bold text-white bg-red-600 rounded-l-xl rounded-r-xl p-1">
-                  Sale!
-                </span>
-
-                <h3 className={`text-xl xl:text-2xl xxl:text-2xl font-bold font-sans ${playfair_display.className}`}>{item.name}</h3>
-
-                <hr className="py-1" />
-
-                {/* Product image */}
-                <Image
-                  src={item.images}
-                  alt={item.alt}
-                  height={250}
-                  width={250}
-                  className="object-none object-center p-1"
-                  priority
-                />
-                <a
-                  href={item.link}
-                  title={`${make} ${item.name}`}
-                  className="items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md md:px-5 xs:py-2 xs:text-xs xs:my-2 xxs:text-sm xxs:my-2 s:text-sm s:my-2 focus:filter brightness-125 mt-3 block text-center"
-                >
-                  Inquire Now
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
           <h2 className={`text-4xl md:text-3xl xs:text-2xl xxs:text-xl sm:text-2xl font-bold mx-auto my-10 ${playfair_display.className}`}>
@@ -994,21 +831,6 @@ export default function MakePage({ params, searchParams }) {
             , Infiniti models, BMW models, Audi models and many other brands.
             Visit to search parts you need.
           </p>
-        </section>
-        <section className="grid grid-cols-1  mt-10 mx-3">
-          {/* Section heading */}
-          <h3 className={`text-4xl md:text-2xl lg:text-3xl font-semibold xs:text-2xl xxs:text-2xl py-5 ${playfair_display.className}`}>
-            List of Genuine & Aftermarket <span className='text-blue-600'>{make} spare parts</span>in UAE
-          </h3>
-
-          {/* Parts list */}
-          <ul className="xs:grid xs:grid-cols-1 sm:grid sm:grid-cols-1 gap-2 md:w-full lg:mx-2 px-3">
-            {partspost.map((post, i) => (
-              <li key={i}>
-                {make} {post.parts} price list
-              </li>
-            ))}
-          </ul>
         </section>
       </div>
     </div>
