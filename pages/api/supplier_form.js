@@ -5,6 +5,8 @@ const sheets = google.sheets('v4');
 
 async function handler(req, res) {
     if (req.method !== 'POST') {
+        res.setHeader('X-Robots-Tag', 'noindex');
+
         return res.status(405).json({ message: 'Method not allowed' });
     }
 
@@ -92,6 +94,7 @@ async function handler(req, res) {
             subject: `New Supplier Added – ${country}`,
             text: description,
         });
+        res.setHeader('X-Robots-Tag', 'noindex');
 
         return res.status(201).json({ success: true, ref: RefNo, response });
     } catch (error) {

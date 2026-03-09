@@ -46,9 +46,13 @@ async function handler(req, res) {
     }
 
     const lastTenEntries = filteredEntries.slice(-10);
+    res.setHeader('X-Robots-Tag', 'noindex');
+
     res.status(200).json(lastTenEntries);
 
   } else {
+    res.setHeader('X-Robots-Tag', 'noindex');
+
     res.status(405).json({ message: 'Method Not Allowed' });
   }
 }

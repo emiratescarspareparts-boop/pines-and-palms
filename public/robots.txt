@@ -1,5 +1,8 @@
 # Block AI & unwanted bots
 
+User-agent: Googlebot
+Disallow: /api/
+
 User-agent: claude-web
 Disallow: /
 User-agent: Anthropic

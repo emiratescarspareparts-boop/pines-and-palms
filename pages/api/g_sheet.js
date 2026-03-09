@@ -174,6 +174,7 @@ https://www.emirates-car.com
 
 
     await transporterCus.sendMail(mailOptionsCus)
+    res.setHeader('X-Robots-Tag', 'noindex');
     res.status(201).json(data);
   } else {
     res.status(200).json({ message: 'error' });
