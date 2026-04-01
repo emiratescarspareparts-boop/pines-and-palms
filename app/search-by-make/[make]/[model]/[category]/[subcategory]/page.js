@@ -509,7 +509,7 @@ export default function SubcategoryPage({ params }) {
                     </div>
                     <div><FormBattery formsData={modelsform} /></div>
                 </div></>) : (<><div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-                    <FormMakeModel formsData={modelsform} mke={make} modl={model} />
+                    <FormMakeModel formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
                 </div></>)}
 
                 <div className="mt-10 xs:pt-5 s:pt-5">
@@ -696,7 +696,7 @@ export default function SubcategoryPage({ params }) {
 
                                 <li key={i} className="h-full">
                                     <Link
-                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(item.category)}`}
+                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}}`}
                                         title={`${make} ${model} ${item.category}`}
                                         target="_blank"
                                         className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
@@ -786,7 +786,7 @@ export default function SubcategoryPage({ params }) {
                     </div>
                     <div><FormBattery formsData={modelsform} /></div>
                 </div></>) : (<><div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-                    <FormMakeModel formsData={modelsform} mke={make} modl={model} />
+                    <FormMakeModel formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
                 </div></>)}
 
                 <div className="mt-10 xs:pt-5 s:pt-5">

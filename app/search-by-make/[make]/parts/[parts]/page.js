@@ -525,7 +525,7 @@ export default function Parts({ params, searchParams }) {
                         </div>
                         <div><FormBattery formsData={modelsform} /></div>
                     </div></>) : (<><div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-                        <FormMakePart formsData={modelsform} mke={make} />
+                        <FormMakePart formsData={modelsform} mke={make} page={`/${make}/${parts}`} />
                     </div></>)}
 
 

@@ -274,7 +274,7 @@ export default function Parts({ params, searchParams }) {
       </div>
 
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelsform} />
+        <FormOnly formsData={modelsform} page={`/search-by-part-name/${parts}`} />
       </div>
 
 

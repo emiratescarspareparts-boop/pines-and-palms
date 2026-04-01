@@ -37,7 +37,7 @@ export default function Contact() {
         emiratesautomobileparts@gmail.com
       </p>
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelforms} />
+        <FormOnly formsData={modelforms} page={`/contact`} />
       </div>
       <div className="py-6 bg-blue-500">
         <div className="pb-6 xs:pb-3 p-2 sm:pb-3 xxs:pb-3">

@@ -16,7 +16,7 @@ const firaSans = Fira_Sans({
     variable: '--font-fira-sans',
 });
 
-export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
+export default function FormMakeModelPart({ formsData = [], mke, modl, prt, page }) {
     const [currentStep, setCurrentStep] = useState(1);
     const [Year, setYear] = useState('');
     const [Make, setMake] = useState(mke);
@@ -594,6 +594,7 @@ export default function FormMakeModelPart({ formsData = [], mke, modl, prt }) {
                     address: textCity,
                     timing: Timing || '',
                     condition: conditionText || '',
+                    page: page
                 }),
                 headers: {
                     'Content-Type': 'application/json',

@@ -28,7 +28,6 @@ export default function FormOnly({ formsData = [] }) {
     const [suggestion, setSuggestion] = useState([]);
     const [Address, setAddress] = useState('');
 
-
     const [Name, setName] = useState('');
     const [Code, setCode] = useState('');
     const [submissionData, setSubmissionData] = useState(null);
@@ -469,8 +468,6 @@ export default function FormOnly({ formsData = [] }) {
         'Sajja',
         'City Walk'
     ]
-
-
 
     useEffect(() => {
         const loadCity = async () => {

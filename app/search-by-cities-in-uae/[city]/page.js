@@ -201,7 +201,7 @@ export default function City({ params }) {
           <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 gap-8 xs:gap-2 xxs:gap-2 xxs:p-2 xs:p-2 sm:p-4 p-8">
             {/* Left Side - Your Form Component */}
             <div className="order-1 md:order-1">
-              <FormOnly formsData={modelsform} />
+              <FormOnly formsData={modelsform} page={`/search-by-cities-in-uae/${cityData.city}`} />
             </div>
 
             {/* Right Side - H1 and CTA */}

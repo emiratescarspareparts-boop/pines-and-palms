@@ -37,6 +37,7 @@ async function handler(req, res) {
     const address = req.body.address;
     const condition = req.body.condition || '';
     const timing = req.body.timing || '';
+    const page = req.body.page;
     const WApp = null;
     const SCnfD = null;
     const Y = null;
@@ -47,7 +48,7 @@ async function handler(req, res) {
 
 
     let messageURIOne =
-      encodeURI(description) +
+      encodeURI(description) + encodeURI(page) +
       '%0AWe%20received%20your%20enquiry%20for%20car%20auto%20parts%20for%20above%20vehicle';
 
     const wap = `https://api.whatsapp.com/send?phone=${contact}&text=${encodeURI(
@@ -120,6 +121,7 @@ async function handler(req, res) {
             model,
             address,
             condition,
+            page,
             timing,
             WApp,
             SCnfD,

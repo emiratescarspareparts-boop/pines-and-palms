@@ -6053,7 +6053,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "4Runner",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -9369,7 +9369,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Sienna",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -12279,7 +12279,7 @@
     "make": "Acura",
     "img": "acura.webp",
     "model": "TSX",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13613,7 +13613,7 @@
     "make": "Audi",
     "img": "audi.webp",
     "model": "A3",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -15469,7 +15469,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Camry Hybrid",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16429,7 +16429,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Venza",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -16815,7 +16815,7 @@
     "make": "Lincoln",
     "img": "lincoln.webp",
     "model": "MKT",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23203,7 +23203,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "GX 460",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -23308,7 +23308,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "LS 460",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -38863,7 +38863,7 @@
     "make": "Lamborghini",
     "img": "lamborghini.webp",
     "model": "Urus",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47875,7 +47875,7 @@
     "make": "Toyota",
     "img": "toyota.webp",
     "model": "Wish",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47923,7 +47923,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "ES 240",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -47935,7 +47935,7 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "GS 460",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -50986,6 +50986,25 @@
     "make": "Cadillac",
     "img": "cadillac.webp",
     "model": "XT6",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14418,
+    "year": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "make": "Lexus",
+    "img": "lexus.webp",
+    "model": "ES 330",
     "seo": true,
     "description": "",
     "keyword": "."
