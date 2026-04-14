@@ -14,7 +14,7 @@ const firaSans = Fira_Sans({
 
 export default function Product({ make, products, allProducts }) {
 
-    const INITIAL_COUNT = 8; // change as needed
+    const INITIAL_COUNT = 20; // change as needed
     const [showAll, setShowAll] = useState(false);
 
     const visibleProducts = showAll

@@ -12,7 +12,7 @@ const firaSans = Fira_Sans({
 });
 
 export default function Product({ make, products, model, subcategory }) {
-    const INITIAL_COUNT = 8;
+    const INITIAL_COUNT = 20;
     const [showAll, setShowAll] = useState(false);
 
     const visibleProducts = showAll
@@ -166,7 +166,7 @@ export default function Product({ make, products, model, subcategory }) {
 
                                         <figcaption className="p-3">
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
-                                                {product.partname} for {make} {compat?.model || ""} {compat?.years || ""}
+                                                {product.partname} for {make} {compatibilityString || compat?.years}
                                             </h2>
                                             <p className={`text-base font-bold text-red-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}&nbsp;<span className='text-sm font-thin text-blue-500'>approx.</span></p>
                                             <p className="text-sm text-gray-600">

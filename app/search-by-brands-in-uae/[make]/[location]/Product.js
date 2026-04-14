@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 
 export default function Product({ make, products, allProducts }) {
 
-    const INITIAL_COUNT = 8;
+    const INITIAL_COUNT = 20;
     const [showAll, setShowAll] = useState(false);
 
     const visibleProducts = showAll

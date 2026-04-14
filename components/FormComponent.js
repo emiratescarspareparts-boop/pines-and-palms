@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function FormComponent({ formsData, postFilter }) {
+export default function FormComponent({ formsData, postFilter, page }) {
   const [Year, setYear] = useState('');
   const [Make, setMake] = useState('');
   const [Model, setModel] = useState('');
@@ -382,6 +382,7 @@ export default function FormComponent({ formsData, postFilter }) {
         year: Year,
         model: Model,
         address: textCity,
+        page: page
       }),
       headers: {
         'Content-Type': 'application/json',

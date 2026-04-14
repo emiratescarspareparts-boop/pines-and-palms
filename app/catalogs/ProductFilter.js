@@ -328,7 +328,7 @@ export default function ProductFilter({ products, allProducts, searchParams }) {
 
                             <hr className="mt-5" />
 
-                            {/* ⭐ FEATURED ONLY FILTER */}
+                            {/*  FEATURED ONLY FILTER */}
                             <fieldset>
                                 <legend className={`font-bold my-3 text-xl ${playfair_display.className}`}>
                                     Featured

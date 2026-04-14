@@ -604,14 +604,11 @@ export default function SubcategoryPage({ params }) {
                     </div>
                 </section>
 
-
-
                 <section>
                     <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
                         Search All spare parts for <span className='text-blue-600'>{make} {model}</span>
                     </h2>
                     <SearchMakeModelParts partsposts={partsposts} make={make} model={model} category={category} />
-
 
                     <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
                         {partsposts.map((post, i) => {
@@ -953,6 +950,22 @@ export default function SubcategoryPage({ params }) {
 
                     </div>
                 </section>
+                <ul>
+                    {makedatas
+                        .filter((post) => !excludedMakes.includes(post.make))
+                        .map((post, i) => {
+
+
+                            return (
+                                <li key={i}>
+                                    {`<url><loc>https://www.emirates-car.com/search-by-make/${encodeURIComponent(post.make)}/parts/Steering%20Rack</loc><lastmod>2026-01-28T12:45:55.555Z</lastmod><changefreq>weekly</changefreq></url>`}
+                                </li>
+                            );
+                        })}
+                </ul>
+
+
+
 
                 {isBattery ? (<></>) : (<><section>
                     <h2 className={`font-bold text-3xl text-center xs:text-2xl my-3 ${playfair_display.className}`}>

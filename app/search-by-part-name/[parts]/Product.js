@@ -12,7 +12,7 @@ const firaSans = Fira_Sans({
 });
 
 export default function Product({ products, allProducts, parts, searchParams }) {
-    const INITIAL_COUNT = 8;
+    const INITIAL_COUNT = 20;
     const [showAll, setShowAll] = useState(false);
 
     const visibleProducts = showAll

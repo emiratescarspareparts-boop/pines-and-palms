@@ -4486,7 +4486,7 @@
             "UPC": ""
         },
         "pricing": {
-            "price": 588.00,
+            "price": 2304.00,
             "price_info": "*Prices reflects the latest compared average online market values for Genuine Ford Motor Company Alternator 12V 225 AMP 6 Grooves. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
             "currency": "AED",
             "discounted_price": 0,
@@ -7421,6 +7421,2202 @@
             "shipping": "Shipping (3-5 Business Days)",
             "delivery": "",
             "returns": "3 Days Returns Accepted",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 91,
+        "subcategory": "Starter",
+        "category": "Electrical & Electronics",
+        "partname": "Starter Motor 12V, 2.2kW, 11 teeth, Clockwise rotation",
+        "partnumber": 458637,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Volvo",
+                "model": "C30",
+                "years": "2006",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volvo",
+                "model": "C70 CC",
+                "years": "1997-2005",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volvo",
+                "model": "S40",
+                "years": "1995-2004",
+                "engine": "1.6L,2.0L"
+            },
+            {
+                "make": "Volvo",
+                "model": "S80",
+                "years": "1998-2006",
+                "engine": ""
+            },
+            {
+                "make": "Volvo",
+                "model": "V50",
+                "years": "2004",
+                "engine": "1.6L,2.0L"
+            },
+            {
+                "make": "Volvo",
+                "model": "V70",
+                "years": "1996-2000",
+                "engine": "2.0L,2.3L,2.4L,2.5L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/volvo/starter91.jpg",
+        "item_specifics": {
+            "sku": "VOL0001",
+            "Brand": "Valeo",
+            "Manufacturer Part Number": 458637,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                ",LRS02263 Lucas,  36000221 Volvo OE, 30667494 Volvo OE, 1376305 Ford OE, 1756795, Ford OE,Ford OE 6G9N-11000-FA"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Poland",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Valeo Starter Motor 12V, 2.2kW, 11 teeth, Clockwise rotation. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 71,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 12V 130 AMP/150 AMP",
+        "partnumber": "11710N",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Hyundai",
+                "model": "Santa Fe",
+                "years": "2009-2012",
+                "engine": ""
+            },
+            {
+                "make": "Hyundai",
+                "model": "Santa Fe Sport 2WD",
+                "years": "2013-2016",
+                "engine": "2.0LTurbocharged,2.4L Theta II"
+            },
+            {
+                "make": "Kia",
+                "model": "Optima",
+                "years": "2014-2015",
+                "engine": "2.0L,2.4L"
+            },
+            {
+                "make": "Kia",
+                "model": "Sorento",
+                "years": "2012-2014",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Hyundai",
+                "model": "Sonata",
+                "years": "2014-2015",
+                "engine": "2.4L Theta II,2.0L Turbocharged GDI,2.4L Hybrid,1.6L Turbocharged GDI"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/hyundai/alternator71.png",
+        "item_specifics": {
+            "sku": "HYN0001",
+            "Brand": "GM Genuine",
+            "Manufacturer Part Number": "37300-2G800/37300-2G850",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "FG15S059 Valeo,FG15S060 Valeo,FG15S110 Valeo,11606 Lester, 37300-2G950,40040126 J&N/Arrowhead,400-40126 J&N/Arrowhead,8400310,AVA0146 AS-PL, 37300-2G850 Hyundai/Kia OEM,373002G855 Hyundai/Kia OEM,37300-2G855 Valeo,373002G950 Hyundai/Kia OEM, 11710 Lester,11710N Lester,373002G800 Hyundai/Kia OEM,37300-2G800 Hyundai/Kia OEM,373002G850 Hyundai/Kia OEM, LRS02263 Lucas"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "South Korea",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 3091,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine GM Genuine Alternator 12V 130 AMP/150 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 81,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator  180 AMP",
+        "partnumber": "6L903024F",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Audi",
+                "model": "A4",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A4 allroad quattro",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5 Sportback",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A6",
+                "years": "2016-2018",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "Q7",
+                "years": "2017-2022",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/vwgroup/audialternator81.png",
+        "item_specifics": {
+            "sku": "AUD0002",
+            "Brand": "Audi/Volkswagen (VW) Group Genuine Parts. ",
+            "Manufacturer Part Number": "06L903024A",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "06L-903-024-F, 06L903024A, 06L903024K, 6L903024F"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Berlin, Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 4224,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Audi/Volkswagen (VW) Group Genuine Parts.  Alternator  180 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 91,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator  180 AMP Valeo",
+        "partnumber": 439949,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Audi",
+                "model": "A4",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A4 allroad quattro",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5 Sportback",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A6",
+                "years": "2016-2018",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "Q7",
+                "years": "2017-2022",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/audi/alternator91.png",
+        "item_specifics": {
+            "sku": "AUD0003",
+            "Brand": "Valeo",
+            "Manufacturer Part Number": 439949,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                ", 06L-903-024-F OE, 06L903024A OE, 06L903024K OE, 6L903024F OE, 2619992C Valeo, 2715187A Valeo, 439949 Valeo, 440700 Valeo"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany/France",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2614,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Valeo Alternator  180 AMP Valeo. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 92,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator  180 AMP AD KUHNER",
+        "partnumber": "554701RIV",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Audi",
+                "model": "A4",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A4 allroad quattro",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5 Sportback",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A6",
+                "years": "2016-2018",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "Q7",
+                "years": "2017-2022",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/audi/alternator92.png",
+        "item_specifics": {
+            "sku": "AUD0004",
+            "Brand": "AD KUHNER",
+            "Manufacturer Part Number": "554701RIV",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                ", 06L-903-024-F OE, 06L903024A OE, 06L903024K OE, 6L903024F OE"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2892,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine AD KUHNER Alternator  180 AMP AD KUHNER. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 93,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator  180 AMP AD KUHNER",
+        "partnumber": "UD102385A",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Audi",
+                "model": "A4",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A4 allroad quattro",
+                "years": "2017-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A5 Sportback",
+                "years": "2018-2020",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "A6",
+                "years": "2016-2018",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Audi",
+                "model": "Q7",
+                "years": "2017-2022",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/audi/alternator93.webp",
+        "item_specifics": {
+            "sku": "AUD0005",
+            "Brand": "AS PL",
+            "Manufacturer Part Number": "UD102385A, UD103625A",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                ", 06L-903-024-F OE, 06L903024A OE, 06L903024K OE, 6L903024F OE, UD103625A"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Poland",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1722,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine AS PL Alternator  180 AMP AD KUHNER. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 100,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 12V 150 AMP 6 Grooves",
+        "partnumber": "JR3Z-10346-B",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2018",
+                "engine": "5.0L V8"
+            },
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2019",
+                "engine": "5.0L V8"
+            },
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2020",
+                "engine": "5.0L V8"
+            },
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2021",
+                "engine": "5.0L V8"
+            },
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2022",
+                "engine": "5.0L V8"
+            },
+            {
+                "make": "Ford",
+                "model": "Mustang",
+                "years": "2023",
+                "engine": "5.0L V8"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/ford/alternator94.png",
+        "item_specifics": {
+            "sku": "FOR0002",
+            "Brand": "Ford Motor Company",
+            "Manufacturer Part Number": "JR3Z10346B",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "FORD JR3Z-10346-B, MOTORCRAFT GL-8940, DENSO 104210-5900, DENSO 1042105900, REMY 20614"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United States",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": "884000789012"
+        },
+        "pricing": {
+            "price": 2650,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Ford Motor Company Alternator 12V 150 AMP 6 Grooves. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 86,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": 94860301505,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0001",
+            "Brand": "Porsche AG",
+            "Manufacturer Part Number": 94860301505,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.05"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 9670,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Porsche AG Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 94,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "ADL1916-6-4",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V9"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0002",
+            "Brand": "Duralast",
+            "Manufacturer Part Number": "ADL1916-6-4",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.06"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 911,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Duralast Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 95,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "138-07964844",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V10"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0003",
+            "Brand": "Remy",
+            "Manufacturer Part Number": "138-07964844",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.07"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1531,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Remy Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 96,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "553521RI",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V11"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0004",
+            "Brand": "AD KUHNER",
+            "Manufacturer Part Number": "553521RI",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.08"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany & Switzerland",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2789,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine AD KUHNER Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 97,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "485.402.190.088",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V12"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0005",
+            "Brand": "BV PSH",
+            "Manufacturer Part Number": "485.402.190.088",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.09"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Netherland",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1890,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine BV PSH Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 98,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "LR1190-915",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V13"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0006",
+            "Brand": "Hitachi",
+            "Manufacturer Part Number": "LR1190-915",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "LR1190-915,94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.05"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Poland",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2539,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Hitachi Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 99,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP 12V",
+        "partnumber": "LRA03823",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2003",
+                "engine": "4.5L V8 IPorsche"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2004",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2005",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne S",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo",
+                "years": "2006",
+                "engine": "4.5L V8"
+            },
+            {
+                "make": "Porsche",
+                "model": "Cayenne Turbo S",
+                "years": "2006",
+                "engine": "4.5L V14"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/porsche/alternator86.png",
+        "item_specifics": {
+            "sku": "POR0007",
+            "Brand": "LUCAS",
+            "Manufacturer Part Number": "LRA03823",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "94860301505, 948 603 015 05, 948-603-015-05, 948.603.015.09,LRA03823"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United Kingdom",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1692.94,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine LUCAS Alternator 190 AMP 12V. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 88,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 150 AMP",
+        "partnumber": 84143543,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 1500",
+                "years": "2014-2019",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 2500",
+                "years": "2014-2019",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 3500HD",
+                "years": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel",
+                "engine": "2014-2019"
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra",
+                "years": "2014-2019",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Tahoe",
+                "years": "2015-2020",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "GMC",
+                "model": "Yukon",
+                "years": "2015-2020",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Cadillac",
+                "model": "Escalade",
+                "years": "2015-2020",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 4500",
+                "years": "2019-2024",
+                "engine": ""
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado 5500",
+                "years": "2019-2024",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado",
+                "years": "6500 HD",
+                "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/chevrolet/alternator88.jpg",
+        "item_specifics": {
+            "sku": "CHEV0001",
+            "Brand": "ACDelco",
+            "Manufacturer Part Number": 84143543,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "104211-8340, 1042118350, 104211-8350, 1042118352, 104211-8352, 1042119110, 104211-9110, 1042119112, 104211-9112, 1042119720, 104211-9720, 22747894, 22747896, 23487088, 23487089, 84143542, 84143543, TN1042119110, TN104211-9110, TN1042119720, TN104211-9720, 1042118340"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United States",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1828,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine ACDelco Alternator 150 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 89,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 105 AMP",
+        "partnumber": "AL8706N",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Cadillac",
+                "model": "Escalade",
+                "years": "1999-2000",
+                "engine": "5.7L V8"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/cadillac/alternator89.webp",
+        "item_specifics": {
+            "sku": "CAD0001",
+            "Brand": "BOSCH",
+            "Manufacturer Part Number": "AL8706N",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "19244778, 19244779, 321-2156,15757624, 321-1132, 10463651, 321-1107, 321-1108, 8206, 10463652"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Fitment",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1607,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine BOSCH Alternator 105 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 72,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 150 AMP/170 AMP",
+        "partnumber": "231004HK6A",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Infiniti",
+                "model": "Q50",
+                "years": "2016-2024",
+                "engine": "3.0L V6 - Gas"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/infiniti/alternator72.webp",
+        "item_specifics": {
+            "sku": "INF0001",
+            "Brand": "Nissan Motor Corporation",
+            "Manufacturer Part Number": "231004HK6A",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "‎11877N, 11877, 42162, 231004HK6A, A003TL0191"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United States",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1318,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Nissan Motor Corporation Alternator 150 AMP/170 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 73,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": "4801835AD",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Jeep",
+                "model": "Grand Cherokee",
+                "years": "2014-2019",
+                "engine": "3.0L V6"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/jeep/alternator73.webp",
+        "item_specifics": {
+            "sku": "JP0001",
+            "Brand": "Mopar",
+            "Manufacturer Part Number": "4801835AD",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "4801835AB, 4801835AC"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United State",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 3233,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Mopar Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 74,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 180 AMP",
+        "partnumber": 36012619,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Volvo",
+                "model": "XC60",
+                "years": "2015-2016",
+                "engine": "2.5L Gas"
+            },
+            {
+                "make": "Volvo",
+                "model": "S60",
+                "years": "2011-2016",
+                "engine": "2.5L"
+            },
+            {
+                "make": "Volvo",
+                "model": "XC70",
+                "years": "2016",
+                "engine": "2.5L Gas"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/volvo/alternator74.png",
+        "item_specifics": {
+            "sku": "VOL0002",
+            "Brand": "Volvo Genuine Parts",
+            "Manufacturer Part Number": 36012619,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "36012619, 36001341, 31419556"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "India/Vietnam/Mexico/Sweden",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 3296,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Volvo Genuine Parts Alternator 180 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 75,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": 20881337,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Cadillac",
+                "model": "Escalade",
+                "years": "2007-2014",
+                "engine": "6.2L, 6.2L Flex"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Avalanche",
+                "years": "2007-2013",
+                "engine": "5.3L,5.3L Flex,6.0L"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Colorado",
+                "years": "2009-2012",
+                "engine": "5.3L"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Express",
+                "years": "2009-2014",
+                "engine": "4.3L,4.8L Flex,5.3L,6.0L Flex"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Silverado",
+                "years": "2007-2014",
+                "engine": "4.3L,4.8L,4.8L Flex,5.3L,5.3 L Flex,6.0L,6.0L Flex,6.2L, 6.2 L Flex"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Suburban",
+                "years": "2007-2014",
+                "engine": "5.3L,6.0L,6.0L Flex"
+            },
+            {
+                "make": "Chevrolet",
+                "model": "Tahoe",
+                "years": "2007-2014",
+                "engine": "4.8L,5.3L,5.3L Flex"
+            },
+            {
+                "make": "GMC",
+                "model": "Canyon",
+                "years": "2009-2012",
+                "engine": "5.3L"
+            },
+            {
+                "make": "GMC",
+                "model": "Savana",
+                "years": "4.3L,4.8L Flex,5.3L,6.0L Flex",
+                "engine": ""
+            },
+            {
+                "make": "GMC",
+                "model": "Sierra",
+                "years": "2007-2014",
+                "engine": "4.3L,4.8L,4.8L Flex,5.3L,5.3L Flex,6.2L,6.2L Flex"
+            },
+            {
+                "make": "GMC",
+                "model": "Yukon",
+                "years": "2007-2014",
+                "engine": "4.8L,5.3L,5.3L Flex,6.0L,6.0L Flex,6.2L,6.2L Flex"
+            },
+            {
+                "make": "Hummer",
+                "model": "H3",
+                "years": "2008-2010",
+                "engine": "5.3L"
+            },
+            {
+                "make": "Hummer",
+                "model": "H3T",
+                "years": "2009-2010",
+                "engine": "5.3L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/gmc/alternator75.png",
+        "item_specifics": {
+            "sku": "HUM0001",
+            "Brand": "General Motors",
+            "Manufacturer Part Number": 20881337,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "15905874, 25869451, 15905872, 22781127, 25968616"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United States",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1257,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine General Motors Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 76,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": "37300-2B150RU",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Kia",
+                "model": "Soul",
+                "years": "2012-2013",
+                "engine": "1.6L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/kia/alternator76.png",
+        "item_specifics": {
+            "sku": "KIA0001",
+            "Brand": "Hyundai Motor Group",
+            "Manufacturer Part Number": "37300-2B150RU",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "37300-2B150"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "South Korea",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1168,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Hyundai Motor Group Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 77,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": "12-31-8-680-374",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mini",
+                "model": "Cooper",
+                "years": "2020-2024",
+                "engine": "1.5L,2.0L"
+            },
+            {
+                "make": "Mini",
+                "model": "Cooper Countryman",
+                "years": "2020-2024",
+                "engine": "1.5L,2.0L Gas/Electric"
+            },
+            {
+                "make": "Mini",
+                "model": "Cooper Clubman",
+                "years": "2020-2024",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mini/alternator77.png",
+        "item_specifics": {
+            "sku": "MIN0001",
+            "Brand": "BMW group",
+            "Manufacturer Part Number": 12318627125,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "7640131, 7640131-03, 1042118181"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United Kingdom",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 3726,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine BMW group Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 79,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": 2706028321,
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Scion",
+                "model": "xB",
+                "years": "2008-2015",
+                "engine": "2.4L"
+            },
+            {
+                "make": "Toyota",
+                "model": "Camry",
+                "years": "2008-2010",
+                "engine": "2.4L,2.5L,3.5L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/scion/alternator79.jpg",
+        "item_specifics": {
+            "sku": "SCI0001",
+            "Brand": "Toyota Motor Corporation",
+            "Manufacturer Part Number": "27060-28321",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "27060-28321-84"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Japan",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 1416,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Toyota Motor Corporation Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 80,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator 190 AMP",
+        "partnumber": "07C903021J",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Bentley",
+                "model": "Continental GT",
+                "years": "2003-2010",
+                "engine": "6.0L"
+            },
+            {
+                "make": "Bentley",
+                "model": "Continental GTC",
+                "years": "2006-2010",
+                "engine": "6.0L"
+            },
+            {
+                "make": "Bentley",
+                "model": "Continental Flying Spur",
+                "years": "2006-2012",
+                "engine": "6.0L"
+            },
+            {
+                "make": "Bentley",
+                "model": "Continental Supersports",
+                "years": "2009-2011",
+                "engine": "6.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/bentley/alternator80.webp",
+        "item_specifics": {
+            "sku": "BEN0002",
+            "Brand": "Bentley Motors Limited",
+            "Manufacturer Part Number": "07C903021J",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "LR1190-906B, LR1190-906C, LR1190906, LR1190906B, LR1190906C, LR1190906E, XIG1279, Lucas LRA04441, LRA4441, LR1190-951, LR1190-938, VW 07C903021J, 079903015J,07C-903-021-J, 07C 903 021 J"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "United Kingdom",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 8086,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Bentley Motors Limited Alternator 190 AMP. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 84,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": "PY8V-18-300E",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mazda",
+                "model": "CX-9",
+                "years": "2016-2023",
+                "engine": "2.5L Gas"
+            },
+            {
+                "make": "Mazda",
+                "model": "6",
+                "years": "2018-2021",
+                "engine": "2.5L Gas"
+            },
+            {
+                "make": "Mazda",
+                "model": "CX-5",
+                "years": "2019-2025",
+                "engine": "2.5L Gas"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mazda/alternator84.png",
+        "item_specifics": {
+            "sku": "MAZ0001",
+            "Brand": "Mazda Motor Corporation",
+            "Manufacturer Part Number": "PY8V18300E",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "PY8V18300A, PY8V18300C, PY8V18300D"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Japan",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 3358,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Mazda Motor Corporation Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 87,
+        "subcategory": "Alternator",
+        "category": "Electrical & Electronics",
+        "partname": "Alternator",
+        "partnumber": "06K903026C",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Volkswagen",
+                "model": "Atlas",
+                "years": "2022-2025",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volkswagen",
+                "model": "Golf R",
+                "years": "2022-2025",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volkswagen",
+                "model": "GTI",
+                "years": "2022-2024",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volkswagen",
+                "model": "Jetta GLI",
+                "years": "2019-2025",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volkswagen",
+                "model": "Passat",
+                "years": "2020-2022",
+                "engine": "2.0L"
+            },
+            {
+                "make": "Volksagen",
+                "model": "Tiguan",
+                "years": "2018-2024",
+                "engine": "2.0L"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/volkswagen/alternator87.png",
+        "item_specifics": {
+            "sku": "VOLK0001",
+            "Brand": "Volkswagen Group",
+            "Manufacturer Part Number": "06K-903-026-C",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "6K903023D, 6K903023dX"
+            ],
+            "Placement on Vehicle": [
+                "Front of Engine Compartment"
+            ],
+            "Condition": "New",
+            "Material": "Aluminum,Copper,Steel",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 2437,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Volkswagen Group Alternator. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
             "payment_methods": [
                 "Cash on Delivery"
             ]

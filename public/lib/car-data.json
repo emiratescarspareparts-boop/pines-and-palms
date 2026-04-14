@@ -1970,7 +1970,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "911",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -10684,7 +10684,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Silverado 3500",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -13906,7 +13906,7 @@
     "make": "Chevrolet",
     "img": "chevrolet.webp",
     "model": "Silverado 3500HD",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25931,7 +25931,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne S",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25961,7 +25961,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Turbo",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -25976,7 +25976,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Cayenne Turbo S",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -35036,7 +35036,7 @@
     "make": "Porsche",
     "img": "porsche.webp",
     "model": "Macan",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },
@@ -51005,6 +51005,84 @@
     "make": "Lexus",
     "img": "lexus.webp",
     "model": "ES 330",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14419,
+    "year": [
+      1990,
+      1991,
+      1992,
+      1993,
+      1994
+    ],
+    "make": "Audi",
+    "img": "audi.webp",
+    "model": "A5 Sportback",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14420,
+    "year": [
+      2016,
+      2017
+    ],
+    "make": "Lexus",
+    "img": "lexus.webp",
+    "model": "SC 430",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14421,
+    "year": [
+      2016,
+      2017
+    ],
+    "make": "Lexus",
+    "img": "lexus.webp",
+    "model": "GS 430",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14422,
+    "year": [
+      2006
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Silverado 6500HD",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14423,
+    "year": [
+      2006
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Silverado 5500",
+    "seo": true,
+    "description": "",
+    "keyword": "."
+  },
+  {
+    "id": 14424,
+    "year": [
+      2006
+    ],
+    "make": "Chevrolet",
+    "img": "chevrolet.webp",
+    "model": "Silverado 4500",
     "seo": true,
     "description": "",
     "keyword": "."

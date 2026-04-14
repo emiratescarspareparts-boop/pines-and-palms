@@ -51,7 +51,7 @@ export default function korean() {
             </div>
           </div>
         </div>
-        <FormComponent formsData={modelforms} postFilter={partsposts} />
+        <FormComponent formsData={modelforms} postFilter={partsposts} page={"/spare-parts/korean-auto-spare-parts"} />
         <h3 className="text-black text-4xl text-center md:text-2xl lg:text-2xl font-bold xs:text-xl xxs:text-2xl pt-10">
           Search for <span className="text-blue-500">Japanese</span> Auto spare
           parts

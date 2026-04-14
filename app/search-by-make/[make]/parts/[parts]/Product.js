@@ -78,9 +78,9 @@ export default function Product({ make, model, parts, products, allProducts }) {
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
                                                 {make} {compat?.model || ""} {compat?.years || ""} {product.partname}
                                             </h2>
-                                            <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}</p>
+                                            <p className={`text-xl font-extrabold text-blue-500 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}</p>
 
-                                            <p className="text-sm text-gray-600">
+                                            <p className="text-sm text-bold">
                                                 Part #: <span itemProp="mpn">{product.partnumber}</span>
                                             </p>
 
