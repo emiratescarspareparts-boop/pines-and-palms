@@ -950,21 +950,6 @@ export default function SubcategoryPage({ params }) {
 
                     </div>
                 </section>
-                <ul>
-                    {makedatas
-                        .filter((post) => !excludedMakes.includes(post.make))
-                        .map((post, i) => {
-
-
-                            return (
-                                <li key={i}>
-                                    {`<url><loc>https://www.emirates-car.com/search-by-make/${encodeURIComponent(post.make)}/parts/Steering%20Rack</loc><lastmod>2026-01-28T12:45:55.555Z</lastmod><changefreq>weekly</changefreq></url>`}
-                                </li>
-                            );
-                        })}
-                </ul>
-
-
 
 
                 {isBattery ? (<></>) : (<><section>
