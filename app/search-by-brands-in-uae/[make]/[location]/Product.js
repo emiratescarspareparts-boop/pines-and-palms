@@ -5,18 +5,10 @@ import React, { useState } from 'react'
 
 
 export default function Product({ make, products, allProducts }) {
-
-    const INITIAL_COUNT = 20;
-    const [showAll, setShowAll] = useState(false);
-
-    const visibleProducts = showAll
-        ? products
-        : products.slice(0, INITIAL_COUNT);
-
-    const filteredProducts = allProducts.filter(product =>
+    const visibleProducts = products.filter(product =>
         product.compatibility.some(
             c =>
-                c.make.toLowerCase() === make.toLowerCase()
+                c.make.toLowerCase() === make.toLowerCase() && c.model.toLowerCase() === model.toLowerCase()
         )
     );
     return (
@@ -103,16 +95,6 @@ export default function Product({ make, products, allProducts }) {
                         </p>
                     )}
                 </ul>
-                {products.length > INITIAL_COUNT && (
-                    <div className="flex justify-center mt-6">
-                        <button
-                            onClick={() => setShowAll(!showAll)}
-                            className="px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition"
-                        >
-                            {showAll ? 'Show Less' : 'Show All'}
-                        </button>
-                    </div>
-                )}
             </section>
         </div>
     )

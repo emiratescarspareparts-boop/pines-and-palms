@@ -19,7 +19,7 @@ import dynamic from "next/dynamic";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],

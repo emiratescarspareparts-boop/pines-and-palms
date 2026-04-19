@@ -2140,5 +2140,19 @@
         "category": "Body Kits",
         "description": "",
         "img": "/img/parts/spoiler.png"
+    },
+    {
+        "id": 300,
+        "parts": "Door Mirror LH",
+        "category": "Glass & Mirrors",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
+    },
+    {
+        "id": 301,
+        "parts": "Door Mirror RH",
+        "category": "Glass & Mirrors",
+        "description": "",
+        "img": "/img/parts/car-spare-parts.png"
     }
 ]

@@ -12,22 +12,13 @@ const firaSans = Fira_Sans({
 });
 
 export default function Product({ make, products, model, subcategory }) {
-    const INITIAL_COUNT = 20;
-    const [showAll, setShowAll] = useState(false);
 
-    const visibleProducts = showAll
-        ? products.filter(product =>
-            product.compatibility.some(
-                c =>
-                    c.make.toLowerCase() === make.toLowerCase() && c.model.toLowerCase() === model.toLowerCase()
-            )
+    const visibleProducts = products.filter(product =>
+        product.compatibility.some(
+            c =>
+                c.make.toLowerCase() === make.toLowerCase() && c.model.toLowerCase() === model.toLowerCase()
         )
-        : products.filter(product =>
-            product.compatibility.some(
-                c =>
-                    c.make.toLowerCase() === make.toLowerCase() && c.model.toLowerCase() === model.toLowerCase()
-            )
-        ).slice(0, INITIAL_COUNT);
+    );
 
     const modelYears = useMemo(() => {
         const yearsSet = new Set();
@@ -204,16 +195,7 @@ export default function Product({ make, products, model, subcategory }) {
                         </p>
                     )}
                 </ul>
-                {products.length > INITIAL_COUNT && (
-                    <div className="flex justify-center mt-6">
-                        <button
-                            onClick={() => setShowAll(!showAll)}
-                            className="px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition"
-                        >
-                            {showAll ? 'Show Less' : 'Show All'}
-                        </button>
-                    </div>
-                )}
+
             </section>
         </div>
     )
