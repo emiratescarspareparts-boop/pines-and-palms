@@ -17221,7 +17221,7 @@
     "make": "Mini",
     "img": "mini.webp",
     "model": "Cooper Countryman",
-    "seo": false,
+    "seo": true,
     "description": "",
     "keyword": "."
   },

@@ -22,7 +22,7 @@ export default function Product({ make, model, products, allProducts }) {
     const filteredProducts = allProducts.filter(product =>
         product.compatibility.some(
             c =>
-                c.make.toLowerCase() === make.toLowerCase()
+                c.make.toLowerCase() === make.toLowerCase() && c.model.toLowerCase() === model.toLowerCase()
         )
     );
 
