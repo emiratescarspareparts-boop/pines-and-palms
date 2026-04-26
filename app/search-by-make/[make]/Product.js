@@ -14,8 +14,6 @@ const firaSans = Fira_Sans({
 
 export default function Product({ make, products, allProducts }) {
 
-
-
     const visibleProducts = products.filter(product =>
         product.compatibility.some(
             c =>

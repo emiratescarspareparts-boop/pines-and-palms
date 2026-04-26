@@ -140,8 +140,6 @@ export function generateStaticParams() {
 }
 
 
-
-
 export function generateMetadata({ params }) {
     const { parts, make } = params;
     const decodedParts = decodeURIComponent(parts);
@@ -168,24 +166,7 @@ export function generateMetadata({ params }) {
     const hasValidContent = partEntry && (isSelectedPart || partFiltered.length > 0);
 
     if (!hasValidContent) {
-        return {
-            title: 'Page Not Found - EMIRATESCAR',
-            description: 'The requested page could not be found.',
-            robots: {
-                index: false,
-                follow: false,
-                noarchive: true,
-                nosnippet: true,
-                noimageindex: true,
-                googleBot: {
-                    index: false,
-                    follow: false,
-                    noarchive: true,
-                    nosnippet: true,
-                    noimageindex: true,
-                },
-            },
-        };
+        notFound()
     }
 
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(decodedMake)}/parts/${encodeURIComponent(decodedParts)}`;

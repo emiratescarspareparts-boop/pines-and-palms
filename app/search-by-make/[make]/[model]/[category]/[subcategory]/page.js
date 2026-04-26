@@ -47,7 +47,6 @@ const excludedMakes = [
 ];
 
 
-
 const selectedParts = [
     // Tier 1
     "Battery", "Engine Assembly", "Gearbox", "Radiator",
@@ -58,61 +57,6 @@ const selectedParts = [
     "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
     "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box"
 ]
-
-const excludedMakesSet = new Set(excludedMakes);
-
-function getMakeImage(make, model) {
-    try {
-        const imagesMap = {};
-        const result = [];
-
-        for (let i = 0; i < CarData.length; i++) {
-            const item = CarData[i];
-
-            if (
-                item.make &&
-                item.model &&
-                item.make.toLowerCase() === make.toLowerCase() &&
-                item.model.toLowerCase() === model.toLowerCase()
-            ) {
-                if (item.img && !imagesMap[item.img]) {
-                    imagesMap[item.img] = true;
-                    result.push(item.img);
-                }
-            }
-        }
-
-        return result;
-    } catch (e) {
-        console.error("Error loading image:", e.message);
-        return [];
-    }
-}
-
-function getPartsByCategory(category) {
-    try {
-        if (!category) return [];
-
-        const result = [];
-
-        for (let i = 0; i < partsData.length; i++) {
-            const item = partsData[i];
-
-            if (
-                item.category &&
-                item.category.toLowerCase() === category.toLowerCase()
-            ) {
-                result.push(item);
-            }
-        }
-
-        return result;
-    } catch (error) {
-        console.error("Error filtering parts by category:", error);
-        return [];
-    }
-}
-
 
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
@@ -136,24 +80,7 @@ export function generateMetadata({ params }) {
     const hasValidContent = isSelectedPart || matchingProducts.length > 0;
 
     if (!hasValidContent) {
-        return {
-            title: 'Page Not Found - EMIRATESCAR',
-            description: 'The requested page could not be found.',
-            robots: {
-                index: false,
-                follow: false,
-                noarchive: true,
-                nosnippet: true,
-                noimageindex: true,
-                googleBot: {
-                    index: false,
-                    follow: false,
-                    noarchive: true,
-                    nosnippet: true,
-                    noimageindex: true,
-                },
-            },
-        };
+        notFound()
     }
 
     const imageMake = getMakeImage(make, model);
@@ -303,6 +230,94 @@ export function generateMetadata({ params }) {
     };
 }
 
+export function generateStaticParams() {
+    const unique = new Set();
+    const params = [];
+
+    for (let i = 0; i < CarData.length; i++) {
+        const car = CarData[i];
+        if (!car.seo || excludedMakesSet.has(car.make)) continue;
+        if (!topMakes.has(car.make)) continue; // only pre-build top makes
+
+        for (let j = 0; j < selectedParts.length; j++) {
+            const subcategory = selectedParts[j];
+            const partEntry = partsData.find(
+                p => p.parts?.toLowerCase() === subcategory.toLowerCase()
+            );
+            if (!partEntry?.category) continue;
+
+            const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
+            if (!unique.has(key)) {
+                unique.add(key);
+                params.push({
+                    make: car.make,
+                    model: car.model,
+                    category: partEntry.category,
+                    subcategory: subcategory,
+                });
+            }
+        }
+    }
+
+    console.log(`✓ Generated ${params.length} pages`);
+    return params;
+}
+const excludedMakesSet = new Set(excludedMakes);
+
+function getMakeImage(make, model) {
+    try {
+        const imagesMap = {};
+        const result = [];
+
+        for (let i = 0; i < CarData.length; i++) {
+            const item = CarData[i];
+
+            if (
+                item.make &&
+                item.model &&
+                item.make.toLowerCase() === make.toLowerCase() &&
+                item.model.toLowerCase() === model.toLowerCase()
+            ) {
+                if (item.img && !imagesMap[item.img]) {
+                    imagesMap[item.img] = true;
+                    result.push(item.img);
+                }
+            }
+        }
+
+        return result;
+    } catch (e) {
+        console.error("Error loading image:", e.message);
+        return [];
+    }
+}
+
+function getPartsByCategory(category) {
+    try {
+        if (!category) return [];
+
+        const result = [];
+
+        for (let i = 0; i < partsData.length; i++) {
+            const item = partsData[i];
+
+            if (
+                item.category &&
+                item.category.toLowerCase() === category.toLowerCase()
+            ) {
+                result.push(item);
+            }
+        }
+
+        return result;
+    } catch (error) {
+        console.error("Error filtering parts by category:", error);
+        return [];
+    }
+}
+
+
+
 function getMake() {
     const uniqueMakes = {};
     for (let i = 0; i < CarData.length; i++) {
@@ -349,38 +364,7 @@ const topMakes = new Set([
     'Infiniti', 'Cadillac', 'GMC', 'Volvo'
 ]);
 
-export function generateStaticParams() {
-    const unique = new Set();
-    const params = [];
 
-    for (let i = 0; i < CarData.length; i++) {
-        const car = CarData[i];
-        if (!car.seo || excludedMakesSet.has(car.make)) continue;
-        if (!topMakes.has(car.make)) continue; // only pre-build top makes
-
-        for (let j = 0; j < selectedParts.length; j++) {
-            const subcategory = selectedParts[j];
-            const partEntry = partsData.find(
-                p => p.parts?.toLowerCase() === subcategory.toLowerCase()
-            );
-            if (!partEntry?.category) continue;
-
-            const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
-            if (!unique.has(key)) {
-                unique.add(key);
-                params.push({
-                    make: car.make,
-                    model: car.model,
-                    category: partEntry.category,
-                    subcategory: subcategory,
-                });
-            }
-        }
-    }
-
-    console.log(`✓ Generated ${params.length} pages`);
-    return params;
-}
 export default function SubcategoryPage({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
