@@ -80,57 +80,76 @@ export function generateMetadata({ params }) {
     const hasValidContent = isSelectedPart || matchingProducts.length > 0;
 
     if (!hasValidContent) {
-        notFound()
+        notFound();
     }
 
     const imageMake = getMakeImage(make, model);
     const canonicalUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}`;
 
-    // FIX 1: Use matchingProducts (make+model+category+subcategory specific)
-    // NOT productsForMake which was loading ALL make products into schema — bloated and irrelevant
-    const productListItems = matchingProducts.map((product, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-            "@type": "Product",
-            // FIX 2: Corrected @id and url to use proper route structure
-            "@id": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}/${product.partname}-${product.partnumber}-${product.id}#product`,
-            "name": `${product.partname} ${product.partnumber} ${make} ${model}`,
-            "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}/${product.partname}-${product.partnumber}-${product.id}`,
-            "image": `https://www.emirates-car.com${product.image}`,
-            "description": `${product.partname} compatible with ${make} ${model}`,
-            "brand": { "@type": "Brand", name: make },
-            "mpn": product.partnumber,
-            "offers": {
-                "@type": "Offer",
-                "priceCurrency": product.pricing.currency,
-                "price": product.pricing.price,
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition",
-            },
-            // FIX 3: Added isAccessoryOrSparePartFor which was missing from subcategory schema
-            "isAccessoryOrSparePartFor": {
-                "@type": "Car",
-                "brand": { "@type": "Brand", "name": make },
-                "model": model
-            }
+    // Computed once outside the map
+    const now = new Date();
+    const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
+
+    // Pre-compute URLs so both productNodes and listItems can reference them
+    const productData = matchingProducts.map((product, index) => {
+        const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(subcategory)}/${product.partname}-${product.partnumber}-${product.id}`;
+
+        return { product, productUrl, index };
+    });
+
+    // Top-level Product nodes in @graph — Google can now resolve offers and aggregateRating
+    const productNodes = productData.map(({ product, productUrl }) => ({
+        "@type": "Product",
+        "@id": `${productUrl}#product`,
+        "name": `${product.partname} ${product.partnumber} ${make} ${model}`,
+        "url": productUrl,
+        "image": `https://www.emirates-car.com${product.image}`,
+        "description": `${product.partname} compatible with ${make} ${model}`,
+        "brand": { "@type": "Brand", "name": make },
+        "mpn": product.partnumber,
+        "offers": {
+            "@type": "Offer",
+            "url": productUrl,
+            "priceCurrency": product.pricing.currency,
+            "price": product.pricing.price,
+            "priceValidUntil": endOfYear,
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
         },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "12"
+        },
+        "isAccessoryOrSparePartFor": {
+            "@type": "Car",
+            "brand": { "@type": "Brand", "name": make },
+            "model": model
+        }
     }));
 
-    const faqSchema = {
+    // ItemList references products by @id only — no inline Product data
+    const listItems = productData.map(({ productUrl, index }) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": { "@id": `${productUrl}#product` }
+    }));
+
+    const schema = {
         "@context": "https://schema.org",
         "@graph": [
             {
                 "@type": "CollectionPage",
                 "name": `${make} ${model} ${subcategory} | EMIRATESCAR`,
                 "url": canonicalUrl,
-                // FIX 4: Added description to CollectionPage — was missing
                 "description": `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery.`,
                 "mainEntity": {
                     "@type": "ItemList",
-                    "itemListElement": productListItems,
-                },
+                    "itemListElement": listItems
+                }
             },
+            // Products are top-level @graph nodes — Google resolves offers + aggregateRating here
+            ...productNodes,
             {
                 "@type": "Organization",
                 "@id": "https://www.emirates-car.com",
@@ -138,7 +157,6 @@ export function generateMetadata({ params }) {
                 "url": "https://www.emirates-car.com"
             },
             {
-                // FIX 5: Removed duplicate @context inside @graph — invalid schema
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {
@@ -178,12 +196,11 @@ export function generateMetadata({ params }) {
                         "item": canonicalUrl
                     }
                 ]
-            },
-        ],
+            }
+        ]
     };
 
     return {
-        // FIX 6: More descriptive, keyword-rich title
         title: `${make} ${model} ${subcategory} | Genuine, Used & Aftermarket Parts UAE`,
         description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
         openGraph: {
@@ -191,7 +208,6 @@ export function generateMetadata({ params }) {
             description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
             images: [
                 {
-                    // FIX 7: OG image was a bare string — should be an object with url, width, height
                     url: `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
                     width: 800,
                     height: 600,
@@ -203,8 +219,6 @@ export function generateMetadata({ params }) {
             type: "website",
             locale: "en_US",
         },
-        // FIX 8: Removed duplicate `other` key — was being overwritten silently
-        // merged product meta and ld+json into single other object
         keywords: `${subcategory} for ${make} ${model} in dubai, buy ${make} ${model} ${subcategory} online UAE`,
         alternates: {
             canonical: canonicalUrl,
@@ -216,16 +230,16 @@ export function generateMetadata({ params }) {
                 index: true,
                 follow: true,
                 noimageindex: false,
-                'max-video-preview': -1,
-                'max-image-preview': 'large',
-                'max-snippet': -1,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
             },
         },
         other: {
-            'product:brand': make,
-            'product:model': model,
-            'product:category': `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
-            "script:ld+json": JSON.stringify(faqSchema),
+            "product:brand": make,
+            "product:model": model,
+            "product:category": `Vehicle Parts & Accessories > ${make} > ${model} > ${category} > ${subcategory}`,
+            "script:ld+json": JSON.stringify(schema),
         }
     };
 }
