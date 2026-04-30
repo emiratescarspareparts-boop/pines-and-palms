@@ -2,31 +2,40 @@
 
 User-agent: Googlebot
 Disallow: /api/
+Disallow: /Removals/page.js
+
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: claude-web
 Disallow: /
+
 User-agent: Anthropic
 Disallow: /
+
 User-agent: anthropic-ai
 Disallow: /
 
-User-agent: OAI-SearchBot
+User-agent: ByteSpider
 Disallow: /
+
+User-agent: Sogou web spider
+Disallow: /
+
 User-agent: MistralAI-User
 Disallow: /
-User-agent: DeepSeekBot
-Disallow: /
+
 User-agent: Google-CloudVertexBot
-Disallow: /
-User-agent: Google-Extended
 Disallow: /
 
 # Block SEO / Marketing / Scraper Bots
 
 User-agent: CCBot
 Disallow: /
+
 User-agent: Applebot-Extended
 Disallow: /
+
 User-agent: Meta-ExternalAgent
 Disallow: /
 
@@ -34,7 +43,7 @@ Disallow: /
 User-agent: *
 Allow: /
 Disallow: /private/
-Disallow: /ar
+Disallow: /ar_
 
 Sitemap: https://www.emirates-car.com/allsitemaps/allblogs.xml
 Sitemap: https://www.emirates-car.com/allsitemaps/allmakelocation.xml

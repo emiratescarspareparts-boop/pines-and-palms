@@ -12792,7 +12792,7 @@
     "make": "Spyker",
     "img": "spyker.webp",
     "model": "C8 Spyder",
-    "seo": true,
+    "seo": false,
     "description": "",
     "keyword": "."
   },

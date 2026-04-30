@@ -83,7 +83,6 @@ export async function generateMetadata({ params }) {
     const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
 
 
-
     const faqSchema = {
         "@context": "https://schema.org",
         "@graph": [

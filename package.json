@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "fast": "next dev --turbo",
+    "prebuild": "node scripts/generate-middleware-lookup.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
