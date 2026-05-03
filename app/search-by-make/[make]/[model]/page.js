@@ -392,8 +392,6 @@ function getModel(make) {
 }
 
 
-
-
 export default function Model({ params, searchParams }) {
   const make = decodeURIComponent(params.make);
   const model = decodeURIComponent(params.model);
