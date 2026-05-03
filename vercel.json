@@ -1,0 +1,17 @@
+{
+    "headers": [
+        {
+            "source": "/robots.txt",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate"
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "text/plain"
+                }
+            ]
+        }
+    ]
+}
