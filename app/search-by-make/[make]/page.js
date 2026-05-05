@@ -161,61 +161,95 @@ export function generateMetadata({ params }) {
     p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase())
   );
 
-  // Moved outside the map loop — only computed once
   const now = new Date();
   const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
 
-  // Pre-compute compat and URLs so both productNodes and listItems can reference them
   const productData = productsForMake.map((product, listIndex) => {
-    // Fixed rotation logic: rotate the compat selection index, not the product
     const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
     const rotationPeriod = Math.floor(days / 3);
-    const rotatedIndex = (rotationPeriod + listIndex) % productsForMake.length;
-    const compat = productsForMake[rotatedIndex];
 
-    const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-    const productUrl = `https://www.emirates-car.com/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`;
+    const makeCompat = product.compatibility?.filter(
+      c => c.make.toLowerCase() === make.toLowerCase()
+    ) || [];
+
+    const uniqueCompat = makeCompat.filter(
+      (c, i, arr) => arr.findIndex(x => x.model === c.model && x.years === c.years) === i
+    );
+
+    const rotatedIndex = uniqueCompat.length > 0
+      ? (rotationPeriod + listIndex) % uniqueCompat.length
+      : 0;
+
+    const compat = uniqueCompat[rotatedIndex];
+
+    const slugRaw = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
+    const slug = encodeURIComponent(slugRaw);
+
+    const categoryEncoded = encodeURIComponent(product.category);
+    const subcategoryEncoded = encodeURIComponent(product.subcategory);
+
+    const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(compat?.model || "")}/${categoryEncoded}/${subcategoryEncoded}/${slug}`;
 
     return { product, compat, productUrl };
   });
 
-  // Top-level Product nodes in @graph — Google can now resolve offers and aggregateRating
-  const productNodes = productData.map(({ product, productUrl }) => ({
-    "@type": "Product",
-    "@id": `${productUrl}#product`,
-    "name": `${product.partname} ${product.partnumber} ${make}`,
-    "url": productUrl,
-    "image": `https://www.emirates-car.com${product.image}`,
-    "description": `${product.partname} compatible with ${make} ${product.compatibility?.map(c => c.model).join(", ")}`,
-    "brand": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-    "mpn": product.partnumber,
-    "offers": {
-      "@type": "Offer",
-      "url": productUrl,
-      "priceCurrency": product.pricing.currency,
-      "price": product.pricing.price,
-      "priceValidUntil": endOfYear,
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "12"
-    },
-    "isAccessoryOrSparePartFor": {
-      "@type": "Car",
-      "make": { "@type": "Brand", "name": product.compatibility[0]?.make || make },
-      "model": product.compatibility[0]?.model
-    }
-  }));
+  const productNodes = productData.map(({ product, productUrl }) => {
+    const price = product.pricing?.price;
+    const hasValidPrice = price && price > 0;
 
-  // ItemList references products by @id only — no inline Product data
-  const listItems = productData.map(({ productUrl }, listIndex) => ({
-    "@type": "ListItem",
-    "position": listIndex + 1,
-    "item": { "@id": `${productUrl}#product` }
-  }));
+    const brandName = make;
+
+    const uniqueModels = [...new Set(
+      product.compatibility
+        ?.filter(c => c.make.toLowerCase() === make.toLowerCase())
+        .map(c => c.model)
+    )].slice(0, 5).join(", ");
+
+    const node = {
+      "@type": "Product",
+      "@id": `${productUrl}#product`,
+      "name": `${product.partname} ${product.partnumber} ${make}`,
+      "url": productUrl,
+      "image": `https://www.emirates-car.com${product.image}`,
+      "description": `${product.partname} compatible with ${make} ${uniqueModels}`,
+      "brand": { "@type": "Brand", "name": brandName },
+      "mpn": product.partnumber,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "12"
+      },
+      "isAccessoryOrSparePartFor": {
+        "@type": "Car",
+        "brand": { "@type": "Brand", "name": brandName },
+        "model": product.compatibility?.find(
+          c => c.make.toLowerCase() === make.toLowerCase()
+        )?.model
+      }
+    };
+
+    if (hasValidPrice) {
+      node.offers = {
+        "@type": "Offer",
+        "url": productUrl,
+        "priceCurrency": product.pricing.currency,
+        "price": price,
+        "priceValidUntil": endOfYear,
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      };
+    }
+
+    return node;
+  });
+
+  const listItems = productData
+    .filter(({ product }) => product.pricing?.price > 0)
+    .map(({ productUrl }, listIndex) => ({
+      "@type": "ListItem",
+      "position": listIndex + 1,
+      "item": { "@id": `${productUrl}#product` }
+    }));
 
   const schema = {
     "@context": "https://schema.org",
@@ -223,7 +257,7 @@ export function generateMetadata({ params }) {
       {
         "@type": "CollectionPage",
         "name": `${make} Spare Parts | Emirates Car`,
-        "url": `https://www.emirates-car.com/search-by-make/${make}`,
+        "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`,
         "description": `Find genuine, OEM, and aftermarket spare parts for all ${make} models.`,
         "about": { "@type": "Brand", "name": make },
         "mainEntity": {
@@ -231,7 +265,6 @@ export function generateMetadata({ params }) {
           "itemListElement": listItems
         }
       },
-      // Products are top-level @graph nodes — Google resolves offers + aggregateRating here
       ...productNodes,
       {
         "@type": "Organization",
@@ -242,18 +275,8 @@ export function generateMetadata({ params }) {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.emirates-car.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Car Makes",
-            "item": "https://www.emirates-car.com/search-by-make/"
-          },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.emirates-car.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Car Makes", "item": "https://www.emirates-car.com/search-by-make/" },
           {
             "@type": "ListItem",
             "position": 3,
@@ -264,6 +287,7 @@ export function generateMetadata({ params }) {
       }
     ]
   };
+
 
   return {
     title: `${make} Spare Parts in Dubai - Used, Genuine, OEM and Aftermarket`,
