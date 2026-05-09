@@ -17,7 +17,7 @@ import Product from './Product';
 import FormOnly from '../../../../components/FormOnly';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
-export const dynamicParams = false;
+export const dynamicParams = 'force-dynamic';
 
 const carDataByMakeModel = {};
 const carDataByMake = {};

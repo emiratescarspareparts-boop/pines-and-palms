@@ -254,7 +254,21 @@ export async function generateMetadata({ params }) {
         },
     };
 }
-
+export async function generateStaticParams() {
+    return products
+        .flatMap((product) =>
+            product.compatibility
+                ?.filter((c) => !excludedMakesSet.has(c.make))
+                .map((c) => ({
+                    make: encodeURIComponent(c.make),
+                    model: encodeURIComponent(c.model),
+                    category: encodeURIComponent(product.category),
+                    subcategory: encodeURIComponent(product.subcategory),
+                    slug: `${product.partname}-${c.make}-${c.model}-${c.years}-${product.partnumber}-${product.id}`,
+                })) ?? []
+        )
+        .filter(Boolean);
+}
 
 export default function ProductPage({ params, searchParams }) {
     const { make, model, category, subcategory, slug } = params;

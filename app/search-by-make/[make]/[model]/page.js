@@ -146,7 +146,27 @@ const baseCity = [{
 }
 ];
 
+export async function generateStaticParams() {
+  const seen = new Set();
+  const params = [];
 
+  for (let i = 0; i < CarData.length; i++) {
+    const car = CarData[i];
+
+    if (excludedMakesSet.has(car.make)) continue;
+
+    const key = `${car.make}-${car.model}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    params.push({
+      make: encodeURIComponent(car.make),
+      model: encodeURIComponent(car.model),
+    });
+  }
+
+  return params;
+}
 
 export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);
