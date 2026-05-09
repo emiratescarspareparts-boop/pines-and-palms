@@ -9,10 +9,6 @@ module.exports = withPWA({
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
