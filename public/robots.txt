@@ -7,9 +7,6 @@ Disallow: /Removals/page.js
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: claude-web
-Disallow: /
-
 User-agent: Anthropic
 Disallow: /
 
