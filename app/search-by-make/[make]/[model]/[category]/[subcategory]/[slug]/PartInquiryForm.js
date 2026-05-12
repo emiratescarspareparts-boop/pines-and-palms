@@ -173,9 +173,9 @@ export default function PartInquiryForm({ product, subcategory }) {
         <div>
             <button
                 onClick={() => setModalOpen(true)}
-                className="px-6 py-2 my-3 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-lg shadow"
+                className="px-6 py-2 my-3 bg-green-600 hover:bg-green-900 text-white font-bold rounded-ee-full shadow"
             >
-                {subcategory === 'Battery' ? ('Order Now') : ('Inquire Now')}
+                {subcategory === 'Battery' ? ('Order Now') : ('Get Best Price')}
             </button>
             <span className={`text-info text-sm ${roboto.className}`}><br />{product.pricing.price_info}</span>
 

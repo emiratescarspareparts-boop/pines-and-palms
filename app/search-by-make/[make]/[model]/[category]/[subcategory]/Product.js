@@ -159,7 +159,14 @@ export default function Product({ make, products, model, subcategory }) {
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
                                                 {product.partname} for {make} {compatibilityString || compat?.years}
                                             </h2>
-                                            <p className={`text-base font-bold text-red-600 ${firaSans.className}`}>{product.pricing.currency} {product.pricing.price}&nbsp;<span className='text-sm font-thin text-blue-500'>approx.</span></p>
+                                            <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>
+                                                {product.pricing.price > 1
+                                                    ? `${product.pricing.currency} ${product.pricing.price.toLocaleString()}`
+                                                    : "Price on Request"
+                                                }
+                                                <span className='text-sm font-thin text-blue-500'>approx.</span>
+                                            </p>
+
                                             <p className="text-sm text-gray-600">
                                                 Compatibility: <br /><span itemProp="compatibility">
                                                     {compatibilityString || `${make} ${model}`}

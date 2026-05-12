@@ -97,7 +97,6 @@ export function generateMetadata({ params }) {
         return { product, productUrl, index };
     });
 
-    // Top-level Product nodes in @graph — Google can now resolve offers and aggregateRating
     const productNodes = productData.map(({ product, productUrl }) => ({
         "@type": "Product",
         "@id": `${productUrl}#product`,
@@ -105,22 +104,24 @@ export function generateMetadata({ params }) {
         "url": productUrl,
         "image": `https://www.emirates-car.com${product.image}`,
         "description": `${product.partname} compatible with ${make} ${model}`,
-        "brand": { "@type": "Brand", "name": make },
-        "mpn": product.partnumber,
+        "mpn": String(product.partnumber),
+        "sku": product.item_specifics?.sku || String(product.partnumber),
+        "brand": {
+            "@type": "Brand",
+            "name": product.item_specifics?.Brand || make
+        },
         "offers": {
             "@type": "Offer",
             "url": productUrl,
             "priceCurrency": product.pricing.currency,
-            "price": product.pricing.price,
-            "priceValidUntil": endOfYear,
+            ...(parseFloat(product.pricing?.price) > 100 && {
+                "price": parseFloat(product.pricing.price),
+                "priceValidUntil": endOfYear,
+            }),
             "availability": "https://schema.org/InStock",
             "itemCondition": "https://schema.org/NewCondition"
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "12"
-        },
+        // ── removed fake aggregateRating ──
         "isAccessoryOrSparePartFor": {
             "@type": "Car",
             "brand": { "@type": "Brand", "name": make },
@@ -201,11 +202,15 @@ export function generateMetadata({ params }) {
     };
 
     return {
-        title: `${make} ${model} ${subcategory} | Genuine, Used & Aftermarket Parts UAE`,
-        description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
+        title: `${make} ${model} ${subcategory} UAE | In Stock – EMIRATES CAR`,
+        description: `Looking for a ${make} ${model} ${subcategory} in UAE?
+We supply genuine OEM and quality aftermarket options.
+In stock · Delivers to all Emirates · Submit inquiry for price.`,
         openGraph: {
             title: `${make} ${model} ${subcategory} | Genuine & Aftermarket Parts UAE`,
-            description: `Buy ${subcategory} for ${make} ${model}. New, used & aftermarket parts with fast UAE delivery in Dubai, Sharjah, Ajman, Abu Dhabi, Fujairah and Ras Al Khaimah.`,
+            description: `Looking for a ${make} ${model} ${subcategory} in UAE?
+We supply genuine OEM and quality aftermarket options.
+In stock · Delivers to all Emirates · Submit inquiry for price.`,
             images: [
                 {
                     url: `https://www.emirates-car.com/img/car-logos/${imageMake?.[0] || "default.png"}`,
