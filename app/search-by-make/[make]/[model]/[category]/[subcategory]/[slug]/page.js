@@ -106,10 +106,10 @@ export async function generateMetadata({ params }) {
     const partnumber = product.partnumber;
     const brand = product.item_specifics?.Brand || decodedMake;
 
-    const pageTitle = `${decodedMake} ${decodedModel} ${partname}${rangeStr} UAE | Emirates Car`;
+    const pageTitle = `${decodedMake} ${decodedModel} ${partname}${rangeStr} Price UAE | Emirates Car`;
     // e.g. "Honda Pilot Steering Rack (2016–2022) UAE | Emirates Car" — 57 chars ✓
 
-    const pageDesc = `${oemType} ${partname} for ${decodedMake} ${decodedModel}${rangeStr}. Part no. ${partnumber}. In stock in UAE — fast delivery to Dubai, Abu Dhabi and Sharjah. Inquire now for price and availability.`;
+    const pageDesc = `${oemType} ${partname} for ${decodedMake} ${decodedModel}${rangeStr}. Part no. ${partnumber}. In stock in UAE — fast delivery to Dubai, Sharjah, Abu Dhabi, Ras Al Khaimah, and Fujairah. Inquire now for price and availability.`;
     // e.g. "Aftermarket Steering Rack for Honda Pilot (2016–2022). Part no. 53400-TG7-A02. In stock in UAE..." ~158 chars ✓
 
     // ─── Schema ─────────────────────────────────────────────────────
@@ -355,8 +355,7 @@ export default function ProductPage({ params, searchParams }) {
 
             <div
                 className="grid xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-6"
-                itemScope
-                itemType="https://schema.org/Product"
+
             >
                 {/* Product Image — server rendered, visible to robots */}
                 {product.image && (
@@ -365,7 +364,6 @@ export default function ProductPage({ params, searchParams }) {
                             src={product.image}
                             alt={`${decodedMake} ${decodedModel} ${product.partname}`}
                             className="w-full rounded-lg shadow border"
-                            itemProp="image"
                         />
                         <figcaption className="text-sm text-gray-500 text-center mt-2">
                             {product.partname} — {decodedMake} {decodedModel}
@@ -377,9 +375,8 @@ export default function ProductPage({ params, searchParams }) {
                 <section className="space-y-4">
                     <h1
                         className={`text-3xl font-extrabold my-5 ${poppins.className}`}
-                        itemProp="name"
                     >
-                        {decodedMake} {decodedModel} {product.partname} ({years})
+                        {decodedMake} {decodedModel} {product.partname} ({years}) {product.item_specifics["OEM or Aftermarket"]} No - {product.partnumber}
                     </h1>
 
                     <p className={`text-green-700 font-semibold ${roboto.className}`}>
@@ -397,13 +394,13 @@ export default function ProductPage({ params, searchParams }) {
                     <div className={`space-y-1 ${roboto.className}`}>
                         <p className="text-gray-700">
                             <strong>Category: </strong>
-                            <span itemProp="category">{product.category}</span>
+                            <span>{product.category}</span>
                         </p>
                         <p className="text-gray-700">
                             <strong>Brand: </strong>
-                            <span itemProp="brand">{product.item_specifics.Brand}</span>
+                            < span>{product.item_specifics.Brand}</span>
                         </p>
-                        <p className="text-gray-700" itemProp="mpn">
+                        <p className="text-gray-700">
                             <strong>Part Number: </strong>{product.partnumber}
                         </p>
                         <p className="text-gray-700">
@@ -440,23 +437,10 @@ export default function ProductPage({ params, searchParams }) {
                                 </span>
                             )}
                         </p>
-                        <meta itemProp="brand" content={product.item_specifics.Brand} />
                     </div>
 
                     {/* ── Price — server rendered ── */}
-                    <div
-                        itemProp="offers"
-                        itemScope
-                        itemType="https://schema.org/Offer"
-                    >
-                        <meta itemProp="priceCurrency" content={product.pricing?.currency || "AED"} />
-                        <meta itemProp="price" content={product.pricing?.price} />
-                        <meta itemProp="availability" content="https://schema.org/InStock" />
-                        <link
-                            itemProp="url"
-                            href={`https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${category}/${subcategory}/${slug}`}
-                        />
-
+                    <div>
                         {subcategory !== 'Battery' && product.pricing?.price > 100 && (
                             <p className="text-xl font-semibold text-gray-800">
                                 Starting from{" "}
