@@ -40,7 +40,7 @@ const selectedParts = [
 
 const excludedMakes = [
   'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab',
-  'Alpha Romeo', 'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
+  'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
   'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
   'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
   'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
@@ -48,7 +48,7 @@ const excludedMakes = [
   'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr',
   'ZNA', 'GAC', 'Gs7', 'Hongqi', 'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK',
   'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
-  'Chery', 'Geely', 'BAIC', 'Bestune'
+  'Chery', 'Geely', 'BAIC', 'Bestune', 'Fairthorpe'
 ];
 
 const excludedMakesSet = new Set(excludedMakes);

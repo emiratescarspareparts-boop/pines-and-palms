@@ -1,50 +1,7 @@
-# Block AI & unwanted bots
-
 User-agent: Googlebot
-Disallow: /api/
-Disallow: /Removals/page.js
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: claude-web
-Disallow: /
-
-User-agent: Anthropic
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ByteSpider
-Disallow: /
-
-User-agent: Sogou web spider
-Disallow: /
-
-User-agent: MistralAI-User
-Disallow: /
-
-User-agent: Google-CloudVertexBot
-Disallow: /
-
-# Block SEO / Marketing / Scraper Bots
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-# Allow general bots / all others
 User-agent: *
-Allow: /
-Disallow: /private/
-Disallow: /ar_
-
+Disallow: /api/
+Disallow: /Removals
 Disallow: /search-by-make/Acura/Legend/*
 Disallow: /search-by-make/Audi/100/*
 Disallow: /search-by-make/Audi/200/*
@@ -3767,17 +3724,11 @@ Allow: /search-by-make/Ford/GT500$
 Allow: /search-by-make/Hyundai/Entourage$
 Allow: /search-by-make/Hyundai/Veracruz$
 Allow: /search-by-make/Infiniti/QX56$
-Allow: /search-by-make/Isuzu/i-290$
-Allow: /search-by-make/Isuzu/i-370$
 Allow: /search-by-make/Kia/Carens$
 Allow: /search-by-make/Kia/Rondo$
 Allow: /search-by-make/Mazda/Mazdaspeed%203$
 Allow: /search-by-make/Mercedes-Benz/GL-Class$
 Allow: /search-by-make/Nissan/Versa$
-Allow: /search-by-make/Pontiac/G5$
-Allow: /search-by-make/Saturn/Aura$
-Allow: /search-by-make/Saturn/Outlook$
-Allow: /search-by-make/Saturn/Sky$
 Allow: /search-by-make/Suzuki/SX4$
 Allow: /search-by-make/Toyota/FJ%20Cruiser$
 Allow: /search-by-make/Toyota/Highlander%20Hybrid$
@@ -3809,7 +3760,6 @@ Allow: /search-by-make/Smart/Fortwo$
 Allow: /search-by-make/Volkswagen/GLI$
 Allow: /search-by-make/Volkswagen/Touareg%202$
 Allow: /search-by-make/Volvo/C30$
-Allow: /search-by-make/Aptera/2e$
 Allow: /search-by-make/Audi/Q5$
 Allow: /search-by-make/Bentley/Brooklands$
 Allow: /search-by-make/BMW/Z4%20M%20Roadster$
@@ -3827,11 +3777,9 @@ Allow: /search-by-make/Mitsubishi/Tundra$
 Allow: /search-by-make/Nissan/370Z$
 Allow: /search-by-make/Nissan/Cube$
 Allow: /search-by-make/Nissan/GT-R$
-Allow: /search-by-make/Pontiac/G3$
 Allow: /search-by-make/Suzuki/Equator$
 Allow: /search-by-make/Volkswagen/Routan$
 Allow: /search-by-make/Acura/ZDX$
-Allow: /search-by-make/Aptera/Type-1h$
 Allow: /search-by-make/Aston%20Martin/Rapide$
 Allow: /search-by-make/Bentley/Azure%20T$
 Allow: /search-by-make/Bentley/Continental%20Super$
@@ -3916,8 +3864,6 @@ Allow: /search-by-make/Acura/RLX%20Hybrid$
 Allow: /search-by-make/Acura/TL%202WD$
 Allow: /search-by-make/Acura/TL%204WD$
 Allow: /search-by-make/Acura/TSX%20Wagon$
-Allow: /search-by-make/Aston%20Martin/Rapide%20S$
-Allow: /search-by-make/Aston%20Martin/Vanquish$
 Allow: /search-by-make/Audi/A4%20quattro$
 Allow: /search-by-make/Audi/A5%20Cabriolet$
 Allow: /search-by-make/Audi/A5%20Cabriolet%20quattro$
@@ -4015,13 +3961,6 @@ Allow: /search-by-make/BMW/X6%20xDrive35i$
 Allow: /search-by-make/BMW/X6%20xDrive50i$
 Allow: /search-by-make/BMW/Z4%20sDrive28i$
 Allow: /search-by-make/BMW/Z4%20sDrive35i$
-Allow: /search-by-make/Buick/Enclave%20AWD$
-Allow: /search-by-make/Buick/Enclave%20FWD$
-Allow: /search-by-make/Buick/Encore$
-Allow: /search-by-make/Buick/Encore%20AWD$
-Allow: /search-by-make/Buick/LaCrosse%20AWD$
-Allow: /search-by-make/Buick/LaCrosse%20eAssist$
-Allow: /search-by-make/Buick/Regal%20AWD$
 Allow: /search-by-make/Buick/Regal%20eAssist$
 Allow: /search-by-make/BYD/e6$
 Allow: /search-by-make/Cadillac/ATS$
@@ -4444,23 +4383,6 @@ Allow: /search-by-make/Rolls-Royce/Phantom%20Coupe$
 Allow: /search-by-make/Rolls-Royce/Phantom%20Drophead%20Coupe$
 Allow: /search-by-make/Rolls-Royce/Phantom%20EWB$
 Allow: /search-by-make/Rolls-Royce/Wraith$
-Allow: /search-by-make/Roush%20Performance/F150%20Pickup%202WD$
-Allow: /search-by-make/Roush%20Performance/F150%20Pickup%204WD$
-Allow: /search-by-make/Roush%20Performance/F150%20Raptor%20Pickup%204WD$
-Allow: /search-by-make/Roush%20Performance/Stage%203%20Mustang$
-Allow: /search-by-make/Smart/fortwo%20cabriolet$
-Allow: /search-by-make/Smart/fortwo%20coupe$
-Allow: /search-by-make/Smart/fortwo%20electric%20drive%20convertible$
-Allow: /search-by-make/Smart/fortwo%20electric%20drive%20coupe$
-Allow: /search-by-make/SRT/Viper$
-Allow: /search-by-make/Subaru/Forester%20AWD$
-Allow: /search-by-make/Subaru/Impreza%20AWD$
-Allow: /search-by-make/Subaru/Impreza%20Wagon%20AWD$
-Allow: /search-by-make/Subaru/Legacy%20AWD$
-Allow: /search-by-make/Subaru/Outback%20AWD$
-Allow: /search-by-make/Subaru/Tribeca%20AWD$
-Allow: /search-by-make/Subaru/XV%20Crosstrek%20AWD$
-Allow: /search-by-make/Subaru/XV%20Crosstrek%20Hybrid%20AWD$
 Allow: /search-by-make/Tesla/Model%20S%20(60%20kW-hr%20battery%20pack)$
 Allow: /search-by-make/Tesla/Model%20S%20(85%20kW-hr%20battery%20pack)$
 Allow: /search-by-make/Tesla/Model%20S%20AWD%20(85%20kW-hr%20battery%20pack)$
@@ -4657,8 +4579,6 @@ Allow: /search-by-make/Nissan/NV200%20NYC%20Taxi$
 Allow: /search-by-make/Nissan/Pathfinder%204WD%20Platinum$
 Allow: /search-by-make/Ram/C%20V%20Tradesman$
 Allow: /search-by-make/Ram/Promaster%20City$
-Allow: /search-by-make/Subaru/Impreza%20Sport%20AWD$
-Allow: /search-by-make/Subaru/WRX$
 Allow: /search-by-make/Tesla/Model%20S%20(90%20kW-hr%20battery%20pack)$
 Allow: /search-by-make/Tesla/Model%20S%20AWD%20-%2070D$
 Allow: /search-by-make/Tesla/Model%20S%20AWD%20-%2085D$
@@ -5022,11 +4942,6 @@ Allow: /search-by-make/Porsche/Cayenne%20Platinum$
 Allow: /search-by-make/Porsche/Macan%20GTS$
 Allow: /search-by-make/Porsche/Macan%20Turbo%20Kit$
 Allow: /search-by-make/Porsche/Panamera%204%20Executive$
-Allow: /search-by-make/Subaru/Crosstrek%20AWD$
-Allow: /search-by-make/Subaru/Impreza%204-Door$
-Allow: /search-by-make/Subaru/Impreza%205-Door$
-Allow: /search-by-make/Subaru/Impreza%20Sport%204-Door$
-Allow: /search-by-make/Subaru/Impreza%20Sport%205-Door$
 Allow: /search-by-make/Tesla/Model%203%20Long%20Range$
 Allow: /search-by-make/Tesla/Model%20S%20AWD%20-%20100D$
 Allow: /search-by-make/Tesla/Model%20X%20AWD%20-%20100D$
@@ -5051,7 +4966,6 @@ Allow: /search-by-make/Volvo/V90%20CC%20AWD$
 Allow: /search-by-make/Acura/TLX%20AWD%20A-SPEC$
 Allow: /search-by-make/Acura/TLX%20FWD%20A-SPEC$
 Allow: /search-by-make/Alfa%20Romeo/Stelvio%20AWD$
-Allow: /search-by-make/Aston%20Martin/DB11%20V8$
 Allow: /search-by-make/Audi/A5%20Sportback%20quattro$
 Allow: /search-by-make/Audi/R8%20AWD$
 Allow: /search-by-make/Audi/R8%20RWD$
@@ -5075,7 +4989,6 @@ Allow: /search-by-make/BMW/X2%20xDrive28i$
 Allow: /search-by-make/BMW/X3%20M40i$
 Allow: /search-by-make/BMW/X3%20xDrive30i$
 Allow: /search-by-make/Bugatti/Chiron$
-Allow: /search-by-make/Buick/Regal%20TourX%20AWD$
 Allow: /search-by-make/Dodge/Durango%20SRT%20AWD$
 Allow: /search-by-make/Ferrari/812%20Superfast$
 Allow: /search-by-make/Ferrari/GTC4Lusso%20T$
@@ -5169,7 +5082,6 @@ Allow: /search-by-make/Mitsubishi/Eclipse%20Cross%204WD$
 Allow: /search-by-make/Mitsubishi/Eclipse%20Cross%20ES%202WD$
 Allow: /search-by-make/Mitsubishi/Eclipse%20Cross%20ES%204WD$
 Allow: /search-by-make/Mitsubishi/Outlander%20PHEV$
-Allow: /search-by-make/Pagani/Huayra$
 Allow: /search-by-make/Porsche/911%20Carrera%20T$
 Allow: /search-by-make/Porsche/911%20GT2%20RS$
 Allow: /search-by-make/Porsche/911%20GT3%20Touring$
@@ -5183,9 +5095,6 @@ Allow: /search-by-make/Porsche/Panamera%20Turbo%20S%20e-Hybrid$
 Allow: /search-by-make/Porsche/Panamera%20Turbo%20S%20e-Hybrid%20Executive$
 Allow: /search-by-make/Porsche/Panamera%20Turbo%20S%20e-Hybrid%20ST$
 Allow: /search-by-make/Porsche/Panamera%20Turbo%20ST$
-Allow: /search-by-make/RUF%20Automobile/RUF%20TURBO%2012%20CTR3$
-Allow: /search-by-make/Subaru/BRZ%20tS$
-Allow: /search-by-make/Subaru/WRX%20STI%20Type%20RA$
 Allow: /search-by-make/Tesla/Model%203%20Long%20Range%20AWD$
 Allow: /search-by-make/Tesla/Model%203%20Long%20Range%20AWD%20Performance$
 Allow: /search-by-make/Tesla/Model%203%20Mid%20Range$
@@ -5345,13 +5254,6 @@ Allow: /search-by-make/Porsche/911%20Turbo%20S%20Exclusive%20Cabriolet$
 Allow: /search-by-make/Porsche/Cayenne%20e-Hybrid$
 Allow: /search-by-make/Porsche/Panamera%20GTS%20ST$
 Allow: /search-by-make/Rolls-Royce/Cullinan$
-Allow: /search-by-make/RUF%20Automobile/RUFTURBO12%20CTR3%20CTR2017$
-Allow: /search-by-make/Smart/EQ%20fortwo%20(convertible)$
-Allow: /search-by-make/Smart/EQ%20fortwo%20(coupe)$
-Allow: /search-by-make/STI/S209$
-Allow: /search-by-make/Subaru/Ascent$
-Allow: /search-by-make/Subaru/Ascent%20Limited%20Touring$
-Allow: /search-by-make/Subaru/Crosstrek%20Hybrid%20AWD$
 Allow: /search-by-make/Tesla/Model%203%20Standard%20Range$
 Allow: /search-by-make/Tesla/Model%203%20Standard%20Range%20Plus$
 Allow: /search-by-make/Tesla/Model%20S%20Long%20Range$
@@ -5371,8 +5273,6 @@ Allow: /search-by-make/Volkswagen/Jetta%20GLI$
 Allow: /search-by-make/Volvo/S60%20AWD%20PHEV$
 Allow: /search-by-make/Volvo/XC40%20AWD$
 Allow: /search-by-make/Volvo/XC40%20FWD$
-Allow: /search-by-make/Aston%20Martin/Vantage%20Manual$
-Allow: /search-by-make/Aston%20Martin/Vantage%20V8$
 Allow: /search-by-make/Audi/A6%20Allroad$
 Allow: /search-by-make/Audi/e-tron%20Sportback$
 Allow: /search-by-make/Audi/RS%20Q8$
@@ -5413,9 +5313,6 @@ Allow: /search-by-make/BMW/X6%20xDrive40i$
 Allow: /search-by-make/BMW/X7%20M50i$
 Allow: /search-by-make/BMW/Z4%20M40i$
 Allow: /search-by-make/Bugatti/Divo$
-Allow: /search-by-make/Buick/Encore%20FWD$
-Allow: /search-by-make/Buick/Encore%20GX%20AWD$
-Allow: /search-by-make/Buick/Encore%20GX%20FWD$
 Allow: /search-by-make/Cadillac/CT4%20AWD$
 Allow: /search-by-make/Cadillac/CT4%20V$
 Allow: /search-by-make/Cadillac/CT4%20V%20AWD$
@@ -5537,7 +5434,6 @@ Allow: /search-by-make/Volkswagen/Atlas%20Cross%20Sport%204motion$
 Allow: /search-by-make/Volvo/V60%20AWD%20PHEV$
 Allow: /search-by-make/Acura/TLX%20Type-S$
 Allow: /search-by-make/Acura/TLX%20Type-S%20Perf%20Tire$
-Allow: /search-by-make/Aston%20Martin/DBX%20V8$
 Allow: /search-by-make/Audi/A4%20S%20line%20quattro$
 Allow: /search-by-make/Audi/A5%20Sportback%20S%20line%20quattro$
 Allow: /search-by-make/Audi/Q3%20S-line%20quattro$
@@ -5662,7 +5558,6 @@ Allow: /search-by-make/Nissan/Rogue%20AWD%20SV%20SL%20Platinum$
 Allow: /search-by-make/Nissan/Rogue%20FWD%20SL%20Platinum$
 Allow: /search-by-make/Nissan/Rogue%20FWD%20SV%20SL%20Platinum$
 Allow: /search-by-make/Nissan/Titan%204WD%20PRO-4X$
-Allow: /search-by-make/Polestar/2$
 Allow: /search-by-make/Porsche/718%20Boxster$
 Allow: /search-by-make/Porsche/718%20Boxster%20GTS$
 Allow: /search-by-make/Porsche/718%20Boxster%20S$
@@ -6045,13 +5940,10 @@ Allow: /search-by-make/GMC$
 Allow: /search-by-make/Honda$
 Allow: /search-by-make/Hyundai$
 Allow: /search-by-make/Infiniti$
-Allow: /search-by-make/Isuzu$
 Allow: /search-by-make/Jaguar$
 Allow: /search-by-make/Jeep$
 Allow: /search-by-make/Volvo$
 Allow: /search-by-make/Kia$
-Allow: /search-by-make/Holden$
-Allow: /search-by-make/Corbin$
 Allow: /search-by-make/Daewoo$
 Allow: /search-by-make/Mini$
 Allow: /search-by-make/Rolls-Royce$
@@ -6066,6 +5958,39 @@ Allow: /search-by-make/Scion$
 Allow: /search-by-make/BYD$
 Allow: /search-by-make/Renault$
 Allow: /search-by-make/Dacia$
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: claude-web
+Disallow: /
+
+User-agent: Anthropic
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ByteSpider
+Disallow: /
+
+User-agent: Sogou web spider
+Disallow: /
+
+User-agent: MistralAI-User
+Disallow: /
+
+User-agent: Google-CloudVertexBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
 
 Sitemap: https://www.emirates-car.com/allsitemaps/allblogs.xml
 Sitemap: https://www.emirates-car.com/allsitemaps/allmakelocation.xml
