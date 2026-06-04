@@ -751,7 +751,7 @@ export default function MakePage({ params, searchParams }) {
             {' '}<a href='/spare-parts/korean-auto-spare-parts' className='text-blue-600'>Korean</a>,
             {' '}<a href='/spare-parts/french-auto-spare-parts' className='text-blue-600'>French</a>,
             {' '}<a href='/spare-parts/british-auto-spare-parts' className='text-blue-600'>Britain</a>,
-            in UAE. We also operate in main cities such as
+            in UAE. We ship and deliver in
             {' '}<a href={`/search-by-brands-in-uae/${make}/Dubai`} className='text-blue-600'>Dubai</a>,
             {' '}<a href={`/search-by-brands-in-uae/${make}/Sharjah`} className='text-blue-600'>Sharjah</a>,
             {' '}<a href={`/search-by-brands-in-uae/${make}/Abu Dhabi`} className='text-blue-600'>Abu Dhabi</a>,
@@ -778,87 +778,7 @@ export default function MakePage({ params, searchParams }) {
         </section>
 
 
-        <section className='mx-3' aria-labelledby={`How to buy ${make} parts`}>
-          <h6 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
-            5 ways you can {make} find parts for your car.
-          </h6>
-          There are 5 ways you can try finding {make} spare parts for your car.
-          <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-            Traditional way its pros and cons
-          </h5>
-          <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-            You find a {make} spare parts shop nearby and go and purchase and the work
-            is done. In this case, the pros is that you find nearby shop to have
-            similar brands you have and that's it! you purchase it with ease. But
-            the cons is when you don't find the nearby shop to have the car
-            brand which you are using. There are shop who only deal with certain
-            parts like the shop A sells only in honda, Mazda, BMW and shop B
-            sells only Audi, Lincoln and Ferrari. So to see for next option, you
-            can opt for shopping from Giant E-commerce company like Amazon,
-            EBay, Flipkart etc.
-          </p>
-          <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-            Giant E-commerce Company its pros and cons:
-          </h5>
-          <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-            If you don't find spare parts nearby your house location, generally
-            we move on to search on internet. You search for top companies
-            selling spare parts online and you end up in giant e-commerce
-            company like Amazon, Flipkart,Ebay etc. Now you see the review of
-            person who has already ordered spare parts. Most of the reviews says
-            the parts were broken. These giant company has a very big logistics
-            that they are vulnerable to be broken during or even get lost during
-            the check-in process. So it is not always safe to buy spare parts
-            from giant e-commerce company. Hence we see for other option which
-            is the Local dealers.
-          </p>
-          <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-            Local Dealers
-          </h5>
-          <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-            Local dealers are known through other person like through friends
-            and family. Or he gives you his business card and he explains you
-            directly the car brands he deals with. However with the current
-            digital advancement, the local dealers are decreasing gradually. So
-            we move to the next option to search on online marketplace.
-          </p>
 
-          <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans mx-auto my-5 font-bold">
-            Online Marketplace (Only CONS!)
-          </h5>
-          <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-            Through Online marketplace we find spare parts for our car easily.
-            But it also has lots of cons. If you search for very latest model
-            used spare parts, it will not be available on marketplace. In this
-            case you have to contact the car brand company directly. If you
-            search for very old model, it will not be available with most of the
-            car brands company itself due to numerous new brands being manufactured yearly. And also there are more spam issues
-            reported from those who purchase from small vendor marketplace and
-            also the larger companies. In this case you should go for Online
-            dealer website.
-          </p>
-
-          <h5 className="text-xl xl:text-2xl xxl:text-2xl font-sans  mx-auto my-5 font-bold">
-            Online Dealer Website ONLY PROS!
-          </h5>
-          <p className={`text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto my-5 ${firaSans.className}`}>
-            Online dealers website is the easiest way to order spare parts. You
-            visit a bunch of site online and submit your inquiries therein and
-            dealers will contact you back through the contact information you
-            submitted. If one website didnt reply you or didn't have stock, then other website will
-            do. So there is plenty of website and options. Emirates-car.com is
-            one such website which accept online inquiries. It deals with parts
-            and accessories for honda accord, Honda civic and{' '}
-            <a
-              href={'/search-by-make/' + make}
-              className="text-blue-500 underline hover:text-blue-900"
-            >
-              other honda models
-            </a>
-            , Infiniti models, BMW models, Audi models and many other brands.
-            Visit to search parts you need.
-          </p>
-        </section>
       </div>
 
     </div>
