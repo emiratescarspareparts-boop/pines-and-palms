@@ -5963,7 +5963,6 @@ Allow: /search-by-make/Dacia$
 User-agent: OAI-SearchBot
 Allow: /
 
-
 User-agent: Anthropic
 Disallow: /
 
@@ -5979,8 +5978,6 @@ Disallow: /
 User-agent: MistralAI-User
 Disallow: /
 
-User-agent: Google-CloudVertexBot
-Disallow: /
 
 User-agent: CCBot
 Disallow: /
