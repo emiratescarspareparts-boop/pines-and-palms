@@ -15,7 +15,6 @@ import SearchPartsComponent from '../components/SearchPart';
 import SearchBar from './catalogs/SearchBar';
 import products from "../public/products.json"
 import Form from '../components/Form';
-import FormRender from '../components/FormRender';
 
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
