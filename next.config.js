@@ -18,6 +18,9 @@ module.exports = withPWA({
   publicRuntimeConfig: {
     GOOGLE_MAPS_API_KEY: process.env.MAP_API_KEY,
   },
+  images: {
+    unoptimized: true,
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
