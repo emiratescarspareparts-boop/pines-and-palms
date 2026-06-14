@@ -10,11 +10,10 @@ import CarData from "../public/lib/car-data.json"
 import PartsData from "../public/lib/parts.json"
 import Link from 'next/link';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import FormOnly from '../components/FormOnly';
 import SearchPartsComponent from '../components/SearchPart';
 import SearchBar from './catalogs/SearchBar';
 import products from "../public/products.json"
-import Form from '../components/Form';
+import FormRender from '../components/FormRender';
 
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
@@ -633,7 +632,7 @@ export default async function Home({ searchParams }) {
         </div>
       </section>
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelforms} page={`/`} />
+        <FormRender formsData={modelforms} page={`/`} />
       </div>
 
       <section>

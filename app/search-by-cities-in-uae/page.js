@@ -6,7 +6,7 @@ import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
 import Image from 'next/image';
-import FormOnly from '../../components/FormOnly';
+import FormRender from '../../components/FormRender';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -292,7 +292,7 @@ export default function Cities() {
         ))}
       </div>
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelsform} page={`/search-by-cities-in-uae`} />
+        <FormRender formsData={modelsform} page={`/search-by-cities-in-uae`} />
       </div>
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">

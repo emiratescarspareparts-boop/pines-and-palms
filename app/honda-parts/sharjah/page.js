@@ -2,8 +2,8 @@ import React from 'react';
 import Footer from '../../../components/footer';
 import OtherHondaModels from '../../../components/OtherHondaModels';
 import Link from 'next/link';
-import FormOnly from '../../../components/FormOnly';
 import CarData from "../../../public/lib/car-data.json"
+import FormRender from '../../../components/FormRender';
 
 
 export default function Sharjah() {
@@ -17,7 +17,7 @@ export default function Sharjah() {
           </h1>
         </div>
         <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-          <FormOnly formsData={modelforms} />
+          <FormRender formsData={modelforms} page={"/honda-parts/sharjah"} />
         </div>
       </div>
       <div className="grid grid-cols-1 place-content-center pt-10 xs:pt-5 mx-8">

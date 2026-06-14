@@ -9,13 +9,13 @@ import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/filteredparts.json"
 import CitiesData from "../../../../../../public/lib/cities.json"
 const Product = dynamic(() => import('./Product'));
-const FormMakeModel = dynamic(() => import('../../../../../../components/FormMakeModel'));
 const FormBattery = dynamic(() => import('../../../../../../components/FormBattery'));
 import { notFound } from "next/navigation";
 import { BadgeCheck, Car, Clock, LinkIcon, MapPin, Recycle } from 'lucide-react';
 import subCityBattery from "../../../../../../public/lib/subCityBattery"
 import subCity from "../../../../../../public/lib/subCity.json"
 import dynamic from "next/dynamic";
+import FormMakeModelRender from "../../../../../../components/FormMakeModelRender";
 
 export const revalidate = 86400;
 export const runtime = 'nodejs';
@@ -513,7 +513,7 @@ export default function SubcategoryPage({ params }) {
                     </div>
                     <div><FormBattery formsData={modelsform} /></div>
                 </div></>) : (<><div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-                    <FormMakeModel formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
+                    <FormMakeModelRender formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
                 </div></>)}
 
                 <div className="mt-10 xs:pt-5 s:pt-5">
@@ -787,7 +787,7 @@ export default function SubcategoryPage({ params }) {
                     </div>
                     <div><FormBattery formsData={modelsform} /></div>
                 </div></>) : (<><div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-                    <FormMakeModel formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
+                    <FormMakeModelRender formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}/${category}/${subcategory}`} />
                 </div></>)}
 
                 <div className="mt-10 xs:pt-5 s:pt-5">

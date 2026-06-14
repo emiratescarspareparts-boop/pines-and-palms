@@ -8,9 +8,9 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import CarData from "../../../../public/lib/car-data.json"
 import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
-import FormMakeModel from '../../../../components/FormMakeModel';
 import { notFound } from 'next/navigation';
 import TenEntries from '../../../../components/tenentries';
+import FormMakeModelRender from '../../../../components/FormMakeModelRender';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -650,7 +650,7 @@ export default function Model({ params, searchParams }) {
       </header>
 
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormMakeModel formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}`} />
+        <FormMakeModelRender formsData={modelsform} mke={make} modl={model} page={`/${make}/${model}`} />
       </div>
 
       <section>

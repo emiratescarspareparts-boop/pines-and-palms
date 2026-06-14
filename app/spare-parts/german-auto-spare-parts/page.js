@@ -9,7 +9,7 @@ import CarData from "../../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import products from "../../../public/products.json"
 import Product from './Product';
-import FormOnly from '../../../components/FormOnly';
+import FormRender from '../../../components/FormRender';
 
 
 const playfair_display = Playfair_Display({
@@ -159,7 +159,7 @@ export default function German() {
         </div>
       </header>
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelforms} page={"/spare-parts/german-auto-spare-parts"} />
+        <FormRender formsData={modelforms} page={"/spare-parts/german-auto-spare-parts"} />
       </div>
       <section>
         {makeModelFiltered.length > 0 ? (

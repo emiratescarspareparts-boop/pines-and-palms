@@ -110,12 +110,12 @@ const MAKES = [
     'Genesis', 'Karma', 'Koenigsegg', 'RUF Automobile', 'STI', 'Polestar', 'Kandi',
 ].sort();
 
-export default function FormRender({ formsData = [] }) {
+export default function FormMakeRender({ formsData = [], mke, page }) {
     const [currentStep, setCurrentStep] = useState(1);
 
     // Vehicle
     const [Year, setYear] = useState('');
-    const [Make, setMake] = useState('');
+    const [Make, setMake] = useState(mke);
     const [Model, setModel] = useState('');
     const [yearSuggestions, setYearSuggestions] = useState([]);
 
@@ -207,10 +207,19 @@ export default function FormRender({ formsData = [] }) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    Timestamp: dateTime, brand: Make, contact: Whatsappno, name: Name,
+                    Timestamp: dateTime,
+                    brand: Make,
+                    contact: Whatsappno,
+                    name: Name,
                     description: `Customer Name: ${Name}\nAddress: ${textCity}\nVehicle: ${Make} ${Model} ${Year}\nPart List: ${partsText}\nRemarks: ${conditionText} ${Timing}`,
-                    partList: partsText, email: Email, year: Year, model: Model,
-                    address: textCity, timing: Timing, condition: conditionText,
+                    partList: partsText,
+                    email: Email,
+                    year: Year,
+                    model: Model,
+                    address: textCity,
+                    timing: Timing,
+                    condition: conditionText,
+                    page: page
                 }),
             });
 

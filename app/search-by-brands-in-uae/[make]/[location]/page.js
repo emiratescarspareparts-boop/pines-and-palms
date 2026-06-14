@@ -14,7 +14,7 @@ import CarData from "../../../../public/lib/car-data.json"
 import baseCityData from "../../../../public/lib/basecity.json"
 import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
-import FormOnly from '../../../../components/FormOnly';
+import FormRender from '../../../../components/FormRender';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = 'force-dynamic';
@@ -720,7 +720,7 @@ export default function Cities({ params, searchParams }) {
         </div>
       </div>
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelsform} page={`/search-by-brands-in-uae/${make}/${location}`} />
+        <FormRender formsData={modelsform} page={`/search-by-brands-in-uae/${make}/${location}`} />
       </div>
       {makeFiltered.length > 0 ?
         <Product

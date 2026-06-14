@@ -5,11 +5,11 @@ import Contents from '../../../components/Contents';
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
 import PartsData from "../../../public/lib/parts.json"
-import FormOnly from '../../../components/FormOnly';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import { MapPin } from 'lucide-react';
 import DubaiContent from './DubaiContent';
 import SearchCity from '../../../components/SearchCity';
+import FormRender from '../../../components/FormRender';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -201,7 +201,7 @@ export default function City({ params }) {
           <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 gap-8 xs:gap-2 xxs:gap-2 xxs:p-2 xs:p-2 sm:p-4 p-8">
             {/* Left Side - Your Form Component */}
             <div className="order-1 md:order-1">
-              <FormOnly formsData={modelsform} page={`/search-by-cities-in-uae/${cityData.city}`} />
+              <FormRender formsData={modelsform} page={`/search-by-cities-in-uae/${cityData.city}`} />
             </div>
 
             {/* Right Side - H1 and CTA */}

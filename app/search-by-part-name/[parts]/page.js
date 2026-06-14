@@ -9,8 +9,8 @@ import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import PartsData from "../../../public/lib/parts.json"
 import CarData from "../../../public/lib/car-data.json"
 import CitiesData from "../../../public/lib/cities.json"
-import FormOnly from '../../../components/FormOnly';
 import Product from './Product';
+import FormRender from '../../../components/FormRender';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
@@ -274,7 +274,7 @@ export default function Parts({ params, searchParams }) {
       </div>
 
       <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-        <FormOnly formsData={modelsform} page={`/search-by-part-name/${parts}`} />
+        <FormRender formsData={modelsform} page={`/search-by-part-name/${parts}`} />
       </div>
 
 

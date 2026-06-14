@@ -3,11 +3,11 @@ import Link from 'next/link';
 import CarData from "../../public/lib/car-data.json"
 import CitiesData from "../../public/lib/cities.json"
 import PartsData from "../../public/lib/parts.json"
-import FormOnly from '../../components/FormOnly';
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
 import ShowCities from './ShowCities';
 import ShowMake from './ShowMake';
 import ShowParts from './ShowParts';
+import FormRender from '../../components/FormRender';
 export const revalidate = 1814400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -146,7 +146,7 @@ export default function Make() {
           </div>
         </div>
         <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-          <FormOnly formsData={modelforms} page={`/search-by-make`} />
+          <FormRender formsData={modelforms} page={`/search-by-make`} />
         </div>
         <ShowMake />
         <ShowParts />
