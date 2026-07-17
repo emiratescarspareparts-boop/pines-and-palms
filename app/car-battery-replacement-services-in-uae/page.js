@@ -6,7 +6,7 @@ import FormBattery from '../../components/FormBattery';
 import BatteryAccordion from '../../components/Battery-Accordion';
 import BatterySlider from '../../components/Battery-Slider';
 export const revalidate = 1814400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 import CarData from "../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';

@@ -8,17 +8,16 @@ import SearchCity from "../../../../../../components/SearchCity";
 import CarData from "../../../../../../public/lib/car-data.json"
 import partsData from "../../../../../../public/lib/filteredparts.json"
 import CitiesData from "../../../../../../public/lib/cities.json"
-const Product = dynamic(() => import('./Product'));
-const FormBattery = dynamic(() => import('../../../../../../components/FormBattery'));
+import Product from './Product'
+import FormBattery from "../../../../../../components/FormBattery";
 import { notFound } from "next/navigation";
 import { BadgeCheck, Car, Clock, LinkIcon, MapPin, Recycle } from 'lucide-react';
 import subCityBattery from "../../../../../../public/lib/subCityBattery"
 import subCity from "../../../../../../public/lib/subCity.json"
-import dynamic from "next/dynamic";
 import FormMakeModelRender from "../../../../../../components/FormMakeModelRender";
 
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
@@ -250,38 +249,7 @@ In stock · Delivers to all Emirates · Submit inquiry for price.`,
     };
 }
 
-export function generateStaticParams() {
-    const unique = new Set();
-    const params = [];
 
-    for (let i = 0; i < CarData.length; i++) {
-        const car = CarData[i];
-        if (!car.seo || excludedMakesSet.has(car.make)) continue;
-        if (!topMakes.has(car.make)) continue; // only pre-build top makes
-
-        for (let j = 0; j < selectedParts.length; j++) {
-            const subcategory = selectedParts[j];
-            const partEntry = partsData.find(
-                p => p.parts?.toLowerCase() === subcategory.toLowerCase()
-            );
-            if (!partEntry?.category) continue;
-
-            const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
-            if (!unique.has(key)) {
-                unique.add(key);
-                params.push({
-                    make: car.make,
-                    model: car.model,
-                    category: partEntry.category,
-                    subcategory: subcategory,
-                });
-            }
-        }
-    }
-
-    console.log(`✓ Generated ${params.length} pages`);
-    return params;
-}
 const excludedMakesSet = new Set(excludedMakes);
 
 function getMakeImage(make, model) {

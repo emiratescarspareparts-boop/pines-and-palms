@@ -12,7 +12,7 @@ import CitiesData from "../../../public/lib/cities.json"
 import Product from './Product';
 import FormRender from '../../../components/FormRender';
 export const revalidate = 1814400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
 

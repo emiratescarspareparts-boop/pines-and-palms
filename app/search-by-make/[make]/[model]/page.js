@@ -12,7 +12,7 @@ import { notFound } from 'next/navigation';
 import TenEntries from '../../../../components/tenentries';
 import FormMakeModelRender from '../../../../components/FormMakeModelRender';
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 const selectedParts = [
@@ -147,27 +147,7 @@ const baseCity = [{
 }
 ];
 
-export async function generateStaticParams() {
-  const seen = new Set();
-  const params = [];
 
-  for (let i = 0; i < CarData.length; i++) {
-    const car = CarData[i];
-
-    if (excludedMakesSet.has(car.make)) continue;
-
-    const key = `${car.make}-${car.model}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-
-    params.push({
-      make: encodeURIComponent(car.make),
-      model: encodeURIComponent(car.model),
-    });
-  }
-
-  return params;
-}
 
 export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);

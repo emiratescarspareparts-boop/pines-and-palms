@@ -16,7 +16,7 @@ import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
 import FormRender from '../../../../components/FormRender';
 export const revalidate = 1814400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = 'force-dynamic';
 
 const carDataByMakeModel = {};

@@ -4,7 +4,7 @@ import Footer from '../../components/footer';
 import Social from '../../components/Social';
 import GetInTouchForm from '../../components/GetInTouchForm';
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 export default function Forms() {

@@ -12,7 +12,7 @@ import PartsData from "../../../public/lib/parts.json"
 import Product from './Product';
 import FormMakeRender from '../../../components/FormMakeRender';
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({

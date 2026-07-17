@@ -4,7 +4,7 @@ import RelatedPost from '../relatedpost/page';
 import Image from 'next/image';
 import carBlog from "../../../public/lib/blog.json"
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 export function generateStaticParams() {

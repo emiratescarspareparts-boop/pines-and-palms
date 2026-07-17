@@ -11,7 +11,7 @@ import DubaiContent from './DubaiContent';
 import SearchCity from '../../../components/SearchCity';
 import FormRender from '../../../components/FormRender';
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 const firaSans = Fira_Sans({

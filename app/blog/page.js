@@ -5,7 +5,7 @@ import Footer from '../../components/footer.js';
 import RelatedPost from './relatedpost/page.js';
 import carBlog from "../../public/lib/blog.json"
 export const revalidate = 86400;
-export const runtime = 'nodejs';
+export const dynamic = 'force-static'
 export const dynamicParams = false;
 
 
