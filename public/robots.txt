@@ -2,7 +2,6 @@ User-agent: Googlebot
 User-agent: *
 Disallow: /api/
 Disallow: /Removals
-Disallow: /_next/
 Disallow: /search-by-make/Acura/Legend/*
 Disallow: /search-by-make/Audi/100/*
 Disallow: /search-by-make/Audi/200/*

@@ -10,9 +10,9 @@ import { MapPin } from 'lucide-react';
 import DubaiContent from './DubaiContent';
 import SearchCity from '../../../components/SearchCity';
 import FormRender from '../../../components/FormRender';
-export const revalidate = 86400;
 export const dynamic = 'force-static'
-export const dynamicParams = false;
+export const dynamicParams = true
+export const revalidate = 86400
 
 const firaSans = Fira_Sans({
   weight: ['400', '700'],
@@ -51,26 +51,38 @@ const excludedMakes = [
 ];
 
 
-export function generateStaticParams() {
-  try {
-    const params = [];
+const PRIORITY_CITIES = [
+  'Ras Al Khor (Dubai)',
+  'Musaffah (Abu Dhabi)',
+  'Jebel Ali Free Zone (Dubai)',
+  'Rak Maritime City (Ras al Khaimah)',
+  'Khalifa City (Abu Dhabi)',
+  'Ajman',
+  'Abu Dhabi',
+  'Mussafah',
+  'Dibba Al Fujairah (Fujairah)',
+  'Hamriya Free Zone Port',
+  'Deira (Dubai)',
+  'Al Quoz (Dubai)',
+  'Al Mafraq (Abu Dhabi)',
+  'Dubai',
+  'Sharjah',
+  'Umm al Quwain',
+  'Al Fujairah',
+  'Al Karama (Dubai)',
+  'Ras al Khaimah',
+]
 
-    for (let i = 0; i < CitiesData.length; i++) {
-      const item = CitiesData[i];
-
-      if (!item || !item.city) continue;
-
-      params.push({
-        city: item.city,
-      });
-    }
-
-    return params;
-  } catch (error) {
-    console.error("Error generating static params from JSON:", error);
-    return [];
-  }
+function encodeCity(city) {
+  return city
+    .replace(/ /g, '%20')
 }
+
+export function generateStaticParams() {
+  return PRIORITY_CITIES.map(city => ({ city: encodeCity(city) }))
+}
+
+
 
 
 

@@ -13,7 +13,7 @@ import Product from './Product';
 import FormMakeRender from '../../../components/FormMakeRender';
 export const revalidate = 86400;
 export const dynamic = 'force-static'
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
@@ -50,6 +50,19 @@ const excludedMakes = [
   'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
   'Chery', 'Geely', 'BAIC', 'Bestune', 'Fairthorpe'
 ];
+
+const ALL_MAKES_BY_TRAFFIC = [
+  'BYD', 'Cadillac', 'Lexus', 'Honda', 'Toyota', 'Exeed',
+  'Hyundai', 'Mitsubishi', 'Mazda', 'Lincoln', 'Hummer',
+  'Mercedes-Benz', 'Audi', 'Nissan', 'Daihatsu', 'Ram',
+  'Volkswagen', 'Jeep', 'Renault', 'Fiat', 'Chevrolet',
+  'Ford', 'Land Rover', 'Kia', 'Dodge', 'Infiniti',
+  'Peugeot', 'Mercury', 'Bugatti', 'Daewoo', 'Volvo',
+  'BMW', 'McLaren', 'Jaguar', 'Porsche', 'Maserati',
+  'Ferrari', 'Subaru', 'Tesla', 'Scion', 'Bentley',
+  'Suzuki', 'GMC', 'Mini', 'Rolls-Royce', 'Alfa Romeo',
+  'Citroen', 'Chrysler', 'Dacia', 'Saturn',
+]
 
 const excludedMakesSet = new Set(excludedMakes);
 
@@ -116,26 +129,14 @@ for (let i = 0; i < CarData.length; i++) {
 }
 
 export function generateStaticParams() {
-  try {
-    const seen = new Set();
-    const params = [];
+  const filteredMakes = ALL_MAKES_BY_TRAFFIC.filter(
+    make => !excludedMakes.includes(make)
+  )
 
-    for (let i = 0; i < CarData.length; i++) {
-      const make = CarData[i].make;
 
-      if (excludedMakes.indexOf(make) !== -1) continue;
-
-      if (!seen.has(make)) {
-        seen.add(make);
-        params.push({ make });
-      }
-    }
-
-    return params;
-  } catch (error) {
-    console.error('Error:', error);
-    return [];
-  }
+  return filteredMakes.map(make => ({
+    make: encodeURIComponent(make.replace(/ /g, '%20'))
+  }))
 }
 
 function getModel(make) {

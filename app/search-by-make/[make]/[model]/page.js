@@ -11,9 +11,9 @@ import Product from './Product';
 import { notFound } from 'next/navigation';
 import TenEntries from '../../../../components/tenentries';
 import FormMakeModelRender from '../../../../components/FormMakeModelRender';
-export const revalidate = 86400;
 export const dynamic = 'force-static'
-export const dynamicParams = false;
+export const dynamicParams = true
+export const revalidate = 86400
 
 const selectedParts = [
   // Tier 1
@@ -103,6 +103,137 @@ const excludedMakes = [
 ];
 
 const excludedMakesSet = new Set(excludedMakes);
+
+const GSC_TRAFFIC_MODELS = new Set([
+  'Toyota|Yaris',
+  'Nissan|Kicks',
+  'Mitsubishi|Pajero',
+  'Honda|Civic',
+  'Toyota|Prado',
+  'Honda|CR-V',
+  'Nissan|Patrol',
+  'Nissan|Rogue',
+  'Nissan|Altima',
+  'Toyota|RAV4',
+  'Hyundai|Santa Fe',
+  'Hyundai|Sonata Hybrid',
+  'JAC|J7',
+  'Nissan|Versa',
+  'Nissan|JUKE',
+  'Mitsubishi|Montero Sport',
+  'Lexus|ES 350',
+  'Kia|Sportage',
+  'Hummer|H3',
+  'Toyota|Corolla',
+  'Nissan|350Z',
+  'Jetour|T2',
+  'Mazda|CX-9',
+  'Audi|e-tron',
+  'Hyundai|Sonata',
+  'Honda|Fit',
+  'Nissan|Tiida',
+  'Nissan|Maxima',
+  'Chevrolet|Malibu',
+  'Nissan|Xterra 4WD',
+  'Toyota|Supra',
+  'Toyota|Sienna',
+  'BYD|Leopard Titanium 7',
+  'Volkswagen|ID.4 1st',
+  'Chevrolet|TrailBlazer',
+  'TANK|500',
+  'Lexus|LX 570',
+  'Nissan|Quest',
+  'Lexus|RX',
+  'GMC|Acadia',
+  'Lexus|GX 460',
+  'Hyundai|Elantra',
+  'Nissan|370Z',
+  'Honda|Accord',
+  'Toyota|Prius',
+  'BAIC|BJ40',
+  'JAC|S3',
+  'JAC|JS4',
+  'Chevrolet|Cruze',
+  'Maxus|V80',
+  'Toyota|Land Cruiser',
+  'Lexus|IS',
+  'Suzuki|Grand Vitara',
+  'Toyota|C-HR',
+  'Lexus|IS 300',
+  'Kia|Rio',
+  'Lexus|IS 200t',
+  'Mitsubishi|Outlander',
+  'Toyota|Tundra',
+  'Exeed|RX',
+  'JAC|J4',
+  'BYD|Leopard',
+  'Toyota|Previa',
+  'Audi|Q7',
+  'Toyota|Highlander',
+  'ZNA|Rich',
+  'Exeed|TXL',
+  'Toyota|Yaris iA',
+  'Chevrolet|Tahoe',
+  'Toyota|86',
+  'Honda|Insight',
+  'Lexus|LS 460',
+  'Toyota|Sequoia',
+  'Chevrolet|Lumina',
+  'Honda|HR-V 2WD',
+  'Nissan|X-trail',
+  'Lexus|ES 300h',
+  'Lexus|RX 450h',
+  'Kia|K5',
+  'Mitsubishi|Lancer Evolution',
+  'Ford|Fusion',
+  'Mazda|Mazda3',
+  'Chevrolet|Captiva AWD',
+  'Volvo|XC60',
+  'Hyundai|Veracruz',
+  'Kia|Sedona',
+  'Mitsubishi|Lancer',
+  'Lexus|LS 460 L',
+  'Mitsubishi|Galant',
+  'Toyota|4Runner',
+  'Infiniti|Q50',
+  'Volkswagen|R32',
+  'Mitsubishi|Eclipse Cross 4WD',
+  'GAC|EMPOW',
+  'Audi|Q5',
+  'Toyota|Camry Hybrid',
+  'Mitsubishi|Montero',
+  'Sandstorm|S24',
+  'Nissan|Pathfinder 4WD',
+  'Kia|Sorento',
+  'Hyundai|Veloster',
+])
+
+export async function generateStaticParams() {
+  const seoModels = CarData.filter(car => car.seo === true)
+
+  const params = []
+
+  for (const car of seoModels) {
+    if (!car.make || !car.model) continue
+
+    const key = `${car.make}|${car.model}`
+    const hasGSCTraffic = GSC_TRAFFIC_MODELS.has(key)
+
+    if (hasGSCTraffic) {
+      params.push({
+        make: encodeURIComponent(car.make.replace(/ /g, '%20')),
+        model: encodeURIComponent(car.model.replace(/ /g, '%20'))
+      })
+    }
+  }
+
+  const unique = Array.from(
+    new Map(params.map(p => [`${p.make}|${p.model}`, p])).values()
+  )
+
+  return unique
+}
+
 
 const baseCity = [{
   "id": 1,

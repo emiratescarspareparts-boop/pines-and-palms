@@ -74,9 +74,88 @@ const selectedParts = [
     "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
     "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors", "Steering Box"
 ]
+const PRIORITY_MAKES = [
+    'Honda', 'Nissan', 'Toyota', 'Mitsubishi', 'Lexus',
+    'Hyundai', 'Kia', 'Mazda', 'Audi', 'Volkswagen',
+    'Mercedes-Benz', 'BMW', 'Ford', 'Chevrolet', 'Jeep',
+    'Infiniti', 'GMC', 'Volvo', 'Dodge', 'Land Rover',
+    'Exeed', 'BYD', 'Genesis', 'Porsche', 'Ferrari',
+    'Bentley', 'Rolls-Royce', 'Lamborghini', 'Maserati',
+    'Jaguar', 'McLaren', 'Daihatsu', 'Suzuki', 'Renault',
+    'Dacia', 'Peugeot', 'Lincoln', 'Hummer',
+    'Cadillac', 'Tesla', 'Mini', 'Alfa Romeo',
+    'Chrysler', 'Daewoo', 'Scion'
+]
 
+const PRIORITY_PARTS = [
+    // High clicks
+    'Alternator',
+    'Headlight Assembly',
+    'Fuel Pump',
+    'Steering Rack',
+    'AC Compressor',
+    'Water Pump',
+    'Gearbox',
+    'Steering Box',
+    'Axle Assembly',
+    'Shock Absorber',
+    'Turbocharger',
+    'Fender Liner',
 
+    // High impressions (0 clicks but ranking)
+    'Battery',
+    'Carburetor',
+    'AC Condenser',
+    'Radiator',
+    'Lower Control Arm',
+    'Engine Assembly',
+    'Brake Disc',
+    'Mirrors',
+    'Taillight',
+    'Bumpers',
+    'Upper Control Arm',
+    'Spoiler',
+    'Suspension',
+    'Crankshaft',
+    'Camshaft',
+    'Starter',
+    'Radiator Cooling Fan',
+    'Door Lock Control Module',
+    'Anti-Lock Brake Control Module (ABS)',
+    'Mirror (Side View, Electric)',
+    'Power Steering Pump',
+    'Engine Block',
+    'Fuel Tank',
+    'Flywheel',
+    'Wheel',
+    'Grille',
+    'Hood',
+    'Brake Pads',
+    'Windshield',
+    'Fender (Front)',
+    'Bumper Cover (Rear)',
+]
 
+export function generateStaticParams() {
+    try {
+        const params = []
+
+        for (const make of PRIORITY_MAKES) {
+            for (const part of selectedParts) {
+                params.push({
+                    make: make.replace(/ /g, '%20'),
+                    parts: part.replace(/ /g, '%20')
+                })
+            }
+        }
+
+        return params
+
+    } catch (error) {
+        console.error('generateStaticParams error:', error)
+        return []
+    }
+}
 
 export function generateMetadata({ params }) {
     const { parts, make } = params;
