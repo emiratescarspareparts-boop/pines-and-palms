@@ -11,6 +11,7 @@ import PartsData from "../../public/lib/parts.json"
 export const revalidate = 1814400;
 export const dynamic = 'force-static'
 export const dynamicParams = false;
+export const fetchCache = 'force-cache';
 
 function getMake() {
   const uniqueMakes = {};

@@ -13,7 +13,9 @@ import Product from './Product';
 import FormMakeRender from '../../../components/FormMakeRender';
 export const revalidate = 86400;
 export const dynamic = 'force-static'
+export const fetchCache = 'force-cache';
 export const dynamicParams = true;
+
 
 const playfair_display = Playfair_Display({
   subsets: ['latin'],

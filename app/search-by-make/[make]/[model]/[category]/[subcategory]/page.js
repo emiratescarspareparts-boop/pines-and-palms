@@ -18,6 +18,7 @@ import FormMakeModelRender from "../../../../../../components/FormMakeModelRende
 
 export const revalidate = 86400;
 export const dynamic = 'force-static'
+export const fetchCache = 'force-cache';
 export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
@@ -549,7 +550,7 @@ export default function SubcategoryPage({ params }) {
                                 } else if (hasSEO) {
                                     // Model has seo=true, link to the subcategory page
                                     linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
-                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${subcategory}`
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${encodeURIComponent(subcategory)}`
                                 } else {
                                     // Model has seo=false, link to model page with form anchor
                                     linkHref = '/search-by-make/[make]/[model]#myForm'
@@ -584,12 +585,43 @@ export default function SubcategoryPage({ params }) {
 
                     <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
                         {partsposts.map((post, i) => {
+                            const isSelectedPart = selectedParts.includes(post.parts);
+
+                            // Check if this specific make/model has seo=true
+                            const hasSEO = CarData.some(car =>
+                                car.make === make &&
+                                car.model === model &&
+                                car.seo === true
+                            );
+
+                            let linkHref, linkAs;
+                            if (excludedMakesSet.has(make)) {
+                                linkHref = '/get-in-touch';
+                                linkAs = '/get-in-touch';
+                            } else if (isSelectedPart && hasSEO) {
+                                // Part is in the selected tier list AND make/model has seo=true
+                                linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]';
+                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(post.parts)}`;
+                            } else {
+                                // Part is not in the selected tier list
+                                linkHref = '/search-by-part-name/[parts]';
+                                linkAs = `/search-by-part-name/${post.parts}`;
+                            }
+
                             return (
                                 <li key={i} className="h-full">
-
-                                    <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                                        {make} {model} <span className="text-blue-500">{post.parts}</span>
-                                    </span>
+                                    <Link
+                                        href={linkHref}
+                                        as={linkAs}
+                                        title={`${make} ${model} ${post.parts}`}
+                                        target="_blank"
+                                        rel={hasSEO ? "noopener noreferrer" : "nofollow noopener noreferrer"}
+                                        className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+                                    >
+                                        <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                            {make} {model} <span className="text-blue-500">{post.parts}</span>
+                                        </span>
+                                    </Link>
                                 </li>
                             );
                         })}
@@ -689,7 +721,7 @@ export default function SubcategoryPage({ params }) {
                         {subCity.map((city) => (
                             <li key={city.id} className="border rounded-md overflow-hidden bg-white shadow hover:shadow-lg transition-shadow h-full flex flex-col">
                                 <Link href={`/search-by-brands-in-uae/${encodeURIComponent(make)}/${encodeURIComponent(city.city)}`} target="_blank"
-                                    title={`${make} ${model} ${subcategory} dubai`}>
+                                    title={`${make} ${model} ${subcategory} in ${city.city}`}>
                                     <div className="p-3 flex-1 flex flex-col">
                                         <h3 className="text-lg font-semibold mb-2 underline text-center">{make} {model} {subcategory} <span className="text-blue-500">{city.city}</span></h3>
                                     </div>
@@ -796,6 +828,124 @@ export default function SubcategoryPage({ params }) {
                     />
                 )}
 
+                <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
+                    <div className="container py-6">
+                        <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
+                            Search <span className='text-blue-600'>{subcategory}</span> for All {make} Models
+                        </h2>
+                        <SearchModel make={make} subcategory={subcategory} car={carmodel} />
+
+                        <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+                            {carmodel.map((post, i) => {
+                                const isBatterySubcategory = decodeURIComponent(subcategory).toLowerCase() === 'battery';
+
+                                const hasBatteryCompatibility = productsFile.some((product) =>
+                                    product.subcategory.toLowerCase() === 'battery' &&
+                                    product.compatibility?.some((c) =>
+                                        c.make.toLowerCase() === post.make.toLowerCase() &&
+                                        c.model.toLowerCase() === post.model.toLowerCase()
+                                    )
+                                );
+                                const isBattery = isBatterySubcategory || hasBatteryCompatibility;
+
+                                // Check if this specific model has seo=true
+                                const modelKey = `${post.make}|${post.model}`;
+                                const hasSEO = CarData.some(car =>
+                                    car.make === post.make &&
+                                    car.model === post.model &&
+                                    car.seo === true
+                                );
+
+                                let linkHref, linkAs;
+                                if (isBattery) {
+                                    linkHref = '/car-battery-replacement-services-in-uae'
+                                    linkAs = '/car-battery-replacement-services-in-uae'
+                                } else if (excludedMakesSet.has(post.make)) {
+                                    linkHref = '/get-in-touch'
+                                    linkAs = '/get-in-touch'
+                                } else if (hasSEO) {
+                                    // Model has seo=true, link to the subcategory page
+                                    linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}/${category}/${encodeURIComponent(subcategory)}`
+                                } else {
+                                    // Model has seo=false, link to model page with form anchor
+                                    linkHref = '/search-by-make/[make]/[model]#myForm'
+                                    linkAs = `/search-by-make/${post.make}/${encodeURIComponent(post.model)}#myForm`
+                                }
+
+                                return (
+                                    <li key={i} className="h-full">
+                                        <Link
+                                            href={linkHref}
+                                            as={linkAs}
+                                            title={`${post.make} ${post.model} ${subcategory}`}
+                                            target="_blank"
+                                            className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+                                        >
+                                            <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                                {post.make} {post.model.replace('%2F', '/')}<span className="text-blue-600"> {isBattery ? "Battery replacement services in UAE" : decodeURIComponent(subcategory)}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </section>
+
+
+
+                <section>
+                    <h2 className={`font-bold text-center text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
+                        Search All spare parts for <span className='text-blue-600'>{make} {model}</span>
+                    </h2>
+                    <SearchMakeModelParts partsposts={partsposts} make={make} model={model} category={category} />
+
+                    <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
+                        {partsposts.map((post, i) => {
+                            const isSelectedPart = selectedParts.includes(post.parts);
+
+                            // Check if this specific make/model has seo=true
+                            const hasSEO = CarData.some(car =>
+                                car.make === make &&
+                                car.model === model &&
+                                car.seo === true
+                            );
+
+                            let linkHref, linkAs;
+                            if (excludedMakesSet.has(make)) {
+                                linkHref = '/get-in-touch';
+                                linkAs = '/get-in-touch';
+                            } else if (isSelectedPart && hasSEO) {
+                                // Part is in the selected tier list AND make/model has seo=true
+                                linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]';
+                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(post.parts)}`;
+                            } else {
+                                // Part is not in the selected tier list
+                                linkHref = '/search-by-part-name/[parts]';
+                                linkAs = `/search-by-part-name/${post.parts}`;
+                            }
+
+                            return (
+                                <li key={i} className="h-full">
+                                    <Link
+                                        href={linkHref}
+                                        as={linkAs}
+                                        title={`${make} ${model} ${post.parts}`}
+                                        rel={hasSEO ? "noopener noreferrer" : "nofollow noopener noreferrer"}
+                                        target="_blank"
+                                        className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
+                                    >
+                                        <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
+                                            {make} {model} <span className="text-blue-500">{post.parts}</span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </section>
+
 
                 <section
                     aria-labelledby={`all-${make}-${model}-${subcategory}-brands`}
@@ -855,45 +1005,6 @@ export default function SubcategoryPage({ params }) {
                     </ul>
                 </section>
 
-                <section
-                    aria-labelledby={`all-${make}-${model}-${subcategory}-brands`}
-                    className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-5 md:px-20 lg:px-10"
-                >
-                    <h2
-                        id={`all-${make}-brands`}
-                        className={`text-4xl text-center md:text-3xl lg:text-3xl xs:text-2xl xxs:text-2xl font-semibold py-5 ${playfair_display.className}`}
-                    >
-                        Search <span className="text-blue-500">{subcategory}</span> for Any Models - Used, Genuine & Aftermarket
-                    </h2>
-
-                    <ul className="grid grid-cols-4 md:grid-cols-3 xs:grid-cols-1 xxs:grid-cols-1 sm:grid-cols-2 xs:gap-1 xxs:gap-1 sm:gap-1 gap-4 my-10">
-
-                        {makeArray.map((p, i) => (
-
-                            <li key={i} className="list-none">
-                                <Link
-                                    href="/search-by-make/[make]/parts/[subcategory]"
-                                    as={`/search-by-make/${encodeURIComponent(p.make)}/parts/${encodeURIComponent(subcategory)}`}
-                                    title={`${p.make} ${subcategory}`}
-                                    target="_blank"
-                                    className="flex flex-col items-center justify-center border hover:border-blue-600 p-3 rounded-sm bg-white"
-                                >
-                                    <Image
-                                        alt={`${p.make}`}
-                                        src={`/img/car-logos/${p.img}`}
-                                        height={90}
-                                        width={90}
-                                        className="object-contain"
-                                        priority
-                                    />
-                                    <span className={`mt-2 px-3 py-1 text-sm md:text-xs xl:text-2xl xxl:text-lg font-medium font-sans text-white bg-blue-600 rounded-sm hover:bg-blue-700 text-center w-max ${firaSans.className}`}>
-                                        {p.make} {subcategory}
-                                    </span>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
                 <section className="mt-10 shadow-sm mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
 
@@ -907,7 +1018,7 @@ export default function SubcategoryPage({ params }) {
 
                                 <li key={i} className="h-full">
                                     <Link
-                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(item.category)}`}
+                                        href={`/search-by-make/${make}/${encodeURIComponent(model)}}`}
                                         title={`${make} ${model} ${item.category}`}
                                         target="_blank"
                                         className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
@@ -933,7 +1044,7 @@ export default function SubcategoryPage({ params }) {
                         {subCity.map((city) => (
                             <li key={city.id} className="border rounded-md overflow-hidden bg-white shadow hover:shadow-lg transition-shadow h-full flex flex-col">
                                 <Link href={`/search-by-brands-in-uae/${encodeURIComponent(make)}/${encodeURIComponent(city.city)}`} target="_blank"
-                                    title={`${make} ${model} ${subcategory} dubai`}>
+                                    title={`${make} ${model} ${subcategory} in ${city.city}`}>
                                     <div className="p-3 flex-1 flex flex-col">
                                         <h3 className="text-lg font-semibold mb-2 underline text-center">{make} {model} {subcategory} <span className="text-blue-500">{city.city}</span></h3>
                                     </div>

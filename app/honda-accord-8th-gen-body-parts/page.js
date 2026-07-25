@@ -7,6 +7,7 @@ import products from "../../public/products.json"
 export const revalidate = 86400;
 export const dynamic = 'force-static'
 export const dynamicParams = false;
+export const fetchCache = 'force-cache';
 
 export default function HondaAccord({ searchParams }) {
   const make = "Honda";

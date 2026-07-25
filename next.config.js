@@ -46,18 +46,18 @@ module.exports = withPWA({
         permanent: true,
       },
       {
-        source: "/search-by-make/Toyota/4Runner/Ignition%20%26%20Electrical/Spark%20Plug-Toyota-4Runner-2002-2009-90919-01235-25",
+        source: "/search-by-make/Toyota/4Runner/Ignition:space1&:space2Electrical/Spark%20Plug-Toyota-4Runner-2002-2009-90919-01235-25",
         destination: "/search-by-make/Toyota/4Runner/Ignition%20%26%20Electrical/Spark%20Plug/Spark%20Plug-Toyota-4Runner-2002-2009-90919-01235-25",
         permanent: true
       },
       {
-        source: "/search-by-make/Toyota/RAV4/Ignition%20&%20Electrical/Spark%20Plug-Toyota-RAV4-2001-2003-90919-01210-26",
-        destination: "/search-by-make/Toyota/RAV4/Ignition%20&%20Electrical/Spark%20Plug/Spark%20Plug-Toyota-RAV4-2001-2003-90919-01210-26",
+        source: "/search-by-make/Toyota/RAV4/Ignition:space1&:space2Electrical/Spark%20Plug-Toyota-RAV4-2001-2003-90919-01210-26",
+        destination: "/search-by-make/Toyota/RAV4/Ignition%20%26%20Electrical/Spark%20Plug/Spark%20Plug-Toyota-RAV4-2001-2003-90919-01210-26",
         permanent: true
       },
       {
-        source: "/search-by-make/Renault/Symbol%202/Ignition%20&%20Electrical/Spark%20Plug-Renault-Symbol%202-2008-2012-7700500168-1",
-        destination: "/search-by-make/Renault/Symbol%202/Ignition%20&%20Electrical/Spark%20Plug/Spark%20Plug-Renault-Symbol%202-2008-2012-7700500168-1",
+        source: "/search-by-make/Renault/Symbol%202/Ignition:space1&:space2Electrical/Spark%20Plug-Renault-Symbol%202-2008-2012-7700500168-1",
+        destination: "/search-by-make/Renault/Symbol%202/Ignition%20%26%20Electrical/Spark%20Plug/Spark%20Plug-Renault-Symbol%202-2008-2012-7700500168-1",
         permanent: true
       },
       {
@@ -71,7 +71,7 @@ module.exports = withPWA({
         permanent: true
       },
       {
-        source: "/search-by-make/Volkswagen/Touareg/Suspension%20%26%20Steering%20Parts/Front%20Lower%20Arm%20Ball%20Joint-Volkswagen-Touareg-2019-2022-4M0407689C-22",
+        source: "/search-by-make/Volkswagen/Touareg/Suspension%20&%20Steering%20Parts/Front%20Lower%20Arm%20Ball%20Joint-Volkswagen-Touareg-2019-2022-4M0407689C-22",
         destination: "/search-by-make/Volkswagen/Touareg/Suspension%20%26%20Steering%20Parts/Suspension/Front%20Lower%20Arm%20Ball%20Joint-Volkswagen-Touareg-2019-2022-4M0407689C-22",
         permanent: true
       },

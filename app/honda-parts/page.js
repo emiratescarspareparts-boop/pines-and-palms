@@ -6,6 +6,7 @@ import FeaturedHonda from '../../components/featured';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
+export const fetchCache = 'force-cache';
 
 export const metadata = {
   alternates: {

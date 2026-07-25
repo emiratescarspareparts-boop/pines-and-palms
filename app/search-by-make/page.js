@@ -10,6 +10,7 @@ import ShowParts from './ShowParts';
 import FormRender from '../../components/FormRender';
 export const revalidate = 1814400;
 export const dynamic = 'force-static'
+export const fetchCache = 'force-cache';
 export const dynamicParams = false;
 
 const firaSans = Fira_Sans({

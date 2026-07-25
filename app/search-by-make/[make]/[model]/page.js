@@ -12,6 +12,7 @@ import { notFound } from 'next/navigation';
 import TenEntries from '../../../../components/tenentries';
 import FormMakeModelRender from '../../../../components/FormMakeModelRender';
 export const dynamic = 'force-static'
+export const fetchCache = 'force-cache';
 export const dynamicParams = true
 export const revalidate = 86400
 
@@ -889,7 +890,7 @@ export default function Model({ params, searchParams }) {
       <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
         <div className="container py-6">
           <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-            Most Searched <span className='text-blue-500'>{make} {model}</span> Spare Parts in UAE
+            Shop Parts for Other <span className='text-blue-500'>{make}</span> Vehicles
           </h2>
 
           <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
@@ -1357,7 +1358,7 @@ export default function Model({ params, searchParams }) {
             <li key={i}>
               <Link
                 href="/search-by-brands-in-uae/[make]/[city]"
-                as={'/search-by-brands-in-uae/' + make + "/" + post.city}
+                as={'/search-by-brands-in-uae/' + encodeURIComponent(make) + "/" + encodeURIComponent(post.city)}
                 title={make + " " + model + ' spare parts ' + post.city}
                 className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
               >
