@@ -777,7 +777,7 @@ export default function Model({ params, searchParams }) {
 
 
       <section className='xs:px-3 xxs:px-3 md:px-3 lg:max-w-4xl lg:mx-auto'>
-        <h3 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why Emirates-car.com?</h3>
+        <h2 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why Emirates-car.com?</h2>
         <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
           EMIRATESCAR is the online dealer in <span className='text-blue-600'>{make}{' '}
             {decodeURIComponent(model)}</span> spare parts and for any car brands running on roads
@@ -936,14 +936,14 @@ export default function Model({ params, searchParams }) {
       <section>
         <div className="d-flex  pt-10 xs:pt-5 mx-8">
           <div>
-            <h6 className="text-3xl font-extrabold mx-auto my-5 justify-center text-center">
+            <h2 className="text-3xl font-extrabold mx-auto my-5 justify-center text-center">
               List of different Genuine and Aftermarket {make} {model} spare parts in UAE
-            </h6>
+            </h2>
             <div className="grid grid-cols-3 xs:grid-cols-1 place-content-center">
               <div>
-                <h5 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
+                <h3 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
                   {make} {model} Engine parts
-                </h5>
+                </h3>
                 <ol className={`list-disc text-xl text-gray-700 xl:text-2xl xxl:text-2xl mx-auto my-5 ${firaSans.className}`} >
                   <li>
                     <Link
@@ -1061,9 +1061,9 @@ export default function Model({ params, searchParams }) {
               </div>
 
               <div>
-                <h5 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
+                <h3 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
                   {make} {model} Mechanical parts
-                </h5>
+                </h3>
                 <ol className={`list-disc text-xl text-gray-700 xl:text-2xl xxl:text-2xl mx-auto my-5 ${firaSans.className}`} >
                   <li>
                     <Link
@@ -1149,9 +1149,9 @@ export default function Model({ params, searchParams }) {
               </div>
 
               <div>
-                <h5 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
+                <h3 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
                   {make} {model} Body Parts
-                </h5>
+                </h3>
                 <ol className={`list-disc text-xl text-gray-700 xl:text-2xl xxl:text-2xl mx-auto my-5 ${firaSans.className}`} >
                   <li>
                     <Link
@@ -1197,9 +1197,9 @@ export default function Model({ params, searchParams }) {
               </div>
 
               <div>
-                <h5 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
+                <h3 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
                   {make} {model} Electrical Parts
-                </h5>
+                </h3>
                 <ol className={`list-disc text-xl text-gray-700 xl:text-2xl xxl:text-2xl mx-auto my-5 ${firaSans.className}`} >
                   <li>
                     <Link
@@ -1245,9 +1245,9 @@ export default function Model({ params, searchParams }) {
               </div>
 
               <div>
-                <h5 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
+                <h3 className={`text-4xl xs:text-2xl xxs:text-2xl md:text-3xl text-blue-600 font-semibold mx-auto mt-10 ${playfair_display.className}`}>
                   {make} {model} AC Parts
-                </h5>
+                </h3>
                 <ol className={`list-disc text-xl text-gray-700 xl:text-2xl xxl:text-2xl mx-auto my-5 ${firaSans.className}`} >
                   <li>
                     <Link
@@ -1301,17 +1301,17 @@ export default function Model({ params, searchParams }) {
       </section>
 
       <section className="d-flex py-10 xs:pt-5 mx-8 md:mx-5 xs:mx-3 lg:max-w-4xl lg:mx-auto" aria-labelledby='oem parts or aftermarket parts'>
-        <h3
+        <h2
           className={`text-4xl md:text-3xl xs:text-2xl xxs:text-2xl sm:text-2xl font-bold text-blue-600 mx-auto my-5 ${playfair_display.className}`}
           id="oemvsaftermarket"
         >
           Team Genuine {make} {decodeURIComponent(model)} Parts VS Team
           Aftermarket {make} {decodeURIComponent(model)} Parts
-        </h3>
-        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
+        </h2>
+        <div className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
           {make} {decodeURIComponent(model)} aftermarket parts are better
           to buy for many reasons:
-        </h5>
+        </div>
         <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
           <li>It is more affordable than genuine parts</li>
           <li>Some genuine parts are similar to genuine parts itself.</li>
@@ -1324,10 +1324,10 @@ export default function Model({ params, searchParams }) {
             parts which can be only from one main manufacturer
           </li>
         </ol>
-        <h5 className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
+        <div className="text-lg font-sans text-gray-700 mx-auto my-5 font-bold">
           {make} {decodeURIComponent(model)} Genuine parts are better to
           buy for many reasons:
-        </h5>
+        </div>
         <ol className={`list-disc text-xl xl:text-2xl xxl:text-2xl font-sans text-gray-700 mx-auto ${firaSans.className}`}>
           <li>
             Aftermarket parts are not regularized or standardized because
