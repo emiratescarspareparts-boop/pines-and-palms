@@ -16,8 +16,11 @@ export default function TenEntries({ make = null, model = null }) {
     return `/api/entries${queryString ? `?${queryString}` : ''}`;
   };
 
-  const { data, error } = useSWR(buildUrl(), fetcher);
-
+  const { data, error } = useSWR(buildUrl(), fetcher, {
+    revalidateOnFocus: false,
+    revalidateIfStale: false,
+    dedupingInterval: 60000,
+  });
   // Build the title based on filters
   const getTitle = () => {
     if (make && model) {

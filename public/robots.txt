@@ -14,7 +14,8 @@ User-agent: Claude-User
 Disallow:
 
 User-agent: Claude-SearchBot
-Disallow:
+Allow: /search-by-make/*$
+Disallow: /search-by-make/*/*/*/*
 
 # Google AI Assistant & Gemini Training Access
 User-agent: Google-Extended

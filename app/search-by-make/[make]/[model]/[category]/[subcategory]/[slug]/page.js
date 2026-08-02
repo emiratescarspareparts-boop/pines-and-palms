@@ -45,7 +45,6 @@ const excludedMakes = [
 ];
 
 const excludedMakesSet = new Set(excludedMakes);
-
 export async function generateStaticParams() {
     return products
         .flatMap((product) =>
@@ -61,6 +60,7 @@ export async function generateStaticParams() {
         )
         .filter(Boolean);
 }
+
 export async function generateMetadata({ params }) {
 
     const { make, model, category, subcategory, slug } = params;
