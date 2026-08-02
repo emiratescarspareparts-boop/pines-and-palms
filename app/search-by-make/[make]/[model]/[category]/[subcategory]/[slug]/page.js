@@ -476,8 +476,6 @@ export default function ProductPage({ params, searchParams }) {
                 <ProductTabs product={product} slug={slug} />
             </section>
 
-            <Symptoms make={decodedMake} model={decodedModel} product={product} years={years} />
-
 
             {/* Related Products */}
             {otherProducts.length > 0 && (
@@ -577,15 +575,7 @@ function StaticPolicies({ product }) {
     );
 }
 
-function Symptoms({ product, make, model, years }) {
-    return (
-        <div className="mt-6 hidden">
-            <h2 className="text-xl font-semibold mb-2">Common Symptoms of {make} {model} {years} {product.item_specifics.partname}</h2>
-            <p>{product.partname}</p>
 
-        </div>
-    );
-}
 
 
 
