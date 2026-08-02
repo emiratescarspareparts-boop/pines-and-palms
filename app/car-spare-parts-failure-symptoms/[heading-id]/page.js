@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import { products } from "../../../public/products.json";
-import { buildArticleSchema } from "../../../components/seo/buildArticleSchema";
+import { buildArticleSchema } from "../../../components/buildArticleSchema";
 import DiagnosisComponent from "../../../components/DiagnosisComponent";
 
 export async function generateMetadata({ params }) {
