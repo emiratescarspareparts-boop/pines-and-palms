@@ -137,68 +137,26 @@ const PRIORITY_PARTS = [
 ]
 
 export function generateStaticParams() {
-    const params = [];
-    const generated = new Set();
+    try {
+        const params = []
 
-    // --- Path 1: From products.json (exact product matches) ---
-    for (let i = 0; i < products.length; i++) {
-        const product = products[i];
-        if (!product?.compatibility || !product.subcategory) continue;
-
-        const subcategory = product.subcategory.trim();
-        const partEntry = partsData.find(
-            p => p.parts.toLowerCase() === subcategory.toLowerCase()
-        );
-        if (!partEntry) continue;
-
-        for (let j = 0; j < product.compatibility.length; j++) {
-            const compat = product.compatibility[j];
-            const make = compat.make?.trim();
-            if (!make || excludedMakesSet.has(make)) continue;
-
-            const key = `${make}|${partEntry.parts}`;
-            if (!generated.has(key)) {
-                generated.add(key);
+        for (const make of PRIORITY_MAKES) {
+            for (const part of selectedParts) {
                 params.push({
-                    make: make,
-                    parts: partEntry.parts,
-                });
+                    make: make.replace(/ /g, '%20'),
+                    parts: part.replace(/ /g, '%20')
+                })
             }
         }
+
+        return params
+
+    } catch (error) {
+        console.error('generateStaticParams error:', error)
+        return []
     }
-
-    // --- Path 2: unique makes x selectedParts ---
-    const uniqueMakes = new Set();
-    for (let i = 0; i < CarData.length; i++) {
-        const make = CarData[i].make?.trim();
-        if (make && !excludedMakesSet.has(make)) {
-            uniqueMakes.add(make);
-        }
-    }
-
-    for (const make of uniqueMakes) {
-        for (let i = 0; i < selectedParts.length; i++) {
-            const selectedPart = selectedParts[i];
-
-            const partEntry = partsData.find(
-                p => p.parts.toLowerCase() === selectedPart.toLowerCase()
-            );
-            if (!partEntry) continue;
-
-            const key = `${make}|${partEntry.parts}`;
-            if (!generated.has(key)) {
-                generated.add(key);
-                params.push({
-                    make: make,
-                    parts: partEntry.parts,
-                });
-            }
-        }
-    }
-
-    console.log(`✅ Generated ${params.length} make/parts pages`);
-    return params;
 }
+
 
 
 
