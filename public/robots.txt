@@ -1,71 +1,8 @@
-# ===================================================
-# SECTION 1: PERMIT & INVITE REAL-TIME AI ASSISTANTS
-# ===================================================
-
-# OpenAI (ChatGPT live web search)
-User-agent: OAI-SearchBot
-Disallow:
-
-User-agent: ChatGPT-User
-Disallow:
-
-# Anthropic (Claude live web search & user-fetches)
-User-agent: Claude-User
-Disallow:
-
-User-agent: Claude-SearchBot
-Allow: /search-by-make/*$
-Disallow: /search-by-make/*/*/*/*
-
-# Google AI Assistant & Gemini Training Access
-User-agent: Google-Extended
-Disallow:
-
-# Google Main Crawler (Powers Google Search & AI Overviews)
 User-agent: Googlebot
-Disallow:
-
-
-# ===================================================
-# SECTION 2: BLOCK BACKGROUND SPAMMERS & AI TRAINERS
-# ===================================================
-
-# Block the aggressive Chinese scraper causing your traffic spike
-User-agent: ByteSpider
-Disallow: /
-
-# Block outdated / unnecessary search crawlers
-User-agent: Sogou web spider
-Disallow: /
-
-# Block AI data-hoarders that don't give you chat traffic
-User-agent: CCBot
-Disallow: /
-
-User-agent: Anthropic
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: MistralAI-User
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-
-# ===================================================
-# SECTION 3: GLOBAL FALLBACK RULE
-# ===================================================
 User-agent: *
+Disallow: /api/
 Disallow: /Removals
+Disallow: /_next/
 Disallow: /search-by-make/Acura/Legend/*
 Disallow: /search-by-make/Audi/100/*
 Disallow: /search-by-make/Audi/200/*
@@ -6022,6 +5959,34 @@ Allow: /search-by-make/Scion$
 Allow: /search-by-make/BYD$
 Allow: /search-by-make/Renault$
 Allow: /search-by-make/Dacia$
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Anthropic
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ByteSpider
+Disallow: /
+
+User-agent: Sogou web spider
+Disallow: /
+
+User-agent: MistralAI-User
+Disallow: /
+
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
 
 Sitemap: https://www.emirates-car.com/allsitemaps/allblogs.xml
 Sitemap: https://www.emirates-car.com/allsitemaps/allmakelocation.xml
