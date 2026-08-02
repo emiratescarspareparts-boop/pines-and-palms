@@ -147,6 +147,12 @@ module.exports = withPWA({
         destination: '/search-by-make/Honda/Accord/Electrical%20%26%20Electronics/Alternator/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
         permanent: true,
       },
+      {
+        source: '/search-by-make/Honda/Pilot/Suspension%20%26%20Steering%20Parts/Steering%20Rack/Steering%20Rack-Honda-Pilot-2017-53400-TG7-A02-67',
+        destination: '/search-by-make/Honda/Pilot/Suspension%20%26%20Steering%20Parts/Steering%20Rack/Steering%20Rack-Honda-Pilot-2016-2022-53400-TG7-A02-67',
+        permanent: true,
+      }
+
     ];
   },
   staticPageGenerationTimeout: 180,

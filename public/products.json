@@ -656,11 +656,6 @@
                 "engine": "1.6 LPG"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/renault/ren-2.jpg",
         "item_specifics": {
@@ -766,11 +761,6 @@
                 "years": "2013-2016",
                 "engine": "2.0"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/renault/ren-3.jpg",
@@ -962,11 +952,6 @@
                 "engine": "2.0 4x4 F4R"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/renault/ren-4.jpg",
         "item_specifics": {
@@ -1025,11 +1010,6 @@
                 "engine": "2.4, 3.5"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/Grille.webp",
         "item_specifics": {
@@ -1083,11 +1063,6 @@
                 "years": "2008-2012",
                 "engine": "2.4, 3.5"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/rightfender.png",
@@ -1144,11 +1119,6 @@
                 "years": "2008-2012",
                 "engine": "2.4, 3.5"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/leftfender.webp",
@@ -1230,11 +1200,6 @@
                 "engine": "1.2 HR12DE"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/renault/ren-1.png",
         "item_specifics": {
@@ -1297,11 +1262,6 @@
                 "engine": "2.3L VTEC, 3.0L V6"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/leftfenderliner.jpg",
         "item_specifics": {
@@ -1357,11 +1317,6 @@
                 "engine": "2.3L VTEC, 3.0L V6"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/rightfenderliner.jpg",
         "item_specifics": {
@@ -1415,11 +1370,6 @@
                 "years": "2008-2010",
                 "engine": "2.4L L4, 3.5L V6"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/hondafrontbumper07.png",
@@ -1478,11 +1428,6 @@
                 "engine": "2.4L L4, 3.5L V6"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/hondafrontbumper08.jpg",
         "item_specifics": {
@@ -1540,11 +1485,6 @@
                 "engine": "2.4L L4, 3.5L V6"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/hondaaccordfrontbumper.webp",
         "item_specifics": {
@@ -1600,11 +1540,6 @@
                 "years": "2008-2010",
                 "engine": "2.4L L4, 3.5L V6"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/hondaaccordfrontbumper.webp",
@@ -1662,11 +1597,6 @@
                 "engine": "2.4L L4, 3.5L V6"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/hondaaccordrearbumper.jpg",
         "item_specifics": {
@@ -1722,11 +1652,6 @@
                 "years": "2008-2012",
                 "engine": "2.4L L4, 3.5L V6"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/hondaaccordrearbumper.jpg",
@@ -1785,11 +1710,6 @@
                 "engine": "2.4, 3.5"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/grilleframe16.jpg",
         "item_specifics": {
@@ -1844,11 +1764,6 @@
                 "years": "2008-2012",
                 "engine": "2.4, 3.5"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/grillesupport17.jpg",
@@ -1905,11 +1820,6 @@
                 "engine": "2.4, 3.5"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/honda/grille18.jpg",
         "item_specifics": {
@@ -1964,11 +1874,6 @@
                 "years": "2008-2010",
                 "engine": "2.4, 3.5"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/grille19.png",
@@ -2028,11 +1933,6 @@
                 "years": "2008-2010",
                 "engine": "2.4, 3.5"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/honda/grillecover21.png",
@@ -2124,11 +2024,6 @@
                 "years": "2019-2022",
                 "engine": "3.0 TFSI / 4.0 TFSI"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/bentley/bentleyballjoint21.webp",
@@ -2323,11 +2218,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/vwgroup/vwwaterpump01.png",
         "item_specifics": {
@@ -2404,11 +2294,6 @@
                 "years": "2007-2013",
                 "engine": "2.0L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/toyota/sparkplugtoy01.jpg",
@@ -2524,11 +2409,6 @@
                 "engine": "1.0L,1.3L,1.4L,1.5L,1.8L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/toyota/sparkplugtoy02.webp",
         "item_specifics": {
@@ -2637,11 +2517,6 @@
                 "engine": "2.2L,2.4L,3.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/toyota/sparkplugtoy03.jpg",
         "item_specifics": {
@@ -2697,11 +2572,6 @@
                 "years": "2013-2019",
                 "engine": "1.8L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "false",
         "image": "/img/nissan/shockabsorberniss01.avif",
@@ -2761,11 +2631,6 @@
                 "years": "2003-2009",
                 "engine": "1.8L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/toyota/accompressor35.webp",
@@ -2946,11 +2811,6 @@
                 "engine": "4.6-liter V8 (1UR-FSE)"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/toyota/accompressor36.jpg",
         "item_specifics": {
@@ -3003,11 +2863,6 @@
                 "years": "2012",
                 "engine": "1.3L,1.5L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/toyota/accompressor37.jpg",
@@ -3073,11 +2928,6 @@
                 "years": "2017",
                 "engine": "2.5L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/toyota/accompressor38.jpeg",
@@ -3162,11 +3012,6 @@
                 "engine": "4.6L V8"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/parts/AC_Compressor.png",
         "item_specifics": {
@@ -3225,11 +3070,6 @@
                 "years": "2003-2009",
                 "engine": "4.0L V6, 4.7L V8"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "featured": "true",
         "image": "/img/toyota/accompressor40.jpg",
@@ -3404,11 +3244,6 @@
                 "engine": "1.5L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/alternator21.webp",
         "item_specifics": {
             "sku": "HON0021",
@@ -3490,11 +3325,6 @@
                 "years": "2009-2014",
                 "engine": "2.4L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/alternator22.png",
         "item_specifics": {
@@ -3607,11 +3437,6 @@
                 "years": "2014",
                 "engine": "2.4L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/alternator23.jpg",
         "item_specifics": {
@@ -3875,11 +3700,6 @@
                 "engine": "3.6L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/sparkplug24.png",
         "item_specifics": {
             "sku": "HON0024",
@@ -4095,11 +3915,6 @@
                 "engine": "1.5L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/alternator25.png",
         "item_specifics": {
             "sku": "HON0025",
@@ -4174,11 +3989,6 @@
                 "engine": "1.6L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/toyota/alternator15.webp",
         "item_specifics": {
             "sku": "TOY0015",
@@ -4249,11 +4059,6 @@
                 "engine": "4.8L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/bmw/alternator48.png",
         "item_specifics": {
             "sku": "BMW0001",
@@ -4323,11 +4128,6 @@
                 "years": "2021",
                 "engine": "2.0L Sport"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/alternator26.png",
         "item_specifics": {
@@ -4458,11 +4258,6 @@
                 "years": "2011",
                 "engine": "3.7L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/ford/alternator01.webp",
         "item_specifics": {
@@ -4714,11 +4509,6 @@
                 "engine": "5.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/landrover/alternator51.png",
         "item_specifics": {
             "sku": "LND0001",
@@ -4789,11 +4579,6 @@
                 "engine": "2.5L,3.5L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/nissan/headlight053.webp",
         "item_specifics": {
             "sku": "NIS0002",
@@ -4863,11 +4648,6 @@
                 "years": "2016",
                 "engine": "2.5L,3.5L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/nissan/headlight052.jpeg",
         "item_specifics": {
@@ -5143,11 +4923,6 @@
                 "engine": "6.0L V8 - Gas,6.6L V8 - Diesel,8.1L V8 - Gas"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/chevrolet/headlight0054.webp",
         "item_specifics": {
             "sku": "GM0001",
@@ -5422,11 +5197,6 @@
                 "engine": "6.0L V8 - Gas,6.6L V8 - Diesel,8.1L V8 - Gas"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/chevrolet/headlight0055.webp",
         "item_specifics": {
             "sku": "GM0002",
@@ -5502,11 +5272,6 @@
                 "years": "2013",
                 "engine": "3.6L V6 - Gas"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/gmc/headlight0056.png",
         "item_specifics": {
@@ -5584,11 +5349,6 @@
                 "engine": "3.6L V6 - Gas"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/gmc/headlight0057.png",
         "item_specifics": {
             "sku": "GM0004",
@@ -5641,11 +5401,6 @@
                 "engine": "2.5L,3.0L,4.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/ford/headlight0058.png",
         "item_specifics": {
             "sku": "GM0005",
@@ -5697,11 +5452,6 @@
                 "years": "1998-2000",
                 "engine": "2.5L,3.0L,4.0L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/ford/headlight0059.png",
         "item_specifics": {
@@ -5761,11 +5511,6 @@
                 "engine": "4.3L,5.3L,6.2L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/gmc/headlight0060.png",
         "item_specifics": {
             "sku": "GM0007",
@@ -5823,11 +5568,6 @@
                 "years": "2015",
                 "engine": "4.3L,5.3L,6.2L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/gmc/headlight0060.png",
         "item_specifics": {
@@ -6115,11 +5855,6 @@
                 "engine": "2.4L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/tensioner27.jpg",
         "item_specifics": {
             "sku": "HON0027",
@@ -6172,11 +5907,6 @@
                 "engine": "2.4L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/warmer28.png",
         "item_specifics": {
             "sku": "HON0028",
@@ -6220,54 +5950,13 @@
         "category": "Suspension & Steering Parts",
         "partname": "Steering Rack",
         "partnumber": "53400-TG7-A02",
-        "availability": "✓ In Stock — Price on Request",
+        "availability": "In Stock — Price on Request",
+        "description": "Genuine Honda Steering Rack (Part 53400-TG7-A02) for 2016-2022 Honda Pilot. New, OEM-fit direct replacement suitable for restoring proper steering performance and safety.",
         "compatibility": [
             {
                 "make": "Honda",
                 "model": "Pilot",
-                "years": "2016",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2017",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2017",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2018",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2019",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2020",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2021",
-                "engine": "3.5L"
-            },
-            {
-                "make": "Honda",
-                "model": "Pilot",
-                "years": "2022",
+                "years": "2016-2022",
                 "engine": "3.5L"
             }
         ],
@@ -6277,6 +5966,47 @@
             "2.0"
         ],
         "image": "/img/honda/steeringrack67.jpg",
+        "article": {
+            "headline": "Honda Pilot 2016-2022 Steering Rack Symptoms: Warning Signs & Diagnosis",
+            "description": "High-quality replacement steering rack for 2016-2022 Honda Pilot (Part 53400-TG7-A02). Common symptoms of a bad steering rack include: 1. Fluid leaks under the front of the vehicle. 2. Stiff or tight steering wheel. 3. Clunking or knocking noises when turning. 4. Whining sounds from the power steering pump.",
+            "replacement_guidance": {
+                "heading": "How Many Years Should a Steering Rack Last Before Replacement?",
+                "interval_label": "8-10 years or 150,000-180,000 km",
+                "paragraph": "A steering rack on a Honda Pilot typically lasts 8 to 10 years or 150,000-180,000 km under normal driving conditions. UAE heat and dust can shorten this by wearing seals faster, so owners in this range should treat any symptom below as a signal to inspect the rack rather than wait for full failure."
+            },
+            "sections": [
+                {
+                    "type": "intro",
+                    "heading": "Why a Failing Steering Rack Matters",
+                    "paragraph": "If you operate a Honda Pilot, a faulty Steering Rack can heavily disrupt vehicle performance and road safety. Early detection of failure symptoms can prevent a complete breakdown or a costly roadside incident."
+                },
+                {
+                    "type": "symptom",
+                    "heading": "Fluid Leaking From the Front Steering Rack Assembly",
+                    "paragraph": "One of the earliest signs of a failing steering rack is visible fluid pooling beneath the front of the vehicle. This usually points to worn seals inside the rack housing, letting power steering fluid escape under pressure."
+                },
+                {
+                    "type": "symptom",
+                    "heading": "Stiff, Tight, or Hard-to-Turn Steering Wheel",
+                    "paragraph": "A steering rack losing hydraulic pressure or suffering internal wear often makes the steering wheel noticeably harder to turn, especially at low speeds or when parking."
+                },
+                {
+                    "type": "symptom",
+                    "heading": "Clunking or Knocking Noises in Tight Turns",
+                    "paragraph": "Worn internal components or loose mounting points inside the rack assembly can produce a clunking or knocking sound when navigating sharp turns or driving over uneven surfaces."
+                },
+                {
+                    "type": "symptom",
+                    "heading": "Whining Sounds From the Power Steering Pump Area",
+                    "paragraph": "A whining noise, especially when turning the wheel fully in either direction, often signals that the steering rack is forcing the power steering pump to work harder than it should."
+                },
+                {
+                    "type": "closing",
+                    "heading": "Getting a Genuine Replacement in the UAE",
+                    "paragraph": "Substituting a damaged component with a Genuine New Honda Steering Rack resolves these issues completely. Emirates Car supplies the UAE region with fast 1-5 day delivery on genuine parts like this one."
+                }
+            ]
+        },
         "item_specifics": {
             "sku": "HON0029",
             "Brand": "Honda Motor Company",
@@ -6298,7 +6028,7 @@
             "UPC": ""
         },
         "pricing": {
-            "price": 3000.00,
+            "price": 3000,
             "price_info": "*Prices reflects the latest compared average online market values for Genuine Honda Motor Company Steering Rack. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
             "currency": "AED",
             "discounted_price": 0,
@@ -6311,7 +6041,8 @@
             "payment_methods": [
                 "Cash on Delivery"
             ]
-        }
+        },
+        "youtube_url": ""
     },
     {
         "id": 68,
@@ -6387,11 +6118,6 @@
                 "years": "2014",
                 "engine": "1.4"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/fiat/alternator68.jpg",
         "item_specifics": {
@@ -6853,11 +6579,6 @@
                 "engine": "3.6L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/dodge/alternator69.webp",
         "item_specifics": {
             "sku": "DOD0001",
@@ -6951,11 +6672,6 @@
                 "years": "2015",
                 "engine": "6.6L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/gmc/alternator70.png",
         "item_specifics": {
@@ -7369,11 +7085,6 @@
                 "engine": "1.8i"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "featured": "true",
         "image": "/img/daihat/acdelco71.webp",
         "item_specifics": {
@@ -7471,11 +7182,6 @@
                 "engine": "2.0L,2.3L,2.4L,2.5L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/volvo/starter91.jpg",
         "item_specifics": {
             "sku": "VOL0001",
@@ -7551,11 +7257,6 @@
                 "years": "2014-2015",
                 "engine": "2.4L Theta II,2.0L Turbocharged GDI,2.4L Hybrid,1.6L Turbocharged GDI"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/hyundai/alternator71.png",
         "item_specifics": {
@@ -7639,11 +7340,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/vwgroup/audialternator81.png",
         "item_specifics": {
             "sku": "AUD0002",
@@ -7725,11 +7421,6 @@
                 "years": "2017-2022",
                 "engine": "2.0L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/audi/alternator91.png",
         "item_specifics": {
@@ -7813,11 +7504,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/audi/alternator92.png",
         "item_specifics": {
             "sku": "AUD0004",
@@ -7900,11 +7586,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/audi/alternator93.webp",
         "item_specifics": {
             "sku": "AUD0005",
@@ -7986,11 +7667,6 @@
                 "years": "2023",
                 "engine": "5.0L V8"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/ford/alternator94.png",
         "item_specifics": {
@@ -8086,11 +7762,6 @@
                 "engine": "4.5L V8"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
             "sku": "POR0001",
@@ -8184,11 +7855,6 @@
                 "years": "2006",
                 "engine": "4.5L V9"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
@@ -8284,11 +7950,6 @@
                 "engine": "4.5L V10"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
             "sku": "POR0003",
@@ -8382,11 +8043,6 @@
                 "years": "2006",
                 "engine": "4.5L V11"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
@@ -8482,11 +8138,6 @@
                 "engine": "4.5L V12"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
             "sku": "POR0005",
@@ -8581,11 +8232,6 @@
                 "engine": "4.5L V13"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
             "sku": "POR0006",
@@ -8679,11 +8325,6 @@
                 "years": "2006",
                 "engine": "4.5L V14"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/porsche/alternator86.png",
         "item_specifics": {
@@ -8791,11 +8432,6 @@
                 "engine": "4.3L V6, 5.3L V8, 6.0L V8, 6.2L V8, and 6.6L V8 Diesel"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/chevrolet/alternator88.jpg",
         "item_specifics": {
             "sku": "CHEV0001",
@@ -8847,11 +8483,6 @@
                 "years": "1999-2000",
                 "engine": "5.7L V8"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/cadillac/alternator89.webp",
         "item_specifics": {
@@ -8905,11 +8536,6 @@
                 "engine": "3.0L V6 - Gas"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/infiniti/alternator72.webp",
         "item_specifics": {
             "sku": "INF0001",
@@ -8961,11 +8587,6 @@
                 "years": "2014-2019",
                 "engine": "3.0L V6"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/jeep/alternator73.webp",
         "item_specifics": {
@@ -9030,11 +8651,6 @@
                 "years": "2016",
                 "engine": "2.5L Gas"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/volvo/alternator74.png",
         "item_specifics": {
@@ -9160,11 +8776,6 @@
                 "engine": "5.3L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/gmc/alternator75.png",
         "item_specifics": {
             "sku": "HUM0001",
@@ -9216,11 +8827,6 @@
                 "years": "2012-2013",
                 "engine": "1.6L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/kia/alternator76.png",
         "item_specifics": {
@@ -9286,11 +8892,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/mini/alternator77.png",
         "item_specifics": {
             "sku": "MIN0001",
@@ -9348,11 +8949,6 @@
                 "years": "2008-2010",
                 "engine": "2.4L,2.5L,3.5L"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/scion/alternator79.jpg",
         "item_specifics": {
@@ -9424,11 +9020,6 @@
                 "engine": "6.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/bentley/alternator80.webp",
         "item_specifics": {
             "sku": "BEN0002",
@@ -9492,11 +9083,6 @@
                 "years": "2019-2025",
                 "engine": "2.5L Gas"
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/mazda/alternator84.png",
         "item_specifics": {
@@ -9580,11 +9166,6 @@
                 "engine": "2.0L"
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/volkswagen/alternator87.png",
         "item_specifics": {
             "sku": "VOLK0001",
@@ -9636,11 +9217,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -9694,11 +9270,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0027",
@@ -9750,11 +9321,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -9808,11 +9374,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0029",
@@ -9864,11 +9425,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -9922,11 +9478,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0031",
@@ -9978,11 +9529,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10036,11 +9582,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0033",
@@ -10092,11 +9633,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10150,11 +9686,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0035",
@@ -10206,11 +9737,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10264,11 +9790,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0037",
@@ -10320,11 +9841,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10378,11 +9894,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0039",
@@ -10434,11 +9945,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10492,11 +9998,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0041",
@@ -10548,11 +10049,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10606,11 +10102,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0043",
@@ -10662,11 +10153,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10720,11 +10206,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0045",
@@ -10776,11 +10257,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10834,11 +10310,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0047",
@@ -10890,11 +10361,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -10948,11 +10414,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0049",
@@ -11004,11 +10465,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11062,11 +10518,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/renault/taillight51.jpg",
         "item_specifics": {
             "sku": "REN0051",
@@ -11118,11 +10569,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/renault/taillight52.jpg",
         "item_specifics": {
@@ -11176,11 +10622,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0053",
@@ -11232,11 +10673,6 @@
                 "years": "2017-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11290,11 +10726,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0055",
@@ -11346,11 +10777,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11404,11 +10830,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0057",
@@ -11460,11 +10881,6 @@
                 "years": "2013-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11518,11 +10934,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0059",
@@ -11574,11 +10985,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11632,11 +11038,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0061",
@@ -11688,11 +11089,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11746,11 +11142,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0063",
@@ -11802,11 +11193,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11860,11 +11246,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0065",
@@ -11916,11 +11297,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -11974,11 +11350,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0067",
@@ -12030,11 +11401,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12088,11 +11454,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0069",
@@ -12144,11 +11505,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12202,11 +11558,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0071",
@@ -12258,11 +11609,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12316,11 +11662,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0073",
@@ -12372,11 +11713,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12430,11 +11766,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0075",
@@ -12486,11 +11817,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12544,11 +11870,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0077",
@@ -12600,11 +11921,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12658,11 +11974,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0079",
@@ -12714,11 +12025,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12772,11 +12078,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0081",
@@ -12828,11 +12129,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -12886,11 +12182,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0083",
@@ -12942,11 +12233,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13000,11 +12286,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0085",
@@ -13056,11 +12337,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13114,11 +12390,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0087",
@@ -13170,11 +12441,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13228,11 +12494,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0089",
@@ -13284,11 +12545,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13342,11 +12598,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0091",
@@ -13398,11 +12649,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13456,11 +12702,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0093",
@@ -13512,11 +12753,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13570,11 +12806,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0095",
@@ -13626,11 +12857,6 @@
                 "years": "",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13684,11 +12910,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0097",
@@ -13740,11 +12961,6 @@
                 "years": "2010-2013",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13798,11 +13014,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0099",
@@ -13854,11 +13065,6 @@
                 "years": "2011-2017",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -13912,11 +13118,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0101",
@@ -13968,11 +13169,6 @@
                 "years": "2010-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14026,11 +13222,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0103",
@@ -14082,11 +13273,6 @@
                 "years": "2010-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14140,11 +13326,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0105",
@@ -14196,11 +13377,6 @@
                 "years": "2010-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14254,11 +13430,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0107",
@@ -14310,11 +13481,6 @@
                 "years": "2010-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14368,11 +13534,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0109",
@@ -14424,11 +13585,6 @@
                 "years": "2013-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14482,11 +13638,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0111",
@@ -14538,11 +13689,6 @@
                 "years": "2013-2017",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14596,11 +13742,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0113",
@@ -14652,11 +13793,6 @@
                 "years": "2015-2017",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14710,11 +13846,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
             "sku": "REN0115",
@@ -14766,11 +13897,6 @@
                 "years": "2015-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/renault.webp",
         "item_specifics": {
@@ -14824,11 +13950,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/bumper54.png",
         "item_specifics": {
             "sku": "HON0054",
@@ -14880,11 +14001,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/grille55.png",
         "item_specifics": {
@@ -14938,11 +14054,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/grille55.png",
         "item_specifics": {
             "sku": "HON0056",
@@ -14994,11 +14105,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/bumper56.webp",
         "item_specifics": {
@@ -15052,11 +14158,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/rearbumper57.png",
         "item_specifics": {
             "sku": "HON0058",
@@ -15108,11 +14209,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/honda/foglamp58.png",
         "item_specifics": {
@@ -15166,11 +14262,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/honda/foglamp59.png",
         "item_specifics": {
             "sku": "HON0060",
@@ -15222,11 +14313,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
@@ -15280,11 +14366,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
             "sku": "HON0062",
@@ -15336,11 +14417,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
@@ -15394,11 +14470,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
             "sku": "HON0064",
@@ -15450,11 +14521,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
@@ -15508,11 +14574,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
             "sku": "HON0066",
@@ -15564,11 +14625,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
@@ -15622,11 +14678,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
             "sku": "HON0068",
@@ -15678,11 +14729,6 @@
                 "years": "2016-2018",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/honda.webp",
         "item_specifics": {
@@ -15736,11 +14782,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0028",
@@ -15792,11 +14833,6 @@
                 "years": "2017-2020",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -15850,11 +14886,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0030",
@@ -15906,11 +14937,6 @@
                 "years": "2017-2022",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -15964,11 +14990,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0032",
@@ -16020,11 +15041,6 @@
                 "years": "2017-2024",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16078,11 +15094,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0034",
@@ -16134,11 +15145,6 @@
                 "years": "2017-2026",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16192,11 +15198,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0036",
@@ -16248,11 +15249,6 @@
                 "years": "2017-2028",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16306,11 +15302,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0038",
@@ -16362,11 +15353,6 @@
                 "years": "2017-2030",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16420,11 +15406,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0040",
@@ -16476,11 +15457,6 @@
                 "years": "2017-2032",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16534,11 +15510,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0042",
@@ -16590,11 +15561,6 @@
                 "years": "2017-2034",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16648,11 +15614,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0044",
@@ -16704,11 +15665,6 @@
                 "years": "1995-1999",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16762,11 +15718,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0046",
@@ -16818,11 +15769,6 @@
                 "years": "2000-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16876,11 +15822,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0048",
@@ -16932,11 +15873,6 @@
                 "years": "1998-1999",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -16990,11 +15926,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0050",
@@ -17046,11 +15977,6 @@
                 "years": "1995-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17104,11 +16030,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0052",
@@ -17160,11 +16081,6 @@
                 "years": "2000-2002",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17218,11 +16134,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0054",
@@ -17274,11 +16185,6 @@
                 "years": "2000-2002",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17332,11 +16238,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0056",
@@ -17388,11 +16289,6 @@
                 "years": "1998-2000",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17446,11 +16342,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0058",
@@ -17502,11 +16393,6 @@
                 "years": "2000-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17560,11 +16446,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0060",
@@ -17616,11 +16497,6 @@
                 "years": "2003-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17674,11 +16550,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0062",
@@ -17730,11 +16601,6 @@
                 "years": "2003-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17788,11 +16654,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0065",
@@ -17844,11 +16705,6 @@
                 "years": "2000-2002",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -17902,11 +16758,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0067",
@@ -17958,11 +16809,6 @@
                 "years": "2003-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18016,11 +16862,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0069",
@@ -18072,11 +16913,6 @@
                 "years": "2003-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18130,11 +16966,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0071",
@@ -18186,11 +17017,6 @@
                 "years": "2003-2005",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18244,11 +17070,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0073",
@@ -18300,11 +17121,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18358,11 +17174,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0075",
@@ -18414,11 +17225,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18472,11 +17278,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0077",
@@ -18528,11 +17329,6 @@
                 "years": "2011-2013",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18586,11 +17382,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0079",
@@ -18642,11 +17433,6 @@
                 "years": "2011-2013",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18700,11 +17486,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0081",
@@ -18756,11 +17537,6 @@
                 "years": "2006-2008",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18814,11 +17590,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0083",
@@ -18870,11 +17641,6 @@
                 "years": "2006-2010",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -18928,11 +17694,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0085",
@@ -18984,11 +17745,6 @@
                 "years": "2006-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19042,11 +17798,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0087",
@@ -19098,11 +17849,6 @@
                 "years": "1993-1994",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19156,11 +17902,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0089",
@@ -19212,11 +17953,6 @@
                 "years": "1995-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19270,11 +18006,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0091",
@@ -19326,11 +18057,6 @@
                 "years": "1995-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19384,11 +18110,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0093",
@@ -19440,11 +18161,6 @@
                 "years": "1990-1992",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19498,11 +18214,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0095",
@@ -19554,11 +18265,6 @@
                 "years": "1988-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19612,11 +18318,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0097",
@@ -19668,11 +18369,6 @@
                 "years": "1988-1990",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19726,11 +18422,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0099",
@@ -19782,11 +18473,6 @@
                 "years": "1988-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19840,11 +18526,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0101",
@@ -19896,11 +18577,6 @@
                 "years": "1995-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -19954,11 +18630,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0103",
@@ -20010,11 +18681,6 @@
                 "years": "1990-1992",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20068,11 +18734,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0105",
@@ -20124,11 +18785,6 @@
                 "years": "1998-2000",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20182,11 +18838,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0107",
@@ -20238,11 +18889,6 @@
                 "years": "1993-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20296,11 +18942,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0109",
@@ -20352,11 +18993,6 @@
                 "years": "1995-1998",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20410,11 +19046,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0111",
@@ -20466,11 +19097,6 @@
                 "years": "1993-1997",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20524,11 +19150,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0113",
@@ -20580,11 +19201,6 @@
                 "years": "1995-1998",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20638,11 +19254,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0115",
@@ -20694,11 +19305,6 @@
                 "years": "2005-2009",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20752,11 +19358,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0117",
@@ -20808,11 +19409,6 @@
                 "years": "2004-2017",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20866,11 +19462,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0119",
@@ -20922,11 +19513,6 @@
                 "years": "2005-2007",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -20980,11 +19566,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0121",
@@ -21036,11 +19617,6 @@
                 "years": "2005-2007",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21094,11 +19670,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0123",
@@ -21150,11 +19721,6 @@
                 "years": "2006-2009",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21208,11 +19774,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0125",
@@ -21264,11 +19825,6 @@
                 "years": "2006-2009",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21322,11 +19878,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0127",
@@ -21378,11 +19929,6 @@
                 "years": "2014-2016",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21436,11 +19982,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0129",
@@ -21492,11 +20033,6 @@
                 "years": "2014-2016",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21550,11 +20086,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0131",
@@ -21606,11 +20137,6 @@
                 "years": "2014",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
@@ -21664,11 +20190,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/nissan.webp",
         "item_specifics": {
             "sku": "NIS0133",
@@ -21720,11 +20241,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -21778,11 +20294,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0028",
@@ -21834,11 +20345,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -21892,11 +20398,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0030",
@@ -21948,11 +20449,6 @@
                 "years": "2010-2020",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22006,11 +20502,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0032",
@@ -22062,11 +20553,6 @@
                 "years": "2010-2019",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22120,11 +20606,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0034",
@@ -22176,11 +20657,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22234,11 +20710,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0036",
@@ -22290,11 +20761,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22348,11 +20814,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0038",
@@ -22404,11 +20865,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22462,11 +20918,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0040",
@@ -22518,11 +20969,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22576,11 +21022,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0042",
@@ -22632,11 +21073,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22690,11 +21126,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0044",
@@ -22746,11 +21177,6 @@
                 "years": "2010-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22804,11 +21230,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0046",
@@ -22860,11 +21281,6 @@
                 "years": "2010-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -22918,11 +21334,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0048",
@@ -22974,11 +21385,6 @@
                 "years": "2010-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -23032,11 +21438,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0050",
@@ -23088,11 +21489,6 @@
                 "years": "2010-2015",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
@@ -23146,11 +21542,6 @@
                 "engine": ""
             }
         ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
-        ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {
             "sku": "VOLK0052",
@@ -23202,11 +21593,6 @@
                 "years": "2011-2012",
                 "engine": ""
             }
-        ],
-        "engine": [
-            "1.8",
-            "1.9",
-            "2.0"
         ],
         "image": "/img/car-logos/volkswagon.webp",
         "item_specifics": {

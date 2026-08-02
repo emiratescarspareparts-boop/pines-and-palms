@@ -169,7 +169,7 @@ export default function Product({ make, model, products, allProducts }) {
                                                     ? `${product.pricing.currency} ${product.pricing.price.toLocaleString()}`
                                                     : "Price on Request"
                                                 }
-                                                <span className='text-sm font-thin text-blue-500'>approx.</span></p>
+                                            </p>
                                             <p className="text-sm text-gray-600">
                                                 Compatibility: <br /><span itemProp="compatibility">
                                                     {compatibilityString || `${make} ${model}`}

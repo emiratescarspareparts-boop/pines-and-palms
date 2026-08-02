@@ -164,7 +164,6 @@ export default function Product({ make, products, model, subcategory }) {
                                                     ? `${product.pricing.currency} ${product.pricing.price.toLocaleString()}`
                                                     : "Price on Request"
                                                 }
-                                                <span className='text-sm font-thin text-blue-500'> approx.</span>
                                             </p>
 
                                             <p className="text-sm text-gray-600">

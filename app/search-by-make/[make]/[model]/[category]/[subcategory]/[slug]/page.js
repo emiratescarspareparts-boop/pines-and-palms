@@ -4,6 +4,7 @@ import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
 import { Fira_Sans, Poppins, Roboto } from 'next/font/google';
 import SearchBar from "../../../../../../catalogs/SearchBar";
+import { faProductHunt } from "@fortawesome/free-brands-svg-icons";
 export const revalidate = 86400;
 export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
@@ -45,7 +46,21 @@ const excludedMakes = [
 
 const excludedMakesSet = new Set(excludedMakes);
 
-
+export async function generateStaticParams() {
+    return products
+        .flatMap((product) =>
+            product.compatibility
+                ?.filter((c) => !excludedMakesSet.has(c.make))
+                .map((c) => ({
+                    make: encodeURIComponent(c.make),
+                    model: encodeURIComponent(c.model),
+                    category: encodeURIComponent(product.category),
+                    subcategory: encodeURIComponent(product.subcategory),
+                    slug: `${product.partname}-${c.make}-${c.model}-${c.years}-${product.partnumber}-${product.id}`,
+                })) ?? []
+        )
+        .filter(Boolean);
+}
 export async function generateMetadata({ params }) {
 
     const { make, model, category, subcategory, slug } = params;
@@ -296,9 +311,6 @@ export async function generateMetadata({ params }) {
     };
 }
 
-
-
-
 // page.js — server component, no changes to "use client" needed here
 
 export default function ProductPage({ params, searchParams }) {
@@ -433,7 +445,7 @@ export default function ProductPage({ params, searchParams }) {
                                 <span className="text-black">
                                     {product.pricing?.currency || "AED"}{" "}
                                     {product.pricing?.price?.toLocaleString()}{" "}
-                                    <span className="text-sm text-blue-500">(approx. — inquire for final price)</span>
+                                    <span className="text-sm text-blue-500">( inquire for final price)</span>
                                 </span>
                             </p>
                         )}
@@ -463,6 +475,9 @@ export default function ProductPage({ params, searchParams }) {
                 {/* Interactive tabs still work on top via client component */}
                 <ProductTabs product={product} slug={slug} />
             </section>
+
+            <Symptoms make={decodedMake} model={decodedModel} product={product} years={years} />
+
 
             {/* Related Products */}
             {otherProducts.length > 0 && (
@@ -558,6 +573,16 @@ function StaticPolicies({ product }) {
                 <li><strong>Delivery:</strong> Available to all Emirates — Dubai, Sharjah, Ajman, Abu Dhabi, Al Ain, Fujairah, Umm Al Quwain, Ras Al Khaimah</li>
                 <li><strong>Payment Methods:</strong> {product.policies.payment_methods.join(", ")}</li>
             </ul>
+        </div>
+    );
+}
+
+function Symptoms({ product, make, model, years }) {
+    return (
+        <div className="mt-6 hidden">
+            <h2 className="text-xl font-semibold mb-2">Common Symptoms of {make} {model} {years} {product.item_specifics.partname}</h2>
+            <p>{product.partname}</p>
+
         </div>
     );
 }
