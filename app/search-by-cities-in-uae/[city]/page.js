@@ -240,7 +240,7 @@ export default function City({ params }) {
 
             <div className="grid grid-cols-5 md:grid-cols-4 lg:grid-cols-5 mx-10 md:mx-4 sm:mx-3 xs:grid xs:grid-cols-2 sm:grid sm:grid-cols-3 xxs:grid xxs:grid-cols-2 s:grid s:grid-cols-3 gap-1 xs:mx-4 s:mx-4 xxs:mx-4 md:ml-11 my-10 pb-10 font-sans">
               <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
-                <MapPin size={32} color="darkblue" /> Downtown Dubai
+                <MapPin size={32} color="darkblue" /> Downtown  Dubai
               </div>
               <div className={`flex flex-1 text-center m-1 text-sm xl:text-xl xxl:text-xl font-medium font-sans rounded-sm w-max ${firaSans.className}  rounded-sm`}>
                 <MapPin size={32} color="darkblue" /> Palm Jumeirah
