@@ -1,4 +1,4 @@
-export function buildArticleSchema({ product, canonicalUrl }) {
+export function BuildarticleSchema({ product, canonicalUrl }) {
     const article = product?.article;
     if (!article) return null;
 

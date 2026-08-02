@@ -1,8 +1,7 @@
-// /app/car-spare-parts-failure-symptoms/[headlineId]/page.jsx
 
 import { notFound } from "next/navigation";
 import { products } from "../../../public/products.json";
-import { buildArticleSchema } from "@/components/seo/buildArticleSchema";
+import { buildArticleSchema } from "../../../components/seo/buildArticleSchema";
 import DiagnosisComponent from "../../../components/DiagnosisComponent";
 
 export async function generateMetadata({ params }) {
