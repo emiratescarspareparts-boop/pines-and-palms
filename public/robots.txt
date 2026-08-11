@@ -63,7 +63,6 @@ Disallow: /search-by-make/Mitsubishi/Precis/*
 Disallow: /search-by-make/Mitsubishi/Sigma/*
 Disallow: /search-by-make/Mitsubishi/Truck/*
 Disallow: /search-by-make/Nissan/Datsun%20Nissan%20Z-car/*
-Disallow: /search-by-make/Nissan/Maxima/*
 Disallow: /search-by-make/Plymouth/Laser/*
 Disallow: /search-by-make/Pontiac/6000/*
 Disallow: /search-by-make/Pontiac/Bonneville/*
@@ -394,7 +393,6 @@ Disallow: /search-by-make/Volvo/C70/*
 Disallow: /search-by-make/Volvo/S70/*
 Disallow: /search-by-make/Volvo/V70/*
 Disallow: /search-by-make/Chevrolet/Silverado%201500/*
-Disallow: /search-by-make/Chevrolet/Silverado%202500/*
 Disallow: /search-by-make/Chrysler/300M/*
 Disallow: /search-by-make/Corbin/Sparrow/*
 Disallow: /search-by-make/Daewoo/Lanos/*
@@ -2777,7 +2775,6 @@ Disallow: /search-by-make/Renault/Captur/*
 Disallow: /search-by-make/Renault/Megane%20Cabriolet/*
 Disallow: /search-by-make/Renault/Sandero/*
 Disallow: /search-by-make/Renault/Clio/*
-Disallow: /search-by-make/Renault/Kwid/*
 Disallow: /search-by-make/Renault/Kangoo/*
 Disallow: /search-by-make/Renault/Clio%202/*
 Disallow: /search-by-make/Renault/Laguna%201/*
@@ -2817,7 +2814,6 @@ Disallow: /search-by-make/Renault/Megane%203%20Coupe/*
 Disallow: /search-by-make/Audi/A8%20Quattro%20L/*
 Disallow: /search-by-make/Audi/TTS%20Quattro/*
 Disallow: /search-by-make/Audi/TT%20Quattro/*
-Disallow: /search-by-make/Nissan/Qashqai/*
 Disallow: /search-by-make/Nissan/Note/*
 Disallow: /search-by-make/Toyota/Coaster/*
 Disallow: /search-by-make/Nissan/Navara/*
@@ -3060,7 +3056,6 @@ Disallow: /search-by-make/BMW/E90/*
 Disallow: /search-by-make/BMW/F30/*
 Disallow: /search-by-make/BMW/G20/*
 Disallow: /search-by-make/BMW/E60/*
-Disallow: /search-by-make/BMW/F10/*
 Disallow: /search-by-make/BMW/520i/*
 Disallow: /search-by-make/BMW/F01/*
 Disallow: /search-by-make/BMW/G11/*
