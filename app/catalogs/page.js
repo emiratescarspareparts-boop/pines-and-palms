@@ -5,7 +5,25 @@ export const revalidate = 1814400;
 export const dynamic = 'force-static'
 export const dynamicParams = false;
 
+export function generateStaticParams() {
+    const params = [];
 
+    for (let i = 0; i < products.length; i++) {
+        const p = products[i];
+
+        // You can generate params based on categories, engines, compatibilities
+        params.push({ category: p.category });
+    }
+
+    // Remove duplicates
+    const unique = [];
+    for (let i = 0; i < params.length; i++) {
+        const exists = unique.find((u) => u.category === params[i].category);
+        if (!exists) unique.push(params[i]);
+    }
+
+    return unique;
+}
 export default function CatalogPage({ searchParams }) {
     const {
         "filter_car_parts[]": categories = [],

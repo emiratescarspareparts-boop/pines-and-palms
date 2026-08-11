@@ -45,21 +45,7 @@ const excludedMakes = [
 ];
 
 const excludedMakesSet = new Set(excludedMakes);
-export async function generateStaticParams() {
-    return products
-        .flatMap((product) =>
-            product.compatibility
-                ?.filter((c) => !excludedMakesSet.has(c.make))
-                .map((c) => ({
-                    make: encodeURIComponent(c.make),
-                    model: encodeURIComponent(c.model),
-                    category: encodeURIComponent(product.category),
-                    subcategory: encodeURIComponent(product.subcategory),
-                    slug: `${product.partname}-${c.make}-${c.model}-${c.years}-${product.partnumber}-${product.id}`,
-                })) ?? []
-        )
-        .filter(Boolean);
-}
+
 
 export async function generateMetadata({ params }) {
 
@@ -310,8 +296,21 @@ export async function generateMetadata({ params }) {
         },
     };
 }
-
-// page.js — server component, no changes to "use client" needed here
+export async function generateStaticParams() {
+    return products
+        .flatMap((product) =>
+            product.compatibility
+                ?.filter((c) => !excludedMakesSet.has(c.make))
+                .map((c) => ({
+                    make: encodeURIComponent(c.make),
+                    model: encodeURIComponent(c.model),
+                    category: encodeURIComponent(product.category),
+                    subcategory: encodeURIComponent(product.subcategory),
+                    slug: `${product.partname}-${c.make}-${c.model}-${c.years}-${product.partnumber}-${product.id}`,
+                })) ?? []
+        )
+        .filter(Boolean);
+}
 
 export default function ProductPage({ params, searchParams }) {
     const { make, model, category, subcategory, slug } = params;
@@ -350,7 +349,7 @@ export default function ProductPage({ params, searchParams }) {
     return (
         <main className="max-w-5xl mx-auto p-6">
             <SearchBar allProducts={products} searchParams={searchParams} />
-
+            {category}
             <div
                 className="grid xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-6"
 

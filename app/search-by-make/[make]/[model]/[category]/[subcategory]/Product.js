@@ -139,7 +139,7 @@ export default function Product({ make, products, model, subcategory }) {
                                     itemType="https://schema.org/Product"
                                 >
                                     <Link
-                                        href={`/search-by-make/${make}/${compat?.model || ""}/${product.category}/${product.subcategory}/${encodeURIComponent(slug)}`}
+                                        href={`/search-by-make/${make}/${compat?.model || ""}/${encodeURIComponent(product.category)}/${product.subcategory}/${encodeURIComponent(slug)}`}
                                         className="flex flex-col h-full"
                                         target="_blank"
                                         title={`${make} ${compat?.model || ""} ${compat?.years || ""} ${product.partname}`}

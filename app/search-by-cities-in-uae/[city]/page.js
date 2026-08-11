@@ -79,10 +79,28 @@ function encodeCity(city) {
     .replace(/ /g, '%20')
 }
 
-export function generateStaticParams() {
-  return PRIORITY_CITIES.map(city => ({ city: encodeCity(city) }))
-}
 
+
+export function generateStaticParams() {
+  try {
+    const params = [];
+
+    for (let i = 0; i < CitiesData.length; i++) {
+      const item = CitiesData[i];
+
+      if (!item || !item.city) continue;
+
+      params.push({
+        city: item.city,
+      });
+    }
+
+    return params;
+  } catch (error) {
+    console.error("Error generating static params from JSON:", error);
+    return [];
+  }
+}
 
 
 
