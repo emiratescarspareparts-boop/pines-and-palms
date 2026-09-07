@@ -16,10 +16,10 @@ import subCityBattery from "../../../../../../public/lib/subCityBattery"
 import subCity from "../../../../../../public/lib/subCity.json"
 import FormMakeModelRender from "../../../../../../components/FormMakeModelRender";
 
-export const revalidate = 86400;
+export const revalidate = 604800;
 export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],

@@ -35,6 +35,7 @@ import { NextResponse } from 'next/server';
 // Must exist before `next build`.
 // Add to package.json: "prebuild": "node scripts/generate-middleware-lookup.mjs"
 import { VALID_MAKES, MODEL_INDEX, PRODUCT_COMBOS, PRODUCT_IDS } from './lib/middleware-lookup';
+// middleware.ts — add at very top of middleware function
 
 // ─── Static data ──────────────────────────────────────────────────────────────
 
@@ -107,7 +108,12 @@ function redirect301(destination) {
 export function middleware(request) {
     const { pathname } = request.nextUrl;
     const ua = request.headers.get('user-agent') || '';
+    const url = request.nextUrl
 
+    if (Array.from(url.searchParams.keys()).some(k => k.startsWith('nxtP'))) {
+        const cleanUrl = new URL(url.pathname, request.url)
+        return NextResponse.redirect(cleanUrl, { status: 301 })
+    }
     // Bot check — runs first
     if (BLOCKED_BOTS.test(ua)) {
         return new NextResponse('Access Denied', { status: 403 });

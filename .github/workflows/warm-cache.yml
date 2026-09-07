@@ -1,0 +1,47 @@
+name: Warm Cache After Deploy
+
+on:
+  deployment_status:
+
+jobs:
+  warm-cache:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Production'
+
+    steps:
+      - name: Wait for deployment to stabilize
+        run: sleep 30
+
+      - name: Warm segment 0 (URLs 1-500)
+        run: |
+          curl -f "https://www.emirates-car.com/api/warm-cache?secret=${{ secrets.WARM_CACHE_SECRET }}&segment=0"
+          echo "Segment 0 complete"
+
+      - name: Wait between segments
+        run: sleep 90
+
+      - name: Warm segment 1 (URLs 501-1000)
+        run: |
+          curl -f "https://www.emirates-car.com/api/warm-cache?secret=${{ secrets.WARM_CACHE_SECRET }}&segment=1"
+          echo "Segment 1 complete"
+
+      - name: Wait between segments
+        run: sleep 90
+
+      - name: Warm segment 2 (URLs 1001-1500)
+        run: |
+          curl -f "https://www.emirates-car.com/api/warm-cache?secret=${{ secrets.WARM_CACHE_SECRET }}&segment=2"
+          echo "Segment 2 complete"
+
+      - name: Wait between segments
+        run: sleep 90
+
+      - name: Warm segment 3 (URLs 1501-2000)
+        run: |
+          curl -f "https://www.emirates-car.com/api/warm-cache?secret=${{ secrets.WARM_CACHE_SECRET }}&segment=3"
+          echo "Segment 3 complete"
+
+      - name: All done
+        run: echo "✅ All segments warmed successfully"

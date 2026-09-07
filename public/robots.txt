@@ -377,14 +377,12 @@ Disallow: /search-by-make/Oldsmobile/Cutlass/*
 Disallow: /search-by-make/Oldsmobile/LSS/*
 Disallow: /search-by-make/Oldsmobile/Regency/*
 Disallow: /search-by-make/Plymouth/Prowler/*
-Disallow: /search-by-make/Porsche/Boxster/*
 Disallow: /search-by-make/Volvo/V90/*
 Disallow: /search-by-make/Chevrolet/Metro/*
 Disallow: /search-by-make/Chevrolet/Prizm/*
 Disallow: /search-by-make/Chevrolet/Tracker/*
 Disallow: /search-by-make/Mercedes-Benz/CL-Class/*
 Disallow: /search-by-make/Mercedes-Benz/CLK-Class/*
-Disallow: /search-by-make/Mercedes-Benz/M-Class/*
 Disallow: /search-by-make/Nissan/Frontier/*
 Disallow: /search-by-make/Oldsmobile/Intrigue/*
 Disallow: /search-by-make/Subaru/Forester/*
@@ -495,7 +493,6 @@ Disallow: /search-by-make/Mitsubishi/Outlander/*
 Disallow: /search-by-make/Nissan/350Z/*
 Disallow: /search-by-make/Nissan/Murano/*
 Disallow: /search-by-make/Pontiac/Vibe/*
-Disallow: /search-by-make/Porsche/Cayenne/*
 Disallow: /search-by-make/Saturn/Ion/*
 Disallow: /search-by-make/Subaru/Baja/*
 Disallow: /search-by-make/Toyota/Matrix/*
@@ -520,7 +517,6 @@ Disallow: /search-by-make/Mitsubishi/Endeavor/*
 Disallow: /search-by-make/Nissan/Pathfinder%20Armada/*
 Disallow: /search-by-make/Nissan/Titan/*
 Disallow: /search-by-make/Pontiac/GTO/*
-Disallow: /search-by-make/Porsche/Carrera%20GT/*
 Disallow: /search-by-make/Spyker/C8%20Laviolette/*
 Disallow: /search-by-make/Spyker/C8%20Spyder/*
 Disallow: /search-by-make/Spyker/C8%20Spyder%20Wide%20Body/*
@@ -552,7 +548,6 @@ Disallow: /search-by-make/Maybach/57S/*
 Disallow: /search-by-make/Mercedes-Benz/SLR%20McLaren/*
 Disallow: /search-by-make/Mercury/Mariner/*
 Disallow: /search-by-make/Mercury/Montego/*
-Disallow: /search-by-make/Nissan/Armada/*
 Disallow: /search-by-make/Panoz/Esperante/*
 Disallow: /search-by-make/Pontiac/Daewoo%20Kalos/*
 Disallow: /search-by-make/Pontiac/G6/*
@@ -568,7 +563,6 @@ Disallow: /search-by-make/Volvo/V50/*
 Disallow: /search-by-make/Aston%20Martin/DB9%20Volante/*
 Disallow: /search-by-make/Aston%20Martin/V8%20Vantage/*
 Disallow: /search-by-make/Aston%20Martin/Vantage/*
-Disallow: /search-by-make/Bentley/Azure/*
 Disallow: /search-by-make/Bentley/Continental%20GT/*
 Disallow: /search-by-make/BMW/550/*
 Disallow: /search-by-make/BMW/650/*
@@ -626,7 +620,6 @@ Disallow: /search-by-make/Nissan/350Z%20Roadster/*
 Disallow: /search-by-make/Peugeot/207/*
 Disallow: /search-by-make/Pontiac/Solstice/*
 Disallow: /search-by-make/Pontiac/Torrent/*
-Disallow: /search-by-make/Porsche/Cayman/*
 Disallow: /search-by-make/Saturn/Vue/*
 Disallow: /search-by-make/Spyker/C8%20Double%2012%20S/*
 Disallow: /search-by-make/Subaru/B9%20Tribeca/*
@@ -657,7 +650,6 @@ Disallow: /search-by-make/Kia/Carens/*
 Disallow: /search-by-make/Kia/Rondo/*
 Disallow: /search-by-make/Mazda/Mazdaspeed%203/*
 Disallow: /search-by-make/Mercedes-Benz/GL-Class/*
-Disallow: /search-by-make/Nissan/Versa/*
 Disallow: /search-by-make/Pontiac/G5/*
 Disallow: /search-by-make/Saturn/Aura/*
 Disallow: /search-by-make/Saturn/Outlook/*
@@ -729,12 +721,10 @@ Disallow: /search-by-make/Hyundai/Genesis%20Coupe/*
 Disallow: /search-by-make/Kia/Forte/*
 Disallow: /search-by-make/Lamborghini/Murcelago/*
 Disallow: /search-by-make/Land%20Rover/Defender%20Ice%20Edition/*
-Disallow: /search-by-make/Land%20Rover/LR4/*
 Disallow: /search-by-make/Lexus/HS/*
 Disallow: /search-by-make/Lexus/LS%20Hybrid/*
 Disallow: /search-by-make/Lotus/Evora/*
 Disallow: /search-by-make/Mercedes-Benz/Sprinter/*
-Disallow: /search-by-make/Porsche/Panamera/*
 Disallow: /search-by-make/Rolls-Royce/Ghost/*
 Disallow: /search-by-make/Subaru/Impreza%20WRX/*
 Disallow: /search-by-make/Suzuki/Kizashi/*
@@ -1270,7 +1260,6 @@ Disallow: /search-by-make/Nissan/Armada%202WD/*
 Disallow: /search-by-make/Nissan/Armada%204WD/*
 Disallow: /search-by-make/Nissan/Frontier%202WD/*
 Disallow: /search-by-make/Nissan/Frontier%204WD/*
-Disallow: /search-by-make/Nissan/Juke/*
 Disallow: /search-by-make/Nissan/Juke%20AWD/*
 Disallow: /search-by-make/Nissan/Murano%20AWD/*
 Disallow: /search-by-make/Nissan/Murano%20CrossCabriolet/*
@@ -2096,7 +2085,6 @@ Disallow: /search-by-make/Acura/RDX%20AWD%20A-SPEC/*
 Disallow: /search-by-make/Acura/RDX%20FWD%20A-SPEC/*
 Disallow: /search-by-make/Alfa%20Romeo/Stelvio/*
 Disallow: /search-by-make/Audi/e-tron/*
-Disallow: /search-by-make/Audi/Q8/*
 Disallow: /search-by-make/Audi/RS%205%20Sportback/*
 Disallow: /search-by-make/BMW/i3%20with%20Range%20Extender/*
 Disallow: /search-by-make/BMW/i3s/*
@@ -2769,7 +2757,6 @@ Disallow: /search-by-make/Ford/E%20450%20Super%20Duty/*
 Disallow: /search-by-make/Renault/Duster/*
 Disallow: /search-by-make/Renault/Megane/*
 Disallow: /search-by-make/Renault/Koleos/*
-Disallow: /search-by-make/Renault/Fluence/*
 Disallow: /search-by-make/Renault/Espace/*
 Disallow: /search-by-make/Renault/Captur/*
 Disallow: /search-by-make/Renault/Megane%20Cabriolet/*
@@ -2818,8 +2805,6 @@ Disallow: /search-by-make/Nissan/Note/*
 Disallow: /search-by-make/Toyota/Coaster/*
 Disallow: /search-by-make/Nissan/Navara/*
 Disallow: /search-by-make/Nissan/Atleon/*
-Disallow: /search-by-make/Nissan/Magnite/*
-Disallow: /search-by-make/Nissan/Micra/*
 Disallow: /search-by-make/Nissan/Sylphy/*
 Disallow: /search-by-make/Nissan/Terrano/*
 Disallow: /search-by-make/Nissan/Bluebird/*
@@ -2832,7 +2817,6 @@ Disallow: /search-by-make/Nissan/Patrol%20Super%20Safari/*
 Disallow: /search-by-make/Nissan/400Z/*
 Disallow: /search-by-make/Nissan/Almera%20Tino/*
 Disallow: /search-by-make/Nissan/Skyline/*
-Disallow: /search-by-make/Nissan/Urvan/*
 Disallow: /search-by-make/Nissan/280Z/*
 Disallow: /search-by-make/Peugeot/208/*
 Disallow: /search-by-make/Peugeot/3008/*
@@ -2908,7 +2892,6 @@ Disallow: /search-by-make/Dodge/Challenger%20Coupe/*
 Disallow: /search-by-make/Jaguar/XTR/*
 Disallow: /search-by-make/Jaguar/F-Type/*
 Disallow: /search-by-make/Jaguar/XJR/*
-Disallow: /search-by-make/GMC/Acadia%20Limited/*
 Disallow: /search-by-make/Honda/CR-V%20Hybrid/*
 Disallow: /search-by-make/Volkswagen/Lupo/*
 Disallow: /search-by-make/Volkswagen/Passat%20CC/*
@@ -2919,12 +2902,8 @@ Disallow: /search-by-make/Volkswagen/ID.7/*
 Disallow: /search-by-make/Volkswagen/Tayron/*
 Disallow: /search-by-make/Volkswagen/Bora/*
 Disallow: /search-by-make/Mercedes-Benz/G-Class%20G63%20AMG/*
-Disallow: /search-by-make/Mercedes-Benz/AMG/*
 Disallow: /search-by-make/Mercedes-Benz/GLC/*
-Disallow: /search-by-make/Mercedes-Benz/GLE%20Coupe/*
 Disallow: /search-by-make/Mercedes-Benz/G-Class%20Brabus/*
-Disallow: /search-by-make/Mercedes-Benz/V-Class/*
-Disallow: /search-by-make/Mercedes-Benz/GLC-Coupe/*
 Disallow: /search-by-make/Mercedes-Benz/CLE-Class/*
 Disallow: /search-by-make/Mercedes-Benz/GLB/*
 Disallow: /search-by-make/Mercedes-Benz/SLS/*
@@ -2956,7 +2935,6 @@ Disallow: /search-by-make/Alfa%20Romeo/Mito/*
 Disallow: /search-by-make/Fiat/500%20(312)/*
 Disallow: /search-by-make/Fiat/Panda/*
 Disallow: /search-by-make/Fiat/Tipo/*
-Disallow: /search-by-make/Chevrolet/Silverado%202500%20HD/*
 Disallow: /search-by-make/GMC/Sierra%202500%20HD/*
 Disallow: /search-by-make/GMC/Sierra%203500%20HD/*
 Disallow: /search-by-make/BYD/Leopard%205/*
@@ -2985,7 +2963,6 @@ Disallow: /search-by-make/Daihatsu/Delta/*
 Disallow: /search-by-make/Daihatsu/Duet/*
 Disallow: /search-by-make/Daihatsu/Feroza/*
 Disallow: /search-by-make/Daihatsu/Mira/*
-Disallow: /search-by-make/Daihatsu/Move/*
 Disallow: /search-by-make/Daihatsu/Pyzar/*
 Disallow: /search-by-make/Daihatsu/Sirion/*
 Disallow: /search-by-make/Daihatsu/Terios/*

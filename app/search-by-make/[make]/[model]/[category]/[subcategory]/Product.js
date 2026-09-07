@@ -104,6 +104,40 @@ export default function Product({ make, products, model, subcategory }) {
         return compatibilityStrings.join(', ');
     };
 
+    const getMakeModelYearsOfProduct = (product, make, model) => {
+        const yearsSet = new Set();
+
+        product.compatibility?.forEach(compat => {
+            if (
+                compat.make?.toLowerCase() === make.toLowerCase() &&
+                compat.model?.toLowerCase() === model.toLowerCase() &&
+                compat.years
+            ) {
+                const yearString = compat.years.toString();
+
+                if (yearString.includes(',')) {
+                    yearString.split(',').forEach(y => {
+                        const year = y.trim();
+                        if (year) yearsSet.add(year);
+                    });
+                } else if (yearString.includes('-')) {
+                    const [start, end] = yearString.split('-').map(y => parseInt(y.trim()));
+                    for (let year = start; year <= end; year++) {
+                        yearsSet.add(year.toString());
+                    }
+                } else {
+                    yearsSet.add(yearString.trim());
+                }
+            }
+        });
+
+        const years = Array.from(yearsSet).sort((a, b) => parseInt(a) - parseInt(b));
+
+        if (years.length === 0) return '';
+        if (years.length === 1) return years[0];
+        return `${years[0]}-${years[years.length - 1]}`;
+    };
+
     return (
         <div>
             {/* Results Grid */}
@@ -127,6 +161,7 @@ export default function Product({ make, products, model, subcategory }) {
                                 compat = compatList[index];
                             }
                             const compatibilityString = getProductCompatibility(product);
+                            const yearString = getMakeModelYearsOfProduct(product, make, model)
 
 
                             const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
@@ -157,8 +192,9 @@ export default function Product({ make, products, model, subcategory }) {
 
                                         <figcaption className="p-3">
                                             <h2 className="font-semibold line-clamp-3" itemProp="name">
-                                                {product.partname} for {make} {compatibilityString || compat?.years}
+                                                {make} {model} {yearString || `${make} ${model}`} {product.partname}
                                             </h2>
+
                                             <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>
                                                 {product.pricing.price > 1
                                                     ? `${product.pricing.currency} ${product.pricing.price.toLocaleString()}`
@@ -168,7 +204,7 @@ export default function Product({ make, products, model, subcategory }) {
 
                                             <p className="text-sm text-gray-600">
                                                 Compatibility: <br /><span itemProp="compatibility">
-                                                    {compatibilityString || `${make} ${model}`}
+                                                    {compatibilityString || compat?.years}
                                                 </span>
                                             </p>
                                             <p className="text-sm text-gray-600">
