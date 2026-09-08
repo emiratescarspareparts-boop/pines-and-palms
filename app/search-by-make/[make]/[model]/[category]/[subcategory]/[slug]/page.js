@@ -4,9 +4,8 @@ import PartInquiryForm from "./PartInquiryForm";
 import ProductTabs from "./ProductTabs";
 import { Fira_Sans, Poppins, Roboto } from 'next/font/google';
 import SearchBar from "../../../../../../catalogs/SearchBar";
-import { faProductHunt } from "@fortawesome/free-brands-svg-icons";
 export const revalidate = 86400;
-export const dynamic = 'force-static'
+export const runtime = 'nodejs';
 export const fetchCache = 'force-cache';
 export const dynamicParams = false;
 
