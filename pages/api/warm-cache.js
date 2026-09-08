@@ -113,22 +113,12 @@ export default async function handler(req, res) {
     const { secret, segment: segmentParam } = req.query
     const segment = parseInt(segmentParam || '0')
 
-    console.log('ENV secret:', process.env.WARM_CACHE_SECRET)
-    console.log('Received secret:', secret)
 
     if (secret !== process.env.WARM_CACHE_SECRET) {
         return res.status(401).json({ error: 'Unauthorized' })
     }
 
     const urls = generateUrls(segment)
-
-    console.log(`\n🔥 SEGMENT ${segment} — ${urls.length} URLs to warm:`)
-    console.log('─'.repeat(60))
-    urls.forEach((url, i) => {
-        console.log(`${i + 1}. ${url}`)
-    })
-    console.log('─'.repeat(60))
-    console.log(`Starting warm...\n`)
 
     const startTime = Date.now()
     const results = []
@@ -143,7 +133,6 @@ export default async function handler(req, res) {
                     try {
                         new URL(url)
                     } catch (e) {
-                        console.log(`⚠️  Invalid URL, skipping → "${url}"`)
                         return { url, status: 'invalid-url', ms: 0 }
                     }
 
@@ -153,10 +142,8 @@ export default async function handler(req, res) {
                             headers: { 'User-Agent': 'Emirates-Car-Warmer/1.0' }
                         })
                         const ms = Date.now() - start
-                        console.log(`✅ ${r.status} ${ms}ms → ${url}`)
                         return { url, status: r.status, ms }
                     } catch (e) {
-                        console.log(`❌ Fetch failed → ${url} (${e.message})`)
                         return { url, status: 'error', ms: 0 }
                     }
                 })
@@ -173,11 +160,6 @@ export default async function handler(req, res) {
     const duration = Math.round((Date.now() - startTime) / 1000)
     const success = results.filter(r => r.status === 200).length
     const failed = results.filter(r => r.status !== 200).length
-
-    console.log(`\n✅ SEGMENT ${segment} COMPLETE`)
-    console.log(`Duration: ${duration}s`)
-    console.log(`Success: ${success}`)
-    console.log(`Failed: ${failed}`)
 
     return res.status(200).json({
         segment,
