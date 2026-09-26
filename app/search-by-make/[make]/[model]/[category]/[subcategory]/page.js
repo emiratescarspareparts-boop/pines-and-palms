@@ -19,7 +19,7 @@ import FormMakeModelRender from "../../../../../../components/FormMakeModelRende
 export const revalidate = 604800;
 export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
