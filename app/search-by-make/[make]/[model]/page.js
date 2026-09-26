@@ -76,7 +76,6 @@ for (let i = 0; i < CarData.length; i++) {
   carDataByMake[makeLower].push(car);
 }
 
-
 const playfair_display = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',

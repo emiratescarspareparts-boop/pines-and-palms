@@ -13,7 +13,7 @@ import FormRender from '../../../components/FormRender';
 export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
 export const dynamicParams = true
-export const revalidate = 86400
+export const revalidate = 1814400
 
 const firaSans = Fira_Sans({
   weight: ['400', '700'],
