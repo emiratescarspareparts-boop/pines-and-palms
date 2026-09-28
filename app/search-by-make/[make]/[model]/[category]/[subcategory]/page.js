@@ -424,13 +424,13 @@ function getModel(make) {
 //     'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
 //     'Infiniti', 'Cadillac', 'GMC', 'Volvo'
 // ]);
-
 const topMakes = new Set([
-    'Toyota', 'Honda', 'BMW', 'Mercedes-Benz', 'Nissan', 'Ford',
-    'Audi', 'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep',
-    'Land Rover', 'Porsche', 'Chevrolet', 'Dodge',
-    'Infiniti', 'Cadillac', 'GMC', 'Volvo', 'Mazda', 'Audi'
+    'Toyota', 'Honda', 'Mercedes-Benz', 'Nissan',
+    'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep'
+    , 'Chevrolet',
+    'Infiniti', 'Cadillac', 'GMC', 'Volvo'
 ]);
+
 
 
 export default function SubcategoryPage({ params }) {
