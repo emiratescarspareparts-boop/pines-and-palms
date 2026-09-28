@@ -10,7 +10,7 @@ export const dynamic = 'force-static'
 export const dynamicParams = false;
 import CarData from "../../public/lib/car-data.json"
 import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import { BadgeCheck, Car, Clock, LeafyGreen, LinkIcon, MapPin, Recycle, Zap } from 'lucide-react';
+import { BadgeCheck, Car, Clock, LinkIcon, MapPin, Recycle, Zap } from 'lucide-react';
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],

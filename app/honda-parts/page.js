@@ -2,7 +2,6 @@ import Footer from '../../components/footer';
 import Link from 'next/link';
 import OtherHondaModels from '../../components/OtherHondaModels';
 import Image from 'next/image';
-import FeaturedHonda from '../../components/featured';
 export const revalidate = 86400;
 export const runtime = 'nodejs';
 export const dynamicParams = false;
@@ -213,7 +212,6 @@ export default function HondaParts() {
               List of different Genuine and Aftermarket Honda spare parts in UAE
             </p>
 
-            <FeaturedHonda />
             <Link
               href="https://www.emirates-car.com/get-in-touch"
               className="w-1/4 mx-auto flex items-center justify-center px-8 py-2 xl:text-xl border border-transparent font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-2 md:text-md mg:text-lg md:px-5 xs:py-2 xs:text-xs xs:my-2 2xs:text-sm 2xs:my-2 s:text-sm s:my-2 focus:filter brightness-125 my-5"
