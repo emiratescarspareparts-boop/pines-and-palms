@@ -60,77 +60,77 @@ const selectedParts = [
 ]
 
 
-// export function generateStaticParams() {
-//     try {
-//         const unique = new Set();
-//         const params = [];
-
-//         for (const product of productsFile) {
-//             if (!product || !product.compatibility) continue;
-
-//             const category = product.category?.trim();
-//             const subcategory = product.subcategory?.trim();
-
-//             if (!category || !subcategory) continue;
-
-//             for (const fit of product.compatibility) {
-//                 const make = fit.make?.trim();
-//                 const model = fit.model?.trim();
-
-//                 if (!make || !model || excludedMakesSet.has(make)) continue;
-
-//                 const key = `${make}|${model}|${category}|${subcategory}`;
-
-//                 if (!unique.has(key)) {
-//                     unique.add(key);
-//                     params.push({
-//                         make,
-//                         model,
-//                         category,
-//                         subcategory,
-//                     });
-//                 }
-//             }
-//         }
-
-//         return params;
-//     } catch (error) {
-//         console.error("Error generating static params", error);
-//         return [];
-//     }
-// }
 export function generateStaticParams() {
-    const unique = new Set();
-    const params = [];
+    try {
+        const unique = new Set();
+        const params = [];
 
-    for (let i = 0; i < CarData.length; i++) {
-        const car = CarData[i];
-        if (!car.seo || excludedMakesSet.has(car.make)) continue;
-        if (!topMakes.has(car.make)) continue; // only pre-build top makes
+        for (const product of productsFile) {
+            if (!product || !product.compatibility) continue;
 
-        for (let j = 0; j < selectedParts.length; j++) {
-            const subcategory = selectedParts[j];
-            const partEntry = partsData.find(
-                p => p.parts?.toLowerCase() === subcategory.toLowerCase()
-            );
-            if (!partEntry?.category) continue;
+            const category = product.category?.trim();
+            const subcategory = product.subcategory?.trim();
 
-            const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
-            if (!unique.has(key)) {
-                unique.add(key);
-                params.push({
-                    make: car.make,
-                    model: car.model,
-                    category: partEntry.category,
-                    subcategory: subcategory,
-                });
+            if (!category || !subcategory) continue;
+
+            for (const fit of product.compatibility) {
+                const make = fit.make?.trim();
+                const model = fit.model?.trim();
+
+                if (!make || !model || excludedMakesSet.has(make)) continue;
+
+                const key = `${make}|${model}|${category}|${subcategory}`;
+
+                if (!unique.has(key)) {
+                    unique.add(key);
+                    params.push({
+                        make,
+                        model,
+                        category,
+                        subcategory,
+                    });
+                }
             }
         }
-    }
 
-    console.log(`✓ Generated ${params.length} pages`);
-    return params;
+        return params;
+    } catch (error) {
+        console.error("Error generating static params", error);
+        return [];
+    }
 }
+// export function generateStaticParams() {
+//     const unique = new Set();
+//     const params = [];
+
+//     for (let i = 0; i < CarData.length; i++) {
+//         const car = CarData[i];
+//         if (!car.seo || excludedMakesSet.has(car.make)) continue;
+//         if (!topMakes.has(car.make)) continue; // only pre-build top makes
+
+//         for (let j = 0; j < selectedParts.length; j++) {
+//             const subcategory = selectedParts[j];
+//             const partEntry = partsData.find(
+//                 p => p.parts?.toLowerCase() === subcategory.toLowerCase()
+//             );
+//             if (!partEntry?.category) continue;
+
+//             const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
+//             if (!unique.has(key)) {
+//                 unique.add(key);
+//                 params.push({
+//                     make: car.make,
+//                     model: car.model,
+//                     category: partEntry.category,
+//                     subcategory: subcategory,
+//                 });
+//             }
+//         }
+//     }
+
+//     console.log(`✓ Generated ${params.length} pages`);
+//     return params;
+// }
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
@@ -424,12 +424,6 @@ function getModel(make) {
 //     'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
 //     'Infiniti', 'Cadillac', 'GMC', 'Volvo'
 // ]);
-const topMakes = new Set([
-    'Toyota', 'Honda', 'Mercedes-Benz', 'Nissan',
-    'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep'
-    , 'Chevrolet',
-    'Infiniti', 'Cadillac', 'GMC', 'Volvo'
-]);
 
 
 
