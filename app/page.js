@@ -14,7 +14,6 @@ import SearchBar from './catalogs/SearchBar';
 import products from "../public/products.json"
 import FormRender from '../components/FormRender';
 import nextDynamic from 'next/dynamic'
-const ChatWidget = nextDynamic(() => import("../components/ChatWidget"), { ssr: false });
 
 
 export const revalidate = 1814400;
