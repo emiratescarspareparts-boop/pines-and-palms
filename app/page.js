@@ -13,7 +13,6 @@ import { Fira_Sans } from 'next/font/google';
 import SearchBar from './catalogs/SearchBar';
 import products from "../public/products.json"
 import FormRender from '../components/FormRender';
-import nextDynamic from 'next/dynamic'
 
 
 export const revalidate = 1814400;
@@ -121,7 +120,6 @@ export default async function Home({ searchParams }) {
 
   return (
     <div>
-      <ChatWidget />
       <SearchBar allProducts={products} searchParams={searchParams} />
       <section
         className="py-5 xxs:py-0 xs:py-0 s:py-0 sm:px-7 lg:mx-6 md:mx-6 xs:px-0 s:px-2 max-w-7xl mx-auto"
