@@ -19,7 +19,7 @@ import FormMakeModelRender from "../../../../../../components/FormMakeModelRende
 export const revalidate = 604800;
 export const dynamic = 'force-static'
 export const fetchCache = 'force-cache';
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const playfair_display = Playfair_Display({
     subsets: ["latin"],
@@ -674,7 +674,7 @@ export default function SubcategoryPage({ params }) {
                             } else if (isSelectedPart && hasSEO) {
                                 // Part is in the selected tier list AND make/model has seo=true
                                 linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]';
-                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(post.parts)}`;
+                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(post.category)}/${encodeURIComponent(post.parts)}`;
                             } else {
                                 // Part is not in the selected tier list
                                 linkHref = '/search-by-part-name/[parts]';
@@ -992,7 +992,7 @@ export default function SubcategoryPage({ params }) {
                             } else if (isSelectedPart && hasSEO) {
                                 // Part is in the selected tier list AND make/model has seo=true
                                 linkHref = '/search-by-make/[make]/[model]/[category]/[subcategory]';
-                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(category)}/${encodeURIComponent(post.parts)}`;
+                                linkAs = `/search-by-make/${make}/${encodeURIComponent(model)}/${encodeURIComponent(post.category)}/${encodeURIComponent(post.parts)}`;
                             } else {
                                 // Part is not in the selected tier list
                                 linkHref = '/search-by-part-name/[parts]';

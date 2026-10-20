@@ -147,6 +147,11 @@ module.exports = withPWA({
         destination: '/search-by-make/Honda/Accord/Electrical%20%26%20Electronics/Alternator/Alternator%20Assembly-Honda-Accord-2018-31100-5PA-A02-46',
         permanent: true,
       },
+      {
+        source: '/search-by-make/Honda/Accord/Glass%20%26%20Mirrors/Alternator',
+        destination: '/search-by-make/Honda/Accord/Electrical%20%26%20Electronics/Alternator',
+        permanent: true,
+      },
     ];
   },
   staticPageGenerationTimeout: 180,

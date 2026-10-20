@@ -21588,5 +21588,251 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 1008,
+        "subcategory": "Headlight Assembly",
+        "category": "Lighting & Lamps",
+        "partname": "Right Headlight",
+        "partnumber": "2229067803",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2017-2020",
+                "engine": "4.0 L Petrol M 177.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350",
+                "years": "2017-2020",
+                "engine": "3 L Diesel OM 656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350 4-matic",
+                "years": "2017-2020",
+                "engine": "2.9 L Diesel OM 656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400",
+                "years": "2017-2020",
+                "engine": "2.9L Diesel OM 656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 4-matic",
+                "years": "2.9L Diesel OM656.929",
+                "engine": ""
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost",
+                "years": "2017-2020",
+                "engine": "3L Mild Hybrid Petrol/Electric M256.930"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost 4-matic",
+                "years": "2017-2020",
+                "engine": "3L M256.930 Petrol/Electric"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 EQ Boost",
+                "years": "2017-2020",
+                "engine": "3L Mild Hybrid M 256.930"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S560",
+                "years": "2017-2020",
+                "engine": "4L Petrol M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560",
+                "years": "2017-2020",
+                "engine": "4 L Petrol M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S560 Maybach 4matic",
+                "years": "2017-2020",
+                "engine": "4L Petrol Engine M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S650",
+                "years": "2017-2020",
+                "engine": "6L Petrol M 279.980"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mercedes/1.jpeg",
+        "item_specifics": {
+            "sku": "BEN0027",
+            "Brand": "Magneti Marelli",
+            "Manufacturer Part Number": 2229067803,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "A2229061905,A2229062005, A2229067703, A2229067803, 2229068704, 2229068804, 2229065904, 2229066004, 2229067703, 2229067803, A2229062405, A2229062305, 711451000375 711451000376 LPR401 LPR402, A2229061905 A2229062005 A2229067703 A2229067803, MERCEDES V222 W222 X222 Sedan"
+            ],
+            "Placement on Vehicle": [
+                "Front"
+            ],
+            "Condition": "New",
+            "Material": "LED",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Italian",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Magneti Marelli Right Headlight. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 1009,
+        "subcategory": "Headlight Assembly",
+        "category": "Lighting & Lamps",
+        "partname": "Left Headlight",
+        "partnumber": "2229067703",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2017-2020",
+                "engine": "4.0 L Petrol M 177.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350",
+                "years": "2017-2020",
+                "engine": "3 L Diesel OM 656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350 4-matic",
+                "years": "2.9 L Diesel OM 656.929",
+                "engine": ""
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400",
+                "years": "2017-2020",
+                "engine": "2.9L Diesel OM 656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 4-matic",
+                "years": "2017-2020",
+                "engine": "2.9L Diesel OM656.929"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost",
+                "years": "2017-2020",
+                "engine": "3L Mild Hybrid Petrol/Electric M256.930"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost 4-matic",
+                "years": "2017-2020",
+                "engine": "3L M256.930 Petrol/Electric"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 EQ Boost",
+                "years": "2017-2020",
+                "engine": "3L Mild Hybrid M 256.930"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S560",
+                "years": "2017-2020",
+                "engine": "4L Petrol M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560",
+                "years": "2017-2020",
+                "engine": "4 L Petrol M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S560 Maybach 4matic",
+                "years": "2017-2020",
+                "engine": "4L Petrol Engine M 176.980"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S650",
+                "years": "2017-2020",
+                "engine": "6L Petrol M 279.980"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mercedes/1.jpeg",
+        "item_specifics": {
+            "sku": "BEN0028",
+            "Brand": "Magneti Marelli",
+            "Manufacturer Part Number": 2229067703,
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "711451000375 711451000376 LPR401 LPR402, A2229061905 A2229062005 A2229067703 A2229067803, MERCEDES V222 W222 X222 Sedan, A2229061905,A2229062005, A2229067703, A2229067803, 2229068704, 2229068804, 2229065904, 2229066004, 2229067703, 2229067803, A2229062405, A2229062305"
+            ],
+            "Placement on Vehicle": [
+                "Front"
+            ],
+            "Condition": "New",
+            "Material": "LED",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Italian",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Magneti Marelli Left Headlight. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
