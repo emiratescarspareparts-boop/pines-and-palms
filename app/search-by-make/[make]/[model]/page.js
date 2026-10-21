@@ -295,11 +295,8 @@ export function generateMetadata({ params }) {
   const now = new Date();
   const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
 
-  const productData = productsForMake.map((product, listIndex) => {
-    const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-    const rotationPeriod = Math.floor(days / 3);
-
-    // ✅ Filter & deduplicate compatibility entries for this make+model
+  const productData = productsForMake.map((product) => {
+    // Filter & deduplicate compatibility entries for this make+model
     const makeModelCompat = product.compatibility?.filter(
       c =>
         c.make.toLowerCase() === make.toLowerCase() &&
@@ -311,14 +308,10 @@ export function generateMetadata({ params }) {
         arr.findIndex(x => x.model === c.model && x.years === c.years) === i
     );
 
-    // ✅ Rotate through this product's own compat entries
-    const rotatedIndex = uniqueCompat.length > 0
-      ? (rotationPeriod + listIndex) % uniqueCompat.length
-      : 0;
+    // Stable: always use the first compat entry (no rotation)
+    const compat = uniqueCompat[0];
 
-    const compat = uniqueCompat[rotatedIndex];
-
-    // ✅ Encode every path segment
+    // Encode every path segment
     const slugRaw = `${product.partname}-${make}-${compat?.model || model}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
     const slug = encodeURIComponent(slugRaw);
 

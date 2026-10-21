@@ -158,6 +158,7 @@ function getModel(make) {
   return Object.values(uniqueModels);
 }
 
+
 export function generateMetadata({ params }) {
   const make = decodeURIComponent(params.make);
   const productsForMake = products.filter(p =>
@@ -167,36 +168,29 @@ export function generateMetadata({ params }) {
   const now = new Date();
   const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
 
-  const productData = productsForMake.map((product, listIndex) => {
-    const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-    const rotationPeriod = Math.floor(days / 3);
+  const productData = productsForMake
+    .map((product) => {
+      const makeCompat = product.compatibility?.filter(
+        c => c.make.toLowerCase() === make.toLowerCase()
+      ) || [];
 
-    const makeCompat = product.compatibility?.filter(
-      c => c.make.toLowerCase() === make.toLowerCase()
-    ) || [];
+      // Always use the first matching compatibility entry -> stable URL
+      const compat = makeCompat[0];
 
-    const uniqueCompat = makeCompat.filter(
-      (c, i, arr) => arr.findIndex(x => x.model === c.model && x.years === c.years) === i
-    );
+      const slugRaw = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
+      const slug = encodeURIComponent(slugRaw);
 
-    const rotatedIndex = uniqueCompat.length > 0
-      ? (rotationPeriod + listIndex) % uniqueCompat.length
-      : 0;
+      const categoryEncoded = encodeURIComponent(product.category);
+      const subcategoryEncoded = encodeURIComponent(product.subcategory);
 
-    const compat = uniqueCompat[rotatedIndex];
+      const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(compat?.model || "")}/${categoryEncoded}/${subcategoryEncoded}/${slug}`;
 
-    const slugRaw = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-    const slug = encodeURIComponent(slugRaw);
+      return { product, compat, productUrl };
+    })
+    // Skip products with no compat entry (avoids empty URL segments)
+    .filter(({ compat }) => compat);
 
-    const categoryEncoded = encodeURIComponent(product.category);
-    const subcategoryEncoded = encodeURIComponent(product.subcategory);
-
-    const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(compat?.model || "")}/${categoryEncoded}/${subcategoryEncoded}/${slug}`;
-
-    return { product, compat, productUrl };
-  });
-
-  const productNodes = productData.map(({ product, productUrl }) => {
+  const productNodes = productData.map(({ product, productUrl, compat }) => {
     const price = product.pricing?.price;
     const hasValidPrice = price && price > 0;
 
@@ -219,14 +213,12 @@ export function generateMetadata({ params }) {
       "sku": product.item_specifics?.sku || String(product.partnumber),
       "brand": {
         "@type": "Brand",
-        "name": product.item_specifics?.Brand || make  // ← specific brand, not just make
+        "name": product.item_specifics?.Brand || make
       },
       "isAccessoryOrSparePartFor": {
         "@type": "Car",
         "brand": { "@type": "Brand", "name": brandName },
-        "model": product.compatibility?.find(
-          c => c.make.toLowerCase() === make.toLowerCase()
-        )?.model
+        "model": compat.model
       }
     };
 
@@ -289,7 +281,6 @@ export function generateMetadata({ params }) {
       }
     ]
   };
-
 
   return {
     title: `${make} Spare Parts in UAE - Used, Genuine, OEM and Aftermarket`,

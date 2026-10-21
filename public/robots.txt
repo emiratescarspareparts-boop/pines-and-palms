@@ -2927,7 +2927,6 @@ Disallow: /search-by-make/Mercedes-Benz/S63%20AMG/*
 Disallow: /search-by-make/Mercedes-Benz/S320/*
 Disallow: /search-by-make/Mercedes-Benz/200/*
 Disallow: /search-by-make/Mercedes-Benz/SL500/*
-Disallow: /search-by-make/Mercedes-Benz/S400/*
 Disallow: /search-by-make/Mercedes-Benz/CLK320/*
 Disallow: /search-by-make/Chrysler/Ypsilon%20(846)/*
 Disallow: /search-by-make/Alfa%20Romeo/Giulietta/*
@@ -5762,7 +5761,6 @@ Allow: /search-by-make/Mercedes-Benz/S63%20AMG$
 Allow: /search-by-make/Mercedes-Benz/S320$
 Allow: /search-by-make/Mercedes-Benz/200$
 Allow: /search-by-make/Mercedes-Benz/SL500$
-Allow: /search-by-make/Mercedes-Benz/S400$
 Allow: /search-by-make/Mercedes-Benz/CLK320$
 Allow: /search-by-make/Chrysler/Ypsilon%20(846)$
 Allow: /search-by-make/Alfa%20Romeo/Giulietta$
