@@ -1,34 +1,40 @@
-import SearchModel from '../../../components/SearchModel';
-import Link from 'next/link';
-import HondaOfferButton from '../../../components/HondaOfferButton';
-import Image from 'next/image';
-import TenEntries from '../../../components/tenentries';
-import PartsAccordion from '../../../components/Parts-Accordion';
-import { notFound } from 'next/navigation';
-import products from "../../../public/products.json"
-import { Fira_Sans, Playfair_Display } from 'next/font/google';
-import CarData from "../../../public/lib/car-data.json"
-import PartsData from "../../../public/lib/parts.json"
-import Product from './Product';
-import FormMakeRender from '../../../components/FormMakeRender';
+import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { Poppins, Roboto } from "next/font/google";
+import SearchModel from "../../../components/SearchModel";
+import HondaOfferButton from "../../../components/HondaOfferButton";
+import TenEntries from "../../../components/tenentries";
+import PartsAccordion from "../../../components/Parts-Accordion";
+import products from "../../../public/products.json";
+import CarData from "../../../public/lib/car-data.json";
+import PartsData from "../../../public/lib/parts.json";
+import Product from "./Product";
+import FormMakeRender from "../../../components/FormMakeRender";
+
 export const revalidate = 86400;
-export const dynamic = 'force-static'
-export const fetchCache = 'force-cache';
+export const dynamic = "force-static";
+export const fetchCache = "force-cache";
 export const dynamicParams = true;
 
-
-const playfair_display = Playfair_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair-display',
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["600"],
 });
 
-const firaSans = Fira_Sans({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fira-sans',
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-roboto",
 });
+
+/* ───────────────────────── data & constants ───────────────────────── */
+
+const SITE = "https://www.emirates-car.com";
+
 const selectedParts = [
   // Tier 1
   "Battery", "Engine Assembly", "Gearbox", "Radiator",
@@ -37,305 +43,161 @@ const selectedParts = [
   // Tier 2
   "Steering Rack", "Water Pump", "Fuel Pump", "Starter",
   "Taillight", "Axle Assembly", "Lower Control Arm", "Upper Control Arm",
-  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors"
-]
+  "Catalytic Convertor", "AC Condenser", "Wheel", "Mirrors",
+];
 
 const excludedMakes = [
-  'Buick', 'Eagle', 'Lotus', 'Plymouth', 'Pontiac', 'Saab',
-  'Geo', 'Oldsmobile', 'Isuzu', 'Saturn', 'Corbin', 'Holden',
-  'Spyker', 'Spyker Cars', 'Aston Martin', 'Panoz', 'Foose', 'Morgan', 'Aptera',
-  'Smart', 'SRT', 'Roush Performance', 'Pagani', 'Mobility Ventures LLC',
-  'RUF Automobile', 'Koenigsegg', 'Karma', 'Polestar', 'STI', 'Kandi', 'Abarth',
-  'Dorcen', 'Foton', 'W Motors', 'Opel', 'Skoda', 'Hillman', 'Austin', 'Fillmore',
-  'Maybach', 'Merkur', 'Rambler', 'Shelby', 'Studebaker', 'Great Wall GWM', 'Zeekr',
-  'ZNA', 'GAC', 'Gs7', 'Hongqi', 'W Motor', 'JAC', 'Jaecoo', 'Jetour', 'TANK',
-  'Soueast', 'Zarooq Motors', 'Changan', 'Maxus', 'Haval', 'Zotye', 'Sandstorm',
-  'Chery', 'Geely', 'BAIC', 'Bestune', 'Fairthorpe'
+  "Buick", "Eagle", "Lotus", "Plymouth", "Pontiac", "Saab",
+  "Geo", "Oldsmobile", "Isuzu", "Saturn", "Corbin", "Holden",
+  "Spyker", "Spyker Cars", "Aston Martin", "Panoz", "Foose", "Morgan", "Aptera",
+  "Smart", "SRT", "Roush Performance", "Pagani", "Mobility Ventures LLC",
+  "RUF Automobile", "Koenigsegg", "Karma", "Polestar", "STI", "Kandi", "Abarth",
+  "Dorcen", "Foton", "W Motors", "Opel", "Skoda", "Hillman", "Austin", "Fillmore",
+  "Maybach", "Merkur", "Rambler", "Shelby", "Studebaker", "Great Wall GWM", "Zeekr",
+  "ZNA", "GAC", "Gs7", "Hongqi", "W Motor", "JAC", "Jaecoo", "Jetour", "TANK",
+  "Soueast", "Zarooq Motors", "Changan", "Maxus", "Haval", "Zotye", "Sandstorm",
+  "Chery", "Geely", "BAIC", "Bestune", "Fairthorpe",
 ];
-
-const ALL_MAKES_BY_TRAFFIC = [
-  'BYD', 'Cadillac', 'Lexus', 'Honda', 'Toyota', 'Exeed',
-  'Hyundai', 'Mitsubishi', 'Mazda', 'Lincoln', 'Hummer',
-  'Mercedes-Benz', 'Audi', 'Nissan', 'Daihatsu', 'Ram',
-  'Volkswagen', 'Jeep', 'Renault', 'Fiat', 'Chevrolet',
-  'Ford', 'Land Rover', 'Kia', 'Dodge', 'Infiniti',
-  'Peugeot', 'Mercury', 'Bugatti', 'Daewoo', 'Volvo',
-  'BMW', 'McLaren', 'Jaguar', 'Porsche', 'Maserati',
-  'Ferrari', 'Subaru', 'Tesla', 'Scion', 'Bentley',
-  'Suzuki', 'GMC', 'Mini', 'Rolls-Royce', 'Alfa Romeo',
-  'Citroen', 'Chrysler', 'Dacia', 'Saturn',
-]
-
 const excludedMakesSet = new Set(excludedMakes);
 
-const baseCity = [{
-  "id": 1,
-  "city": "Abu Dhabi",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465132.6090253298!2d54.27841778442708!3d24.38657289151084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e440f723ef2b9%3A0xc7cc2e9341971108!2sAbu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018687052!5m2!1sen!2sin",
-  "description": "Abu Dhabi, also spelled Abū Ẓaby. Abu Dhabi, the capital of the United Arab Emirates, sits off the mainland on an island in the Persian (Arabian) Gulf. Its focus on oil exports and commerce is reflected by the skyline’s modern towers and shopping megacenters such as Abu Dhabi and Marina malls. The city of Abu Dhabi is located on an island Beneath white-marble domes, the vast Sheikh Zayed Grand Mosque features an immense Persian carpet, crystal chandeliers and capacity for 41,000 worshipers."
-},
-{
-  "id": 2,
-  "city": "Ajman",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230658.57689222984!2d55.39307659945978!3d25.40346278803545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5764dd8fbe79%3A0xcda090de6445a819!2sAjman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640009886379!5m2!1sen!2sin",
-  "description": "After Abu Dhabi, Sharjah and Al Ain, Ajman is the fifth largest city in United Arab Emirates. A paper published by researchers from Ajman university explains the URBANISATION IN AJMAN: PUSHING BY HOUSING DEVELOPMENT, published on febrauary, 2020. It is published in a motto of developing the Ajman city."
-},
-{
-  "id": 3,
-  "city": "Dubai",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.65102636546!2d54.94754444558808!3d25.075759435668097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640016582896!5m2!1sen!2sin",
-  "description": "."
-},
-{
-  "id": 4,
-  "city": "Al Ain",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232921.30495584515!2d55.60677819193463!3d24.192928130526976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8ab145cbd5a049%3A0xf56f8cea5bf29f7f!2sAl%20Ain%20-%20Abu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018189460!5m2!1sen!2sin",
-  "description": "Al Ain is a inland oasis city. It shares eastern border with Oman. Its called a garden city because it is loaded with palm grooves trees and natural springs. It has Archeological park to the north and tombs on mountain of Jebel al Hafeet and its remains are displayed on the National museum in the central part of Al Ain. So naturally, Al Ain is more adventourous to attract tourist. A new project is initiated by the name `Plan Al Ain 2030`. It is expected to complete by 2030. The paper released by faculty of UAEU. It outlines the Foundation, Economics, urban structure framework and overall patterns"
-},
-{
-  "id": 5,
-  "city": "Sharjah",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230818.9387004767!2d55.41516106289569!3d25.319455944500426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5fede7964b%3A0x2a830aa19c1f6d89!2sAl%20Sharjah%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640011943348!5m2!1sen!2sin",
-  "description": "."
-},
-{
-  "id": 6,
-  "city": "Ras al Khaimah",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922252.0033869754!2d55.44538869425926!3d25.453407942583034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef6710e4cd209a7%3A0xb99e670ca684e20f!2sRas%20al%20Khaimah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640012402585!5m2!1sen!2sin",
-  "description": "."
-}, {
-  "id": 7,
-  "city": "Fujairah",
-  "link": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114828.64793224298!2d54.86883979250164!3d24.890725154679558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef4323d9028b95f%3A0xa6c1b11bdbb33cbc!2sFujairah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1640018083168!5m2!1sen!2sin",
-  "description": "A sheikhdom of the United Arab Emirates on the Gulf of Oman. It joined the federation in 1971. Fujairah City (Arabic: الفجيرة‎) is the capital of the emirate of Fujairah in the United Arab Emirates. It is the seventh-largest city in UAE. Metro population is about 1,52,000"
-}
+const ALL_MAKES_BY_TRAFFIC = [
+  "BYD", "Cadillac", "Lexus", "Honda", "Toyota", "Exeed",
+  "Hyundai", "Mitsubishi", "Mazda", "Lincoln", "Hummer",
+  "Mercedes-Benz", "Audi", "Nissan", "Daihatsu", "Ram",
+  "Volkswagen", "Jeep", "Renault", "Fiat", "Chevrolet",
+  "Ford", "Land Rover", "Kia", "Dodge", "Infiniti",
+  "Peugeot", "Mercury", "Bugatti", "Daewoo", "Volvo",
+  "BMW", "McLaren", "Jaguar", "Porsche", "Maserati",
+  "Ferrari", "Subaru", "Tesla", "Scion", "Bentley",
+  "Suzuki", "GMC", "Mini", "Rolls-Royce", "Alfa Romeo",
+  "Citroen", "Chrysler", "Dacia", "Saturn",
 ];
 
-const carDataByMakeModel = {};
+const CITIES = ["Abu Dhabi", "Ajman", "Dubai", "Al Ain", "Sharjah", "Ras al Khaimah", "Fujairah"];
+const AREAS = ["Dubai", "Sharjah", "Abu Dhabi", "Ajman", "Al Quoz", "Palm Jumeirah", "Deira"];
+const COUNTRIES = ["Japanese", "American", "German", "Chinese", "Korean", "French", "British"];
+
+// Built once at module load (build time)
 const carDataByMake = {};
-
-for (let i = 0; i < CarData.length; i++) {
-  const car = CarData[i];
-
-  const key = `${car.make.toLowerCase()}-${car.model.toLowerCase()}`;
-  if (!carDataByMakeModel[key]) {
-    carDataByMakeModel[key] = [];
-  }
-  carDataByMakeModel[key].push(car);
-
-  const makeLower = car.make.toLowerCase();
-  if (!carDataByMake[makeLower]) {
-    carDataByMake[makeLower] = [];
-  }
-  carDataByMake[makeLower].push(car);
+for (const car of CarData) {
+  (carDataByMake[car.make.toLowerCase()] ||= []).push(car);
 }
 
-export function generateStaticParams() {
-  const filteredMakes = ALL_MAKES_BY_TRAFFIC.filter(
-    make => !excludedMakes.includes(make)
-  )
+/* ───────────────────────── helpers ───────────────────────── */
 
-
-  return filteredMakes.map(make => ({
-    make: encodeURIComponent(make.replace(/ /g, '%20'))
-  }))
-}
-
-function getModel(make) {
-  const makeLower = make.toLowerCase();
-  const cars = carDataByMake[makeLower];
-
-  if (!cars || cars.length === 0) return [];
-
-  const uniqueModels = {};
-  for (let i = 0; i < cars.length; i++) {
-    const car = cars[i];
-    if (!uniqueModels[car.model]) {
-      uniqueModels[car.model] = car;
-    }
+const safeDecode = (s = "") => {
+  try {
+    return decodeURIComponent(s);
+  } catch {
+    return s;
   }
+};
+const norm = (s) => (s || "").toString().trim().toLowerCase();
+const toArray = (v) => (Array.isArray(v) ? v : v ? [v] : []);
 
-  return Object.values(uniqueModels);
+function getModels(make) {
+  const cars = carDataByMake[norm(make)];
+  if (!cars?.length) return [];
+  const unique = {};
+  for (const car of cars) if (!unique[car.model]) unique[car.model] = car;
+  return Object.values(unique);
 }
 
+function getMakeField(make, field) {
+  const cars = carDataByMake[norm(make)];
+  if (!cars?.length) return "";
+  for (const car of cars) if (car[field]) return car[field];
+  return "";
+}
 
-export function generateMetadata({ params }) {
-  const make = decodeURIComponent(params.make);
-  const productsForMake = products.filter(p =>
-    p.compatibility?.some(c => c.make.toLowerCase() === make.toLowerCase())
-  );
+function productUrl(product, compat, make) {
+  const slugRaw = `${product.partname}-${make}-${compat.model || ""}${compat.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
+  return `/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(compat.model || "")}/${encodeURIComponent(product.category)}/${encodeURIComponent(product.subcategory)}/${encodeURIComponent(slugRaw)}`;
+}
 
-  const now = new Date();
-  const endOfYear = new Date(now.getFullYear(), 11, 31).toISOString().split("T")[0];
-
-  const productData = productsForMake
-    .map((product) => {
-      const makeCompat = product.compatibility?.filter(
-        c => c.make.toLowerCase() === make.toLowerCase()
-      ) || [];
-
-      // Always use the first matching compatibility entry -> stable URL
-      const compat = makeCompat[0];
-
-      const slugRaw = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
-      const slug = encodeURIComponent(slugRaw);
-
-      const categoryEncoded = encodeURIComponent(product.category);
-      const subcategoryEncoded = encodeURIComponent(product.subcategory);
-
-      const productUrl = `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(compat?.model || "")}/${categoryEncoded}/${subcategoryEncoded}/${slug}`;
-
-      return { product, compat, productUrl };
-    })
-    // Skip products with no compat entry (avoids empty URL segments)
-    .filter(({ compat }) => compat);
-
-  const productNodes = productData.map(({ product, productUrl, compat }) => {
-    const price = product.pricing?.price;
-    const hasValidPrice = price && price > 0;
-
-    const brandName = make;
-
-    const uniqueModels = [...new Set(
-      product.compatibility
-        ?.filter(c => c.make.toLowerCase() === make.toLowerCase())
-        .map(c => c.model)
-    )].slice(0, 5).join(", ");
-
-    const node = {
-      "@type": "Product",
-      "@id": `${productUrl}#product`,
-      "name": `${product.partname} ${product.partnumber} ${make}`,
-      "url": productUrl,
-      "image": `https://www.emirates-car.com${product.image}`,
-      "description": `${product.partname} compatible with ${make} ${uniqueModels}`,
-      "mpn": String(product.partnumber),
-      "sku": product.item_specifics?.sku || String(product.partnumber),
-      "brand": {
-        "@type": "Brand",
-        "name": product.item_specifics?.Brand || make
-      },
-      "isAccessoryOrSparePartFor": {
-        "@type": "Car",
-        "brand": { "@type": "Brand", "name": brandName },
-        "model": compat.model
-      }
-    };
-
-    if (hasValidPrice) {
-      node.offers = {
-        "@type": "Offer",
-        "url": productUrl,
-        "priceCurrency": product.pricing.currency,
-        "price": price,
-        "priceValidUntil": endOfYear,
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      };
-    }
-
-    return node;
-  });
-
-  const listItems = productData
-    .filter(({ product }) => product.pricing?.price > 0)
-    .map(({ productUrl }, listIndex) => ({
-      "@type": "ListItem",
-      "position": listIndex + 1,
-      "item": { "@id": `${productUrl}#product` }
-    }));
-
-  const schema = {
+function buildSchema(make, items) {
+  const pageUrl = `${SITE}/search-by-make/${encodeURIComponent(make)}`;
+  return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "CollectionPage",
-        "name": `${make} Spare Parts | Emirates Car`,
-        "url": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`,
-        "description": `Find genuine, OEM, and aftermarket spare parts for all ${make} models.`,
-        "about": { "@type": "Brand", "name": make },
-        "mainEntity": {
-          "@type": "ItemList",
-          "itemListElement": listItems
-        }
+        "@id": `${pageUrl}#page`,
+        name: `${make} Spare Parts | Emirates Car`,
+        url: pageUrl,
+        description: `Find genuine, OEM, and aftermarket spare parts for all ${make} models.`,
+        about: { "@type": "Brand", name: make },
+        isPartOf: { "@id": `${SITE}/#organization` },
+        ...(items.length > 0 && { mainEntity: { "@id": `${pageUrl}#list` } }),
       },
-      ...productNodes,
-      {
-        "@type": "Organization",
-        "@id": "https://www.emirates-car.com",
-        "name": "Emirates Car",
-        "url": "https://www.emirates-car.com"
-      },
+      ...(items.length > 0
+        ? [
+          {
+            "@type": "ItemList",
+            "@id": `${pageUrl}#list`,
+            itemListElement: items.map((it, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `${SITE}${it.href}`,
+              name: it.name,
+            })),
+          },
+        ]
+        : []),
+      { "@type": "Organization", "@id": `${SITE}/#organization`, name: "Emirates Car", url: SITE },
       {
         "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.emirates-car.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Car Makes", "item": "https://www.emirates-car.com/search-by-make/" },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": `${make} Spare Parts`,
-            "item": `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`
-          }
-        ]
-      }
-    ]
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: "Car Makes", item: `${SITE}/search-by-make/` },
+          { "@type": "ListItem", position: 3, name: `${make} Spare Parts`, item: pageUrl },
+        ],
+      },
+    ],
   };
+}
+
+/* ───────────────────────── static params + metadata ───────────────────────── */
+
+export function generateStaticParams() {
+  return ALL_MAKES_BY_TRAFFIC.filter((make) => !excludedMakesSet.has(make)).map((make) => ({
+    make: encodeURIComponent(make.replace(/ /g, "%20")),
+  }));
+}
+
+export function generateMetadata({ params }) {
+  const make = safeDecode(params.make);
+  const imageMake = getMakeField(make, "img");
+  const canonical = `${SITE}/search-by-make/${encodeURIComponent(make)}`;
+
+  const title = `${make} Spare Parts in UAE - Used, Genuine, OEM and Aftermarket`;
+  const description = `Buy genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`;
+  const ogImages = [
+    { url: imageMake ? `${SITE}/img/car-logos/${imageMake}` : `${SITE}/img/car-spare-parts.png`, alt: `${make} spare parts` },
+    { url: `${SITE}/icons/icon-512x512.png`, width: 512, height: 512, alt: "car parts" },
+  ];
 
   return {
-    title: `${make} Spare Parts in UAE - Used, Genuine, OEM and Aftermarket`,
-    description: `Buy genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-    metadataBase: new URL("https://www.emirates-car.com"),
-    openGraph: {
-      title: `${make} Spare Parts in UAE - Used, Genuine, OEM and Aftermarket`,
-      description: `Buy genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-      url: "https://www.emirates-car.com/search-by-make/" + encodeURIComponent(make),
-      image: "https://www.emirates-car.com/img/car-spare-parts.png",
-      siteName: "EMIRATESCAR",
-      images: [
-        "https://www.emirates-car.com/icons/favicon-32x32.png",
-        {
-          url: "https://www.emirates-car.com/icon-192x192.png",
-          width: 192,
-          height: 192,
-        },
-        {
-          url: "https://www.emirates-car.com/icons/icon-512x512.png",
-          width: 512,
-          height: 512,
-          alt: "car parts",
-        },
-      ],
-      locale: "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${make} Spare Parts in UAE - Used, Genuine, OEM and Aftermarket`,
-      url: "https://www.emirates-car.com/search-by-make/" + encodeURIComponent(make),
-      description: `Buy genuine, OEM, used & aftermarket ${make} spare parts in Dubai, Sharjah & across the UAE. Get best prices and fast quotes from trusted dealers today.`,
-      images: ["https://www.emirates-car.com/icons/favicon-32x32.png"],
-    },
+    title,
+    description,
+    metadataBase: new URL(SITE),
+    openGraph: { title, description, url: canonical, siteName: "EMIRATESCAR", images: ogImages, locale: "en_US", type: "website" },
+    twitter: { card: "summary_large_image", title, description, images: [ogImages[0].url] },
     icons: {
-      icon: "https://www.emirates-car.com/icons/favicon-32x32.png",
-      shortcut: "https://www.emirates-car.com/icons/icon-96x96.png",
-      apple: "https://www.emirates-car.com/icons/icon-192x192.png",
-      other: {
-        rel: "apple-touch-icon-precomposed",
-        url: "https://www.emirates-car.com/icons/icon-152x152.png",
-      },
+      icon: `${SITE}/icons/favicon-32x32.png`,
+      shortcut: `${SITE}/icons/icon-96x96.png`,
+      apple: `${SITE}/icons/icon-192x192.png`,
+      other: { rel: "apple-touch-icon-precomposed", url: `${SITE}/icons/icon-152x152.png` },
     },
     category: `Vehicle Parts & Accessories > ${make}`,
-    alternates: {
-      canonical: `https://www.emirates-car.com/search-by-make/${encodeURIComponent(make)}`,
-    },
+    alternates: { canonical },
     robots: {
       index: true,
       follow: true,
       googleBot: {
         index: true,
         follow: true,
-        noimageindex: true,
+        noimageindex: false,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -344,438 +206,287 @@ export function generateMetadata({ params }) {
     other: {
       "product:brand": make,
       "product:category": `Vehicle Parts & Accessories > ${make}`,
-      "script:ld+json": JSON.stringify(schema),
+      // JSON-LD is rendered as a real <script> in the page body (metadata.other only makes <meta> tags)
     },
   };
 }
 
-function getMakeImage(make) {
-  const key = `${make.toLowerCase()}`;
-  const cars = carDataByMake[key];
+/* ───────────────────────── page ───────────────────────── */
 
-  if (!cars || cars.length === 0) return '';
+export default function MakePage({ params, searchParams = {} }) {
+  const make = safeDecode(params.make);
 
-  for (const car of cars) {
-    if (car.img) {
-      return car.img;
-    }
-  }
+  // Bail out early, before any heavy work
+  if (excludedMakesSet.has(make)) notFound();
+  const makeLower = norm(make);
+  if (!carDataByMake[makeLower]?.length) notFound();
 
-  return '';
-}
+  const carmodel = getModels(make);
+  const imageMake = getMakeField(make, "img");
+  const description = getMakeField(make, "description");
+  const makeEnc = encodeURIComponent(make);
 
+  const makeFiltered = products.filter((p) => p.compatibility?.some((c) => norm(c.make) === makeLower));
 
-function getDescription(make) {
-  const cars = carDataByMake[make.toLowerCase()];
-  if (!cars || cars.length === 0) return '';
+  // Query-string filters (unchanged behaviour)
+  const cats = new Set(toArray(searchParams["filter_car_parts[]"]));
+  const engs = new Set(toArray(searchParams["engine[]"]));
+  const compats = new Set(toArray(searchParams["compatibility[]"]));
+  const query = (searchParams.search || "").toString().toLowerCase();
 
-  for (let i = 0; i < cars.length; i++) {
-    if (cars[i].description) {
-      return cars[i].description;
-    }
-  }
-
-  return '';
-}
-export default function MakePage({ params, searchParams }) {
-  const make = decodeURIComponent(params.make);
-  const carmodel = getModel(make);
-  const partspost = PartsData;
-  const modelsform = CarData;
-  const imageMake = getMakeImage(make)
-  const description = getDescription(make)
-
-  const {
-    "filter_car_parts[]": categories = [],
-    "engine[]": engines = [],
-    "compatibility[]": compats = [],
-    search = ""
-  } = searchParams;
-
-  // Normalize filters
-  const selectedCategories = Array.isArray(categories) ? categories : [categories].filter(Boolean);
-  const selectedEngines = Array.isArray(engines) ? engines : [engines].filter(Boolean);
-  const selectedCompats = Array.isArray(compats) ? compats : [compats].filter(Boolean);
-
-  const query = search?.toLowerCase() || "";
-
-  const categoriesSet = new Set(selectedCategories);
-  const enginesSet = new Set(selectedEngines);
-  const compatsSet = new Set(selectedCompats);
-
-  const makeLower = make.toLowerCase();
-
-  const makeFiltered = [];
-
-  for (let i = 0; i < products.length; i++) {
-    const product = products[i];
-
-    if (!product.compatibility) continue;
-
-    for (let j = 0; j < product.compatibility.length; j++) {
-      const c = product.compatibility[j];
-
-      if (c.make?.toLowerCase() === makeLower) {
-        makeFiltered.push(product);
-        break;
-      }
-    }
-  }
-
-  const filtered = [];
-
-  for (let i = 0; i < makeFiltered.length; i++) {
-    const product = makeFiltered[i];
-
-    // Category filter
-    if (categoriesSet.size > 0 && !categoriesSet.has(product.category)) {
-      continue;
-    }
-
-    // Search filter
+  const filtered = makeFiltered.filter((product) => {
+    if (cats.size && !cats.has(product.category)) return false;
     if (query) {
-      let matches = false;
-
-      if (product.partname?.toLowerCase().includes(query)) {
-        matches = true;
-      }
-
-      if (!matches && product.engine) {
-        for (let j = 0; j < product.engine.length; j++) {
-          if (product.engine[j].toLowerCase().includes(query)) {
-            matches = true;
-            break;
-          }
-        }
-      }
-
-      if (!matches && product.compatibility) {
-        for (let j = 0; j < product.compatibility.length; j++) {
-          const c = product.compatibility[j];
-          const searchStr = `${c.make} ${c.model ?? ""} ${c.years ?? ""}`.toLowerCase();
-
-          if (searchStr.includes(query)) {
-            matches = true;
-            break;
-          }
-        }
-      }
-
-      if (!matches) continue;
+      const hit =
+        product.partname?.toLowerCase().includes(query) ||
+        product.engine?.some((e) => e.toLowerCase().includes(query)) ||
+        product.compatibility?.some((c) => `${c.make} ${c.model ?? ""} ${c.years ?? ""}`.toLowerCase().includes(query));
+      if (!hit) return false;
     }
+    if (engs.size && !product.engine?.some((e) => engs.has(e))) return false;
+    if (
+      compats.size &&
+      !product.compatibility?.some((c) => compats.has(`${c.make} ${c.model ?? ""} ${c.years ? `(${c.years})` : ""}`))
+    )
+      return false;
+    return true;
+  });
 
-    // Engine filter
-    if (enginesSet.size > 0) {
-      let hasEngine = false;
+  // JSON-LD list: first 50 products (URL + name only)
+  const schemaItems = makeFiltered
+    .slice(0, 50)
+    .map((p) => {
+      const compat = p.compatibility.find((c) => norm(c.make) === makeLower);
+      return compat ? { name: `${make} ${p.partname} ${p.partnumber}`, href: productUrl(p, compat, make) } : null;
+    })
+    .filter(Boolean);
+  const jsonLd = buildSchema(make, schemaItems);
 
-      if (product.engine) {
-        for (let j = 0; j < product.engine.length; j++) {
-          if (enginesSet.has(product.engine[j])) {
-            hasEngine = true;
-            break;
-          }
-        }
-      }
-
-      if (!hasEngine) continue;
-    }
-
-    // Compatibility filter (make-level)
-    if (compatsSet.size > 0) {
-      let hasCompat = false;
-
-      if (product.compatibility) {
-        for (let j = 0; j < product.compatibility.length; j++) {
-          const c = product.compatibility[j];
-          const compatStr = `${c.make} ${c.model ?? ""} ${c.years ? `(${c.years})` : ""}`;
-
-          if (compatsSet.has(compatStr)) {
-            hasCompat = true;
-            break;
-          }
-        }
-      }
-
-      if (!hasCompat) continue;
-    }
-
-    filtered.push(product);
-  }
-
-
-  if (excludedMakesSet.has(make)) {
-    notFound();
-  }
-
-  const data = carDataByMake[makeLower] || [];
-
-  if (data.length === 0) {
-    notFound();
-  }
-
-
-  const grouped = {};
-
-  for (let i = 0; i < filtered.length; i++) {
-    const item = filtered[i];
-
-    if (!grouped[item.category]) {
-      grouped[item.category] = [];
-    }
-
-    grouped[item.category].push(item.parts);
-  }
-
-
+  const categoryTiles = PartsData.filter((post) => selectedParts.includes(post.parts));
+  const sectionTitle = `text-2xl font-bold text-gray-900 sm:text-3xl ${poppins.className}`;
 
   return (
-    <div>
-      <div className='max-w-7xl mx-auto md:px-0 lg:px-0 xs:px-0 xxs:px-0 sm:px-2'>
-        <header
-          className="xxs:py-0 sm:px-7  xl:py-10 xxl:py-10 s:py-0 xs:py-0 lg:py-0 md:mx-0 md:py-0"
-          aria-label="Spare parts by country of origin"
-        >
-          <div className="bg-backgroundlight rounded-sm">
-            <div className="grid grid-cols-2 xs:grid-cols-1 sm:grid-cols-2 xxs:grid-cols-1 xs:text-center">
-              <div>
-                <div className="xs:px-3 ml-8 md:ml-8 xs:ml-1 xxs:ml-0 mt-10 xs:my-5 xl:my-5 xxl:my-5 sm:mt-12 md:mt-10 lg:mt-20 xl:mt-20 xs:text-left">
-                  <h6 className="block text-lg xl:text-xl sm:text-sm xs:text-base xxs:text-base xxs:text-center md:text-lg lg:text-2xl font-medium font-poppins text-gray-800  lg:leading-tight ">
-                    <span className="block">
-                      Expert Parts&nbsp;
-                      <span className="text-blue-600">
-                        Seamless Performance
-                      </span>
-                    </span>
-                  </h6>
-                  <h1 className={`text-3xl xl:text-4xl xxl:text-4xl font-extrabold mx-auto my-5 xs:my-3 xs:text-xl xxs:text-2xl md:text-xl md:my-3 sm:text-xl xxs:text-center ${playfair_display.className}`}>
-                    <span className="text-blue-600 xl:inline">
-                      {make} Spare Parts
-                    </span>{" "}
-                    – Genuine, OEM & Used Auto Parts from Dubai with Delivery Across UAE
-                  </h1>
-                  <div className="mt-2 lg:pb-5 py-3 w-1/2 lg:w-2/4 xs:w-full xxs:w-2/4 xxs:mx-auto mr-auto rounded-lg shadow-md">
-                    <a
-                      href="#myForm"
-                      title="Inquire about vehicle parts online"
-                      className="flex items-center justify-center py-2 border border-transparent font-medium rounded-sm text-white bg-blue-600 hover:bg-blue-700"
-                    >
-                      Inquire Now
-                    </a>
-                  </div>
-                </div>
-              </div>
+    <div className={`mx-auto max-w-7xl px-4 pb-16 sm:px-6 ${roboto.className}`}>
+      {/* Breadcrumbs */}
+      <nav aria-label="Breadcrumb" className="py-4 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <li><Link href="/" className="hover:text-blue-600 hover:underline">Home</Link></li>
+          <li aria-hidden="true">/</li>
+          <li><Link href="/search-by-make" className="hover:text-blue-600 hover:underline">Car Makes</Link></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="font-medium text-gray-900">{make}</li>
+        </ol>
+      </nav>
 
-              <div className="xxs:hidden xs:hidden s:hidden hero_section_blob">
-                <Image
-                  src={'/img/car-logos/' + imageMake}
-                  alt={make + ' spare parts'}
-                  className="ml-20 md:ml-5 lg:ml-8 lg:mt-10 xl:mt-10 xxl:mt-10 xl:ml-16 xxl:ml-16"
-                  priority
-                  width={300}
-                  height={300}
-                />
-              </div>
+      {/* Hero */}
+      <header className="overflow-hidden rounded-3xl border bg-gradient-to-br from-blue-50 via-white to-blue-100">
+        <div className="grid items-center gap-6 p-6 sm:p-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              Expert parts · Seamless performance
+            </p>
+            <h1 className={`mt-3 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl ${poppins.className}`}>
+              <span className="text-blue-600">{make} Spare Parts</span>{" "}
+              – Genuine, OEM &amp; Used Auto Parts from Dubai with Delivery Across UAE
+            </h1>
+
+            <ul className="mt-5 flex flex-wrap gap-2 text-sm">
+              {["Genuine & OEM", "Used & aftermarket", "Fitment checked", "Delivery across UAE"].map((chip) => (
+                <li key={chip} className="rounded-full border bg-white px-3 py-1 font-medium text-gray-700">
+                  ✓ {chip}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#myForm"
+                title="Inquire about vehicle parts online"
+                className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm hover:bg-blue-700"
+              >
+                Get Best Price
+              </a>
+              <a
+                href="#parts"
+                className="rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-800 hover:border-blue-600 hover:text-blue-600"
+              >
+                Browse parts
+              </a>
             </div>
           </div>
-        </header>
-        <div className='sm:max-w-xl lg:max-w-2xl md:max-w-xl xl:max-w-2xl xxl:max-w-2xl mx-auto xs:mx-3 xxs:mx-3 sm:mx-5'>
-          <FormMakeRender formsData={modelsform} mke={make} page={`/search-by-make/${make}`} />
+
+          {imageMake && (
+            <div className="hidden justify-center md:flex lg:flex xl:flex xxl:flex">
+              <Image
+                src={`/img/car-logos/${imageMake}`}
+                alt={`${make} spare parts`}
+                priority
+                width={320}
+                height={320}
+                className="h-auto w-full max-w-xs object-contain drop-shadow-lg"
+              />
+            </div>
+          )}
         </div>
-        {makeFiltered.length > 0 ?
-          <Product
-            make={make}
-            products={filtered}
-            allProducts={makeFiltered}
-          /> : <></>}
+      </header>
 
-        <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-gray-100 px-20 xs:px-3 xxs:px-3">
-          <div className="container py-6">
-            <h2 className={`text-black text-4xl text-center md:text-2xl lg:text-3xl font-bold xs:text-xl xxs:text-2xl pt-10 ${firaSans.className}`}>
-              Most Searched <span className='text-blue-500'>{make}</span> Spare Parts in UAE
-            </h2>
-
-            <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-              {partspost
-                .filter(post => selectedParts.includes(post.parts))
-                .map((post, i) => {
-                  // Check if this model has seo=true
-                  const key = `${make.toLowerCase()}`;
-                  const carEntry = carDataByMake[key];
-                  const hasSEO = carEntry?.some(car => car.seo === true);
-
-                  const linkHref = hasSEO
-                    ? `/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(post.parts)}`
-                    : `/search-by-make/${encodeURIComponent(make)}/parts/${encodeURIComponent(post.parts)}`;
-
-                  return (
-                    <li key={i} className="border">
-                      <a href={linkHref} target="_blank">
-                        <div className="flex flex-col hover:border-blue-600 py-3 bg-gray-100 rounded-sm">
-                          <div className="w-[120px] h-[120px] mx-auto m-3 flex items-center justify-center">
-                            <Image
-                              src={post.img || '/img/parts/car-spare-parts.png'}
-                              alt={`${make}  ${post.parts}`}
-                              className="max-w-full max-h-full object-contain"
-                              width={120}
-                              height={120}
-                            />
-                          </div>
-                          <p className="text-center font-sans font-medium text-base">
-                            <span>{make} {post.parts}</span>
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                  );
-                })
-              }
-            </ul>
-          </div>
-        </section>
-        <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-          <div className="container py-6">
-            <h2 className={`font-bold text-3xl xs:text-2xl my-3 ${playfair_display.className}`}>
-              Search <span className='text-blue-600'>{make}</span> spare parts by Model
-            </h2>
-            <SearchModel make={make} car={carmodel} />
-
-            <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-              {carmodel.map((post, i) => {
-                return (
-                  <li key={i} className="h-full">
-                    <Link
-                      href='/search-by-make/[make]/[model]'
-                      as={`/search-by-make/${post.make}/${encodeURIComponent(post.model)}`}
-                      title={`${post.make} ${post.model} spare parts`}
-                      className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                    >
-                      <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                        {make} {post.model.replace('%2F', '/')} parts
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-
-
-
-
-          </div>
-        </section>
-        <div className="text-center mt-2 text-red-400 text-sm xs:text-xs py-5">
-          **Model not found above?
-          <Link href="/get-in-touch">
-            <nobr className="text-blue-500 text-sm underline">
-              {' '}
-              Get in touch with us {'>>'}**
-            </nobr>
-          </Link>{' '}
-        </div>
-
-
-        <div className="text-center">
-          {make === 'Honda' ? <HondaOfferButton /> : <></>}
-        </div>
-
-
-        <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
-          <h2 className={`text-4xl md:text-3xl xs:text-2xl xxs:text-xl sm:text-2xl font-bold mx-auto my-10 ${playfair_display.className}`}>
-            Availability of <span className='text-blue-600'>{make} spare parts</span> in UAE
-          </h2>
-
-          <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-3 gap-3 xs:gap-1 mt-10">
-            {baseCity.map((post, i) => (
-              <li key={i}>
-                <Link
-                  href="/search-by-brands-in-uae/[make]/[city]"
-                  as={'/search-by-brands-in-uae/' + make + "/" + post.city}
-                  title={make + ' spare parts ' + post.city}
-                  className="block border border-blue-800 hover:border-blue-900 bg-white rounded-sm h-full p-3 text-center"
-                >
-                  <span className="text-center text-black text-lg font-medium hover:text-gray-800 p-2 xs:p-0 font-sans underline ">
-                    {post.city}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <TenEntries />
-        <PartsAccordion make={make} />
-        <section className='xs:px-3 xxs:px-3 md:px-3 lg:max-w-4xl lg:mx-auto'>
-          <h3 className={`text-3xl xs:text-2xl font-semibold mx-auto my-5 xs:my-3 xxs:my-3 sm:my-3 md:my-4 ${playfair_display.className}`}>Why EMIRATESCAR?</h3>
-          <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg ${firaSans.className}`}>
-            Emirates-car.com is the online dealer in <span className='text-blue-600'>{make}{' '}
-            </span> spare parts and for any car brands running on roads
-            of UAE. We find the correct used, genuine (otherwise
-            called OEM parts) and aftermarket parts that matches your fitment. We have
-            experienced professional who can find the parts at affordable and
-            reasonable price. We deal in Used, Genuine {make} {' '} parts and Aftermarket {make} {' '}
-            parts such as Engine parts, Mechanical parts, Electrical and
-            Electronic parts, Body parts and Lights, AC parts and Service and
-            Maintenance parts.
-          </p>
-          <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg mt-3 ${firaSans.className}`}>
-            You can inquire {make} {' '} spare parts by simply
-            submitting the online inquiry form{' '}
-            <Link
-              href="/"
-              target="_newtab"
-              className="text-blue-500 underline hover:text-blue-900"
-              title={make + ' parts'}
-            >
-              here
-            </Link>
-            . You can get callback or whatsapp chat or email after submitting your
-            form inquiry.
-          </p>
-          {description.length > 0 ? <p
-            className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg mt-3 ${firaSans.className}`}
-            dangerouslySetInnerHTML={{ __html: description || '' }}
-          ></p> : <></>}
-
-          <p className={`text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg mt-3 ${firaSans.className}`}>
-            We deal with any country auto spare parts including{' '}
-            <a href='/spare-parts/japanese-auto-spare-parts' className='text-blue-600'>Japanese</a>,
-            {' '}<a href='/spare-parts/american-auto-spare-parts' className='text-blue-600'>American</a>,
-            {' '}<a href='/spare-parts/german-auto-spare-parts' className='text-blue-600'>German</a>,
-            {' '}<a href='/spare-parts/chinese-auto-spare-parts' className='text-blue-600'>Chinese</a>,
-            {' '}<a href='/spare-parts/german-auto-spare-parts' className='text-blue-600'>German</a>,
-            {' '}<a href='/spare-parts/korean-auto-spare-parts' className='text-blue-600'>Korean</a>,
-            {' '}<a href='/spare-parts/french-auto-spare-parts' className='text-blue-600'>French</a>,
-            {' '}<a href='/spare-parts/british-auto-spare-parts' className='text-blue-600'>Britain</a>,
-            in UAE. We ship and deliver in
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Dubai`} className='text-blue-600'>Dubai</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Sharjah`} className='text-blue-600'>Sharjah</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Abu Dhabi`} className='text-blue-600'>Abu Dhabi</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Ajman`} className='text-blue-600'>Ajman</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Al Quoz`} className='text-blue-600'>Al Quoz</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Palm Jumeirah`} className='text-blue-600'>Palm Jumeirah</a>,
-            {' '}<a href={`/search-by-brands-in-uae/${make}/Deira`} className='text-blue-600'>Deira</a>,
-            etc. You can check our catalogue at{' '}
-            <Link
-              href="/catalogs"
-              className="text-blue-400 underline"
-              title={make}
-            >
-              /catalogs
-            </Link>
-            . We provide auto spare parts for any vehicles including :
-          </p>
-          <ul className={`list-disc text-xl font-sans text-gray-700 mx-auto xs:text-lg xl:text-lg xxs:text-lg mt-3 ${firaSans.className}`}>
-            <li>New auto spare parts in uae</li>
-            <li>Used auto spare parts in uae</li>
-            <li>Genuine auto spare parts in uae</li>
-            <li>Aftermarket auto spare parts in uae</li>
-          </ul>
-        </section>
-
-
-
+      {/* Inquiry form */}
+      <div className="mx-auto mt-8 max-w-2xl rounded-2xl border bg-white p-4 shadow-sm sm:p-6">
+        <FormMakeRender formsData={CarData} mke={make} page={`/search-by-make/${make}`} />
       </div>
 
-    </div>
+      {/* Products */}
+      <section id="parts" className="mt-12 scroll-mt-20">
+        {makeFiltered.length > 0 && <Product make={make} products={filtered} allProducts={makeFiltered} />}
+      </section>
 
+      {/* Most searched parts */}
+      <section className="mt-14">
+        <h2 className={sectionTitle}>
+          Most searched <span className="text-blue-600">{make}</span> spare parts in UAE
+        </h2>
+        <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xxl:grid-cols-6 xl:grid-cols-6">
+          {categoryTiles.map((post) => (
+            <li key={`${post.category}-${post.parts}`}>
+              <Link
+                href={`/search-by-make/${makeEnc}/parts/${encodeURIComponent(post.parts)}`}
+                className="flex h-full flex-col items-center rounded-2xl border bg-white p-4 text-center transition hover:border-blue-600 hover:shadow-md"
+              >
+                <span className="flex h-24 w-24 items-center justify-center">
+                  <Image
+                    src={post.img || "/img/parts/car-spare-parts.png"}
+                    alt={`${make} ${post.parts}`}
+                    width={96}
+                    height={96}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </span>
+                <span className="mt-3 text-sm font-medium text-gray-800">
+                  {make} {post.parts}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Models */}
+      <section className="mt-14 rounded-3xl bg-gray-50 p-6 sm:p-10">
+        <h2 className={sectionTitle}>
+          Search <span className="text-blue-600">{make}</span> spare parts by model
+        </h2>
+        <div className="mt-4">
+          <SearchModel make={make} car={carmodel} />
+        </div>
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-4">
+          {carmodel.map((post) => (
+            <li key={`${post.make}-${post.model}`}>
+              <Link
+                href={`/search-by-make/${post.make}/${encodeURIComponent(post.model)}`}
+                title={`${post.make} ${post.model} spare parts`}
+                className="block h-full rounded-xl border bg-white p-3 text-center text-sm font-medium text-gray-900 hover:border-blue-600"
+              >
+                {make} <span className="text-blue-600">{post.model.replace("%2F", "/")}</span> parts
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Model not found above?{" "}
+          <Link href="/get-in-touch" className="font-medium text-blue-600 underline">
+            Get in touch with us &raquo;
+          </Link>
+        </p>
+      </section>
+
+      {make === "Honda" && (
+        <div className="mt-8 text-center">
+          <HondaOfferButton />
+        </div>
+      )}
+
+      {/* Availability */}
+      <section className="mt-14">
+        <h2 className={sectionTitle}>
+          Availability of <span className="text-blue-600">{make} spare parts</span> in UAE
+        </h2>
+        <ul className="mt-6 flex flex-wrap gap-3">
+          {CITIES.map((city) => (
+            <li key={city}>
+              <Link
+                href={`/search-by-brands-in-uae/${makeEnc}/${encodeURIComponent(city)}`}
+                title={`${make} spare parts ${city}`}
+                className="block rounded-full border bg-white px-5 py-2 text-sm font-medium text-gray-900 hover:border-blue-600 hover:text-blue-600"
+              >
+                {city}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <TenEntries />
+      <PartsAccordion make={make} />
+
+      {/* Why us */}
+      <section className="mx-auto mt-14 max-w-4xl space-y-4 text-gray-700">
+        <h2 className={sectionTitle}>Why EMIRATESCAR?</h2>
+        <p>
+          Emirates-car.com is the online dealer in <span className="font-medium text-blue-600">{make}</span>{" "}
+          spare parts and for any car brand running on the roads of UAE. We find the correct used, genuine
+          (otherwise called OEM parts) and aftermarket parts that match your fitment. We have experienced
+          professionals who can find the parts at an affordable and reasonable price. We deal in used and
+          genuine {make} parts and aftermarket {make} parts such as engine parts, mechanical parts, electrical
+          and electronic parts, body parts and lights, AC parts and service and maintenance parts.
+        </p>
+        <p>
+          You can inquire about {make} spare parts by simply submitting the{" "}
+          <a href="#myForm" className="text-blue-600 underline hover:text-blue-800" title={`${make} parts`}>
+            online inquiry form
+          </a>
+          . You can get a callback, WhatsApp chat or email after submitting your inquiry.
+        </p>
+        {description && <div dangerouslySetInnerHTML={{ __html: description }} />}
+        <p>
+          We deal with auto spare parts from any country, including{" "}
+          {COUNTRIES.map((c, i) => (
+            <span key={c}>
+              <Link href={`/spare-parts/${c.toLowerCase()}-auto-spare-parts`} className="text-blue-600 hover:underline">
+                {c}
+              </Link>
+              {i < COUNTRIES.length - 1 ? ", " : ""}
+            </span>
+          ))}{" "}
+          brands in UAE. We ship and deliver in{" "}
+          {AREAS.map((a, i) => (
+            <span key={a}>
+              <Link
+                href={`/search-by-brands-in-uae/${makeEnc}/${encodeURIComponent(a)}`}
+                className="text-blue-600 hover:underline"
+              >
+                {a}
+              </Link>
+              {i < AREAS.length - 1 ? ", " : ""}
+            </span>
+          ))}
+          , etc. You can check our catalogue at{" "}
+          <Link href="/catalogs" className="text-blue-600 underline" title={make}>
+            /catalogs
+          </Link>
+          . We provide auto spare parts for any vehicle, including:
+        </p>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {["New auto spare parts in UAE", "Used auto spare parts in UAE", "Genuine auto spare parts in UAE", "Aftermarket auto spare parts in UAE"].map((t) => (
+            <li key={t} className="rounded-xl border bg-white px-4 py-2 text-sm font-medium">✓ {t}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* JSON-LD: real <script> tag, server-rendered so it appears in View Page Source */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+    </div>
   );
 }
