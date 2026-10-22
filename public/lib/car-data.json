@@ -42435,7 +42435,7 @@
     "make": "Mercedes-Benz",
     "img": "mercedesbenz.webp",
     "model": "S400",
-    "seo": false
+    "seo": true
   },
   {
     "id": 14350,

@@ -1,22 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Fira_Sans, Playfair_Display, Poppins, Roboto } from 'next/font/google';
+import { Fira_Sans, Poppins } from 'next/font/google';
 import Link from 'next/link';
-
-const playfair_display = Playfair_Display({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-playfair-display',
-});
-
-const roboto = Roboto({
-    subsets: ['latin'],
-    weight: ['400', '700'],
-    style: ['normal', 'italic'],
-    display: 'swap',
-    variable: '--font-roboto',
-});
 
 const firaSans = Fira_Sans({
     weight: ['400', '700'],
@@ -32,169 +17,164 @@ const poppins = Poppins({
     weight: ['600'],
 });
 
-export default function ProductTabs({ product, slug }) {
-    const [activeTab, setActiveTab] = useState('compatibility');
+const SECTIONS = [
+    { id: 'compatibility', label: 'Compatibility' },
+    { id: 'item-specifics', label: 'Item Specifics' },
+    { id: 'policies', label: 'Policies' },
+];
 
+const DELIVERY_AREAS =
+    'Delivery Available to All Emirates - Dubai, Sharjah, Ajman, Abu Dhabi, Al Ain, Fujairah, Umm Al Quwain, Ras Al Khaimah';
+
+const joinIfArray = (v) => (Array.isArray(v) ? v.join(', ') : v);
+
+const th = 'border border-gray-300 bg-gray-100 px-3 py-2 text-left font-semibold';
+const td = 'border border-gray-300 px-3 py-2 text-gray-700 align-top';
+
+export default function ProductTabs({ product, slug }) {
+    // Smooth-scroll to a section (href="#id" remains as a no-JS / crawler fallback)
+    const scrollToSection = (e, id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.replaceState(null, '', `#${id}`);
+    };
+
+    // Item specifics -> flat [label, value] rows (empty values skipped)
+    const specs = product?.item_specifics || {};
+    const specRows = [
+        ['SKU', specs.sku],
+        ['Brand', specs.Brand],
+        ['Manufacturer Part Number', specs['Manufacturer Part Number']],
+        ['Placement on Vehicle', joinIfArray(specs['Placement on Vehicle'])],
+        ['OEM or Aftermarket', joinIfArray(specs['OEM or Aftermarket'])],
+        ['Interchange Part Number', joinIfArray(specs['Interchange Part Number'])],
+        ['Condition', specs.Condition],
+        ['Warranty', specs.Warranty],
+        ['Country/Region of Manufacture', specs['Country/Region of Manufacture']],
+    ].filter(([, value]) => value !== undefined && value !== null && String(value).trim() !== '');
+
+    const policyRows = [
+        ['Shipping', product?.policies?.shipping],
+        ['Delivery', DELIVERY_AREAS],
+        ['Returns', product?.policies?.returns],
+        ['Payment Methods', joinIfArray(product?.policies?.payment_methods)],
+    ].filter(([, value]) => value);
 
     return (
         <div className="mt-10">
-            {/* Tabs navigation */}
-            <div className={`flex border-b mb-4 space-x-2 overflow-x-auto scrollbar-hide ${poppins.className}`}>
-                <button
-                    onClick={() => setActiveTab('compatibility')}
-                    className={`px-4 xs:px-1 xxs:px-2 s:px-2 py-2 rounded-t-lg whitespace-nowrap font-semibold ${activeTab === 'compatibility' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300 '
-                        }`}
-                    id='#compat'
-                >
-                    Compatibility
-                </button>
-                <button
-                    onClick={() => setActiveTab('item-specifics')}
-                    className={`px-4 xs:px-1 xxs:px-2 s:px-2 py-2 rounded-t-lg whitespace-nowrap font-semibold ${activeTab === 'item-specifics' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
-                        }`}
-                >
-                    Item Specifics
-                </button>
-                <button
-                    onClick={() => setActiveTab('policies')}
-                    className={`px-4 xs:px-1 xxs:px-2 s:px-2 py-2 rounded-t-lg whitespace-nowrap font-semibold ${activeTab === 'policies' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
-                        }`}
-                >
-                    Policies
-                </button>
-            </div>
+            {/* Jump links (sticky so they stay reachable while scrolling) */}
+            <nav
+                aria-label="Product details sections"
+                className={`sticky top-0 z-10 flex border-b mb-6 space-x-2 overflow-x-auto scrollbar-hide bg-white ${poppins.className}`}
+            >
+                {SECTIONS.map((s) => (
+                    <a
+                        key={s.id}
+                        href={`#${s.id}`}
+                        onClick={(e) => scrollToSection(e, s.id)}
+                        className="px-4 xs:px-1 xxs:px-2 s:px-2 py-2 rounded-t-lg whitespace-nowrap font-semibold bg-gray-200 hover:bg-blue-600 hover:text-white"
+                    >
+                        {s.label}
+                    </a>
+                ))}
+            </nav>
 
-            {/* Tabs content */}
-            <div>
-                {activeTab === 'compatibility' && (
-                    <div>
-                        <h2 className="text-xl font-semibold mb-2">Compatibility</h2>
-                        <ul className={`list-disc pl-6 space-y-1 ${firaSans.className}`}>
+            {/* scroll-mt leaves room for the sticky nav when jumping to a section */}
+
+            {/* Compatibility */}
+            <section id="compatibility" className="scroll-mt-16 mb-10">
+                <h2 className="text-xl font-semibold mb-2">Compatibility</h2>
+                <div className="overflow-x-auto">
+                    <table className={`w-full border-collapse text-sm ${firaSans.className}`}>
+                        <caption className="sr-only">
+                            Vehicles compatible with {product?.partname} {product?.partnumber}
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" className={th}>Make</th>
+                                <th scope="col" className={th}>Model</th>
+                                <th scope="col" className={th}>Year(s)</th>
+                                <th scope="col" className={th}>Engine</th>
+                                <th scope="col" className={th}>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {product?.compatibility?.map((comp, index) => {
                                 const compatMake = encodeURIComponent(comp.make);
                                 const compatModel = encodeURIComponent(comp.model);
-                                const compatYear = comp.years;
-
-                                const partSlug = `${product.partname}-${comp.make}-${comp.model}-${compatYear}-${product.partnumber}-${product.id}`;
+                                const partSlug = `${product.partname}-${comp.make}-${comp.model}-${comp.years}-${product.partnumber}-${product.id}`;
+                                const href = `https://www.emirates-car.com/search-by-make/${compatMake}/${compatModel}/${encodeURIComponent(
+                                    product.category
+                                )}/${encodeURIComponent(product.subcategory)}/${encodeURIComponent(partSlug)}`;
 
                                 return (
-                                    <li key={index}>
-                                        <Link
-                                            className="text-blue-700 hover:underline"
-                                            href={`https://www.emirates-car.com/search-by-make/${compatMake}/${compatModel}/${encodeURIComponent(
-                                                product.category
-                                            )}/${encodeURIComponent(product.subcategory)}/${encodeURIComponent(partSlug)}`}
-                                            target='_blank'
-                                        >
-                                            {comp.make} {comp.model} {compatYear} {comp.engine}
-                                        </Link>
-                                    </li>
+                                    <tr key={index}>
+                                        <td className={td}>{comp.make}</td>
+                                        <td className={td}>{comp.model}</td>
+                                        <td className={td}>{comp.years}</td>
+                                        <td className={td}>{comp.engine}</td>
+                                        <td className={td}>
+                                            <Link className="text-blue-700 hover:underline" href={href} target="_blank">
+                                                {comp.make} {comp.model} {comp.years} {comp.engine}
+                                            </Link>
+                                        </td>
+                                    </tr>
                                 );
                             })}
-                        </ul>
-                    </div>
-                )}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                {activeTab === 'item-specifics' && (
-                    <div>
-                        <h2 className="text-xl font-semibold mb-2">Item Specifics</h2>
-                        <dl className={`grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 ${firaSans.className}`}>
+            {/* Item Specifics */}
+            <section id="item-specifics" className="scroll-mt-16 mb-10">
+                <h2 className="text-xl font-semibold mb-2">Item Specifics</h2>
+                <div className="overflow-x-auto">
+                    <table className={`w-full border-collapse text-sm ${firaSans.className}`}>
+                        <caption className="sr-only">Item specifics</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" className={th}>Attribute</th>
+                                <th scope="col" className={th}>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {specRows.map(([label, value]) => (
+                                <tr key={label}>
+                                    <th scope="row" className={`${td} font-semibold text-left text-black`}>{label}</th>
+                                    <td className={td}>{value}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                            {/* SKU */}
-                            {product.item_specifics.sku && (
-                                <div>
-                                    <dt className="font-semibold">SKU</dt>
-                                    <dd className="text-gray-700">{product.item_specifics.sku}</dd>
-                                </div>
-                            )}
-
-                            {/* Brand */}
-                            {product.item_specifics.Brand && (
-                                <div>
-                                    <dt className="font-semibold">Brand</dt>
-                                    <dd className="text-gray-700">{product.item_specifics.Brand}</dd>
-                                </div>
-                            )}
-
-                            {/* Manufacturer Part Number */}
-                            {product.item_specifics["Manufacturer Part Number"] && (
-                                <div>
-                                    <dt className="font-semibold">Manufacturer Part Number</dt>
-                                    <dd className="text-gray-700">{product.item_specifics["Manufacturer Part Number"]}</dd>
-                                </div>
-                            )}
-
-                            {/* Other Part Number */}
-                            {product.item_specifics["Placement on Vehicle"]?.length > 0 && (
-                                <div>
-                                    <dt className="font-semibold">Placement on Vehicle</dt>
-                                    <dd className="text-gray-700">{product.item_specifics["Placement on Vehicle"].join(", ")}</dd>
-                                </div>
-                            )}
-
-                            {/* OEM or Aftermarket */}
-                            {product.item_specifics["OEM or Aftermarket"] && (
-                                <div>
-                                    <dt className="font-semibold">OEM or Aftermarket</dt>
-                                    <dd className="text-gray-700">
-                                        {Array.isArray(product.item_specifics["OEM or Aftermarket"])
-                                            ? product.item_specifics["OEM or Aftermarket"].join(", ")
-                                            : product.item_specifics["OEM or Aftermarket"]}
-                                    </dd>
-                                </div>
-                            )}
-
-                            {/* Interchange Part Number */}
-                            {product.item_specifics["Interchange Part Number"]?.length > 0 && (
-                                <div>
-                                    <dt className="font-semibold">Interchange Part Number</dt>
-                                    <dd className="text-gray-700">{product.item_specifics["Interchange Part Number"].join(", ")}</dd>
-                                </div>
-                            )}
-
-                            {/* Condition */}
-                            {product.item_specifics.Condition && (
-                                <div>
-                                    <dt className="font-semibold">Condition</dt>
-                                    <dd className="text-gray-700">{product.item_specifics.Condition}</dd>
-                                </div>
-                            )}
-
-                            {/* Warranty */}
-                            {product.item_specifics.Warranty && (
-                                <div>
-                                    <dt className="font-semibold">Warranty</dt>
-                                    <dd className="text-gray-700">{product.item_specifics.Warranty}</dd>
-                                </div>
-                            )}
-
-                            {/* Country of Manufacture */}
-                            {product.item_specifics["Country/Region of Manufacture"] && (
-                                <div>
-                                    <dt className="font-semibold">Country/Region of Manufacture</dt>
-                                    <dd className="text-gray-700">{product.item_specifics["Country/Region of Manufacture"]}</dd>
-                                </div>
-                            )}
-
-                        </dl>
-                    </div>
-                )}
-
-
-
-
-                {activeTab === 'policies' && (
-                    <div>
-                        <h2 className="text-xl font-semibold mb-2">Shipping & Delivery</h2>
-                        <ul className={`list-disc pl-5 space-y-1 text-gray-700 ${firaSans.className}`}>
-                            <li><strong>Shipping:</strong> {product.policies.shipping}</li>
-                            <li><strong>Delivery:</strong> Delivery Available to All Emirates - Dubai, Sharjah, Ajman, Abu Dhabi, Al Ain, Fujairah, Umm Al Quwain, Ras Al Khaimah</li>
-                            <li><strong>Returns:</strong> {product.policies.returns}</li>
-                            <li><strong>Payment Methods:</strong> {product.policies.payment_methods.join(", ")}</li>
-                        </ul>
-                    </div>
-                )}
-            </div>
+            {/* Policies */}
+            <section id="policies" className="scroll-mt-16">
+                <h2 className="text-xl font-semibold mb-2">Shipping &amp; Delivery</h2>
+                <div className="overflow-x-auto">
+                    <table className={`w-full border-collapse text-sm ${firaSans.className}`}>
+                        <caption className="sr-only">Shipping, delivery, returns and payment policies</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" className={th}>Policy</th>
+                                <th scope="col" className={th}>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {policyRows.map(([label, value]) => (
+                                <tr key={label}>
+                                    <th scope="row" className={`${td} font-semibold text-left text-black`}>{label}</th>
+                                    <td className={td}>{value}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     );
 }
