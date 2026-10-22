@@ -9,7 +9,7 @@ import SearchBar from "../../../../../../catalogs/SearchBar";
 export const revalidate = 86400;
 export const runtime = "nodejs";
 export const fetchCache = "force-cache";
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 const roboto = Roboto({
     subsets: ["latin"],
