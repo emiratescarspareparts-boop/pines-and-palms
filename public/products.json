@@ -21834,5 +21834,371 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 1010,
+        "subcategory": "Shock Absorber",
+        "category": "Suspension & Steering Parts",
+        "partname": "Right Air Suspension Strut",
+        "partnumber": "44-239978",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mercedes-Benz",
+                "model": "S300 BlueTEC Hybrid",
+                "years": "2013-2020",
+                "engine": "2.1L Inline-4 OM 651 Diesel Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S320",
+                "years": "2013-2020",
+                "engine": "2.0L Inline-4 Turbo M 274 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350",
+                "years": "2013-2020",
+                "engine": "3.5L V6 M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400",
+                "years": "2013-2020",
+                "engine": "3.0L V6 Biturbo M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 Hybrid",
+                "years": "2013-2020",
+                "engine": "3.5L V6 M 276 Petrol Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 4-matic",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Mild Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 4-matic",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 EQ Boost",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Mild Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Hybrid",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Plug-in Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2013-2017",
+                "engine": "5.5L V8 Biturbo M 157 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2018-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "3.0L V6 Biturbo M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 Maybach",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Maybach",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560",
+                "years": "2013-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560 4matic",
+                "years": "2013-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S650",
+                "years": "2013-2020",
+                "engine": "6.0L V12 Biturbo M 279 Petrol"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mercedes/shockabsorber1010.jpeg",
+        "item_specifics": {
+            "sku": "BEN0029",
+            "Brand": "Bilstein",
+            "Manufacturer Part Number": "44-239978",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "A 222 320 02 13, A 222 320 48 13, 44-239978, 44-239961, 222 320 48 13 89, 222 320 48 13,A 222 320 48 13 89"
+            ],
+            "Placement on Vehicle": [
+                "Front Axle Right"
+            ],
+            "Condition": "New",
+            "Material": "Gas Pressure",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Bilstein Right Air Suspension Strut. Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
+    },
+    {
+        "id": 1011,
+        "subcategory": "Shock Absorber",
+        "category": "Suspension & Steering Parts",
+        "partname": "Left Air Suspension Strut",
+        "partnumber": "44-239961",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Mercedes-Benz",
+                "model": "S300 BlueTEC Hybrid",
+                "years": "2013-2020",
+                "engine": "2.1L Inline-4 OM 651 Diesel Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S320",
+                "years": "2013-2020",
+                "engine": "2.0L Inline-4 Turbo M 274 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S350",
+                "years": "2013-2020",
+                "engine": "3.5L V6 M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400",
+                "years": "2013-2020",
+                "engine": "3.0L V6 Biturbo M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 Hybrid",
+                "years": "2013-2020",
+                "engine": "3.5L V6 M 276 Petrol Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 4-matic",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 EQ Boost",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Mild Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 4-matic",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 EQ Boost",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Mild Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Hybrid",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Plug-in Hybrid"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2013-2017",
+                "engine": "5.5L V8 Biturbo M 157 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "AMG S63 4matic Plus",
+                "years": "2018-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S400 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "3.0L V6 Biturbo M 276 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 Maybach",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S450 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "3.0L Inline-6 Turbo M 256 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Maybach",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "S500 Maybach 4matic",
+                "years": "2013-2020",
+                "engine": "4.7L V8 Biturbo M 278 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560",
+                "years": "2013-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S560 4matic",
+                "years": "2013-2020",
+                "engine": "4.0L V8 Biturbo M 177 Petrol"
+            },
+            {
+                "make": "Mercedes-Benz",
+                "model": "Maybach S650",
+                "years": "2013-2020",
+                "engine": "6.0L V12 Biturbo M 279 Petrol"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/mercedes/shockabsorber1011.jpeg",
+        "item_specifics": {
+            "sku": "BEN0030",
+            "Brand": "Bilstein",
+            "Manufacturer Part Number": "44-239961",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "A 222 320 47 13, A 222 320 47 13 89, 222 320 47 13, 222 320 47 13 89"
+            ],
+            "Placement on Vehicle": [
+                "Front Axle Left"
+            ],
+            "Condition": "New",
+            "Material": "Gas Pressure",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Germany",
+            "OEM or Aftermarket": "Genuine",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 0,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine Bilstein Left Air Suspension Strut . Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
