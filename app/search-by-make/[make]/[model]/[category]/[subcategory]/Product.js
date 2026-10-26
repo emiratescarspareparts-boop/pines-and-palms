@@ -2,7 +2,7 @@
 import { Fira_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 
 const firaSans = Fira_Sans({
     weight: ['400', '700'],
@@ -104,6 +104,7 @@ export default function Product({ make, products, model, subcategory }) {
         return compatibilityStrings.join(', ');
     };
 
+    // Returns every year for this make + model, e.g. "2008, 2009, 2010, 2011"
     const getMakeModelYearsOfProduct = (product, make, model) => {
         const yearsSet = new Set();
 
@@ -133,9 +134,7 @@ export default function Product({ make, products, model, subcategory }) {
 
         const years = Array.from(yearsSet).sort((a, b) => parseInt(a) - parseInt(b));
 
-        if (years.length === 0) return '';
-        if (years.length === 1) return years[0];
-        return `${years[0]}-${years[years.length - 1]}`;
+        return years.join(', ');
     };
 
     return (
@@ -147,23 +146,23 @@ export default function Product({ make, products, model, subcategory }) {
                 <ul className="grid grid-cols-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xxl:grid-cols-5 xxs:grid-cols-2 xs:grid-cols-2 xs:gap-2 s:gap-2 xxs:gap-2 md:gap-2 s:grid-cols-2 sm:grid-cols-2 sm:gap-2 gap-6 xl:gap-3 xxl:gap-3 lg:gap-3">
                     {visibleProducts.length > 0 ? (
                         visibleProducts.map(product => {
-                            const compatList = product.compatibility.filter(
-                                c => c.make.toLowerCase() === make.toLowerCase()
-                            );
+                            // Use the compatibility entry matching this page's make + model,
+                            // otherwise fall back to the first entry for the make
+                            const compat =
+                                product.compatibility.find(
+                                    c =>
+                                        c.make.toLowerCase() === make.toLowerCase() &&
+                                        c.model.toLowerCase() === model.toLowerCase()
+                                ) ||
+                                product.compatibility.find(
+                                    c => c.make.toLowerCase() === make.toLowerCase()
+                                ) ||
+                                null;
 
-                            let compat = null;
-
-                            if (compatList.length > 0) {
-                                const now = new Date();
-                                const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-                                const rotationPeriod = Math.floor(days / 3);
-                                const index = (rotationPeriod + product.id) % compatList.length;
-                                compat = compatList[index];
-                            }
                             const compatibilityString = getProductCompatibility(product);
-                            const yearString = getMakeModelYearsOfProduct(product, make, model)
+                            const yearString = getMakeModelYearsOfProduct(product, make, model);
 
-
+                            // Slug keeps the compact years format (e.g. 2008-2011)
                             const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
 
                             return (
@@ -177,7 +176,7 @@ export default function Product({ make, products, model, subcategory }) {
                                         href={`/search-by-make/${make}/${compat?.model || ""}/${encodeURIComponent(product.category)}/${product.subcategory}/${encodeURIComponent(slug)}`}
                                         className="flex flex-col h-full"
                                         target="_blank"
-                                        title={`${make} ${compat?.model || ""} ${compat?.years || ""} ${product.partname}`}
+                                        title={`${make} ${compat?.model || ""} ${yearString} ${product.partname}`}
                                         rel="noopener noreferrer"
                                     >
                                         <figure className="relative w-full aspect-square bg-white">
@@ -191,8 +190,8 @@ export default function Product({ make, products, model, subcategory }) {
                                         </figure>
 
                                         <figcaption className="p-3">
-                                            <h2 className="font-semibold line-clamp-3" itemProp="name">
-                                                {make} {model} {yearString || `${make} ${model}`} {product.partname}
+                                            <h2 className="font-semibold line-clamp-4" itemProp="name">
+                                                {make} {model} {yearString} {product.partname}
                                             </h2>
 
                                             <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>
@@ -215,7 +214,7 @@ export default function Product({ make, products, model, subcategory }) {
                                             <meta itemProp="category" content={product.category} />
                                             <meta
                                                 itemProp="description"
-                                                content={`${product.partname} compatible with ${make} ${compat?.model || ""} ${compat?.years || ""}`}
+                                                content={`${product.partname} compatible with ${make} ${compat?.model || ""} ${yearString}`}
                                             />
                                         </figcaption>
                                     </Link>
@@ -233,7 +232,7 @@ export default function Product({ make, products, model, subcategory }) {
                         })
                     ) : (
                         <p className="col-span-full text-center text-gray-600">
-                            No {make} products found for "{localQuery}"
+                            No {make} {model} products found
                         </p>
                     )}
                 </ul>

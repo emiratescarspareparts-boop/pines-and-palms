@@ -9,7 +9,7 @@ import SearchBar from "../../../../../../catalogs/SearchBar";
 export const revalidate = 86400;
 export const runtime = "nodejs";
 export const fetchCache = "force-cache";
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -56,6 +56,41 @@ const norm = (s) => (s || "").toString().trim().toLowerCase();
 const imgPath = (img) => (/^https?:/.test(img) ? img : `/${img.replace(/^\//, "")}`);
 const imgAbs = (img) => (/^https?:/.test(img) ? img : `${SITE}/${img.replace(/^\//, "")}`);
 
+// Expands a list of year values into one sorted, de-duplicated string:
+// ["2008-2011"] -> "2008, 2009, 2010, 2011"
+// ["2005, 2008-2010", "2009"] -> "2005, 2008, 2009, 2010"
+function expandYears(values) {
+    const set = new Set();
+
+    values.forEach((value) => {
+        if (!value) return;
+
+        value.toString().split(",").forEach((part) => {
+            const p = part.trim();
+            if (!p) return;
+
+            if (p.includes("-")) {
+                const [start, end] = p.split("-").map((y) => parseInt(y.trim()));
+                if (!isNaN(start) && !isNaN(end) && start <= end) {
+                    for (let yr = start; yr <= end; yr++) set.add(yr.toString());
+                    return;
+                }
+            }
+
+            set.add(p);
+        });
+    });
+
+    return [...set]
+        .sort((a, b) => {
+            const na = parseInt(a);
+            const nb = parseInt(b);
+            if (isNaN(na) || isNaN(nb)) return a.localeCompare(b);
+            return na - nb;
+        })
+        .join(", ");
+}
+
 // Handles "2016", "2010-2020", mixed arrays with duplicates
 function yearRange(compatibility, filterMake, filterModel) {
     if (!compatibility?.length) return "";
@@ -99,7 +134,8 @@ function getContext(params) {
     if (!matchingCompats.length) notFound();
     const compat = matchingCompats[0];
 
-    const years = [...new Set(matchingCompats.map((c) => c.years))].join(", ");
+    // Every year listed individually, e.g. "2008, 2009, 2010, 2011"
+    const years = expandYears(matchingCompats.map((c) => c.years));
     const range = yearRange(product.compatibility, decodedMake, decodedModel);
     const rangeStr = range ? ` (${range})` : "";
 

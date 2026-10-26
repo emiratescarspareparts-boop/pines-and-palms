@@ -2,7 +2,7 @@
 import { Fira_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React from 'react'
 
 const firaSans = Fira_Sans({
     weight: ['400', '700'],
@@ -11,6 +11,32 @@ const firaSans = Fira_Sans({
     variable: '--font-fira-sans',
 });
 
+// Expands "2008-2011" -> "2008, 2009, 2010, 2011"
+// Also handles "2005, 2008-2010" -> "2005, 2008, 2009, 2010"
+const expandYears = (years) => {
+    if (!years) return "";
+
+    const result = [];
+
+    years.toString().split(',').forEach(part => {
+        const p = part.trim();
+        if (!p) return;
+
+        if (p.includes('-')) {
+            const [start, end] = p.split('-').map(y => parseInt(y.trim()));
+            if (!isNaN(start) && !isNaN(end) && start <= end) {
+                for (let year = start; year <= end; year++) {
+                    result.push(year.toString());
+                }
+                return;
+            }
+        }
+
+        result.push(p);
+    });
+
+    return result.join(', ');
+};
 
 export default function Product({ make, products, allProducts }) {
 
@@ -36,21 +62,15 @@ export default function Product({ make, products, allProducts }) {
                 <ul className="grid grid-cols-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xxl:grid-cols-5 xxs:grid-cols-2 xs:grid-cols-2 xs:gap-2 s:gap-2 xxs:gap-2 md:gap-2 s:grid-cols-2 sm:grid-cols-2 sm:gap-2 gap-6 xl:gap-3 xxl:gap-3 lg:gap-3">
                     {visibleProducts.length > 0 ? (
                         visibleProducts.map(product => {
-                            // === 3-DAY ROTATION LOGIC ===
-                            const compatList = product.compatibility.filter(
-                                c => c.make.toLowerCase() === make.toLowerCase()
-                            );
+                            // Use the first compatibility entry for this make
+                            const compat =
+                                product.compatibility.find(
+                                    c => c.make.toLowerCase() === make.toLowerCase()
+                                ) || null;
 
-                            let compat = null;
+                            const displayYears = expandYears(compat?.years);
 
-                            if (compatList.length > 0) {
-                                const now = new Date();
-                                const days = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
-                                const rotationPeriod = Math.floor(days / 3);
-                                const index = (rotationPeriod + product.id) % compatList.length;
-                                compat = compatList[index];
-                            }
-
+                            // Slug keeps the compact years format (e.g. 2008-2011)
                             const slug = `${product.partname}-${make}-${compat?.model || ""}${compat?.years ? `-${compat.years}` : ""}-${product.partnumber}-${product.id}`;
 
                             return (
@@ -64,7 +84,7 @@ export default function Product({ make, products, allProducts }) {
                                         href={`/search-by-make/${make}/${compat?.model || ""}/${encodeURIComponent(product.category)}/${encodeURIComponent(product.subcategory)}/${encodeURIComponent(slug)}`}
                                         className="flex flex-col h-full"
                                         target="_blank"
-                                        title={`${make} ${compat?.model || ""} ${compat?.years || ""} ${product.partname}`}
+                                        title={`${make} ${compat?.model || ""} ${displayYears} ${product.partname}`}
                                         rel="noopener noreferrer"
                                     >
                                         <figure className="relative w-full aspect-square bg-white">
@@ -78,8 +98,8 @@ export default function Product({ make, products, allProducts }) {
                                         </figure>
 
                                         <figcaption className="p-3">
-                                            <h2 className="font-semibold line-clamp-3" itemProp="name">
-                                                {make} {compat?.model || ""} {compat?.years || ""} {product.partname}
+                                            <h2 className="font-semibold line-clamp-4" itemProp="name">
+                                                {make} {compat?.model || ""} {displayYears} {product.partname}
                                             </h2>
                                             <p className={`text-sm font-bold text-blue-600 ${firaSans.className}`}>
                                                 {product.pricing.price > 1
@@ -96,7 +116,7 @@ export default function Product({ make, products, allProducts }) {
                                             <meta itemProp="category" content={product.category} />
                                             <meta
                                                 itemProp="description"
-                                                content={`${product.partname} compatible with ${make} ${compat?.model || ""} ${compat?.years || ""}`}
+                                                content={`${product.partname} compatible with ${make} ${compat?.model || ""} ${displayYears}`}
                                             />
                                         </figcaption>
                                     </Link>
@@ -114,7 +134,7 @@ export default function Product({ make, products, allProducts }) {
                         })
                     ) : (
                         <p className="col-span-full text-center text-gray-600">
-                            No {make} products found for "{localQuery}"
+                            No {make} products found
                         </p>
                     )}
                 </ul>
