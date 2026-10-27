@@ -203,9 +203,6 @@ export function generateStaticParams() {
 }
 
 
-
-
-
 export function generateMetadata({ params }) {
     const { parts, make } = params;
     const decodedParts = decodeURIComponent(parts);

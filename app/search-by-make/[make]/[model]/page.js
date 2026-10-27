@@ -11,6 +11,7 @@ import PartsData from "../../../../public/lib/parts.json";
 import Product from "./Product";
 import TenEntries from "../../../../components/tenentries";
 import FormMakeModelRender from "../../../../components/FormMakeModelRender";
+import PartsTypesSection from "../../../../components/PartsTypeSection";
 
 export const dynamic = "force-static";
 export const fetchCache = "force-cache";
@@ -412,21 +413,31 @@ export default function Model({ params, searchParams = {} }) {
         )}
       </section>
 
+      <PartsTypesSection
+        make={make}
+        model={model}
+      />
+
       {/* Shop by category */}
       <section className="mt-14">
         <h2 className={sectionTitle}>
           Shop <span className="text-blue-600">{make} {model}</span> parts by category
         </h2>
-        <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 xxl:grid-cols-6">
+        <ul
+          role="list"
+          className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 xxl:grid-cols-6"
+        >
           {categoryTiles.map((post) => {
             const href = hasSEO
               ? `/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}/${encodeURIComponent(post.category)}/${encodeURIComponent(post.parts)}`
               : `/search-by-make/${encodeURIComponent(make)}/${encodeURIComponent(model)}#myForm`;
+            const title = `${make} ${model} ${post.parts}`;
+
             return (
               <li key={`${post.category}-${post.parts}`}>
                 <Link
                   href={href}
-                  className="flex h-full flex-col items-center rounded-2xl border bg-white p-4 text-center transition hover:border-blue-600 hover:shadow-md"
+                  className="flex h-full flex-col items-center rounded-2xl border bg-white p-4 text-center transition hover:border-blue-600 hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
                 >
                   <span className="flex h-24 w-24 items-center justify-center">
                     <Image
@@ -438,7 +449,7 @@ export default function Model({ params, searchParams = {} }) {
                     />
                   </span>
                   <span className="mt-3 text-sm font-medium text-gray-800">
-                    {make} {model} {post.parts}
+                    {title}
                   </span>
                 </Link>
               </li>
@@ -517,7 +528,7 @@ export default function Model({ params, searchParams = {} }) {
                 title={`${post.make} ${post.model} spare parts`}
                 className="block h-full rounded-xl border bg-white p-3 text-center text-sm font-medium text-gray-900 hover:border-blue-600"
               >
-                {make} <span className="text-blue-600">{post.model.replace("%2F", "/")}</span> parts
+                {`${make} ${post.model.replace("%2F", "/")} parts`}
               </Link>
             </li>
           ))}
@@ -527,15 +538,17 @@ export default function Model({ params, searchParams = {} }) {
       <TenEntries />
 
       {/* Parts directory */}
-      <section className="mt-14">
-        <h2 className={`${sectionTitle} text-center`}>
-          List of Genuine and Aftermarket {make} {model} spare parts in UAE
+      {/* Parts directory */}
+      <section className="mt-14" aria-labelledby="parts-directory-heading">
+        <h2 id="parts-directory-heading" className={`${sectionTitle} text-center`}>
+          {`List of Genuine and Aftermarket ${make} ${model} spare parts in UAE`}
         </h2>
+
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xxl:grid-cols-3">
           {PART_GROUPS.map((group) => (
             <div key={group.title} className="rounded-2xl border bg-white p-5">
               <h3 className="text-lg font-semibold text-blue-600">
-                {make} {model} {group.title}
+                {`${group.title}`}
               </h3>
               <ul className="mt-3 space-y-1.5 text-gray-700">
                 {group.parts.map(([label, slug]) => (
@@ -544,7 +557,7 @@ export default function Model({ params, searchParams = {} }) {
                       href={`/search-by-part-name/${encodeURIComponent(slug || label)}`}
                       className="hover:text-blue-600 hover:underline"
                     >
-                      {label}
+                      {`${make} ${model} ${label}`}
                     </Link>
                   </li>
                 ))}
@@ -552,6 +565,7 @@ export default function Model({ params, searchParams = {} }) {
             </div>
           ))}
         </div>
+
         <div className="mt-8 text-center">
           <Link
             href="/get-in-touch"
@@ -571,7 +585,7 @@ export default function Model({ params, searchParams = {} }) {
         <h2 id="oemvsaftermarket" className={`${sectionTitle} text-center`}>
           Genuine {make} {model} parts vs aftermarket {make} {model} parts
         </h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-2 lg:grid-cols-2">
           <div className="rounded-2xl border bg-white p-6">
             <h3 className="font-semibold text-gray-900">Why aftermarket parts can be better</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700">
@@ -605,10 +619,10 @@ export default function Model({ params, searchParams = {} }) {
             <li key={city}>
               <Link
                 href={`/search-by-brands-in-uae/${encodeURIComponent(make)}/${encodeURIComponent(city)}`}
-                title={`${make} ${model} spare parts ${city}`}
+                title={``}
                 className="block rounded-full border bg-white px-5 py-2 text-sm font-medium text-gray-900 hover:border-blue-600 hover:text-blue-600"
               >
-                {city}
+                {`${make} ${model} parts in ${city}`}
               </Link>
             </li>
           ))}

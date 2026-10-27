@@ -15,6 +15,7 @@ import baseCityData from "../../../../public/lib/basecity.json"
 import PartsData from "../../../../public/lib/parts.json"
 import Product from './Product';
 import FormRender from '../../../../components/FormRender';
+import PartsTypesSection from '../../../../components/PartsTypeSection';
 export const revalidate = 1814400;
 export const dynamic = 'force-static'
 export const dynamicParams = 'force-dynamic';
@@ -728,6 +729,11 @@ export default function Cities({ params, searchParams }) {
           products={filtered}
           allProducts={makeFiltered}
         /> : <></>}
+
+      <PartsTypesSection
+        make={make}
+        location={location}
+      />
 
       <div>
         <div className="bg-bglight">

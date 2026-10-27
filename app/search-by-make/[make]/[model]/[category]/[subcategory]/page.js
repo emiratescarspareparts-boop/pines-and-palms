@@ -15,6 +15,7 @@ import { BadgeCheck, Car, Clock, LinkIcon, MapPin, Recycle } from 'lucide-react'
 import subCityBattery from "../../../../../../public/lib/subCityBattery"
 import subCity from "../../../../../../public/lib/subCity.json"
 import FormMakeModelRender from "../../../../../../components/FormMakeModelRender";
+import PartsTypesSection from "../../../../../../components/PartsTypeSection";
 
 export const revalidate = 604800;
 export const dynamic = 'force-static'
@@ -60,77 +61,77 @@ const selectedParts = [
 ]
 
 
-export function generateStaticParams() {
-    try {
-        const unique = new Set();
-        const params = [];
-
-        for (const product of productsFile) {
-            if (!product || !product.compatibility) continue;
-
-            const category = product.category?.trim();
-            const subcategory = product.subcategory?.trim();
-
-            if (!category || !subcategory) continue;
-
-            for (const fit of product.compatibility) {
-                const make = fit.make?.trim();
-                const model = fit.model?.trim();
-
-                if (!make || !model || excludedMakesSet.has(make)) continue;
-
-                const key = `${make}|${model}|${category}|${subcategory}`;
-
-                if (!unique.has(key)) {
-                    unique.add(key);
-                    params.push({
-                        make,
-                        model,
-                        category,
-                        subcategory,
-                    });
-                }
-            }
-        }
-
-        return params;
-    } catch (error) {
-        console.error("Error generating static params", error);
-        return [];
-    }
-}
 // export function generateStaticParams() {
-//     const unique = new Set();
-//     const params = [];
+//     try {
+//         const unique = new Set();
+//         const params = [];
 
-//     for (let i = 0; i < CarData.length; i++) {
-//         const car = CarData[i];
-//         if (!car.seo || excludedMakesSet.has(car.make)) continue;
-//         if (!topMakes.has(car.make)) continue; // only pre-build top makes
+//         for (const product of productsFile) {
+//             if (!product || !product.compatibility) continue;
 
-//         for (let j = 0; j < selectedParts.length; j++) {
-//             const subcategory = selectedParts[j];
-//             const partEntry = partsData.find(
-//                 p => p.parts?.toLowerCase() === subcategory.toLowerCase()
-//             );
-//             if (!partEntry?.category) continue;
+//             const category = product.category?.trim();
+//             const subcategory = product.subcategory?.trim();
 
-//             const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
-//             if (!unique.has(key)) {
-//                 unique.add(key);
-//                 params.push({
-//                     make: car.make,
-//                     model: car.model,
-//                     category: partEntry.category,
-//                     subcategory: subcategory,
-//                 });
+//             if (!category || !subcategory) continue;
+
+//             for (const fit of product.compatibility) {
+//                 const make = fit.make?.trim();
+//                 const model = fit.model?.trim();
+
+//                 if (!make || !model || excludedMakesSet.has(make)) continue;
+
+//                 const key = `${make}|${model}|${category}|${subcategory}`;
+
+//                 if (!unique.has(key)) {
+//                     unique.add(key);
+//                     params.push({
+//                         make,
+//                         model,
+//                         category,
+//                         subcategory,
+//                     });
+//                 }
 //             }
 //         }
-//     }
 
-//     console.log(`✓ Generated ${params.length} pages`);
-//     return params;
+//         return params;
+//     } catch (error) {
+//         console.error("Error generating static params", error);
+//         return [];
+//     }
 // }
+export function generateStaticParams() {
+    const unique = new Set();
+    const params = [];
+
+    for (let i = 0; i < CarData.length; i++) {
+        const car = CarData[i];
+        if (!car.seo || excludedMakesSet.has(car.make)) continue;
+        if (!topMakes.has(car.make)) continue; // only pre-build top makes
+
+        for (let j = 0; j < selectedParts.length; j++) {
+            const subcategory = selectedParts[j];
+            const partEntry = partsData.find(
+                p => p.parts?.toLowerCase() === subcategory.toLowerCase()
+            );
+            if (!partEntry?.category) continue;
+
+            const key = `${car.make}|${car.model}|${partEntry.category}|${subcategory}`;
+            if (!unique.has(key)) {
+                unique.add(key);
+                params.push({
+                    make: car.make,
+                    model: car.model,
+                    category: partEntry.category,
+                    subcategory: subcategory,
+                });
+            }
+        }
+    }
+
+    console.log(`✓ Generated ${params.length} pages`);
+    return params;
+}
 export function generateMetadata({ params }) {
     const make = decodeURIComponent(params.make);
     const model = decodeURIComponent(params.model);
@@ -418,12 +419,12 @@ function getModel(make) {
 }
 
 
-// const topMakes = new Set([
-//     'Toyota', 'Honda', 'BMW', 'Mercedes-Benz', 'Nissan', 'Ford',
-//     'Audi', 'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep',
-//     'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
-//     'Infiniti', 'Cadillac', 'GMC', 'Volvo'
-// ]);
+const topMakes = new Set([
+    'Toyota', 'Honda', 'BMW', 'Mercedes-Benz', 'Nissan', 'Ford',
+    'Audi', 'Hyundai', 'Kia', 'Lexus', 'Volkswagen', 'Jeep',
+    'Land Rover', 'Porsche', 'Chevrolet', 'Dodge', 'Mitsubishi',
+    'Infiniti', 'Cadillac', 'GMC', 'Volvo'
+]);
 
 
 
@@ -584,6 +585,13 @@ export default function SubcategoryPage({ params }) {
                         ))}
                     </ul>
                 </section></>) : (<></>)}
+
+                <PartsTypesSection
+                    make={make}
+                    model={model}
+                    category={category}
+                    subcategory={subcategory}
+                />
 
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">
@@ -900,6 +908,12 @@ export default function SubcategoryPage({ params }) {
                         allProducts={productMatches}
                     />
                 )}
+                <PartsTypesSection
+                    make={make}
+                    model={model}
+                    category={category}
+                    partName={subcategory}
+                />
 
                 <section className="mt-10 shadow-sm mx-4 md:mx-4 lg:max-w-4xl lg:mx-auto xl:mx-10 bg-bglight px-20 xs:px-3 xxs:px-3">
                     <div className="container py-6">

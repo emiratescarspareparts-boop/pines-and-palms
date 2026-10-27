@@ -11,6 +11,7 @@ import CarData from "../../../public/lib/car-data.json";
 import PartsData from "../../../public/lib/parts.json";
 import Product from "./Product";
 import FormMakeRender from "../../../components/FormMakeRender";
+import PartsTypesSection from "../../../components/PartsTypeSection";
 
 export const revalidate = 86400;
 export const dynamic = "force-static";
@@ -31,7 +32,6 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-/* ───────────────────────── data & constants ───────────────────────── */
 
 const SITE = "https://www.emirates-car.com";
 
@@ -216,7 +216,6 @@ export function generateMetadata({ params }) {
 export default function MakePage({ params, searchParams = {} }) {
   const make = safeDecode(params.make);
 
-  // Bail out early, before any heavy work
   if (excludedMakesSet.has(make)) notFound();
   const makeLower = norm(make);
   if (!carDataByMake[makeLower]?.length) notFound();
@@ -340,6 +339,8 @@ export default function MakePage({ params, searchParams = {} }) {
         {makeFiltered.length > 0 && <Product make={make} products={filtered} allProducts={makeFiltered} />}
       </section>
 
+      <PartsTypesSection make={make} />
+
       {/* Most searched parts */}
       <section className="mt-14">
         <h2 className={sectionTitle}>
@@ -355,7 +356,7 @@ export default function MakePage({ params, searchParams = {} }) {
                 <span className="flex h-24 w-24 items-center justify-center">
                   <Image
                     src={post.img || "/img/parts/car-spare-parts.png"}
-                    alt={`${make} ${post.parts}`}
+                    alt={``}
                     width={96}
                     height={96}
                     className="max-h-full max-w-full object-contain"
@@ -383,7 +384,7 @@ export default function MakePage({ params, searchParams = {} }) {
             <li key={`${post.make}-${post.model}`}>
               <Link
                 href={`/search-by-make/${post.make}/${encodeURIComponent(post.model)}`}
-                title={`${post.make} ${post.model} spare parts`}
+                title={``}
                 className="block h-full rounded-xl border bg-white p-3 text-center text-sm font-medium text-gray-900 hover:border-blue-600"
               >
                 {make} <span className="text-blue-600">{post.model.replace("%2F", "/")}</span> parts
@@ -415,10 +416,10 @@ export default function MakePage({ params, searchParams = {} }) {
             <li key={city}>
               <Link
                 href={`/search-by-brands-in-uae/${makeEnc}/${encodeURIComponent(city)}`}
-                title={`${make} spare parts ${city}`}
+                title={``}
                 className="block rounded-full border bg-white px-5 py-2 text-sm font-medium text-gray-900 hover:border-blue-600 hover:text-blue-600"
               >
-                {city}
+                {make} spare parts in {city}
               </Link>
             </li>
           ))}
