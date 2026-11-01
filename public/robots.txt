@@ -5930,6 +5930,9 @@ Allow: /search-by-make/BYD$
 Allow: /search-by-make/Renault$
 Allow: /search-by-make/Dacia$
 
+User-Agent: __usage_ai-training
+Disallow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 

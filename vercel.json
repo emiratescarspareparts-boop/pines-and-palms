@@ -13,5 +13,25 @@
                 }
             ]
         }
-    ]
+    ],
+    "security": {
+        "firewall": {
+            "rules": [
+                {
+                    "name": "Block Stale and Fake Scraper User Agents",
+                    "action": "deny",
+                    "condition": {
+                        "type": "or",
+                        "conditions": [
+                            {
+                                "key": "userAgent",
+                                "op": "match",
+                                "value": ".*(Chrome\\/123\\.|Chrome\\/131\\.|Chrome\\/151\\.|Chrome\\/152\\.|claudebot).*$"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
 }

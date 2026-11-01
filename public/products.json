@@ -22200,5 +22200,62 @@
                 "Cash on Delivery"
             ]
         }
+    },
+    {
+        "id": 237,
+        "subcategory": "Taillight",
+        "category": "Lighting & Lamps",
+        "partname": "Upper Tail Light Tail Lamp",
+        "partnumber": "8158147021",
+        "availability": "Inquire Now",
+        "compatibility": [
+            {
+                "make": "Toyota",
+                "model": "Prius",
+                "years": "2016-2017",
+                "engine": "1.8L 1798CC 110Cu. In. l4 FULL HYBRID EV-GAS (FHEV) DOHC Naturally Aspirated"
+            }
+        ],
+        "engine": [
+            "1.8",
+            "1.9",
+            "2.0"
+        ],
+        "image": "/img/toyota/toyota237.jpeg",
+        "item_specifics": {
+            "sku": "TOY0030",
+            "Brand": "China",
+            "Manufacturer Part Number": "11-6897-00-1",
+            "Other Part Number": [],
+            "Interchange Part Number": [
+                "81551-47290"
+            ],
+            "Placement on Vehicle": [
+                "Rear corners"
+            ],
+            "Condition": "New",
+            "Material": "LED",
+            "Warranty": "Inquire to check",
+            "Country/Region of Manufacture": "Guangdong, China",
+            "OEM or Aftermarket": "Aftermarket",
+            "Surface Finish": "Smooth",
+            "Fitment Type": "Direct Replacement",
+            "UPC": ""
+        },
+        "pricing": {
+            "price": 300,
+            "price_info": "*Prices reflects the latest compared average online market values for Genuine China Upper Tail Light Tail Lamp . Inquiry is recommended to confirm compatibility, Affordable Aftermarket replacement options and final pricing.",
+            "currency": "AED",
+            "discounted_price": 0,
+            "offer": "0% OFF"
+        },
+        "policies": {
+            "shipping": "Standard Shipping (3-5 Business Days)",
+            "delivery": "Delivery available in UAE",
+            "returns": "",
+            "payment_methods": [
+                "Cash on Delivery"
+            ]
+        }
     }
 ]
